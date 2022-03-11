@@ -14,8 +14,8 @@ jobs:
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
           store: ${{ secrets.SHOP_STORE }}
           password: ${{ secrets.SHOP_PASSWORD }}
-          collection_handle: /collections/candy-by-flavor-butter-rum
-          product_handle: /products/life-savers-butter-rum-roll
+          collection_handle: candy-by-flavor-butter-rum
+          product_handle: life-savers-butter-rum-roll
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           lhci_min_score_performance: 0.9
           lhci_min_score_accessibility: 0.97
