@@ -340,6 +340,8 @@ class MenuDrawer extends HTMLElement {
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+    var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    elementAnnouncement.style.display = "none";
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
@@ -353,6 +355,8 @@ class MenuDrawer extends HTMLElement {
     document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
     removeTrapFocus(elementToFocus);
     this.closeAnimation(this.mainDetailsToggle);
+    var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    elementAnnouncement.style.display = "block";
   }
 
   onFocusOut(event) {
@@ -417,11 +421,15 @@ class HeaderDrawer extends MenuDrawer {
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+    var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    elementAnnouncement.style.display = "none";
   }
 
   closeMenuDrawer(event, elementToFocus) {
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
+    var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    elementAnnouncement.style.display = "block";
   }
 }
 
