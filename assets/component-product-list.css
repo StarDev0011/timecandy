@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Trend Sans';
-  src: url('./assets/trend-sans-regular.ttf');
+  src: url('/assets/trend-sans-regular.ttf');
   font-display: swap;
 }
 
