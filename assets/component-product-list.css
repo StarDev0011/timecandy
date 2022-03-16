@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: 'Trend Sans';
+  src: url('./assets/trend-sans-regular.ttf');
+  font-display: swap;
+}
+
+:root {
+  --color-header: #262626;
+  --color-text: #484E57;
+  --color-link-text: #0C5273;
+  --my-font: 'Trend Sans', sans-serif;
+  --font-2: 'Merriweather', serif;
+}
+
+.col-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.col-5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card-product__picture {
+  position: relative;
+  padding-top: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.card-product__image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+}
+
+.card-product__title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--my-font);
+  color: var(--color-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.card-product__label {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+  font-family: var(--my-font);
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.card-product__price {
+  font-family: var(--my-font);
+  text-transform: uppercase;
+  line-height: 24px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: var(--color-link-text);
+}
+
+.card-product__price-text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+}
+
+.card-product__btn {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  cursor: pointer;
+}
+
+.card-product__btn-icon svg {
+  vertical-align: middle;
+}
+
+.card-product__btn-text {
+  margin-left: 4px;
+  color: var(--color-header);
+  border-bottom: 1px solid currentcolor;
+}
+
+@media (max-width: 767px) {
+  .card-product__title {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .card-product__label {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .card-product__price-text {
+    display: none;
+  }
+
+  .card-product__btn {
+    font-size: 12px;
+  }
+}

@@ -1,158 +1,56 @@
 /* Color custom properties */
-
 :root,
-.color-background-1 {
+.color-background-1,
+.background-primary {
   --color-foreground: var(--color-base-text);
-  --color-background: var(--color-base-background-1);
-  --gradient-background: var(--gradient-base-background-1);
-}
-
-.color-background-2 {
-  --color-foreground: var(--color-base-text);
-  --color-background: var(--color-base-background-2);
-  --gradient-background: var(--gradient-base-background-2);
-}
-
-.color-inverse {
-  --color-foreground: var(--color-base-background-1);
-  --color-background: var(--color-base-text);
-  --gradient-background: rgb(var(--color-base-text));
-}
-
-.color-accent-1 {
-  --color-foreground: var(--color-base-solid-button-labels);
-  --color-background: var(--color-base-accent-1);
-  --gradient-background: var(--gradient-base-accent-1);
-}
-
-.color-accent-2 {
-  --color-foreground: var(--color-base-solid-button-labels);
-  --color-background: var(--color-base-accent-2);
-  --gradient-background: var(--gradient-base-accent-2);
-}
-
-.color-foreground-outline-button {
-  --color-foreground: var(--color-base-outline-button-labels);
-}
-
-.color-foreground-accent-1 {
-  --color-foreground: var(--color-base-accent-1);
-}
-
-.color-foreground-accent-2 {
-  --color-foreground: var(--color-base-accent-2);
-}
-
-:root,
-.color-background-1 {
-  --color-link: var(--color-base-outline-button-labels);
-  --alpha-link: 0.85;
+  --color-background: var(--color-primary-background);
 }
 
 .color-background-2,
-.color-inverse,
-.color-accent-1,
-.color-accent-2 {
-  --color-link: var(--color-foreground);
-  --alpha-link: 0.7;
+.background-secondary {
+  --color-background: var(--color-secondary-background);
+}
+
+.color-inverse {
+  --color-foreground: var(--color-primary-background);
+  --color-background: var(--color-base-text);
 }
 
 :root,
-.color-background-1 {
-  --color-button: var(--color-base-accent-1);
-  --color-button-text: var(--color-base-solid-button-labels);
+a {
+  --color-link: var(--color-link-text);
+  --alpha-link: 1;
+}
+
+.link-inverse--text {
+  --color-link: var(--color-link-hover-text);
+  --alpha-link: 0.75;
+}
+
+:root,
+.button--primary {
+  --color-button: var(--color-primary-button-background);
+  --color-button-text: var(--color-primary-button-text);
   --alpha-button-background: 1;
   --alpha-button-border: 1;
 }
 
-.color-background-2,
-.color-inverse,
-.color-accent-1,
-.color-accent-2 {
-  --color-button: var(--color-foreground);
-  --color-button-text: var(--color-background);
-}
-
 .button--secondary {
-  --color-button: var(--color-base-outline-button-labels);
-  --color-button-text: var(--color-base-outline-button-labels);
-  --color-button: var(--color-background);
-  --alpha-button-background: 1;
-}
-
-.color-background-2 .button--secondary,
-.color-accent-1 .button--secondary,
-.color-accent-2 .button--secondary {
-  --color-button: var(--color-background);
-  --color-button-text: var(--color-foreground);
-}
-
-.color-inverse .button--secondary {
-  --color-button: var(--color-background);
-  --color-button-text: var(--color-foreground);
-}
-
-.button--tertiary {
-  --color-button: var(--color-base-outline-button-labels);
-  --color-button-text: var(--color-base-outline-button-labels);
+  --color-button: var(--color-secondary-button-background);
+  --color-button-text: var(--color-secondary-button-text);
+  --color-button-border: var(--color-secondary-button-border);
   --alpha-button-background: 0;
-  --alpha-button-border: 0.2;
 }
-
-.color-background-2 .button--tertiary,
-.color-inverse .button--tertiary,
-.color-accent-1 .button--tertiary,
-.color-accent-2 .button--tertiary {
-  --color-button: var(--color-foreground);
-  --color-button-text: var(--color-foreground);
-}
-
-:root,
-.color-background-1 {
-  --color-badge-background: var(--color-background);
-  --color-badge-border: var(--color-foreground);
-  --alpha-badge-border: 0.1;
-}
-
-.color-background-2,
-.color-inverse,
-.color-accent-1,
-.color-accent-2 {
-  --color-badge-background: var(--color-background);
-  --color-badge-border: var(--color-background);
+:root {
+  --color-badge-background: var(--color-primary-background);
+  --color-badge-color: var(--color-base-text);
+  --color-badge-border: var(--color-base-text);
   --alpha-badge-border: 1;
-}
-
-:root,
-.color-background-1,
-.color-background-2 {
-  --color-card-hover: var(--color-base-text);
+  --color-card-hover: var(--color-secondary-background);
 }
 
 .color-inverse {
-  --color-card-hover: var(--color-base-background-1);
-}
-
-.color-accent-1,
-.color-accent-2 {
-  --color-card-hover: var(--color-base-solid-button-labels);
-}
-
-:root,
-.color-icon-text {
-  --color-icon: rgb(var(--color-base-text));
-}
-
-.color-icon-accent-1 {
-  --color-icon: rgb(var(--color-base-accent-1));
-}
-
-.color-icon-accent-2 {
-  --color-icon: rgb(var(--color-base-accent-2));
-}
-
-.color-icon-outline-button {
-  --color-icon: rgb(var(--color-base-outline-button-labels));
+  --color-card-hover: var(--color-primary-background);
 }
 
 .contains-card,
@@ -1287,10 +1185,12 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  border-radius: var(--buttons-radius-outset);
+  padding: 13px 40px;
   cursor: pointer;
   font: inherit;
-  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 24px;
   text-decoration: none;
   color: rgb(var(--color-button-text));
   transition: box-shadow var(--duration-short) ease;
@@ -1298,7 +1198,6 @@ button.shopify-payment-button__button--unbranded {
   appearance: none;
   background-color: rgba(var(--color-button), var(--alpha-button-background));
 }
-
 .button:before,
 .shopify-challenge__button:before,
 .customer button:before,
@@ -1375,11 +1274,15 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
-  line-height: calc(1 + 0.2 / var(--font-body-scale));
+  font-family: Trend Sans;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  height: 50px;
 }
-
 .button--tertiary {
   font-size: 1.2rem;
   padding: 1rem 1.5rem;
@@ -2160,14 +2063,17 @@ input[type='checkbox'] {
 
 .announcement-bar__message {
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 10px 30px;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
   margin: 0;
-  letter-spacing: 0.1rem;
 }
 
 /* section-header */
 #shopify-section-header {
   z-index: 3;
+  background-color: #fff;
 }
 
 .shopify-section-header-sticky {
@@ -2198,59 +2104,48 @@ input[type='checkbox'] {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
-.header {
+.header-middle {
   display: grid;
-  grid-template-areas: 'left-icon heading icons';
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
-
+.header-bottom{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(var(--color-background));
+}
+header-drawer{
+  grid-area: navigation;
+}
 @media screen and (min-width: 990px) {
-  .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .header--has-menu:not(.header--middle-left) {
-    padding-bottom: 0;
-  }
-
-  .header--top-left,
-  .header--middle-left:not(.header--has-menu) {
-    grid-template-areas:
-      'heading icons'
-      'navigation navigation';
-    grid-template-columns: 1fr auto;
-  }
-
-  .header--middle-left {
-    grid-template-areas: 'heading navigation icons';
+  .header-middle  {
+    grid-template-areas: 'heading search icons';
     grid-template-columns: auto auto 1fr;
-    column-gap: 2rem;
-  }
-
-  .header--top-center {
-    grid-template-areas:
-      'left-icon heading icons'
-      'navigation navigation navigation';
-  }
-
-  .header:not(.header--middle-left) .header__inline-menu {
-    margin-top: 1.05rem;
+    column-gap: 56px;
+    height: 88px;
+    align-items: center;
   }
 }
 
-.header *[tabindex='-1']:focus {
-  outline: none;
+@media (max-width: 989px) {
+  .header-middle  {
+    display: grid;
+    grid-template-areas: 'navigation heading icons' 'search search search';
+    padding: 8px 16px;
+  }
+  .header-search{
+    margin:  8px -16px 0;
+    padding: 8px 16px 0;
+    border-top: 1px solid #ccc;
+  }
 }
-
 .header__heading {
   margin: 0;
   line-height: 0;
 }
-
+.header-search{
+  grid-area: search;
+}
 .header > .header__heading-link {
   line-height: 0;
 }
@@ -2263,7 +2158,6 @@ input[type='checkbox'] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
   text-decoration: none;
   word-break: break-word;
 }
@@ -2290,10 +2184,6 @@ input[type='checkbox'] {
 }
 
 @media screen and (min-width: 990px) {
-  .header__heading-link {
-    margin-left: -0.75rem;
-  }
-
   .header__heading,
   .header__heading-link {
     justify-self: start;
@@ -2452,7 +2342,6 @@ details[open] .modal-overlay::after {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0 5rem 0 1rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   position: relative;
 }
@@ -2474,19 +2363,20 @@ details[open] .modal-overlay::after {
   right: 0.3rem;
 }
 
+@media screen and (min-width: 1025px) {
+  .header-search{
+    width: 654px;
+  }
+}
 @media screen and (min-width: 750px) {
   .search-modal__close-button {
     right: 1rem;
   }
-
-  .search-modal__content {
-    padding: 0 6rem;
-  }
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
-    max-width: 47.8rem;
+  .header-search{
+    max-width: 654px;
   }
 
   .search-modal__close-button {
@@ -2541,7 +2431,6 @@ details[open] > .header__submenu {
 
 /* Header menu */
 .header__inline-menu {
-  margin-left: -1.2rem;
   grid-area: navigation;
   display: none;
 }
@@ -2556,14 +2445,6 @@ details[open] > .header__submenu {
     display: block;
   }
 
-  .header--top-center .header__inline-menu {
-    justify-self: center;
-  }
-
-  .header--top-center .header__inline-menu > .list-menu--inline {
-    justify-content: center;
-  }
-
   .header--middle-left .header__inline-menu {
     margin-left: 0;
   }
@@ -2574,24 +2455,13 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 14px;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
-
-.header__menu-item:hover {
-  color: rgb(var(--color-foreground));
-}
-
-.header__menu-item span {
-  transition: text-decoration var(--duration-short) ease;
-}
-
-.header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
 details[open] > .header__menu-item {
   text-decoration: underline;
 }
@@ -2602,17 +2472,6 @@ details[open]:hover > .header__menu-item {
 
 details[open] > .header__menu-item .icon-caret {
   transform: rotate(180deg);
-}
-
-.header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-.header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
 }
 
 .header__submenu {
