@@ -39,11 +39,6 @@
     %}
 
     {% style %}
-      @font-face {
-        font-family: 'Trend Sans';
-        src: url('trend-sans-regular.ttf | asset_url');
-        font-display: swap;
-      }
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
