@@ -3,7 +3,7 @@
     {%- if section.settings.link != blank -%}
       <a href="{{ section.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
     {%- endif -%}
-        <p class="announcement-bar__message h5">
+        <p class="announcement-bar__message h6">
           {{ section.settings.text | escape }}
           {%- if section.settings.link != blank -%}
             {% render 'icon-arrow' %}
@@ -22,7 +22,7 @@
   .announcement-bar{
     background: rgba(var(--background-announcement), 1);
   }
-  .announcement-bar__message.h5{
+  .announcement-bar__message{
     color: rgba(var(--color-announcement-text), 1);
   }
 {% endstyle %}

@@ -1,0 +1,128 @@
+{% assign count_block = 0 %}
+{% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
+    {% assign count_block = count_block | plus: 1 %}
+{% endif %}
+{% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
+    {% assign count_block = count_block | plus: 1 %}
+{% endif %}
+{% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
+    {% assign count_block = count_block | plus: 1 %}
+{% endif %}
+{% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
+    {% assign count_block = count_block | plus: 1 %}
+{% endif %}
+<div class="page-width">
+    <div class="mega-menu-wrapper">
+        <div class="d-flex menu-child">
+        {% for submenu in links %}
+            <div class="last-level-menu {{ childlink.title | handleize }} col-ds__{{ 100 | divided_by: links.size | ceil }} js-parent">
+                {% if datas.show_tt_child %}
+                    <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
+                {% endif %}
+                <ul class="list-menu">
+                    {% for childlink in submenu.links %}
+                        <li class="child-link"><a class="header__menu-item list-menu__item link link--text focus-inset caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
+                    {% endfor %}
+                </ul>  
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="mega-menu-image">  
+        <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
+        <div class="image-container-wrapper {% if menu-has-child == true %}d-flex__end{% else %}d-flex{% endif %}">
+            {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
+                <div class="d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                    <div class="image-container-item">
+                        <a class="image p-relative" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>
+                            {% if datas.push_1_image != blank %}
+                                <img class="p-center" 
+                                    src="{{ datas.push_1_image | img_url: '217x199' }}"
+                                    alt="{{ datas.push_1_image.alt }}"
+                                    width="{{ datas.push_1_image.width }}"
+                                    height="{{ datas.push_1_image.height }}"
+                                    loading="lazy"
+                                />
+                            {% endif %}
+                            {% if datas.push_1_label != blank %}
+                                <span class="text-label h6">{{ datas.push_1_label }}</span>
+                            {% endif %}
+                        </a>
+                        {% if datas.push_1_heading != blank %}
+                            <a class="text-container link h6" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
+                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                    <div class="image-container-item">
+                        <a class="image p-relative" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
+                            {% if datas.push_2_image != blank %}
+                                <img class="p-center" 
+                                    src="{{ datas.push_2_image | img_url: '217x199'}}"
+                                    alt="{{ datas.push_2_image.alt }}"
+                                    width="{{ datas.push_2_image.width }}"
+                                    height="{{ datas.push_2_image.height }}"
+                                    loading="lazy"
+                                />
+                            {% endif %}
+                            {% if datas.push_2_label != blank %}
+                                <span class="text-label h6">{{ datas.push_2_label }}</span>
+                            {% endif %}
+                        </a>
+                        {% if datas.push_2_heading != blank %}
+                            <a class="text-container link h6" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
+                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                    <div class="image-container-item">
+                        <a class="image p-relative" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
+                            {% if datas.push_3_image != blank %}
+                                <img class="p-center" 
+                                    src="{{ datas.push_3_image | img_url: '217x199'}}"
+                                    alt="{{ datas.push_3_image.alt }}"
+                                    width="{{ datas.push_3_image.width }}"
+                                    height="{{ datas.push_3_image.height }}"
+                                    loading="lazy"
+                                />
+                            {% endif %}
+                            {% if datas.push_3_label != blank %}
+                                <span class="text-label h6">{{ datas.push_3_label }}</span>
+                            {% endif %}
+                        </a>
+                        {% if datas.push_3_heading != blank %}
+                            <a class="text-container link h6" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
+                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                    <div class="image-container-item">
+                        <a class="image p-relative" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
+                            {% if datas.push_4_image != blank %}
+                                <img class="p-center" 
+                                    src="{{ datas.push_4_image | img_url: '217x199'}}"
+                                    alt="{{ datas.push_4_image.alt }}"
+                                    width="{{ datas.push_4_image.width }}"
+                                    height="{{ datas.push_4_image.height }}"
+                                    loading="lazy"
+                                />
+                            {% endif %}
+                            {% if datas.push_4_label != blank %}
+                                <span class="text-label h6">{{ datas.push_4_label }}</span>
+                            {% endif %}
+                        </a>
+                        {% if datas.push_4_heading != blank %}
+                            <a class="text-container link h6" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

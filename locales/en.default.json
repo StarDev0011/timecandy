@@ -221,6 +221,9 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "megamenu": {
+        "top_product_label": "Top Products"
       }
     },
     "cart": {

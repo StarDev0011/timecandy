@@ -41,7 +41,7 @@
       {
         "type": "color",
         "id": "link_color_hover",
-        "default": "#CDCDCD",
+        "default": "#8ED1CB",
         "label": "t:settings_schema.colors.settings.link_color_hover.label"
       },
       {
@@ -55,6 +55,12 @@
         "id": "secondary_background",
         "default": "#BBE2DD",
         "label": "t:settings_schema.colors.settings.secondary_background.label"
+      },
+      {
+        "type": "color",
+        "id": "basic_background",
+        "default": "#F1F3F3",
+        "label": "t:settings_schema.colors.settings.basic_background.label"
       },
       {
         "type": "header",
@@ -75,7 +81,7 @@
       {
         "type": "color",
         "id": "secondary_button_color",
-        "default": "#AC1229",
+        "default": "#7F161B",
         "label": "t:settings_schema.colors.settings.secondary_button_color.label"
       },
       {
@@ -87,7 +93,7 @@
       {
         "type": "color",
         "id": "secondary_button_border",
-        "default": "#AC1229",
+        "default": "#7F161B",
         "label": "t:settings_schema.colors.settings.secondary_button_border.label"
       }
     ]
@@ -102,7 +108,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
+        "default": "merriweather_sans_n4",
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
@@ -123,7 +129,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
+        "default": "merriweather_sans_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
       },

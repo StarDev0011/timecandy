@@ -116,6 +116,9 @@
         "secondary_background": {
           "label": "Secondary background"
         },
+        "basic_background": {
+          "label": "Basic background"
+        },
         "primary_button_color": {
           "label": "Primary button color"
         },

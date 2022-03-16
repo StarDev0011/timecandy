@@ -78,7 +78,7 @@
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.subheading != blank -%}
-              <div class="banner__text" {{ block.shopify_attributes }}>
+              <div class="banner__text h5" {{ block.shopify_attributes }}>
                 <span>{{ block.settings.subheading | escape }}</span>
               </div>
             {%- endif -%}
@@ -276,11 +276,11 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "h2",
+              "value": "h1",
               "label": "t:sections.all.heading_size.options__1.label"
             },
             {
-              "value": "h1",
+              "value": "h2",
               "label": "t:sections.all.heading_size.options__2.label"
             },
             {
