@@ -271,3 +271,18 @@ slider-component {
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) scale(1.1);
 }
+.banner__text{
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.banner--desktop-transparent .banner__text {
+  color: #0C5273;
+}
+.banner__heading.h1{
+  font-size: 48px;
+  line-height: 59px;
+}
+.banner--desktop-transparent .banner__heading.h1 {
+  color: var(--color-base-text);
+}
