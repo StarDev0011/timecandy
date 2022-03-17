@@ -6,17 +6,18 @@
         "164749713181c4d229-0": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
+            "image": "shopify:\/\/shop_images\/Scroller_Image.png",
+            "heading": "Get Valentine’s Day Candy and More 14% Off with Code “BEMINE”",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
+            "subheading": "create a candy bouquet",
+            "button_label": "Shop now",
+            "link": "shopify:\/\/collections",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "color_scheme": "#E4F1F5",
+            "color_scheme": "#e4f1f5",
             "text_alignment_mobile": "center"
           }
         },
@@ -33,7 +34,7 @@
             "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "color_scheme": "#E4F1F5",
+            "color_scheme": "#e4f1f5",
             "text_alignment_mobile": "center"
           }
         }
