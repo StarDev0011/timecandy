@@ -2546,7 +2546,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__submenu.list-menu {
-  padding: 56px 0;
+  padding: 30px 0;
 }
 
 .header__submenu .header__submenu {
@@ -2558,7 +2558,9 @@ details[open] > .header__menu-item .icon-caret {
 .header__submenu .header__menu-item:after {
   right: 2rem;
 }
-
+.header__submenu summary.header__menu-item{
+    font-family: var(--font-heading);
+}
 .header__submenu .header__menu-item {
   justify-content: space-between;
   padding: 0.8rem 2.4rem;
@@ -2569,7 +2571,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__menu-item .icon-caret {
-  right: 0.8rem;
+  right: 0;
 }
 
 .header__submenu .icon-caret {
