@@ -360,7 +360,7 @@ h6,
   color: rgb(var(--color-heading));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .h0 {
@@ -396,6 +396,8 @@ h2,
 .h2 {
   font-size: 24px;
   line-height: 32px;
+   margin-top: 0;
+  margin-bottom: 28px;
 }
 
 @media only screen and (min-width: 750px) {
@@ -1185,7 +1187,6 @@ summary::-webkit-details-marker {
 /* component-media */
 .media {
   display: block;
-  background-color: rgba(var(--color-foreground), 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -2180,7 +2181,7 @@ header{
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 1px solid rgb(var(--color-foreground));
+  border-bottom: 1px solid #ccc;
 }
 
 .header-middle {
@@ -2191,7 +2192,7 @@ header{
 .header-bottom{
   display: flex;
   justify-content: center;
-  background-color: rgb(var(--color-background));
+  background-color: rgb(var(--color-background2));
 }
 header-drawer{
   grid-area: navigation;

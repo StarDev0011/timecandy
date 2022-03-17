@@ -271,12 +271,3 @@ slider-component {
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) scale(1.1);
 }
-.banner__text{
-  text-transform: uppercase;
-}
-.banner--desktop-transparent .banner__text {
-  color:rgb(var(--color-link-text)); ;
-}
-.banner--desktop-transparent .banner__heading {
-  color: rgb(var(--color-base-text));
-}

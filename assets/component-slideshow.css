@@ -34,6 +34,9 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--adapt_image {
     height: 56rem;
   }
+  .banner--desktop-transparent .banner__box{
+    padding: 0;
+  }
 }
 
 .slideshow__text.banner__box {
@@ -46,7 +49,12 @@ slideshow-component .slideshow.banner {
 .slideshow__text > * {
   max-width: 100%;
 }
-
+.slideshow__text .banner__heading{
+  text-transform: capitalize;
+}
+.banner--desktop-transparent .banner__heading {
+  color: rgb(var(--color-base-text));
+}
 @media screen and (max-width: 749px) {
   slideshow-component.page-width .slideshow__text {
     border-right: var(--text-boxes-border-width) solid rgba(var(--color-foreground), var(--text-boxes-border-opacity));
@@ -81,6 +89,13 @@ slideshow-component .slideshow.banner {
 }
 
 @media screen and (min-width: 750px) {
+
+  .banner__box>*+*{
+    margin-top: 24px;
+  }
+  .banner__box>*+.banner__buttons{
+    margin-top: 48px;
+  }
   .slideshow__text.slideshow__text--left {
     align-items: flex-start;
     text-align: left;
@@ -97,21 +112,48 @@ slideshow-component .slideshow.banner {
   height: 100%;
 }
 
+
 @media screen and (min-width: 750px) {
   .slideshow__text-wrapper.banner__content {
     height: 100%;
     padding: 5rem;
   }
+  .image-mobile-visible .img-mb{
+    display: none !important;
+  }
+  
 }
 
 .slideshow__controls {
   border: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
-
 @media screen and (max-width: 749px) {
   slideshow-component.page-width .slideshow.banner--mobile-bottom + .slideshow__controls {
     border-bottom-right-radius: var(--text-boxes-radius);
     border-bottom-left-radius: var(--text-boxes-radius);
+  }
+  .banner__text.h5{
+    font-size: 18px;
+    line-height: 24px;
+  }   
+  .banner__box>*+*{
+    margin-top: 16px;
+  }
+  .banner__box>*+.banner__buttons{
+    margin-top: 24px;
+  }
+  .banner__box{
+    padding: 40px 20px 50px;
+  }
+  .image-mobile-visible.media>.img-mb:not(.zoom):not(.deferred-media__poster-button){
+    position: static;
+    object-fit: contain;
+  }
+  .image-mobile-visible .img-desktop{
+    display: none !important;
+  }
+  .image-mobile-visible.media:before {
+    content: none !important;
   }
 }
 

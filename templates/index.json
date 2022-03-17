@@ -3,8 +3,8 @@
     "slideshow":{
       "type": "slideshow"
     },
-    "image_width_text":{
-      "type": "image_width_text"
+    "image_with_text":{
+      "type": "image-with-text"
     },
     "multicolumn": {
       "type": "multicolumn",
@@ -83,7 +83,7 @@
     
   "order": [
     "slideshow",
-    "image_width_text",
+    "image_with_text",
     "featured_collection",
     "multicolumn"
   ]
