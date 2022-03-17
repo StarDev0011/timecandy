@@ -346,13 +346,13 @@
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {
-        "text": {
-          "label": "Text"
-        },
-        "link": {
-          "label": "Link"
+          "text": {
+            "label": "Text"
+          },
+          "link": {
+            "label": "Link"
+          }
         }
-      }
     },
     "apps": {
       "name": "Apps",

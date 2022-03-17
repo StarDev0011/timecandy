@@ -1,9 +1,7 @@
 {
   "sections": {
     "product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
-      }
+      "type": "main-collection-product-grid"
     }
   },
   "order": [
