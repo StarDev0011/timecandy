@@ -28,101 +28,163 @@
         {% endfor %}
         </div>
     </div>
-    <div class="mega-menu-image">  
+    <div class="mega-menu-image">
         <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-        <div class="image-container-wrapper {% if menu-has-child == true %}d-flex__end{% else %}d-flex{% endif %}">
-            {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
-                <div class="d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
-                    <div class="image-container-item">
-                        <a class="image p-relative" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>
-                            {% if datas.push_1_image != blank %}
-                                <img class="p-center" 
-                                    src="{{ datas.push_1_image | img_url: '217x199' }}"
-                                    alt="{{ datas.push_1_image.alt }}"
-                                    width="{{ datas.push_1_image.width }}"
-                                    height="{{ datas.push_1_image.height }}"
-                                    loading="lazy"
-                                />
+        <div class="swiper swiper-container">  
+            <div class="image-container-wrapper swiper-wrapper {% if menu-has-child == true %}d-flex__end{% else %}d-flex{% endif %}">
+                {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
+                    <div class="swiper-slide d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                        <div class="image-container-item">
+                            <a class="image p-relative" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>
+                                {% if datas.push_1_image != blank %}
+                                    <img class="p-center" 
+                                        src="{{ datas.push_1_image | img_url: '217x199' }}"
+                                        alt="{{ datas.push_1_image.alt }}"
+                                        width="{{ datas.push_1_image.width }}"
+                                        height="{{ datas.push_1_image.height }}"
+                                        loading="lazy"
+                                    />
+                                {% endif %}
+                                {% if datas.push_1_label != blank %}
+                                    <span class="text-label h6">{{ datas.push_1_label }}</span>
+                                {% endif %}
+                            </a>
+                            {% if datas.push_1_heading != blank %}
+                                <a class="text-container link h6" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
                             {% endif %}
-                            {% if datas.push_1_label != blank %}
-                                <span class="text-label h6">{{ datas.push_1_label }}</span>
-                            {% endif %}
-                        </a>
-                        {% if datas.push_1_heading != blank %}
-                            <a class="text-container link h6" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
-                        {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-            {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
-                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
-                    <div class="image-container-item">
-                        <a class="image p-relative" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
-                            {% if datas.push_2_image != blank %}
-                                <img class="p-center" 
-                                    src="{{ datas.push_2_image | img_url: '217x199'}}"
-                                    alt="{{ datas.push_2_image.alt }}"
-                                    width="{{ datas.push_2_image.width }}"
-                                    height="{{ datas.push_2_image.height }}"
-                                    loading="lazy"
-                                />
+                {% endif %}
+                {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
+                    <div class="swiper-slide d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                        <div class="image-container-item">
+                            <a class="image p-relative" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
+                                {% if datas.push_2_image != blank %}
+                                    <img class="p-center" 
+                                        src="{{ datas.push_2_image | img_url: '217x199'}}"
+                                        alt="{{ datas.push_2_image.alt }}"
+                                        width="{{ datas.push_2_image.width }}"
+                                        height="{{ datas.push_2_image.height }}"
+                                        loading="lazy"
+                                    />
+                                {% endif %}
+                                {% if datas.push_2_label != blank %}
+                                    <span class="text-label h6">{{ datas.push_2_label }}</span>
+                                {% endif %}
+                            </a>
+                            {% if datas.push_2_heading != blank %}
+                                <a class="text-container link h6" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
                             {% endif %}
-                            {% if datas.push_2_label != blank %}
-                                <span class="text-label h6">{{ datas.push_2_label }}</span>
-                            {% endif %}
-                        </a>
-                        {% if datas.push_2_heading != blank %}
-                            <a class="text-container link h6" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
-                        {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-            {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
-                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
-                    <div class="image-container-item">
-                        <a class="image p-relative" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
-                            {% if datas.push_3_image != blank %}
-                                <img class="p-center" 
-                                    src="{{ datas.push_3_image | img_url: '217x199'}}"
-                                    alt="{{ datas.push_3_image.alt }}"
-                                    width="{{ datas.push_3_image.width }}"
-                                    height="{{ datas.push_3_image.height }}"
-                                    loading="lazy"
-                                />
+                {% endif %}
+                {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
+                    <div class="swiper-slide d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                        <div class="image-container-item">
+                            <a class="image p-relative" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
+                                {% if datas.push_3_image != blank %}
+                                    <img class="p-center" 
+                                        src="{{ datas.push_3_image | img_url: '217x199'}}"
+                                        alt="{{ datas.push_3_image.alt }}"
+                                        width="{{ datas.push_3_image.width }}"
+                                        height="{{ datas.push_3_image.height }}"
+                                        loading="lazy"
+                                    />
+                                {% endif %}
+                                {% if datas.push_3_label != blank %}
+                                    <span class="text-label h6">{{ datas.push_3_label }}</span>
+                                {% endif %}
+                            </a>
+                            {% if datas.push_3_heading != blank %}
+                                <a class="text-container link h6" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
                             {% endif %}
-                            {% if datas.push_3_label != blank %}
-                                <span class="text-label h6">{{ datas.push_3_label }}</span>
-                            {% endif %}
-                        </a>
-                        {% if datas.push_3_heading != blank %}
-                            <a class="text-container link h6" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
-                        {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-            {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
-                <div class="d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
-                    <div class="image-container-item">
-                        <a class="image p-relative" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
-                            {% if datas.push_4_image != blank %}
-                                <img class="p-center" 
-                                    src="{{ datas.push_4_image | img_url: '217x199'}}"
-                                    alt="{{ datas.push_4_image.alt }}"
-                                    width="{{ datas.push_4_image.width }}"
-                                    height="{{ datas.push_4_image.height }}"
-                                    loading="lazy"
-                                />
+                {% endif %}
+                {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
+                    <div class="swiper-slide d-flex__column col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                        <div class="image-container-item">
+                            <a class="image p-relative" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
+                                {% if datas.push_4_image != blank %}
+                                    <img class="p-center" 
+                                        src="{{ datas.push_4_image | img_url: '217x199'}}"
+                                        alt="{{ datas.push_4_image.alt }}"
+                                        width="{{ datas.push_4_image.width }}"
+                                        height="{{ datas.push_4_image.height }}"
+                                        loading="lazy"
+                                    />
+                                {% endif %}
+                                {% if datas.push_4_label != blank %}
+                                    <span class="text-label h6">{{ datas.push_4_label }}</span>
+                                {% endif %}
+                            </a>
+                            {% if datas.push_4_heading != blank %}
+                                <a class="text-container link h6" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
                             {% endif %}
-                            {% if datas.push_4_label != blank %}
-                                <span class="text-label h6">{{ datas.push_4_label }}</span>
-                            {% endif %}
-                        </a>
-                        {% if datas.push_4_heading != blank %}
-                            <a class="text-container link h6" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
-                        {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+       (function() {
+
+      'use strict';
+      const breakpoint = window.matchMedia( '(min-width:990px)' );
+      let mySwiper;
+      const breakpointChecker = function() {
+
+        // if larger viewport and multi-row layout needed
+        if ( breakpoint.matches === true ) {
+
+          // clean up old instances and inline styles when available
+          if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
+
+          // or/and do nothing
+          return;
+
+          // else if a small viewport and single column layout needed
+          } else if ( breakpoint.matches === false ) {
+
+            // fire small viewport version of swiper
+            return enableSwiper();
+
+          }
+
+      };
+
+      const enableSwiper = function() {
+
+        mySwiper = new Swiper ('.swiper-container', {
+          loop: true,
+          slidesPerView: 2,
+          breakpoints: {
+              0: { 
+                slidesPerView: 1,
+                spaceBetween: 20,
+                slidesOffsetBefore: 0,
+              },
+              375: { 
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+                slidesOffsetBefore: 0,
+              },
+              500: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+                slidesOffsetBefore: 0,
+              }
+            }
+        });
+
+      };
+      breakpoint.addListener(breakpointChecker);
+      breakpointChecker();
+
+    })(); /* IIFE end */
+  });
+
+</script>

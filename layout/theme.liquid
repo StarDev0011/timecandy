@@ -28,11 +28,12 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
-    {%- liquid
+    {%- liquid  
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
@@ -155,38 +156,6 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
-
-      html {
-        box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 62.5%);
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 12px;
-        letter-spacing: 0.06rem;
-        line-height: 21px;
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-      }
-
-      @media screen and (min-width: 750px) {
-        body {
-          font-size: 1.6rem;
-        }
       }
     {% endstyle %}
 

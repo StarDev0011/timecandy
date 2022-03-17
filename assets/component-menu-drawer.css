@@ -118,7 +118,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__menu-item {
   padding: 20px;
   text-decoration: none;
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   border-bottom: 1px solid #ccc;
 }
 
@@ -184,7 +184,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-items: center;
   width: 100%;
   background-color: transparent;
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   color: rgb(var(--color-light-text));
   justify-content: center;
   position: relative;

@@ -1,11 +1,49 @@
+/* Import font */
 @font-face {
     font-family: "Trend Sans";
-    src: local("Trend Sans"), url('./Latinotype - TrendSansOne.otf') format('truetype');
-    font-weight: 700;
+    src: local("Trend Sans"), url('./Trend-Sans-One.otf') format('truetype');
+}
+@font-face {
+    font-family: "Merriweather Black";
+    src: local("Merriweather Black"), url('./Merriweather-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Merriweather BlackItalic";
+    src: local("Merriweather BlackItalic"), url('./Merriweather-BlackItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Merriweather Bold";
+    src: local("Merriweather Black"), url('./Merriweather-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Merriweather BoldItalic";
+    src: local("Merriweather BoldItalic"), url('./Merriweather-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Merriweather Italic";
+    src: local("Merriweather Italic"), url('./Merriweather-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Merriweather Light";
+    src: local("Merriweather Light"), url('./Merriweather-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Merriweather LightItalic";
+    src: local("Merriweather LightItalic"), url('./Merriweather-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Merriweather";
+    src: local("Merriweather"), url('./Merriweather-Regular.ttf') format('truetype');
 }
 
 /* Color custom properties */
 :root{
+  --font-default: "Merriweather";
+  --font-heading: "Trend Sans";
   --color-foreground: var(--color-base-text);
   --color-heading: var(--color-heading-text);
   --color-background: var(--color-primary-background);
@@ -102,7 +140,29 @@ a {
 }
 
 /* base */
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
+  html {
+    box-sizing: border-box;
+    font-size: calc(var(--font-body-scale) * 62.5%);
+    height: 100%;
+  }
+
+  body {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.06rem;
+    line-height: 21px;
+    font-family: var(--font-default);
+  }
 .no-js:not(html) {
   display: none !important;
 }
@@ -304,7 +364,7 @@ h6,
 }
 
 .h0 {
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   font-size: 36px;
   line-height: 48px;
 }
@@ -319,7 +379,7 @@ h6,
 
 h1,
 .h1 {
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   font-size: 28px;
   line-height: 36px;
 }
@@ -350,7 +410,7 @@ h3,
 .h3 {
   font-size: 20px;
   line-height: 28px;
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
 }
 
 @media only screen and (min-width: 750px) {
@@ -376,7 +436,7 @@ h4,
 }
 h5,
 .h5 {
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   font-size: 14px;
   line-height: 24px;
 }
@@ -393,7 +453,7 @@ h6,
 .h6 {
   font-size: 10px;
   line-height: 18px;
-  font-family: "Trend Sans";
+  font-family: var(--font-heading);
   margin: 0;
 }
 @media only screen and (min-width: 750px) {
