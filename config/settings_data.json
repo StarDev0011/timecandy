@@ -197,7 +197,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "Welcome to our store",
+          "text": "$9.95 flat rate US ground shipping. Free for orders over $250.",
           "link": "",
           "color_text": "#0c5273",
           "color_bg": "#bbe2dd"
