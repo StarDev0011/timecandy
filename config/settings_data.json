@@ -122,10 +122,32 @@
               "push_4_url": "",
               "width_megamenu_link": 33
             }
+          },
+          "9389a90e-1532-430f-af80-1331457bdd21": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "occassions",
+              "show_tt_child": true,
+              "push_1_image": "shopify:\/\/shop_images\/image.png",
+              "push_1_label": "",
+              "push_1_heading": "Andes Mints",
+              "push_1_url": "",
+              "push_2_label": "",
+              "push_2_heading": "",
+              "push_2_url": "",
+              "push_3_label": "",
+              "push_3_heading": "",
+              "push_3_url": "",
+              "push_4_label": "",
+              "push_4_heading": "",
+              "push_4_url": "",
+              "width_megamenu_link": 50
+            }
           }
         },
         "block_order": [
-          "0cac5274-2370-4f5f-8088-63a31e91bdb2"
+          "0cac5274-2370-4f5f-8088-63a31e91bdb2",
+          "9389a90e-1532-430f-af80-1331457bdd21"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo.png",
