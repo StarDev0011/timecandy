@@ -84,6 +84,7 @@
         "16474971177f76ae72-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Donny_Image.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
