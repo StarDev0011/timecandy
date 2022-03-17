@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
-@font-face {
+/* @font-face {
   font-family: 'Trend Sans';
   src: url('./assets/trend-sans-regular.ttf');
   font-display: swap;
-}
+} */
 
 :root {
   --color-header: #262626;

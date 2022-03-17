@@ -48,7 +48,7 @@ header-drawer {
 }
 .header__inline-menu .item-parent span{
 	position: relative;
-	font-family: "Trend Sans";
+	font-family: var(--font-heading);
 }
 .header__inline-menu .item-parent span::before{
 	content: "";
@@ -100,42 +100,8 @@ header-drawer {
 .p-relative{
 	position: relative;
 }
-.col-ds__50 {
-	flex: 1 1 50%;
-	max-width: 50%;
-}
-
-.col-ds__33 {
-	flex: 1 1 33.33%;
-	max-width: 33.33%;
-}
-
-.col-ds__25 {
-	flex: 1 1 25%;
-	max-width: 25%;
-}
-
-.col-ds__20 {
-	flex: 1 1 20%;
-	max-width: 20%;
-}
 .megamenu-image-heading{
 	margin-bottom: 14px;
-}
-.megamenu .mega-menu-wrapper + .mega-menu-image .image-container-wrapper {
-	justify-content: end;
-}
-.megamenu .mega-menu-wrapper + .mega-menu-image  {
-	position: relative;
-}
-.megamenu .mega-menu-wrapper + .mega-menu-image::before {
-	content: "";
-	height: 100%;
-	width: 1px;
-	background-color: #ccc;
-	position: absolute;
-	top: 0;
-	left: -64px;
 }
 
 .megamenu .image-container-item{
@@ -145,10 +111,6 @@ header-drawer {
 .megamenu .image-container-item .image img {
 	width: 100%;
 	float: left;
-}
-
-.megamenu .image-container-wrapper {
-	column-gap: 20px;
 }
 
 .megamenu .child-link .header__menu-item {
@@ -214,7 +176,7 @@ header-drawer {
 	padding:0 0 16px;
 	display: inline-block;
 	text-transform: uppercase;
-	font-family: "Trend Sans";
+	font-family: var(--font-heading);
 }
 .megamenu .list-menu li{
 	padding-bottom: 14px;
@@ -223,6 +185,30 @@ header-drawer {
 	padding-bottom: 0;
 }
 @media (min-width:990px) {
+
+	.megamenu .image-container-wrapper {
+		column-gap: 20px;
+	}
+
+	.col-ds__50 {
+		flex: 1 1 50%;
+		max-width: 50%;
+	}
+
+	.col-ds__33 {
+		flex: 1 1 33.33%;
+		max-width: 33.33%;
+	}
+
+	.col-ds__25 {
+		flex: 1 1 25%;
+		max-width: 25%;
+	}
+
+	.col-ds__20 {
+		flex: 1 1 20%;
+		max-width: 20%;
+	}
 	.d-flex__space-between {
 		display: flex;
 		justify-content: space-between;
@@ -238,6 +224,22 @@ header-drawer {
 	.megamenu .mega-menu-wrapper .d-flex {
 		column-gap: 50px;
 	}
+		.megamenu .mega-menu-wrapper + .mega-menu-image .image-container-wrapper {
+		justify-content: end;
+	}
+	.megamenu .mega-menu-wrapper + .mega-menu-image  {
+		position: relative;
+	}
+	.megamenu .mega-menu-wrapper + .mega-menu-image::before {
+		content: "";
+		height: 100%;
+		width: 1px;
+		background-color: #ccc;
+		position: absolute;
+		top: 0;
+		left: -64px;
+	}
+
 }
 @media (max-width: 989px) {
 	.menu-drawer__inner-submenu .megamenu{
@@ -269,5 +271,10 @@ header-drawer {
 	}
 	.megamenu .mega-menu-wrapper+.mega-menu-image{
 		border-top: 1px solid #ccc;
+	}
+	.megamenu .image-container-item .image img,
+	.megamenu .image-container-item .image{
+		height: 100%;
+		width: 100%;
 	}
 }
