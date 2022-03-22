@@ -1,0 +1,45 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+<div class="collection-candy__header" style="background-color: {{ section.settings.bg_color }}">
+  <div class="container">
+    <div class="collection-candy__header-sub" style="color: {{ section.settings.color_sub }}"> WALK THE CANDY AISLE </div>
+    <h1 class="collection-candy__header-title" style="color: {{ section.settings.color_title }}"> Discover over 300 different kinds of Candy you ate as a kid® </h1>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "type" : "textarea",
+        "id": "sub_headder",
+        "label": "Sub title",
+        "default": "WALK THE CANDY AISLE"
+      },
+      {
+        "type": "color",
+        "id": "color_sub",
+        "label": "Color Sub tilte",
+        "default": "#0C5273"
+      },
+      {
+        "type" : "textarea",
+        "id": "title",
+        "label": "Title",
+        "default": "Discover over 300 different kinds of Candy you ate as a kid®"
+      },
+      {
+        "type": "color",
+        "id": "color_title",
+        "label": "Color Tilte",
+        "default": "#262626"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#BBE2DD"
+      }
+    ]
+  }
+{% endschema %}

@@ -42,6 +42,11 @@
       #Slide-{{ section.id }}-{{ forloop.index }} div:not(.banner--desktop-transparent) .banner__box{
         background: {{ block.settings.color_scheme }};
       }
+      @media screen and (max-width: 749px) {
+        #Slide-{{ section.id }}-{{ forloop.index }} .content-container--full-width-mobile{
+          background: {{ block.settings.bg_container_scheme }};
+        }
+      }
       </style>
       <div class="slideshow__slide grid__item grid--1-col slider__slide"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -51,9 +56,9 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
       >
-        <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}">
+        <div class="{%- if block.settings.image_mb -%} image-mobile-visible {% endif %} slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}">
           {%- if block.settings.image -%}
-            <img
+            <img class="img-desktop" 
               srcset="{%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
               {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
               {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
@@ -74,16 +79,27 @@
           {%- else -%}
             {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}
+          {%- if block.settings.image_mb -%}
+            <img class="lazyload img-mb"
+              srcset="{%- if block.settings.image_mb.width >= 375 -%}{{ block.settings.image_mb | img_url: '375x' }} 375w,{%- endif -%}
+                {%- if block.settings.image_mb.width >= 750 -%}{{ block.settings.image_mb | img_url: '750x' }} 750w,{%- endif -%}"
+              sizes="100vw"
+              src="{{ block.settings.image_mb | img_url: '750x' }}"
+              loading="lazy"
+              alt="{{ block.settings.image_mb.alt | escape }}"
+              width="{{ block.settings.image_mb.width }}"
+              height="{{ block.settings.image_mb.height }}"
+            >
+          {%- endif -%}
         </div>
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.subheading != blank -%}
-              <div class="banner__text h5" {{ block.shopify_attributes }}>
-                <span>{{ block.settings.subheading | escape }}</span>
+              <div class="banner__text h5" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}
               </div>
             {%- endif -%}
             {%- if block.settings.heading != blank -%}
-              <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+              <h2 class="banner__heading h2">{{ block.settings.heading | escape }}</h2>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">
@@ -266,30 +282,15 @@
           "label": "t:sections.slideshow.blocks.slide.settings.image.label"
         },
         {
+          "type": "image_picker",
+          "id": "image_mb",
+          "label": "Image for Mobile"
+        },
+        {
           "type": "text",
           "id": "heading",
           "default": "Image slide",
           "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
         },
         {
           "type": "text",
@@ -356,7 +357,7 @@
               "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__9.label"
             }
           ],
-          "default": "middle-center",
+          "default": "middle-left",
           "label": "t:sections.slideshow.blocks.slide.settings.box_align.label",
           "info": "t:sections.slideshow.blocks.slide.settings.box_align.info"
         },
@@ -383,7 +384,7 @@
               "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_3.label"
             }
           ],
-          "default": "center",
+          "default": "left",
           "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.label"
         },
         {
@@ -408,6 +409,13 @@
           "content": "t:sections.slideshow.settings.mobile.content"
         },
         {
+          "type": "color",
+          "id": "bg_container_scheme",
+          "default": "#FCF0EE",
+          "label": "Background container",
+          "info": "Visible when how content below images on mobile"
+        },
+        {
           "type": "select",
           "id": "text_alignment_mobile",
           "options": [
@@ -424,7 +432,7 @@
               "label": "t:sections.slideshow.blocks.slide.settings.text_alignment_mobile.options__3.label"
             }
           ],
-          "default": "center",
+          "default": "left",
           "label": "t:sections.slideshow.blocks.slide.settings.text_alignment_mobile.label"
         }
       ]

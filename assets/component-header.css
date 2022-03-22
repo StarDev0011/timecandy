@@ -185,6 +185,9 @@ header-drawer {
 	padding-bottom: 0;
 }
 @media (min-width:990px) {
+	.header__submenu.megamenu.list-menu {
+	  padding: 56px 0;
+	}
 
 	.megamenu .image-container-wrapper {
 		column-gap: 20px;

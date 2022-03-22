@@ -1,0 +1,43 @@
+{
+  "wrapper": "div.collection-candy",
+  "sections": {
+    "header": {
+      "type": "collection--candy-header",
+      "settings": {
+      }
+    },
+    "candy-classics": {
+      "type": "collection--candy-aisle",
+      "settings": {
+      }
+    },
+    "candy-chocolate": {
+      "type": "collection--candy-aisle",
+      "settings": {
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+      }
+    },
+    "lunch-boxes-with-candy": {
+      "type": "collection--candy-aisle",
+      "settings": {
+      }
+    },
+    "banner-with-text": {
+      "type": "banner-with-text",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "candy-classics",
+    "candy-chocolate",
+    "featured-product",
+    "lunch-boxes-with-candy",
+    "banner-with-text"
+  ]
+}
