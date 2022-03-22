@@ -14,8 +14,8 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1920s Candy",
-        "collection": "candy-by-decade-1920s-candy",
+        "title": "Birthday",
+        "collection": "candy-by-occasion-birthday-candy-gifts",
         "row": 7,
         "show_view_all": true
       }
