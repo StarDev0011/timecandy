@@ -6,39 +6,24 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "image": "shopify:\/\/shop_images\/Scroller_Image.png",
+            "image_mb": "shopify:\/\/shop_images\/Scroller_Image-mb.png",
+            "heading": "Get Valentine’s Day Candy and More 14% Off with Code “BEMINE”",
+            "subheading": "Create a candy bouquet",
+            "button_label": "shop now",
             "link": "#",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
-            "color_scheme": "#E4F1F5",
-            "bg_container_scheme": "#FCF0EE",
-            "text_alignment_mobile": "left"
-          }
-        },
-        "slide2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "#",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": false,
-            "text_alignment": "left",
-            "color_scheme": "#E4F1F5",
-            "bg_container_scheme": "#FCF0EE",
+            "color_scheme": "#e4f1f5",
+            "bg_container_scheme": "#fcf0ee",
             "text_alignment_mobile": "left"
           }
         }
       },
       "block_order": [
-        "slide1",
-        "slide2"
+        "slide1"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -121,7 +106,7 @@
       "settings": {
         "columns_desktop": 3,
         "column_alignment": "center",
-        "color_scheme": "#E4F1F5",
+        "color_scheme": "#e4f1f5",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 0,
@@ -131,22 +116,20 @@
     "featured_product": {
       "type": "featured-product",
       "settings": {
+        "product": "",
+        "sub_title": "looking for a gift?",
+        "show_best_seller": true,
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "image_text_list": {
       "type": "image-text-list",
       "blocks": {
-        "image_text_list1": {
-          "type": "select",
-          "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
-            "button_label": "shop now",
-            "button_link": "#",
-            "layout": "image_first",
-            "mobile_content_alignment": "center"
-          }
-        },
         "image_text_list2": {
           "type": "select",
           "settings": {
@@ -176,9 +159,28 @@
       ],
       "settings": {
         "heading": "Image text list",
-        "color_bg": "#E4F1F5",
+        "color_bg": "#e4f1f5",
         "padding_top": 160,
         "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "#f1f3f3",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
     "testimonial": {
@@ -227,25 +229,6 @@
         "title": "Candy memories",
         "padding_top": 90,
         "padding_bottom": 120
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "#f1f3f3",
-        "show_view_all": true,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 40
       }
     }
   },
