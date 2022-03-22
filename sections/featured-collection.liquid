@@ -6,13 +6,17 @@
 
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
+{{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
+
 
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  .featured-collection{
+    background: {{ section.settings.color_scheme }};
+  }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -35,66 +39,112 @@
     assign show_mobile_slider = true
   endif
 -%}
+<div class="p-relative {% if section.settings.image_bg_top != blank %}has-image-background-top{% endif %} {% if section.settings.image_bg_top != blank %}has-image-background-bottom{% endif %}">
+  {% if section.settings.image_bg_top != blank %}
+  <div class="img-bg-top" >
+    <img 
+      srcset="{%- if section.settings.image_bg_top.width >= 375 -%}{{ section.settings.image_bg_top | image_url: width: 375 }} 375w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 550 -%}{{ section.settings.image_bg_top | image_url: width: 550 }} 550w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 750 -%}{{ section.settings.image_bg_top | image_url: width: 750 }} 750w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 1100 -%}{{ section.settings.image_bg_top | image_url: width: 1100 }} 1100w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 1500 -%}{{ section.settings.image_bg_top | image_url: width: 1500 }} 1500w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 1780 -%}{{ section.settings.image_bg_top | image_url: width: 1780 }} 1780w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 2000 -%}{{ section.settings.image_bg_top | image_url: width: 2000 }} 2000w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 3000 -%}{{ section.settings.image_bg_top | image_url: width: 3000 }} 3000w,{%- endif -%}
+      {%- if section.settings.image_bg_top.width >= 3840 -%}{{ section.settings.image_bg_top | image_url: width: 3840 }} 3840w,{%- endif -%}
+      {{ section.settings.image_bg_top | image_url }} {{ section.settings.image_bg_top.width }}w"
+      sizes="100vw"
+      src="{{ section.settings.image_bg_top | image_url: width: 1500 }}"
+      loading="lazy"
+      alt="{{ section.settings.image_bg_top.alt | escape }}"
+      width="{{ section.settings.image_bg_top.width }}"
+      height="{{ section.settings.image_bg_top.height}}"
+      >
+    </div>
+  {% endif %}
+  
+  <div class="featured-collection">
+    <div class="page-width{% if show_mobile_slider %} page-width-mb {% else %} not-show-slide-mb{% endif %} section-{{ section.id }}-padding">
+      {%- unless section.settings.title == blank -%}
+        <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %} title-wrapper--no-top-margin">
+          <h2 class="title h1 text-center">{{ section.settings.title | escape }}</h2>
 
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection page-width{% if show_mobile_slider %} page-width-desktop{% endif %} section-{{ section.id }}-padding">
-    {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %} title-wrapper--no-top-margin">
-        <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
-  
-        {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
-          <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
-        {%- endif -%}
-      </div>
-    {%- endunless -%}
-  
-    <slider-component class="slider-mobile-gutter">
-      <ul id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop {% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" role="list">
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}">
-            {% render 'card-product',
-              card_product: product,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {%- else -%}
-          {%- for i in (1..4) -%}
-            <li class="grid__item">
-              {% render 'card-product', show_vendor: section.settings.show_vendor %}
+          {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
+            <a href="{{ section.settings.collection.url }}" class="link underlined-link h5 large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
+          {%- endif -%}
+        </div>
+      {%- endunless -%}
+
+      <slider-component class="slider-mobile-gutter">
+        <ul id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop {% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" role="list">
+          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}">
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: section.settings.image_ratio,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating
+              %}
             </li>
+          {%- else -%}
+            {%- for i in (1..4) -%}
+              <li class="grid__item">
+                {% render 'card-product', show_vendor: section.settings.show_vendor %}
+              </li>
+            {%- endfor -%}
           {%- endfor -%}
-        {%- endfor -%}
-      </ul>
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons no-js-hidden">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
+        </ul>
+        {%- if show_mobile_slider -%}
+          <div class="slider-buttons no-js-hidden">
+            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+            <div class="slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="slider-counter--total">{{ products_to_display }}</span>
+            </div>
+            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
           </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+        {%- endif -%}
+      </slider-component>
+
+      {%- if section.settings.show_view_all and more_in_collection -%}
+        <div class="center collection__view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
+          <a href="{{ section.settings.collection.url }}"
+            class="button"
+            aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
+          >
+            {{ 'sections.featured_collection.view_all' | t }}
+          </a>
         </div>
       {%- endif -%}
-    </slider-component>
-  
-    {%- if section.settings.show_view_all and more_in_collection -%}
-      <div class="center collection__view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-        <a href="{{ section.settings.collection.url }}"
-          class="button"
-          aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
-        >
-          {{ 'sections.featured_collection.view_all' | t }}
-        </a>
-      </div>
-    {%- endif -%}
+    </div>
   </div>
-</div>
+  {% if section.settings.image_bg_top != blank %}
+  <div class="img-bg-bottom">
+    <img 
+      srcset="{%- if section.settings.image_bg_bottom.width >= 375 -%}{{ section.settings.image_bg_bottom | image_url: width: 375 }} 375w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 550 -%}{{ section.settings.image_bg_bottom | image_url: width: 550 }} 550w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 750 -%}{{ section.settings.image_bg_bottom | image_url: width: 750 }} 750w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 1100 -%}{{ section.settings.image_bg_bottom | image_url: width: 1100 }} 1100w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 1500 -%}{{ section.settings.image_bg_bottom | image_url: width: 1500 }} 1500w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 1780 -%}{{ section.settings.image_bg_bottom | image_url: width: 1780 }} 1780w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 2000 -%}{{ section.settings.image_bg_bottom | image_url: width: 2000 }} 2000w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 3000 -%}{{ section.settings.image_bg_bottom | image_url: width: 3000 }} 3000w,{%- endif -%}
+      {%- if section.settings.image_bg_bottom.width >= 3840 -%}{{ section.settings.image_bg_bottom | image_url: width: 3840 }} 3840w,{%- endif -%}
+      {{ section.settings.image_bg_bottom | image_url }} {{ section.settings.image_bg_bottom.width }}w"
+      sizes="100vw"
+      src="{{ section.settings.image_bg_bottom | image_url: width: 1500 }}"
+      loading="lazy"
+      alt="{{ section.settings.image_bg_bottom.alt | escape }}"
+      width="{{ section.settings.image_bg_bottom.width }}"
+      height="{{ section.settings.image_bg_bottom.height}}"
+      >
+    </div>
+  {% endif %}
 
+</div>
 {% schema %}
 {
   "name": "t:sections.featured-collection.name",
@@ -108,26 +158,6 @@
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
@@ -138,46 +168,34 @@
       "min": 2,
       "max": 12,
       "step": 1,
-      "default": 4,
+      "default": 8,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
     },
     {
       "type": "range",
       "id": "columns_desktop",
-      "min": 1,
+      "min": 2,
       "max": 5,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.columns_desktop.label"
     },
     {
-      "type": "select",
+      "type": "color",
       "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
+      "default": "#f1f3f3",
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_bg_top",
+        "label": "Background Top"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_bg_bottom",
+        "label": "Background Bottom"
     },
     {
       "type": "checkbox",
@@ -262,21 +280,21 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 100 ,
+      "step": 10,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 0
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 10,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 40
     }
   ],
   "presets": [

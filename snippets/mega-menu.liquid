@@ -31,7 +31,7 @@
     {% if count_block > 0%}
         <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-            <div class="swiper swiper-container">  
+            <div  id="" class="swiper swiper-container">  
                 <div class="image-container-wrapper swiper-wrapper {% if menu-has-child == true %}d-flex__end{% else %}d-flex{% endif %}">
                     {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
                         <div class="swiper-slide d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">

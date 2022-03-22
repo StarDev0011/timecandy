@@ -1,82 +1,250 @@
 {
   "sections": {
     "slideshow":{
-      "type": "slideshow"
+      "type": "slideshow",
+      "blocks": {
+        "slide1": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label":"Button label",
+            "link":"#",
+            "button_style_secondary":false,
+            "box_align":"middle-left",
+            "show_text_box":false,
+            "text_alignment":"left",
+            "color_scheme":"#E4F1F5",
+            "bg_container_scheme":"#FCF0EE",
+            "text_alignment_mobile":"left"
+          } 
+        },
+        "slide2": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "subheading": "Tell your brand's story through images",
+            "button_label":"Button label",
+            "link":"#",
+            "button_style_secondary":false,
+            "box_align":"middle-left",
+            "show_text_box":false,
+            "text_alignment":"left",
+            "color_scheme":"#E4F1F5",
+            "bg_container_scheme":"#FCF0EE",
+            "text_alignment_mobile":"left"
+          }
+        }
+      },
+      "block_order": [
+        "slide1",
+        "slide2"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "none",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
     },
     "image_with_text":{
-      "type": "image-with-text"
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+      "type": "image-with-text",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "heading": {
+          "type": "heading",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "heading": "Image with text"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Label button",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140
+      }
+    },
+    "icon_with_text":{
+      "type": "icon-with-text",
+      "blocks": {
+        "icon1": {
+          "type": "icon",
+          "settings": {
+            "title": "Icon with text",
             "link": ""
           }
         },
-        "column2": {
-          "type": "column",
+        "icon2": {
+          "type": "icon",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "title": "Icon with text",
             "link": ""
           }
         },
-        "column3": {
-          "type": "column",
+        "icon3": {
+          "type": "icon",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
+            "title": "Icon with text",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "icon1",
+        "icon2",
+        "icon3"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
+        "color_scheme": "#E4F1F5",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 140
+      }
+    },
+    "featured_product":{
+      "type": "featured-product"
+    },
+    "image_text_list":{
+      "type":"image-text-list",
+      "blocks": {
+        "image_text_list1": {
+          "type": "select",
+          "settings": {
+            "title": "Image text item",
+            "caption": "Add a tagline",
+            "button_label": "shop now",
+            "button_link": "#",
+            "layout": "image_first",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "image_text_list2": {
+          "type": "select",
+          "settings": {
+            "title": "Image text item",
+            "caption": "Add a tagline",
+            "button_label": "shop now",
+            "button_link": "#",
+            "layout": "text_first",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "image_text_list3": {
+          "type": "select",
+          "settings": {
+            "title": "Image text item",
+            "caption": "Add a tagline",
+            "button_label": "shop now",
+            "button_link": "#",
+            "layout": "image_first",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_list",
+        "image_text_list2",
+        "image_text_list3"
+      ],
+      "settings": {
+        "heading": "Image text list",
+        "color_bg": "#E4F1F5",
+        "padding_top": 160,
+        "padding_bottom": 0
+      }
+    },
+    "testimonial":{
+      "type":"testimonial",
+      "blocks": {
+        "testimonial1": {
+          "type": "select",
+          "settings": {
+            "button_link": "#",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": "#"
+          }
+        },
+        "testimonial2": {
+          "type": "select",
+          "settings": {
+            "button_link": "#",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": "#"
+          }
+        },
+        "testimonial3": {
+          "type": "select",
+          "settings": {
+            "button_link": "#",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": "#"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial1",
+        "testimonial2",
+        "testimonial3"
+      ],
+      "settings": {
+        "title": "Candy memories",
+        "padding_top": 90,
+        "padding_bottom": 120
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured products",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
+        "color_scheme": "#f1f3f3",
+        "show_view_all": true,
         "image_ratio": "adapt",
         "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
+        "show_vendor": true,
+        "show_rating": true,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     }
   },
@@ -84,7 +252,10 @@
   "order": [
     "slideshow",
     "image_with_text",
+    "icon_with_text",
+    "featured_product",
+    "image_text_list",
     "featured_collection",
-    "multicolumn"
+    "testimonial"
   ]
 }

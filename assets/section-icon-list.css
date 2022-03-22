@@ -1,0 +1,25 @@
+.icon-card__image-wrapper{
+	width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+}
+.icon-card__media.placeholder{
+	width: 100%;
+}
+.icon-card__info h5{
+	margin: 32px 0 0;
+}
+.icon-list.grid{
+	margin-bottom: 0 !important;
+}
+.icon-list-wrapper .slider-buttons{
+	display: none;
+}
+.icon-list-wrapper .slider.slider--mobile .slider__slide{
+	padding-bottom: 0;
+}
