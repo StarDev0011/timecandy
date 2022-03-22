@@ -251,7 +251,16 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: var(--my-font)
+  font-family: var(--my-font);
+  flex-direction: column;
+}
+
+.collection-view-all__link span {
+  margin-bottom: 10px;
+}
+
+.collection-view-all__link-icon {
+  margin-top: 14px;
 }
 
 .custom-swiper-pagination {
