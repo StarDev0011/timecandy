@@ -10,7 +10,7 @@
   endif
 %}
 
-<div class="card-product__item">
+<div class="card-product__item {{ slideItem }}">
   <div class="card-product__picture">
     <a class="card-product__link" href="{{ product.url | within: collection }}">
       <img class="card-product__image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
@@ -51,4 +51,10 @@
       {% endif %}
     </form>
   </div>
+
+  {% if product.metafields.global.limited_time.value  != blank %}
+    <div class="card-product-label">
+      {{ product.metafields.global.limited_time.value }}
+    </div>
+  {% endif %}
 </div>
