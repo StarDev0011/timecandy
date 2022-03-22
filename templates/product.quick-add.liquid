@@ -1,0 +1,35 @@
+<div class="quick-add__container">
+  <div class="quick-add__header">
+    <span class="quick-add__header-title">{{ product.title }}</span>
+    <span class="quick-add__header-icon js-close-quick-add">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4735 13.5266C14.5997 13.6518 14.6707 13.8222 14.6707 14C14.6707 14.1777 14.5997 14.3481 14.4735 14.4733C14.3483 14.5995 14.1779 14.6705 14.0001 14.6705C13.8224 14.6705 13.652 14.5995 13.5268 14.4733L8.00012 8.93998L2.47346 14.4733C2.34828 14.5995 2.17788 14.6705 2.00012 14.6705C1.82236 14.6705 1.65197 14.5995 1.52679 14.4733C1.40058 14.3481 1.32959 14.1777 1.32959 14C1.32959 13.8222 1.40058 13.6518 1.52679 13.5266L7.06012 7.99998L1.52679 2.47331C1.35768 2.3042 1.29164 2.05773 1.35354 1.82672C1.41543 1.59572 1.59587 1.41529 1.82687 1.35339C2.05787 1.29149 2.30435 1.35754 2.47346 1.52664L8.00012 7.05998L13.5268 1.52664C13.7882 1.26523 14.212 1.26523 14.4735 1.52664C14.7349 1.78806 14.7349 2.21189 14.4735 2.47331L8.94012 7.99998L14.4735 13.5266Z" fill="#262626"/>
+      </svg>
+    </span>
+  </div>
+  <div class="quick-add__content">
+    {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
+      <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+        {%- for option in product.options_with_values -%}
+            <fieldset class="js product-form__input">
+              <legend class="form__label">{{ option.name }}</legend>
+              {%- for value in option.values -%}
+                <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                      name="{{ option.name }}"
+                      value="{{ value | escape }}"
+                      form="{{ product_form_id }}"
+                      {% if option.selected_value == value %}checked{% endif %}
+                >
+                <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                  {{ value }}
+                </label>
+              {%- endfor -%}
+            </fieldset>
+        {%- endfor -%}
+        <script type="application/json">
+          {{ product.variants | json }}
+        </script>
+      </variant-radios>
+    {%- endform -%}
+  </div>
+</div>
