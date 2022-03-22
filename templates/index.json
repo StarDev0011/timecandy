@@ -117,7 +117,7 @@
     "featured_product": {
       "type": "featured-product",
       "settings": {
-        "product": "",
+        "product": "3-musketeers-box",
         "sub_title": "looking for a gift?",
         "show_best_seller": true,
         "color_scheme": "background-1",
