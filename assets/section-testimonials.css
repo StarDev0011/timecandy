@@ -1,0 +1,193 @@
+.testimonial__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    justify-content: center;
+    column-gap: 96px;
+    align-items: center;
+}
+.testimonial__img {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: auto 0;
+     width: 394px;
+    height: 394px;
+    border-radius: 15px;
+}
+.testimonial__img img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.testimonial__img .placeholder-svg {
+    position: absolute;
+    background-color: rgb(var(--color-background1));
+}
+
+.testimonial-grid{
+    padding: 69px 99px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(var(--color-background2));
+    margin: 0 82px;
+}
+.testimonial-grid .testimonial-bg-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.testimonial__content{
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+.content-review,
+.state-reviewer,
+ .h5.name-reviewer{
+    color: rgb(var(--color-base-text));
+ }
+ .state-reviewer {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 2px;
+    text-transform: capitalize;
+ }
+ .content-review{
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 24px;
+    font-family: "Merriweather Light"
+ }
+ .content-review p{
+    margin-top: 0;
+ }
+ .content-review p:last-child{
+    margin-bottom: 0;
+ }
+ .testimonial__img-wrap a{
+    font-size: 12px;
+    line-height: 18px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+ }
+ .testimonial__content  a{
+    font-size: 12px;
+    line-height: 18px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    color: rgb(var(--color-light-text));
+    margin-top: 24px;
+ }
+ .testimonial .swiper-button-prev{
+    left: 0;
+ }
+ .testimonial .swiper-button-next{
+    right: 0;
+ }
+ .testimonial .swiper-button-prev:after,
+ .testimonial .swiper-button-next:after{
+    content: none;
+ }
+ @media (min-width: 750px) {
+    .testimonial .heading-center{
+        margin-bottom: 96px;
+     }
+     .testimonial.page-width{
+        padding-left: 38px;
+        padding-right: 38px;
+     }
+     .testimonial-bg-mb{
+        display: none !important;
+     }
+}
+@media (max-width: 1199px) {
+    .testimonial-grid{
+        margin: 0;
+    } 
+    .testimonial .swiper-button-prev,
+    .testimonial .swiper-button-next{
+        display: none;
+    }
+
+    .content-review {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+@media (min-width: 750px) and (max-width: 1199px) {
+     .testimonial-grid{
+        margin: 0;
+        padding: 40px;
+    } 
+    .testimonial__img{
+        width: 280px;
+        height: 280px;
+    }
+    .testimonial-grid .testimonial-bg-img{
+        max-width: 50%;
+    }
+    .testimonial__wrap{
+        column-gap: 60px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .testimonial-grid{
+        padding: 0;
+    }
+    .testimonial__wrap {
+        display: block;
+    }
+    .testimonial .heading-center{
+        margin-bottom: 56px;
+     }
+     .testimonial__img{
+        margin: 0;
+        height: auto;
+        padding:48px 16px 0;
+        width: auto;
+        border-radius: 15px 15px 0 0;
+     }
+     .testimonial__img img:not(.testimonial-bg-mb){
+        z-index: 1;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+     }
+     .testimonial__img img.testimonial-bg-mb{
+        top: 0;
+        left: 0;
+        max-height: calc(50% + 48px);
+        width: 100%;
+        transform: none;
+        border-radius: 0;
+     }
+     .testimonial__img-wrap a{
+        color: rgb(var(--color-link-text));
+        padding: 0 16px 0;
+     }
+    .testimonial-grid .testimonial-bg-img {
+       display: none;
+    }
+    .testimonial__img .placeholder-svg{
+        position: relative;
+        z-index: 1;
+    }
+    .testimonial__content {
+        padding: 32px 16px;
+    }
+}
