@@ -36,9 +36,6 @@
   >
     {%- for block in section.blocks -%}
       <style>
-      #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
-        opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
-      }
       #Slide-{{ section.id }}-{{ forloop.index }} div:not(.banner--desktop-transparent) .banner__box{
         background: {{ block.settings.color_scheme }};
       }
@@ -386,16 +383,6 @@
           ],
           "default": "left",
           "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.label"
-        },
-        {
-          "type": "range",
-          "id": "image_overlay_opacity",
-          "min": 0,
-          "max": 100,
-          "step": 10,
-          "unit": "%",
-          "label": "t:sections.slideshow.blocks.slide.settings.image_overlay_opacity.label",
-          "default": 0
         },
         {
           "type": "color",

@@ -1286,20 +1286,25 @@ button.shopify-payment-button__button--unbranded {
 .cart__dynamic-checkout-buttons iframe {
   box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-base-text), var(--shadow-opacity));
 }
-
+.heading-center{
+  text-align: center;
+  justify-content: center;
+}
 .button,
 .shopify-challenge__button,
 .customer button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(var(--color-button), var(--alpha-button-background));;
+  border: 1px solid rgba(var(--color-button), var(--alpha-button-background));
   height: 50px;
   border-radius: var(--buttons-radius-outset);
-  padding: 13px 40px;
+  padding: 13px 40px 14px;
   cursor: pointer;
-  font: inherit;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
   font-size: 15px;
+  box-sizing: border-box;
   line-height: 24px;
   text-decoration: none;
   color: rgb(var(--color-button-text));
@@ -1352,19 +1357,7 @@ button.shopify-payment-button__button--unbranded {
   background-color: rgba(var(--color-button-text), 0.3);
 }
 
-.button,
-.button-label,
-.shopify-challenge__button,
-.customer button {
-  font-family: Trend Sans;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 300;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  text-align: center;
-  height: 50px;
-}
+
 .button--tertiary {
   font-size: 1.2rem;
   padding: 1rem 1.5rem;
@@ -2229,7 +2222,13 @@ header-drawer{
 .header > .header__heading-link {
   line-height: 0;
 }
-
+.header__heading-link span{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 275px;
+    overflow: hidden;
+    display: block
+}
 .header__heading,
 .header__heading-link {
   grid-area: heading;
@@ -2787,3 +2786,22 @@ details-disclosure > details {
 .font-body-bold {
   font-weight: var(--font-body-weight-bold);
 }
+
+ .customer-controls-slide .swiper-pagination{
+    position: static;
+    top: auto;
+    bottom: auto;
+    margin-top: 49px;
+ }
+ 
+ .customer-controls-slide .swiper-pagination-bullet{
+    background: #E4F1F5;
+    height: 21px;
+    width: 21px;
+    opacity: 1;
+    border: 1px solid #E4F1F5;
+ }
+ .customer-controls-slide .swiper-pagination-bullet-active{
+    background: #8ED1CB;
+    border-color: #0C5273;
+ }

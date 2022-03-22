@@ -1,0 +1,278 @@
+{{ 'component-image-text-list.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: 100px;
+  }
+  .image-text-list-wrap{
+    background: {{ section.settings.color_bg }};
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%} 
+
+<div class="image-text-list">
+  <div class="image-text-list-wrap">
+    <div class="page-width section-{{ section.id }}-padding ">
+      {% if section.settings.heading != blank %}
+        <h2 class="heading-center h1"> 
+            {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      <div class="image-text-list__grid">
+          <div  id="slider-list" class="swiper swiper-container">
+            <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              <div class="swiper-slide">
+                  <div class="image-text-list__item {% if block.settings.layout == 'text_first' %} image-text-list__item--reverse{% endif %}">
+                    <div class="image-with-text__media {% if block.settings.image == blank %} placeholder{% endif %} image-with-text__media-{{ block.settings.mobile_content_alignment }} ">
+                      {%- if block.settings.image != blank -%}
+                        <img
+                          srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
+                            {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                            {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                          src="{{ block.settings.image | image_url: width: 750 }}"
+                          data-sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                          alt="{{ block.settings.image.alt | escape }}"
+                          loading="lazy"
+                        >
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </div>
+                    {% if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank %}
+                      <div class="image-with-text__content image-with-text__content--mobile-{{ block.settings.mobile_content_alignment }} ">
+                        <h5 class="text--caption" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
+                        <h2 class="text--heading h2" {{ block.shopify_attributes }}>
+                          {{ block.settings.title | escape }}
+                        </h2>
+                        {%- if block.settings.button_label != blank -%}
+                          <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
+                            {{ block.settings.button_label | escape }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {% endif %}
+                  </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class="customer-controls-slide">
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if section.settings.image_bg_bottom != blank %}
+    <div class="img-bg-bottom">
+      <img 
+        srcset="{%- if section.settings.image_bg_bottom.width >= 375 -%}{{ section.settings.image_bg_bottom | image_url: width: 375 }} 375w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 550 -%}{{ section.settings.image_bg_bottom | image_url: width: 550 }} 550w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 750 -%}{{ section.settings.image_bg_bottom | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 1100 -%}{{ section.settings.image_bg_bottom | image_url: width: 1100 }} 1100w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 1500 -%}{{ section.settings.image_bg_bottom | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 1780 -%}{{ section.settings.image_bg_bottom | image_url: width: 1780 }} 1780w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 2000 -%}{{ section.settings.image_bg_bottom | image_url: width: 2000 }} 2000w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 3000 -%}{{ section.settings.image_bg_bottom | image_url: width: 3000 }} 3000w,{%- endif -%}
+        {%- if section.settings.image_bg_bottom.width >= 3840 -%}{{ section.settings.image_bg_bottom | image_url: width: 3840 }} 3840w,{%- endif -%}
+        {{ section.settings.image_bg_bottom | image_url }} {{ section.settings.image_bg_bottom.width }}w"
+        sizes="100vw"
+        src="{{ section.settings.image_bg_bottom | image_url: width: 1500 }}"
+        loading="lazy"
+        alt="{{ section.settings.image_bg_bottom.alt | escape }}"
+        width="{{ section.settings.image_bg_bottom.width }}"
+        height="{{ section.settings.image_bg_bottom.height}}"
+        >
+    </div>
+  {% endif %}
+</div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+       (function() {
+
+      'use strict';
+      const breakpoint2 = window.matchMedia( '(min-width:750px)' );
+      let mySwiper2;
+      const breakpointChecker2 = function() {
+        if ( breakpoint2.matches === true ) {
+          if ( mySwiper2 !== undefined ) mySwiper2.destroy( true, true );
+          return;
+          } else if ( breakpoint2.matches === false ) {
+            return enableSwiper();
+
+          }
+
+      };
+
+      const enableSwiper = function() {
+
+        mySwiper2 = new Swiper ('#slider-list.swiper-container', {
+          loop: true,
+          slidesPerView: 1,
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+        });
+
+      };
+      breakpoint2.addListener(breakpointChecker2);
+      breakpointChecker();
+
+    })(); /* IIFE end */
+  });
+
+</script>
+{% schema %}
+{
+  "name": "Image text list",
+  "class": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "default": "Image text list",
+      "label": "Heading"
+    },
+    {
+      "type":"color",
+      "id":"color_bg",
+      "default":"#E4F1F5",
+      "label": "Background Color"
+    },
+    {
+      "type":"image_picker",
+      "id":"image_bg_bottom",
+      "label": "Background Image Bottom"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 160
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+        "name": "Image with text",
+        "type": "select",
+        "settings": [  
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.image-with-text.settings.image.label"
+          },
+          {
+            "type": "html",
+            "id": "title",
+            "default": "Image text item",
+            "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+          },
+          {
+            "type": "text",
+            "id": "caption",
+            "default": "Add a tagline",
+            "label": "Sub heading"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "default": "Button label",
+            "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+            "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "options": [
+              {
+                "value": "image_first",
+                "label": "t:sections.image-with-text.settings.layout.options__1.label"
+              },
+              {
+                "value": "text_first",
+                "label": "t:sections.image-with-text.settings.layout.options__2.label"
+              }
+            ],
+            "default": "image_first",
+            "label": "t:sections.image-with-text.settings.layout.label",
+            "info": "t:sections.image-with-text.settings.layout.info"
+          },
+          {
+            "type": "header",
+            "content": "Mobile layout"
+          },
+          {
+            "type": "select",
+            "id": "mobile_content_alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__1.label"
+              },
+              {
+                "value": "center",
+                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__2.label"
+              },
+              {
+                "value": "right",
+                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__3.label"
+              }
+            ],
+            "default": "center",
+            "label": "t:sections.image-with-text.settings.mobile_content_alignment.label"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Image text list",
+      "blocks": [
+        {
+          "type": "select"
+        },
+        {
+          "type": "select"
+        },
+        {
+          "type": "select"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+ 

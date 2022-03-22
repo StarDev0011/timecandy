@@ -262,7 +262,7 @@
       "onboarding_content": "Give your customers a summary of your blog post"
     },
     "featured_collection": {
-      "view_all": "View all",
+      "view_all": "Shop best sellers",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
     "collection_list": {

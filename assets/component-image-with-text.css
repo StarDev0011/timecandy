@@ -30,6 +30,12 @@
 .image-with-text__media-item{
   width: 100%;
 }
+.image-with-text__text--caption{
+  margin: 0;
+}
+.image-with-text__text--caption + .image-with-text__heading{
+  margin-top: 24px;
+}
 .image-with-text__heading{
   text-transform: capitalize;
   font-family: "Merriweather Bold";
