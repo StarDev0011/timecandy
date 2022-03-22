@@ -41,21 +41,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text"
+            "heading": "Find the Candy You Ate as a Kid!"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Do you remember running down to the corner store to buy as much candy as you could carry? Wax Lips, Bonomo’s Turkish Taffy, Candy Cigarettes, Mary Janes, Atomic Fireballs, and more! Order a gift box of candy from your favorite decade, or pack your own assortment. Take a slow walk down the candy aisle... go ahead, the memories are on us.<\/p>",
             "text_style": "body"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Label button",
-            "button_link": "#"
+            "button_label": "Walk the candy aisle",
+            "button_link": "shopify:\/\/collections"
           }
         }
       },
@@ -65,6 +65,7 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Donny_Image.png",
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
