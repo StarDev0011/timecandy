@@ -100,11 +100,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.png",
           "logo_width": 90,
-          "menu": "menu-home",
-          "bg_menu": "#0C5273",
-          "color_menu": "#fff",
+          "menu": "main-menu",
           "show_line_separator": true,
           "enable_sticky_header": true,
           "margin_bottom": 0
@@ -165,20 +162,8 @@
         "settings": {
           "color_scheme": "background-1"
         }
-      },
-      "announcement-bar": {
-        "type": "announcement-bar",
-        "settings": {
-          "text": "Welcome to our store",
-          "link": "",
-          "color_text": "#0C5273",
-          "color_bg": "#BBE2DD"
-        }
       }
-    },
-    "content_for_index": [
-
-    ]
+    }
   },
   "presets": {
     "Default": {

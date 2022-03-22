@@ -312,6 +312,42 @@ img {
   display: none;
 }
 
+@media (max-width: 1199px) and (min-width: 768px) {
+  .section-featured-product .featured-product {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 50px;
+  }
+
+  .section-featured-product .product__sub-title {
+    font-size: 16px;
+  }
+
+  .section-featured-product .product__title {
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .featured-product__best-seller {
+    right: -10px;
+    top: -30px;
+  }
+
+  .featured-product__best-seller svg{
+    width: 80px;
+    height: 80px;
+  }
+
+  .section-featured-product .page-width {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px;
+  }
+
+  .collection-candy__list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   .product-form__action-mobile {
     display: block;
