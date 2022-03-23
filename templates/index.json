@@ -164,8 +164,8 @@
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_3.png",
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
-            "button_label": "Button label",
-            "button_link": "",
+            "button_label": "Shop now",
+            "button_link": "#",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
