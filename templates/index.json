@@ -137,21 +137,35 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
+            "title": "Send yourself or a friend a box of candy automatically.",
+            "caption": "subscription boxes",
             "button_label": "shop now",
             "button_link": "#",
-            "layout": "text_first",
+            "layout": "image_first",
             "mobile_content_alignment": "center"
           }
         },
         "image_text_list3": {
           "type": "select",
           "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_2.png",
+            "title": "Sometimes you just need 3+ lbs of candy for your next party.",
+            "caption": "retro candy in bulk",
             "button_label": "shop now",
             "button_link": "#",
+            "layout": "text_first",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "29de3973-f22a-4eed-aac7-3e366ba80eab": {
+          "type": "select",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3.png",
+            "title": "Send a personalized candy gift to your employees or clients.",
+            "caption": "Corporate Gifts",
+            "button_label": "Button label",
+            "button_link": "",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
@@ -159,11 +173,13 @@
       },
       "block_order": [
         "image_text_list2",
-        "image_text_list3"
+        "image_text_list3",
+        "29de3973-f22a-4eed-aac7-3e366ba80eab"
       ],
       "settings": {
-        "heading": "Image text list",
+        "heading": "Recommended for you",
         "color_bg": "#e4f1f5",
+        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract_5a993792-29bb-4fb3-a0ee-58b2401cab70.png",
         "padding_top": 160,
         "padding_bottom": 0
       }
