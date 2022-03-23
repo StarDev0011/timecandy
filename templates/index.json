@@ -221,6 +221,7 @@
         "1648000290f7ac8147-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Image_Lockup_2.png",
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
@@ -237,6 +238,8 @@
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
+        "image_bg_top": "shopify:\/\/shop_images\/Subtract_1.png",
+        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract.png",
         "show_view_all": true,
         "image_ratio": "adapt",
         "show_secondary_image": true,
