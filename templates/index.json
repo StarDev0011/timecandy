@@ -124,7 +124,7 @@
         "sub_title": "looking for a gift?",
         "show_best_seller": true,
         "color_scheme": "background-1",
-        "secondary_background": false,
+        "secondary_background": true,
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
