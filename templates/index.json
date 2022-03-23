@@ -80,21 +80,24 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/Group_146.png",
+            "title": "Family-owned since 2000",
             "link": ""
           }
         },
         "icon2": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/illustration.png",
+            "title": "lagrange, ohio-based",
             "link": ""
           }
         },
         "icon3": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
+            "title": "by candy lovers, for candy lovers",
             "link": ""
           }
         }
