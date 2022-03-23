@@ -33,6 +33,7 @@ slideshow-component .slideshow.banner {
 @media screen and (min-width: 750px) {
   .slideshow--placeholder.banner--adapt_image {
     height: 56rem;
+
   }
   .banner--desktop-transparent .banner__box{
     padding: 0;
@@ -43,7 +44,7 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 54.5rem;
+  max-width: 610px;
 }
 
 .slideshow__text > * {

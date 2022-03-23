@@ -125,6 +125,7 @@ header-drawer {
 	padding-top: 16px;
 	text-decoration: none;
 	color: #484E57;
+	display: block;
 	max-width: 199px;
 }
 .megamenu .image-container-wrapper .text-container:hover{

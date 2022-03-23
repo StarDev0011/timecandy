@@ -11,6 +11,10 @@
 .icon-card__media.placeholder{
 	width: 100%;
 }
+.icon-card__info{
+	max-width: 190px;
+	margin: auto;
+}
 .icon-card__info h5{
 	margin: 32px 0 0;
 }
