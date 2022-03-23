@@ -47,9 +47,7 @@
         {%- for block in section.blocks -%}
           {% case block.type %}
             {%- when 'heading' -%}
-              <h2 class="image-with-text__heading h2" {{ block.shopify_attributes }}>
-                {{ block.settings.heading | escape }}
-              </h2>
+                <h2 class="image-with-text__heading h2">{{ block.settings.heading }}</h2>
             {%- when 'caption' -%}
               <h5 class="image-with-text__text--caption" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
             {%- when 'text' -%}
@@ -200,9 +198,8 @@
       "limit": 1,
       "settings": [
         {
-          "type": "html",
+          "type": "liquid",
           "id": "heading",
-          "default": "Image with text",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
         }
       ]

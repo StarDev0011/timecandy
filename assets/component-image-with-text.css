@@ -52,9 +52,12 @@
 }
 .image-with-text__heading{
   text-transform: capitalize;
-  font-family: "Merriweather Bold";
+  font-family: "Merriweather";
   color: var(--color-base-text);
   margin-bottom: 0;
+}
+.image-with-text__heading span{
+  font-family: "Merriweather Bold";
 }
 .image-with-text__text {
   font-size: 16px;
