@@ -41,7 +41,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Find the Candy You Ate as a Kid!"
+            "heading": "<h2 class=\"image-with-text__heading h2\">Find the Candy You Ate as a Kid!<\/h2>"
           }
         },
         "text": {
