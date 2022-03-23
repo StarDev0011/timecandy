@@ -18,7 +18,7 @@
   <div class="image-with-text__grid {% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
     <div class="image-with-text__media-item  image-with-text__media-item--{{ section.settings.desktop_content_position }}">
       <div class="image-with-text__media {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"
-        {% if section.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
+        {% if section.settings.image != blank %} style="max-width: min(100%, {{ section.settings.image_width }}px);  padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
       >
         {%- if section.settings.image != blank -%}
           <img

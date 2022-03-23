@@ -1,8 +1,7 @@
 @media (min-width: 750px) {
   .image-with-text__grid {
-    display: grid;
+    display: flex;
     column-gap: 125px;
-    grid-template-columns: 1fr 1fr;
   }
   .image-with-text__grid--reverse{
     flex-direction: row-reverse;
@@ -26,6 +25,12 @@
   .image-with-text__content--desktop-right>* {
       align-self: flex-end;
       text-align: right;
+  }
+  .image-with-text__text-item{
+    max-width: 455px;
+  }
+  .image-with-text__media.media{
+      margin-left: auto;
   }
 }
 .image-with-text__media-item{
