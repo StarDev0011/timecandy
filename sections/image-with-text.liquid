@@ -35,6 +35,7 @@
             loading="lazy"
             width="{{ section.settings.image.width }}"
             height="{{ section.settings.image.height }}"
+            style="max-width: min(100%, {{ section.settings.image_width }}px); height: auto;"
           >
         {%- else -%}
           {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -75,6 +76,16 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 200,
+      "max": 600,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 485
     },
     {
       "type": "select",

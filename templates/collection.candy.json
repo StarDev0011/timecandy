@@ -46,7 +46,7 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Collection title",
+        "title": "Candy Classic",
         "collection": "candy-by-decade-1960s-candy",
         "row": 7,
         "show_view_all": true
