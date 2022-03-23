@@ -184,6 +184,51 @@
         "padding_bottom": 0
       }
     },
+    "1648000290d9b3ee64": {
+      "type": "image-with-text",
+      "blocks": {
+        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a": {
+          "type": "caption",
+          "settings": {
+            "caption": "water wells for africa"
+          }
+        },
+        "1648000290f7ac8147-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "We’re making a difference in Sierra Leone and so can you!"
+          }
+        },
+        "1648000290f7ac8147-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A small donation of just $1 or $2, the cost of a single bottle of water, seems like such a small sacrifice but it truly makes a difference in our world.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1648000290f7ac8147-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Donate",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a",
+        "1648000290f7ac8147-0",
+        "1648000290f7ac8147-1",
+        "1648000290f7ac8147-2"
+      ],
+      "settings": {
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -258,6 +303,7 @@
     "icon_with_text",
     "featured_product",
     "image_text_list",
+    "1648000290d9b3ee64",
     "featured_collection",
     "testimonial"
   ]
