@@ -251,22 +251,13 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: var(--my-font);
-  flex-direction: column;
-}
-
-.collection-view-all__link span {
-  margin-bottom: 10px;
-}
-
-.collection-view-all__link-icon {
-  margin-top: 14px;
+  font-family: var(--my-font)
 }
 
 .custom-swiper-pagination {
   display: block;
   position: static;
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: left;
 }
 
