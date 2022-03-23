@@ -67,7 +67,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Donny_Image.png",
         "image_width": 490,
-        "layout": "image_first",
+        "layout": "text_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
