@@ -144,7 +144,7 @@
           "b9fae957-4b5f-4215-8025-5e0bab5661dc": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
+              "heading": "shop",
               "menu": "footer"
             }
           },
@@ -165,8 +165,8 @@
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
             "type": "subscribe",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "stay in touch",
+              "subtext": "<p>Get a 10% discount code just for signing up.<\/p>"
             }
           }
         },
