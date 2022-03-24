@@ -15,7 +15,15 @@
           {%- endfor -%}
           {% if section.settings.show_view_all %}
             <div class="card-product__item collection-view-all">
-              <a class="collection-view-all__link" href="{{ collection.url }}"> Shop all {{ collection.title }} </a>
+              <a class="collection-view-all__link" href="{{ collection.url }}">
+                <span>Shop all</span>
+                <span> {{ collection.title }} </span>
+                <span class="collection-view-all__link-icon">
+                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 13L6.68421 7L0.999999 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
             </div>
           {% endif %}
         </div>
@@ -27,12 +35,13 @@
     </div>
   </div>
 </div>
-<script>
-  var breakpoint = window.matchMedia( '(min-width: 768px)' );
-  let mySwiper;
-  const breakpointChecker = function() {
+
+<script type="text/javascript">
+  const breakpoint = window.matchMedia( '(min-width: 768px)' );
+  var productSlider;
+  const breakpointCheck = function() {
     if ( breakpoint.matches === true ) {
-      if ( mySwiper !== undefined ) mySwiper.destroy( true, true );
+      if ( productSlider !== undefined ) productSlider.destroy( true, true );
         return;
     } else if ( breakpoint.matches === false ) {
       return enableSwiper();
@@ -40,7 +49,7 @@
   };
 
   const enableSwiper = function() {
-    mySwiper = new Swiper ('.js-product-slider', {
+    productSlider = new Swiper ('.js-product-slider', {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 16,
@@ -52,8 +61,8 @@
   };
 
   window.onload = function() {
-    breakpoint.addListener(breakpointChecker);
-    breakpointChecker();
+    breakpoint.addListener(breakpointCheck);
+    breakpointCheck();
   }
 </script>
 {% schema %}
