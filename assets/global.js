@@ -755,13 +755,12 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.removeErrorMessage();
-
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
-      this.updateMedia();
-      this.updateURL();
+      // this.updateMedia();
+      // this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
@@ -809,6 +808,7 @@ class VariantSelects extends HTMLElement {
       const input = productForm.querySelector('input[name="id"]');
       input.value = this.currentVariant.id;
       input.dispatchEvent(new Event('change', { bubbles: true }));
+      console.log(this.currentVariant)
     });
   }
 
@@ -844,6 +844,7 @@ class VariantSelects extends HTMLElement {
         if (source && destination) destination.innerHTML = source.innerHTML;
 
         const price = document.getElementById(`price-${this.dataset.section}`);
+        console.log(`${this.dataset.section}`);
 
         if (price) price.classList.remove('visibility-hidden');
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
@@ -901,3 +902,54 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+function initQuickAdd() {
+  const itemQuickAdd = document.querySelectorAll('[data-quick-add]');
+  itemQuickAdd.forEach(function(btn) {
+    btn.onclick = function(e) {
+      e.preventDefault();
+      const baseUrl = this.getAttribute('data-url');
+      const quickAdd = document.querySelectorAll('.quick-add');
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          quickAdd.forEach((item) => {
+            item.innerHTML = '';
+            item.classList.remove('active');
+          })
+          const html = btn.closest('.card-product__form').nextElementSibling;
+          html.innerHTML += this.responseText;
+          html.classList.add('active');
+          const swatchName = document.querySelector('.js-swacth-label');
+          const swatchActive = document.querySelector('.js-swatch-active');
+          swatchName.innerHTML = swatchActive.textContent;
+
+          const dropdown = document.querySelector('.product-form__swatch-dropdown');
+          const btnClose = document.querySelector('.js-close-quick-add');
+          const itemSwacth = document.querySelectorAll('.js-swatch-item');
+          itemSwacth.forEach(function(item) {
+            item.onclick = () => {
+              swatchName.innerHTML = item.textContent;
+              dropdown.classList.remove('active');
+            }
+          })
+
+          btnClose.onclick = () => {
+            html.classList.remove('active');
+          }
+
+          const swatchLabel = document.querySelector('.product-swatch__label');
+          swatchLabel.onclick = () => {
+            dropdown.classList.toggle('active');
+          }
+        }
+      }
+      xmlhttp.open('GET', baseUrl+'?view=quick-add');
+      xmlhttp.send();
+    }
+  });
+}
+
+window.onload = function() {
+  initQuickAdd();
+}
