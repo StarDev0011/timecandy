@@ -122,10 +122,35 @@
               "push_4_url": "",
               "width_megamenu_link": 40
             }
+          },
+          "95918a9a-7581-4b5d-b684-26ed10f073b8": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "occasions",
+              "show_tt_child": true,
+              "push_1_image": "shopify:\/\/shop_images\/image.png",
+              "push_1_label": "",
+              "push_1_heading": "",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/banner_1.png",
+              "push_2_label": "",
+              "push_2_heading": "",
+              "push_2_url": "",
+              "push_3_image": "shopify:\/\/shop_images\/banner_2.png",
+              "push_3_label": "",
+              "push_3_heading": "",
+              "push_3_url": "",
+              "push_4_image": "shopify:\/\/shop_images\/Image_Lockup_2.png",
+              "push_4_label": "",
+              "push_4_heading": "",
+              "push_4_url": "",
+              "width_megamenu_link": 25
+            }
           }
         },
         "block_order": [
-          "8121eb0d-4ef4-42d5-974a-7c566b145734"
+          "8121eb0d-4ef4-42d5-974a-7c566b145734",
+          "95918a9a-7581-4b5d-b684-26ed10f073b8"
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo.png",
