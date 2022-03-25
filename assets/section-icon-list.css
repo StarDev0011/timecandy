@@ -27,3 +27,10 @@
 .icon-list-wrapper .slider.slider--mobile .slider__slide{
 	padding-bottom: 0;
 }
+.icon-list-wrapper .icon-list{
+	max-width: 755px;
+	margin: auto;
+}
+.icon-card__media img{
+	float: left;
+}
