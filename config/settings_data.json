@@ -129,7 +129,7 @@
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 90,
+          "logo_width": 275,
           "menu": "menu-home",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
@@ -177,9 +177,9 @@
           "d7bc321f-ef27-4a6b-b63e-3b523788d979"
         ],
         "settings": {
-          "footer_bg": "#0C5273",
-          "footer_bottom_bg": "#8ED1CB",
-          "text_color": "#fff",
+          "footer_bg": "#0c5273",
+          "footer_bottom_bg": "#8ed1cb",
+          "text_color": "#ffffff",
           "image": "shopify:\/\/shop_images\/Donny_a1fa8dd0-ff53-4ded-a864-95b297effbdc.png",
           "image_width": 164,
           "newsletter_enable": true,
