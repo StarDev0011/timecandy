@@ -2428,10 +2428,10 @@ details[open] .modal-overlay::after {
 .header__icon--cart{
   position: relative;
 }
-@media screen and (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1199px) {
   .header-search{
-    max-width: 654px;
-    min-width: 500px;
+    min-width: 450px;
+    width: 450px;
   }
 }
 @media screen and (min-width: 750px) {
@@ -2440,9 +2440,10 @@ details[open] .modal-overlay::after {
   }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1200px) {
   .header-search{
     max-width: 654px;
+    width: 654px;
   }
 
   .search-modal__close-button {

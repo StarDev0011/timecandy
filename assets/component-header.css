@@ -172,7 +172,7 @@ header-drawer {
 .child-title {
 	font-size: 12px;
 	line-height: 21px;
-	color: rgb(var(--color-link-text));
+	color: rgba(var(--color-heading),1);
 	text-decoration: none;
 	padding:0 0 16px;
 	display: inline-block;
@@ -262,7 +262,7 @@ header-drawer {
 	}
 	.mega-menu-wrapper + .mega-menu-image{
 		margin-top: 40px;
-		padding: 40px 20px 0 20px;
+		padding: 40px 0 0 20px;
 	}
 	.megamenu .mega-menu-wrapper+.mega-menu-image:before{
 		content: none;
