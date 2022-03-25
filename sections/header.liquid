@@ -94,7 +94,7 @@
                                   </button>
                                   {%- if has_mega_menu == true -%}
                                     <div class="megamenu">
-                                      {% render 'mega-menu' with links: link.links, datas: datas %}
+                                      {% render 'mega-menu-mobile' with links: link.links, datas: datas %}
                                     </div>
                                   {% else %}
                                     <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
@@ -154,20 +154,15 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if section.settings.logo != blank -%}
-              {%- assign image_size = section.settings.logo_width | append: 'x' -%}
-              <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                src="{{ section.settings.logo | img_url: image_size }}"
-                loading="lazy"
-                class="header__heading-logo"
-                width="{{ section.settings.logo.width }}"
-                height="{{ section.settings.logo.height }}"
-                alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-              >
-            {%- else -%}
-              <span class="h1">{{ shop.name }}</span>
-            {%- endif -%}
+          <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text focus-inse">
+              {% if section.settings.logo %}
+                  <img itemprop="logo" class="{% if section.settings.logo != blank %}hide-mobile{% endif %}" src="{{ section.settings.logo | img_url: '257x' }}" alt="{{ shop.name }}"/>
+                  {% if section.settings.logo_mobile != blank %}
+                  <img itemprop="logo" class="hide-bigger-mobile" src="{{ section.settings.logo_mobile | img_url: '192x' }}" alt="{{ shop.name }}"/>
+                  {% endif %}
+              {% else %}
+                  <span itemprop="name">{{ shop.name }}</span>
+              {% endif %}
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -509,14 +504,9 @@
       "label": "t:sections.header.settings.logo.label"
     },
     {
-      "type": "range",
-      "id": "logo_width",
-      "min": 50,
-      "max": 400,
-      "step": 5,
-      "default": 275,
-      "unit": "t:sections.header.settings.logo_width.unit",
-      "label": "t:sections.header.settings.logo_width.label"
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Logo mobile (optional)"
     },
     {
       "type": "link_list",

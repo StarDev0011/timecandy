@@ -99,13 +99,13 @@
        (function() {
 
       'use strict';
-      const breakpoint2 = window.matchMedia( '(min-width:750px)' );
+      const breakpoint = window.matchMedia( '(min-width:750px)' );
       let mySwiper2;
-      const breakpointChecker2 = function() {
-        if ( breakpoint2.matches === true ) {
+      const breakpointChecker = function() {
+        if ( breakpoint.matches === true ) {
           if ( mySwiper2 !== undefined ) mySwiper2.destroy( true, true );
           return;
-          } else if ( breakpoint2.matches === false ) {
+          } else if ( breakpoint.matches === false ) {
             return enableSwiper();
 
           }
@@ -124,7 +124,7 @@
         });
 
       };
-      breakpoint2.addListener(breakpointChecker2);
+      breakpoint.addListener(breakpointChecker);
       breakpointChecker();
 
     })(); /* IIFE end */

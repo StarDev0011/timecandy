@@ -196,7 +196,7 @@ html.no-js .no-js-hidden {
 
 @media screen and (min-width: 750px) {
   .page-width {
-    padding: 0 5rem;
+    padding: 0 80px;
   }
 
   .page-width--narrow {
@@ -599,7 +599,7 @@ a,
   box-shadow: none;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-  color: rgb(var(--color-link));
+  color: rgb(var(--color-link-text));
   background-color: transparent;
   font-size: 12px;
   line-height: 18px;
@@ -607,13 +607,22 @@ a,
 }
 
 .link--text {
-  color: rgb(var(--color-link));
+  color: var(--color-link)
 }
 
 .link--text:hover {
-  color: rgb(var(--color-link-hover));
+  color: var(--color-link-hover)
 }
-
+@media (max-width: 989px) {
+   .header-logo .hide-mobile{
+      display: none !important;
+   } 
+}
+@media (min-width: 989px) {
+   .header-logo .hide-bigger-mobile{
+      display: none !important;
+   } 
+}
 .link-with-icon {
   display: inline-flex;
   font-size: 1.4rem;
@@ -2088,8 +2097,9 @@ input[type='checkbox'] {
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
+  border: 1px solid rgb(var(--color-button));;
+  color: rgb(var(--color-button));
+  background-color: rgb(var(--color-button-text));
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 100%;
@@ -2097,8 +2107,8 @@ input[type='checkbox'] {
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  bottom: 0.8rem;
-  left: 2.2rem;
+  top: 5px;
+  right: -10px;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -2138,8 +2148,6 @@ input[type='checkbox'] {
 .announcement-bar__message {
   text-align: center;
   padding: 10px 30px;
-  font-size: 12px;
-  line-height: 21px;
   text-transform: uppercase;
   margin: 0;
 }
@@ -2197,6 +2205,9 @@ header-drawer{
     column-gap: 56px;
     height: 88px;
     align-items: center;
+  }
+  .header-bottom{
+    border-top: 1px solid #ccc;
   }
 }
 
@@ -2423,10 +2434,13 @@ details[open] .modal-overlay::after {
   position: absolute;
   right: 0.3rem;
 }
-
-@media screen and (min-width: 1025px) {
+.header__icon--cart{
+  position: relative;
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
   .header-search{
-    width: 654px;
+    min-width: 450px;
+    width: 450px;
   }
 }
 @media screen and (min-width: 750px) {
@@ -2435,9 +2449,10 @@ details[open] .modal-overlay::after {
   }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1200px) {
   .header-search{
     max-width: 654px;
+    width: 654px;
   }
 
   .search-modal__close-button {
@@ -2459,7 +2474,7 @@ details:not([open]) > .header__icon--menu .icon-close,
 details[open] > .header__icon--menu .icon-hamburger {
   visibility: hidden;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(1);
 }
 
 .js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
@@ -2469,7 +2484,7 @@ details[open] > .header__icon--menu .icon-hamburger {
 .js details[open]:not(.menu-opening) > .header__icon--menu .icon-hamburger {
   visibility: visible;
   opacity: 1;
-  transform: scale(1.07);
+  transform: scale(1);
 }
 
 .js details > .header__submenu {
@@ -2606,6 +2621,12 @@ details-disclosure > details {
   .overflow-hidden-mobile {
     overflow: auto;
   }
+  .header__icon--account {
+      min-width: 43px;
+    }
+    .header__icon--cart{
+      min-width: 33px;
+    }
 }
 
 @media screen and (min-width: 990px) {
@@ -2694,6 +2715,18 @@ details-disclosure > details {
   .content-container--full-width-mobile:after {
     display: none;
   }
+  .announcement-bar__message{
+    padding: 8px 13px;
+  }
+  .header__icon--account img{
+    height: 24px;
+  }
+  .header__icons {
+    column-gap: 10px;
+  }
+  .header__icon--cart img{
+    height: 28px;
+  }
 }
 
 .global-media-settings {
@@ -2759,6 +2792,7 @@ details-disclosure > details {
       padding-left: var(--grid-desktop-horizontal-spacing);
       padding-bottom: var(--grid-desktop-vertical-spacing);
     }
+
   }
 
   .grid--gapless .grid__item {

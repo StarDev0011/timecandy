@@ -11,6 +11,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   summary.setAttribute('aria-expanded', 'false');
 
   if(summary.nextElementSibling.getAttribute('id')) {
+
     summary.setAttribute('aria-controls', summary.nextElementSibling.id);
   }
 
@@ -326,6 +327,7 @@ class MenuDrawer extends HTMLElement {
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
     } else {
       setTimeout(() => {
+         document.body.classList.add(`open-submenu`);
         detailsElement.classList.add('menu-opening');
         summaryElement.setAttribute('aria-expanded', true);
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
@@ -371,6 +373,7 @@ class MenuDrawer extends HTMLElement {
   }
 
   closeSubmenu(detailsElement) {
+    document.body.classList.remove(`open-submenu`);
     detailsElement.classList.remove('menu-opening');
     detailsElement.querySelector('summary').setAttribute('aria-expanded', false);
     removeTrapFocus(detailsElement.querySelector('summary'));
