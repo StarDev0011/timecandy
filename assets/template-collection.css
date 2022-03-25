@@ -251,31 +251,13 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: var(--my-font);
-  flex-direction: column;
-}
-
-.collection-view-all__link span {
-  margin-bottom: 10px;
-}
-
-.collection-view-all__link-icon {
-  margin-top: 14px;
-}
-
-.quick-add .product-form__swatch-dropdown input:checked+label {
-  color: var(--color-link);
-}
-
-.quick-add .product-form__swatch-dropdown label:hover {
-  color: var(--color-link);
-  cursor: pointer;
+  font-family: var(--my-font)
 }
 
 .custom-swiper-pagination {
   display: block;
   position: static;
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: left;
 }
 
@@ -331,10 +313,6 @@
     grid-template-columns: 1fr;
   }
 
-  .collection__wrapper {
-    grid-gap: 56px 20px;
-  }
-
   .collection__header {
     padding-top: 40px;
     grid-gap: 24px;
@@ -364,10 +342,6 @@
     margin-left: -20px;
     margin-right: -20px;
     padding: 20px;
-  }
-
-  .collection-product__inner {
-    grid-gap: 40px 20px;
   }
 }
 
@@ -404,9 +378,5 @@
 
   .collection-view-all {
     display: none;
-  }
-
-  .card-product__image {
-    padding: 32px;
   }
 }

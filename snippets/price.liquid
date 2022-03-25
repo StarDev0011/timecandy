@@ -22,7 +22,7 @@
   assign available = target.available | default: false
   assign money_price = price | money
   if settings.currency_code_enabled
-    assign money_price = price | money
+    assign money_price = price | money_with_currency
   endif
 
   if target == product and product.price_varies
@@ -54,7 +54,7 @@
         <span>
           <s class="price-item price-item--regular">
             {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money }}
+              {{ compare_at_price | money_with_currency }}
             {% else %}
               {{ compare_at_price | money }}
             {% endif %}

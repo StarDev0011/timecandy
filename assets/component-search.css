@@ -10,6 +10,7 @@
   align-self: center;
   font-size: 14px;
   line-height: 20px;
+  font-family: var(--font-default);
 }
 .search .field::after,
 .search .field::before{
@@ -52,4 +53,19 @@
 /* Remove extra spacing for search inputs in Safari */
 input::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+@media(max-width: 749px){
+  .search__input.field__input{
+    height: 40px;
+    padding-left: 68px;
+  }
+  .search__button{
+    width: 40px;
+    height: 40px;
+  }
+  .search__button .icon{
+    width: 14px;
+    height: 18px;
+  }
 }

@@ -37,14 +37,11 @@ img {
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
   margin-bottom: 20px;
+  border: 2px solid transparent
 }
 
 .card-product__item:hover .card-product__picture {
-  box-shadow: 0 0 0 2px #0C5273;
-}
-
-.card-product__item:hover .card-product__btn-text {
-  color: #ac1229;
+  border-color: #0C5273;
 }
 
 .card-product__image {
@@ -101,7 +98,6 @@ img {
   text-transform: uppercase;
   font-family: var(--my-font);
   cursor: pointer;
-  font-size: 12px;
 }
 
 .card-product__btn-icon svg {
@@ -112,7 +108,6 @@ img {
   margin-left: 4px;
   color: var(--color-header);
   border-bottom: 1px solid currentcolor;
-  padding-bottom: 1px;
 }
 
 .card-product__link {
@@ -171,7 +166,6 @@ img {
   font-size: 48px;
   line-height: 59px;
   color: var(--color-text);
-  text-transform: none;
 }
 
 .section-featured-product .price {
@@ -316,191 +310,6 @@ img {
 
 .product-form__action-mobile {
   display: none;
-}
-
-.quick-add {
-  position: absolute;
-  top: 29px;
-  border: 2px solid #0C5273;
-  background-color: #fff;
-  z-index: 1;
-  left: 0;
-  height: 95%;
-  border-radius: 15px;
-  overflow: auto;
-  display: none;
-}
-
-.quick-add.active {
-  display: block;
-}
-
-.quick-add__content {
-  padding: 24px 18px 32px;
-}
-
-.quick-add__header {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: #0C5273;
-  font-family: var(--my-font);
-  background-color: #BBE2DD;
-  border-radius: 13px 13px 0 0;
-  padding: 12px 16px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.quick-add__header-title {
-  padding-right: 20px;
-}
-
-.quick-add .product-form__input {
-  padding: 0;
-  border: 0;
-  margin: 0 0 22px;
-  position: relative;
-}
-
-.quick-add .product-form__input input {
-  display: none;
-}
-
-.quick-add .form__label {
-  padding: 0;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: var(--color-link);
-  font-family: var(--my-font);
-  margin-bottom: 7px;
-}
-
-.quick-add .product-form__input label {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: var(--font-2);
-}
-
-.quick-add .product-form__swatch-size {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.quick-add .product-form__swatch-size label {
-  padding: 10px 30px;
-  border: 1px solid #ccc;
-  margin-bottom: 8px;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 3px;
-}
-
-.quick-add .product-form__buttons {
-  margin-top: 15px;
-}
-
-.quick-add__header-icon {
-  cursor: pointer;
-}
-
-.quick-add .product-form__buttons .product-form__submit {
-  width: 100%;
-  border-radius: 32px;
-}
-
-.quick-add .product-form__swatch-size input:checked + label {
-  background-color: #0C5273;
-  color: #fff;
-  border-color: #0C5273;
-}
-
-.quick-add .product-swatch__label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: var(--my-font);
-  color: var(--color-text);
-  padding: 13px 16px 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.quick-add .product-form__swatch-dropdown {
-  display: none;
-  flex-direction: column;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  margin-top: 3px;
-  border-radius: 3px;
-  padding: 5px 0;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 11;
-}
-
-.product-form__swatch-dropdown.active {
-  display: flex;
-}
-
-.quick-add .price {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: var(--my-font);
-  color: var(--color-link);
-  text-transform: uppercase;
-}
-
-.quick-add .product-form__swatch-dropdown label {
-  padding: 7px 16px;
-  color: var(--color-text);
-}
-
-@media (max-width: 1199px) and (min-width: 768px) {
-  .section-featured-product .featured-product {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px 50px;
-  }
-
-  .section-featured-product .product__sub-title {
-    font-size: 16px;
-  }
-
-  .section-featured-product .product__title {
-    font-size: 26px;
-    line-height: 38px;
-  }
-
-  .featured-product__best-seller {
-    right: -10px;
-    top: -30px;
-  }
-
-  .featured-product__best-seller svg{
-    width: 80px;
-    height: 80px;
-  }
-
-  .section-featured-product .page-width {
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 30px;
-  }
-
-  .collection-candy__list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 @media (max-width: 767px) {
