@@ -607,11 +607,11 @@ a,
 }
 
 .link--text {
-  color: rgba(var(--color-link-text),1);
+  color: var(--color-link)
 }
 
 .link--text:hover {
-  color: rgba(var(--color-link-hover),1);
+  color: var(--color-link-hover)
 }
 
 .link-with-icon {
