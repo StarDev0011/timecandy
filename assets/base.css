@@ -599,7 +599,7 @@ a,
   box-shadow: none;
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-  color: rgb(var(--color-link));
+  color: rgb(var(--color-link-text));
   background-color: transparent;
   font-size: 12px;
   line-height: 18px;
@@ -607,11 +607,11 @@ a,
 }
 
 .link--text {
-  color: rgb(var(--color-link));
+  color: rgba(var(--color-link-text),1);
 }
 
 .link--text:hover {
-  color: rgb(var(--color-link-hover));
+  color: rgba(var(--color-link-hover),1);
 }
 
 .link-with-icon {
