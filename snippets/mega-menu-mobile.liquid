@@ -1,3 +1,4 @@
+
 {% assign count_block = 0 %}
 {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
     {% assign count_block = count_block | plus: 1 %}
@@ -11,17 +12,11 @@
 {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
     {% assign count_block = count_block | plus: 1 %}
 {% endif %}
-{% for submenu in links %}
-    {% if links.size > 1 %}
-        {% assign megamenu_slide = true %} 
-    {% endif %}
-
-{% endfor%}
 <div class="page-width">
     <div class="mega-menu-wrapper">
         <div class="d-flex menu-child">
         {% for submenu in links %}
-            <div class="last-level-menu {{ childlink.title | handleize }} col-ds__{{ 100 | divided_by: links.size | ceil }} js-parent">
+            <div class="last-level-menu {{ childlink.title | handleize }} js-parent">
                 {% if datas.show_tt_child %}
                     <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 {% endif %}
@@ -35,12 +30,12 @@
         </div>
     </div>
     {% if count_block > 0%}
-        <div class="mega-menu-image {% if megamenu_slide %} has-slide {% endif %}">
+        <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-            <div  id="megamenu-image" class="megamenu-image-container {% if megamenu_slide %} swiper swiper-container  {% endif %} ">  
-                <div class="image-container-wrapper {% if megamenu_slide %} swiper-wrapper {% else %}d-flex__end{% endif %}">
+            <div  id="megamenu-image-mobile" class="megamenu-image-container swiper swiper-container">  
+                <div class="image-container-wrapper swiper-wrapper">
                     {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
+                        <div class="image_item swiper-slide">
                             <div class="image-container-item">
                                 <a class="image p-relative" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>
                                     {% if datas.push_1_image != blank %}
@@ -63,7 +58,7 @@
                         </div>
                     {% endif %}
                     {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
+                        <div class="image_item swiper-slide">
                             <div class="image-container-item">
                                 <a class="image p-relative" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
                                     {% if datas.push_2_image != blank %}
@@ -86,7 +81,7 @@
                         </div>
                     {% endif %}
                     {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
+                        <div class="image_item swiper-slide">
                             <div class="image-container-item">
                                 <a class="image p-relative" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
                                     {% if datas.push_3_image != blank %}
@@ -109,7 +104,7 @@
                         </div>
                     {% endif %}
                     {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
-                       <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
+                       <div class="image_item swiper-slide">
                             <div class="image-container-item">
                                 <a class="image p-relative" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
                                     {% if datas.push_4_image != blank %}
@@ -141,7 +136,7 @@
        (function() {
 
       'use strict';
-      let mySwiper = new Swiper ('.has-slide .swiper-container', {
+      let mySwiper = new Swiper ('#megamenu-image-mobile.swiper-container', {
           loop: false,
           slidesPerView: 3,
           breakpoints: {

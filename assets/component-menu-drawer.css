@@ -52,9 +52,6 @@ menu-drawer > details[open] > summary::before {
 
 .js .menu-drawer {
   height: calc(100vh - 100%);
-  height: calc(
-    var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%))
-  );
 }
 
 .js details[open] > .menu-drawer,
@@ -240,4 +237,13 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer .list-social__link {
   padding: 1.3rem 1.25rem;
+}
+.open-submenu .header__icon--summary ,
+.open-submenu .header-middle .header-search,
+.open-submenu .header-middle .header__icons,
+.open-submenu .header-middle .header__heading{
+  display: none;
+}
+.open-submenu  .header-middle{
+  padding: 0;
 }

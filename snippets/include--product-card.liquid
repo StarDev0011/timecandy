@@ -8,6 +8,13 @@
   if product.available
     assign sold_out = false
   endif
+  assign is_size = false
+  for option in product.options_with_values
+    assign optionName = option.name | downcase
+    if optionName contains 'size'
+      assign is_size = true
+    endif
+  endfor
 %}
 
 <div class="card-product__item {{ slideItem }}">
@@ -18,7 +25,9 @@
   </div>
   <div class="card-product__bottom">
     <a class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
-    <div class="card-product__label"> Various sizes</div>
+    {% if is_size %}
+      <div class="card-product__label"> Various sizes</div>
+    {% endif %}
     <div class="card-product__price">
       {% if on_sale %}
         <span class="card-product__price--sale">{{ product.price | money }}</span>
@@ -35,7 +44,7 @@
           {{ 'products.product.sold_out' | t }}
         </button>
       {% elsif option_size > 1 %}
-        <button class="card-product__btn">
+        <button class="card-product__btn" data-quick-add data-url="{{ product.url }}">
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
@@ -50,6 +59,9 @@
         </button>
       {% endif %}
     </form>
+    {% if option_size > 1 %}
+      <div class="quick-add"></div>
+    {% endif %}
   </div>
 
   {% if product.metafields.global.limited_time.value  != blank %}

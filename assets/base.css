@@ -613,7 +613,16 @@ a,
 .link--text:hover {
   color: var(--color-link-hover)
 }
-
+@media (max-width: 989px) {
+   .header-logo .hide-mobile{
+      display: none !important;
+   } 
+}
+@media (min-width: 989px) {
+   .header-logo .hide-bigger-mobile{
+      display: none !important;
+   } 
+}
 .link-with-icon {
   display: inline-flex;
   font-size: 1.4rem;

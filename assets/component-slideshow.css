@@ -52,6 +52,7 @@ slideshow-component .slideshow.banner {
 }
 .slideshow__text .banner__heading{
   text-transform: capitalize;
+  font-family: var(--font-default);
 }
 .banner--desktop-transparent .banner__heading {
   color: rgb(var(--color-base-text));
