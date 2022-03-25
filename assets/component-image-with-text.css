@@ -36,9 +36,22 @@
   }
   .image-with-text__text-item{
     max-width: 455px;
+    width: 100%;
   }
   .image-with-text__media.media{
       margin-left: auto;
+      width: 100%;
+  }
+  .image-with-text__media-item{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+  }
+  .image-with-text__media.placeholder{
+    min-width: 355px;
   }
 }
 .image-with-text__media-item{
@@ -51,7 +64,7 @@
   margin-top: 24px;
 }
 .image-with-text__heading{
-  text-transform: capitalize;
+  text-transform: none;
   font-family: "Merriweather";
   color: var(--color-base-text);
   margin-bottom: 0;

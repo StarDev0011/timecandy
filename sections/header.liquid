@@ -155,14 +155,7 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text focus-inse">
-              {% if section.settings.logo %}
-                  <img itemprop="logo" class="{% if section.settings.logo != blank %}hide-mobile{% endif %}" src="{{ section.settings.logo | img_url: '257x' }}" alt="{{ shop.name }}"/>
-                  {% if section.settings.logo_mobile != blank %}
-                  <img itemprop="logo" class="hide-bigger-mobile" src="{{ section.settings.logo_mobile | img_url: '192x' }}" alt="{{ shop.name }}"/>
-                  {% endif %}
-              {% else %}
-                  <span itemprop="name">{{ shop.name }}</span>
-              {% endif %}
+              <img src="{{ 'logo.svg' | asset_url }}"  width="{{section.settings.logo_width}}"  alt="{{ shop.name }}" itemprop="logo"> 
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -499,14 +492,14 @@
   "class": "section-header",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo_mobile",
-      "label": "Logo mobile (optional)"
+      "type": "range",
+      "id": "logo_width",
+      "min": 100,
+      "max": 300,
+      "step": 5,
+      "default": 255,
+      "unit": "t:sections.header.settings.logo_width.unit",
+      "label": "t:sections.header.settings.logo_width.label"
     },
     {
       "type": "link_list",

@@ -2218,7 +2218,7 @@ header-drawer{
     padding: 8px 16px;
   }
   .header-search{
-    margin:  8px -16px 0;
+    margin:  4px -16px 0;
     padding: 8px 16px 0;
     border-top: 1px solid #ccc;
   }
@@ -2255,14 +2255,6 @@ header-drawer{
 .header__heading-logo {
   height: auto;
   width: 100%;
-}
-
-@media screen and (max-width: 989px) {
-  .header__heading,
-  .header__heading-link {
-    text-align: center;
-    width: 192px;
-  }
 }
 
 @media screen and (min-width: 990px) {

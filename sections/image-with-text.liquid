@@ -42,7 +42,7 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="image-with-text__text-item">
+    <div class="image-with-text__text-item" style="max-width: min(100%, {{ section.settings.image_width }}px);">
       <div id="ImageWithText--{{ section.id }}" class="image-with-text__content image-with-text__content--{{ section.settings.desktop_content_position }} image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} ">
         {%- for block in section.blocks -%}
           {% case block.type %}
@@ -84,6 +84,16 @@
       "unit": "px",
       "label": "Image width",
       "default": 485
+    },
+    {
+      "type": "range",
+      "id": "box_text_width",
+      "min": 200,
+      "max": 600,
+      "step": 5,
+      "unit": "px",
+      "label": "Text Block Width",
+      "default": 455
     },
     {
       "type": "select",
