@@ -225,7 +225,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Image_Lockup_2.png",
         "image_width": 485,
-        "box_text_width": 455,
+        "box_text_width": 600,
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
