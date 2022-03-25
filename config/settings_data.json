@@ -129,7 +129,7 @@
         ],
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 275,
+          "logo_mobile": "shopify:\/\/shop_images\/logo_8aed78ec-b24e-4ad8-9a34-22e4e17c4d32.png",
           "menu": "menu-home",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
