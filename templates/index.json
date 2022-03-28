@@ -73,7 +73,9 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 140
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64
       }
     },
     "icon_with_text": {
@@ -230,7 +232,9 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 140
+        "padding_bottom": 140,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 86
       }
     },
     "featured_collection": {
