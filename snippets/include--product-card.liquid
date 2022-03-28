@@ -33,7 +33,7 @@
         <span class="card-product__price--sale">{{ product.price | money }}</span>
         <span class="card-product__price--old">{{ product.compare_at_price | money }}</span>
       {% else %}
-        <span class="card-product__price-text">Starting at</span>
+      {% if is_size %} <span class="card-product__price-text">Starting at</span>{% endif %}
         <span>{{ product.price | money }}</span>
       {% endif %}
     </div>
