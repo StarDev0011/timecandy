@@ -72,7 +72,7 @@
           {% endif %}
         </div>
         <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
-          <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
+          <input class="card-product__variant-id" type="hidden" name="id" value="{{ card_product.variants[0].id }}"/>
           {% if sold_out %}
             <button class="btn--disabled card-product__btn" disabled="disabled">
               {{ 'products.product.sold_out' | t }}

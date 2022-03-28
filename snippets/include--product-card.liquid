@@ -40,9 +40,9 @@
     <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
       <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
       {% if sold_out %}
-          <a href="#" class="BIS_trigger btn--disabled card-product__btn" data-product-data="{{ product | json | escape }}">
-            Email when available
-          </a>
+        <button class="btn--disabled card-product__btn" disabled="disabled">
+          {{ 'products.product.sold_out' | t }}
+        </button>
       {% elsif option_size > 1 %}
         <button class="card-product__btn" data-quick-add data-url="{{ product.url }}">
           <span class="card-product__btn-icon">

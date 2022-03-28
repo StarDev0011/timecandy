@@ -179,7 +179,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="template-{{ request.page_type | handle }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -227,9 +227,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-    <!-- Back in Stock helper snippet -->
-    {% render 'back-in-stock-helper' %}
-    <!-- End Back in Stock helper snippet -->
   </body>
 </html>
