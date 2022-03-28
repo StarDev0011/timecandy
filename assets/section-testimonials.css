@@ -178,7 +178,7 @@
         border-radius: 0;
      }
      .testimonial__img-wrap a{
-        color: rgb(var(--color-link-text));
+        color: var(--color-link-text);
         padding: 0 16px 0;
      }
     .testimonial-grid .testimonial-bg-img {

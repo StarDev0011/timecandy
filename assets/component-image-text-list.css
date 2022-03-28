@@ -1,3 +1,8 @@
+@media (min-width: 1330px) {
+	.image-text-list__item .image-with-text__content{
+		min-width: 515px;
+	}
+}
 @media (min-width: 750px) {
 	.image-text-list__item {
 	    display: flex;
@@ -8,9 +13,6 @@
 	    margin: auto;
 	    width: 100%;
 	    justify-content: center;
-	}
-	.image-text-list__item .image-with-text__content{
-		min-width: 515px;
 	}
 	.image-text-list__item--reverse .image-with-text__media {
 		order: 2;
