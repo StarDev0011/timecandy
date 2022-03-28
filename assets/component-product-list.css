@@ -113,6 +113,7 @@ img {
   color: var(--color-header);
   border-bottom: 1px solid currentcolor;
   padding-bottom: 1px;
+  display: inline-block;
 }
 
 .card-product__link {

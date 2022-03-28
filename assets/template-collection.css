@@ -36,6 +36,8 @@
   border: 1px solid #ccc;
   border-radius: 32px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 .collection__menu-link.active {
