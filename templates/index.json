@@ -252,7 +252,7 @@
         "show_secondary_image": true,
         "show_vendor": true,
         "show_rating": true,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
         "padding_bottom": 40
