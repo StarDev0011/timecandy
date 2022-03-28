@@ -11,8 +11,8 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
   }
   .featured-collection{
     background: {{ section.settings.color_scheme }};
@@ -295,6 +295,26 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 40
+    },
+     {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 30,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 130
     }
   ],
   "presets": [
