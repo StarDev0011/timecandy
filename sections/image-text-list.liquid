@@ -2,8 +2,8 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top_mb }}px;
-    padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
+    padding-bottom: 100px;
   }
   .image-text-list-wrap{
     background: {{ section.settings.color_bg }};
@@ -177,26 +177,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding_top_mb",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 60
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_mb",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 64
     }
   ],
   "blocks": [
