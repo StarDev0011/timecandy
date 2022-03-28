@@ -106,7 +106,7 @@
     align-self: flex-end;
     text-align: right;
   }
-  .image-with-text__media img{
+ .image-with-text .image-with-text__media img{
     padding:  0 28px;
   }
 }
