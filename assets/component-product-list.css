@@ -112,7 +112,7 @@ img {
   margin-left: 4px;
   color: var(--color-header);
   border-bottom: 1px solid currentcolor;
-  padding-bottom: 1px;
+  padding-bottom: 3px;
   display: inline-block;
 }
 
