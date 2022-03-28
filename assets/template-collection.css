@@ -32,14 +32,10 @@
   font-size: 12px;
   line-height: 21px;
   text-transform: uppercase;
-  padding: 4.5px 18px;
-  border: 1px solid #ccc;
-  border-radius: 32px;
-  background-color: #fff;
 }
 
-.collection__menu-link.active {
-  border-color: cadetblue;
+.collection__menu-view-more {
+  margin-bottom: 8px;
 }
 
 .menu-view-more {
@@ -54,9 +50,17 @@
   text-transform: uppercase;
 }
 
-.collection__menu-item {
+.collection__menu-item:not(.collection__menu-view-more) {
   margin-right: 8px;
   margin-bottom: 8px;
+  padding: 4px 18px;
+  border: 1px solid #ccc;
+  border-radius: 32px;
+  background-color: #fff;
+}
+
+.collection__menu-item.active {
+  border-color: cadetblue;
 }
 
 .container {

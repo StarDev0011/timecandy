@@ -19,9 +19,9 @@
         <div class="collection__nav">
           <ul class="collection__menu">
             {% for link in linklists.candy-by-decade.links %}
-              <li class="collection__menu-item" {% if forloop.index > 8 %}style="display: none"{% endif %}>
-                <a class="collection__menu-link{% if link.active %} active{% endif %}" href="{{ link.url }}">
-                  <span>{{ link.title }}</span>
+              <li class="collection__menu-item{% if link.active %} active{% endif %}" {% if forloop.index > 8 %}style="display: none"{% endif %}>
+                <a class="collection__menu-link" href="{{ link.url }}">
+                  {{- link.title -}}
                 </a>
               </li>
               {% if forloop.last and forloop.index > 8 %}
