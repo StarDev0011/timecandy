@@ -34,3 +34,12 @@
 .icon-card__media img{
 	float: left;
 }
+@media (max-width: 749px) {
+	.icon-list-wrapper .page-width{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.icon-card__info h5{
+		font-size: 18px;
+	}
+}

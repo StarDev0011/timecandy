@@ -18,89 +18,98 @@
   }
 {%- endstyle -%}
 
-{%- liquid
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
-  assign show_mobile_slider = false
-  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
-    assign show_mobile_slider = true
-  endif
--%}
-
 <div class="icon-list-wrapper">
   <div class="page-width section-{{ section.id }}-padding isolate">
-    <slider-component class="slider-mobile-gutter">
-      <ul class="icon-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
-        id="Slider-{{ section.id }}"
-        role="list"
-      >
-        {%- liquid
-          assign highest_ratio = 0
-          for block in section.blocks
-            if block.settings.image.aspect_ratio > highest_ratio
-              assign highest_ratio = block.settings.image.aspect_ratio
-            endif
-          endfor
-        -%}
-        {%- for block in section.blocks -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="icon-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
-            <div class="icon-card content-container">
-              {%- if block.settings.image != blank -%}
-                <div class="icon-card__image-wrapper">
-                  <div class="icon-card__media">
-                    <img
-                      class="icon-card__image"
-                      srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
-                        {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
-                        {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | image_url: width: 710 }} 710w,{%- endif -%}
-                        {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | image_url: width: 1420 }} 1420w,{%- endif -%}
-                        {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
-                      src="{{ block.settings.image | image_url: width: 550 }}"
-                      sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
-                        (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
-                        calc(100vw - 30px)"
-                      alt="{{ block.settings.image.alt }}"
-                      height="{{ block.settings.image.height }}"
-                      width="{{ block.settings.image.width }}"
-                      loading="lazy"
-                    >
-                  </div>
-                </div>
-              {% else %}
+    <div class="icon-list">
+      <div class="swiper swiper-container ">
+        <div class="swiper-wrapper contains-content-container"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- liquid
+            assign highest_ratio = 0
+            for block in section.blocks
+              if block.settings.image.aspect_ratio > highest_ratio
+                assign highest_ratio = block.settings.image.aspect_ratio
+              endif
+            endfor
+          -%}
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide icon-list__item {% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
+              <div class="icon-card content-container">
+                {%- if block.settings.image != blank -%}
                   <div class="icon-card__image-wrapper">
-                    <div class="icon-card__media placeholder">
-                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    <div class="icon-card__media">
+                      <img
+                        class="icon-card__image"
+                        srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
+                          {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                          {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | image_url: width: 710 }} 710w,{%- endif -%}
+                          {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | image_url: width: 1420 }} 1420w,{%- endif -%}
+                          {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                        src="{{ block.settings.image | image_url: width: 550 }}"
+                        sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                          (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                          calc(100vw - 30px)"
+                        alt="{{ block.settings.image.alt }}"
+                        height="{{ block.settings.image.height }}"
+                        width="{{ block.settings.image.width }}"
+                        loading="lazy"
+                      >
                     </div>
                   </div>
-              {%- endif -%}
-              <div class="icon-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h5>
-                    {%- if block.settings.link != blank -%}<a class="link animate-arrow" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}" {% endif %}>{% endif %}
-                    {{ block.settings.title | escape }}
-                    {%- if block.settings.link != blank -%}</a>{% endif %}
-                  </h5>
+                {% else %}
+                    <div class="icon-card__image-wrapper">
+                      <div class="icon-card__media placeholder">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      </div>
+                    </div>
                 {%- endif -%}
+                <div class="icon-card__info">
+                  {%- if block.settings.title != blank -%}
+                    <h5>
+                      {%- if block.settings.link != blank -%}<a class="link animate-arrow" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}" {% endif %}>{% endif %}
+                      {{ block.settings.title | escape }}
+                      {%- if block.settings.link != blank -%}</a>{% endif %}
+                    </h5>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
-          </li>
-        {%- endfor -%}
-      </ul>
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons no-js-hidden medium-hide">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+          {%- endfor -%}
         </div>
-      {%- endif -%}
-    </slider-component>
+      </div> 
+    </div>
   </div>
 </div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var Swipes = new Swiper('.icon-list-wrapper .swiper-container', {
+            loop: true,
+            slidesPerView: 2,
+            centeredSlides: true,
+            spaceBetween: 50,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+              990: {
+                centeredSlides: false,
+                spaceBetween: 30,
+                loop: false,
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }
+        });
+    });
 
+</script>
 {% schema %}
 {
   "name": "Icon with text",
@@ -157,12 +166,6 @@
       ],
       "default": "1",
       "label": "t:sections.multicolumn.settings.columns_mobile.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": true,
-      "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
     },
     {
       "type": "header",

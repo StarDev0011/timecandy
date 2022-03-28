@@ -16,7 +16,7 @@
 	color: rgb(var(--color-light-text));
 	position: absolute;
 	top: 12px;
-	left: 0;
+	left: -2px;
 	height: 28px;
 	padding: 4px 16px 3px;
 	display: flex;

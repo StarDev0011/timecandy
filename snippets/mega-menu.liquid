@@ -42,7 +42,7 @@
                     {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
                         <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
                             <div class="image-container-item">
-                                <a class="image p-relative" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>
+                                <a class="image p-relative {% if datas.push_1_url == blank %} not-link {% endif %}" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}" {% endif %}>
                                     {% if datas.push_1_image != blank %}
                                         <img class="p-center" 
                                             src="{{ datas.push_1_image | img_url: '217x199' }}"
@@ -57,7 +57,7 @@
                                     {% endif %}
                                 </a>
                                 {% if datas.push_1_heading != blank %}
-                                    <a class="text-container link h6" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
+                                    <a class="text-container link h6 {% if datas.push_1_url == blank %} not-link {% endif %}" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                     {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
                         <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
                             <div class="image-container-item">
-                                <a class="image p-relative" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
+                                <a class="image p-relative {% if datas.push_2_url == blank %} not-link {% endif %} " {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
                                     {% if datas.push_2_image != blank %}
                                         <img class="p-center" 
                                             src="{{ datas.push_2_image | img_url: '217x199'}}"
@@ -80,7 +80,7 @@
                                     {% endif %}
                                 </a>
                                 {% if datas.push_2_heading != blank %}
-                                    <a class="text-container link h6" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
+                                    <a class="text-container link h6 {% if datas.push_2_url == blank %} not-link {% endif %}" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                     {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
                         <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
                             <div class="image-container-item">
-                                <a class="image p-relative" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
+                                <a class="image p-relative {% if datas.push_3_url == blank %} not-link {% endif %} " {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
                                     {% if datas.push_3_image != blank %}
                                         <img class="p-center" 
                                             src="{{ datas.push_3_image | img_url: '217x199'}}"
@@ -103,7 +103,7 @@
                                     {% endif %}
                                 </a>
                                 {% if datas.push_3_heading != blank %}
-                                    <a class="text-container link h6" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
+                                    <a class="text-container link h6 {% if datas.push_3_url == blank %} not-link {% endif %}" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                     {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
                             <div class="image-container-item">
-                                <a class="image p-relative" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
+                                <a class="image p-relative {% if datas.push_4_url == blank %} not-link {% endif %}" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
                                     {% if datas.push_4_image != blank %}
                                         <img class="p-center" 
                                             src="{{ datas.push_4_image | img_url: '217x199'}}"
@@ -126,7 +126,7 @@
                                     {% endif %}
                                 </a>
                                 {% if datas.push_4_heading != blank %}
-                                    <a class="text-container link h6" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
+                                    <a class="text-container link h6 {% if datas.push_4_url == blank %} not-link {% endif %}" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
                                 {% endif %}
                             </div>
                         </div>

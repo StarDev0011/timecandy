@@ -1,3 +1,22 @@
+@media (min-width: 1330px) {
+	.image-text-list__item .image-with-text__content{
+		min-width: 515px;
+	}
+}
+
+@media( min-width: 750px) and (max-width: 1329px){
+	.image-text-list .text--heading{
+		font-size: 40px;
+		line-height: 52px;
+	}
+	.image-text-list .text--caption{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.image-text-list__item {
+	    column-gap: 50px;
+	}
+}
 @media (min-width: 750px) {
 	.image-text-list__item {
 	    display: flex;
@@ -8,9 +27,6 @@
 	    margin: auto;
 	    width: 100%;
 	    justify-content: center;
-	}
-	.image-text-list__item .image-with-text__content{
-		min-width: 515px;
 	}
 	.image-text-list__item--reverse .image-with-text__media {
 		order: 2;
