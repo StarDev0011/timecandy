@@ -114,7 +114,6 @@
         "column_alignment": "center",
         "color_scheme": "#e4f1f5",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
         "padding_top": 0,
         "padding_bottom": 140
       }
@@ -182,7 +181,7 @@
         "heading": "Recommended for you",
         "color_bg": "#e4f1f5",
         "image_bg_bottom": "shopify:\/\/shop_images\/Subtract_5a993792-29bb-4fb3-a0ee-58b2401cab70.png",
-        "padding_top": 160,
+        "padding_top": 60,
         "padding_bottom": 0
       }
     },
