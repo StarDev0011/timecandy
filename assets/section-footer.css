@@ -312,8 +312,14 @@
     margin-left: 0;
   }
   .footer-block-subscribe {
-    grid-row-start: 1;
-    grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+  }
+  .footer__content-top .grid{
+    row-gap: 0;
+  }
+  .footer__column--info, .footer-has-img {
+      padding-left: 155px;
   }
 }
 
