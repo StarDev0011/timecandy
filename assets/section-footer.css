@@ -307,7 +307,11 @@
     display: flex;
     column-gap:0;
     flex-wrap: wrap;
-}
+  }
+  .footer-has-img {
+      column-gap: 0;
+      display: block;
+  }
   .footer-block-subscribe-content{
     margin-left: 0;
   }
@@ -337,7 +341,7 @@
     row-gap: 0;
   }
   .footer__column--info, .footer-has-img {
-      padding-left: 155px;
+      padding-left: 175px;
   }
 }
 
