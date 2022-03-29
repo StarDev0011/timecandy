@@ -28,9 +28,6 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
     height: 28rem;
   }
-  .slideshow__text-wrapper.page-width{
-    padding: 0;
-  }
 }
 
 @media screen and (min-width: 750px) {
