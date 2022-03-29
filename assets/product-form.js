@@ -37,8 +37,8 @@ if (!customElements.get('product-form')) {
             this.handleErrorMessage(response.description);
             return;
           }
-
-          this.cartNotification.renderContents(response);
+          location.href = '/cart';
+          // this.cartNotification.renderContents(response);
         })
         .catch((e) => {
           console.error(e);
