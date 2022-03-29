@@ -314,8 +314,16 @@
   .footer__blocks-wrapper.grid--4-col-tablet .grid__item {
       width: 33.33%;
   }
+  .footer__blocks-wrapper.grid--4-col-tablet .grid__item:nth-child(3) {
+      padding-right: 0;
+  }
   .footer__blocks-wrapper.grid--4-col-tablet .grid__item.footer-block-subscribe{
-
+    width: 100%;
+  }
+  .footer .newsletter-form {
+      align-items: flex-start;
+      margin: 0 auto;
+      max-width: 100%;
   }
   .footer-block--menu{
     padding-right: 20px;
