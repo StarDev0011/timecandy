@@ -606,11 +606,6 @@ img {
     margin-bottom: 20px;
   }
 
-  .section-featured-product .product-formv-varaint,
-  .section-featured-product .product-form__action {
-    display: none;
-  }
-
   .section-featured-product {
     margin-bottom: 48px;
     background-image: url("data:image/svg+xml,%3Csvg width='375' height='300' viewBox='0 0 375 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1379_37613)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M168.086 81.6171C288.912 59.1811 409.738 70.4985 530.563 81.8158C651.774 93.1691 772.984 104.522 894.194 81.7994V13.1229C773.042 35.8023 651.89 24.4544 530.738 13.1065C409.528 1.75321 288.318 -9.60012 167.108 13.1229V13.3053C46.282 35.7413 -74.5438 24.4239 -195.37 13.1066C-316.58 1.75326 -437.79 -9.60007 -559 13.123L-559 81.7995C-437.848 59.1201 -316.696 70.468 -195.544 81.8159C-74.3343 93.1692 46.8758 104.523 168.086 81.7995V81.6171Z' fill='%230C5273'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M-195.544 150.33C-316.696 138.994 -437.848 127.658 -559 150.314L-559 81.5774C-437.848 58.9214 -316.696 70.2576 -195.544 81.5938C-74.6603 92.9049 46.2238 104.216 167.108 81.7598V81.5774C288.26 58.9214 409.412 70.2576 530.563 81.5938C651.774 92.9354 772.984 104.277 894.194 81.5774V150.314C772.984 173.013 651.774 161.672 530.564 150.33C409.738 139.024 288.912 127.719 168.086 150.132V150.314C46.8758 173.013 -74.3343 161.672 -195.544 150.33Z' fill='%237F161B'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M168.086 218.209C288.912 195.789 409.737 207.099 530.563 218.408C651.773 229.754 772.983 241.099 894.193 218.392V149.697C773.041 172.361 651.89 161.021 530.738 149.681C409.528 138.335 288.317 126.99 167.107 149.697V149.88C46.2816 172.3 -74.544 160.99 -195.37 149.681C-316.58 138.335 -437.79 126.99 -559 149.697L-559 218.392C-437.848 195.728 -316.696 207.068 -195.544 218.408C-74.3343 229.754 46.8758 241.099 168.086 218.392V218.209Z' fill='%23F2B3AB'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M168.086 286.935C288.912 264.46 409.737 275.797 530.563 287.134C651.773 298.507 772.983 309.88 894.193 287.118V218.454C772.983 241.216 651.773 229.843 530.563 218.47C409.411 207.103 288.259 195.735 167.107 218.454V218.637C46.2234 241.155 -74.6605 229.812 -195.544 218.47C-316.696 207.103 -437.848 195.735 -559 218.454L-559 287.118C-437.848 264.399 -316.696 275.767 -195.544 287.134C-74.3343 298.507 46.8759 309.88 168.086 287.118V286.935Z' fill='%234AC4D9'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1379_37613'%3E%3Crect width='376' height='300' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
@@ -623,5 +618,24 @@ img {
 
   .collection-candy__title {
     margin-bottom: 20px;
+  }
+
+  .section-featured-product .product-form__input--last {
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
+  .section-featured-product .product-form__action {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-featured-product .product-formv-varaint {
+    margin-bottom: 34px;
+  }
+
+  .section-featured-product .product-form {
+    margin-bottom: 20px !important;
   }
 }
