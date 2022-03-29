@@ -638,4 +638,9 @@ img {
   .section-featured-product .product-form {
     margin-bottom: 20px !important;
   }
+
+  .section-featured-product .product-form__quantity {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
 }
