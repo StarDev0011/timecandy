@@ -60,10 +60,10 @@
     });
   };
 
-  window.onload = function() {
+  window.addEventListener('load', (event) => {
     breakpoint.addListener(breakpointCheck);
     breakpointCheck();
-  }
+  })
 </script>
 {% schema %}
   {
