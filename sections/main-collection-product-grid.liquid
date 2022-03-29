@@ -84,13 +84,17 @@
           </div>
         </div>
         <div class="collection-product__list">
-          <div class="collection-product__inner {{ grid_item_width }}">
+          <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
             {%- for product in collection.products -%}
               {% render 'include--product-card', product: product %}
             {%- endfor -%}
           </div>
           {%- if paginate.pages > 1 -%}
-            {% render 'pagination', paginate: paginate, anchor: '' %}
+            {% if section.settings.page == 'page' %}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {% else %}
+              <a href="{{ paginate.next.url }}" class="js-infinite-scroll"> Load more </a>
+            {% endif %}
           {%- endif -%}
         </div>
       </div>
@@ -110,6 +114,9 @@
       }
     })
   });
+  function infiniteScroll() {
+  
+  }
 </script>
 
 {% schema %}
@@ -133,6 +140,26 @@
         "min": 2,
         "max": 50,
         "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Paginate"
+      },
+      {
+        "type": "radio",
+        "id": "page",
+        "label": "Paginate",
+        "default": "scroll",
+        "options": [
+          {
+            "value": "page",
+            "label": "Paginate"
+          },
+          {
+            "value": "scroll",
+            "label": "Scroll load"
+          }
+        ]
       }
     ]
   }
