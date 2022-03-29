@@ -84,19 +84,13 @@
           </div>
         </div>
         <div class="collection-product__list">
-          <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
+          <div class="collection-product__inner {{ grid_item_width }}">
             {%- for product in collection.products -%}
               {% render 'include--product-card', product: product %}
             {%- endfor -%}
           </div>
           {%- if paginate.pages > 1 -%}
-            {% if section.settings.page == 'page' %}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-            {% else %}
-              <a href="{{ paginate.next.url }}" class="js-infinite-scroll">
-                <span class="loader"></span>
-              </a>
-            {% endif %}
+            {% render 'pagination', paginate: paginate, anchor: '' %}
           {%- endif -%}
         </div>
       </div>
@@ -116,36 +110,6 @@
       }
     })
   });
-  window.addEventListener('load', (event) => {
-    var isBusy = false;
-    var listData = $('#collection-products');
-    var btnLoadMore = $('.js-infinite-scroll');
-    $(window).scroll(function() {
-      let url = btnLoadMore.attr('href');
-      if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.8 ){
-        if(isBusy == true) {
-          return false;
-        }
-        if(btnLoadMore.length) {
-          isBusy = true;
-          $('[data-btn-text]').hide();
-          btnLoadMore.show();
-          $.get(url, function(data) {
-            btnLoadMore.hide();
-            var product = $(data).find('#collection-products');
-            listData.append(product.children());
-            btnLoadMore.replaceWith($(data).find('.js-infinite-scroll'));
-            initQuickAdd();
-          }).always (function() {
-            isBusy = false;
-          });
-
-          return false;
-        }
-      }
-    });
-  });
-
 </script>
 
 {% schema %}
@@ -169,26 +133,6 @@
         "min": 2,
         "max": 50,
         "step": 1
-      },
-      {
-        "type": "header",
-        "content": "Paginate"
-      },
-      {
-        "type": "radio",
-        "id": "page",
-        "label": "Paginate",
-        "default": "scroll",
-        "options": [
-          {
-            "value": "page",
-            "label": "Paginate"
-          },
-          {
-            "value": "scroll",
-            "label": "Scroll load"
-          }
-        ]
       }
     ]
   }

@@ -26,7 +26,7 @@
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
-    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="defer"></script>
+
     {% render 'meta-tags' %}
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
