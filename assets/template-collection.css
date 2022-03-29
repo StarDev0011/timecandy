@@ -280,7 +280,7 @@
 .custom-swiper-pagination {
   display: block;
   position: static;
-  margin-top: 20px;
+  margin-top: 32px;
   text-align: left;
 }
 
@@ -299,7 +299,7 @@
 }
 
 .collection-view-all__mobile {
-  margin-top: 32px;
+  margin-top: 26px;
 }
 
 .collection-view-all__mobil-link {
@@ -413,5 +413,25 @@
 
   .card-product__image {
     padding: 32px;
+  }
+
+  .collection-candy__wrapper {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .swiper.js-product-slider {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 22px;
+  }
+
+  .collection-view-all__mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .collection-candy__title {
+    margin-bottom: 12px;
   }
 }
