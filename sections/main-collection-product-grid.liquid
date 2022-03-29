@@ -93,9 +93,17 @@
             {% if section.settings.page == 'page' %}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {% else %}
-              <a href="{{ paginate.next.url }}" class="js-infinite-scroll">
-                <span class="loader"></span>
-              </a>
+            <div class="product-paginate" data-paginate>
+              {% unless paginate.next.is_link %}
+              <!-- <button class="btn no-product" type="button">
+                No products
+              </button> -->
+              {% else %}
+                <a href="{{ paginate.next.url }}" class="js-infinite-scroll">
+                  <span class="loader"></span>
+                </a>
+              {% endunless %}
+            </div>
             {% endif %}
           {%- endif -%}
         </div>
@@ -122,8 +130,8 @@
       var btnLoadMore = $('.js-infinite-scroll');
       let url = btnLoadMore.attr('href');
       if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
-        if(isBusy == true) {
-          return false;
+        if(isBusy) {
+          return;
         }
         if(btnLoadMore.length) {
           isBusy = true;
@@ -131,17 +139,15 @@
           btnLoadMore.show();
           var listData = $('#collection-products');
           var product;
-          $.get(url, function(data) {
+          $.get(url).done(function (data) {
             btnLoadMore.hide();
             product = $(data).find('#collection-products');
             listData.append(product.children());
-            btnLoadMore.replaceWith($(data).find('.js-infinite-scroll'));
+            $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
             initQuickAdd();
           }).always (function() {
             isBusy = false;
           });
-
-          return false;
         }
       }
     });
