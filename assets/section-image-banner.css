@@ -176,7 +176,7 @@
 
 .banner--adapt,
 .banner--adapt_image.banner--mobile-bottom .banner__media:not(.placeholder) {
-  height: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 749px) {
