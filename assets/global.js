@@ -864,14 +864,18 @@ class VariantSelects extends HTMLElement {
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
-      addButton.style.display = 'none';
-      addBackInstock.style.display = 'block';
+      if($('.quick-add').length) {
+        addButton.style.display = 'none';
+        addBackInstock.style.display = 'block';
+      }
       if (text) addButtonText.textContent = text;
     } else {
-      addButton.style.display = 'block';
       addButton.removeAttribute('disabled');
       addButtonText.textContent = window.variantStrings.addToCart;
-      addBackInstock.style.display = 'none';
+      if($('.quick-add').length) {
+        addButton.style.display = 'block';
+        addBackInstock.style.display = 'none'; 
+      }
     }
 
     if (!modifyClass) return;
