@@ -321,4 +321,8 @@ header-drawer {
 	.header-logo{
 		margin-left: 5px;
 	}
+	.megamenu .text-label{
+		font-size: 12px;
+		line-height: 21px;
+	}
 }
