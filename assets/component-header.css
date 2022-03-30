@@ -149,7 +149,6 @@ header-drawer {
 	position: absolute;
 	top: 12px;
 	left: 0;
-	height: 28px;
 	padding: 4px 16px 3px;
 	display: flex;
 	align-items: center;
@@ -161,7 +160,7 @@ header-drawer {
   height: 0px;
   border-left: 14px solid transparent;
   border-right: 14px solid transparent;
-  border-top: 14px solid #E2E43D;
+  border-top: 15px solid #E2E43D;
   top: 0;
   right: -14px;
   position: absolute;
