@@ -446,6 +446,7 @@ img {
   cursor: pointer;
   text-align: center !important;
   border-radius: 3px;
+  margin-right: 0 !important;
 }
 
 .quick-add .product-form__buttons {
