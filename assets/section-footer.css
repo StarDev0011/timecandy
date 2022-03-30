@@ -304,6 +304,7 @@
       max-width: 110px;
       margin-top: 50px;
       margin-bottom: -82px;
+      position: static;
     }
     .footer__blocks-wrapper.grid--4-col-tablet {
     display: flex;
@@ -351,6 +352,9 @@
   }
   .footer__content-bottom-wrapper {
       padding: 42px 48px 39px;
+  }
+  .footer__column--info{
+    padding: 0;
   }
 }
 
