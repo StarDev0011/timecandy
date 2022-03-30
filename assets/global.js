@@ -847,7 +847,6 @@ class VariantSelects extends HTMLElement {
         if (source && destination) destination.innerHTML = source.innerHTML;
 
         const price = document.getElementById(`price-${this.dataset.section}`);
-        console.log(`${this.dataset.section}`);
 
         if (price) price.classList.remove('visibility-hidden');
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
@@ -857,17 +856,26 @@ class VariantSelects extends HTMLElement {
   toggleAddButton(disable = true, text, modifyClass = true) {
     const productForm = document.getElementById(`product-form-${this.dataset.section}`);
     if (!productForm) return;
-    const addButton = productForm.querySelector('[name="add"]');
-    const addButtonText = productForm.querySelector('[name="add"] > span');
+    const addButton = productForm.querySelector('[type="submit"]');
+    const addButtonText = productForm.querySelector('[type="submit"] > span');
+    const addBackInstock = productForm.querySelector('.sold-out-variant');
 
     if (!addButton) return;
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
+      if($('.quick-add').length) {
+        addButton.style.display = 'none';
+        addBackInstock.style.display = 'block';
+      }
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
       addButtonText.textContent = window.variantStrings.addToCart;
+      if($('.quick-add').length) {
+        addButton.style.display = 'block';
+        addBackInstock.style.display = 'none'; 
+      }
     }
 
     if (!modifyClass) return;

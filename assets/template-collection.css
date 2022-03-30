@@ -268,15 +268,6 @@
   margin-top: 14px;
 }
 
-.quick-add .product-form__swatch-dropdown input:checked+label {
-  color: var(--color-link);
-}
-
-.quick-add .product-form__swatch-dropdown label:hover {
-  color: var(--color-link);
-  cursor: pointer;
-}
-
 .custom-swiper-pagination {
   display: block;
   position: static;
