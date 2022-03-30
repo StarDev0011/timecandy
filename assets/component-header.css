@@ -318,4 +318,7 @@ header-drawer {
 		width: 19px;
 		height: 18px;
 	}
+	.header-logo{
+		margin-left: 5px;
+	}
 }
