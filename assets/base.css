@@ -2837,7 +2837,7 @@ details-disclosure > details {
   }
  .template-index section.shopify-section.section-featured-product::before{
   content: "";
-  height: 300px;
+  height: calc(50% + 100px);
   width: 100%;
   background: #e4f1f5;
   position: absolute;
