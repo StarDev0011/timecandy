@@ -8,9 +8,7 @@
     </span>
   </div>
   <div class="quick-add__content">
-    <product-form class="product-form">
-    {%- assign product_form_id = 'product-form-' | append: section.id -%}
-    {%- form 'product', product, id: product_form_id, class: 'installment caption-large' -%}
+    {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
         {%- for option in product.options_with_values -%}
@@ -70,13 +68,7 @@
             </svg>
           </div>
         </button>
-        <div class="sold-out-variant" style="display: none;">
-          <a href="#" class="BIS_trigger" data-product-data="{{ product | json | escape }}">
-            Email when available
-          </a>
-        </div>
       </div>
     {%- endform -%}
-    </product-form>
   </div>
 </div>

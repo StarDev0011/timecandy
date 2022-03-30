@@ -57,27 +57,13 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           endif
         -%}
-        <div class="footer__blocks-wrapper--container {% if section.settings.image%} footer-has-img {% endif %} ">
-          {% if section.settings.image%}
-              <a href="{{ shop.url }}" class="logo__image--wrap">
-                <div class="logo__image">
-                  {%- if section.settings.image != blank -%}
-                    {%- assign image_size = section.settings.image_width | append: 'x' -%}
-                    <img
-                      srcset= "{{ section.settings.image | img_url: image_size }}, {{ section.settings.image | img_url: image_size, scale: 2 }} 2x"
-                      src="{{ section.settings.image | image_url: width: 400 }}"
-                      alt="{{ section.settings.image.alt | escape }}"
-                      loading="lazy"
-                      width="{{ section.settings.image.width }}"
-                      height="{{ section.settings.image.height }}"
-                      style="max-width: min(100%, {{ section.settings.image_width }}px); height: auto;"
-                    >
-                  {%- else -%}
-                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                  {%- endif -%}
-                </div>
-              </a>
-            {% endif %}
+        <div class="footer__blocks-wrapper--container  footer-has-img ">
+
+          <a href="{{ shop.url }}" class="logo__image--wrap">
+            <div class="logo__image">
+              <img src="{{ 'donny.svg' | asset_url }}"  width="{{section.settings.logo_width}}"  alt="{{ shop.name }}" itemprop="logo"> 
+            </div>
+          </a>
           <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
             
             {%- for block in section.blocks -%}
@@ -378,20 +364,15 @@
       "label": "Color Text"
     },
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
       "type": "range",
-      "id": "image_width",
+      "id": "logo_width",
       "min": 50,
       "max": 200,
       "step": 2,
       "unit": "px",
-      "label": "Image width",
+      "label": "Logo width",
       "default": 164
-    },
+    }, 
     {
       "type": "header",
       "content": "t:sections.footer.settings.header__1.content",

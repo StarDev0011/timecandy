@@ -44,7 +44,7 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 610px;
+  max-width: 660px;
 }
 
 .slideshow__text > * {
