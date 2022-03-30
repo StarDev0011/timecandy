@@ -110,4 +110,10 @@
  .image-with-text .image-with-text__media img{
     padding:  0 28px;
   }
+  .image-with-text .image-with-text__media{
+    padding-bottom: 0 !important;
+  }
+  .image-with-text .image-with-text__media img {
+      position: static !important;
+  }
 }
