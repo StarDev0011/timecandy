@@ -14,6 +14,24 @@
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+{% liquid
+  assign on_sale = false
+  assign sold_out = true
+  assign option_size = card_product.options | size
+  if card_product.compare_at_price > card_product.price
+    assign on_sale = true
+  endif
+  if card_product.available
+    assign sold_out = false
+  endif
+  assign is_size = false
+  for option in card_product.options_with_values
+    assign optionName = option.name | downcase
+    if optionName contains 'size'
+      assign is_size = true
+    endif
+  endfor
+%}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {%- if card_product and card_product != empty -%}
   <div class="card-product__item">
@@ -61,13 +79,12 @@
         {%- endif -%}
 
         <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-        <div class="card-product__price">
+        <div class="card-product__price"> 
           {% if on_sale %}
             <span class="card-product__price--sale">{{ card_product.price | money }}</span>
             <span class="card-product__price--old">{{ card_product.compare_at_price | money }}</span>
           {% else %}
-            <span class="card-product__price-text">Starting at</span>
+          {% if is_size %} <span class="card-product__price-text">Starting at</span>{% endif %}
             <span>{{ card_product.price | money }}</span>
           {% endif %}
         </div>
@@ -91,6 +108,11 @@
           {% endif %}
         </form>
       </div>
+      {% if card_product.metafields.global.limited_time.value  != blank %}
+        <div class="card-product-label">
+          {{ card_product.metafields.global.limited_time.value }}
+        </div>
+      {% endif %}
   </div>
 {%- else -%}
   <div class="card-wrapper underline-links-hover">

@@ -75,6 +75,7 @@
 .image-with-text__text {
   font-size: 16px;
   line-height: 24px;
+  max-width: 424px;
 }
 .image-with-text__content>*+* {
     margin-top: 28px;
