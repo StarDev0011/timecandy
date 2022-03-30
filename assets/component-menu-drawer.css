@@ -244,3 +244,6 @@ details[open].menu-opening > .menu-drawer__submenu {
 .open-submenu  .header-middle{
   padding: 0;
 }
+.open-submenu  .menu-drawer{
+  border-top: none;
+}
