@@ -41,7 +41,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Find the <span>Candy You Ate as a Kid!<\/span>"
+            "heading": "Find the <span>Candy You Ate as a Kid!®<\/span>"
           }
         },
         "text": {
@@ -255,7 +255,9 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 130
       }
     },
     "testimonial": {
