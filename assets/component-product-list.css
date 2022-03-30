@@ -373,7 +373,7 @@ img {
 }
 
 .quick-add .product-form__swatch-dropdown label:hover {
-  color: var(--color-link);
+  color: var(--color-link) !important;
   cursor: pointer;
 }
 
@@ -428,10 +428,10 @@ img {
 }
 
 .quick-add .product-form__input label {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: var(--font-2);
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-family: var(--font-2) !important;
 }
 
 .quick-add .product-form__swatch-size {
@@ -440,11 +440,11 @@ img {
 }
 
 .quick-add .product-form__swatch-size label {
-  padding: 10px 30px;
-  border: 1px solid #ccc;
-  margin-bottom: 8px;
+  padding: 10px 30px !important;
+  border: 1px solid #ccc !important;
+  margin-bottom: 8px !important;
   cursor: pointer;
-  text-align: center;
+  text-align: center !important;
   border-radius: 3px;
 }
 
@@ -514,6 +514,12 @@ img {
 .quick-add .product-form__swatch-dropdown label {
   padding: 7px 16px;
   color: var(--color-text);
+  padding: 7px 16px !important;
+  color: var(--color-text) !important;
+  background-color: transparent !important;
+  text-align: left !important;
+  border: 0 !important;
+  margin: 0 !important;
 }
 
 .sold-out-variant {

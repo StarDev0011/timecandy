@@ -1,7 +1,4 @@
-{% unless template == 'candy' %}
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{% endunless %}
-
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 {{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
