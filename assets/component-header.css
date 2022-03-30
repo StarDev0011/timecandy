@@ -310,3 +310,12 @@ header-drawer {
 		display: none;
 	}
 }
+@media (max-width: 749px) {
+	.header-logo img{
+		max-width: 192px;
+	}
+	.menu-drawer-container.menu-opening .header__icon--menu .icon{
+		width: 19px;
+		height: 18px;
+	}
+}
