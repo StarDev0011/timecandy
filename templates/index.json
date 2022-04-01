@@ -1,44 +1,29 @@
 {
   "sections": {
-    "slideshow":{
+    "slideshow": {
       "type": "slideshow",
       "blocks": {
         "slide1": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label":"Button label",
-            "link":"#",
-            "button_style_secondary":false,
-            "box_align":"middle-left",
-            "show_text_box":false,
-            "text_alignment":"left",
-            "color_scheme":"#E4F1F5",
-            "bg_container_scheme":"#FCF0EE",
-            "text_alignment_mobile":"left"
-          } 
-        },
-        "slide2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "subheading": "Tell your brand's story through images",
-            "button_label":"Button label",
-            "link":"#",
-            "button_style_secondary":false,
-            "box_align":"middle-left",
-            "show_text_box":false,
-            "text_alignment":"left",
-            "color_scheme":"#E4F1F5",
-            "bg_container_scheme":"#FCF0EE",
-            "text_alignment_mobile":"left"
+            "image": "shopify:\/\/shop_images\/Scroller_Image.png",
+            "image_mb": "shopify:\/\/shop_images\/Scroller_Image-mb.png",
+            "heading": "Get Valentine’s Day Candy and More 14% Off with Code “BEMINE”",
+            "subheading": "Create a candy bouquet",
+            "button_label": "shop now",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "color_scheme": "#e4f1f5",
+            "bg_container_scheme": "#fcf0ee",
+            "text_alignment_mobile": "left"
           }
         }
       },
       "block_order": [
-        "slide1",
-        "slide2"
+        "slide1"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -50,27 +35,27 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "image_with_text":{
+    "image_with_text": {
       "type": "image-with-text",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text"
+            "heading": "Find the <span><i>Candy You Ate as a Kid!®<\/i><\/span>"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Do you remember running down to the corner store to buy as much candy as you could carry? Wax Lips, Bonomo’s Turkish Taffy, Candy Cigarettes, Mary Janes, Atomic Fireballs, and more! Order a gift box of candy from your favorite decade, or pack your own assortment. Take a slow walk down the candy aisle... go ahead, the memories are on us.<\/p>",
             "text_style": "body"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Label button",
-            "button_link": "#"
+            "button_label": "Walk the candy aisle",
+            "button_link": "shopify:\/\/collections"
           }
         }
       },
@@ -80,35 +65,43 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Donny_Image.png",
+        "image_width": 490,
+        "box_text_width": 480,
         "layout": "image_first",
-        "desktop_content_position": "middle",
+        "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 140
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64
       }
     },
-    "icon_with_text":{
+    "icon_with_text": {
       "type": "icon-with-text",
       "blocks": {
         "icon1": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/Group_146.png",
+            "title": "Family-owned since 2000",
             "link": ""
           }
         },
         "icon2": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/illustration.png",
+            "title": "lagrange, ohio-based",
             "link": ""
           }
         },
         "icon3": {
           "type": "icon",
           "settings": {
-            "title": "Icon with text",
+            "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
+            "title": "by candy lovers, for candy lovers",
             "link": ""
           }
         }
@@ -121,47 +114,60 @@
       "settings": {
         "columns_desktop": 3,
         "column_alignment": "center",
-        "color_scheme": "#E4F1F5",
+        "color_scheme": "#e4f1f5",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
         "padding_top": 0,
         "padding_bottom": 140
       }
     },
-    "featured_product":{
-      "type": "featured-product"
+    "featured_product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "birthday-by-the-numbers-decade-gift-box-birthday-banner",
+        "sub_title": "looking for a gift?",
+        "show_best_seller": true,
+        "color_scheme": "inverse",
+        "secondary_background": true,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
-    "image_text_list":{
-      "type":"image-text-list",
+    "image_text_list": {
+      "type": "image-text-list",
       "blocks": {
-        "image_text_list1": {
+        "image_text_list2": {
           "type": "select",
           "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
+            "title": "Send yourself or a friend a box of candy automatically.",
+            "caption": "subscription boxes",
             "button_label": "shop now",
             "button_link": "#",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
         },
-        "image_text_list2": {
+        "image_text_list3": {
           "type": "select",
           "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_2.png",
+            "title": "Sometimes you just need 3+ lbs of candy for your next party.",
+            "caption": "retro candy in bulk",
             "button_label": "shop now",
             "button_link": "#",
             "layout": "text_first",
             "mobile_content_alignment": "center"
           }
         },
-        "image_text_list3": {
+        "29de3973-f22a-4eed-aac7-3e366ba80eab": {
           "type": "select",
           "settings": {
-            "title": "Image text item",
-            "caption": "Add a tagline",
-            "button_label": "shop now",
+            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3.png",
+            "title": "Send a personalized candy gift to your employees or clients.",
+            "caption": "Corporate Gifts",
+            "button_label": "Shop now",
             "button_link": "#",
             "layout": "image_first",
             "mobile_content_alignment": "center"
@@ -169,26 +175,101 @@
         }
       },
       "block_order": [
-        "image_text_list",
         "image_text_list2",
-        "image_text_list3"
+        "image_text_list3",
+        "29de3973-f22a-4eed-aac7-3e366ba80eab"
       ],
       "settings": {
-        "heading": "Image text list",
-        "color_bg": "#E4F1F5",
-        "padding_top": 160,
+        "heading": "Recommended for you",
+        "color_bg": "#e4f1f5",
+        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract_5a993792-29bb-4fb3-a0ee-58b2401cab70.png",
+        "padding_top": 60,
         "padding_bottom": 0
       }
     },
-    "testimonial":{
-      "type":"testimonial",
+    "1648000290d9b3ee64": {
+      "type": "image-with-text",
+      "blocks": {
+        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a": {
+          "type": "caption",
+          "settings": {
+            "caption": "water wells for africa"
+          }
+        },
+        "1648000290f7ac8147-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "We’re making a difference in Sierra Leone and so can you!"
+          }
+        },
+        "1648000290f7ac8147-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A small donation of just $1 or $2, the cost of a single bottle of water, seems like such a small sacrifice but it truly makes a difference in our world.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1648000290f7ac8147-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Donate",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a",
+        "1648000290f7ac8147-0",
+        "1648000290f7ac8147-1",
+        "1648000290f7ac8147-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Image_Lockup_2.png",
+        "image_width": 485,
+        "box_text_width": 600,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 86
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "old time candy fan favorites",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "#f1f3f3",
+        "image_bg_top": "shopify:\/\/shop_images\/Subtract_1.png",
+        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract.png",
+        "show_view_all": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 130
+      }
+    },
+    "testimonial": {
+      "type": "testimonial",
       "blocks": {
         "testimonial1": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
             "button_link": "#",
             "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
             "link_readmore": "#"
@@ -197,9 +278,10 @@
         "testimonial2": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
             "button_link": "#",
             "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
             "link_readmore": "#"
@@ -208,9 +290,10 @@
         "testimonial3": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
             "button_link": "#",
             "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
             "link_readmore": "#"
@@ -224,37 +307,19 @@
       ],
       "settings": {
         "title": "Candy memories",
+        "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
         "padding_top": 90,
         "padding_bottom": 120
       }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "#f1f3f3",
-        "show_view_all": true,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 40
-      }
     }
   },
-    
   "order": [
     "slideshow",
     "image_with_text",
     "icon_with_text",
     "featured_product",
     "image_text_list",
+    "1648000290d9b3ee64",
     "featured_collection",
     "testimonial"
   ]

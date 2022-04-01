@@ -1,27 +1,17 @@
 {
   "current": {
-    "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#121212",
-    "gradient_accent_1": "",
-    "colors_accent_2": "#334fb4",
-    "gradient_accent_2": "",
-    "colors_text": "#121212",
-    "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#ffffff",
-    "gradient_background_1": "",
-    "colors_background_2": "#f3f3f3",
-    "gradient_background_2": "",
-    "type_header_font": "assistant_n4",
+    "colors_text": "#484e57",
+    "type_header_font": "merriweather_sans_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "merriweather_sans_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1440,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_vertical": 40,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
-    "buttons_radius": 0,
+    "buttons_radius": 30,
     "buttons_shadow_opacity": 0,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 4,
@@ -84,9 +74,9 @@
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
     "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_facebook_link": "#",
+    "social_pinterest_link": "#",
+    "social_instagram_link": "#",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -96,14 +86,77 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#121212",
+    "gradient_accent_1": "",
+    "colors_accent_2": "#334fb4",
+    "gradient_accent_2": "",
+    "colors_outline_button_labels": "#121212",
+    "colors_background_1": "#ffffff",
+    "gradient_background_1": "",
+    "colors_background_2": "#f3f3f3",
+    "gradient_background_2": "",
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "8121eb0d-4ef4-42d5-974a-7c566b145734": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "shop-all",
+              "show_tt_child": true,
+              "push_1_image": "shopify:\/\/shop_images\/image.png",
+              "push_1_label": "Great gift!",
+              "push_1_heading": "Decade Candy Gift Box",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/image.png",
+              "push_2_label": "",
+              "push_2_heading": "RED VINES ORIGINAL",
+              "push_2_url": "",
+              "push_3_image": "shopify:\/\/shop_images\/image.png",
+              "push_3_label": "",
+              "push_3_heading": "HARIBO GUMMI WATERMELON WEDGES",
+              "push_3_url": "",
+              "push_4_label": "no",
+              "push_4_heading": "",
+              "push_4_url": "",
+              "width_megamenu_link": 40
+            }
+          },
+          "95918a9a-7581-4b5d-b684-26ed10f073b8": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "occassions",
+              "show_tt_child": true,
+              "push_1_image": "shopify:\/\/shop_images\/image_f0aef60c-112b-4332-9bc2-b0bc6832312e.png",
+              "push_1_label": "",
+              "push_1_heading": "Andes Mints",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/image_516c9ae6-f2c8-4344-9438-d919e23e9f3b.png",
+              "push_2_label": "Great gift",
+              "push_2_heading": "Chocolate lovers box",
+              "push_2_url": "shopify:\/\/products\/100-grand-bar",
+              "push_3_image": "shopify:\/\/shop_images\/image_4a621c87-a00f-4e31-8a51-78950e1b58de.png",
+              "push_3_label": "",
+              "push_3_heading": "Birthday decade gift box",
+              "push_3_url": "",
+              "push_4_image": "shopify:\/\/shop_images\/image_47d09e08-04d9-4c93-9a40-283b6918b7c9.png",
+              "push_4_label": "",
+              "push_4_heading": "movie night gift bucket",
+              "push_4_url": "",
+              "width_megamenu_link": 15
+            }
+          }
+        },
+        "block_order": [
+          "8121eb0d-4ef4-42d5-974a-7c566b145734",
+          "95918a9a-7581-4b5d-b684-26ed10f073b8"
+        ],
         "settings": {
-          "color_scheme": "background-1",
-          "logo_width": 90,
-          "logo_position": "middle-left",
-          "menu": "main-menu",
+          "logo_width": 255,
+          "menu": "menu-home",
+          "bg_menu": "#0c5273",
+          "color_menu": "#ffffff",
           "show_line_separator": true,
           "enable_sticky_header": true,
           "margin_bottom": 0
@@ -112,44 +165,55 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
+          "b9fae957-4b5f-4215-8025-5e0bab5661dc": {
+            "type": "link_list",
+            "settings": {
+              "heading": "shop",
+              "menu": "footer"
+            }
+          },
+          "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
               "menu": "footer"
             }
           },
-          "footer-1": {
+          "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
-              "heading": "Info",
+              "heading": "Quick links",
               "menu": "footer"
             }
           },
-          "footer-2": {
+          "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
             "type": "subscribe",
             "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "stay in touch",
+              "subtext": "<p>Get a 10% discount code just for signing up.<\/p>"
             }
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-1",
-          "footer-2"
+          "b9fae957-4b5f-4215-8025-5e0bab5661dc",
+          "8fdf852d-ce4b-4960-80a2-f97a190ad691",
+          "9e87bb31-1098-4bac-bcc4-ef91da13c935",
+          "d7bc321f-ef27-4a6b-b63e-3b523788d979"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "footer_bg": "#0c5273",
+          "footer_bottom_bg": "#8ed1cb",
+          "text_color": "#ffffff",
+          "image": "shopify:\/\/shop_images\/Donny_a1fa8dd0-ff53-4ded-a864-95b297effbdc.png",
+          "image_width": 164,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
-          "enable_country_selector": false,
-          "enable_language_selector": false,
-          "payment_enable": true,
-          "margin_top": 48,
-          "padding_top": 36,
-          "padding_bottom": 36
+          "social_heading": "STAY CONNECTED",
+          "payment_enable": false,
+          "margin_top": 0,
+          "padding_top": 70,
+          "padding_bottom": 0
         }
       },
       "main-password-header": {
@@ -164,8 +228,20 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "Welcome to our store",
+          "link": "",
+          "color_text": "#0c5273",
+          "color_bg": "#bbe2dd"
+        }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
@@ -269,9 +345,7 @@
         "header": {
           "type": "header",
           "settings": {
-            "color_scheme": "background-1",
             "logo_width": 90,
-            "logo_position": "middle-left",
             "menu": "main-menu",
             "show_line_separator": true,
             "enable_sticky_header": true,
@@ -296,7 +370,7 @@
               }
             },
             "footer-2": {
-              "type": "subscribe",
+              "type": "text",
               "settings": {
                 "heading": "Our mission",
                 "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
