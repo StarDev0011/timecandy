@@ -102,7 +102,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Add to bag",
       "description": "Description",
       "on_sale": "Sale",
       "product_variants": "Product variants",
