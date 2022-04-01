@@ -44,6 +44,7 @@
         "default": "#8ED1CB",
         "label": "t:settings_schema.colors.settings.link_color_hover.label"
       },
+
       {
         "type": "color",
         "id": "primary_background",
