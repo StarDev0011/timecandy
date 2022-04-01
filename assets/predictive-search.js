@@ -147,6 +147,41 @@ class PredictiveSearch extends HTMLElement {
         this.close();
         throw error;
       });
+    this.getSuggestedTerms(searchTerm);
+  }
+
+  getSuggestedTerms(searchTerm) {
+    const proxy = 'https://cors-everywhere.herokuapp.com/';
+    fetch(`${proxy}https://google.com/complete/search?client=firefox&hl=en&q=${searchTerm}`, {
+      headers: { origin: 'google.com' }
+    })
+    .then(res => res.json())
+    .then(res => {
+      res[1].map(function(x) {
+        console.log(x);
+      }).join('')
+    });
+    // let emptyArray = [];
+    // $.getJSON(proxy + '/search/suggest.json', {
+    //   'q' : '' + searchTerm + '',
+    //   'resources' : {
+    //     'type' : 'product',
+    //     'limit' : 8,
+    //     'options' : {
+    //       'unavailable_products' : 'last',
+    //       'fields' : 'title,product_type,variants.title'
+    //     }
+    //   }
+    // }).done(function (response) {
+    //   const productSuggestions = response.resources.results.products;
+    //   if (productSuggestions.length > 0) {
+    //     productSuggestions.map(function(product) {
+    //       const dataTitle = product.title
+    //       console.log(dataTitle)
+    //     }).join('');
+    //   }
+    // })
+    //
   }
 
   setLiveRegionLoadingState() {
