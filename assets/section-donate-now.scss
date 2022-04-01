@@ -6,13 +6,6 @@
 		box-sizing: border-box;
 	}
 
-	.donate-now__text {
-		color: #262626;
-		font-family: var(--font-default);
-		font-size: 16px;
-		line-height: 27px;
-	}
-
 	.grid {
 		all: initial;
 		display: block;
@@ -32,9 +25,17 @@
 	}
 
 	.grid__item {
+		all: initial;
 		float: left;
 		padding-left: 5px;
 		width: 100%;
+	}
+
+	.donate-now__text {
+		color: #262626;
+		font-family: var(--font-default);
+		font-size: 16px;
+		line-height: 27px;
 	}
 
 	@media (min-width: 825px) {
