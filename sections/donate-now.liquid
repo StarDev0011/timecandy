@@ -3,17 +3,20 @@
 {{ 'section-donate-now.min.css' | asset_url | stylesheet_tag }}
 
 <div class="donate-now-section grid">
-   <div class="donate-now">
-      <div class="donate-now__text
-         grid__item medium-up--five-twelfths 
-         medium-up--push-three-twelfths">
-         {{ section.settings.desc }}
-      </div>
-      <div class="grid__item
-         medium-up--two-twelfths
-         medium-up--push-three-twelfths">
-         <a class="primary-btn btn--wide" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
-      </div>
+   <div class="donate-now__text
+      grid__item
+      small--ten-twelfths
+      small--push-one-twelfth
+      medium-up--five-twelfths 
+      medium-up--push-three-twelfths">
+      {{ section.settings.desc }}
+   </div>
+   <div class="grid__item
+      small--ten-twelfths
+      small--push-one-twelfth
+      medium-up--two-twelfths
+      medium-up--push-three-twelfths">
+      <a class="primary-btn btn--wide" href="{{ section.settings.btn_link }}">{{ section.settings.btn_text }}</a>
    </div>
 </div>
 
