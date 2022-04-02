@@ -34,6 +34,8 @@
                   #Block{{ block.id }} {
                      padding-left: {{ block.settings.padding_left | escape }};
                      padding-right: {{ block.settings.padding_right | escape }};
+                     padding-top: {{ block.settings.padding_top | escape }};
+                     padding-bottom: {{ block.settings.padding_bottom | escape }};
                   }
                </style>
             </div>
@@ -152,6 +154,18 @@
                   "type": "text",
                   "label": "Padding right",
                   "default": "0"
+               },
+               {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
+                  "default": "0"
                },      
                {
                   "id": "heading",
@@ -230,6 +244,18 @@
                   "default": "0"
                },  
                {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
+                  "default": "0"
+               },      
+               {
                   "id": "content",
                   "type": "html",
                   "label": "Content"
@@ -282,6 +308,18 @@
                   "id": "padding_right",
                   "type": "text",
                   "label": "Padding right",
+                  "default": "0"
+               },      
+               {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
                   "default": "0"
                },      
                {

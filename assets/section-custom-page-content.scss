@@ -5,12 +5,11 @@
 		padding: 0;
 	}
 
-	.flex-center {
-		display: flex;
-		justify-content: center;
-	}
-
 	@media (min-width: 825px) {
+		.flex-center {
+			display: flex;
+			justify-content: center;
+		}
 		.full-width {
 			width: 100%;
 		}
@@ -88,7 +87,7 @@
 		float: left;
 
 		@media (max-width: 824px) {
-			width: 83.33333%;
+			width: 100%;
 		}
 	}
 
