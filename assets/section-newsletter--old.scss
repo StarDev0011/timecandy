@@ -8,15 +8,6 @@
 		}
 	}
 
-	.field__input::placeholder {
-		opacity: 1;
-		color: #b4bbc3;
-		font-family: Georgia, Times, "Times New Roman", serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0px;
-	}
-
 	.newsletter-form,
 	.newsletter__wrapper .newsletter-form__field-wrapper {
 		max-width: 100%;
@@ -91,10 +82,7 @@
 	}
 
 	.newsletter-form__field-wrapper .field__input {
-		box-sizing: border-box;
-		border-radius: 2px;
 		padding: 0px 0px 0px 16px;
-		height: 38px;
 		text-align: left;
 		color: rgb(0, 0, 0);
 		font-family: Georgia, Times, "Times New Roman", serif;
@@ -103,16 +91,88 @@
 		letter-spacing: 0px;
 		background-color: rgb(255, 255, 255);
 		border: 1px solid rgb(180, 187, 195);
-		/* border: 1px solid rgb(208, 51, 31); */
+		margin: 0;
+		height: 100%;
 		min-height: unset;
-		margin: 10px 6px;
-		position: relative;
-		flex: 1 0 0px;
 
 		&:hover,
 		&:focus {
-			border-color: black;
+			border-color: black !important;
 			box-shadow: none;
+		}
+
+		&::placeholder,
+		&:focus::placeholder {
+			opacity: 1;
+			color: #b4bbc3;
+			font-family: Georgia, Times, "Times New Roman", serif;
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 0px;
+		}
+	}
+
+	.newsletter__tooltip {
+		display: none;
+		background-color: white;
+		position: absolute;
+		z-index: 1;
+		right: 0px;
+		border-radius: 4px;
+		animation: 0.4s ease 0s 1 normal none running klaviyo-fadein;
+		top: calc(100% + 14px);
+		right: 0;
+		border-radius: 4px;
+		box-shadow: rgba(0, 0, 0, 0.26) 1px 1px 4px 0px;
+		border: 1px solid rgb(208, 51, 31);
+		background-color: rgb(248, 236, 233);
+		font-size: 14px;
+		padding: 8px;
+		font-family: Georgia, Times, "Times New Roman", serif;
+		color: rgb(208, 51, 31);
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 9px;
+			left: 7px;
+			top: -17px;
+			border-color: transparent transparent #d0331f transparent;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			left: 9px;
+			border-width: 8px;
+			top: -15px;
+			border-color: transparent transparent rgb(248, 236, 233) transparent;
+		}
+	}
+
+	.field__input-wrapper {
+		box-sizing: border-box;
+		border-radius: 2px;
+		padding: 0px 0px 0px 16px;
+		height: 38px;
+		position: relative;
+		flex: 1 0 0px;
+		margin: 10px 6px;
+
+		&.error {
+			.field__input {
+				border: 1px solid rgb(208, 51, 31);
+			}
+			.newsletter__tooltip {
+				display: block;
+			}
 		}
 	}
 }
