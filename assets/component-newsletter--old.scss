@@ -1,0 +1,111 @@
+.newsletter--old {
+	.field {
+		align-items: center;
+
+		&::before,
+		&::after {
+			content: none;
+		}
+	}
+
+	.field__input::placeholder {
+		opacity: 1;
+		color: #b4bbc3;
+		font-family: Georgia, Times, "Times New Roman", serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0px;
+	}
+
+	.newsletter-form,
+	.newsletter__wrapper .newsletter-form__field-wrapper {
+		max-width: 100%;
+	}
+
+	.newsletter-form {
+		width: 66.66667%;
+
+		@media (min-width: 1100px) {
+			width: 50%;
+			padding-left: 7.08333%;
+			padding-right: 7.08333%;
+		}
+	}
+
+	.h1 {
+		font-weight: 100;
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: 23px;
+		color: black;
+		margin: 0 auto 1.5em;
+		width: 66.66667%;
+
+		@media (min-width: 1100px) {
+			width: 50%;
+		}
+	}
+
+	.newsletter__subheading {
+		padding: 10px 6px;
+		margin: 0 auto;
+		color: black;
+		font-family: Georgia, Times, "Times New Roman", serif;
+		font-size: 16px;
+		width: 66.66667%;
+
+		@media (min-width: 1100px) {
+			width: 50%;
+		}
+	}
+
+	.newsletter-form__button,
+	.newsletter-form__button:not(:focus-visible):not(.focused) {
+		all: initial;
+		background: rgb(17, 93, 121);
+		border-radius: 3px;
+		border-style: none;
+		border-color: rgb(0, 0, 0);
+		border-width: 0px;
+		color: rgb(255, 255, 255);
+		font-family: var(--font-heading);
+		font-size: 16px;
+		font-weight: 200;
+		letter-spacing: 1px;
+		line-height: 1;
+		white-space: normal;
+		padding: 11px 10px;
+		text-align: center;
+		word-break: break-word;
+		cursor: pointer;
+		width: max-content;
+		height: auto;
+		margin: 10px 6px;
+	}
+
+	.newsletter-form__field-wrapper .field__input {
+		box-sizing: border-box;
+		border-radius: 2px;
+		padding: 0px 0px 0px 16px;
+		height: 38px;
+		text-align: left;
+		color: rgb(0, 0, 0);
+		font-family: Georgia, Times, "Times New Roman", serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0px;
+		background-color: rgb(255, 255, 255);
+		border: 1px solid rgb(180, 187, 195);
+		/* border: 1px solid rgb(208, 51, 31); */
+		min-height: unset;
+		margin: 10px 6px;
+		position: relative;
+		flex: 1 0 0px;
+
+		&:hover,
+		&:focus {
+			border-color: black;
+			box-shadow: none;
+		}
+	}
+}

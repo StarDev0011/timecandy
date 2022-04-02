@@ -266,6 +266,10 @@ body,
 	background-color: #bfe8f5;
 }
 
+.background-light-blue {
+	background-color: #e4f1f5;
+}
+
 .grid-auto-flow {
 	display: grid;
 	grid-auto-flow: column;

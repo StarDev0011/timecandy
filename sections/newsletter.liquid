@@ -1,5 +1,13 @@
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{% case section.settings.style %}
+  {% when 'old' %}
+    {{ 'component-newsletter--old.min.css' | asset_url | stylesheet_tag }} 
+    {% assign background = 'background-light-blue' %}   
+  {% else %}
+    {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}  
+    {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+    {% capture background %}gradient{% endcapture %}
+{% endcase %}
+
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -18,7 +26,7 @@
 <div class="newsletter center
   {% if section.settings.style != "default" %}newsletter--{{ section.settings.style }}{% endif %}
   {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} {{ background }} content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -150,7 +158,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 40
@@ -160,7 +168,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
