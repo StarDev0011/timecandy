@@ -15,7 +15,9 @@
   }
 {%- endstyle -%}
 
-<div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
+<div class="newsletter center
+  {% if section.settings.style != "default" %}newsletter--{{ section.settings.style }}{% endif %}
+  {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -51,11 +53,18 @@
                     placeholder="{{ 'newsletter.label' | t }}"
                     required
                   >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
+                  {% if section.settings.style != 'old' %}
+                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                      {{ 'newsletter.label' | t }}
+                    </label>
+                  {% endif %}
                   <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                    {% render 'icon-arrow' %}
+                    {% case section.settings.style %}
+                      {% when 'old' %}
+                        {{ block.settings.btn_text }}
+                      {% else %}
+                        {% render 'icon-arrow' %}                      
+                    {% endcase %}
                   </button>
                 </div>
                 {%- if form.errors -%}
@@ -78,6 +87,22 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "id": "style",
+      "type": "select",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "old",
+          "label": "Old style"
+        }
+      ],
+      "default": "default"
+    },
     {
       "type": "select",
       "id": "color_scheme",
@@ -191,7 +216,16 @@
     {
       "type": "email_form",
       "name": "t:sections.newsletter.blocks.email_form.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text",
+          "default": "Sign up",
+          "info": "Only available in Old style."
+        }
+      ]
     },
     {
       "type": "@app"
