@@ -3,7 +3,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	if (categorySelector) {
 		categorySelector.addEventListener("change", () => {
-			let redirectLink = categorySelector.getAttribute("target");
+			const options = categorySelector.options;
+			let redirectLink = options[categorySelector.selectedIndex].getAttribute("target");
 			window.location.href = redirectLink;
 		});
 	}
