@@ -14,7 +14,7 @@
             <div class="custom-page-content__block {{ block.settings.width }}" id="Block{{ block.id }}">
                {% case block.type %}                  
                   {% when 'image' %}
-                     <image src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt}}" />
+                     <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt}}" >
                   {% else %}
                      {% if block.settings.heading %}
                         {% case block.settings.heading_type %}
