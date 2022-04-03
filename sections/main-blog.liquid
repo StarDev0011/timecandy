@@ -31,14 +31,14 @@
         <div class="blog-categories">
           <h2 class="blog-categories__title">Categories</h2>
           <ul class="blog-categories__list">
-            {% for tag in blog.tags %}
+            {% for tag in blog.all_tags %}
               <li>{{ tag | link_to_tag: tag }}</li>
             {% endfor %}
           </ul>
 
           <select class="blog-categories__list--mobile js-blog-categories">
             <option target="{{ blog.url }}">All</option>
-            {% for tag in blog.tags %}
+            {% for tag in blog.all_tags %}
             <option target="{{ blog.url }}/tagged/{{ tag.handle }}"
               {% if current_tags contains tag %}selected{% endif %}>
               {{ tag }}

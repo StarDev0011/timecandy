@@ -147,7 +147,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 
 	@media (min-width: $bp-medium-up) {
 		flex: 1;
-		max-width: 257px;
+		min-width: 257px;
 		order: 1;
 	}
 
