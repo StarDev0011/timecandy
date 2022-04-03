@@ -1,0 +1,103 @@
+.custom-page-content-section {
+	background-color: #faf9f7;
+
+	.page-width {
+		padding: 0;
+	}
+
+	@media (min-width: 825px) {
+		.flex-center {
+			display: flex;
+			justify-content: center;
+		}
+		.full-width {
+			width: 100%;
+		}
+		.eight-twelfths {
+			width: 66.66667%;
+		}
+		.six-tenths {
+			width: 58%;
+		}
+		.half-width {
+			width: 50%;
+		}
+		.four-tenths {
+			width: 42%;
+		}
+		.one-thirds {
+			width: 33%;
+		}
+		.one-fourth {
+			width: 25%;
+		}
+	}
+}
+
+.custom-page-content {
+	display: flow-root;
+	margin: 0 auto;
+	color: #262626;
+	font-family: var(--font-default);
+	font-size: 16px;
+	line-height: 27px;
+
+	@media (max-width: 824px) {
+		width: 83.33333%;
+	}
+
+	h1 {
+		color: #c91835;
+		font-family: var(--font-heading);
+		font-weight: 100;
+		text-transform: uppercase;
+		font-size: 24px;
+		letter-spacing: -1px;
+		line-height: 27px;
+		margin-top: 0;
+		margin-bottom: 1.5em;
+	}
+
+	h2 {
+		color: black;
+		font-family: var(--font-heading);
+		font-weight: 100;
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: 23px;
+		margin-top: 0;
+		margin-block-end: 0.83em;
+	}
+
+	p {
+		color: #262626;
+		font-family: var(--font-default);
+		font-size: 16px;
+		line-height: 27px;
+	}
+
+	a {
+		font-family: "Merriweather", Georgia, serif;
+		color: #115369;
+		font-size: inherit;
+		text-transform: none;
+	}
+
+	.custom-page-content__block {
+		float: left;
+
+		@media (max-width: 824px) {
+			width: 100%;
+		}
+	}
+
+	img,
+	iframe {
+		width: 100%;
+		object-fit: contain;
+	}
+}
+
+.custom-page-content--single-col {
+	width: 50%;
+}

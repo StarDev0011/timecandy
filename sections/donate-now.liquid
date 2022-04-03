@@ -1,0 +1,54 @@
+{{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-donate-now.min.css' | asset_url | stylesheet_tag }}
+
+<section class="donate-now-section background-medium-blue">
+   <div class="grid">
+      <div class="donate-now__text
+         grid__item
+         small--ten-twelfths
+         small--push-one-twelfth
+         medium-up--five-twelfths 
+         medium-up--push-three-twelfths">
+         {{ section.settings.desc }}
+      </div>
+
+      <div class="grid__item
+         small--ten-twelfths
+         small--push-one-twelfth
+         medium-up--two-twelfths
+         medium-up--push-three-twelfths">
+         <a class="primary-btn btn--wide" href="{{ section.settings.btn_link }}">
+            {{ section.settings.btn_text }}
+         </a>
+      </div>
+   </div>
+</section>
+
+{% schema %}
+   {
+      "name": "Donate now",
+      "settings": [
+         {
+            "id": "desc",
+            "type": "richtext",
+            "label": "Description"
+         },
+         {
+            "id": "btn_text",
+            "type": "text",
+            "label": "Button text",
+            "default": "Donate now"
+         },
+         {
+            "id": "btn_link",
+            "type": "url",
+            "label": "Button link"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Donate now"
+         }
+      ]
+   }
+{% endschema %}
