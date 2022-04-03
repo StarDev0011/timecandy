@@ -1,5 +1,5 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -38,7 +38,7 @@
           </ul>
         </div>
   
-        <div>
+        <div class="blog-articles-wrapper">
           <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
             {%- for article in blog.articles -%}
               <div class="blog-articles__article article">
@@ -49,7 +49,7 @@
                   show_image: section.settings.show_image,
                   show_date: section.settings.show_date,
                   show_author: section.settings.show_author,
-                  show_excerpt: true 
+                  show_excerpt: false
                 -%}
               </div>
             {%- endfor -%}

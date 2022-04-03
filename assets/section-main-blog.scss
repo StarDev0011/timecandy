@@ -44,11 +44,14 @@ $bp-medium-up: $bp-small + 1;
 	}
 }
 
+.blog-articles-wrapper {
+	flex: 3.5;
+}
+
 .blog-articles {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 64px 20px;
-	flex: 3.5;
 
 	@media (max-width: $bp-small) {
 		grid-template-columns: 1fr;
