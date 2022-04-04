@@ -2114,7 +2114,7 @@ input[type='checkbox'] {
 
 /* section-announcement-bar */
 #shopify-section-announcement-bar {
-  z-index: 4;
+  z-index: 1;
 }
 
 .announcement-bar {
@@ -2408,7 +2408,6 @@ details[open] .modal-overlay::after {
   width: 100%;
   height: 100%;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  position: relative;
 }
 
 .search-modal__content-bottom {

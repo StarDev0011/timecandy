@@ -28,8 +28,6 @@
 @media screen and (max-width: 989px) {
   .predictive-search {
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
   }
 }
 
@@ -38,26 +36,11 @@
     border-top: none;
     width: calc(100% + 0.2rem);
   }
-
-  .header predictive-search {
-    position: relative;
-  }
 }
 
 predictive-search[open] .predictive-search,
 predictive-search[loading] .predictive-search {
   display: block;
-}
-
-.predictive-search__heading {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  margin: 0 auto;
-  padding: 1.5rem 0 0.75rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: calc(100% - 4rem);
-  color: rgba(var(--color-foreground), 0.7);
 }
 
 predictive-search .spinner {
@@ -106,7 +89,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 .predictive-search__item {
   display: flex;
   padding: 1rem 2rem;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   width: 100%;
 }
@@ -173,4 +156,162 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   grid-area: product-image;
   object-fit: contain;
   font-family: 'object-fit: contain';
+}
+
+
+ /*  */
+.predictive-search {
+  padding: 60px;
+  max-height: initial !important;
+}
+
+.predictive-search__results-list {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.header-middle {
+  position: relative;
+}
+
+predictive-search[open] .predictive-search,
+predictive-search[product="true"] .predictive-search {
+  background-color: #F1F3F3;
+  box-shadow: 0px 2px 10px rgb(0 0 0 / 25%);
+  border-radius: 6px;
+  top: calc(80% + 6px);
+}
+
+.search-results__content {
+  display: grid;
+  grid-template-columns: 205px 1fr;
+}
+
+.search-results-suggested__header {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--color-link-text);
+  font-family: var(--my-font);
+  margin-bottom: 14px;
+}
+
+.search-results-suggested__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results-suggested__link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(----color-header);
+  font-family: var(--font-2);
+  text-transform: initial;
+}
+
+.search-results-suggested__item {
+  margin-bottom: 10px;
+}
+
+.predictive-search__heading {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--color-link-text);
+  font-family: var(--my-font);
+  margin-bottom: 16px;
+}
+
+#predictive-search-results,
+.search-results-suggested__product {
+  border-left: 1px solid #ccc;
+  padding-left: 40px;
+}
+
+.search-modal__form[open="true"]::before,
+.search-modal__form[product="true"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.search-modal__form[open="true"] .field,
+  .search-modal__form[product="true"] .field {
+  z-index: 7;
+  filter:drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.25));
+}
+
+.predictive-search__item {
+  display: inline-block;
+  width: auto;
+  padding: 13px 40px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #AC1229;
+  font-family: var(--my-font);
+  border: 2px solid currentcolor;
+  border-radius: 90px;
+}
+
+.predictive-search__list-item {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.search-results__content .card-product__picture{
+  box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  .search-results__content {
+    grid-template-columns: 1fr;
+  }
+
+  .predictive-search {
+    padding: 32px 24px;
+    top: 100% !important;
+    width: calc(100% - 40px);
+    margin: auto;
+    left: 0;
+    right: 0;
+    max-height: 80vh !important;
+  }
+
+  .predictive-search__container {
+    overflow: auto;
+  }
+
+  .predictive-search__results-list {
+    min-width: 747px;
+  }
+
+  #predictive-search-results,
+  .search-results-suggested__product {
+    padding-left: 0;
+    border: 0;
+    overflow: hidden;
+  }
+
+  .predictive-search__item {
+    padding: 13px;
+  }
+
+  .search-results-suggested {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+  }
 }
