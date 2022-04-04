@@ -1,5 +1,14 @@
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{% case section.settings.style %}
+  {% when 'old' %}
+    {{ 'section-newsletter--old.min.css' | asset_url | stylesheet_tag }} 
+    {{ 'newsletter-checker.js' | asset_url | script_tag }} 
+    {% assign background = 'background-light-blue' %}   
+  {% else %}
+    {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}  
+    {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+    {% capture background %}gradient{% endcapture %}
+{% endcase %}
+
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,8 +24,10 @@
   }
 {%- endstyle -%}
 
-<div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+<div class="newsletter center
+  {% if section.settings.style != "default" %}newsletter--{{ section.settings.style }}{% endif %}
+  {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
+  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} {{ background }} content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -26,36 +37,49 @@
         {%- when 'paragraph' -%}
           <div class="newsletter__subheading rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
         {%- when 'email_form' -%}
-          <div {{ block.shopify_attributes }}>
+          <div class="newsletter-form-wrapper" {{ block.shopify_attributes }}>
             {% form 'customer', class: 'newsletter-form' %}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="newsletter-form__field-wrapper">
                 <div class="field">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="field__input"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="Newsletter-error--{{ section.id }}"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="Newsletter-success--{{ section.id }}"
+                  <div class="field__input-wrapper">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="field__input js-newsletter-input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="Newsletter-error--{{ section.id }}"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="Newsletter-success--{{ section.id }}"
+                      {% endif %}
+                      placeholder="{{ 'newsletter.label' | t }}"
+                      required
+                    >
+
+                    <div class="newsletter__tooltip js-newsletter-tooltip"></div>
+                    
+                    {% if section.settings.style != 'old' %}
+                      <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                        {{ 'newsletter.label' | t }}
+                      </label>
                     {% endif %}
-                    placeholder="{{ 'newsletter.label' | t }}"
-                    required
-                  >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
+                  </div>
+
                   <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                    {% render 'icon-arrow' %}
+                    {% case section.settings.style %}
+                      {% when 'old' %}
+                        {{ block.settings.btn_text }}
+                      {% else %}
+                        {% render 'icon-arrow' %}                      
+                    {% endcase %}
                   </button>
                 </div>
                 {%- if form.errors -%}
@@ -78,6 +102,22 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "id": "style",
+      "type": "select",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "old",
+          "label": "Old style"
+        }
+      ],
+      "default": "default"
+    },
     {
       "type": "select",
       "id": "color_scheme",
@@ -125,7 +165,7 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
       "default": 40
@@ -135,7 +175,7 @@
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
@@ -191,7 +231,16 @@
     {
       "type": "email_form",
       "name": "t:sections.newsletter.blocks.email_form.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text",
+          "default": "Sign up",
+          "info": "Only available in Old style."
+        }
+      ]
     },
     {
       "type": "@app"

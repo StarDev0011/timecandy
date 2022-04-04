@@ -1,6 +1,7 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.min.css' | asset_url | stylesheet_tag }}
+{{ 'blog-categories.js' | asset_url | script_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -17,29 +18,71 @@
 {%- endstyle -%}
 
 {%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary">{{ blog.title | escape }}</h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true 
-          -%}
-        </div>
-      {%- endfor -%}
+  <div class="main-blog">
+    <div class="main-blog__banner">
+      <div class="page-width">
+        <h1 class="title--primary">{{ blog.title | escape }}</h1>
+      </div>
+      <img src="{{ 'wave.svg' | asset_url }}">
     </div>
 
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endif -%}
+    <div class="page-width section-{{ section.id }}">
+      <div class="main-blog__content">
+        <div class="blog-categories">
+          <h2 class="blog-categories__title">Categories</h2>
+          <ul class="blog-categories__list">
+            {% for tag in blog.all_tags %}
+              <li>{{ tag | link_to_tag: tag }}</li>
+            {% endfor %}
+          </ul>
+
+          <select class="blog-categories__list--mobile js-blog-categories">
+            <option target="{{ blog.url }}">All</option>
+            {% for tag in blog.all_tags %}
+            <option target="{{ blog.url }}/tagged/{{ tag.handle }}"
+              {% if current_tags contains tag %}selected{% endif %}>
+              {{ tag }}
+            </option>
+            {% endfor %}
+          </select>
+
+          <style>
+            .blog-categories__list--mobile {
+              background-image: url('{{ "icon-caret.svg" | asset_url }}');
+            }
+          </style>
+        </div>
+  
+        <div class="blog-articles-wrapper">
+          <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+            {%- for article in blog.articles -%}
+              <div class="blog-articles__article article">
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: false
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+          
+          {%- if paginate.pages > 1 -%}
+            {%- render 'pagination', paginate: paginate -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
   </div>
+
+  <style>
+    .main-blog__banner {
+      background-image: url("{{ 'dots-background.svg' | asset_url }}");
+    }
+  </style>
 {%- endpaginate -%}
 
 {% schema %}

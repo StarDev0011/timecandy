@@ -1,0 +1,31 @@
+.primary-btn {
+	background-color: #c91835;
+	color: white;
+	appearance: none;
+	font-family: var(--font-heading);
+	font-weight: 100;
+	text-transform: uppercase;
+	border: 0;
+	border-radius: 3px;
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: 10px 0;
+	padding: 14px;
+	text-decoration: none;
+	text-align: center;
+	transition: all ease-in-out 0.25s;
+	vertical-align: middle;
+	width: auto;
+	height: max-content;
+	white-space: normal;
+
+	&:hover {
+		background-color: #961228;
+		color: white;
+	}
+}
+
+.btn--wide {
+	width: 100%;
+}

@@ -1,0 +1,339 @@
+{{ 'section-custom-page-content.min.css' | asset_url | stylesheet_tag }}
+
+{% if section.blocks.size == 1 %}
+   {% assign isSingleCol= true %}   
+{% endif %}
+
+<section class="custom-page-content-section" id="Section{{ section.id }}">
+   <div class="page-width">
+      <div class="custom-page-content
+         {{ section.settings.container_width }}
+         {% if section.settings.enable_flex %}flex-center{% endif %}"
+      >
+         {% for block in section.blocks %}
+            <div class="custom-page-content__block {{ block.settings.width }}" id="Block{{ block.id }}">
+               {% case block.type %}                  
+                  {% when 'image' %}
+                     <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt}}" >
+                  {% else %}
+                     {% if block.settings.heading %}
+                        {% case block.settings.heading_type %}
+                           {% when 'heading1' %}
+                              <h1>{{ block.settings.heading }}</h1>      
+                           {% when 'heading2' %}
+                              <h2>{{ block.settings.heading }}</h2>      
+                        {% endcase %}
+                     {% endif %}
+                  
+                     <div class="custom-page-content__content">
+                        {{ block.settings.content }}
+                     </div>
+               {% endcase %}
+   
+               <style>
+                  #Block{{ block.id }} {
+                     padding-left: {{ block.settings.padding_left | escape }};
+                     padding-right: {{ block.settings.padding_right | escape }};
+                     padding-top: {{ block.settings.padding_top | escape }};
+                     padding-bottom: {{ block.settings.padding_bottom | escape }};
+                  }
+               </style>
+            </div>
+         {% endfor %}
+      </div>
+   </div>
+</section>
+
+<style>
+   #Section{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | escape }};
+      padding-bottom: {{ section.settings.padding_bottom | escape }};
+   }
+</style>
+
+{% schema %}
+   {
+      "name": "Custom page content",
+      "settings": [
+         {
+            "id": "container_width",
+            "type": "select",
+            "label": "Container width",
+            "info": "Applied in desktop screen",
+            "options": [
+               {
+                  "value": "full-width",
+                  "label": "Full width"
+               },
+               {
+                  "value": "eight-twelfths",
+                  "label": "Eight-twelfths width"
+               },
+               {
+                  "value": "six-tenths",
+                  "label": "Six-tenths width"
+               },
+               {
+                  "value": "half-width",
+                  "label": "Half width"
+               },
+               {
+                  "value": "one-thirds",
+                  "label": "One-thirds width"
+               },
+               {
+                  "value": "one-fourth",
+                  "label": "One-fourth width"
+               }
+            ]
+         },
+         {
+            "id": "padding_top",
+            "type": "text",
+            "label": "Padding top",
+            "default": "1.5em"
+         },
+         {
+            "id": "padding_bottom",
+            "type": "text",
+            "label": "Padding bottom",
+            "default": "1.5em"
+         },
+         {
+            "id": "enable_flex",
+            "type": "checkbox",
+            "label": "Enable center by flex",
+            "default": false
+         }
+      ],
+      "blocks": [
+         {
+            "name": "Text Content",
+            "type": "text-content",
+            "settings": [
+               {
+                  "id": "width",
+                  "type": "select",
+                  "label": "Width",
+                  "info": "Applied in desktop screen",
+                  "options": [
+                     {
+                        "value": "full-width",
+                        "label": "Full width"
+                     },
+                     {
+                        "value": "six-tenths",
+                        "label": "Six-tenths width"
+                     },
+                     {
+                        "value": "half-width",
+                        "label": "Half width"
+                     },
+                     {
+                        "value": "four-tenths",
+                        "label": "Four-tenths width"
+                     },
+                     {
+                        "value": "one-thirds",
+                        "label": "One-thirds width"
+                     },
+                     {
+                        "value": "one-fourth",
+                        "label": "One-fourth width"
+                     }
+                  ]
+               },
+               {
+                  "id": "padding_left",
+                  "type": "text",
+                  "label": "Padding left",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_right",
+                  "type": "text",
+                  "label": "Padding right",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
+                  "default": "0"
+               },      
+               {
+                  "id": "heading",
+                  "type": "text",
+                  "label": "Heading",
+                  "default": "Heading"
+               },
+               {
+                  "id": "heading_type",
+                  "type": "select",
+                  "label": "Heading type",
+                  "options": [
+                     {
+                        "value": "heading1",
+                        "label": "Heading 1"
+                     },
+                     {
+                        "value": "heading2",
+                        "label": "Heading 2"
+                     }
+                  ]
+               },
+               {
+                  "id": "content",
+                  "type": "richtext",
+                  "label": "Content"
+               }
+            ]
+         },
+         {
+            "name": "Custom Content",
+            "type": "custom-content",
+            "settings": [
+               {
+                  "id": "width",
+                  "type": "select",
+                  "label": "Width",
+                  "info": "Applied in desktop screen",
+                  "options": [
+                     {
+                        "value": "full-width",
+                        "label": "Full width"
+                     },
+                     {
+                        "value": "six-tenths",
+                        "label": "Six-tenths width"
+                     },
+                     {
+                        "value": "half-width",
+                        "label": "Half width"
+                     },
+                     {
+                        "value": "four-tenths",
+                        "label": "Four-tenths width"
+                     },
+                     {
+                        "value": "one-thirds",
+                        "label": "One-thirds width"
+                     },
+                     {
+                        "value": "one-fourth",
+                        "label": "One-fourth width"
+                     }
+                  ]
+               },
+               {
+                  "id": "padding_left",
+                  "type": "text",
+                  "label": "Padding left",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_right",
+                  "type": "text",
+                  "label": "Padding right",
+                  "default": "0"
+               },  
+               {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
+                  "default": "0"
+               },      
+               {
+                  "id": "content",
+                  "type": "html",
+                  "label": "Content"
+               }
+            ]
+         },
+         {
+            "name": "Image",
+            "type": "image",
+            "settings": [
+               {
+                  "id": "width",
+                  "type": "select",
+                  "label": "Width",
+                  "info": "Applied in desktop screen",
+                  "options": [
+                     {
+                        "value": "full-width",
+                        "label": "Full width"
+                     },
+                     {
+                        "value": "one-sixth",
+                        "label": "Six-tenths width"
+                     },
+                     {
+                        "value": "half-width",
+                        "label": "Half width"
+                     },
+                     {
+                        "value": "four-tenths",
+                        "label": "Four-tenths width"
+                     },
+                     {
+                        "value": "one-thirds",
+                        "label": "One-thirds width"
+                     },
+                     {
+                        "value": "one-fourth",
+                        "label": "One-fourth width"
+                     }
+                  ]
+               },     
+               {
+                  "id": "padding_left",
+                  "type": "text",
+                  "label": "Padding left",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_right",
+                  "type": "text",
+                  "label": "Padding right",
+                  "default": "0"
+               },      
+               {
+                  "id": "padding_top",
+                  "type": "text",
+                  "label": "Padding top",
+                  "default": "0"
+               },
+               {
+                  "id": "padding_bottom",
+                  "type": "text",
+                  "label": "Padding bottom",
+                  "default": "0"
+               },      
+               {
+                  "id": "image",
+                  "type": "image_picker",
+                  "label": "Image"
+               }
+            ]
+         }
+      ],
+      "presets": [
+         {
+            "name": "Custom page content"
+         }
+      ]
+   }
+{% endschema %}
