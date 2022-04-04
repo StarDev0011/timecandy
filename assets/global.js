@@ -874,7 +874,7 @@ class VariantSelects extends HTMLElement {
       addButtonText.textContent = window.variantStrings.addToCart;
       if($('.quick-add').length) {
         addButton.style.display = 'block';
-        addBackInstock.style.display = 'none'; 
+        addBackInstock.style.display = 'none';
       }
     }
 

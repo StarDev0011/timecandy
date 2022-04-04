@@ -155,7 +155,7 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text focus-inse">
-              <img src="{{ 'logo.svg' | asset_url }}"  width="{{section.settings.logo_width}}"  alt="{{ shop.name }}" itemprop="logo"> 
+              <img src="{{ 'logo.svg' | asset_url }}"  width="{{section.settings.logo_size}}"  alt="{{ shop.name }}" itemprop="logo"> 
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -193,6 +193,19 @@
                     <use href="#icon-search">
                   </svg>
                 </button>
+                <div class="close-search">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1970_54029)">
+                    <line x1="1.49491" y1="1.00496" x2="15.4949" y2="15.005" stroke="#262626" stroke-width="1.4"/>
+                    <line x1="1.47561" y1="15.0344" x2="15.4756" y2="1.03443" stroke="#262626" stroke-width="1.4"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1970_54029">
+                    <rect width="16" height="15" fill="white" transform="translate(0 0.499985)"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                </div>
               </div>
 
               {%- if settings.predictive_search_enabled -%}
@@ -203,7 +216,36 @@
                     </svg>
                   </div>
                 </div>
-
+                <!--  -->
+                <div class="predictive-search predictive-search--product" data-search-products>
+                  {% assign suggested = settings.suggested | split: ',' %}
+                  <div class="search-results__content">
+                    <div class="search-results-suggested">
+                      <div class="search-results-suggested__header">top search terms</div>
+                      <div class="search-results-suggested__content">
+                        <ul class="search-results-suggested__list">
+                          {% for term in suggested %}
+                            <li class="search-results-suggested__item">
+                              <a class="search-results-suggested__link" href="/search?q={{ term }}"> {{ term }} </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="search-results-suggested__product">
+                      <h2 class="predictive-search__heading">Top products</h2>
+                      <div class="predictive-search__container">
+                        <div class="predictive-search__results-list col-3">
+                          {%- assign collection = collections[settings.collection] -%}
+                          {% for product in collection.products limit: 3 %}
+                            {% render 'search--product-card', product: product %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
                 <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
               {%- endif -%}
             </form>
@@ -211,7 +253,7 @@
             </predictive-search>
           {%- endif -%}
         </div>
-      </div> 
+      </div>
 
       <div class="header__icons">
         {%- if shop.customer_accounts_enabled -%}
@@ -494,13 +536,13 @@
   "settings": [
     {
       "type": "range",
-      "id": "logo_width",
-      "min": 100,
+      "id": "logo_size",
+      "unit": "t:sections.header.settings.logo_width.unit",
+      "label": "t:sections.header.settings.logo_width.label",
+      "min": 150,
       "max": 300,
       "step": 5,
-      "default": 255,
-      "unit": "t:sections.header.settings.logo_width.unit",
-      "label": "t:sections.header.settings.logo_width.label"
+      "default": 255
     },
     {
       "type": "link_list",

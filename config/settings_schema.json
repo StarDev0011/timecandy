@@ -1112,18 +1112,15 @@
         "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
       },
       {
-        "type": "checkbox",
-        "id": "predictive_search_show_vendor",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+        "type": "collection",
+        "id": "collection",
+        "label": "Select collection"
       },
       {
-        "type": "checkbox",
-        "id": "predictive_search_show_price",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+        "type": "textarea",
+        "id": "suggested",
+        "label": "Suggested",
+        "default": "Sollicitudin, Egestas, Tristique, Mollis, Risus"
       }
     ]
   },

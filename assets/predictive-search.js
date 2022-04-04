@@ -3,6 +3,8 @@ class PredictiveSearch extends HTMLElement {
     super();
     this.cachedResults = {};
     this.input = this.querySelector('input[type="search"]');
+    this.closeIconSearch = this.querySelector('.close-search');
+    this.searchProduct = document.querySelector('[data-search-products]');
     this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
     this.isOpen = false;
 
@@ -43,24 +45,43 @@ class PredictiveSearch extends HTMLElement {
 
   onFocus() {
     const searchTerm = this.getQuery();
-
-    if (!searchTerm.length) return;
-
+    this.closeIconSearch.style.display = 'block';
+    if (!searchTerm.length) {
+      this.searchProduct.style.display = 'block';
+      this.setAttribute('product', true);
+    } else {
+      this.searchProduct.style.display = 'none';
+      this.setAttribute('product', false);
+    }
     if (this.getAttribute('results') === 'true') {
       this.open();
-    } else {
-      this.getSearchResults(searchTerm);
     }
+    // else {
+      // this.getSearchResults(searchTerm);
+    // }
   }
 
   onFocusOut() {
     setTimeout(() => {
-      if (!this.contains(document.activeElement)) this.close();
+      if (!this.contains(document.activeElement)) {
+        this.searchProduct.style.display = 'none';
+        this.closeIconSearch.style.display = 'none';
+        this.setAttribute('product', false);
+        this.close();
+      }
     })
   }
 
   onKeyup(event) {
-    if (!this.getQuery().length) this.close(true);
+    if (!this.getQuery().length) {
+      this.close(true);
+      this.searchProduct.style.display = 'block';
+      this.setAttribute('product', true);
+    } else {
+      this.searchProduct.style.display = 'none';
+      this.setAttribute('product', false);
+    };
+
     event.preventDefault();
 
     switch (event.code) {
@@ -128,7 +149,7 @@ class PredictiveSearch extends HTMLElement {
       return;
     }
 
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&${encodeURIComponent('resources[limit]')}=4&section_id=predictive-search`)
+    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&${encodeURIComponent('resources[limit]')}=3&section_id=predictive-search`)
       .then((response) => {
         if (!response.ok) {
           var error = new Error(response.status);

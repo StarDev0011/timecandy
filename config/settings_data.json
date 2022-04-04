@@ -153,7 +153,6 @@
           "95918a9a-7581-4b5d-b684-26ed10f073b8"
         ],
         "settings": {
-          "logo_width": 255,
           "menu": "menu-home",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
@@ -345,7 +344,6 @@
         "header": {
           "type": "header",
           "settings": {
-            "logo_width": 90,
             "menu": "main-menu",
             "show_line_separator": true,
             "enable_sticky_header": true,
