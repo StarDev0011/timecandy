@@ -3,6 +3,7 @@ class PredictiveSearch extends HTMLElement {
     super();
     this.cachedResults = {};
     this.input = this.querySelector('input[type="search"]');
+    this.closeIconSearch = this.querySelector('.close-search');
     this.searchProduct = document.querySelector('[data-search-products]');
     this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
     this.isOpen = false;
@@ -44,6 +45,7 @@ class PredictiveSearch extends HTMLElement {
 
   onFocus() {
     const searchTerm = this.getQuery();
+    this.closeIconSearch.style.display = 'block';
     if (!searchTerm.length) {
       this.searchProduct.style.display = 'block';
       this.setAttribute('product', true);
@@ -63,6 +65,7 @@ class PredictiveSearch extends HTMLElement {
     setTimeout(() => {
       if (!this.contains(document.activeElement)) {
         this.searchProduct.style.display = 'none';
+        this.closeIconSearch.style.display = 'none';
         this.setAttribute('product', false);
         this.close();
       }
@@ -165,41 +168,6 @@ class PredictiveSearch extends HTMLElement {
         this.close();
         throw error;
       });
-    this.getSuggestedTerms(searchTerm);
-  }
-
-  getSuggestedTerms(searchTerm) {
-    const proxy = 'https://cors-everywhere.herokuapp.com/';
-    fetch(`${proxy}https://google.com/complete/search?client=firefox&hl=en&q=${searchTerm}`, {
-      headers: { origin: 'google.com' }
-    })
-    .then(res => res.json())
-    .then(res => {
-      res[1].map(function(x) {
-        console.log(x);
-      }).join('')
-    });
-    // let emptyArray = [];
-    // $.getJSON(proxy + '/search/suggest.json', {
-    //   'q' : '' + searchTerm + '',
-    //   'resources' : {
-    //     'type' : 'product',
-    //     'limit' : 8,
-    //     'options' : {
-    //       'unavailable_products' : 'last',
-    //       'fields' : 'title,product_type,variants.title'
-    //     }
-    //   }
-    // }).done(function (response) {
-    //   const productSuggestions = response.resources.results.products;
-    //   if (productSuggestions.length > 0) {
-    //     productSuggestions.map(function(product) {
-    //       const dataTitle = product.title
-    //       console.log(dataTitle)
-    //     }).join('');
-    //   }
-    // })
-    //
   }
 
   setLiveRegionLoadingState() {

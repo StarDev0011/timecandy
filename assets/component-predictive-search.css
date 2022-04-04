@@ -275,6 +275,14 @@ predictive-search[product="true"] .predictive-search {
   box-shadow: none;
 }
 
+.close-search {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 8px);
+  cursor: pointer;
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .predictive-search {
     width: calc(100% - 40px);
