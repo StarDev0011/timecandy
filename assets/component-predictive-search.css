@@ -275,18 +275,19 @@ predictive-search[product="true"] .predictive-search {
   box-shadow: none;
 }
 
-@media (max-width: 767px) {
-  .search-results__content {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 1200px) {
   .predictive-search {
-    padding: 32px 24px;
-    top: 100% !important;
     width: calc(100% - 40px);
     margin: auto;
     left: 0;
     right: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .predictive-search {
+    padding: 32px 24px;
+    top: 100% !important;
     max-height: 80vh !important;
   }
 
@@ -296,6 +297,17 @@ predictive-search[product="true"] .predictive-search {
 
   .predictive-search__results-list {
     min-width: 747px;
+  }
+
+  #predictive-search-results,
+  .search-results-suggested__product {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-results__content {
+    grid-template-columns: 1fr;
   }
 
   #predictive-search-results,
