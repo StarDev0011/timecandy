@@ -276,8 +276,8 @@
           "type": "custom-content",
           "settings": {
             "width": "half-width",
-            "padding_left": "10px",
-            "padding_right": "10px",
+            "padding_left": "5px",
+            "padding_right": "5px",
             "padding_top": "30px",
             "padding_bottom": "30px",
             "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/I0S0piyzJXU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
@@ -287,8 +287,8 @@
           "type": "custom-content",
           "settings": {
             "width": "half-width",
-            "padding_left": "10px",
-            "padding_right": "10px",
+            "padding_left": "5px",
+            "padding_right": "5px",
             "padding_top": "30px",
             "padding_bottom": "60px",
             "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Uz36yGpqtIo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
