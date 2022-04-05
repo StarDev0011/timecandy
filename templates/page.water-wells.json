@@ -93,12 +93,66 @@
         "padding_bottom": "1.5em",
         "enable_flex": false
       }
+    },
+    "16491414925759bb6b": {
+      "type": "custom-page-content",
+      "blocks": {
+        "3a706095-b9c3-4764-884f-b7a012ded290": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "A MAJOR FACTOR CONTRIBUTING TO THE SHORT LIFE EXPECTANCY IS THE LACK OF CLEAN DRINKING WATER.",
+            "heading_type": "heading2",
+            "content": "<p>We saw the need wherever we went. We experienced the need ourselves. And, the solution is incredibly simple. A water well can be drilled just about anywhere in the country. Water is found in the range of 150 to 300 feet below the surface. Hear what missionary Tom McLane has to say about the most basic human need for water in West Africa...<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3a706095-b9c3-4764-884f-b7a012ded290"
+      ],
+      "settings": {
+        "container_width": "half-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649141796182ac431": {
+      "type": "custom-page-content",
+      "blocks": {
+        "532d1d2e-b400-4750-af8a-97fd639f04cc": {
+          "type": "custom-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Yc4CBGcLgM4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "532d1d2e-b400-4750-af8a-97fd639f04cc"
+      ],
+      "settings": {
+        "container_width": "one-thirds",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
     }
   },
   "order": [
     "main",
     "16491411523dd0117a",
     "1649141265211324d5",
-    "1649141446db6f85c2"
+    "1649141446db6f85c2",
+    "16491414925759bb6b",
+    "1649141796182ac431"
   ]
 }
