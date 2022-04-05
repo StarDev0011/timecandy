@@ -31,28 +31,14 @@
             "heading_type": "heading1",
             "content": "<p>In 2007 Karen and I took a 2 week trip to Sierra Leone, West Africa in support of our church's missionary family living there. This experience changed our lives forever.<\/p><p>Sierra Leone is a small West African nation, and sadly the poorest country in the world. From 1991 to 2002 Sierra Leone was fighting a horrific civil war. It is the country featured in the movie, \"Blood Diamond\" with Leonardo DiCaprio. The poverty we witnessed here was staggering. Most of the population don't have access to clean water which leads to hunger, malnutrition, poor sanitation and an increase disease.<\/p><p>Before leaving Sierra Leone I asked our missionary what he believed to be the greatest need in Sierra Leone. His answer came quickly... water. We decided to get involved with the Africa Oasis Project which partners with our churches in Africa to provide deep-water wells, irrigation, sanitation training, and sewage management.<\/p>"
           }
-        }
-      },
-      "block_order": [
-        "0d960ec4-8471-48bc-bd02-8127f18ea758"
-      ],
-      "settings": {
-        "container_width": "half-width",
-        "padding_top": "1.5em",
-        "padding_bottom": "1.5em",
-        "enable_flex": false
-      }
-    },
-    "1649141324b4493bbb": {
-      "type": "custom-page-content",
-      "blocks": {
-        "bc025bcd-b0a6-4888-ae4a-9274fe0441a2": {
+        },
+        "0368d01a-5d35-47e7-b1bc-d5e75a799bca": {
           "type": "text-content",
           "settings": {
             "width": "full-width",
-            "padding_left": "0",
+            "padding_left": "",
             "padding_right": "0",
-            "padding_top": "0",
+            "padding_top": "50px",
             "padding_bottom": "0",
             "heading": "WHAT IT COSTS",
             "heading_type": "heading2",
@@ -61,7 +47,8 @@
         }
       },
       "block_order": [
-        "bc025bcd-b0a6-4888-ae4a-9274fe0441a2"
+        "0d960ec4-8471-48bc-bd02-8127f18ea758",
+        "0368d01a-5d35-47e7-b1bc-d5e75a799bca"
       ],
       "settings": {
         "container_width": "half-width",
@@ -80,7 +67,8 @@
             "padding_left": "1rem",
             "padding_right": "1rem",
             "padding_top": "0",
-            "padding_bottom": "0"
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-1_460x305_crop_center_2x_b9cfbbb9-b607-46e2-9cfb-79098516b7a1.png"
           }
         },
         "7ce22762-891e-4dcb-a2b0-0f2a9aeb1be1": {
@@ -90,7 +78,8 @@
             "padding_left": "1rem",
             "padding_right": "1rem",
             "padding_top": "0",
-            "padding_bottom": "0"
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-2_460x305_crop_center_2x_92876192-24b9-4074-9063-794c2940e933.png"
           }
         }
       },
@@ -100,7 +89,7 @@
       ],
       "settings": {
         "container_width": "eight-twelfths",
-        "padding_top": "1.5em",
+        "padding_top": "1em",
         "padding_bottom": "1.5em",
         "enable_flex": false
       }
@@ -110,7 +99,6 @@
     "main",
     "16491411523dd0117a",
     "1649141265211324d5",
-    "1649141324b4493bbb",
     "1649141446db6f85c2"
   ]
 }
