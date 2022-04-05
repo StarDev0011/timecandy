@@ -264,7 +264,7 @@
       ],
       "settings": {
         "container_width": "six-tenths",
-        "padding_top": "1.5em",
+        "padding_top": "7em",
         "padding_bottom": "1.5em",
         "enable_flex": false
       }
