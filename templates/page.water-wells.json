@@ -241,8 +241,24 @@
             "padding_bottom": "0",
             "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png"
           }
-        },
-        "d9ce831a-8659-499b-9ae0-eb078e4ea74c": {
+        }
+      },
+      "block_order": [
+        "d632c937-4692-4262-86dc-413a99268b7f",
+        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55",
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90"
+      ],
+      "settings": {
+        "container_width": "six-tenths",
+        "padding_top": "7em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "164914286116fab5b2": {
+      "type": "custom-page-content",
+      "blocks": {
+        "4b3edaf2-c4f8-40b9-be07-a575d0695515": {
           "type": "text-content",
           "settings": {
             "width": "six-sevenths",
@@ -257,14 +273,11 @@
         }
       },
       "block_order": [
-        "d632c937-4692-4262-86dc-413a99268b7f",
-        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55",
-        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90",
-        "d9ce831a-8659-499b-9ae0-eb078e4ea74c"
+        "4b3edaf2-c4f8-40b9-be07-a575d0695515"
       ],
       "settings": {
         "container_width": "six-tenths",
-        "padding_top": "7em",
+        "padding_top": "1.5em",
         "padding_bottom": "1.5em",
         "enable_flex": false
       }
@@ -352,6 +365,7 @@
     "1649141796182ac431",
     "164914202125ead99d",
     "16491420242bee22d3",
+    "164914286116fab5b2",
     "1649142356939b647f",
     "16491428293e641f1e"
   ]
