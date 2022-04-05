@@ -276,7 +276,7 @@
           "type": "custom-content",
           "settings": {
             "width": "half-width",
-            "padding_left": "0",
+            "padding_left": "5em",
             "padding_right": "10px",
             "padding_top": "0",
             "padding_bottom": "0",
@@ -288,7 +288,7 @@
           "settings": {
             "width": "half-width",
             "padding_left": "0",
-            "padding_right": "0",
+            "padding_right": "5em",
             "padding_top": "0",
             "padding_bottom": "60px",
             "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Uz36yGpqtIo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
