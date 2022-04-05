@@ -145,6 +145,73 @@
         "padding_bottom": "1.5em",
         "enable_flex": false
       }
+    },
+    "164914202125ead99d": {
+      "type": "statistics-fact",
+      "blocks": {
+        "16491420215b2d1809-0": {
+          "type": "statistics",
+          "settings": {
+            "label": "Infant Mortality Rate",
+            "value": "15.8%"
+          }
+        },
+        "16491420215b2d1809-1": {
+          "type": "statistics",
+          "settings": {
+            "label": "of children don’t survive age 5.",
+            "value": "27.8%"
+          }
+        },
+        "16491420215b2d1809-2": {
+          "type": "statistics",
+          "settings": {
+            "label": "live below the poverty line.",
+            "value": "70%"
+          }
+        },
+        "16491420215b2d1809-3": {
+          "type": "statistics",
+          "settings": {
+            "label": "Approximate life expectancy",
+            "value": "40 YRS"
+          }
+        },
+        "16491420215b2d1809-4": {
+          "type": "statistics",
+          "settings": {
+            "label": "women dies in childbirth",
+            "value": "1 IN 6"
+          }
+        },
+        "16491420215b2d1809-5": {
+          "type": "statistics",
+          "settings": {
+            "label": "do not have access to clean water.",
+            "value": "~50%"
+          }
+        }
+      },
+      "block_order": [
+        "16491420215b2d1809-0",
+        "16491420215b2d1809-1",
+        "16491420215b2d1809-2",
+        "16491420215b2d1809-3",
+        "16491420215b2d1809-4",
+        "16491420215b2d1809-5"
+      ],
+      "settings": {
+        "title": "The facts about sierrea loene"
+      }
+    },
+    "16491420242bee22d3": {
+      "type": "custom-page-content",
+      "settings": {
+        "container_width": "full-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
     }
   },
   "order": [
@@ -153,6 +220,8 @@
     "1649141265211324d5",
     "1649141446db6f85c2",
     "16491414925759bb6b",
-    "1649141796182ac431"
+    "1649141796182ac431",
+    "164914202125ead99d",
+    "16491420242bee22d3"
   ]
 }
