@@ -1,45 +1,30 @@
 {%- if predictive_search.performed -%}
-  {% assign suggested = settings.suggested | split: ',' %}
-  <div class="search-results__content">
-    <div class="search-results-suggested">
-      <div class="search-results-suggested__header">Suggested terms</div>
-      <div class="search-results-suggested__content">
-        <ul class="search-results-suggested__list">
-          {% for term in suggested %}
-            <li class="search-results-suggested__item">
-              <a class="search-results-suggested__link" href="/search?q={{ term }}"> {{ term }} </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <div id="predictive-search-results">
-      {%- if predictive_search.resources.products.size > 0 -%}
-        <h2 id="predictive-search-products" class="predictive-search__heading text-body caption-with-letter-spacing">
-          {{ 'templates.search.products' | t }}
+  <div id="predictive-search-results">
+    {%- if predictive_search.resources.products.size > 0 -%}
+      <h2 id="predictive-search-products" class="predictive-search__heading text-body caption-with-letter-spacing">
+        {{ 'templates.search.products' | t }}
 
-          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-          </svg>
-        </h2>
-      {%- endif -%}
-      <div class="predictive-search__container">
-        <div id="predictive-search-results-list" class="predictive-search__results-list list-unstyled col-3" role="listbox" aria-labelledby="predictive-search-products">
-          {%- for product in predictive_search.resources.products -%}
-            {% render 'search--product-card', product: product %}
-          {%- endfor -%}
-          <!-- <div id="predictive-search-option-search-keywords" class="predictive-search__list-item" role="option">
-            <button class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow" tabindex="-1">
-              {{ 'templates.search.search_for' | t: terms: predictive_search.terms }}
-            </button>
-          </div> -->
-        </div>
-      </div>
-      <div class="predictive-search__loading-state" aria-hidden="true">
         <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
           <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
         </svg>
+      </h2>
+    {%- endif -%}
+    <div class="predictive-search__container">
+      <div id="predictive-search-results-list" class="predictive-search__results-list list-unstyled col-3" role="listbox" aria-labelledby="predictive-search-products">
+        {%- for product in predictive_search.resources.products -%}
+          {% render 'search--product-card', product: product %}
+        {%- endfor -%}
+        <!-- <div id="predictive-search-option-search-keywords" class="predictive-search__list-item" role="option">
+          <button class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow" tabindex="-1">
+            {{ 'templates.search.search_for' | t: terms: predictive_search.terms }}
+          </button>
+        </div> -->
       </div>
+    </div>
+    <div class="predictive-search__loading-state" aria-hidden="true">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+      </svg>
     </div>
   </div>
   <div id="predictive-search-option-search-keywords" class="predictive-search__list-item" role="option">
@@ -52,7 +37,7 @@
           {{ 'templates.search.results_with_count' | t: terms: predictive_search.terms, count: predictive_search.resources.products.size }}
         {%- endif -%}
       </span>
-      <span>{{ 'templates.search.search_for' | t: terms: predictive_search.terms }}</span>
+      <span>for '{{ predictive_search.terms }}'</span>
     </button>
   </div>
 {%- endif -%}

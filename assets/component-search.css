@@ -58,7 +58,7 @@ input::-webkit-search-decoration {
 @media(max-width: 749px){
   .search__input.field__input{
     height: 40px;
-    padding-left: 68px;
+    padding-left: 60px;
   }
   .search__button{
     width: 40px;

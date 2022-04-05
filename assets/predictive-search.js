@@ -30,7 +30,7 @@ class PredictiveSearch extends HTMLElement {
 
   onChange() {
     const searchTerm = this.getQuery();
-
+    this.getSuggestedTerms(searchTerm);
     if (!searchTerm.length) {
       this.close(true);
       return;
@@ -143,7 +143,7 @@ class PredictiveSearch extends HTMLElement {
   getSearchResults(searchTerm) {
     const queryKey = searchTerm.replace(" ", "-").toLowerCase();
     this.setLiveRegionLoadingState();
-
+    this.getSuggestedTerms(searchTerm);
     if (this.cachedResults[queryKey]) {
       this.renderSearchResults(this.cachedResults[queryKey]);
       return;
@@ -168,6 +168,21 @@ class PredictiveSearch extends HTMLElement {
         this.close();
         throw error;
       });
+  }
+
+  getSuggestedTerms(searchTerm) {
+    let emptyArray = [];
+    if(searchTerm) {
+      emptyArray = suggested.filter(function(data) {
+        return data.toLocaleLowerCase().startsWith(searchTerm.toLocaleLowerCase())
+      });
+
+      emptyArray = emptyArray.slice(0, 5).map(function(data) {
+        let url = data.replace(/\s+/g, '+');
+        return data = '<li class="search-results-suggested__item"><a class="search-results-suggested__link" href="/search?q='+url+'">'+data+'</a></li>';
+      });
+      $('[data-suggested-list]').html(emptyArray);
+    }
   }
 
   setLiveRegionLoadingState() {
