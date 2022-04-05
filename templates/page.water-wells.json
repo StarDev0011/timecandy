@@ -206,8 +206,50 @@
     },
     "16491420242bee22d3": {
       "type": "custom-page-content",
+      "blocks": {
+        "d632c937-4692-4262-86dc-413a99268b7f": {
+          "type": "text-content",
+          "settings": {
+            "width": "six-tenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "THE BOOK OF HOPE",
+            "heading_type": "heading2",
+            "content": "<p>While in Africa we shared the hope of Jesus Christ with a people for whom you would think there is little hope. With the help of our small group of 9 people, we visited 34 schools, distributing Christian booklets called the Book of Hope to over 24,000 students and teachers. The Book of Hope is a scripture book designed to engage and speak to the needs of children and youth within various African cultures.<\/p><p>The children in these pictures are fortunate because their families have enough money to send them to school. There is no public education in Sierra Leone, you must pay to go to school. Some students actually sneak into the classrooms. In one school with an enrollment of 1200 pupils we distributed over 1300 booklets. The hope for Sierra Leone and West Africa is in these children.<\/p><p>Most children in Sierra Leone are not so fortunate. According to recent report by UNICEF, 78% of the children between the ages of 7 and 14 are engaged in child labor. The study, which covered one quarter of the world's population, ranked Sierra Leone last among nations surveyed. Our Christian faith teaches that it is not enough to tell people about Jesus without attempting to provide for their human needs (James 2:14-17).<\/p>"
+          }
+        },
+        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55": {
+          "type": "image",
+          "settings": {
+            "width": "four-tenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-3_355x260_crop_center_2x_f57a8deb-20a4-49da-800b-9d0a3f764335.png"
+          }
+        },
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90": {
+          "type": "image",
+          "settings": {
+            "width": "four-tenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png"
+          }
+        }
+      },
+      "block_order": [
+        "d632c937-4692-4262-86dc-413a99268b7f",
+        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55",
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90"
+      ],
       "settings": {
-        "container_width": "full-width",
+        "container_width": "six-tenths",
         "padding_top": "1.5em",
         "padding_bottom": "1.5em",
         "enable_flex": false
