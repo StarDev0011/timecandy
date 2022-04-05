@@ -2,13 +2,115 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "16491411523dd0117a": {
+      "type": "donate-now",
+      "settings": {
+        "desc": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water seems like such a small sacrifice, but it truly does make a difference in our world.<\/p><p>In 2021 our customers donated $5812 which we matched for a total of $11,624. Thank you for your generosity.<\/p>",
+        "btn_text": "Donate now",
+        "btn_link": "https:\/\/www.oldtimecandy.com\/products\/water-wells-donation"
+      }
+    },
+    "1649141265211324d5": {
+      "type": "custom-page-content",
+      "blocks": {
+        "0d960ec4-8471-48bc-bd02-8127f18ea758": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "MAKING A DIFFERENCE IN SIERRA LEONE",
+            "heading_type": "heading1",
+            "content": "<p>In 2007 Karen and I took a 2 week trip to Sierra Leone, West Africa in support of our church's missionary family living there. This experience changed our lives forever.<\/p><p>Sierra Leone is a small West African nation, and sadly the poorest country in the world. From 1991 to 2002 Sierra Leone was fighting a horrific civil war. It is the country featured in the movie, \"Blood Diamond\" with Leonardo DiCaprio. The poverty we witnessed here was staggering. Most of the population don't have access to clean water which leads to hunger, malnutrition, poor sanitation and an increase disease.<\/p><p>Before leaving Sierra Leone I asked our missionary what he believed to be the greatest need in Sierra Leone. His answer came quickly... water. We decided to get involved with the Africa Oasis Project which partners with our churches in Africa to provide deep-water wells, irrigation, sanitation training, and sewage management.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "0d960ec4-8471-48bc-bd02-8127f18ea758"
+      ],
+      "settings": {
+        "container_width": "half-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649141324b4493bbb": {
+      "type": "custom-page-content",
+      "blocks": {
+        "bc025bcd-b0a6-4888-ae4a-9274fe0441a2": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "WHAT IT COSTS",
+            "heading_type": "heading2",
+            "content": "<p>Investing in water solutions for Africa creates long-term solutions and clean water for generations to come. Each well serves around 2,000 people. That means it costs only about $3.50 to provide clean water for 20 years.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bc025bcd-b0a6-4888-ae4a-9274fe0441a2"
+      ],
+      "settings": {
+        "container_width": "half-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649141446db6f85c2": {
+      "type": "custom-page-content",
+      "blocks": {
+        "163afa01-9403-4ff3-a135-d7fb5962ef2b": {
+          "type": "image",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "1rem",
+            "padding_right": "1rem",
+            "padding_top": "0",
+            "padding_bottom": "0"
+          }
+        },
+        "7ce22762-891e-4dcb-a2b0-0f2a9aeb1be1": {
+          "type": "image",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "1rem",
+            "padding_right": "1rem",
+            "padding_top": "0",
+            "padding_bottom": "0"
+          }
+        }
+      },
+      "block_order": [
+        "163afa01-9403-4ff3-a135-d7fb5962ef2b",
+        "7ce22762-891e-4dcb-a2b0-0f2a9aeb1be1"
+      ],
+      "settings": {
+        "container_width": "eight-twelfths",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "16491411523dd0117a",
+    "1649141265211324d5",
+    "1649141324b4493bbb",
+    "1649141446db6f85c2"
   ]
 }
