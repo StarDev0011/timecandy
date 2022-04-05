@@ -179,7 +179,7 @@ predictive-search[product="true"] .predictive-search {
   background-color: #F1F3F3;
   box-shadow: 0px 2px 10px rgb(0 0 0 / 25%);
   border-radius: 6px;
-  top: calc(80% + 6px);
+  top: calc(80% + 9px);
 }
 
 .search-results__content {
@@ -208,9 +208,13 @@ predictive-search[product="true"] .predictive-search {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: var(----color-header);
+  color: var(--color-header);
   font-family: var(--font-2);
   text-transform: initial;
+}
+
+.search__input.field__input {
+  color: var(--color-header) !important;
 }
 
 .search-results-suggested__item {
@@ -227,7 +231,7 @@ predictive-search[product="true"] .predictive-search {
   margin-bottom: 16px;
 }
 
-#predictive-search-results,
+.search-results-suggested__inner,
 .search-results-suggested__product {
   border-left: 1px solid #ccc;
   padding-left: 40px;
@@ -241,7 +245,7 @@ predictive-search[product="true"] .predictive-search {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -283,9 +287,9 @@ predictive-search[product="true"] .predictive-search {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1230px) {
   .predictive-search {
-    width: calc(100% - 40px);
+    width: calc(100% - 32px);
     margin: auto;
     left: 0;
     right: 0;
@@ -294,7 +298,7 @@ predictive-search[product="true"] .predictive-search {
 
 @media (max-width: 990px) {
   .predictive-search {
-    padding: 32px 24px;
+    padding: 32px 20px;
     top: 100% !important;
     max-height: 80vh !important;
   }
@@ -307,7 +311,7 @@ predictive-search[product="true"] .predictive-search {
     min-width: 747px;
   }
 
-  #predictive-search-results,
+  .search-results-suggested__inner,
   .search-results-suggested__product {
     overflow: hidden;
   }
@@ -318,7 +322,7 @@ predictive-search[product="true"] .predictive-search {
     grid-template-columns: 1fr;
   }
 
-  #predictive-search-results,
+  .search-results-suggested__inner,
   .search-results-suggested__product {
     padding-left: 0;
     border: 0;
@@ -333,5 +337,17 @@ predictive-search[product="true"] .predictive-search {
     border-bottom: 1px solid #ccc;
     padding-bottom: 18px;
     margin-bottom: 28px;
+  }
+
+  .predictive-search__list-item {
+    margin-top: 16px;
+  }
+
+  predictive-search[open] .predictive-search, predictive-search[product=true] .predictive-search {
+    box-shadow: none;
+  }
+
+  .predictive-search__results-list {
+    grid-gap: 12px;
   }
 }

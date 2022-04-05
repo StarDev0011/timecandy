@@ -23,11 +23,10 @@
       <div class="page-width">
         <h1 class="title--primary">{{ blog.title | escape }}</h1>
       </div>
-      <img class="main-blog__banner--background" src="{{ 'dots-background.svg' | asset_url }}">
-      <img class="main-blog__banner--wave" src="{{ 'wave.svg' | asset_url }}">
+      <img src="{{ 'wave.svg' | asset_url }}">
     </div>
 
-    <div class="page-width main-blog__content-wrapper section-{{ section.id }}">
+    <div class="page-width section-{{ section.id }}">
       <div class="main-blog__content">
         <div class="blog-categories">
           <h2 class="blog-categories__title">Categories</h2>
@@ -78,6 +77,12 @@
       </div>
     </div>
   </div>
+
+  <style>
+    .main-blog__banner {
+      background-image: url("{{ 'dots-background.svg' | asset_url }}");
+    }
+  </style>
 {%- endpaginate -%}
 
 {% schema %}
