@@ -241,15 +241,66 @@
             "padding_bottom": "0",
             "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png"
           }
+        },
+        "d9ce831a-8659-499b-9ae0-eb078e4ea74c": {
+          "type": "text-content",
+          "settings": {
+            "width": "six-sevenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "YOU CAN HELP PROVIDE CLEAN WATER TO AFRICA FOR THE COST OF JUST ONE BOTTLE OF WATER...",
+            "heading_type": "heading2",
+            "content": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water seems like such a small sacrifice, but It truly does make a difference in our world.<\/p><p>Karen and Don Bridge, Owners <br\/>Old Time Candy Company<\/p><p>Read the <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/steve_and_glenda_newsletter.pdf\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/steve_and_glenda_newsletter.pdf\">latest newsletter<\/a> from the missionaries on the ground in Africa.<\/p>"
+          }
         }
       },
       "block_order": [
         "d632c937-4692-4262-86dc-413a99268b7f",
         "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55",
-        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90"
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90",
+        "d9ce831a-8659-499b-9ae0-eb078e4ea74c"
       ],
       "settings": {
         "container_width": "six-tenths",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649142356939b647f": {
+      "type": "custom-page-content",
+      "blocks": {
+        "29d5e81a-0f69-478d-83dd-c2ead99a7306": {
+          "type": "custom-content",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "0",
+            "padding_right": "10px",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/I0S0piyzJXU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        },
+        "fa5b0b93-20f6-4d32-8b51-22a685b36859": {
+          "type": "custom-content",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Uz36yGpqtIo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "29d5e81a-0f69-478d-83dd-c2ead99a7306",
+        "fa5b0b93-20f6-4d32-8b51-22a685b36859"
+      ],
+      "settings": {
+        "container_width": "eight-twelfths",
         "padding_top": "1.5em",
         "padding_bottom": "1.5em",
         "enable_flex": false
@@ -264,6 +315,7 @@
     "16491414925759bb6b",
     "1649141796182ac431",
     "164914202125ead99d",
-    "16491420242bee22d3"
+    "16491420242bee22d3",
+    "1649142356939b647f"
   ]
 }
