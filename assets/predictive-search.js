@@ -6,7 +6,6 @@ class PredictiveSearch extends HTMLElement {
     this.closeIconSearch = this.querySelector('.close-search');
     this.searchProduct = document.querySelector('[data-search-products]');
     this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
-    this.suggestedList = this.querySelector('[data-suggested-list]');
     this.isOpen = false;
 
     this.setupEventListeners();
@@ -172,16 +171,6 @@ class PredictiveSearch extends HTMLElement {
   }
 
   getSuggestedTerms(searchTerm) {
-    // const proxy = 'https://cors-everywhere.herokuapp.com/';
-    // fetch(`${proxy}https://google.com/complete/search?client=firefox&hl=en&q=${searchTerm}`, {
-    //   headers: { origin: 'google.com' }
-    // })
-    // .then(res => res.json())
-    // .then(res => {
-    //   res[1].map(function(x) {
-    //     console.log(x);
-    //   }).join('')
-    // });
     let emptyArray = [];
     if(searchTerm) {
       emptyArray = suggested.filter(function(data) {
@@ -192,17 +181,8 @@ class PredictiveSearch extends HTMLElement {
         let url = data.replace(/\s+/g, '+');
         return data = '<li class="search-results-suggested__item"><a class="search-results-suggested__link" href="/search?q='+url+'">'+data+'</a></li>';
       });
-      $('[data-suggested-list]').html(emptyArray)
+      $('[data-suggested-list]').html(emptyArray);
     }
-    //
-  }
-
-  showSuggested(terms) {
-    let listData;
-    if(terms.length) {
-      listData = terms.join('');
-    }
-    this.suggestedList.innerHTML = listData;
   }
 
   setLiveRegionLoadingState() {
