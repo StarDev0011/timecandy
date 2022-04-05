@@ -300,7 +300,7 @@
         "fa5b0b93-20f6-4d32-8b51-22a685b36859"
       ],
       "settings": {
-        "container_width": "eight-twelfths",
+        "container_width": "full-width",
         "padding_top": "1.5em",
         "padding_bottom": "1.5em",
         "enable_flex": false
