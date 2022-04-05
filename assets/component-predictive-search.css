@@ -279,6 +279,10 @@ predictive-search[product="true"] .predictive-search {
   box-shadow: none;
 }
 
+.search-results-suggested {
+  padding-right: 15px;
+}
+
 .close-search {
   position: absolute;
   right: 20px;
