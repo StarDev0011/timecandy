@@ -377,6 +377,18 @@
   display: inline-block;
   
 }
+.collection-sidebar__input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #c91835;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);  
+}
 .sidebar-filter__inner.active .collection-sidebar__list {
   display: block;
 }
