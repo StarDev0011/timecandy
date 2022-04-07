@@ -358,7 +358,10 @@
 .collection-sidebar__input:checked + label {
   color: var(--color-link);
 }
-
+.collection-sidebar__input:checked + label:after {
+  content: 'X';
+  display: inline-block;
+}
 .sidebar-filter__inner.active .collection-sidebar__list {
   display: block;
 }
