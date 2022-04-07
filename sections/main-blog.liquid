@@ -24,7 +24,7 @@
         <h1 class="title--primary">{{ blog.title | escape }}</h1>
       </div>
       <img class="main-blog__banner--background" loading="lazy" src="{{ 'dots-background.svg' | asset_url }}">
-      <img class="main-blog__banner--wave" loading="lazy" src="{{ 'wave.svg' | asset_url }}">
+      {% render 'background-image-wave' %}
     </div>
 
     <div class="page-width main-blog__content-wrapper section-{{ section.id }}">

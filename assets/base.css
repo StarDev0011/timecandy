@@ -270,6 +270,16 @@ body,
 	background-color: #e4f1f5;
 }
 
+.background-white {
+	background-color: white;
+}
+
+.background-image-wave {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
 .grid-auto-flow {
 	display: grid;
 	grid-auto-flow: column;
