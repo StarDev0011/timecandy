@@ -28,13 +28,20 @@
       <div class="article-template__hero-textbox">
         <div class="article-template__hero-title">
           <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-          {%- if section.settings.blog_show_date -%}
-            <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
-          {%- endif -%}
+          <div class="article-template__info">
+            {%- if section.settings.blog_show_date -%}
+              Posted <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }} </span>
+            {%- endif -%}
+            in {{ blog.title | link_to: blog.url }}
+          </div>
         </div>
       </div>
     </div>
   </header>
+
+  <div class="article-template__content page-width page-width--narrow" itemprop="articleBody">
+    {{ article.content }}
+  </div>
 
   {%- for block in section.blocks -%}
     {%- case block.type -%}
@@ -42,16 +49,7 @@
         <div class="page-width page-width--narrow">
           {% render block %}
         </div>
-      {%- when 'featured_image'-%}
-        {%- when 'title'-%}
-          
-
-        {%- when 'content'-%}
-          <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{ block.shopify_attributes }}>
-              {{ article.content }}
-          </div>
-
-        {%- when 'share' -%}
+      {%- when 'share' -%}
           <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
             <share-button class="share-button" {{ block.shopify_attributes }}>
               <button class="share-button__button hidden">
