@@ -9,6 +9,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 }
 
 .article__header {
+	background-color: transparent;
 	padding-top: 104px;
 	position: relative;
 	overflow: hidden;

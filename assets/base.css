@@ -280,6 +280,10 @@ body,
 	z-index: 1;
 }
 
+.flip {
+	transform: scaleX(-1) scaleY(-1);
+}
+
 .grid-auto-flow {
 	display: grid;
 	grid-auto-flow: column;
