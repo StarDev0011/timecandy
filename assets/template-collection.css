@@ -357,6 +357,7 @@
 
 .collection-sidebar__input:checked + label {
   color: var(--color-link);
+  font-weight: 700;
 }
 .collection-sidebar__input:checked + label:after {
   font-family: Arial, sans-serif;
