@@ -367,6 +367,7 @@
   vertical-align: middle;
   cursor: pointer;
   margin-right: 5px;
+  margin-top: -2px;
 }
 .collection-sidebar__input:checked + label {
   color: var(--color-link);
