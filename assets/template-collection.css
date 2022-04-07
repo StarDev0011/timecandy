@@ -64,13 +64,6 @@
   border-color: cadetblue;
 }
 
-.container {
-  max-width: 1240px;
-  margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .header-title {
   color: var(--color-header);
   font-weight: 300;
@@ -106,9 +99,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  user-select: none;
 }
 
-.sidebar-filter__item {
+.collection-sidebar__link {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-family: var(--my-font);
+  padding-bottom: 4px;
+}
+
+.sidebar-filter__inner {
   border-top: 1px solid #ccc;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -119,7 +124,7 @@
   padding-right: 10px;
 }
 
-.sidebar-filter__item:last-child {
+.sidebar-filter__inner:last-child {
   border-bottom: 1px solid #ccc;
 }
 
@@ -321,6 +326,49 @@
   margin-top: 30px;
 }
 
+.collection-sidebar__list {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  padding-top: 14px;
+  display: none;
+}
+
+.collection-sidebar__item {
+  margin-bottom: 14px;
+}
+
+.collection-sidebar__label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: var(--font-2);
+  color: var(--color-header);
+  cursor: pointer;
+  user-select: none;
+}
+
+.collection-sidebar__label:hover {
+  color: var(--color-link);
+}
+
+.collection-sidebar__input:checked + label {
+  color: var(--color-link);
+}
+
+.sidebar-filter__inner.active .collection-sidebar__list {
+  display: block;
+}
+
+.sidebar-filter__inner.active .collection-sidebar__header-icon svg {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-bottom: 2px;
+}
+
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -384,7 +432,7 @@
     padding-bottom: 10px;
   }
 
-  .sidebar-filter__item {
+  .sidebar-filter__inner {
     margin-left: -20px;
     margin-right: -20px;
     padding: 20px;

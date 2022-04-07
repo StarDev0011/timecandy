@@ -6,6 +6,13 @@
   font-display: swap;
 } */
 
+.container {
+  max-width: 1240px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 :root {
   --color-header: #262626;
   --color-text: #484E57;

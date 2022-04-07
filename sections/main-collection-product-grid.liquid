@@ -36,53 +36,7 @@
         </div>
       </div>
       <div class="collection__wrapper">
-        <div class="collection-sidebar">
-          <div class="collection-sidebar__filter sidebar-filter">
-            <div class="sidebar-filter__item">
-              <h3 class="collection-sidebar__header">
-                <span>By type</span>
-                <span class="collection-sidebar__header-icon">
-                  {% render 'icon-arrow-down' %}
-                </span>
-              </h3>
-            </div>
-            <div class="sidebar-filter__item">
-              <h3 class="collection-sidebar__header">
-                <span>by flavor</span>
-                <span class="collection-sidebar__header-icon">
-                  {% render 'icon-arrow-down' %}
-                </span>
-              </h3>
-            </div>
-            <div class="sidebar-filter__item">
-              <h3 class="collection-sidebar__header">
-                <span>by occassion</span>
-                <span class="collection-sidebar__header-icon">
-                  {% render 'icon-arrow-down' %}
-                </span>
-              </h3>
-            </div>
-            <div class="sidebar-filter__item">
-              <h3 class="collection-sidebar__header">
-                <span>by decade</span>
-                <span class="collection-sidebar__header-icon">
-                  {% render 'icon-arrow-down' %}
-                </span>
-              </h3>
-            </div>
-          </div>
-          <div class="collection__sort-by">
-            <h3 class="collection-sidebar__header">Sort by</h3>
-            <div class="sort-by__wrapper">
-              <label class="sort-by__label">Name:</label>
-              <select name="SortBy" id="SortBy" class="sort-by__select" onchange="location = this.value;">
-                {% for option in collection.sort_options %}
-                  <option value="?sort_by={{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
-                {% endfor %}
-              </select>
-            </div>
-          </div>
-        </div>
+        {% render 'include--sidebar' %}
         <div class="collection-product__list">
           <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
             {%- for product in collection.products -%}
