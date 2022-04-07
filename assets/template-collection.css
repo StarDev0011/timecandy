@@ -358,15 +358,15 @@
   content:'';
   -webkit-appearance: none;
   background-color: transparent;
-  border: 2px solid #c91835;
+  border: 2px solid #000;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-  padding: 5px;
+  padding: 8px;
   display: inline-block;
   position: relative;
   vertical-align: middle;
   cursor: pointer;
-  margin-right: 5px;  
+  margin-right: 5px;
 }
 .collection-sidebar__input:checked + label {
   color: var(--color-link);
