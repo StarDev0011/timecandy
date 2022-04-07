@@ -370,7 +370,6 @@
   margin-top: -2px;
 }
 .collection-sidebar__input:checked + label {
-  color: var(--color-link);
   position: relative;
 }
 .collection-sidebar__input:checked + label:before {
