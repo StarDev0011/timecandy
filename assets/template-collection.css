@@ -374,16 +374,15 @@
   position: relative;
 }
 .collection-sidebar__input:checked + label:before {
-  line-height: 1;
-  display: inline-block;
+  border-color: #c91835;
   
 }
 .collection-sidebar__input:checked + label:after {
   content: '';
   display: block;
   position: absolute;
-  top: 2px;
-  left: 9px;
+  top: 1px;
+  left: 5px;
   width: 6px;
   height: 14px;
   border: solid #c91835;
