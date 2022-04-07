@@ -123,11 +123,11 @@
     "featured_product": {
       "type": "featured-product",
       "settings": {
-        "product": "birthday-by-the-numbers-decade-gift-box-birthday-banner",
+        "product": "large-decade-candy-gift-box",
         "sub_title": "looking for a gift?",
         "show_best_seller": true,
-        "color_scheme": "inverse",
-        "secondary_background": true,
+        "color_scheme": "accent-1",
+        "secondary_background": false,
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
@@ -241,7 +241,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "old time candy fan favorites",
-        "collection": "all",
+        "collection": "top-candy",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
