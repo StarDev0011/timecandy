@@ -160,5 +160,17 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		border-radius: 32px;
 		padding: 13px 40px;
 		color: white;
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-weight: 200;
+		font-size: 15px;
+		text-align: center;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+
+		span {
+			font: inherit;
+		}
 	}
 }
