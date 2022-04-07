@@ -1,7 +1,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-article-card.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.min.css' | asset_url | stylesheet_tag }}
-{{ 'blog-categories.js' | asset_url | script_tag }}
+<script src="{{ 'blog-categories.js' | asset_url }}" defer></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -23,8 +23,8 @@
       <div class="page-width">
         <h1 class="title--primary">{{ blog.title | escape }}</h1>
       </div>
-      <img class="main-blog__banner--background" src="{{ 'dots-background.svg' | asset_url }}">
-      <img class="main-blog__banner--wave" src="{{ 'wave.svg' | asset_url }}">
+      <img class="main-blog__banner--background lazy" src="{{ 'dots-background.svg' | asset_url }}">
+      <img class="main-blog__banner--wave lazy" src="{{ 'wave.svg' | asset_url }}">
     </div>
 
     <div class="page-width main-blog__content-wrapper section-{{ section.id }}">
