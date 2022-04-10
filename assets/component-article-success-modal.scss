@@ -9,6 +9,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	--color-accent: #0c5273;
 	--color-button: #ac1229;
 
+	&.animated img {
+		animation: pop-up 0.5s both;
+	}
+
 	.article__success-modal {
 		position: fixed;
 		top: 50%;
@@ -67,5 +71,14 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		opacity: 0.5;
 		z-index: 98;
 		display: block;
+	}
+}
+
+@keyframes pop-up {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

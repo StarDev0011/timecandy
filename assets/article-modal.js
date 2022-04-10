@@ -5,6 +5,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	if (successModal && modalBackground) {
 		document.body.appendChild(successModal);
 		document.documentElement.appendChild(successModal);
+		successModal.classList.add("animated");
+
 		modalBackground.addEventListener("click", () => {
 			successModal.style.display = "none";
 		});
