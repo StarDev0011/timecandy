@@ -10,13 +10,27 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	--color-button: #ac1229;
 	--button-default-color: var(--color-button);
 	--button-hover-color: #961228;
+
+	.page-width--narrow {
+		@media (max-width: $bp-medium) {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
 }
 
 .article__header {
 	background-color: transparent;
 	padding-top: 104px;
 	position: relative;
-	overflow: hidden;
+
+	@media (min-width: $bp-medium-up) {
+		overflow: hidden;
+	}
+
+	@media (max-width: $bp-medium) {
+		padding-top: 64px;
+	}
 
 	.background-image-wave {
 		position: absolute;
@@ -50,6 +64,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	}
 
 	@media (max-width: $bp-medium) {
+		display: block;
 		padding-left: 16px;
 		padding-right: 16px;
 	}
@@ -61,6 +76,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	border-radius: 15px;
 	overflow: hidden;
 	position: relative;
+
+	@media (max-width: $bp-medium) {
+		border-radius: 15px 15px 0px 0px;
+	}
 
 	img {
 		position: absolute;
@@ -76,6 +95,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	flex: 1.4;
 	padding-top: 32px;
 	padding-bottom: 32px;
+
+	@media (max-width: $bp-medium) {
+		padding: 0;
+	}
 }
 
 .article-template__hero-title {
@@ -87,6 +110,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	flex-direction: column;
 	justify-content: center;
 	padding: 48px;
+
+	@media (max-width: $bp-medium) {
+		border-radius: 0px 0px 15px 15px;
+		padding: 16px;
+	}
 }
 
 .article-template__title {
@@ -98,6 +126,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	margin-top: 0;
 	margin-bottom: 16px;
 	word-break: normal;
+
+	@media (max-width: $bp-medium) {
+		font-size: 24px;
+		line-height: 32px;
+	}
 }
 
 .article-template__info {
@@ -110,6 +143,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-weight: 200;
 		font-size: 18px;
 		line-height: 24px;
+
+		@media (max-width: $bp-medium) {
+			font-size: 14px;
+			line-height: 18px;
+		}
 	}
 
 	time,
@@ -122,6 +160,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	padding-top: 96px;
 	font-family: var(--font-default);
 
+	@media (max-width: $bp-medium) {
+		padding-top: 76px;
+	}
+
 	h2,
 	h2 * {
 		color: var(--color-header);
@@ -132,6 +174,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		line-height: 59px;
 		margin: 0;
 		margin-bottom: 24px;
+
+		@media (max-width: $bp-medium) {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 
 	h3,
@@ -143,6 +190,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		line-height: 36px;
 		margin-top: 0;
 		margin-bottom: 16px;
+
+		@media (max-width: $bp-medium) {
+			font-size: 20px;
+			line-height: 28px;
+		}
 	}
 
 	pre {
@@ -155,6 +207,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		margin-top: 24px;
 		margin-bottom: 32px;
 		display: block;
+
+		@media (max-width: $bp-medium) {
+			font-size: 18px;
+			line-height: 30px;
+		}
 	}
 
 	p {
@@ -183,6 +240,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		margin-top: 32px;
+		margin-bottom: 72px;
 
 		span {
 			font: inherit;
@@ -193,6 +251,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 .article-template__social-sharing {
 	padding-top: 48px;
 	padding-bottom: 48px;
+
+	@media (max-width: $bp-medium) {
+		padding-top: 32px;
+		padding-bottom: 64px;
+	}
 
 	&--title {
 		font-family: var(--font-heading);
@@ -211,6 +274,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 130px;
+
+	@media (max-width: $bp-medium) {
+		padding-bottom: 94px;
+	}
 
 	.nav-btn {
 		display: flex;
@@ -246,6 +313,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	position: relative;
 	padding-bottom: 120px;
 
+	@media (max-width: $bp-medium) {
+		padding-bottom: 90px;
+	}
+
 	.wave-background {
 		position: absolute;
 		top: 0;
@@ -269,6 +340,13 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 50px;
+
+	@media (max-width: $bp-medium) {
+		flex-direction: column;
+		grid-gap: 2px;
+		margin-bottom: 32px;
+		align-items: flex-start;
+	}
 
 	h2 {
 		font-family: var(--font-heading);
@@ -296,6 +374,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	position: relative;
 	z-index: 2;
 
+	@media (max-width: $bp-medium) {
+		padding: 16px;
+	}
+
 	span[aria-hidden] {
 		display: none;
 	}
@@ -308,6 +390,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-weight: 200;
 		font-size: 15px;
 		line-height: 24px;
+
+		@media (max-width: $bp-medium) {
+			margin: 32px auto 0;
+		}
 	}
 
 	.field {
@@ -324,6 +410,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		display: flex;
 		grid-gap: 16px;
 		margin-bottom: 32px;
+
+		@media (max-width: $bp-medium) {
+			flex-direction: column;
+			grid-gap: 32px;
+		}
 
 		.field__input {
 			flex: 1;
