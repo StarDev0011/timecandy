@@ -1,6 +1,7 @@
 .primary-btn {
-	background-color: #c91835;
+	background-color: var(--button-default-color);
 	color: white;
+	cursor: pointer;
 	appearance: none;
 	font-family: var(--font-heading);
 	font-weight: 100;
@@ -21,17 +22,18 @@
 	white-space: normal;
 
 	&:hover {
-		background-color: #961228;
+		background-color: var(--button-hover-color);
 		color: white;
 	}
 }
 
 .secondary-btn {
 	background-color: white;
-	border: 2px solid #ac1229;
+	border: 2px solid var(--button-default-color);
 	box-sizing: border-box;
 	border-radius: 90px;
-	color: #ac1229;
+	color: var(--button-default-color);
+	cursor: pointer;
 	font-family: var(--font-heading);
 	font-weight: 200;
 	font-size: 15px;
@@ -48,7 +50,7 @@
 	white-space: normal;
 
 	// &:hover {
-	// 	background-color: #961228;
+	// 	background-color: var(--button-hover-color);
 	// 	color: white;
 	// }
 }
