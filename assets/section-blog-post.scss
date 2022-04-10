@@ -355,6 +355,12 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		line-height: 36px;
 		color: var(--color-accent);
 		margin: 0;
+
+		@media (max-width: $bp-medium) {
+			font-size: 20px;
+			line-height: 28px;
+			margin-bottom: 2px;
+		}
 	}
 
 	.article__comments-count {
@@ -363,6 +369,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-size: 28px;
 		line-height: 36px;
 		color: #cccccc;
+
+		@media (max-width: $bp-medium) {
+			font-size: 20px;
+			line-height: 28px;
+		}
 	}
 }
 

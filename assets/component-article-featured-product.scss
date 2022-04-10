@@ -20,6 +20,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		position: relative;
 
 		@media (max-width: $bp-medium) {
+			padding: 24px 16px;
 			margin-bottom: 8px;
 		}
 
@@ -71,5 +72,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-size: 48px;
 		line-height: 59px;
 		margin-bottom: 24px;
+
+		@media (max-width: $bp-medium) {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 }
