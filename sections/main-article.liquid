@@ -2,6 +2,17 @@
 {{ 'component-article-featured-product.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-blog-post.min.css' | asset_url | stylesheet_tag }}
 
+{% assign blog_handle = article.handle | split: '/' | first %}
+{% assign blog = blogs[blog_handle] %}
+{% assign last_index = blog.articles_count | minus: 1 %}
+{% for i_article in blog.articles %}
+  {% if i_article == article %}
+    {% assign article_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+{% assign prev_article_index = article_index | plus: 1 %}
+{% assign next_article_index = article_index | minus: 1 %}
+
 <article class="article-template background-light-blue" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="article__header">
     {% render 'background-image-wave' %}
@@ -58,57 +69,26 @@
         {% endfor %}
       {% endfor %}
     </div>
+
+    <div class="page-width page-width--narrow">
+      <div class="article-template__social-sharing">
+        <h6 class="article-template__social-sharing--title">Share</h6>
+        {% render 'social-media-share', options: 'facebook, pinterest' %}
+      </div>
+
+      <div class="article-template__navigation">
+        {% unless article_index == last_index %}
+          <a href="{{ blog.articles[prev_article_index].url }}" class="nav-btn nav-btn--prev">{% render 'icon-prev' %} <span>Previous post</span></a>        
+        {% endunless %}
+  
+        {% unless article_index == 0 %}
+          <a href="{{ blog.articles[next_article_index].url }}" class="nav-btn nav-btn--next"><span>Next post</span> {% render 'icon-prev' %}</a>        
+        {% endunless %}
+      </div>
+    </div>
   </div>
 
   {% render 'background-image-wave', class: 'flip' %}
-
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when '@app' -%}
-        <div class="page-width page-width--narrow">
-          {% render block %}
-        </div>
-      {%- when 'share' -%}
-          <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <share-button class="share-button" {{ block.shopify_attributes }}>
-              <button class="share-button__button hidden">
-                {% render 'icon-share' %}
-                {{ block.settings.share_label | escape }}
-              </button>
-              <details id="Details-{{ block.id }}-{{ section.id }}">
-                <summary class="share-button__button">
-                  {% render 'icon-share' %}
-                  {{ block.settings.share_label | escape }}
-                </summary>
-                <div id="Article-share-{{ section.id }}" class="share-button__fallback motion-reduce">
-                  <div class="field">
-                    <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
-                    </span>
-                    <input type="text"
-                          class="field__input"
-                          id="url"
-                          value="{{ request.origin | append: article.url }}"
-                          placeholder="{{ 'general.share.share_url' | t }}"
-                          onclick="this.select();"
-                          readonly
-                    >
-                    <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
-                  </div>
-                  <button class="share-button__close hidden no-js-hidden">
-                    {% render 'icon-close' %}
-                    <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
-                  </button>
-                  <button class="share-button__copy no-js-hidden">
-                    {% render 'icon-clipboard' %}
-                    <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-                  </button>
-                </div>
-              </details>
-            </share-button>
-            <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
-          </div>
-    {%- endcase -%}
-  {%- endfor -%}
 
   <div class="article-template__back element-margin-top center">
     <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
