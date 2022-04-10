@@ -26,6 +26,33 @@
 	}
 }
 
+.secondary-btn {
+	background-color: white;
+	border: 2px solid #ac1229;
+	box-sizing: border-box;
+	border-radius: 90px;
+	color: #ac1229;
+	font-family: var(--font-heading);
+	font-weight: 200;
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	padding: 13px 40px;
+	text-decoration: none;
+	transition: all ease-in-out 0.25s;
+	width: auto;
+	height: max-content;
+	white-space: normal;
+
+	// &:hover {
+	// 	background-color: #961228;
+	// 	color: white;
+	// }
+}
+
 .btn--wide {
 	width: 100%;
 }
