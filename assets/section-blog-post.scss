@@ -12,6 +12,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	--button-hover-color: #961228;
 
 	.page-width--narrow {
+		@media (min-width: $bp-medium-up) {
+			max-width: 794px;
+		}
+
 		@media (max-width: $bp-medium) {
 			padding-left: 16px;
 			padding-right: 16px;
