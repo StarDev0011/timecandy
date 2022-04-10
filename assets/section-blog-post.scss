@@ -34,8 +34,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 
 	.background-image-wave {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-20%);
+		bottom: 30%;
 	}
 
 	.background-white {
