@@ -160,9 +160,12 @@
                 {%- endfor -%}
               </ul>
             {%- elsif form.posted_successfully? -%}
+              {%- comment -%}
               <div class="form-status-list form__message" role="status">
                 <h3 class="form-status" tabindex="-1" autofocus>{% render 'icon-success' %} {{ post_message | t }}</h3>
               </div>
+              {%- endcomment -%}
+              {% render 'article-success-modal' %}
             {%- endif -%}
 
             <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
