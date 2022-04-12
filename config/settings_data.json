@@ -170,21 +170,21 @@
             "type": "link_list",
             "settings": {
               "heading": "shop",
-              "menu": "footer"
+              "menu": "shop-footer"
             }
           },
           "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "service",
+              "menu": "service-footer"
             }
           },
           "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "about",
+              "menu": "about-footer"
             }
           },
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
