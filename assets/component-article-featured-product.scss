@@ -6,7 +6,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	display: flex;
 	grid-gap: 14px;
 	align-items: center;
-	margin: 72px 0;
+	margin-bottom: 72px;
 
 	@media (max-width: $bp-medium) {
 		display: block;

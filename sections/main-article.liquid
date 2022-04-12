@@ -45,7 +45,7 @@
             {%- if section.settings.blog_show_date -%}
               Posted <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }} </span>
             {%- endif -%}
-            in {{ blog.title | link_to: blog.url }}
+            <br class="mobile">in {{ blog.title | link_to: blog.url }}
           </div>
         </div>
       </div>
