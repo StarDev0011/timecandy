@@ -369,6 +369,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		line-height: 36px;
 		color: var(--color-accent);
 		margin: 0;
+		text-transform: none;
 
 		@media (max-width: $bp-medium) {
 			font-size: 20px;
@@ -455,6 +456,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-size: 12px;
 		line-height: 21px;
 		margin-bottom: 4px;
+		text-transform: uppercase;
 	}
 
 	.field__input {
