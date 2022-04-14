@@ -15,12 +15,15 @@
       <li>{{ 'customer.menu_links.logout' | t | link_to: routes.account_logout_url }}</li>
    </ul>
 
-   <select class="link-selector link-selector--mobile account-menu__links--mobile js-selector">
-      <option target="{{ routes.account_url }}">{{ 'customer.menu_links.orders' | t }}</li>
-      <option target="{{ routes.account_addresses_url }}">{{ 'customer.menu_links.addresses' | t }}</li>
-      <option target="{{ routes.account_url }}">{{ 'customer.menu_links.wishlist' | t }}</li>
-      <option target="{{ routes.account_logout_url }}">{{ 'customer.menu_links.logout' | t }}</li>
-    </select>
+   <div class="account-menu__links--mobile">
+      <h6 class="account-menu__label">Menu</h6>
+      <select class="link-selector link-selector--mobile js-selector">
+         <option target="{{ routes.account_url }}">{{ 'customer.menu_links.orders' | t }}</li>
+         <option target="{{ routes.account_addresses_url }}">{{ 'customer.menu_links.addresses' | t }}</li>
+         <option target="{{ routes.account_url }}">{{ 'customer.menu_links.wishlist' | t }}</li>
+         <option target="{{ routes.account_logout_url }}">{{ 'customer.menu_links.logout' | t }}</li>
+       </select>
+   </div>
 
     <style>
       .link-selector {
