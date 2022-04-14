@@ -270,6 +270,10 @@ body,
 	background-color: #e4f1f5;
 }
 
+.background-lightest-gray {
+	background-color: #F1F3F3;
+}
+
 .background-white {
 	background-color: white;
 }

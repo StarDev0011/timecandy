@@ -296,8 +296,14 @@
     "update_country": "Update country\/region"
   },
   "customer": {
+    "menu_links": {
+      "orders": "Orders",
+      "addresses": "Addresses",
+      "wishlist": "Wishlist",
+      "logout": "Log out"
+    },
     "account": {
-      "title": "Account",
+      "title": "My account",
       "details": "Account details",
       "view_addresses": "View addresses",
       "return": "Return to Account details"
@@ -318,6 +324,7 @@
       "edit_address": "Edit address",
       "first_name": "First name",
       "last_name": "Last name",
+      "full_name": "Name",
       "company": "Company",
       "address1": "Address 1",
       "address2": "Address 2",
