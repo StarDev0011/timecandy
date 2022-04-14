@@ -11,11 +11,18 @@
 	grid-gap: 46px;
 	padding-top: 96px;
 	padding-bottom: 120px;
+
+	@include mq("medium") {
+		flex-direction: column;
+		grid-gap: 64px;
+	}
 }
 
 .account-menu {
 	flex: 1;
-	max-width: 257px;
+	@include mq("medium", "min-width") {
+		max-width: 257px;
+	}
 }
 
 .account-content {

@@ -38,6 +38,10 @@
 	padding-left: 0;
 	margin-bottom: 0;
 
+	@include mq("medium") {
+		display: none;
+	}
+
 	li a {
 		font-family: var(--font-heading);
 		font-weight: 200;
@@ -51,5 +55,13 @@
 
 	li + li {
 		margin-top: 24px;
+	}
+}
+
+.account-menu__links--mobile {
+	display: none;
+
+	@include mq("medium") {
+		display: block;
 	}
 }
