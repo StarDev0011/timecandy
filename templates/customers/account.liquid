@@ -1,10 +1,9 @@
 {{ 'component-selector.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-account.min.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'selector-handler.js' | asset_url }}" defer></script>
 
 <div class="background-lightest-gray">
   <div class="page-width customer account">
-    {% render 'account-menu' %}
+    {% render 'account-menu', selected: 'order' %}
   
     <div class="account-content">
       <div class="account-content__order-history">  

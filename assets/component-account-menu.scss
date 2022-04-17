@@ -57,15 +57,22 @@
 		display: none;
 	}
 
-	li a {
-		font-family: var(--font-heading);
-		font-weight: 200;
-		font-size: 12px;
-		line-height: 21px;
-		text-transform: uppercase;
-		color: var(--color-heading);
-		text-decoration-color: var(--color-accent);
-		text-decoration-thickness: 3px;
+	li {
+		a {
+			font-family: var(--font-heading);
+			font-weight: 200;
+			font-size: 12px;
+			line-height: 21px;
+			text-transform: uppercase;
+			color: var(--color-heading);
+			text-decoration: none;
+		}
+
+		&.selected a {
+			text-decoration: underline;
+			text-decoration-color: var(--color-accent);
+			text-decoration-thickness: 3px;
+		}
 	}
 
 	li + li {
