@@ -306,7 +306,7 @@
       "title": "My account",
       "details": "Account details",
       "view_addresses": "View addresses",
-      "return": "Return to Account details"
+      "return": "Back to all orders"
     },
     "account_fallback": "Account",
     "activate_account": {

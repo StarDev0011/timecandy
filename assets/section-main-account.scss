@@ -1,6 +1,6 @@
 @import "mq";
 
-.account {
+.customer {
 	--color-heading: #0c5273;
 	--color-text: #484e57;
 	--color-accent: #8ed1cb;
@@ -69,7 +69,7 @@
 /* Customer Table */
 .customer table {
 	table-layout: auto;
-	// border-collapse: collapse;
+	background-color: white;
 	border-collapse: separate;
 	border-spacing: 0;
 	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
@@ -723,5 +723,27 @@ li[data-address] > h2 {
 	@include mq("medium") {
 		font-size: 14px;
 		line-height: 18px;
+	}
+}
+
+// Order details
+a.account__back {
+	display: flex;
+	align-items: center;
+	grid-gap: 8px;
+	font-family: var(--font-heading);
+	font-weight: 200;
+	font-size: 15px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--color-text);
+	margin-bottom: 24px;
+
+	img {
+		transform: rotate(90deg);
+		width: 13px;
+		height: 7px;
 	}
 }

@@ -10,7 +10,7 @@
       <div class="account-content__order-history">  
         {% paginate customer.orders by 20 %}
           {%- if customer.orders.size > 0 -%}
-            <table role="table" class="order-history background-white">
+            <table role="table" class="order-history">
               <caption class="visually-hidden">{{ 'customer.orders.title' | t }}</caption>
               <thead role="rowgroup">
                 <tr role="row">
