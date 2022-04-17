@@ -15,6 +15,8 @@
 	@include mq("medium") {
 		flex-direction: column;
 		grid-gap: 64px;
+		padding-top: 64px;
+		padding-bottom: 180px;
 	}
 }
 
@@ -77,13 +79,7 @@
 	position: relative;
 
 	@include mq("medium") {
-		border: none;
-		box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.08);
-	}
-
-	@media screen and (forced-colors: active) {
-		border-top: 0.1rem solid transparent;
-		border-bottom: 0.1rem solid transparent;
+		padding: 24px 16px;
 	}
 }
 
@@ -104,20 +100,13 @@
 .customer tbody td {
 	font-family: var(--font-default);
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 14px;
+	line-height: 20px;
 	color: var(--color-text);
 
-	@include mq("medium") {
-		padding-left: 16px;
-		padding-right: 16px;
-
-		&:first-of-type {
-			padding-top: 24px;
-		}
-	}
-
 	@include mq("medium", "min-width") {
+		font-size: 16px;
+		line-height: 24px;
 		padding-top: 13px;
 		padding-bottom: 16px;
 		border-bottom: 1px solid #cccccc;
@@ -125,14 +114,23 @@
 	}
 }
 
-.customer tr:last-of-type td {
+.customer tr {
+	@include mq("medium") {
+		&:not(:last-of-type) {
+			border-bottom: 1px solid #cccccc;
+			padding-bottom: 16px;
+			margin-bottom: 16px;
+		}
+	}
 	@include mq("medium", "min-width") {
-		padding-bottom: 0;
-		border-bottom: none;
+		&:last-of-type td {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
 	}
 }
 
-.customer td:empty {
+.customer tr .customer td:empty {
 	display: initial;
 }
 
@@ -145,29 +143,9 @@
 	}
 }
 
-.customer tbody td:last-of-type {
-	padding-bottom: 4rem;
-}
-
 @media screen and (min-width: 750px) {
 	.customer tbody td:last-of-type {
 		padding-bottom: 0;
-	}
-}
-
-.customer tbody tr {
-	border-top: 0.01rem solid rgba(var(--color-foreground), 0.08);
-}
-
-@media screen and (min-width: 750px) {
-	.customer tbody tr:first-of-type {
-		border-top: none;
-	}
-}
-
-@media screen and (forced-colors: active) {
-	.customer tbody tr {
-		border-top: 0.1rem solid transparent;
 	}
 }
 
@@ -204,7 +182,7 @@
 }
 
 /* mobile table overrides */
-@media screen and (max-width: 749px) {
+@include mq("medium") {
 	.customer thead,
 	.customer th,
 	.customer tfoot td:first-of-type {
@@ -217,9 +195,11 @@
 	}
 
 	.customer td::before {
-		color: rgba(var(--color-foreground), 0.75);
 		content: attr(data-label);
-		font-size: 1.4rem;
+		color: var(--color-heading);
+		font-family: var(--font-heading);
+		font-size: 14px;
+		line-height: 18px;
 		padding-right: 2rem;
 		text-transform: uppercase;
 		flex-grow: 1;
@@ -236,6 +216,7 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		width: 100%;
+		grid-gap: 4px;
 	}
 }
 
@@ -722,6 +703,10 @@ li[data-address] > h2 {
 	text-decoration-thickness: 1px;
 	text-transform: uppercase;
 	color: var(--color-heading);
+
+	@include mq("medium") {
+		font-size: 14px;
+	}
 }
 
 .account table td:first-of-type a:hover {
@@ -734,4 +719,9 @@ li[data-address] > h2 {
 	font-size: 18px;
 	line-height: 24px;
 	color: var(--color-accent-2);
+
+	@include mq("medium") {
+		font-size: 14px;
+		line-height: 18px;
+	}
 }
