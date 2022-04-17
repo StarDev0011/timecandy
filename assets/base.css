@@ -615,8 +615,7 @@ h6:empty {
 	display: none;
 }
 a,
-.link,
-.customer a {
+.link {
 	cursor: pointer;
 	display: inline-block;
 	border: none;
@@ -726,8 +725,7 @@ details > * {
 	--duration-long: 500ms;
 }
 
-.underlined-link,
-.customer a {
+.underlined-link {
 	color: rgba(var(--color-link), var(--alpha-link));
 	text-underline-offset: 0.3rem;
 	text-decoration-thickness: 0.1rem;
