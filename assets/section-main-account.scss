@@ -67,23 +67,21 @@
 /* Customer Table */
 .customer table {
 	table-layout: auto;
-	border-collapse: collapse;
-	border-bottom: 0.01rem solid rgba(var(--color-foreground), 0.08);
-	box-shadow: none;
+	// border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	padding: 24px;
 	width: 100%;
-	font-size: 1.6rem;
 	position: relative;
-}
 
-@media screen and (min-width: 750px) {
-	.customer table {
+	@include mq("medium") {
 		border: none;
 		box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.08);
 	}
-}
 
-@media screen and (forced-colors: active) {
-	.customer table {
+	@media screen and (forced-colors: active) {
 		border-top: 0.1rem solid transparent;
 		border-bottom: 0.1rem solid transparent;
 	}
@@ -118,16 +116,24 @@
 			padding-top: 24px;
 		}
 	}
+
+	@include mq("medium", "min-width") {
+		padding-top: 13px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #cccccc;
+		vertical-align: top;
+	}
+}
+
+.customer tr:last-of-type td {
+	@include mq("medium", "min-width") {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
 }
 
 .customer td:empty {
 	display: initial;
-}
-
-.customer thead th {
-	font-size: 1.2rem;
-	letter-spacing: 0.07rem;
-	text-transform: uppercase;
 }
 
 @media screen and (min-width: 750px) {
@@ -136,24 +142,6 @@
 		text-align: left;
 		padding-left: 0;
 		padding-right: 2.2rem;
-	}
-
-	.customer tbody td {
-		padding-top: 16px;
-		padding-bottom: 16px;
-	}
-
-	.customer th:first-of-type,
-	.customer td:first-of-type {
-		padding-left: var(--table-padding);
-	}
-
-	.customer tbody td {
-		vertical-align: top;
-	}
-
-	.customer tbody td:first-of-type {
-		padding-top: 2.4rem;
 	}
 }
 
@@ -432,13 +420,6 @@
 	margin-right: 1rem;
 }
 
-@media screen and (min-width: 750px) {
-	.account table td:first-of-type {
-		padding-top: 1.2rem;
-		padding-bottom: 1.2rem;
-	}
-}
-
 .order td:first-of-type {
 	align-items: initial;
 }
@@ -699,14 +680,6 @@ li[data-address] > h2 {
 	margin-top: 1.5rem;
 }
 
-// Table
-.order-history {
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
-	border-radius: 15px;
-	width: 100%;
-	padding: 24px;
-}
-
 .customer thead th {
 	font-family: var(--font-heading);
 	font-weight: 200;
@@ -714,7 +687,6 @@ li[data-address] > h2 {
 	line-height: 24px;
 	text-transform: uppercase;
 	color: var(--color-text);
-	padding-top: 24px;
 	padding-bottom: 12px;
 }
 
@@ -727,12 +699,11 @@ li[data-address] > h2 {
 .customer tfoot::before {
 	content: " ";
 	background: var(--color-text);
-	width: calc(100% - 48px);
+	width: 100%;
 	height: 1px;
 	display: block;
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	left: 0;
 }
 
 @media screen and (forced-colors: active) {
@@ -748,6 +719,7 @@ li[data-address] > h2 {
 	font-size: 18px;
 	line-height: 24px;
 	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
 	text-transform: uppercase;
 	color: var(--color-heading);
 }
