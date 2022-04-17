@@ -733,8 +733,7 @@ details > * {
 }
 a:hover,
 .link:hover,
-.underlined-link:hover,
-.customer a:hover {
+.underlined-link:hover {
 	color: rgb(var(--color-link-hover));
 	text-decoration-thickness: 0.2rem;
 }
