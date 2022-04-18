@@ -53,12 +53,6 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		top: 0;
 		left: 0;
 	}
-
-	&--wave {
-		width: 100%;
-		position: relative;
-		z-index: 1;
-	}
 }
 
 .main-blog__content {

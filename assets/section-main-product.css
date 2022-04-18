@@ -290,59 +290,6 @@ fieldset.product-form__input .form__label {
 
 /* Product info */
 
-.product__info-container > * + * {
-  margin: 1.5rem 0;
-}
-
-.product__info-container .product-form,
-.product__info-container .product__description {
-  margin: 2.5rem 0;
-}
-
-.product__text {
-  margin-bottom: 0;
-}
-
-a.product__text {
-  display: block;
-  text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
-}
-
-.product__text.caption-with-letter-spacing {
-  text-transform: uppercase;
-}
-
-.product__title {
-  word-break: break-word;
-  margin-bottom: 1.5rem;
-}
-
-.product__title + .product__text.caption-with-letter-spacing {
-  margin-top: -1.5rem;
-}
-
-.product__text.caption-with-letter-spacing + .product__title {
-  margin-top: 0;
-}
-
-.product__accordion .accordion__content {
-  padding: 0 1rem;
-}
-
-.product .price .badge {
-  margin-bottom: 0.5rem;
-}
-
-.product .price__container {
-  margin-bottom: 0.5rem;
-}
-
-.product .price dl {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .product .price--sold-out .price__badge-sold-out {
   background: transparent;
   color: rgb(var(--color-base-text));
@@ -1157,4 +1104,65 @@ a.product__text {
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+
+/*  */
+.product__text {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  letter-spacing: normal;
+  color: var(--color-header);
+  margin-bottom: 12px;
+}
+
+.product__title {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 36px;
+  font-family: var(--my-font);
+  text-transform: none;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.product-detail {
+  background-color: #E4F1F5;
+  padding-top: 64px;
+}
+
+.product-detail .price {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  color: var(--color-link);
+  margin-bottom: 12px;
+}
+
+.product-detail .product__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--font-2);
+  color: var(--color-text);
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 24px;
+}
+
+.product-detail .product__description a,
+.product-detail .product__description p,
+.product-detail .product__description strong {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--font-2);
+  color: var(--color-text);
 }

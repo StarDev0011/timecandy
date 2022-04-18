@@ -1,0 +1,58 @@
+{%- comment -%}
+   Usage: {% render 'social-media-share', options: '[option1], [option2]' %}
+   Available options: 'facebook', 'twitter', 'pinterest'
+{%- endcomment -%}
+
+{{ 'component-social-media-share.min.css' | asset_url | stylesheet_tag}}
+
+{% unless options %}
+   {% assign options = 'facebook, pinterest' %}
+{% endunless %}
+
+{% capture current_url %}
+  {{ shop.url }}{{ article.url }}
+{% endcapture %}
+
+<div class="social-share-buttons social-share-buttons--{{ settings.social_media_share_style }} is-grouped has-margin-bottom">
+   {% capture title %}{{ article.title | strip_html | url_escape }}{% endcapture %}
+   {% capture shop_name %}{{ shop.name | url_param_escape }}{% endcapture %}
+   {% capture twitter_name %}{{ settings.twitter_link | split: 'twitter.com/' | last }}{% endcapture %}
+
+   {% comment %} Facebook {% endcomment %}
+   {% if options contains 'facebook' %}
+      <div class="share-btn share-btn--facebook control">
+         <a target="_blank"  rel="noopener"class="social-button" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}">
+            {% render 'icon-facebook' %}
+         </a>
+      </div>
+   {% endif %}
+  
+   {% comment %} Instagram {% endcomment %}
+   {%- comment -%}
+   {% if options contains 'instagram' %}
+      <div class="share-btn share-btn--instagram control">
+         <a target="_blank" rel="noopener" class="button" title="Share on Instagram" href="https://twitter.com/intent/tweet?text={{ title | replace: '&','%26' }}&url={{ current_url }}{%- if twitter_name != blank -%}&via={{ twitter_name }}{%- endif -%}">
+            {% render 'icon-instagram' %}
+         </a>
+      </div>      
+   {% endif %}
+   {%- endcomment -%}
+
+   {% comment %} Twitter {% endcomment %}
+   {% if options contains 'twitter' %}
+      <div class="share-btn share-btn--twitter control">
+         <a target="_blank" rel="noopener" class="social-button" title="{{ 'layout.social_sharing.twitter_title' | t }}" href="https://twitter.com/intent/tweet?text={{ title | replace: '&','%26' }}&url={{ current_url }}{%- if twitter_name != blank -%}&via={{ twitter_name }}{%- endif -%}">
+         {% render 'icon-twitter' %}
+         </a>
+      </div>
+   {% endif %}
+
+   {% comment %} Pinterest {% endcomment %}
+   {% if options contains 'pinterest' %}
+      <div class="share-btn share-btn--pinterest control">
+         <a target="_blank"  rel="noopener"data-pin-do="skipLink" class="social-button" title="Share on Pinterest" href="https://pinterest.com/pin/create/button/?url={{ current_url }}&description={{ article.content | strip_html | truncate: 240 }}&media={% if article.image %}{{ article.image | img_url: 'grande' }}{% else %}{% assign my_image_url=article.content | escape %}{% if my_image_url contains '&lt;img' %}{% assign my_image_url = my_image_url | split: 'src=&quot;' %}{% assign my_image_url = my_image_url[1] | split: '&quot;' %}{% assign my_image_url = my_image_url[0] | remove: '//cdn' %}{% assign my_image_url = my_image_url | remove: 'http:http://' %}{% assign my_image_url = my_image_url | remove: 'https:' %}{{ my_image_url | prepend: 'https://cdn'}}{% endif %}{% endif %}">
+         {% render 'icon-pinterest' %}
+         </a>
+      </div>
+   {% endif %}
+</div>

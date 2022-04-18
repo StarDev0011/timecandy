@@ -1,0 +1,13 @@
+{{ 'component-article-success-modal.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'article-modal.js' | asset_url }}" defer></script>
+
+<div class="article-success js-article-modal">
+   <div class="modal-background js-modal-background"></div>
+   <div class="article__success-modal">
+      <div class="article__success-modal--content">
+         <img src="{{ 'article-success.svg' | asset_url }}">
+         <h3 class="article__success-title">{{ 'blogs.article.success' | t }}</h3>
+         <div class="article__success-footnote">{{ 'blogs.article.success_moderated' | t }}</div>
+      </div>
+   </div>
+</div>
