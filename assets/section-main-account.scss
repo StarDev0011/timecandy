@@ -481,7 +481,16 @@
 }
 
 .order table p {
-	margin-bottom: 24px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--color-text);
+	margin-bottom: 12px;
+
+	&:first-of-type,
+	&:last-of-type {
+		margin-bottom: 24px;
+	}
 }
 
 .order .item-props {
@@ -543,18 +552,6 @@
 
 .order table a {
 	line-height: calc(1 + 0.3 / var(--font-body-scale));
-}
-
-.order tbody tr:first-of-type td:first-of-type > div {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-}
-
-@media screen and (min-width: 750px) {
-	.order tbody tr:first-of-type td:first-of-type > div {
-		align-items: flex-start;
-	}
 }
 
 .order .properties {
@@ -625,6 +622,53 @@
 .order thead th:last-of-type {
 	text-align: right;
 	padding-right: 0;
+}
+
+.order__product {
+	display: flex;
+	grid-gap: 12px;
+	align-items: center;
+}
+
+.order__product-image {
+	width: 80px;
+	height: 80px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.order__product-details {
+	flex: 1;
+}
+
+.order__subtotal td {
+	padding-top: 24px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #cccccc;
+}
+
+.order__additional-fees td {
+	padding-top: 16px;
+}
+
+.order__additional-fees + .order__additional-fees {
+	td {
+		padding-top: 8px;
+	}
+}
+
+.order__additional-fees:nth-last-of-type(2) {
+	td {
+		padding-bottom: 16px;
+	}
+}
+
+.order__total td {
+	border-top: 1px solid #cccccc;
 }
 
 /* Addresses */
