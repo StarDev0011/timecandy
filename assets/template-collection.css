@@ -369,13 +369,15 @@
   margin-right: 5px;
   margin-top: -2px;
 }
+
 .collection-sidebar__input:checked + label {
   position: relative;
 }
+
 .collection-sidebar__input:checked + label:before {
   border-color: #c91835;
-  
 }
+
 .collection-sidebar__input:checked + label:after {
   content: '';
   display: block;
@@ -386,8 +388,9 @@
   height: 14px;
   border: solid #c91835;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);  
+  transform: rotate(45deg);
 }
+
 .sidebar-filter__inner.active .collection-sidebar__list {
   display: block;
 }

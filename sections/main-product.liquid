@@ -209,12 +209,14 @@
           {%- when 'description' -%}
             {%- if product.description != blank -%}
             {% liquid
-                assign limit_desc = product.description | size
-
+                assign desc = product.description | truncatewords
+                assign count_desc = desc | size
             %}
-              <div class="product__description rte{% if limit_desc > 40 %} product__height-desc{% endif %}">
-                {{ product.description }}
-                {% if limit_desc > 40 %}
+              <div class="product__description rte">
+                <div {% if count_desc > 9 %}class="product__height-desc"{% endif %}>
+                  {{ product.description }}
+                </div>
+                {% if count_desc > 9 %}
                   <a class="js-read-more product__read-more" href="#"> Read more</a>
                 {% endif %}
               </div>
@@ -309,21 +311,40 @@
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
-                <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
+                    {% assign optionName = option.name | downcase %}
+                    {% assign is_size = false %}
+                    {% if optionName == 'decade' %}
+                      {% assign is_size = true %}
+                    {% endif %}
                       <fieldset class="js product-form__input">
                         <legend class="form__label">{{ option.name }}</legend>
-                        {%- for value in option.values -%}
-                          <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                                name="{{ option.name }}"
-                                value="{{ value | escape }}"
-                                form="{{ product_form_id }}"
-                                {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                            {{ value }}
-                          </label>
-                        {%- endfor -%}
+                        {% if is_size %}
+                          <div class="product-swatch__label">
+                            <span class="js-swacth-label"></span>
+                            <span>
+                              {% render 'icon-caret' %}
+                            </span>
+                          </div>
+                        {% endif %}
+                        <div class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
+                          {%- for value in option.values -%}
+                            <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                  name="{{ option.name }}"
+                                  value="{{ value | escape }}"
+                                  form="{{ product_form_id }}"
+                                  {% if option.selected_value == value %}checked{% endif %}
+                            >
+                            <label {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                              {% if value contains 'decade gift box' %}
+                                {{ value | split: 'decade gift box' }}
+                              {% else %}
+                                {{ value }}
+                              {% endif %}
+                            </label>
+                          {%- endfor -%}
+                        </div>
                       </fieldset>
                   {%- endfor -%}
                   <script type="application/json">
@@ -395,7 +416,10 @@
                   <span class="product-form__error-message"></span>
                 </div>
 
-                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form', data-productid: product.id -%}
+                  <!-- Begin ReCharge code -->
+                  {% if product.available %}{% render 'subscription-product' with product as product %}{% endif %}
+                  <!-- End ReCharge code -->
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
                   <div class="product-form__buttons">
                     <button
