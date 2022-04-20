@@ -29,7 +29,7 @@
                   </span>
                 </div>
               {% endif %}
-              <div class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif%}">
+              <div class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
                 {%- for value in option.values -%}
                   <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                         name="{{ option.name }}"
