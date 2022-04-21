@@ -1,6 +1,7 @@
 $screens: (
 	"small": 375,
 	"medium": 989,
+	"large": 1279,
 );
 
 @mixin mq($mq-screen, $type: "max-width") {

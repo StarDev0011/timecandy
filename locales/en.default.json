@@ -372,6 +372,7 @@
       "price": "Price",
       "quantity": "Quantity",
       "total": "Total",
+      "order_total": "Order total",
       "fulfilled_at_html": "Fulfilled {{ date }}",
       "track_shipment": "Track shipment",
       "tracking_url": "Tracking link",

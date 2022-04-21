@@ -14,7 +14,7 @@
       </svg>
       <div>
         <a href="{{ routes.account_url }}" class="account__back">
-          <img src="{{ "icon-caret.svg" | asset_url }}">
+          {% render 'icon-caret' %}
           {{ 'customer.account.return' | t }}
         </a>
       </div>
@@ -57,10 +57,19 @@
                         <img src="{{ line_item.image | img_url: '600x' }}" alt="{{ line_item.title }}">
                       </div>
                       <div class="order__product-details">
+                        {% assign line_item_title = line_item.title | split: ' - ' %}
+                        {% assign line_item_variant = line_item_title | slice: 1, line_item_title.size | join: ' - ' %}
+
                         {%- if line_item.url != blank -%}
-                          <a class="order__product-title" href="{{ line_item.url }}">{{ line_item.title }}</a>
+                          <a class="order__line-item-link" href="{{ line_item.url }}">
+                            <div class="order__product-title">{{ line_item_title | first }}</div>
+                            <div class="order__product-variant">{{ line_item_variant | default: 'N/A' }}</div>
+                          </a>
                         {%- else -%}
-                          <p class="order__product-title">{{ line_item.title }}</p>
+                          <div class="order__product-title">
+                            <div class="order__product-title">{{ line_item_title | first }}</div>
+                            <div class="order__product-variant">{{ line_item_variant | default: 'N/A' }}</div>
+                          </div>
                         {%- endif -%}
                         {%- assign property_size = line_item.properties | size -%}
                         {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}
@@ -276,7 +285,7 @@
               <tr role="row" class="order__total">
                 <td headers="RowTotal" role="cell" colspan="3" data-label="{{ 'customer.order.total' | t }}">
                   <div class="order__total-row">
-                    <div class="order__total-label">{{ 'customer.order.total' | t }}</div>
+                    <div class="order__total-label">{{ 'customer.order.order_total' | t }}</div>
                     <div class="order__total-price">{{ order.total_price | money_with_currency }}</div>
                   </div>
                 </td>
