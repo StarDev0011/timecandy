@@ -408,22 +408,6 @@
 	}
 }
 
-:is(.account, .order) p {
-	margin: 0 0 2rem;
-	font-size: 1.6rem;
-}
-
-:is(.account, .order) h2 {
-	margin-top: 4rem;
-	margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 990px) {
-	:is(.account, .order) h2 {
-		margin-top: 0;
-	}
-}
-
 .account h1 + a {
 	display: inline-flex;
 	align-items: center;
@@ -669,6 +653,58 @@
 .order__total-row {
 	display: flex;
 	justify-content: space-between;
+}
+
+.customer__info-box {
+	background: #ffffff;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	padding: 16px;
+
+	h2 {
+		font-family: var(--font-heading);
+		font-weight: 200;
+		font-size: 14px;
+		line-height: 24px;
+		text-transform: uppercase;
+		color: var(--color-heading);
+		margin: 0;
+	}
+
+	p {
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		color: var(--color-text);
+		margin: 0;
+	}
+}
+
+.order__info {
+	flex: 1;
+}
+
+.order__addresses {
+	width: 285px;
+
+	* + * {
+		margin-top: 20px;
+	}
+
+	.primary-btn {
+		margin: 0;
+		border-radius: 32px;
+		font-size: 15px;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		font-weight: 200;
+	}
+}
+
+.order__row {
+	display: flex;
+	grid-gap: 20px;
 }
 
 /* Addresses */

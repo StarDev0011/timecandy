@@ -1,44 +1,46 @@
-{{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
+<div>
+   {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 
-{% for line_item in order.line_items %}
-   {% unless line_item.variant_id == blank %}
-      {% assign reorder = true %}
-      <script>reorder_line_items.push({ quantity: {{ line_item.quantity | json }}, variant_id: {{ line_item.variant_id | json }} });</script>
-   {% endunless %}
-{% endfor %}
+   {% for line_item in order.line_items %}
+      {% unless line_item.variant_id == blank %}
+         {% assign reorder = true %}
+         <script>reorder_line_items.push({ quantity: {{ line_item.quantity | json }}, variant_id: {{ line_item.variant_id | json }} });</script>
+      {% endunless %}
+   {% endfor %}
 
-{% if reorder == true %}
-   <script>
-      Shopify.moveAlong = function() {
-         if (reorder_line_items.length) {
-            document.getElementById('re-order-btn').classList.add('disabled');
-            var request = reorder_line_items.shift();
-            //Shopify.addItem(request.variant_id, request.quantity, Shopify.moveAlong);
-            
-            $.ajax({
-            type: 'POST',
-            url: '/cart/add.js',
-            data: {
-               quantity: request.quantity,
-               id: request.variant_id
-            },
-            dataType: 'json', 
-            success: function (data) { 
-               Shopify.moveAlong();
-            },
-            error: function(e) {
-               Shopify.moveAlong();
-               //console.log(e);
+   {% if reorder == true %}
+      <script>
+         Shopify.moveAlong = function() {
+            if (reorder_line_items.length) {
+               document.getElementById('re-order-btn').classList.add('disabled');
+               var request = reorder_line_items.shift();
+               //Shopify.addItem(request.variant_id, request.quantity, Shopify.moveAlong);
+               
+               $.ajax({
+               type: 'POST',
+               url: '/cart/add.js',
+               data: {
+                  quantity: request.quantity,
+                  id: request.variant_id
+               },
+               dataType: 'json', 
+               success: function (data) { 
+                  Shopify.moveAlong();
+               },
+               error: function(e) {
+                  Shopify.moveAlong();
+                  //console.log(e);
+               }
+               });           
             }
-            });           
+            else {
+               document.location.href = '/checkout';
+            }
          }
-         else {
-            document.location.href = '/checkout';
-         }
-      }
-   </script>
+      </script>
 
-   <td><a href="javascript:void(0)" id="re-order-btn" class="primary-btn btn--wide" onclick="Shopify.moveAlong()">Reorder</a></td>
+      <td><a href="javascript:void(0)" id="re-order-btn" class="primary-btn btn--wide" onclick="Shopify.moveAlong()">Reorder</a></td>
 
-   <script>var reorder_line_items = [];</script>
-{% endif %}
+      <script>var reorder_line_items = [];</script>
+   {% endif %}
+</div>
