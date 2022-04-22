@@ -63,3 +63,21 @@
 .rte blockquote > * {
   margin: -0.5rem 0 -0.5rem 0;
 }
+
+.image-with-text__bottom {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.text-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.text-bottom__item {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #484E57;
+}
