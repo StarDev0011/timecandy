@@ -164,6 +164,14 @@ img {
   border: 0;
 }
 
+.featured-product__desc {
+  font-size: 16px;
+  line-height: 24px;
+  color: #484E57;
+  margin-bottom: 40px;
+}
+
+
 .section-featured-product .product__sub-title {
   font-weight: 300;
   font-size: 18px;

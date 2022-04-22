@@ -117,3 +117,39 @@
       position: static !important;
   }
 }
+
+.banner-with-text__grid {
+  max-width: 1087px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-with-text__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px 96px;
+}
+
+.banner-with-text__heading {
+  text-transform: none;
+  color: #484E57;
+  margin-bottom: 32px;
+}
+
+.banner-with-text__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #484E57;
+  margin-bottom: 20px;
+}
+
+.banner-with-text__sub-heading {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #0C5273;
+  font-family: var(--my-font);
+  margin-bottom: 4px;
+}
