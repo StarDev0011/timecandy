@@ -387,35 +387,6 @@
 	}
 }
 
-/* Account/Order */
-@media screen and (min-width: 990px) {
-	:is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
-		flex-grow: 1;
-		padding-right: 3.2rem;
-	}
-}
-
-@media screen and (min-width: 750px) and (max-width: 989px) {
-	.order > div:nth-of-type(2) > div:last-of-type {
-		display: flex;
-	}
-
-	.order > div:nth-of-type(2) > div:last-of-type div {
-		padding-right: 3.2rem;
-	}
-}
-
-.account h1 + a {
-	display: inline-flex;
-	align-items: center;
-}
-
-.account a svg {
-	width: 1.5rem;
-	margin-bottom: -0.03rem;
-	margin-right: 1rem;
-}
-
 /* Order */
 .customer.order {
 	@include mq("medium") {
@@ -510,15 +481,6 @@
 	.order td .cart-discount {
 		display: none;
 	}
-}
-
-.order tbody ul {
-	list-style: none;
-	font-size: 1.2rem;
-	text-align: right;
-	padding-left: 0;
-	margin-top: 1rem;
-	margin-bottom: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -1086,28 +1048,12 @@
 	text-align: left;
 }
 
-li[data-address] {
-	margin-top: 5rem;
-}
-
 .addresses [aria-expanded="true"] ~ div[id] {
 	display: block;
 }
 
 .addresses h2 {
 	text-align: left;
-}
-
-li[data-address] > h2 {
-	text-align: center;
-	font-size: calc(var(--font-heading-scale) * 1.8rem);
-	margin-bottom: 0;
-}
-
-@media only screen and (min-width: 750px) {
-	li[data-address] > h2 {
-		font-size: calc(var(--font-heading-scale) * 2.2rem);
-	}
 }
 
 .addresses ul p {
@@ -1131,10 +1077,6 @@ li[data-address] > h2 {
 	@include mq("medium") {
 		font-size: 14px;
 	}
-}
-
-.account table td:first-of-type a:hover {
-	box-shadow: 0 0 0 0.2rem rgba(var(--color-link), 0.2);
 }
 
 a.account__back {
