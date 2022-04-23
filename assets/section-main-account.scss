@@ -646,7 +646,8 @@
 	}
 }
 
-.order__total-price {
+.order__total-price,
+.customer .order__total-price {
 	font-family: var(--font-heading);
 	font-weight: 200;
 	font-size: 18px;
