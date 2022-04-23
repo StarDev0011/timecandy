@@ -27,10 +27,10 @@
               <tr>
                 <td colspan="3">
                   <h2>{{ 'customer.order.title' | t: name: order.name }}</h2>
-                  {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
+                  {%- assign order_date = order.created_at | time_tag: "%B %d, %Y %H:%M %p" -%}
                   <p>{{ order_date }}</p>
                   {%- if order.cancelled -%}
-                    {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                    {%- assign cancelled_at = order.cancelled_at | time_tag: "%B %d, %Y %H:%M %p" -%}
                     <p>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</p>
                     <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
                   {%- endif -%}
