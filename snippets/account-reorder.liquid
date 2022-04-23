@@ -4,6 +4,7 @@
    {% for line_item in order.line_items %}
       {% unless line_item.variant_id == blank %}
          {% assign reorder = true %}
+         <script>var reorder_line_items = [];</script>
          <script>reorder_line_items.push({ quantity: {{ line_item.quantity | json }}, variant_id: {{ line_item.variant_id | json }} });</script>
       {% endunless %}
    {% endfor %}
@@ -40,7 +41,5 @@
       </script>
 
       <td><a href="javascript:void(0)" id="re-order-btn" class="primary-btn btn--wide" onclick="Shopify.moveAlong()">Reorder</a></td>
-
-      <script>var reorder_line_items = [];</script>
    {% endif %}
 </div>
