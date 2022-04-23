@@ -6,13 +6,13 @@
 
 <div class="background-lightest-gray">
   <div class="page-width customer addresses">
-    {% render 'account-menu', selected: 'order' %}
+    {% render 'account-menu', selected: 'addresses' %}
   
     <div class="account-content" data-customer-addresses>
       <div class="addresses__heading">
         <h1 class="addresses__header">{{ 'customer.addresses.default' | t }}</h1>
         <button
-          class="primary-btn"
+          class="primary-btn addresses__btn-desktop"
           type="button"
           aria-expanded="false"
           aria-controls="AddAddress"
@@ -180,6 +180,15 @@
           {%- endif -%}
         </div>
       {%- endpaginate -%}
+
+      <button
+        class="primary-btn addresses__btn-mobile"
+        type="button"
+        aria-expanded="false"
+        aria-controls="AddAddress"
+      >
+        {{ 'customer.addresses.add_new' | t }}
+      </button>
     </div>
   </div>
 </div>

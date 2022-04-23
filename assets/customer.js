@@ -5,6 +5,7 @@ const selectors = {
 	toggleAddressButton: "button[aria-expanded]",
 	addAddressButton: 'button[aria-controls="AddAddress"]',
 	addAddressModal: "[add-address-modal]",
+	editAddressButton: 'button[action="edit"]',
 	cancelAddressButton: 'button[type="reset"]',
 	deleteAddressButton: "button[data-confirm-message]",
 	modals: "[address-modal]",
@@ -30,7 +31,8 @@ class CustomerAddresses {
 					container,
 					addressContainer: container.querySelector(selectors.addressContainer),
 					toggleButtons: document.querySelectorAll(selectors.toggleAddressButton),
-					addButton: container.querySelector(selectors.addAddressButton),
+					editButtons: container.querySelectorAll(selectors.editAddressButton),
+					addButtons: container.querySelectorAll(selectors.addAddressButton),
 					addAddressModal: container.querySelector(selectors.addAddressModal),
 					modals: container.querySelectorAll(selectors.modals),
 					cancelButtons: container.querySelectorAll(selectors.cancelAddressButton),
@@ -60,7 +62,12 @@ class CustomerAddresses {
 		this.elements.toggleButtons.forEach((element) => {
 			element.addEventListener("click", this._handleAddEditButtonClick);
 		});
-		this.elements.addButton.addEventListener("click", this._handleAddButtonClick);
+		this.elements.addButtons.forEach((element) => {
+			element.addEventListener("click", this._handleAddButtonClick);
+		});
+		this.elements.editButtons.forEach((element) => {
+			element.addEventListener("click", this._handleEditButtonClick);
+		});
 		this.elements.cancelButtons.forEach((element) => {
 			element.addEventListener("click", this._handleCancelButtonClick);
 		});
@@ -92,19 +99,22 @@ class CustomerAddresses {
 		this._disableScrollLock();
 	}
 
-	_handleAddEditButtonClick = ({ currentTarget }) => {
-		this._toggleExpanded(currentTarget);
+	_handleAddEditButtonClick = () => {
 		this._enableScrollLock();
 	};
 
-	_handleAddButtonClick = ({ currentTarget }) => {
+	_handleAddButtonClick = () => {
 		this._handleOpenModal(this.elements.addAddressModal);
-		this._toggleExpanded(currentTarget.closest(selectors.addressContainer).querySelector(`[${attributes.expanded}]`));
 	};
 
-	_handleCancelButtonClick = ({ currentTarget }) => {
+	_handleEditButtonClick = ({ currentTarget }) => {
+		const formId = currentTarget.getAttribute("aria-controls");
+		const modal = document.getElementById(formId);
+		modal.classList.add("active");
+	};
+
+	_handleCancelButtonClick = () => {
 		this._handleCloseModal();
-		this._toggleExpanded(currentTarget.closest(selectors.addressContainer).querySelector(`[${attributes.expanded}]`));
 	};
 
 	_handleDeleteButtonClick = ({ currentTarget }) => {

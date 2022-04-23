@@ -3,9 +3,10 @@
       {{ address | format_address }}
 
       <button
-         class="address__actions address__actions--edit"
+         class="address__actions address__actions--edit addresses__btn-desktop"
          type="button"
          id="EditFormButton_{{ address.id }}"
+         action="edit"
          aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
          aria-controls="EditAddress_{{ address.id }}"
          aria-expanded="false"
@@ -122,14 +123,30 @@
       </div>
    </div>
 
-   <button
-     class="address__actions address__actions--delete"
-     type="button"
-     aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
-     data-target="{{ address.url }}"
-     data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
-   >
-     {% render 'icon-delete' %}
-     {{ 'customer.addresses.delete' | t }}
-   </button>
+   <div class="addresses__edit-btn-group">
+      <button
+         class="address__actions address__actions--edit addresses__btn-mobile"
+         type="button"
+         id="EditFormButton_{{ address.id }}"
+         action="edit"
+         aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+         aria-controls="EditAddress_{{ address.id }}"
+         aria-expanded="false"
+         data-address-id="{{ address.id }}"
+      >
+         {% render 'icon-edit' %}
+         {{ 'customer.addresses.edit' | t }}
+      </button>
+
+      <button
+         class="address__actions address__actions--delete"
+         type="button"
+         aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+         data-target="{{ address.url }}"
+         data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+         >
+         {% render 'icon-delete' %}
+         {{ 'customer.addresses.delete' | t }}
+      </button>
+   </div>
  </div>

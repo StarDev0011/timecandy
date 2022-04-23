@@ -791,12 +791,24 @@
 }
 
 /* Addresses */
+.addresses {
+	padding-top: 96px;
+	padding-bottom: 120px;
+
+	@include mq("medium") {
+		grid-gap: 48px;
+		padding-top: 64px;
+		padding-bottom: 90px;
+	}
+}
+
 .addresses .primary-btn {
 	border-radius: 32px;
 	font-weight: 200;
 	font-size: 15px;
 	line-height: 24px;
 	padding: 13px 40px;
+	margin: 0;
 }
 
 .addresses__heading {
@@ -814,12 +826,28 @@
 	line-height: 36px;
 	color: var(--color-heading);
 	margin: 0;
+
+	@include mq("medium") {
+		font-size: 20px;
+		line-height: 28px;
+	}
+}
+
+.addresses__header {
+	@include mq("medium") {
+		margin-bottom: 16px;
+	}
 }
 
 .addresses__grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 32px 20px;
+
+	@include mq("medium") {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
 }
 
 .addresses__grid-item {
@@ -876,6 +904,50 @@
 	}
 }
 
+.addresses .addresses__btn-desktop {
+	@include mq("medium") {
+		display: none;
+	}
+}
+
+.addresses .addresses__btn-mobile {
+	display: none;
+
+	@include mq("medium") {
+		display: block;
+	}
+
+	&.primary-btn {
+		width: 100%;
+		margin: 48px 0 0;
+	}
+
+	&.address__actions--edit {
+		font-size: 15px;
+		line-height: 24px;
+		color: var(--color-accent-2);
+
+		@include mq("medium") {
+			display: flex;
+			grid-gap: 8px;
+		}
+
+		svg {
+			width: 16px;
+			height: 18px;
+		}
+
+		path {
+			fill: var(--color-accent-2);
+		}
+	}
+}
+
+.addresses__edit-btn-group {
+	display: flex;
+	grid-gap: 36px;
+}
+
 .addresses__modal {
 	display: none;
 
@@ -898,6 +970,10 @@
 	max-height: 90vh;
 	overflow: auto;
 	z-index: 99;
+
+	@include mq("medium") {
+		padding: 24px 16px;
+	}
 
 	.addresses__header {
 		margin-bottom: 32px;
@@ -957,6 +1033,11 @@
 		flex: 1;
 		margin-top: 0;
 	}
+
+	@include mq("medium") {
+		flex-direction: column;
+		grid-gap: 24px;
+	}
 }
 
 .addresses__checkbox {
@@ -972,6 +1053,22 @@
 	justify-content: flex-end;
 	grid-gap: 24px;
 	margin-top: 32px;
+
+	@include mq("medium") {
+		flex-direction: column;
+
+		.secondary-btn {
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			font-weight: 200;
+			font-size: 12px;
+			line-height: 18px;
+			color: var(--color-text);
+			text-decoration: underline;
+			order: 1;
+		}
+	}
 
 	button {
 		margin: 0;
@@ -990,10 +1087,6 @@
 
 li[data-address] {
 	margin-top: 5rem;
-}
-
-.addresses [aria-expanded="false"] ~ div[id] {
-	display: none;
 }
 
 .addresses [aria-expanded="true"] ~ div[id] {
