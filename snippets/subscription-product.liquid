@@ -167,6 +167,7 @@
 	</style>
 	<!-- Subscriptions Powered by ReCharge Payments: HTML -->
 	<div id="rc_container" {% if subscription_only %}class="rc_subscription-only"{% endif %} style="display: none;">
+		<label class="rc_subscription__label">Frequency</label>
 		<input type="hidden" name="" id="rc_shipping_interval_unit_type" value="{{ shipping_interval_unit_type }}">
 		<select id="rc_duplicate_selector" aria-hidden="true" class="styled replaced no-js" style="display: none;">
 			{% if variant_to_duplicate %}

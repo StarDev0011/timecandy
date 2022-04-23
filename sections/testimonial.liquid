@@ -13,17 +13,28 @@
 {% if section.blocks.size > 0 %}
     {{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
     <div class="page-width  testimonial section-{{ section.id }}-padding">
-        {%- unless section.settings.title == blank -%}
-          <h2 class="h1 heading-center">{{ section.settings.title | escape }}</h2>
-        {%- endunless -%}
-       
+        <div class="testimonial__header">
+            {%- unless section.settings.title == blank -%}
+            <h2 class="h1 heading-center">{{ section.settings.title | escape }}</h2>
+            {%- endunless -%}
+            {% if section.settings.desc != blank %}
+                <div class="testimonial__desc">
+                    {{ section.settings.desc }}
+                </div>
+            {% endif %}
+            {% if section.settings.btn != blank %}
+            <div class="testimonial__action">
+                <a class="button testimonial__btn" href="{{ section.settings.btn_link }}"> {{ section.settings.btn }} </a>
+            </div>
+            {% endif %}
+        </div>
             <div id="slider-testimonial" class="swiper swiper-container">
                 <div class="swiper-wrapper">
                     {% for block in section.blocks %}
                         <div class="swiper-slide">
                             <div class="testimonial-grid">
                                 {%- if section.settings.bg_image != blank -%}
-                                <img class="testimonial-bg-img" 
+                                <img class="testimonial-bg-img"
                                     src="{{ section.settings.bg_image | img_url: '750x' }}"
                                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
                                     alt="{{ section.settings.bg_image.alt | escape }}"
@@ -52,7 +63,7 @@
                                             >
                                         {%- endif -%}
                                         {%- if section.settings.bg_image != blank -%}
-                                            <img class="testimonial-bg-mb" 
+                                            <img class="testimonial-bg-mb"
                                                 src="{{ section.settings.bg_image | img_url: '750x' }}"
                                                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
                                                 alt="{{ section.settings.bg_image.alt | escape }}"
@@ -69,20 +80,20 @@
                                 <div class="testimonial__content ">
                                     {% if block.settings.reviewer != blank %}
                                             <div class=" h5 name-reviewer ">
-                                                {{ block.settings.reviewer }}                    
+                                                {{ block.settings.reviewer }}
                                             </div>
                                         {% endif %}
                                         {% if block.settings.state != blank %}
                                             <div class="state-reviewer ">
-                                                {{ block.settings.state}}                    
+                                                {{ block.settings.state}}
                                             </div>
                                         {% endif %}
                                         {% if block.settings.content_review != blank %}
                                             <div class="content-review">
-                                                {{ block.settings.content_review }}                        
+                                                {{ block.settings.content_review }}
                                             </div>
                                         {% endif %}
-                                        {%  if block.settings.link_readmore != blank %}
+                                        {% if block.settings.link_readmore != blank %}
                                             <a href="{{block.settings.link_readmore}}"> Read more</a>
                                         {% endif %}
                                     </div>
@@ -99,7 +110,7 @@
         </div>
     </div>
 {% endif %}
-    
+
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         var Swipes = new Swiper('#slider-testimonial.swiper-container', {
@@ -129,6 +140,21 @@
           "id": "title",
           "default": "Heading",
           "label":"Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "desc",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "btn",
+            "label": "Button"
+        },
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Link button"
         },
         {
             "type": "image_picker",

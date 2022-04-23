@@ -8,6 +8,28 @@
 }
 
 .product-recommendations__heading {
-  margin: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 75px;
+  text-align: center;
+  font-family: var(--my-font);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: none;
+}
+
+.product-recommendations .product-grid {
+  margin-top: 0;
+  grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.product-recommendations .grid__item {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.product-recommendations .card-product__form {
+  display: none;
 }
