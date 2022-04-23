@@ -533,7 +533,6 @@ blockquote {
 
 .caption-large,
 .customer .field input,
-.customer select,
 .field__input,
 .form__label,
 .select__select {
@@ -1286,7 +1285,6 @@ deferred-media {
 
 .button,
 .shopify-challenge__button,
-.customer button,
 button.shopify-payment-button__button--unbranded,
 .shopify-payment-button [role="button"],
 .cart__dynamic-checkout-buttons [role="button"],
@@ -1303,7 +1301,6 @@ button.shopify-payment-button__button--unbranded,
 
 .button,
 .shopify-challenge__button,
-.customer button,
 button.shopify-payment-button__button--unbranded {
 	min-width: calc(12rem + var(--buttons-border-width) * 2);
 	min-height: calc(4.5rem + var(--buttons-border-width) * 2);
@@ -1322,8 +1319,7 @@ button.shopify-payment-button__button--unbranded {
 	justify-content: center;
 }
 .button,
-.shopify-challenge__button,
-.customer button {
+.shopify-challenge__button {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -1353,7 +1349,6 @@ button.shopify-payment-button__button--unbranded {
 }
 .button:hover,
 .shopify-challenge__button:hover,
-.customer button:hover,
 .button--secondary:hover,
 .button--alternative:hover,
 .button--secondary:not([disabled]):hover,
@@ -1383,8 +1378,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button::selection,
-.shopify-challenge__button::selection,
-.customer button::selection {
+.shopify-challenge__button::selection {
 	background-color: rgba(var(--color-button-text), 0.3);
 }
 
@@ -1403,10 +1397,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button:disabled,
 .button[aria-disabled="true"],
-.button.disabled,
-.customer button:disabled,
-.customer button[aria-disabled="true"],
-.customer button.disabled {
+.button.disabled {
 	cursor: not-allowed;
 	opacity: 0.5;
 }
@@ -1626,8 +1617,7 @@ details[open] > .share-button__fallback {
 /* component-form */
 .field__input,
 .select__select,
-.customer .field input,
-.customer select {
+.customer .field input {
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: rgb(var(--color-background));
@@ -1646,8 +1636,6 @@ details[open] > .share-button__fallback {
 
 .field:before,
 .select:before,
-.customer .field:before,
-.customer select:before,
 .localization-form__select:before {
 	pointer-events: none;
 	content: "";
@@ -1664,8 +1652,6 @@ details[open] > .share-button__fallback {
 
 .field:after,
 .select:after,
-.customer .field:after,
-.customer select:after,
 .localization-form__select:after {
 	pointer-events: none;
 	content: "";
@@ -1694,7 +1680,6 @@ details[open] > .share-button__fallback {
 .select:hover.select:after,
 .select__select:hover.select__select:after,
 .customer .field:hover.field:after,
-.customer select:hover.select:after,
 .localization-form__select:hover.localization-form__select:after {
 	box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width))
 		rgba(var(--color-foreground), var(--inputs-border-opacity));
@@ -1705,7 +1690,6 @@ details[open] > .share-button__fallback {
 .field__input:focus-visible,
 .select__select:focus-visible,
 .customer .field input:focus-visible,
-.customer select:focus-visible,
 .localization-form__select:focus-visible.localization-form__select:after {
 	box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
 	outline: 0;
@@ -1715,7 +1699,6 @@ details[open] > .share-button__fallback {
 .field__input:focus,
 .select__select:focus,
 .customer .field input:focus,
-.customer select:focus,
 .localization-form__select:focus.localization-form__select:after {
 	box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
 	outline: 0;
@@ -1745,8 +1728,7 @@ details[open] > .share-button__fallback {
 	right: calc(var(--inputs-border-width) + 1.5rem);
 }
 
-.select__select,
-.customer select {
+.select__select {
 	cursor: pointer;
 	line-height: calc(1 + 0.6 / var(--font-body-scale));
 	padding: 0 2rem;
@@ -1763,10 +1745,6 @@ details[open] > .share-button__fallback {
 	transition: box-shadow var(--duration-short) ease;
 }
 
-.customer .field {
-	display: flex;
-}
-
 .field--with-error {
 	flex-wrap: wrap;
 }
@@ -1780,8 +1758,7 @@ details[open] > .share-button__fallback {
 	transition: box-shadow var(--duration-short) ease;
 }
 
-.field__label,
-.customer .field label {
+.field__label {
 	font-size: 1.6rem;
 	left: calc(var(--inputs-border-width) + 2rem);
 	top: calc(1rem + var(--inputs-border-width));

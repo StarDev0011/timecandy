@@ -38,23 +38,6 @@
 	flex: 3.5;
 }
 
-.customer:not(.account):not(.order) {
-	margin: 6rem auto 9rem;
-	max-width: 33.4rem;
-	padding: 0 1.5rem;
-	text-align: center;
-}
-
-@media screen and (min-width: 750px) {
-	.customer:not(.account):not(.order) {
-		max-width: 47.8rem;
-	}
-}
-
-.customer form {
-	margin-top: 4rem;
-}
-
 .customer h2.form__message {
 	font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
@@ -63,10 +46,6 @@
 	.customer h2.form__message {
 		font-size: calc(var(--font-heading-scale) * 2.2rem);
 	}
-}
-
-.customer .field {
-	margin: 2rem 0 0 0;
 }
 
 .customer .field:first-of-type {
@@ -397,9 +376,7 @@
 	margin-bottom: 0;
 }
 
-.activate button[name="decline"],
-.addresses li > button,
-.addresses form button[type] {
+.activate button[name="decline"] {
 	background-color: rgba(var(--color-background), var(--alpha-button-background));
 }
 
@@ -814,31 +791,191 @@
 }
 
 /* Addresses */
-.addresses li > button {
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
+.addresses .primary-btn {
+	border-radius: 32px;
+	font-weight: 200;
+	font-size: 15px;
+	line-height: 24px;
+	padding: 13px 40px;
 }
 
-.addresses li > button + button,
-.addresses form button + button {
-	margin-top: 0rem;
+.addresses__heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2px;
 }
 
-@media screen and (min-width: 750px) {
-	.addresses li > button:first-of-type {
-		margin-top: 3rem;
+.addresses__header,
+.customer__info-box .addresses__header {
+	font-family: var(--font-heading);
+	font-weight: 200;
+	font-size: 28px;
+	line-height: 36px;
+	color: var(--color-heading);
+	margin: 0;
+}
+
+.addresses__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 32px 20px;
+}
+
+.addresses__grid-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.addresses .customer__info-box {
+	flex: 1;
+	color: var(--color-text);
+	font-family: var(--font-default);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 16px;
+}
+
+.addresses__all {
+	margin-top: 64px;
+
+	h1 {
+		margin-bottom: 16px;
 	}
 }
 
-.addresses form button:first-of-type {
-	margin-right: 1rem;
+.address__actions {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-family: var(--font-heading);
+
+	&--edit {
+		grid-gap: 3px;
+		font-weight: 200;
+		font-size: 12px;
+		line-height: 21px;
+		text-transform: uppercase;
+		color: var(--color-text);
+	}
+
+	&--delete {
+		grid-gap: 8px;
+		font-weight: 200;
+		font-size: 15px;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: var(--color-accent-2);
+	}
 }
 
-label[for="AddressCountryNew"],
-label[for="AddressProvinceNew"] {
-	display: block;
-	font-size: 1.4rem;
-	margin-bottom: 0.6rem;
+.addresses__modal {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.addresses__modal-content {
+	background: #ffffff;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 15px;
+	padding: 32px 24px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 770px;
+	max-width: 90%;
+	max-height: 90vh;
+	overflow: auto;
+	z-index: 99;
+
+	.addresses__header {
+		margin-bottom: 32px;
+	}
+}
+
+.addresses__field {
+	& > div {
+		position: relative;
+	}
+
+	label {
+		display: block;
+		font-family: var(--font-heading);
+		font-weight: 200;
+		font-size: 12px;
+		line-height: 21px;
+		text-transform: uppercase;
+		color: var(--color-heading);
+		margin-bottom: 4px;
+	}
+
+	input,
+	select {
+		appearance: none;
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		box-sizing: border-box;
+		border-radius: 3px;
+		width: 100%;
+		padding: 12px 16px;
+		color: var(--color-text);
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+}
+
+.addresses__field + .addresses__field,
+.addresses__form-row + .addresses__field,
+.addresses__field + .addresses__form-row,
+.addresses__form-row + .addresses__form-row {
+	margin-top: 24px;
+}
+
+.addresses__form-row {
+	display: flex;
+	grid-gap: 20px;
+
+	.addresses__field {
+		flex: 1;
+		margin-top: 0;
+	}
+}
+
+.addresses__checkbox {
+	font-family: var(--font-default);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--color-text);
+}
+
+.addresses__button-group {
+	display: flex;
+	justify-content: flex-end;
+	grid-gap: 24px;
+	margin-top: 32px;
+
+	button {
+		margin: 0;
+	}
 }
 
 .addresses form {
@@ -849,12 +986,6 @@ label[for="AddressProvinceNew"] {
 .addresses form > div {
 	width: 100%;
 	text-align: left;
-}
-
-.addresses ul {
-	list-style: none;
-	padding-left: 0;
-	text-align: center;
 }
 
 li[data-address] {
@@ -890,29 +1021,7 @@ li[data-address] > h2 {
 }
 
 .addresses input[type="checkbox"] {
-	margin-top: 2rem;
-	margin-left: 0;
-}
-
-@media only screen and (min-width: 750px) {
-	.addresses form > div:nth-of-type(1) {
-		margin-right: 2rem;
-	}
-
-	.addresses form > div:nth-of-type(2) {
-		margin-top: 0;
-	}
-
-	.addresses form > div:nth-of-type(1),
-	.addresses form > div:nth-of-type(2) {
-		box-sizing: border-box;
-		flex-basis: calc(50% - 1rem);
-	}
-}
-
-.addresses form > div:nth-of-type(7),
-.addresses form > div:nth-of-type(7) + div[id] {
-	margin-top: 1.5rem;
+	margin: 24px 6px 0 0;
 }
 
 .account table td:first-of-type a {
