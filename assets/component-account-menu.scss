@@ -9,6 +9,7 @@
 	text-transform: none;
 	margin-top: 0;
 	margin-bottom: 16px;
+	hyphens: auto;
 
 	@include mq("medium") {
 		font-size: 20px;
