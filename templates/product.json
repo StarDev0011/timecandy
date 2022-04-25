@@ -33,11 +33,6 @@
             "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -98,7 +93,6 @@
         "caption",
         "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
         "description",
         "collapsible-row-0",
@@ -113,9 +107,7 @@
         "media_size": "large",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "enable_video_looping": false
       }
     },
     "image-with-text": {
@@ -124,8 +116,7 @@
         "image-with-text-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Image with text"
           }
         },
         "image-with-text-1": {
@@ -141,16 +132,10 @@
         "image-with-text-1"
       ],
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "mobile_content_alignment": "left"
       }
     },
     "multicolumn": {
@@ -191,9 +176,7 @@
         "button_link": "",
         "color_scheme": "background-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": false
       }
     },
     "product-recommendations": {
@@ -207,9 +190,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "columns_mobile": "2"
       }
     }
   },
