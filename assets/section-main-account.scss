@@ -556,6 +556,10 @@
 			text-transform: uppercase;
 			color: var(--color-heading);
 
+			@include mq("medium", "min-width") {
+				padding-bottom: 22px;
+			}
+
 			@include mq("medium") {
 				font-size: 14px;
 				line-height: 18px;
@@ -686,6 +690,12 @@
 .order__additional-fees:nth-last-of-type(2) {
 	td {
 		padding-bottom: 16px;
+	}
+}
+
+.order__subtotal + .order__total {
+	td {
+		border-top: none;
 	}
 }
 
