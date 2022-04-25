@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "product-decade-box",
       "blocks": {
         "vendor": {
           "type": "text",
