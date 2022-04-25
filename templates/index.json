@@ -249,8 +249,8 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "old time candy fan favorites",
-        "collection": "top-candy",
+        "title": "Old Time Candy Fan Favorites",
+        "collection": "candy-by-occasion-mothers-day-candy",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
