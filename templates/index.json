@@ -55,7 +55,7 @@
           "type": "button",
           "settings": {
             "button_label": "Walk the candy aisle",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify:\/\/collections\/walk-the-candy-aisle"
           }
         }
       },
@@ -75,7 +75,11 @@
         "padding_top": 90,
         "padding_bottom": 140,
         "padding_top_mb": 60,
-        "padding_bottom_mb": 64
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
       }
     },
     "icon_with_text": {
@@ -125,6 +129,7 @@
       "settings": {
         "product": "large-decade-candy-gift-box",
         "sub_title": "looking for a gift?",
+        "desc": "",
         "show_best_seller": true,
         "color_scheme": "accent-1",
         "secondary_background": false,
@@ -234,7 +239,11 @@
         "padding_top": 90,
         "padding_bottom": 140,
         "padding_top_mb": 80,
-        "padding_bottom_mb": 86
+        "padding_bottom_mb": 86,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
       }
     },
     "featured_collection": {
@@ -307,6 +316,9 @@
       ],
       "settings": {
         "title": "Candy memories",
+        "desc": "",
+        "btn": "",
+        "btn_link": "",
         "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
         "padding_top": 90,
         "padding_bottom": 120
