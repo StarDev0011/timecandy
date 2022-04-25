@@ -236,7 +236,7 @@
 
 	.customer tbody td::before {
 		content: attr(data-label);
-		color: var(--color-heading);
+		color: var(--color-text);
 		font-family: var(--font-heading);
 		font-size: 14px;
 		line-height: 18px;
