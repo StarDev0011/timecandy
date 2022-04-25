@@ -153,3 +153,19 @@
   font-family: var(--my-font);
   margin-bottom: 4px;
 }
+
+@media (max-width: 767px) {
+  .banner-with-text__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-with-text__content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 899px) and (min-width: 768px) {
+  .banner-with-text__grid {
+    grid-gap: 40px;
+  }
+}

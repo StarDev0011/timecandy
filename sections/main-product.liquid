@@ -23,25 +23,6 @@
   <div class="product">
     <div class="product__media-wrapper">
       <div class="product__media-content">
-        {% if product.media.size > 1 %}
-        <div class="product__media-inner">
-          <div class="product__media-thumnail swiper js-swiper-thumnail">
-            <div class="product-thumbnails swiper-wrapper">
-              {% for media in product.media %}
-                <div class="product-thumbnails__item swiper-slide">
-                  <img class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x'}}">
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="swiper-btn-next swiper-btn">
-            {% render 'icon-arrow-bottom' %}
-          </div>
-          <div class="swiper-btn-prev swiper-btn">
-            {% render 'icon-arrow-top' %}
-          </div>
-        </div>
-        {% endif %}
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
@@ -168,6 +149,25 @@
             </slider-component>
           {%- endif -%}
         </media-gallery>
+        {% if product.media.size > 1 %}
+          <div class="product__media-inner">
+            <div class="product__media-thumnail swiper js-swiper-thumnail">
+              <div class="product-thumbnails swiper-wrapper">
+                {% for media in product.media %}
+                  <div class="product-thumbnails__item swiper-slide">
+                    <img class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x'}}">
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="swiper-btn-next swiper-btn">
+              {% render 'icon-arrow-bottom' %}
+            </div>
+            <div class="swiper-btn-prev swiper-btn">
+              {% render 'icon-arrow-top' %}
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
     <div class="product__info-wrapper">
@@ -213,7 +213,7 @@
                 assign count_desc = desc | size
             %}
               <div class="product__description rte">
-                <div {% if count_desc > 50 %}class="product__height-desc"{% endif %}>
+                <div class="product__desc-text {% if count_desc > 50 %}product__height-desc{% endif %}">
                   {{ product.description }}
                 </div>
                 {% if count_desc > 50 %}
@@ -670,18 +670,19 @@
 
   window.addEventListener('load', () => {
     var swiper = new Swiper('.js-swiper-thumnail', {
-      direction: 'vertical',
+      direction: 'horizontal',
       slidesPerView: 5,
       spaceBetween: 8,
       freeMode: true,
       navigation: {
         nextEl: ".swiper-btn-next",
         prevEl: ".swiper-btn-prev",
+      },
+      breakpoints: {
+        900: {
+          direction: 'vertical',
+        }
       }
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
     });
     var Swipes = new Swiper('.js-swiper-main', {
       spaceBetween: 10,
@@ -691,6 +692,7 @@
     });
   });
 </script>
+
 
 {%- if first_3d_model -%}
   <script type="application/json" id="ProductJSON-{{ product.id }}">

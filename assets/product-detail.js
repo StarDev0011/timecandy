@@ -4,11 +4,13 @@ Product = {
   Class: {
     swatchName: '.js-option-label',
     swatchInput: '.js-variant-input',
-    swatchLabel: '.product-swatch__label'
+    swatchLabel: '.product-swatch__label',
+    btnReadMore: '.js-read-more'
   },
 
   init: function() {
     this.dropDownOption();
+    this.readMoreDesc();
   },
 
   dropDownOption: () => {
@@ -24,6 +26,13 @@ Product = {
       $(Product.Class.swatchName).text(name);
       $('.product-form__swatch-dropdown').slideToggle(200);
     })
+  },
+
+  readMoreDesc: () => {
+    $('body').on('click', Product.Class.btnReadMore, function() {
+      $('.product__desc-text').removeClass('product__height-desc');
+      $(this).hide();
+    });
   }
 };
 
