@@ -795,6 +795,12 @@
 	margin: 0;
 }
 
+.addresses__icon-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
 .addresses__heading {
 	display: flex;
 	justify-content: space-between;
