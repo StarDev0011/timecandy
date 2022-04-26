@@ -159,9 +159,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_2.png",
             "title": "Sometimes you just need 3+ lbs of candy for your next party.",
-            "caption": "retro candy in bulk",
-            "button_label": "shop now",
-            "button_link": "#",
+            "caption": "Retro Candy in Bulk",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/bulk-candy",
             "layout": "text_first",
             "mobile_content_alignment": "center"
           }
