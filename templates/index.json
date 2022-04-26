@@ -54,7 +54,7 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Walk the candy aisle",
+            "button_label": "Walk the Candy Aisle",
             "button_link": "shopify:\/\/collections\/walk-the-candy-aisle"
           }
         }
