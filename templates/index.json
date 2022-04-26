@@ -77,9 +77,9 @@
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
         "show_bottom": false,
-        "column_1": "",
-        "column_2": "",
-        "column_3": ""
+        "column_1": "<p>Testing<\/p>",
+        "column_2": "<p>Testing<\/p>",
+        "column_3": "<p>Testing<\/p>"
       }
     },
     "icon_with_text": {
