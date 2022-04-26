@@ -1,8 +1,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-article-card.min.css' | asset_url | stylesheet_tag }}
-{{ 'component-selector.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.min.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'selector-handler.js' | asset_url }}" defer></script>
+<script src="{{ 'blog-categories.js' | asset_url }}" defer></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -38,7 +37,7 @@
             {% endfor %}
           </ul>
 
-          <select class="link-selector link-selector--mobile js-selector">
+          <select class="blog-categories__list--mobile js-blog-categories">
             <option target="{{ blog.url }}">All</option>
             {% for tag in blog.all_tags %}
             <option target="{{ blog.url }}/tagged/{{ tag.handle }}"
@@ -49,7 +48,7 @@
           </select>
 
           <style>
-            .link-selector {
+            .blog-categories__list--mobile {
               background-image: url('{{ "icon-caret.svg" | asset_url }}');
             }
           </style>

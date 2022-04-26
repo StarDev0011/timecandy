@@ -296,17 +296,11 @@
     "update_country": "Update country\/region"
   },
   "customer": {
-    "menu_links": {
-      "orders": "Orders",
-      "addresses": "Addresses",
-      "wishlist": "Wishlist",
-      "logout": "Log out"
-    },
     "account": {
-      "title": "My account",
+      "title": "Account",
       "details": "Account details",
       "view_addresses": "View addresses",
-      "return": "Back to all orders"
+      "return": "Return to Account details"
     },
     "account_fallback": "Account",
     "activate_account": {
@@ -319,21 +313,19 @@
     },
     "addresses": {
       "title": "Addresses",
-      "all": "All addresses",
-      "default": "Default address",
+      "default": "Default",
       "add_new": "Add a new address",
       "edit_address": "Edit address",
       "first_name": "First name",
       "last_name": "Last name",
-      "full_name": "Name",
       "company": "Company",
-      "address1": "Address line 1",
-      "address2": "Address line 2",
+      "address1": "Address 1",
+      "address2": "Address 2",
       "city": "City",
       "country": "Country\/region",
-      "province": "State\/Province",
+      "province": "Province",
       "zip": "Postal\/ZIP code",
-      "phone": "Phone number",
+      "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add address",
       "update": "Update address",
@@ -373,7 +365,6 @@
       "price": "Price",
       "quantity": "Quantity",
       "total": "Total",
-      "order_total": "Order total",
       "fulfilled_at_html": "Fulfilled {{ date }}",
       "track_shipment": "Track shipment",
       "tracking_url": "Tracking link",
