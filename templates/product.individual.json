@@ -49,15 +49,6 @@
           "settings": {
             "custom_text": "<p>Orders placed by midnight usually ship on the next business day.  <a href=\"#\" title=\"#\">Lean more<\/a> <\/p>"
           }
-        },
-        "671f3cfa-ea66-44e3-8413-d7997c5f9d05": {
-          "type": "add_on",
-          "settings": {
-            "pr_title": "Fun Extras!",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "pr_1": "3-musketeers-bar",
-            "pr_2": "air-heads-bar"
-          }
         }
       },
       "block_order": [
@@ -68,8 +59,7 @@
         "description",
         "variant_picker",
         "buy_buttons",
-        "63cc3701-5fe9-4ea4-b7b1-9ee5463fec2a",
-        "671f3cfa-ea66-44e3-8413-d7997c5f9d05"
+        "63cc3701-5fe9-4ea4-b7b1-9ee5463fec2a"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -113,7 +103,7 @@
         "padding_bottom": 140,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
-        "show_bottom": true,
+        "show_bottom": false,
         "column_1": "<p>Atomic Fire Balls<br\/>BB Bats<br\/>Beechies Gum <br\/>Bit-O-Honey <br\/>Bonomo's Turkish Taffy<br\/>Bubble Yum <br\/>Candy Buttons on paper tape <br\/>Candy Cigarettes <br\/>Candy Necklace <br\/>Charleston Chews <br\/>Chick-o-Stick <br\/>Chuckles <br\/>Clark Bar Jr <\/p>",
         "column_2": "<p>Dots<br\/>Dubble Bubble Gum<br\/>Gobstoppers<br\/>Jawbreakers<br\/>Kits Taffy<br\/>Laffy Taffy<br\/>Lemonheads<br\/>Lik-M-Aid Fun Dip<br\/>Necco Wafers<br\/>Now & Laters<br\/>Oh Henry<br\/>Peanut Butter Bars<br\/>Pop Rocks<\/p>",
         "column_3": "<p>Root Beer Barrels<br\/>Saf-T-Pops<br\/>Smarties<br\/>Sour Patch Kids<br\/>Spearmint Gum<br\/>Stick Candy<br\/>Sugar Daddy<br\/>Swedish Fish<br\/>Tootsie Pops<br\/>Tootsie RollWarheads<br\/>Wax LipsZotz<\/p>"
