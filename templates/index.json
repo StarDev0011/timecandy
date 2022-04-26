@@ -108,21 +108,12 @@
             "title": "by candy lovers, for candy lovers",
             "link": ""
           }
-        },
-        "1b3f21c8-d3a1-4064-af8b-22ea3c2396cf": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1295_1.png",
-            "title": "Column",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "icon1",
         "icon2",
-        "icon3",
-        "1b3f21c8-d3a1-4064-af8b-22ea3c2396cf"
+        "icon3"
       ],
       "settings": {
         "columns_desktop": 3,
