@@ -111,6 +111,7 @@
     },
     "1650857606d9d1e1f2": {
       "type": "featured-product",
+      "disabled": true,
       "settings": {
         "product": "10-color-pen",
         "sub_title": "hand-written gift cards",
