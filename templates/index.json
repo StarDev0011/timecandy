@@ -30,9 +30,9 @@
         "slide_height": "adapt_image",
         "slider_visual": "none",
         "auto_rotate": false,
-        "change_slides_speed": 5,
+        "change_slides_speed": 9,
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "accessibility_info": "Our Featured Promotions"
       }
     },
     "image_with_text": {
