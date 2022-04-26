@@ -133,7 +133,7 @@
         "show_best_seller": true,
         "color_scheme": "accent-1",
         "secondary_background": false,
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -148,8 +148,8 @@
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "subscription boxes",
-            "button_label": "shop now",
-            "button_link": "#",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/subscription-boxes",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
