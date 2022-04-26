@@ -34,6 +34,7 @@
       "settings": {
         "product": "large-decade-candy-gift-box",
         "sub_title": "looking for a gift?",
+        "desc": "",
         "show_best_seller": true,
         "color_scheme": "background-1",
         "secondary_background": false,
@@ -59,9 +60,9 @@
           "type": "banner",
           "settings": {
             "image": "shopify:\/\/shop_images\/banner_1.png",
-            "btn": "shop gift boxes",
-            "link": "",
-            "title": "Personalized gifts",
+            "btn": "Shop Gift Boxes",
+            "link": "shopify:\/\/collections\/candy-gift-boxes",
+            "title": "Personalized Gifts",
             "bg_label": "#8ed1cb",
             "color_label": "#262626"
           }
@@ -70,9 +71,9 @@
           "type": "banner",
           "settings": {
             "image": "shopify:\/\/shop_images\/banner_2.png",
-            "btn": "shop sale",
-            "link": "",
-            "title": "Personalized gifts",
+            "btn": "Shop Sale",
+            "link": "shopify:\/\/collections\/deals-of-the-week",
+            "title": "Deals of the Week",
             "bg_label": "#ac1229",
             "color_label": "#ffffff"
           }
