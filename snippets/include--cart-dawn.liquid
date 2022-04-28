@@ -1,0 +1,15 @@
+{{ 'component-cart-dawn.css' | asset_url | stylesheet_tag }}
+<div class="modal-mini-cart js-mini-cart"></div>
+<div class="modal-error" style="display: none;">
+	<div class="modal-error__box">
+		<div class="modal-error__close js-close">
+			<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L14.5 14.5" stroke="#B6B6B6" stroke-width="2" stroke-linecap="round"></path>
+				<path d="M14.5 1L1 14.5" stroke="#B6B6B6" stroke-width="2" stroke-linecap="round"></path>
+			</svg>
+		</div>
+		<div class="modal-error__content">
+			<div class="modal-error__message js-message-error"></div>
+		</div>
+	</div>
+</div>

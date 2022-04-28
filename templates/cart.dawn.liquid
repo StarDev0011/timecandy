@@ -1,0 +1,114 @@
+{% layout none %}
+<div class="mini-cart">
+  <div class="mini-cart__header">
+    <div class="mini-cart__inner">
+      <div class="mini-cart__close js-close-minicart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.04163 9.45008L12.7083 1.95008C13.0123 1.60533 13.538 1.57177 13.8833 1.87508C14.2281 2.17905 14.2616 2.70475 13.9583 3.05008L7.7833 10.0001L13.9583 16.9501C14.2381 17.2975 14.1947 17.8037 13.8598 18.0984C13.5249 18.3931 13.0173 18.3718 12.7083 18.0501L6.04163 10.5501C5.76526 10.2355 5.76526 9.76467 6.04163 9.45008Z" fill="#484E57"/>
+        </svg>
+      </div>
+      <span class="mini-cart__header-title">My bag </span>
+      {% if cart.item_count > 0 %}
+        <span class="mini-cart__count js-mini-cart-count"> ({{ cart.item_count }}) </span>
+      {% endif %}
+    </div>
+    {% if cart.item_count > 0 %}
+      <div class="mini-cart__icon-cart">
+        <span class="mini-cart__icon-count js-mini-cart-count"> {{ cart.item_count }} </span>
+      </div>
+    {% endif %}
+  </div>
+  {% if cart.item_count > 0 %}
+    <form class="mini-cart__form" action="/cart" method="post" novalidate>
+      <div class="mini-cart__list js-mini-cart-list">
+        {%- for item in cart.items -%}
+          <div class="mini-cart__item" data-id="{{ item.id }}">
+            <div class="mini-cart__picture">
+              <a class="mini-cart__link" href="{{ item.url }}">
+                <img class="mini-cart__image" src="{{ item | img_url: 'x250' }}" alt="{{ item.image.alt | escape }}">
+              </a>
+            </div>
+            <div class="mini-cart__info">
+              <a class="mini-cart__link mini-cart__title" href="{{ item.url }}">
+                {{- item.product.title -}}
+              </a>
+
+              {%- if item.product.has_only_default_variant == false -%}
+                <div class="mini-cart__variants"> {{- item.variant.title -}} </div>
+              {%- endif -%}
+
+              <div class="mini-cart__group">
+                <div class="mini-cart__wrapper">
+                  <div class="mini-cart__qty">
+                    <button type="button" class="mini-cart__btn cart__btn-minus">
+                      {%- render 'icon-minus' -%}
+                    </button>
+                    <input class="mini-cart__qty-input cart-{{ item.id }}" data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                    <button type="button" class="mini-cart__btn cart__btn-plus">
+                      {%- render 'icon-plus' -%}
+                    </button>
+                  </div>
+                </div>
+                <div class="mini-cart__price">
+                  {% if item.variant.compare_at_price > item.original_price %}
+                    <span class="mini-cart__price--sale">{{ item.variant.compare_at_price | money }}</span>
+                    <span class="mini-cart__price--old">{{ item.price | money }}</span>
+                  {% else %}
+                  <span>{{ item.price | money }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <a class="mini-cart__remove js-remove-item-cart" href="#">
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.54597 8.45409C9.62485 8.53233 9.66922 8.63882 9.66922 8.74992C9.66922 8.86102 9.62485 8.96752 9.54597 9.04576C9.46773 9.12464 9.36124 9.16901 9.25014 9.16901C9.13904 9.16901 9.03254 9.12464 8.9543 9.04576L5.50014 5.58742L2.04597 9.04576C1.96773 9.12464 1.86124 9.16901 1.75014 9.16901C1.63904 9.16901 1.53254 9.12464 1.4543 9.04576C1.37542 8.96752 1.33105 8.86102 1.33105 8.74992C1.33105 8.63882 1.37542 8.53233 1.4543 8.45409L4.91264 4.99992L1.4543 1.54576C1.34861 1.44007 1.30734 1.28602 1.34602 1.14164C1.38471 0.997265 1.49748 0.884494 1.64185 0.845808C1.78623 0.807123 1.94028 0.8484 2.04597 0.954091L5.50014 4.41242L8.9543 0.954091C9.11769 0.790706 9.38259 0.790706 9.54597 0.954091C9.70936 1.11747 9.70936 1.38237 9.54597 1.54576L6.08764 4.99992L9.54597 8.45409Z" fill="#777777"/>
+              </svg>
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="mini-cart__bottom">
+      </div>
+    </form>
+  {% else %}
+    <div class="mini-cart-empty">
+      <div class="mini-cart-empty__icon">
+        <svg width="231" height="108" viewBox="0 0 231 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M180.684 26.8801C187.555 26.8801 193.124 21.3105 193.124 14.44C193.124 7.5696 187.555 2 180.684 2C173.814 2 168.244 7.5696 168.244 14.44C168.244 21.3105 173.814 26.8801 180.684 26.8801Z" fill="#EBEBEB"/>
+          <path d="M171.962 26.0167C175.87 29.6234 180.708 32.1515 185.974 33.3367C187.422 33.6578 198.827 35.9828 209.357 29.0612C222.697 20.2963 222.555 4.62776 222.524 3.49201L149.029 2.30275C148.641 2.30275 141.426 2.25518 137.47 8.24907C133.57 14.1359 136.478 20.332 136.663 20.7364" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M142.423 17.0046C140.092 19.8089 140.447 29.4243 146.757 30.5756" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M145.626 25.0512C145.626 25.0512 156.154 29.932 160.328 18.1355" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M219.389 10.2815C221.447 10.2815 223.116 8.61298 223.116 6.5548C223.116 4.49661 221.447 2.82812 219.389 2.82812C217.331 2.82812 215.662 4.49661 215.662 6.5548C215.662 8.61298 217.331 10.2815 219.389 10.2815Z" fill="#424242"/>
+          <path d="M172.768 12.481C173.655 13.529 174.77 14.3762 176.034 14.9625C177.298 15.5487 178.681 15.8597 180.084 15.8732C181.487 15.8868 182.876 15.6027 184.153 15.041C185.429 14.4793 186.562 13.6538 187.47 12.6231" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M129.793 80.4529C128.626 80.7329 127.441 80.9989 126.237 81.251C107.56 85.1435 88.1818 84.4403 69.8548 79.2048" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M171.637 59.9792C167.553 63.292 166.062 63.9253 159.197 67.8956" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M57.4148 29.8394C54.3232 22.5592 50.3721 17.6995 47.3361 18.1664C46.7923 18.2712 46.2758 18.4855 45.8186 18.7961C45.3613 19.1068 44.9729 19.5071 44.6773 19.9727C43.2366 22.3195 45.2957 25.7048 45.2957 25.7048L50.9039 36.0691L23.4874 106.347H46.9033L46.9714 106.273C48.5358 104.467 49.5065 101.647 49.0737 99.5702C48.4553 96.6704 44.8876 94.1146 40.4172 94.2621" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40.451 93.9066C49.2991 93.0342 57.6989 89.7382 64.6488 84.4117C69.6472 80.5233 73.7334 75.6659 76.6402 70.1575" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M159.197 67.8958C156.867 71.2767 154.471 74.5967 152.208 78.0385C148.399 83.6668 144.962 89.5419 141.921 95.6254C143.225 95.6315 144.509 95.943 145.673 96.535C146.837 97.1271 147.848 97.9835 148.626 99.0367C149.878 100.73 150.272 102.972 150.235 106.237L127.531 106.347C128.064 97.8184 129.746 89.29 130.279 80.725" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M90.6944 83.9863L97.0842 96.1392C97.0842 96.1392 108.409 93.071 109.437 106.347H86.7192L67.593 82.3891L71.9272 80.3357L90.6944 83.9863Z" fill="#424242" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M57.4147 30.5757C58.9017 35.6536 61.8881 42.3712 68.0583 47.7489C81.5649 59.52 103.809 59.2264 117.556 48.6911C123.455 44.1638 126.935 40.3645 128.662 36.6019C120.925 38.3517 114.23 37.4462 109.806 37.9051C97.8913 39.1287 85.3349 40.3523 70.9336 36.0697C66.2522 34.6943 61.723 32.8536 57.4147 30.5757Z" fill="#EBEBEB"/>
+          <path d="M129.793 36.0696C127.376 36.8346 79.6241 43.5687 57.4147 30.5757" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M165.872 64.5029C170.901 74.9281 174.921 86.7148 179.926 97.14C179.926 97.14 192.11 92.6018 193.124 106.347H170.705C164.228 97.6435 157.753 88.9611 151.281 80.2993L159.768 67.7293L165.872 64.5029Z" fill="#424242" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M227.052 106.347H2" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M188.604 43.0156C188.573 41.8391 188.77 40.6682 189.182 39.572C189.595 38.4758 190.214 37.4765 191.005 36.6332C191.795 35.7898 192.74 35.1195 193.784 34.6617C194.828 34.204 195.95 33.9683 197.083 33.9683C198.216 33.9683 199.337 34.204 200.381 34.6617C201.425 35.1195 202.37 35.7898 203.161 36.6332C203.951 37.4765 204.571 38.4758 204.983 39.572C205.395 40.6682 205.592 41.8391 205.561 43.0156" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M213.481 78.0739H171.637L180.432 43.0156H207.214L213.481 78.0739Z" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M206.695 43.0156H216.216L222.528 78.0739H213.014" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M218.004 78.074L215.742 66.7649" stroke="#424242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="218" cy="76.2046" r="13" fill="#06DEA6"/>
+          <path d="M213.628 76.6277H222.316" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M217.972 72.2793V80.9759" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="mini-cart-empty__title">
+        Your cart is empty
+      </div>
+      <div class="mini-cart-empty__desc">
+        Add a couple of goodies for your doggo
+      </div>
+      <div class="mini-cart-empty__action">
+        <a class="mini-cart-empty__btn mini-cart-empty__btn-food" href="/pages/our-range">Shop Food</a>
+        <a class="mini-cart-empty__btn mini-cart-empty__btn-access" href="/collections/dog-treats">Shop Accessories</a>
+      </div>
+    </div>
+  {% endif %}
+</div>
