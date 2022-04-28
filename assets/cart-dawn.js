@@ -168,44 +168,46 @@ CartDawn = {
   addMessageToAttributes: () => {
     $('body').on('click', '.js-attr-message', function(e) {
       e.preventDefault();
-      $(this).find('.modal-cart-gift__btn-text').hide();
-      $(this).find('.modal-cart-gift__btn-icon').show();
+      const seft = $(this);
+      seft.find('.modal-cart-gift__btn-text').hide();
+      seft.find('.modal-cart-gift__btn-icon').show();
 
       setTimeout(function() {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       }, 800)
       $.post('/cart.js', {
         attributes: {
           'Gift Message' : $('.modal-cart-gift__input').val()
         }
       }).done(function() {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       }).fail(function (jqXHR, textStatus) {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       });
     });
 
     $('body').on('click', '.js-attr-date', function(e) {
       e.preventDefault();
-      $(this).find('.modal-cart-gift__btn-text').hide();
-      $(this).find('.modal-cart-gift__btn-icon').show();
+      const seft = $(this);
+      seft.find('.modal-cart-gift__btn-text').hide();
+      seft.find('.modal-cart-gift__btn-icon').show();
       setTimeout(function() {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       }, 800)
       $.post('/cart.js', {
         attributes: {
           'Delayed Shipping Date' : $('.modal-cart-gift__date').val()
         }
       }).done(function() {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       }).fail(function (jqXHR, textStatus) {
-        $(this).find('.modal-cart-gift__btn-text').show();
-        $(this).find('.modal-cart-gift__btn-icon').hide();
+        seft.find('.modal-cart-gift__btn-text').show();
+        seft.find('.modal-cart-gift__btn-icon').hide();
       });
     });
   },
