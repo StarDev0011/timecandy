@@ -77,11 +77,33 @@
               </div>
             {% endif %}
           {% endfor %}
+          <a class="image-with-text__read-more js-read-more-text" href="#">
+            <span class="image-with-text__read-more--icon">
+              <ssvg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="8" transform="rotate(-180 8 8)" fill="#AC1229"/>
+                <path d="M12.1663 8.00065C12.1663 8.23077 11.9798 8.41732 11.7497 8.41732H8.41634V11.7507C8.41634 11.9808 8.22979 12.1673 7.99968 12.1673C7.76956 12.1673 7.58301 11.9808 7.58301 11.7507V8.41732H4.24967C4.01956 8.41732 3.83301 8.23077 3.83301 8.00065C3.83301 7.77053 4.01956 7.58399 4.24967 7.58399H7.58301V4.25065C7.58301 4.02053 7.76956 3.83398 7.99968 3.83398C8.22979 3.83398 8.41634 4.02053 8.41634 4.25065V7.58399H11.7497C11.9798 7.58399 12.1663 7.77053 12.1663 8.00065Z" fill="white"/>
+              </svg>
+            </span>
+            <span>Read more</span>
+          </a>
         </div>
       </div>
     {% endif %}
   </div>
 </div>
+
+<script>
+  const btnReadmore = document.querySelector('.js-read-more-text');
+  const columItems = document.querySelectorAll('.text-bottom__item');
+  btnReadmore.onclick = (e) => {
+    e.preventDefault();
+    columItems.forEach(function(item) {
+      item.style.display = 'block'
+      btnReadmore.style.display = 'none'
+    })
+  }
+</script>
+
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",

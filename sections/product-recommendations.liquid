@@ -18,25 +18,34 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  @media(min-width: 768px) {
+    .product-recommendations .swiper {
+      overflow: inherit;
+    }
+  }
 {%- endstyle -%}
 
 <div style="background-color: #E4F1F5;">
   <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
-      <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="swiper js-product-recommendations-slider">
+        <ul class="swiper-wrapper product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+          {% for recommendation in recommendations.products %}
+            <li class="grid__item swiper-slide">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="custom-swiper-pagination swiper-pagination" style="text-align: center;"></div>
+      </div>
     {% endif %}
   </product-recommendations>
 </div>
@@ -45,7 +54,29 @@
   class ProductRecommendations extends HTMLElement {
     constructor() {
       super();
+      const breakpoint = window.matchMedia( '(min-width: 768px)' );
+      var productSlider;
+      const breakpointCheck = function() {
+        if ( breakpoint.matches === true ) {
+          if ( productSlider !== undefined ) productSlider.destroy( true, true );
+            return;
+        } else if ( breakpoint.matches === false ) {
+          return enableSwiper();
+        }
+      };
 
+      const enableSwiper = function() {
+        productSlider = new Swiper ('.js-product-recommendations-slider', {
+          loop: false,
+          slidesPerView: 1,
+          spaceBetween: 16,
+          centeredSlides: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          }
+        });
+      };
       const handleIntersection = (entries, observer) => {
         if (!entries[0].isIntersecting) return;
         observer.unobserve(this);
@@ -59,6 +90,8 @@
 
             if (recommendations && recommendations.innerHTML.trim().length) {
               this.innerHTML = recommendations.innerHTML;
+              breakpoint.addListener(breakpointCheck);
+              breakpointCheck();
             }
 
             if (html.querySelector('.grid__item')) {
@@ -77,6 +110,36 @@
   customElements.define('product-recommendations', ProductRecommendations);
 {% endjavascript %}
 
+<script>
+  const breakpoint = window.matchMedia( '(min-width: 768px)' );
+  var productSlider;
+  const breakpointCheck = function() {
+    if ( breakpoint.matches === true ) {
+      if ( productSlider !== undefined ) productSlider.destroy( true, true );
+        return;
+    } else if ( breakpoint.matches === false ) {
+      return enableSwiper();
+    }
+  };
+
+  const enableSwiper = function() {
+    productSlider = new Swiper ('.js-product-recommendations-slider', {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }
+    });
+  };
+
+  window.addEventListener('load', (event) => {
+    breakpoint.addListener(breakpointCheck);
+    breakpointCheck();
+  })
+</script>
 {% schema %}
 {
   "name": "t:sections.product-recommendations.name",
