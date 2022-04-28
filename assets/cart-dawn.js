@@ -178,8 +178,8 @@ CartDawn = {
         $(this).find('.modal-cart-gift__btn-text').show();
         $(this).find('.modal-cart-gift__btn-icon').hide();
       }).fail(function (jqXHR, textStatus) {
-        $(this).find('.modal-cart-gift__btn-text').hide();
-        $(this).find('.modal-cart-gift__btn-icon').show();
+        $(this).find('.modal-cart-gift__btn-text').show();
+        $(this).find('.modal-cart-gift__btn-icon').hide();
       });
     });
 
