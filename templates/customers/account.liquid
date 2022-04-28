@@ -43,7 +43,7 @@
                       {{ order.fulfillment_status_label }}
                     </td>
                     <td class="order__total-price" headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                      {{ order.total_price | money }}</td>
+                      {{ order.total_price | money_with_currency }}</td>
                   </tr>
                 {%- endfor -%}
               </tbody>

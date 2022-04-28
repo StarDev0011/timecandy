@@ -19,11 +19,7 @@
       <div id="EditAddress_{{ address.id }}" class="addresses__modal" address-modal>
          <div class="modal-background"></div>
          <div class="addresses__modal-content">
-            <div class="addresses__heading">
-               <h2 class="addresses__header">{{ 'customer.addresses.edit_address' | t }}</h2>
-               <button type="reset" class="addresses__icon-btn">{% render 'icon-close' %}</button>
-             </div>
-
+            <h2 class="addresses__header">{{ 'customer.addresses.edit_address' | t }}</h2>
             {%- form 'customer_address', address -%}
 
             <div class="addresses__form-row">

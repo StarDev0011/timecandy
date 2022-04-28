@@ -281,7 +281,7 @@
           </a>
         {%- endif -%}
 
-        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset js-open-cart" id="cart-icon-bubble">
           {{ 'bag.png' | asset_url | img_tag : 'test'  , 'icon-bag-desktop' }}
           {{ 'icon-bag-mb.png' | asset_url | img_tag : 'test' , 'icon-bag-mb' }}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>

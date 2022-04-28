@@ -448,6 +448,47 @@
     ]
   },
   {
+    "name": "Cart Dawn",
+    "settings": [
+      {
+        "type": "text",
+        "id": "min_price",
+        "label": "Enter the minimum price for free shipping",
+        "default": "1995"
+      },
+      {
+        "type": "header",
+        "content": "Donation Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_donation_product",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "product",
+        "id": "donation_product",
+        "label": "Water Wells Donation Product"
+      },
+      {
+        "type": "header",
+        "content": "SHIPPING INSURANCE PRODUCT"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shipping_product",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "product",
+        "id": "shipping_product",
+        "label": "Shipping Insurance Product"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cards.name",
     "settings": [
       {
