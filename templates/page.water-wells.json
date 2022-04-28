@@ -1,0 +1,372 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "16491411523dd0117a": {
+      "type": "donate-now",
+      "settings": {
+        "desc": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water seems like such a small sacrifice, but it truly does make a difference in our world.<\/p><p>In 2021 our customers donated $5812 which we matched for a total of $11,624. Thank you for your generosity.<\/p>",
+        "btn_text": "Donate now",
+        "btn_link": "https:\/\/www.oldtimecandy.com\/products\/water-wells-donation"
+      }
+    },
+    "1649141265211324d5": {
+      "type": "custom-page-content",
+      "blocks": {
+        "0d960ec4-8471-48bc-bd02-8127f18ea758": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "MAKING A DIFFERENCE IN SIERRA LEONE",
+            "heading_type": "heading1",
+            "content": "<p>In 2007 Karen and I took a 2 week trip to Sierra Leone, West Africa in support of our church's missionary family living there. This experience changed our lives forever.<\/p><p>Sierra Leone is a small West African nation, and sadly the poorest country in the world. From 1991 to 2002 Sierra Leone was fighting a horrific civil war. It is the country featured in the movie, \"Blood Diamond\" with Leonardo DiCaprio. The poverty we witnessed here was staggering. Most of the population don't have access to clean water which leads to hunger, malnutrition, poor sanitation and an increase disease.<\/p><p>Before leaving Sierra Leone I asked our missionary what he believed to be the greatest need in Sierra Leone. His answer came quickly... water. We decided to get involved with the Africa Oasis Project which partners with our churches in Africa to provide deep-water wells, irrigation, sanitation training, and sewage management.<\/p>"
+          }
+        },
+        "0368d01a-5d35-47e7-b1bc-d5e75a799bca": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "",
+            "padding_right": "0",
+            "padding_top": "50px",
+            "padding_bottom": "0",
+            "heading": "WHAT IT COSTS",
+            "heading_type": "heading2",
+            "content": "<p>Investing in water solutions for Africa creates long-term solutions and clean water for generations to come. Each well serves around 2,000 people. That means it costs only about $3.50 to provide clean water for 20 years.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "0d960ec4-8471-48bc-bd02-8127f18ea758",
+        "0368d01a-5d35-47e7-b1bc-d5e75a799bca"
+      ],
+      "settings": {
+        "container_width": "half-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649141446db6f85c2": {
+      "type": "custom-page-content",
+      "blocks": {
+        "163afa01-9403-4ff3-a135-d7fb5962ef2b": {
+          "type": "image",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "1rem",
+            "padding_right": "1rem",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-1_460x305_crop_center_2x_b9cfbbb9-b607-46e2-9cfb-79098516b7a1.png"
+          }
+        },
+        "7ce22762-891e-4dcb-a2b0-0f2a9aeb1be1": {
+          "type": "image",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "1rem",
+            "padding_right": "1rem",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-2_460x305_crop_center_2x_92876192-24b9-4074-9063-794c2940e933.png"
+          }
+        }
+      },
+      "block_order": [
+        "163afa01-9403-4ff3-a135-d7fb5962ef2b",
+        "7ce22762-891e-4dcb-a2b0-0f2a9aeb1be1"
+      ],
+      "settings": {
+        "container_width": "eight-twelfths",
+        "padding_top": "1em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "16491414925759bb6b": {
+      "type": "custom-page-content",
+      "blocks": {
+        "3a706095-b9c3-4764-884f-b7a012ded290": {
+          "type": "text-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "A MAJOR FACTOR CONTRIBUTING TO THE SHORT LIFE EXPECTANCY IS THE LACK OF CLEAN DRINKING WATER.",
+            "heading_type": "heading2",
+            "content": "<p>We saw the need wherever we went. We experienced the need ourselves. And, the solution is incredibly simple. A water well can be drilled just about anywhere in the country. Water is found in the range of 150 to 300 feet below the surface. Hear what missionary Tom McLane has to say about the most basic human need for water in West Africa...<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3a706095-b9c3-4764-884f-b7a012ded290"
+      ],
+      "settings": {
+        "container_width": "half-width",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649141796182ac431": {
+      "type": "custom-page-content",
+      "blocks": {
+        "532d1d2e-b400-4750-af8a-97fd639f04cc": {
+          "type": "custom-content",
+          "settings": {
+            "width": "full-width",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Yc4CBGcLgM4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "532d1d2e-b400-4750-af8a-97fd639f04cc"
+      ],
+      "settings": {
+        "container_width": "one-thirds",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "164914202125ead99d": {
+      "type": "statistics-fact",
+      "blocks": {
+        "16491420215b2d1809-0": {
+          "type": "statistics",
+          "settings": {
+            "label": "Infant Mortality Rate",
+            "value": "15.8%"
+          }
+        },
+        "16491420215b2d1809-1": {
+          "type": "statistics",
+          "settings": {
+            "label": "of children don’t survive age 5.",
+            "value": "27.8%"
+          }
+        },
+        "16491420215b2d1809-2": {
+          "type": "statistics",
+          "settings": {
+            "label": "live below the poverty line.",
+            "value": "70%"
+          }
+        },
+        "16491420215b2d1809-3": {
+          "type": "statistics",
+          "settings": {
+            "label": "Approximate life expectancy",
+            "value": "40 YRS"
+          }
+        },
+        "16491420215b2d1809-4": {
+          "type": "statistics",
+          "settings": {
+            "label": "women dies in childbirth",
+            "value": "1 IN 6"
+          }
+        },
+        "16491420215b2d1809-5": {
+          "type": "statistics",
+          "settings": {
+            "label": "do not have access to clean water.",
+            "value": "~50%"
+          }
+        }
+      },
+      "block_order": [
+        "16491420215b2d1809-0",
+        "16491420215b2d1809-1",
+        "16491420215b2d1809-2",
+        "16491420215b2d1809-3",
+        "16491420215b2d1809-4",
+        "16491420215b2d1809-5"
+      ],
+      "settings": {
+        "title": "The facts about sierrea loene"
+      }
+    },
+    "16491420242bee22d3": {
+      "type": "custom-page-content",
+      "blocks": {
+        "d632c937-4692-4262-86dc-413a99268b7f": {
+          "type": "text-content",
+          "settings": {
+            "width": "six-tenths",
+            "padding_left": "0",
+            "padding_right": "10px",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "THE BOOK OF HOPE",
+            "heading_type": "heading2",
+            "content": "<p>While in Africa we shared the hope of Jesus Christ with a people for whom you would think there is little hope. With the help of our small group of 9 people, we visited 34 schools, distributing Christian booklets called the Book of Hope to over 24,000 students and teachers. The Book of Hope is a scripture book designed to engage and speak to the needs of children and youth within various African cultures.<\/p><p>The children in these pictures are fortunate because their families have enough money to send them to school. There is no public education in Sierra Leone, you must pay to go to school. Some students actually sneak into the classrooms. In one school with an enrollment of 1200 pupils we distributed over 1300 booklets. The hope for Sierra Leone and West Africa is in these children.<\/p><p>Most children in Sierra Leone are not so fortunate. According to recent report by UNICEF, 78% of the children between the ages of 7 and 14 are engaged in child labor. The study, which covered one quarter of the world's population, ranked Sierra Leone last among nations surveyed. Our Christian faith teaches that it is not enough to tell people about Jesus without attempting to provide for their human needs (James 2:14-17).<\/p>"
+          }
+        },
+        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55": {
+          "type": "image",
+          "settings": {
+            "width": "four-tenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-3_355x260_crop_center_2x_f57a8deb-20a4-49da-800b-9d0a3f764335.png"
+          }
+        },
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90": {
+          "type": "image",
+          "settings": {
+            "width": "four-tenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png"
+          }
+        }
+      },
+      "block_order": [
+        "d632c937-4692-4262-86dc-413a99268b7f",
+        "f8d41fe6-9ca2-4996-a2ee-d770ef8bae55",
+        "ef36153c-e0d0-4caa-b72c-f9c8af35dc90"
+      ],
+      "settings": {
+        "container_width": "six-tenths",
+        "padding_top": "7em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "164914286116fab5b2": {
+      "type": "custom-page-content",
+      "blocks": {
+        "4b3edaf2-c4f8-40b9-be07-a575d0695515": {
+          "type": "text-content",
+          "settings": {
+            "width": "six-sevenths",
+            "padding_left": "0",
+            "padding_right": "0",
+            "padding_top": "0",
+            "padding_bottom": "0",
+            "heading": "YOU CAN HELP PROVIDE CLEAN WATER TO AFRICA FOR THE COST OF JUST ONE BOTTLE OF WATER...",
+            "heading_type": "heading2",
+            "content": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water seems like such a small sacrifice, but It truly does make a difference in our world.<\/p><p>Karen and Don Bridge, Owners <br\/>Old Time Candy Company<\/p><p>Read the <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/steve_and_glenda_newsletter.pdf\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/steve_and_glenda_newsletter.pdf\">latest newsletter<\/a> from the missionaries on the ground in Africa.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4b3edaf2-c4f8-40b9-be07-a575d0695515"
+      ],
+      "settings": {
+        "container_width": "six-tenths",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "1649142356939b647f": {
+      "type": "custom-page-content",
+      "blocks": {
+        "29d5e81a-0f69-478d-83dd-c2ead99a7306": {
+          "type": "custom-content",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "5px",
+            "padding_right": "5px",
+            "padding_top": "30px",
+            "padding_bottom": "30px",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/I0S0piyzJXU\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        },
+        "fa5b0b93-20f6-4d32-8b51-22a685b36859": {
+          "type": "custom-content",
+          "settings": {
+            "width": "half-width",
+            "padding_left": "5px",
+            "padding_right": "5px",
+            "padding_top": "30px",
+            "padding_bottom": "60px",
+            "content": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/Uz36yGpqtIo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "29d5e81a-0f69-478d-83dd-c2ead99a7306",
+        "fa5b0b93-20f6-4d32-8b51-22a685b36859"
+      ],
+      "settings": {
+        "container_width": "eight-twelfths",
+        "padding_top": "1.5em",
+        "padding_bottom": "1.5em",
+        "enable_flex": false
+      }
+    },
+    "16491428293e641f1e": {
+      "type": "newsletter",
+      "blocks": {
+        "16491428290799c88c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "16491428290799c88c-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "16491428290799c88c-2": {
+          "type": "email_form",
+          "settings": {
+            "btn_text": "Sign up"
+          }
+        }
+      },
+      "block_order": [
+        "16491428290799c88c-0",
+        "16491428290799c88c-1",
+        "16491428290799c88c-2"
+      ],
+      "settings": {
+        "style": "old",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 95,
+        "padding_bottom": 74
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16491411523dd0117a",
+    "1649141265211324d5",
+    "1649141446db6f85c2",
+    "16491414925759bb6b",
+    "1649141796182ac431",
+    "164914202125ead99d",
+    "16491420242bee22d3",
+    "164914286116fab5b2",
+    "1649142356939b647f",
+    "16491428293e641f1e"
+  ]
+}
