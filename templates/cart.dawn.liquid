@@ -24,10 +24,10 @@
       {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
       <div class="mini-cart__progress-text">
         {%- if cartTotalPrice >= 100 -%}
-          Congrats! You qualified for Free shipping!
+          {{- settings.progress_text -}}
         {%- else -%}
-        You’re {{ remaining_price | money }} away from free shipping!
-        <a href="/">shop bulk candy</a>
+          {{ settings.pro_hint }} {{ remaining_price | money }} {{ settings.pro_hint_2 }}
+          <a href="{{ settings.link_shop }}">shop bulk candy</a>
         {%- endif -%}
       </div>
       <div class="mini-cart__progress-bar">
@@ -148,13 +148,15 @@
           {% if cart.total_price < freeshipPrice %}<div class="mini-cart__checkout-text">minimum order value is {{ freeshipPrice | money }}</div>{% endif %}
         </div>
         <div class="mini-cart__add-on">
+          {% if settings.enable_gift %}
           <div class="mini-cart__field">
             <input type="radio" value="Gift Message" id="GiftMessage" class="js-gift-message hidden">
             <label class="mini-cart__label" for="GiftMessage">
               <span class="mini-cart__gift-add js-gift-add">Add</span>
-              <span class="mini-cart__gift-text">Customize gift message and delayed delivery options.</span>
+              <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
             </label>
           </div>
+          {% endif %}
           <div class="mini-cart__field">
             {%- assign shipping_product = all_products[settings.shipping_product] -%}
             {% assign isInclude = false %}
@@ -167,7 +169,7 @@
             <label class="mini-cart__label" for="CartInclude">
               <span class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
               <span class="mini-cart__gift-text">
-                <p>Include shipping protection for only $0.98 extra. <a href="/"> Learn more </a></p>
+                {{ settings.cart_label }}
               </span>
             </label>
           </div>
@@ -178,7 +180,7 @@
     <div class="mini-cart-empty">
         <div class="mini-cart__progress">
           <div class="mini-cart__progress-text">
-            You’re $250 away from free shipping!
+            {{- settings.cart_empty_text -}}
           </div>
           <div class="mini-cart__progress-bar">
             <div class="mini-cart__progress-percent" style="width: 0;"></div>

@@ -522,6 +522,14 @@
   display: none;
 }
 
+.mini-cart__gift-text p {
+  margin: 0;
+}
+
+.mini-cart__field {
+  margin-bottom: 12px;
+}
+
 .modal-cart-gift__container {
   background-color: #fff;
   max-width: 700px;

@@ -457,6 +457,29 @@
         "default": "1995"
       },
       {
+        "type": "richtext",
+        "id": "progress_text",
+        "label": "Progress text",
+        "default": "<p>Congrats! You qualified for Free shipping!<\/p>"
+      },
+      {
+        "type": "text",
+        "id": "pro_hint",
+        "label": "Hint",
+        "default": "You’re"
+      },
+      {
+        "type": "textarea",
+        "id": "pro_hint_2",
+        "label": "Hint 2",
+        "default": "away from free shipping!"
+      },
+      {
+        "type": "url",
+        "id": "link_shop",
+        "label": "Link Shop bulk candy"
+      },
+      {
         "type": "header",
         "content": "Donation Product"
       },
@@ -497,6 +520,22 @@
       },
       {
         "type": "header",
+        "content": "Gift Cart"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gift",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "gift_label",
+        "label": "Label",
+        "default": "<p>Customize gift message and delayed delivery options.<\/p>"
+      },
+      {
+        "type": "header",
         "content": "SHIPPING INSURANCE PRODUCT"
       },
       {
@@ -511,8 +550,20 @@
         "label": "Shipping Insurance Product"
       },
       {
+        "type": "richtext",
+        "id": "cart_label",
+        "label": "Label",
+        "default": "<p>Include shipping protection for only $0.98 extra. <a href=\"\/pages\/shipping-insurance\"> Learn more <\/a><\/p>"
+      },
+      {
         "type": "header",
         "content": "Cart Empty"
+      },
+      {
+        "type": "textarea",
+        "id": "cart_empty_text",
+        "label": "Text",
+        "default": "You’re $250 away from free shipping!"
       },
       {
         "type": "text",
