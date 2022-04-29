@@ -172,6 +172,11 @@ CartDawn = {
       $('.product-donate__desc').slideToggle(200);
       $(this).hide();
     });
+
+    $('body').on('click', '.js-read-less', function() {
+      $('.product-donate__desc').slideToggle(200);
+      $('.js-donate-read-more').show();
+    });
   },
 
   addMessageToAttributes: () => {
