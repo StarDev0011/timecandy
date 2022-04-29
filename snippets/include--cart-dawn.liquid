@@ -26,7 +26,9 @@
     </div>
 		<div class="modal-cart-gift__field">
 			<label class="modal-cart-gift__label">Message</label>
-			<textarea class="modal-cart-gift__input" placeholder="Text" maxlength="100"></textarea>
+			<textarea class="modal-cart-gift__input" placeholder="Text" maxlength="100">
+				{{- cart.attributes['Gift Message'] -}}
+			</textarea>
 			<button class="modal-cart-gift__btn js-attr-message button">
 				<span class="modal-cart-gift__btn-text">Save message</span>
 				<div class="modal-cart-gift__btn-icon"></div>
@@ -42,7 +44,7 @@
 			</div>
 			<div class="modal-cart-gift__field">
 				<label class="modal-cart-gift__label">desired arrival date</label>
-				<input type="text" class="modal-cart-gift__date" value="">
+				<input type="text" class="modal-cart-gift__date" value="{{- cart.attributes['Delayed Shipping Date'] -}}">
 				<button class="modal-cart-gift__btn js-attr-date button">
 					<span class="modal-cart-gift__btn-text">Confirm date</span>
 					<div class="modal-cart-gift__btn-icon"></div>
