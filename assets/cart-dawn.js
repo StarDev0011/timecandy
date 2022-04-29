@@ -29,11 +29,13 @@ CartDawn = {
   },
 
   doAjaxAddToCart: (item) => {
+    $('.cart-overlay').show();
     $.post('/cart/add.js', item.serialize(), null, 'json').done(function (item) {
       $('.modal-error').fadeOut(500);
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
         $('.js-mini-cart').html(data);
+        $('.cart-overlay').hide();
       });
 
       $.get('/cart.js', null, null, 'json').done(function (data) {
@@ -58,6 +60,7 @@ CartDawn = {
   addProductDonate: () => {
     $('body').on('change', '.js-product-donate:not([checked])', function(e) {
       e.preventDefault();
+      $('.cart-overlay').show();
       data = {
         items: [
           {
@@ -75,6 +78,7 @@ CartDawn = {
         success:function(data){
           $.get('/cart?view=dawn', function(data) {
             $('body').addClass('open-minicart');
+            $('.cart-overlay').hide();
             $('.js-mini-cart').html(data);
           });
 
@@ -87,11 +91,13 @@ CartDawn = {
   },
 
   updateCartAjax:(qty, id) => {
+    $('.cart-overlay').show();
     $.post('/cart/change.json', {
         quantity: qty,
         id: id
       }).done(function(cart) {
         $.get('/cart?view=dawn', function(data) {
+          $('.cart-overlay').hide();
           $('.js-mini-cart').html(data);
         });
 
