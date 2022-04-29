@@ -180,7 +180,8 @@
     <div class="mini-cart-empty">
         <div class="mini-cart__progress">
           <div class="mini-cart__progress-text">
-            {{- settings.cart_empty_text -}}
+            {% assign freeshipPrice = settings.min_price | plus: 0 %}
+            {{ settings.pro_hint }} {{ freeshipPrice | money }} {{ settings.pro_hint_2 }}
           </div>
           <div class="mini-cart__progress-bar">
             <div class="mini-cart__progress-percent" style="width: 0;"></div>
