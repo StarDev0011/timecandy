@@ -24,7 +24,11 @@
       <div class="addresses__modal" address-modal add-address-modal>
         <div class="modal-background"></div>
         <div id="AddAddress" class="addresses__modal-content">
-          <h2 class="addresses__header" id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
+          <div class="addresses__heading">
+            <h2 class="addresses__header" id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
+            <button type="reset" class="addresses__icon-btn">{% render 'icon-close' %}</button>
+          </div>
+
           {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
             <div class="addresses__form-row">
               <div class="addresses__field">
