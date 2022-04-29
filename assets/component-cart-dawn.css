@@ -727,10 +727,6 @@
 }
 
 @media (max-width: 767px) {
-  .mini-cart__item {
-    grid-template-columns: 70px 1fr;
-  }
-
   .mini-cart__link.mini-cart__title {
     font-size: 12px;
     line-height: 14px;
