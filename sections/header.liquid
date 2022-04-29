@@ -281,14 +281,14 @@
           </a>
         {%- endif -%}
 
-        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset js-open-cart" id="cart-icon-bubble">
           {{ 'bag.png' | asset_url | img_tag : 'test'  , 'icon-bag-desktop' }}
           {{ 'icon-bag-mb.png' | asset_url | img_tag : 'test' , 'icon-bag-mb' }}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
           {%- if cart != empty -%}
             <div class="cart-count-bubble">
               {%- if cart.item_count < 100 -%}
-                <span aria-hidden="true">{{ cart.item_count }}</span>
+                <span aria-hidden="true" class="js-cart-count">{{ cart.item_count }}</span>
               {%- endif -%}
               <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
             </div>
