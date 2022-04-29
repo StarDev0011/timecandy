@@ -38,6 +38,7 @@ CartDawn = {
 
       $.get('/cart.js', null, null, 'json').done(function (data) {
         $(CartDawn.Selector.count).text(data.item_count);
+        $('.js-cart-count').html(data.item_count);
       });
     }).fail(function ({ responseJSON }) {
         const { description } = responseJSON;
@@ -91,8 +92,10 @@ CartDawn = {
         id: id
       }).done(function(cart) {
         $.get('/cart?view=dawn', function(data) {
-            $('.js-mini-cart').html(data);
+          $('.js-mini-cart').html(data);
         });
+
+        $('.js-cart-count').html(cart.item_count);
         $(CartDawn.Selector.count).text(cart.item_count);
         if(qty == '') {
           $(this).val(1);

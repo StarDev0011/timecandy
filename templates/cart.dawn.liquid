@@ -100,16 +100,16 @@
           {% if settings.donation_product != blank %}
             <div class="product-donate">
               <div class="product-donate__header">
-                <div class="product-donate__header-title">DONATE TO HELP BUILD WATER</div>
+                <div class="product-donate__header-title">
+                  {{- settings.cart_title_1 -}}
+                </div>
                 <div class="product-donate__sub-header">
-                  WELLS IN AFRICA.
+                  {{- settings.cart_title_2 -}}
                   <a class="product-donate__more js-donate-read-more" href="#">Read more</a>
                 </div>
               </div>
               <div class="product-donate__desc">
-                <p>
-                  A small donation of just $1.00 or $2.00, the cost of a single bottle of water, will have an impact. To show our appreciation we will match your donation dollar for dollar
-                </p>
+                {{- settings.cart_desc -}}
                 <a class="product-donate__more js-donate-read-more js-read-less" href="#"> Read less</a>
               </div>
               <div class="product-donate__list">
@@ -127,7 +127,7 @@
                 {% endfor %}
               </div>
               {% if isChecked %}
-                <div class="product-donate__message">Your donation was applied!</div>
+                <div class="product-donate__message"> {{- settings.cart_message -}} </div>
               {% endif %}
               <a class="product-donate__remove js-remove-donate" href="#">
                 <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,9 +209,15 @@
       </div>
       <div class="mini-cart-empty__title"> Your bag is empty </div>
       <div class="mini-cart-empty__action">
-        <a class="mini-cart-empty__btn" href="/pages/our-range">Walk the Candy Aisle </a>
-        <a class="mini-cart-empty__btn" href="/collections/dog-treats"> Shop best sellers </a>
-        <a class="mini-cart-empty__btn" href="/collections/dog-treats"> Shop decade boxes </a>
+        {%- if settings.cart_btn_1 != blank -%}
+          <a class="mini-cart-empty__btn" href="{{ settings.link_1 }}"> {{- settings.cart_btn_1 -}} </a>
+        {%- endif -%}
+        {%- if settings.cart_btn_2 != blank -%}
+          <a class="mini-cart-empty__btn" href="{{ settings.link_2 }}"> {{- settings.cart_btn_2 -}} </a>
+        {%- endif -%}
+        {%- if settings.cart_btn_3 != blank -%}
+          <a class="mini-cart-empty__btn" href="{{ settings.link_3 }}"> {{- settings.cart_btn_3 -}} </a>
+        {%- endif -%}
       </div>
     </div>
   {% endif %}
