@@ -520,6 +520,7 @@
   z-index: 1111;
   font-family: var(--my-font);
   display: none;
+  padding: 20px;
 }
 
 .mini-cart__gift-text p {
@@ -655,5 +656,39 @@
   to {
     transform: scale(1);
     opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .mini-cart__item {
+    grid-template-columns: 70px 1fr;
+  }
+
+  .mini-cart__link.mini-cart__title {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .mini-cart__checkout-btn {
+    font-size: 12px;
+  }
+
+  .modal-cart-gift__header-text {
+    font-size: 20px;
+    line-height: 28px;
+    padding-right: 30px;
+  }
+
+  .modal-cart-gift__header {
+    margin-bottom: 12px;
+  }
+
+  .modal-cart-gift__close svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-cart-gift__input {
+    min-height: 88px;
   }
 }
