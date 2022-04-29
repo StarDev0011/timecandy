@@ -25,10 +25,6 @@
 	flex: 1;
 
 	@include mq("medium", "min-width") {
-		display: none;
-	}
-
-	@include mq("large", "min-width") {
 		display: block;
 		max-width: 257px;
 	}
@@ -93,13 +89,24 @@
 	@include mq("medium", "min-width") {
 		font-size: 16px;
 		line-height: 24px;
-		padding-top: 13px;
-		padding-bottom: 16px;
 		border-bottom: 1px solid #cccccc;
 		vertical-align: top;
 	}
 }
 
+.account tbody td {
+	@include mq("medium", "min-width") {
+		padding-top: 18px;
+		padding-bottom: 14px;
+	}
+}
+
+.order tbody td {
+	@include mq("medium", "min-width") {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+}
 .account tr {
 	@include mq("medium") {
 		&:not(:last-of-type) {
@@ -229,7 +236,7 @@
 
 	.customer tbody td::before {
 		content: attr(data-label);
-		color: var(--color-heading);
+		color: var(--color-text);
 		font-family: var(--font-heading);
 		font-size: 14px;
 		line-height: 18px;
@@ -545,6 +552,10 @@
 			text-transform: uppercase;
 			color: var(--color-heading);
 
+			@include mq("medium", "min-width") {
+				padding-bottom: 22px;
+			}
+
 			@include mq("medium") {
 				font-size: 14px;
 				line-height: 18px;
@@ -678,6 +689,12 @@
 	}
 }
 
+.order__subtotal + .order__total {
+	td {
+		border-top: none;
+	}
+}
+
 .order__total td {
 	padding-top: 16px;
 	border-top: 1px solid #cccccc;
@@ -774,11 +791,21 @@
 	margin: 0;
 }
 
+.addresses__icon-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
 .addresses__heading {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	margin-bottom: 2px;
+
+	.addresses__header {
+		text-transform: none;
+	}
 }
 
 .addresses__header,
@@ -974,6 +1001,10 @@
 		font-size: 16px;
 		line-height: 24px;
 
+		&::placeholder {
+			color: var(--color-text);
+		}
+
 		&:focus {
 			box-shadow: none;
 			outline: none;
@@ -1027,7 +1058,6 @@
 			font-weight: 200;
 			font-size: 12px;
 			line-height: 18px;
-			color: var(--color-text);
 			text-decoration: underline;
 			order: 1;
 		}
@@ -1035,6 +1065,10 @@
 
 	button {
 		margin: 0;
+	}
+
+	.secondary-btn {
+		color: var(--color-text);
 	}
 }
 
