@@ -560,12 +560,6 @@
         "content": "Cart Empty"
       },
       {
-        "type": "textarea",
-        "id": "cart_empty_text",
-        "label": "Text",
-        "default": "You’re $250 away from free shipping!"
-      },
-      {
         "type": "text",
         "id": "cart_btn_1",
         "label": "Button 1",

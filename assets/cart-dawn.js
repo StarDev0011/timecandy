@@ -165,6 +165,10 @@ CartDawn = {
     $('body').on('click', '.js-close-gift', function() {
       $('.modal-cart-gift').fadeOut(200);
     });
+
+    $('body').on('click', '.js-remove-donate', function() {
+      $('.product-donate').slideToggle(200);
+    });
   },
 
   moreText: () => {
