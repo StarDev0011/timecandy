@@ -23,7 +23,12 @@
   <div class="main-blog">
     <div class="main-blog__banner">
       <div class="page-width">
-        <h1 class="title--primary">{{ blog.title | escape }}</h1>
+        <div class="main-blog__banner--text">
+          <h1 class="title--primary">{{ blog.title | escape }}</h1>
+          {% if current_tags %}
+            <div class="blog__current-tag">Posts tagged: {{ current_tags.first }}</div>
+          {% endif %}
+        </div>
       </div>
       <img class="main-blog__banner--background" loading="lazy" src="{{ 'dots-background.svg' | asset_url }}">
       {% render 'background-image-wave' %}
