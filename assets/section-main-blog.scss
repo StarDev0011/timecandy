@@ -12,6 +12,42 @@
 	@include mq("medium") {
 		padding-bottom: 102px;
 	}
+
+	.pagination__list {
+		& > li:not(:last-child) {
+			margin-right: 0;
+		}
+
+		& > li:first-child .pagination__item {
+			border-radius: 4px 0px 0px 4px;
+		}
+
+		& > li:last-child .pagination__item {
+			border-radius: 0px 4px 4px 0px;
+		}
+	}
+
+	.pagination__item {
+		background: #ffffff;
+		border: 1px solid #cccccc;
+		box-sizing: border-box;
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		display: flex;
+		align-items: center;
+		color: #484e57;
+	}
+
+	.pagination__item--current {
+		background: #0c5273;
+		color: white;
+
+		&::after {
+			content: none;
+		}
+	}
 }
 
 .main-blog__banner {
