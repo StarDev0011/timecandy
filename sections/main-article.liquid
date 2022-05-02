@@ -54,20 +54,24 @@
 
   <div class="background-white">
     <div class="article-template__content page-width page-width--narrow" itemprop="articleBody">
-      {% for i in (0..article.metafields.accentuate.article_content.size) %}
-        {% for field in shop.metafields.acf_settings.article.fields %}
-          {% assign field_value = article.metafields[field.namespace][field.name][i] %}
-          {% case field.name %}
-            {% when 'article_content' %}
-              {{ field_value }}            
-            {% when 'featured_product' %}
-              {% assign product = all_products[field_value] %}
-              {% if product != empty %}
-                {% render 'article-featured-product', product: product %}                  
-              {% endif %}
-          {% endcase %}
-        {% endfor %}
-      {% endfor %}
+      {% if article.metafields.accentuate.article_content.size > 0 %}
+        {% for i in (0..article.metafields.accentuate.article_content.size) %}
+          {% for field in shop.metafields.acf_settings.article.fields %}
+            {% assign field_value = article.metafields[field.namespace][field.name][i] %}
+            {% case field.name %}
+              {% when 'article_content' %}
+                {{ field_value }}            
+              {% when 'featured_product' %}
+                {% assign product = all_products[field_value] %}
+                {% if product != empty %}
+                  {% render 'article-featured-product', product: product %}                  
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        {% endfor %}     
+      {% else %}
+        {{ article.content }}   
+      {% endif %}
     </div>
 
     <div class="page-width page-width--narrow">
