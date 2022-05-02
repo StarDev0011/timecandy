@@ -129,7 +129,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-size: 15px;
 		line-height: 24px;
 		text-decoration: none;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		grid-gap: 8px;
 	}
@@ -137,6 +137,32 @@ $bp-medium-up: #{$breakpoint + 1}px;
 	svg {
 		width: 16px;
 		height: 16px;
+	}
+}
+
+.underline-links-hover {
+	.article-card__read-more a {
+		position: relative;
+
+		&::before {
+			content: "";
+			height: 1px;
+			width: 0;
+			background-color: var(--color-accent);
+			position: absolute;
+			bottom: -5px;
+			transition: all 0.5s ease-in-out;
+		}
+	}
+
+	&:hover {
+		a {
+			text-decoration: none;
+		}
+
+		.article-card__read-more a::before {
+			width: 100%;
+		}
 	}
 }
 
