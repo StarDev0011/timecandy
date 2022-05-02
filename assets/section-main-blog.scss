@@ -14,6 +14,11 @@
 	}
 
 	.pagination__list {
+		& > li {
+			flex: 1 0 44px;
+			max-width: 44px;
+		}
+
 		& > li:not(:last-child) {
 			margin-right: 0;
 		}
@@ -31,6 +36,7 @@
 		background: #ffffff;
 		border: 1px solid #cccccc;
 		box-sizing: border-box;
+		height: 32px;
 		font-family: var(--font-default);
 		font-weight: 400;
 		font-size: 16px;
@@ -42,6 +48,7 @@
 
 	.pagination__item--current {
 		background: #0c5273;
+		border-color: #0c5273;
 		color: white;
 
 		&::after {
@@ -167,10 +174,6 @@
 			font-weight: 200;
 			font-size: 12px;
 			line-height: 21px;
-
-			&:hover {
-				text-decoration: underline;
-			}
 		}
 
 		li + li {
