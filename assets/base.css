@@ -279,7 +279,9 @@ body,
 }
 
 .background-image-wave {
+	display: block;
 	width: 100%;
+	max-height: 222px;
 	position: relative;
 	z-index: 1;
 }
