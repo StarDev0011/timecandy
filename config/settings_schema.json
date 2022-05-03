@@ -566,6 +566,12 @@
         "default": "Walk the Candy Aisle"
       },
       {
+        "type": "richtext",
+        "id": "cart_empty_text",
+        "label": "Text",
+        "default": "<p>You’re $250 away from free shipping!<\/p>"
+      },
+      {
         "type": "url",
         "id": "link_1",
         "label": "Link Button 1"
