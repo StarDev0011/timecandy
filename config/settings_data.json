@@ -224,7 +224,8 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "logo_max_width": 100,
+          "logo": "shopify:\/\/shop_images\/logo_c62f94c0-3ff1-4982-8d91-3047a9cf0bab.png",
+          "logo_max_width": 150,
           "color_scheme": "background-1"
         }
       },
