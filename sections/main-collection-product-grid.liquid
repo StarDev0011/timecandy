@@ -66,6 +66,9 @@
         </div>
         {%- endif -%}
       </div>
+      {% if settings.ss_enable %}
+      	<div id="searchspring-no-results-recs"></div>
+      {%- endif -%}
     </div>
   </div>
 {%- endpaginate -%}
