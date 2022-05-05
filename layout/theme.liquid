@@ -177,9 +177,13 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+    
+    {% if settings.ss_enable %}
+		{% render 'ss-script' %}
+	{% endif %}
   </head>
 
-  <body class="template-{{ request.page_type | handle }}">
+  <body class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -224,14 +228,20 @@
       }
     </script>
 
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {% if settings.ss_enable == false %}
+    	{%- if settings.predictive_search_enabled -%}
+      		<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    	{%- endif -%}
     {%- endif -%}
+    
     {% render 'include--cart-dawn' %}
     <!-- Back in Stock helper snippet -->
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
     <script src="{{ 'cart-dawn.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'suggested.js' | asset_url }}" defer="defer"></script>
+    {% if settings.ss_enable %}
+		{% render 'ss-intellisuggest' %}
+	{% endif %}
   </body>
 </html>
