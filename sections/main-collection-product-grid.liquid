@@ -38,6 +38,9 @@
       <div class="collection__wrapper">
         {% render 'include--sidebar' %}
         <div class="collection-product__list">
+          {% if settings.ss_enable %}
+          	<div id="searchspring-content"></div>
+		  {% else %}
           <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
             {%- for product in collection.products -%}
               {% render 'include--product-card', product: product %}
@@ -61,6 +64,7 @@
             {% endif %}
           {%- endif -%}
         </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
