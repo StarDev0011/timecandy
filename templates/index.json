@@ -30,9 +30,9 @@
         "slide_height": "adapt_image",
         "slider_visual": "none",
         "auto_rotate": false,
-        "change_slides_speed": 5,
+        "change_slides_speed": 9,
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "accessibility_info": "Our Featured Promotions"
       }
     },
     "image_with_text": {
@@ -54,8 +54,8 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Walk the candy aisle",
-            "button_link": "shopify:\/\/collections"
+            "button_label": "Walk the Candy Aisle",
+            "button_link": "shopify:\/\/collections\/walk-the-candy-aisle"
           }
         }
       },
@@ -75,7 +75,11 @@
         "padding_top": 90,
         "padding_bottom": 140,
         "padding_top_mb": 60,
-        "padding_bottom_mb": 64
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "<p>Testing<\/p>",
+        "column_2": "<p>Testing<\/p>",
+        "column_3": "<p>Testing<\/p>"
       }
     },
     "icon_with_text": {
@@ -124,11 +128,12 @@
       "type": "featured-product",
       "settings": {
         "product": "large-decade-candy-gift-box",
-        "sub_title": "looking for a gift?",
+        "sub_title": "Need a Perfect Gift?",
+        "desc": "What's better than giving a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
         "show_best_seller": true,
         "color_scheme": "accent-1",
         "secondary_background": false,
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -143,8 +148,8 @@
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "subscription boxes",
-            "button_label": "shop now",
-            "button_link": "#",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/subscription-boxes",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
@@ -154,9 +159,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_2.png",
             "title": "Sometimes you just need 3+ lbs of candy for your next party.",
-            "caption": "retro candy in bulk",
-            "button_label": "shop now",
-            "button_link": "#",
+            "caption": "Retro Candy in Bulk",
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/bulk-candy",
             "layout": "text_first",
             "mobile_content_alignment": "center"
           }
@@ -193,7 +198,7 @@
         "63eb75be-5d42-4b9b-9b80-beae67dc2d2a": {
           "type": "caption",
           "settings": {
-            "caption": "water wells for africa"
+            "caption": "Water Wells for Africa"
           }
         },
         "1648000290f7ac8147-0": {
@@ -212,8 +217,8 @@
         "1648000290f7ac8147-2": {
           "type": "button",
           "settings": {
-            "button_label": "Donate",
-            "button_link": "#"
+            "button_label": "Donate Now",
+            "button_link": "shopify:\/\/products\/water-wells-donation"
           }
         }
       },
@@ -234,14 +239,18 @@
         "padding_top": 90,
         "padding_bottom": 140,
         "padding_top_mb": 80,
-        "padding_bottom_mb": 86
+        "padding_bottom_mb": 86,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "old time candy fan favorites",
-        "collection": "top-candy",
+        "title": "Old Time Candy Fan Favorites",
+        "collection": "candy-by-occasion-mothers-day-candy",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
@@ -307,6 +316,9 @@
       ],
       "settings": {
         "title": "Candy memories",
+        "desc": "",
+        "btn": "",
+        "btn_link": "",
         "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
         "padding_top": 90,
         "padding_bottom": 120

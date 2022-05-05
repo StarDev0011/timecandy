@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "collection-caramel-creams",
+      "settings": {
+        "text": "<p>A caramel jacket with a pure sugar cream center.<br\/><a href=\"\/\" title=\"\/\">Read more history<\/a><\/p>",
+        "show_desc": true,
+        "grid": 4,
+        "rows": 18,
+        "page": "scroll"
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

@@ -468,7 +468,7 @@
         "type": "richtext",
         "id": "progress_text",
         "label": "Progress text",
-        "default": "<p>Congrats! You qualified for Free shipping!</p>"
+        "default": "<p>Congrats! You qualified for Free shipping!<\/p>"
       },
       {
         "type": "text",
@@ -513,7 +513,7 @@
         "type": "richtext",
         "id": "cart_desc",
         "label": "Description",
-        "default": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water, will have an impact. To show our appreciation we will match your donation dollar for dollar</p>"
+        "default": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water, will have an impact. To show our appreciation we will match your donation dollar for dollar<\/p>"
       },
       {
         "type": "textarea",
@@ -540,7 +540,7 @@
         "type": "richtext",
         "id": "gift_label",
         "label": "Label",
-        "default": "<p>Customize gift message and delayed delivery options.</p>"
+        "default": "<p>Customize gift message and delayed delivery options.<\/p>"
       },
       {
         "type": "header",
@@ -561,7 +561,7 @@
         "type": "richtext",
         "id": "cart_label",
         "label": "Label",
-        "default": "<p>Include shipping protection for only $0.98 extra. <a href=\"/pages/shipping-insurance\"> Learn more </a></p>"
+        "default": "<p>Include shipping protection for only $0.98 extra. <a href=\"\/pages\/shipping-insurance\"> Learn more <\/a><\/p>"
       },
       {
         "type": "header",
@@ -577,7 +577,7 @@
         "type": "richtext",
         "id": "cart_empty_text",
         "label": "Text",
-        "default": "<p>You’re $250 away from free shipping!</p>"
+        "default": "<p>You’re $250 away from free shipping!<\/p>"
       },
       {
         "type": "url",
