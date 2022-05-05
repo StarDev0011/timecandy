@@ -452,9 +452,17 @@
     "settings": [
       {
         "type": "text",
-        "id": "min_price",
-        "label": "Enter the minimum price for free shipping",
-        "default": "1995"
+        "id": "min_price_checkout",
+        "label": "Minimum Price value to checkout",
+        "default": "1995",
+        "info": "Price 19.95$"
+      },
+      {
+        "type": "text",
+        "id": "min_price_freeship",
+        "label": "Minimum price value for free shipping",
+        "default": "25000",
+        "info": "Price 250$"
       },
       {
         "type": "richtext",
@@ -564,6 +572,12 @@
         "id": "cart_btn_1",
         "label": "Button 1",
         "default": "Walk the Candy Aisle"
+      },
+      {
+        "type": "richtext",
+        "id": "cart_empty_text",
+        "label": "Text",
+        "default": "<p>You’re $250 away from free shipping!</p>"
       },
       {
         "type": "url",

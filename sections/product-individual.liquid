@@ -570,7 +570,7 @@
             <span>add to wishlist</span>
           </a>
         </div> -->
-        
+
         <div class="product-buy-more">
           <div class="product-buy-more__header">Buy more, save more!</div>
           <div class="product-buy-more__content">
@@ -590,6 +590,9 @@
             </table>
           </div>
         </div>
+        {% if product.has_only_default_variant %}
+          {% render 'product-tiered-pricing', product: product %}
+        {% endif %}
       </div>
     </div>
   </div>

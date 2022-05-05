@@ -19,10 +19,11 @@
 
   {% if cart.item_count > 0 %}
     <div class="mini-cart__progress">
-      {% assign freeshipPrice = settings.min_price | plus: 0 %}
+      {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
+      {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
       {% assign cartTotalPrice = cart.total_price | times: 100 | divided_by: freeshipPrice %}
       {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
-      <div class="mini-cart__progress-text">
+      <div class="mini-cart__progress-text" {{ freeshipPrice | money }}>
         {%- if cartTotalPrice >= 100 -%}
           {{- settings.progress_text -}}
         {%- else -%}
@@ -144,8 +145,8 @@
           <div class="mini-cart-bottom__total-price"> {{ cart.total_price | money }} </div>
         </div>
         <div class="mini-cart-bottom__item">
-          <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < freeshipPrice %} disabled {% endif %}> Proceed to checkout </button>
-          {% if cart.total_price < freeshipPrice %}<div class="mini-cart__checkout-text">minimum order value is {{ freeshipPrice | money }}</div>{% endif %}
+          <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
+          {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
         </div>
         <div class="mini-cart__add-on">
           {% if settings.enable_gift %}
@@ -180,8 +181,7 @@
     <div class="mini-cart-empty">
         <div class="mini-cart__progress">
           <div class="mini-cart__progress-text">
-            {% assign freeshipPrice = settings.min_price | plus: 0 %}
-            {{ settings.pro_hint }} {{ freeshipPrice | money }} {{ settings.pro_hint_2 }}
+            {{ settings.cart_empty_text }}
           </div>
           <div class="mini-cart__progress-bar">
             <div class="mini-cart__progress-percent" style="width: 0;"></div>
