@@ -1,0 +1,32 @@
+{%- if customer -%}
+	{% capture ss_shopper_config %} 
+		shopper = { id: "{{ customer.id }}" };
+	{% endcapture %}
+{%- endif -%}
+
+{% assign ss_defer_config = ' defer' %}
+{%- if collection.handle and template contains 'collection' -%}
+	{% assign ss_defer_config = '' %}
+	{%- if collection.handle != settings.ss_collection_handle -%}
+		{% capture ss_collection_config %} 
+			collection = { id: "{{ collection.id }}", name: "{{ collection.title | replace: '"', '&quot;' }}", handle: "{{ collection.handle }}" };
+		{% endcapture %}
+	{%- endif -%}	
+{%- endif -%}
+
+{%- if current_tags -%}
+	{% capture ss_tags_config %}
+		tags = "{{ current_tags | join: '|' | replace: '"', '&quot;' }}";
+	{% endcapture %}
+{%- endif -%}
+
+{%- if template -%}
+	{% capture ss_template_config %}
+		template = "{{ template }}";
+	{% endcapture -%}
+{%- endif -%}
+
+{% comment %}Searchspring Script{% endcomment %}
+<script src="https://snapui.searchspring.io/{{ settings.ss_site_id }}/bundle.js" id="searchspring-context"{{ ss_defer_config }}>
+	{{ ss_shopper_config }}{{ ss_collection_config }}{{ ss_tags_config }}{{ ss_template_config }}
+</script>
