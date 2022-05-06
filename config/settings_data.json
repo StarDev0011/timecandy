@@ -32,6 +32,7 @@
     "inputs_shadow_blur": 5,
     "min_price_checkout": "500",
     "min_price_freeship": "20000",
+    "cart_title_2": "WELLS IN AFRICA.",
     "donation_product": "water-wells-donation",
     "shipping_product": "routeins-1",
     "card_style": "standard",
