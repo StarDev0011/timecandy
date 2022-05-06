@@ -1,0 +1,377 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="banner-with-text section-{{ section.id }}-padding">
+  <div class="banner-with-text__container container">
+    <div class="banner-with-text__grid {% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+      <div class="banner-with-text__media-item  image-with-text__media-item--{{ section.settings.desktop_content_position }}">
+        <div class="banner-with-text__media {% if section.settings.image != blank %}media{% else %}banner-with-text__media--placeholder placeholder{% endif %}"
+          {% if section.settings.image != blank %} style="max-width: min(100%, {{ section.settings.image_width }}px);  padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
+        >
+          {%- if section.settings.image != blank -%}
+            <img
+              srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+              src="{{ section.settings.image | image_url: width: 1500 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+              alt="{{ section.settings.image.alt | escape }}"
+              loading="lazy"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.height }}"
+              style="max-width: min(100%, {{ section.settings.image_width }}px); height: auto;"
+            >
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="banner-with-text__text-item" style="max-width: min(100%, {{ section.settings.box_text_width }}px);">
+        <div id="ImageWithText--{{ section.id }}" class="image-with-text__content">
+          {%- for block in section.blocks -%}
+            {% case block.type %}
+              {%- when 'sub' -%}
+                <div class="banner-with-text__sub-heading"> {{ block.settings.sub_title }} </div>
+              {%- when 'heading' -%}
+                  <h2 class="banner-with-text__heading h2">{{ block.settings.heading }}</h2>
+              {%- when 'caption' -%}
+                <h5 class="banner-with-text__text--caption" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
+              {%- when 'text' -%}
+                <div class="banner-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+              {%- when 'button' -%}
+                {%- if block.settings.button_label != blank -%}
+                  <a href="#" class="js-modal-gift-cards button banner-with-text__link{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+                    <span class="banner-with-text__icon">
+                      <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.6663 8.50065C14.6663 8.86884 14.3679 9.16732 13.9997 9.16732H8.66634V14.5007C8.66634 14.8688 8.36786 15.1673 7.99967 15.1673C7.63148 15.1673 7.33301 14.8688 7.33301 14.5007V9.16732H1.99967C1.63148 9.16732 1.33301 8.86884 1.33301 8.50065C1.33301 8.13246 1.63148 7.83398 1.99967 7.83398H7.33301V2.50065C7.33301 2.13246 7.63148 1.83398 7.99967 1.83398C8.36786 1.83398 8.66634 2.13246 8.66634 2.50065V7.83398H13.9997C14.3679 7.83398 14.6663 8.13246 14.6663 8.50065Z" fill="white"/>
+                      </svg>
+                    </span>
+                    <span>{{ block.settings.button_label | escape }}</span>
+                  </a>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gift-cart-modal">
+  <div class="gift-cart-modal__container">
+    <div class="card-product-label gift-cart-modal__label">product added to cart!</div>
+    <a class="gift-cart-modal__close" href="#">
+      {% render 'icon-close' %}
+    </a>
+    <div class="gift-cart-modal__content">
+      <div class="gift-cart-modal__inner">
+        <h3 class="gift-cart-modal__header"> {{- section.settings.heading -}} </h3>
+        <div class="swiper js-products-slider">
+          <div class="swiper-wrapper gift-cart-modal__product col-3">
+            {%- for product in section.settings.collection.products limit: 3 -%}
+              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+            {% endfor %}
+          </div>
+          <div class="custom-swiper-pagination swiper-pagination"></div>
+        </div>
+        <div class="gift-cart-modal__action">
+          <a class="gift-cart-modal__btn button button-light" href="/cart"> View cart </a>
+          <a class="gift-cart-modal__btn button" href="/checkout"> Proceed to checkout </a>
+        </div>
+      </div>
+      <div class="gift-cart-modal__inner">
+        <h3 class="gift-cart-modal__header"> {{- section.settings.heading_2 -}} </h3>
+        <div class="swiper js-products-slider">
+          <div class="swiper-wrapper gift-cart-modal__product col-3">
+            {%- for product in section.settings.collection_2.products limit: 3 -%}
+              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+            {% endfor %}
+          </div>
+          <div class="custom-swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const media = window.matchMedia( '(min-width: 768px)' );
+  var product;
+  const mediaCheck = function() {
+    if ( media.matches === true ) {
+      if ( product !== undefined ) product.destroy( true, true );
+        return;
+    } else if ( media.matches === false ) {
+      return productSliders();
+    }
+  };
+
+  const productSliders = function() {
+    product = new Swiper ('.js-products-slider', {
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }
+    });
+  };
+
+  const openModalCard = () => {
+    $('body').on('click', '.js-modal-gift-cards', function(e) {
+      e.preventDefault();
+      $('.gift-cart-modal').fadeIn(300);
+    });
+  }
+
+  const closeModalCard = () => {
+    $('body').on('click', '.gift-cart-modal__close', function(e) {
+      e.preventDefault();
+      $('.gift-cart-modal').fadeOut(300);
+    });
+
+    $('.gift-cart-modal').click(function (e) {
+      if(!$(event.target).closest('.gift-cart-modal__container').length && !$(event.target).is('.gift-cart-modal__container')) {
+        $('.gift-cart-modal').fadeOut(300);
+      }
+    });
+  }
+
+  window.addEventListener('load', (event) => {
+    media.addListener(mediaCheck);
+    mediaCheck();
+    openModalCard();
+    closeModalCard();
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Gift Cards",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 200,
+      "max": 600,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 485
+    },
+    {
+      "type": "range",
+      "id": "box_text_width",
+      "min": 200,
+      "max": 600,
+      "step": 5,
+      "unit": "px",
+      "label": "Text Block Width",
+      "default": 505
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 20,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 20,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 120
+    },
+     {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Gift Cards Modal"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Making it a gift? add these specials!"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection Gift Cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_like",
+      "label": "Display You May Also Like",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading",
+      "default": "You May Also Like"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Select Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sub",
+      "name": "Sub title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title",
+          "default": "Sub Title"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "heading",
+          "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "t:sections.image-with-text.blocks.caption.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "Add a tagline",
+          "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-with-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.image-with-text.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.image-with-text.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Add to bag",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift Cards",
+      "blocks": [
+        {
+          "type": "sub"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -18,7 +18,7 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<section class="product-detail section-{{ section.id }}-padding">
+<section class="product-detail product-individual section-{{ section.id }}-padding">
   <div class="container">
   <div class="product">
     <div class="product__media-wrapper">
@@ -289,15 +289,21 @@
                 <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                     {% assign optionName = option.name | downcase %}
-                    {% assign is_size = false %}
-                    {% if optionName == 'decade' %}
-                      {% assign is_size = true %}
+                    {% assign is_size = true %}
+                    {% if optionName == 'size' %}
+                      {% assign is_size = false %}
                     {% endif %}
                       <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}">
                         <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
                         {% if is_size %}
                           <div class="product-swatch__label">
-                            <span class="js-option-label"></span>
+                            <div class="product-swatch__content">
+                              <img class="js-swatch-image" src="" style="display: none;">
+                              <div class="product-swatch__caption">
+                                <span class="js-option-label"></span>
+                                <span class="product-swatch__sold-out js-option-sold-out"></span>
+                              </div>
+                            </div>
                             <span>
                               {% render 'icon-caret' %}
                             </span>
@@ -313,11 +319,19 @@
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
                             <label {% if is_size %}class="js-variant-item{% if option.selected_value == value %} js-variant-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                              {% if value contains 'decade gift box' %}
-                                {{ value | split: 'decade gift box' }}
-                              {% else %}
-                                {{ value }}
+                              {% if product.variants[forloop.index0].featured_media != blank %}
+                                <img class="product-form__swatch-image" src="{{ product.variants[forloop.index0].featured_media  | img_url: "small" }}">
                               {% endif %}
+                              <span class="product-form__swatch-group">
+                                {% if value contains 'decade gift box' %}
+                                  <span>{{ value | split: 'decade gift box' }}</span>
+                                {% else %}
+                                  <span>{{ value }}</span>
+                                {% endif %}
+                                {% if product.variants[forloop.index0].available == false %}
+                                  <span class="product-form__swatch-soldout">Temporarily out of stock</span>
+                                {% endif %}
+                              </span>
                             </label>
                           {%- endfor -%}
                         </div>
@@ -556,13 +570,28 @@
             <span>add to wishlist</span>
           </a>
         </div> -->
-        {% if product.has_only_default_variant %}
-          <div class="product-buy-more">
-            <div class="product-buy-more__header">Buy more, save more!</div>
-            <div class="product-buy-more__content">
-              {% render 'product-tiered-pricing', product: product %}
-            </div>
+
+        <!-- <div class="product-buy-more">
+          <div class="product-buy-more__header">Buy more, save more!</div>
+          <div class="product-buy-more__content">
+            <table>
+              <tbody>
+                <tr>
+                  <td>buy 2-5</td>
+                  <td style="color: #AC1229;">Save 10%</td>
+                  <td style="color: #0C5273;">$3.59 each</td>
+                </tr>
+                <tr>
+                  <td>buy 6+</td>
+                  <td style="color: #AC1229;">Save 15%</td>
+                  <td style="color: #0C5273;">$3.39 each</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div> -->
+        {% if product.has_only_default_variant %}
+          {% render 'product-tiered-pricing', product: product %}
         {% endif %}
       </div>
     </div>
