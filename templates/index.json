@@ -173,7 +173,7 @@
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
-            "button_link": "#",
+            "button_link": "shopify:\/\/collections\/corporate-gifts",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
