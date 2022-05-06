@@ -19,7 +19,7 @@
 {%- endif -%}
 
 <section class="product-detail section-{{ section.id }}-padding">
-  <div class="container" helllloooo>
+  <div class="container">
   <div class="product">
     <div class="product__media-wrapper">
       <div class="product__media-content">
@@ -611,6 +611,13 @@
   {%- endfor -%}
   </div>
 </section>
+  
+<script type="searchspring/personalized-recommendations" profile="cross-sell">
+	seed = "{{ product.variants[0].sku }}";
+</script>
+<script type="searchspring/personalized-recommendations" profile="similar">
+	seed = "{{ product.variants[0].sku }}";
+</script>
 
 {% javascript %}
   class ProductModal extends ModalDialog {
