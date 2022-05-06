@@ -250,7 +250,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Old Time Candy Fan Favorites",
-        "collection": "candy-by-occasion-mothers-day-candy",
+        "collection": "top-candy",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
