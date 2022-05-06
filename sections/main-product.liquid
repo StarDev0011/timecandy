@@ -665,13 +665,6 @@
 {% if product.media.size > 0 %}
   <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
 {% endif %}
-  
-  <script type="searchspring/personalized-recommendations" profile="recently-viewed">
-	seed = "{{ product.variants[0].sku }}";
-    options = {
-		siteId : "y0yjxq",
-	};
-</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
