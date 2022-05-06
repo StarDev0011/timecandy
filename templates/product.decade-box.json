@@ -109,20 +109,54 @@
         "column_3": "<p>Root Beer Barrels<br\/>Saf-T-Pops<br\/>Smarties<br\/>Sour Patch Kids<br\/>Spearmint Gum<br\/>Stick Candy<br\/>Sugar Daddy<br\/>Swedish Fish<br\/>Tootsie Pops<br\/>Tootsie RollWarheads<br\/>Wax LipsZotz<\/p>"
       }
     },
-    "1650857606d9d1e1f2": {
-      "type": "featured-product",
-      "disabled": true,
+    "16518009138973d5b1": {
+      "type": "product--gift-cards",
+      "blocks": {
+        "16518009137f8d1de2-0": {
+          "type": "sub",
+          "settings": {
+            "sub_title": "hand-written gift cards"
+          }
+        },
+        "16518009137f8d1de2-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Yes, a card written by an actual human being. And it’s free."
+          }
+        },
+        "16518009137f8d1de2-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "16518009137f8d1de2-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Add to bag"
+          }
+        }
+      },
+      "block_order": [
+        "16518009137f8d1de2-0",
+        "16518009137f8d1de2-1",
+        "16518009137f8d1de2-2",
+        "16518009137f8d1de2-3"
+      ],
       "settings": {
-        "product": "10-color-pen",
-        "sub_title": "hand-written gift cards",
-        "desc": "Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.",
-        "show_best_seller": false,
-        "color_scheme": "background-1",
-        "secondary_background": false,
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify:\/\/shop_images\/gift-cards.png",
+        "image_width": 485,
+        "box_text_width": 505,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "heading": "Making it a gift? add these specials!",
+        "collection": "",
+        "show_product_like": true,
+        "heading_2": "You May Also Like",
+        "collection_2": ""
       }
     },
     "1650857688b2ff975d": {
@@ -270,7 +304,7 @@
   "order": [
     "main",
     "image-with-text",
-    "1650857606d9d1e1f2",
+    "16518009138973d5b1",
     "1650857688b2ff975d",
     "165085778823b445b7",
     "product-recommendations",
