@@ -97,7 +97,7 @@
           "type": "icon",
           "settings": {
             "image": "shopify:\/\/shop_images\/illustration.png",
-            "title": "lagrange, ohio-based",
+            "title": "LaGrange, Ohio-based",
             "link": ""
           }
         },
@@ -105,7 +105,7 @@
           "type": "icon",
           "settings": {
             "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
-            "title": "by candy lovers, for candy lovers",
+            "title": "By candy lovers, for candy lovers",
             "link": ""
           }
         }
@@ -128,8 +128,8 @@
       "type": "featured-product",
       "settings": {
         "product": "large-decade-candy-gift-box",
-        "sub_title": "Need a Perfect Gift?",
-        "desc": "What's better than giving a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
+        "sub_title": "Need The Perfect Gift?",
+        "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
         "show_best_seller": true,
         "color_scheme": "accent-1",
         "secondary_background": false,
@@ -147,7 +147,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
             "title": "Send yourself or a friend a box of candy automatically.",
-            "caption": "subscription boxes",
+            "caption": "Subscription boxes",
             "button_label": "Shop Now",
             "button_link": "shopify:\/\/collections\/subscription-boxes",
             "layout": "image_first",
@@ -173,7 +173,7 @@
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
-            "button_link": "#",
+            "button_link": "shopify:\/\/collections\/corporate-gifts",
             "layout": "image_first",
             "mobile_content_alignment": "center"
           }
@@ -250,7 +250,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Old Time Candy Fan Favorites",
-        "collection": "candy-by-occasion-mothers-day-candy",
+        "collection": "top-candy",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",

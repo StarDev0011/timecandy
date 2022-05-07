@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "product-individual",
+      "type": "product-decade-box",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -76,13 +76,13 @@
         "image-with-text-0": {
           "type": "heading",
           "settings": {
-            "heading": "Product Details"
+            "heading": "What’s in the 2lb 1950s decade box?"
           }
         },
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Bit-O-Honey is a chewy candy with almond bits blended into a honey flavored taffy. A 3 lb bulk bag contains about 203 pieces. <\/p>",
+            "text": "<p>Our 2lb assortment is jammed with over 35 pieces of candy! Each box includes 12 or more full-size candies in a colorful gift box that measures 9.5 x 7 x 3 inches. Please keep in mind that these are typical lists. The actual candy you receive may vary according to availability from our suppliers.<\/p>",
             "text_style": "body"
           }
         }
@@ -103,26 +103,60 @@
         "padding_bottom": 140,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
-        "show_bottom": false,
+        "show_bottom": true,
         "column_1": "<p>Atomic Fire Balls<br\/>BB Bats<br\/>Beechies Gum <br\/>Bit-O-Honey <br\/>Bonomo's Turkish Taffy<br\/>Bubble Yum <br\/>Candy Buttons on paper tape <br\/>Candy Cigarettes <br\/>Candy Necklace <br\/>Charleston Chews <br\/>Chick-o-Stick <br\/>Chuckles <br\/>Clark Bar Jr <\/p>",
         "column_2": "<p>Dots<br\/>Dubble Bubble Gum<br\/>Gobstoppers<br\/>Jawbreakers<br\/>Kits Taffy<br\/>Laffy Taffy<br\/>Lemonheads<br\/>Lik-M-Aid Fun Dip<br\/>Necco Wafers<br\/>Now & Laters<br\/>Oh Henry<br\/>Peanut Butter Bars<br\/>Pop Rocks<\/p>",
         "column_3": "<p>Root Beer Barrels<br\/>Saf-T-Pops<br\/>Smarties<br\/>Sour Patch Kids<br\/>Spearmint Gum<br\/>Stick Candy<br\/>Sugar Daddy<br\/>Swedish Fish<br\/>Tootsie Pops<br\/>Tootsie RollWarheads<br\/>Wax LipsZotz<\/p>"
       }
     },
-    "1650857606d9d1e1f2": {
-      "type": "featured-product",
-      "disabled": true,
+    "16518009138973d5b1": {
+      "type": "product--gift-cards",
+      "blocks": {
+        "16518009137f8d1de2-0": {
+          "type": "sub",
+          "settings": {
+            "sub_title": "hand-written gift cards"
+          }
+        },
+        "16518009137f8d1de2-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Yes, a card written by an actual human being. And it’s free."
+          }
+        },
+        "16518009137f8d1de2-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "16518009137f8d1de2-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Add to bag"
+          }
+        }
+      },
+      "block_order": [
+        "16518009137f8d1de2-0",
+        "16518009137f8d1de2-1",
+        "16518009137f8d1de2-2",
+        "16518009137f8d1de2-3"
+      ],
       "settings": {
-        "product": "10-color-pen",
-        "sub_title": "hand-written gift cards",
-        "desc": "Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.",
-        "show_best_seller": false,
-        "color_scheme": "background-1",
-        "secondary_background": false,
-        "hide_variants": false,
-        "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify:\/\/shop_images\/gift-cards.png",
+        "image_width": 485,
+        "box_text_width": 505,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "heading": "Making it a gift? add these specials!",
+        "collection": "candy-by-decade-1940s-candy",
+        "show_product_like": true,
+        "heading_2": "You May Also Like",
+        "collection_2": "candy-by-decade-1960s-candy"
       }
     },
     "1650857688b2ff975d": {
@@ -270,7 +304,7 @@
   "order": [
     "main",
     "image-with-text",
-    "1650857606d9d1e1f2",
+    "16518009138973d5b1",
     "1650857688b2ff975d",
     "165085778823b445b7",
     "product-recommendations",

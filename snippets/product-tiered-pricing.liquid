@@ -11,99 +11,114 @@
   {% case tag %}
     {% when 'Tier_1_Discounts' %}
       {% capture tierPricing %}
-        <div class="product-tiered-pricing">
-        {% for tier in Tier_1 %}
-          {% assign tier_money = tier | divided_by: 100.00 %}
-          {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
-          {% assign product_price = product.price | divided_by: 100.00 %}
-            <table class="responsive-table">
-              <tbody>
-              {% case forloop.index %}
-              {% when 1 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 2+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }}each</td>
-                </tr>
-              {% when 2 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 5+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }}each</td>
-                </tr>
-              {% when 3 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 10+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }} each</td>
-                </tr>
-              {% endcase %}
-            </tbody>
-          </table>
-        {% endfor %}
+      <div class="product-buy-more">
+        <div class="product-buy-more__header">Buy more, save more!</div>
+        <div class="product-buy-more__content">
+          <div class="product-tiered-pricing">
+          {% for tier in Tier_1 %}
+            {% assign tier_money = tier | divided_by: 100.00 %}
+            {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
+            {% assign product_price = product.price | divided_by: 100.00 %}
+              <table class="responsive-table">
+                <tbody>
+                {% case forloop.index %}
+                {% when 1 %}
+                  <tr class="responsive-table-row">
+                    <td data-label="Quantity">Buy 2+</td>
+                    <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                    <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }}each</td>
+                  </tr>
+                {% when 2 %}
+                  <tr class="responsive-table-row">
+                    <td data-label="Quantity">Buy 5+</td>
+                    <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                    <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }}each</td>
+                  </tr>
+                {% when 3 %}
+                  <tr class="responsive-table-row">
+                    <td data-label="Quantity">Buy 10+</td>
+                    <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                    <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' '  }} each</td>
+                  </tr>
+                {% endcase %}
+              </tbody>
+            </table>
+          {% endfor %}
+          </div>
         </div>
+      </div>
       {% endcapture %}
     {% when 'Tier_2_Discounts' %}
       {% capture tierPricing %}
-        <div class="product-tiered-pricing">
-        {% for tier in Tier_2 %}
-          {% assign tier_money = tier | divided_by: 100.00 %}
-          {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
-          {% assign product_price = product.price | divided_by: 100.00 %}
-            <table class="responsive-table">
-              <tbody>
-              {% case forloop.index %}
-              {% when 1 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 2+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
-                </tr>
-              {% when 2 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 5+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
-                </tr>
-              {% when 3 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 10+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }} each</td>
-                </tr>
-              {% endcase %}
-            </tbody>
-          </table>
-        {% endfor %}
-        </div>
+      <div class="product-buy-more">
+        <div class="product-buy-more__header">Buy more, save more!</div>
+          <div class="product-buy-more__content">
+            <div class="product-tiered-pricing">
+            {% for tier in Tier_2 %}
+              {% assign tier_money = tier | divided_by: 100.00 %}
+              {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
+              {% assign product_price = product.price | divided_by: 100.00 %}
+                <table class="responsive-table">
+                  <tbody>
+                  {% case forloop.index %}
+                  {% when 1 %}
+                    <tr class="responsive-table-row">
+                      <td data-label="Quantity">Buy 2+</td>
+                      <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                      <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
+                    </tr>
+                  {% when 2 %}
+                    <tr class="responsive-table-row">
+                      <td data-label="Quantity">Buy 5+</td>
+                      <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                      <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
+                    </tr>
+                  {% when 3 %}
+                    <tr class="responsive-table-row">
+                      <td data-label="Quantity">Buy 10+</td>
+                      <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                      <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }} each</td>
+                    </tr>
+                  {% endcase %}
+                </tbody>
+              </table>
+            {% endfor %}
+            </div>
+          </div>
+      </div>
       {% endcapture %}
     {% when 'Tier_3_Discounts' %}
       {% capture tierPricing %}
-        <div class="product-tiered-pricing">
-        {% for tier in Tier_3 %}
-          {% assign tier_money = tier | divided_by: 100.00 %}
-          {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
-          {% assign product_price = product.price | divided_by: 100.00 %}
-            <table class="responsive-table">
-              <tbody>
-              {% case forloop.index %}
-              {% when 1 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 2-5</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
-                </tr>
-              {% when 2 %}
-                <tr class="responsive-table-row">
-                  <td data-label="Quantity">Buy 6+</td>
-                  <td data-label="Discount">Save {{ tier | append: '%' }}</td>
-                  <td data-label="Price">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
-                </tr>
-              {% endcase %}
-            </tbody>
-          </table>
-        {% endfor %}
+      <div class="product-buy-more">
+        <div class="product-buy-more__header">Buy more, save more!</div>
+        <div class="product-buy-more__content">
+          <div class="product-tiered-pricing">
+          {% for tier in Tier_3 %}
+            {% assign tier_money = tier | divided_by: 100.00 %}
+            {% assign tier_discount = product.price | money_without_currency | times: tier_money | round: 2 %}
+            {% assign product_price = product.price | divided_by: 100.00 %}
+              <table class="responsive-table">
+                <tbody>
+                {% case forloop.index %}
+                {% when 1 %}
+                  <tr class="responsive-table-row">
+                    <td data-label="Quantity">Buy 2-5</td>
+                    <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                    <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
+                  </tr>
+                {% when 2 %}
+                  <tr class="responsive-table-row">
+                    <td data-label="Quantity">Buy 6+</td>
+                    <td data-label="Discount" style="color: #AC1229;">Save {{ tier | append: '%' }}</td>
+                    <td data-label="Price" style="color: #0C5273;">{{ product_price | minus: tier_discount | times: 100 | money_without_currency | prepend: '$' | append: ' ' }}each</td>
+                  </tr>
+                {% endcase %}
+              </tbody>
+            </table>
+          {% endfor %}
+          </div>
         </div>
+      </div>
       {% endcapture %}
   {% endcase %}
 {% endfor %}

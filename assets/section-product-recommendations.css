@@ -24,6 +24,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   box-sizing: inherit;
+  padding-left: 0;
+  list-style: none;
 }
 
 .product-recommendations .grid__item {
