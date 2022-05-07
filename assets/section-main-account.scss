@@ -646,6 +646,8 @@
 .order__product-image {
 	width: 80px;
 	height: 80px;
+	border-radius: 8px;
+	overflow: hidden;
 
 	img {
 		width: 100%;
