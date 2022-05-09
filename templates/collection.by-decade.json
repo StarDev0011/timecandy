@@ -1,0 +1,98 @@
+{
+  "wrapper": "div.collection-candy",
+  "sections": {
+    "header": {
+      "type": "collection--candy-header",
+      "settings": {
+        "sub_headder": "WALK THE CANDY AISLE",
+        "color_sub": "#0c5273",
+        "title": "Discover over 300 different kinds of Candy you ate as a kid®",
+        "color_title": "#262626",
+        "bg_color": "#bbe2dd"
+      }
+    },
+    "candy-classics": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "title": "Birthday",
+        "collection": "candy-by-occasion-birthday-candy-gifts",
+        "row": 7,
+        "show_view_all": true
+      }
+    },
+    "candy-chocolate": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "title": "1950s Candy",
+        "collection": "candy-by-decade-1950s-candy",
+        "row": 7,
+        "show_view_all": true
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "large-decade-candy-gift-box",
+        "sub_title": "looking for a gift?",
+        "desc": "",
+        "show_best_seller": true,
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lunch-boxes-with-candy": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "title": "Candy Classic",
+        "collection": "candy-by-decade-1960s-candy",
+        "row": 7,
+        "show_view_all": true
+      }
+    },
+    "banner-with-text": {
+      "type": "banner-with-text",
+      "blocks": {
+        "524cccb0-9633-418c-adfd-33a14efd4b4a": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_1.png",
+            "btn": "Shop Gift Boxes",
+            "link": "shopify:\/\/collections\/candy-gift-boxes",
+            "title": "Personalized Gifts",
+            "bg_label": "#8ed1cb",
+            "color_label": "#262626"
+          }
+        },
+        "3b61cf33-8f54-4a74-9079-a6bc35924168": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_2.png",
+            "btn": "Shop Sale",
+            "link": "shopify:\/\/collections\/deals-of-the-week",
+            "title": "Deals of the Week",
+            "bg_label": "#ac1229",
+            "color_label": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "524cccb0-9633-418c-adfd-33a14efd4b4a",
+        "3b61cf33-8f54-4a74-9079-a6bc35924168"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "candy-classics",
+    "candy-chocolate",
+    "featured-product",
+    "lunch-boxes-with-candy",
+    "banner-with-text"
+  ]
+}
