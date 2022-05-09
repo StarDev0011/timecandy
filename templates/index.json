@@ -73,7 +73,7 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 140,
+        "padding_bottom": 80,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
         "show_bottom": false,
