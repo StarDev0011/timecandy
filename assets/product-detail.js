@@ -16,8 +16,13 @@ Product = {
   },
 
   dropDownOption: () => {
-    const variantTile = $(`${ Product.Class.swatchInput }:checked`).val();
-    $(Product.Class.swatchName).text(variantTile);
+    // const variantTile = $(`${ Product.Class.swatchInput }:checked`).val();
+    // $(Product.Class.swatchName).text(variantTile);
+    const variantTile = document.querySelectorAll(`${ Product.Class.swatchInput }:checked`);
+    variantTile.forEach(function (item, index) {
+      const variantLabel = document.querySelectorAll(`${ Product.Class.swatchName }`)[index];
+      variantLabel.textContent = item.value;
+    });
 
     if($(Product.Class.swatchImage).length) {
       const varinatImg = $(`${ Product.Class.swatchInput }:checked`).next().find('.product-form__swatch-image').attr('src');
@@ -29,9 +34,16 @@ Product = {
       $(Product.Class.swatchSoldOut).text(soldOut);
     }
 
-    $('body').on('click', Product.Class.swatchLabel, function() {
-      $(this).next().slideToggle(200);
-    });
+    // $('body').on('click', Product.Class.swatchLabel, function() {
+    //   $(this).next().slideToggle(200);
+    // });
+
+    const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
+    swatchLabel.forEach(function(itemLabel) {
+      itemLabel.addEventListener('click', function () {
+        this.nextElementSibling.style.display = 'block';
+      });
+    })
 
     $('body').on('change', Product.Class.swatchInput, function() {
       const name = $(this).val();

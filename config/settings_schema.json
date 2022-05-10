@@ -580,6 +580,11 @@
         "default": "<p>You’re $250 away from free shipping!<\/p>"
       },
       {
+        "type": "image_picker",
+        "id": "gif_img",
+        "label": "Select Gif Image"
+      },
+      {
         "type": "url",
         "id": "link_1",
         "label": "Link Button 1"
