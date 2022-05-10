@@ -298,7 +298,7 @@
                         <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
                         {% if is_size %}
                           <div class="product-swatch__label">
-                            <span class="js-option-label"></span>
+                            <span class="js-option-label" id="option-name-{{ product.id }}"></span>
                             <span>
                               {% render 'icon-caret' %}
                             </span>

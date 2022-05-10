@@ -1233,6 +1233,7 @@ fieldset.product-form__input .form__label {
   justify-content: space-between;
   cursor: pointer;
   background-color: #fff;
+  user-select: none;
 }
 
 .product-detail .product-swatch__label svg {

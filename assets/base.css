@@ -1,7 +1,7 @@
 /* Import font */
 @font-face {
 	font-family: "Trend Sans";
-	src: local("Trend Sans"), url("./trend-sans-one.eot");
+	src: local("Trend Sans"), url("./trend-sans-one.eot"), url("./trend-sans-one.woff") format("truetype");;
 }
 @font-face {
 	font-family: "Merriweather Black";
