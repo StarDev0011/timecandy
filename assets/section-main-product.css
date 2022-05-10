@@ -1274,6 +1274,10 @@ fieldset.product-form__input .form__label {
   display: none;
 }
 
+.product-detail .product-form__input .product-form__swatch-dropdown.active {
+  display: block;
+}
+
 .product-individual .product-form__swatch-dropdown input[type=radio]:checked + label {
   position: relative;
 }

@@ -16,12 +16,14 @@ Product = {
   },
 
   dropDownOption: () => {
-    // const variantTile = $(`${ Product.Class.swatchInput }:checked`).val();
-    // $(Product.Class.swatchName).text(variantTile);
     const variantTile = document.querySelectorAll(`${ Product.Class.swatchInput }:checked`);
+    const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
+    const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
+    const variantLabel = document.querySelectorAll(Product.Class.swatchName);
+    const dropdown = document.querySelector('.product-form__swatch-dropdown');
+
     variantTile.forEach(function (item, index) {
-      const variantLabel = document.querySelectorAll(`${ Product.Class.swatchName }`)[index];
-      variantLabel.textContent = item.value;
+      variantLabel[index].textContent = item.value;
     });
 
     if($(Product.Class.swatchImage).length) {
@@ -34,29 +36,32 @@ Product = {
       $(Product.Class.swatchSoldOut).text(soldOut);
     }
 
-    // $('body').on('click', Product.Class.swatchLabel, function() {
-    //   $(this).next().slideToggle(200);
-    // });
-
-    const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
     swatchLabel.forEach(function(itemLabel) {
       itemLabel.addEventListener('click', function () {
-        this.nextElementSibling.style.display = 'block';
+        this.nextElementSibling.classList.toggle('active');
       });
     })
 
-    $('body').on('change', Product.Class.swatchInput, function() {
-      const name = $(this).val();
-      $(Product.Class.swatchName).text(name);
-      $('.product-form__swatch-dropdown').slideToggle(200);
-
-      if($(Product.Class.swatchImage).length) {
-        const image = $(this).next().find('.product-form__swatch-image').attr('src');
-        const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
-        $(Product.Class.swatchImage).attr('src', image).show();
-        $(Product.Class.swatchSoldOut).text(textSoldOut);
-      }
+    swacthIuput.forEach(function(input, i) {
+      input.addEventListener('change', function() {
+        const name = input.value;
+        this.parentNode.classList.remove('active');
+        this.parentNode.previousElementSibling.textContent = name;
+      })
     })
+
+    // $('body').on('change', Product.Class.swatchInput, function() {
+    //   const name = $(this).val();
+    //   $(Product.Class.swatchName).text(name);
+    //   $('.product-form__swatch-dropdown').slideToggle(200);
+
+    //   if($(Product.Class.swatchImage).length) {
+    //     const image = $(this).next().find('.product-form__swatch-image').attr('src');
+    //     const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
+    //     $(Product.Class.swatchImage).attr('src', image).show();
+    //     $(Product.Class.swatchSoldOut).text(textSoldOut);
+    //   }
+    // })
   },
 
   readMoreDesc: () => {
