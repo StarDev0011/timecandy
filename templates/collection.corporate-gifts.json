@@ -4,9 +4,9 @@
     "header": {
       "type": "collection--candy-header",
       "settings": {
-        "sub_headder": "WALK THE CANDY AISLE",
+        "sub_headder": "Great Employee Gifts",
         "color_sub": "#0c5273",
-        "title": "Discover over 300 different kinds of Candy you ate as a kid®",
+        "title": "Thoughtfully-packaged boxes full of sweet memories for your special corporate interests.",
         "color_title": "#262626",
         "bg_color": "#bbe2dd"
       }
@@ -14,8 +14,8 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Birthday",
-        "collection": "candy-by-occasion-birthday-candy-gifts",
+        "title": "Thank You Gift Ideas",
+        "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes-thank-you-decade-gift-boxes",
         "row": 7,
         "show_view_all": true
       }
@@ -23,8 +23,8 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1950s Candy",
-        "collection": "candy-by-decade-1950s-candy",
+        "title": "Get Well Soon",
+        "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes-get-well-soon-decade-gift-boxes",
         "row": 7,
         "show_view_all": true
       }
@@ -44,8 +44,8 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Candy Classic",
-        "collection": "candy-by-decade-1960s-candy",
+        "title": "Classic Toys",
+        "collection": "walk-the-candy-aisle-retro-toys",
         "row": 7,
         "show_view_all": true
       }
