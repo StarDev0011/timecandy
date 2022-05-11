@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-header.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'component-header.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -52,10 +52,9 @@
         <header-drawer data-breakpoint="tablet">
           <details id="Details-menu-drawer-container" class="menu-drawer-container">
             <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
-              <span>
-                {% render 'icon-hamburger' %}
-                {% render 'icon-close' %}
-              </span>
+              <div class="header-icon__line">
+                <span class="header-icon__line-item"></span>
+              </div>
             </summary>
             <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
               <div class="menu-drawer__inner-container">
@@ -285,14 +284,12 @@
           {{ 'bag.png' | asset_url | img_tag : 'test'  , 'icon-bag-desktop' }}
           {{ 'icon-bag-mb.png' | asset_url | img_tag : 'test' , 'icon-bag-mb' }}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-          {%- if cart != empty -%}
             <div class="cart-count-bubble">
               {%- if cart.item_count < 100 -%}
                 <span aria-hidden="true" class="js-cart-count">{{ cart.item_count }}</span>
               {%- endif -%}
               <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
             </div>
-          {%- endif -%}
         </a>
       </div>
   </div>

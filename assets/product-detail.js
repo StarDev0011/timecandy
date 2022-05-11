@@ -20,12 +20,14 @@ Product = {
     const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
     const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
     const variantLabel = document.querySelectorAll(Product.Class.swatchName);
+    const swatchSoldOut = document.querySelector(Product.Class.swatchSoldOut);
     const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');
 
     variantTile.forEach(function (item, index) {
       variantLabel[index].textContent = item.value;
     });
 
+    const variantImage =  document.querySelectorAll(`${ Product.Class.swatchInput }:checked`)
     if($(Product.Class.swatchImage).length) {
       const varinatImg = $(`${ Product.Class.swatchInput }:checked`).next().find('.product-form__swatch-image').attr('src');
       $(Product.Class.swatchImage).attr('src', varinatImg).show();
@@ -36,18 +38,22 @@ Product = {
       $(Product.Class.swatchSoldOut).text(soldOut);
     }
 
-    swatchLabel.forEach(function(itemLabel, i) {
+    swatchLabel.forEach(function(itemLabel) {
       itemLabel.addEventListener('click', function () {
         this.nextElementSibling.classList.toggle('active');
       });
     })
 
-    swacthIuput.forEach(function(input, i) {
+    swacthIuput.forEach(function(input) {
       input.addEventListener('change', function() {
         const name = input.value;
         this.parentNode.classList.remove('active');
         const elmTitle = this.parentNode.previousElementSibling;
         elmTitle.querySelector('.js-option-label').textContent = name;
+        if(swatchSoldOut.length){
+          const textSoldOut = input.nextElementSibling.querySelector('.product-form__swatch-soldout').textContent;
+          swatchSoldOut.textContent = textSoldOut;
+        }
       })
     })
 
@@ -76,9 +82,12 @@ Product = {
   },
 
   readMoreDesc: () => {
-    $('body').on('click', Product.Class.btnReadMore, function() {
-      $('.product__desc-text').removeClass('product__height-desc');
-      $(this).hide();
+    const btnReadmore = document.querySelector(Product.Class.btnReadMore);
+    const desc = document.querySelector('.product__desc-text');
+    btnReadmore.addEventListener('click', function(e) {
+      e.preventDefault();
+      desc.classList.remove('product__height-desc');
+      btnReadmore.style.display = 'none';
     });
   }
 };

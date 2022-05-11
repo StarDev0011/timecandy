@@ -169,7 +169,7 @@
     {%- endunless -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+    {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -222,6 +222,8 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       }
+
+      window.placeholder = `{{ settings.placeholder }}`
     </script>
 
     {%- if settings.predictive_search_enabled -%}

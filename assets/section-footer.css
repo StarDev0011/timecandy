@@ -607,3 +607,13 @@ noscript .localization-selector.link {
     }
   }
 }
+
+@media (max-width: 380px) {
+  .footer__content-bottom-wrapper {
+    padding-right: 27px !important;
+  }
+
+  .footer__copyright, .copyright__content a {
+    font-size: 12px;
+  }
+}

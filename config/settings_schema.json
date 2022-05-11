@@ -1286,6 +1286,12 @@
         "id": "suggested",
         "label": "Suggested",
         "default": "Sollicitudin, Egestas, Tristique, Mollis, Risus"
+      },
+      {
+        "type": "textarea",
+        "id": "placeholder",
+        "label": "Placeholder",
+        "default": "Search for 100 Grand Bar, Search for other…, 100 Grand Bar"
       }
     ]
   },
