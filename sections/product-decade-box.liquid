@@ -23,6 +23,7 @@
   <div class="product">
     <div class="product__media-wrapper">
       <div class="product__media-content">
+        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
@@ -155,7 +156,7 @@
               <div class="product-thumbnails swiper-wrapper">
                 {% for media in product.media %}
                   <div class="product-thumbnails__item swiper-slide">
-                    <img class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x'}}">
+                    <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}">
                   </div>
                 {% endfor %}
               </div>
@@ -297,7 +298,7 @@
                         <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
                         {% if is_size %}
                           <div class="product-swatch__label">
-                            <span class="js-option-label"></span>
+                            <span class="js-option-label" id="option-name-{{ product.id }}"></span>
                             <span>
                               {% render 'icon-caret' %}
                             </span>

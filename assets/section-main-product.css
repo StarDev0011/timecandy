@@ -1220,7 +1220,7 @@ fieldset.product-form__input .form__label {
 }
 
 .product-detail .product-swatch__label {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   font-family: var(--font-2);
@@ -1233,6 +1233,7 @@ fieldset.product-form__input .form__label {
   justify-content: space-between;
   cursor: pointer;
   background-color: #fff;
+  user-select: none;
 }
 
 .product-detail .product-swatch__label svg {
@@ -1243,18 +1244,52 @@ fieldset.product-form__input .form__label {
   position: relative;
 }
 
+.template-product .featured-collection .title-wrapper-with-link h2 {
+  text-transform: none;
+}
+
+.template-product .card-product__form button {
+  text-transform: uppercase;
+}
+
+.template-product .testimonial__header h2 {
+  text-transform: none;
+}
+
+.product-individual .product-detail__many-options .product-detail__swatch-order {
+  max-width: 285px;
+  flex-basis: 49%;
+  margin-right: 20px;
+}
+
 .product-detail .product-form__input .product-form__swatch-dropdown {
   flex-direction: column;
   background-color: #fff;
   border: 1px solid #ccc;
-  margin-top: 3px;
-  border-radius: 3px;
+  margin-top: -1px;
   padding: 5px 0;
   position: absolute;
   left: 0;
   width: 100%;
   z-index: 1;
   display: none;
+}
+
+.product-detail .product-form__input .product-form__swatch-dropdown.active {
+  display: block;
+}
+
+.product-individual .product-form__swatch-dropdown input[type=radio]:checked + label {
+  position: relative;
+}
+
+.product-individual .product-form__swatch-dropdown input[type=radio]:checked + label::before {
+  width: calc(100% + 32px);
+  left: -16px;
+  right: 0;
+  height: 100%;
+  border-radius: 0;
+  background-color: rgba(228, 241, 245, 0.4);
 }
 
 .product-swatch__sold-out {
@@ -1313,11 +1348,11 @@ fieldset.product-form__input .form__label {
 
 .product-buy-more__header {
   font-weight: 300;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 18px;
+  line-height: 24px;
   color: #484E57;
   font-family: var(--my-font);
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 .product-buy-more table {
@@ -1334,8 +1369,8 @@ fieldset.product-form__input .form__label {
   border: 0;
   padding: 12px 0;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 14px;
   font-family: var(--my-font);
   text-transform: uppercase;
   width: 33.333%;
@@ -1472,6 +1507,15 @@ div.rc_block__type {
   color: var(--color-link-text);
 }
 
+.product__read-more {
+  font-family: var(--my-font) !important;
+  text-transform: uppercase;
+}
+
+.product-custom-text a {
+  font-family: var(--my-font);
+}
+
 .product-detail .product-form__group {
   display: grid;
   grid-template-columns: 142px 1fr;
@@ -1482,6 +1526,7 @@ div.rc_block__type {
 
 .product-detail .product-form__submit {
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 #rc_container {

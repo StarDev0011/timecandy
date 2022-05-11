@@ -1,0 +1,28 @@
+<form id="ContactFooter" class="footer__newsletter newsletter-form" action="https://manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="https://manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate"></form>
+<input type="hidden" name="g" value="{{ list_id }}">
+<input type="hidden" name="$fields" value="$consent">
+<input type="hidden" name="$list_fields" value="$consent">
+<div class="newsletter-form__field-wrapper">
+  <div class="field">
+    <input
+      id="NewsletterForm--{{ section.id }}"
+      type="email"
+      class="field__input"
+      aria-required="true"
+      autocorrect="off"
+      autocapitalize="off"
+      autocomplete="email"
+      placeholder="{{ 'newsletter.label' | t }}"
+      required
+    >
+    <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+      {% render 'icon-arrow-right' %}
+    </button>
+  </div>
+</div>
+</form>
+
+{% if key != blank %}
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id={{ key }}"></script>
+  <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+{% endif %}

@@ -1,7 +1,7 @@
 /* Import font */
 @font-face {
 	font-family: "Trend Sans";
-	src: local("Trend Sans"), url("./Trend-Sans-One.otf") format("truetype");
+	src: local("Trend Sans"), url("./trend-sans-one.eot"), url("./trend-sans-one.woff") format("truetype");;
 }
 @font-face {
 	font-family: "Merriweather Black";
@@ -2103,18 +2103,16 @@ input[type="checkbox"] {
 
 .cart-count-bubble {
 	position: absolute;
-	border: 1px solid rgb(var(--color-button));
-	color: rgb(var(--color-button));
-	background-color: rgb(var(--color-button-text));
+	color: #fff;
 	height: 1.7rem;
 	width: 1.7rem;
 	border-radius: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.9rem;
-	top: 5px;
-	right: -10px;
+	font-size: 14px;
+	top: 18px;
+	right: 7px;
 	line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -2164,12 +2162,14 @@ header {
 }
 #shopify-section-header {
 	z-index: 3;
+	position: sticky;
+	top: 0;
 }
 
-.shopify-section-header-sticky {
+/* .shopify-section-header-sticky {
 	position: sticky;
 	top: -1px;
-}
+} */
 
 .shopify-section-header-hidden.menu-open {
 	transform: translateY(0);

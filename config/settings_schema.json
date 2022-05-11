@@ -580,6 +580,11 @@
         "default": "<p>You’re $250 away from free shipping!<\/p>"
       },
       {
+        "type": "image_picker",
+        "id": "gif_img",
+        "label": "Select Gif Image"
+      },
+      {
         "type": "url",
         "id": "link_1",
         "label": "Link Button 1"
@@ -1281,6 +1286,12 @@
         "id": "suggested",
         "label": "Suggested",
         "default": "Sollicitudin, Egestas, Tristique, Mollis, Risus"
+      },
+      {
+        "type": "textarea",
+        "id": "placeholder",
+        "label": "Placeholder",
+        "default": "Search for 100 Grand Bar, Search for other…, 100 Grand Bar"
       }
     ]
   },

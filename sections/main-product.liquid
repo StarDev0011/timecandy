@@ -23,6 +23,7 @@
   <div class="product">
     <div class="product__media-wrapper">
       <div class="product__media-content">
+        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
@@ -44,7 +45,7 @@
               -%}
               {%- for media in product.media -%}
                 <li id="Slide-{{ section.id }}-{{ media.id }}" class="swiper-slide product__media-item {% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                  {%- assign media_position = media_position | default: 0 | plus: 1 -%}
+                  {%- assign media_position = 1 -%}
                   {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true %}
                 </li>
               {%- endfor -%}
@@ -149,14 +150,16 @@
             </slider-component>
           {%- endif -%}
         </media-gallery>
-        {% if product.media.size > 1 %}
+        {% if product.media.size >= 1 %}
           <div class="product__media-inner">
             <div class="product__media-thumnail swiper js-swiper-thumnail">
               <div class="product-thumbnails swiper-wrapper">
                 {% for media in product.media %}
-                  <div class="product-thumbnails__item swiper-slide">
-                    <img class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x'}}">
-                  </div>
+                  {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                    <div class="product-thumbnails__item swiper-slide">
+                      <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}">
+                    </div>
+                  {%- endunless -%}
                 {% endfor %}
               </div>
             </div>
@@ -285,8 +288,9 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
+              {% assign variantCount = product.options_with_values | size %}
               {%- if block.settings.picker_type == 'button' -%}
-                <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                <variant-radios class="no-js-hidden product-detail__variants{% if variantCount > 1 %} product-detail__many-options{% endif %}" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                     {% assign optionName = option.name | downcase %}
                     {% assign is_size = true %}
@@ -298,9 +302,11 @@
                         {% if is_size %}
                           <div class="product-swatch__label">
                             <div class="product-swatch__content">
-                              <img class="js-swatch-image" src="" style="display: none;">
+                              {% unless variantCount > 1 %}
+                                <img height="200" width="200" loading="lazy" class="js-swatch-image" src="" style="display: none;">
+                              {% endunless %}
                               <div class="product-swatch__caption">
-                                <span class="js-option-label"></span>
+                                <span class="js-option-label" id="option-name-{{ product.id }}{{ forloop.index }}"></span>
                                 <span class="product-swatch__sold-out js-option-sold-out"></span>
                               </div>
                             </div>
@@ -319,18 +325,22 @@
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
                             <label {% if is_size %}class="js-variant-item{% if option.selected_value == value %} js-variant-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                              {% if product.variants[forloop.index0].featured_media != blank %}
-                                <img class="product-form__swatch-image" src="{{ product.variants[forloop.index0].featured_media  | img_url: "small" }}">
-                              {% endif %}
+                              {% unless variantCount > 1 %}
+                                {% if product.variants[forloop.index0].featured_media != blank %}
+                                  <img height="auto" width="50" loading="lazy"  class="product-form__swatch-image" src="{{ product.variants[forloop.index0].featured_media  | img_url: "small" }}">
+                                {% endif %}
+                              {% endunless %}
                               <span class="product-form__swatch-group">
                                 {% if value contains 'decade gift box' %}
                                   <span>{{ value | split: 'decade gift box' }}</span>
                                 {% else %}
                                   <span>{{ value }}</span>
                                 {% endif %}
-                                {% if product.variants[forloop.index0].available == false %}
-                                  <span class="product-form__swatch-soldout">Temporarily out of stock</span>
-                                {% endif %}
+                                {% unless variantCount > 1 %}
+                                  {% if product.variants[forloop.index0].available == false %}
+                                    <span class="product-form__swatch-soldout">Temporarily out of stock</span>
+                                  {% endif %}
+                                {% endunless %}
                               </span>
                             </label>
                           {%- endfor -%}

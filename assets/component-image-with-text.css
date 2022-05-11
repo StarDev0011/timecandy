@@ -134,6 +134,7 @@
   text-transform: none;
   color: #484E57;
   margin-bottom: 32px;
+  font-family: var(--font-2);
 }
 
 .banner-with-text__text {
@@ -158,7 +159,6 @@
   display: flex;
   align-items: center;
   margin-right: 8px;
-  margin-bottom: 2px;
 }
 
 .gift-cart-modal {
@@ -302,6 +302,14 @@
 
   .gift-cart-modal__btn {
     margin-bottom: 16px;
+  }
+
+  .image-with-text__text {
+    text-align: left;
+  }
+
+  .banner-with-text__sub-heading {
+    font-size: 14px;
   }
 }
 

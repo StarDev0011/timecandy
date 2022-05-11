@@ -44,6 +44,10 @@
     padding-left: 0;
     grid-gap: 0;
   }
+
+  .product-recommendations__heading {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 899px) and (min-width: 768px) {

@@ -16,9 +16,18 @@ Product = {
   },
 
   dropDownOption: () => {
-    const variantTile = $(`${ Product.Class.swatchInput }:checked`).val();
-    $(Product.Class.swatchName).text(variantTile);
+    const variantTile = document.querySelectorAll(`${ Product.Class.swatchInput }:checked`);
+    const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
+    const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
+    const variantLabel = document.querySelectorAll(Product.Class.swatchName);
+    const swatchSoldOut = document.querySelector(Product.Class.swatchSoldOut);
+    const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');
 
+    variantTile.forEach(function (item, index) {
+      variantLabel[index].textContent = item.value;
+    });
+
+    const variantImage =  document.querySelectorAll(`${ Product.Class.swatchInput }:checked`)
     if($(Product.Class.swatchImage).length) {
       const varinatImg = $(`${ Product.Class.swatchInput }:checked`).next().find('.product-form__swatch-image').attr('src');
       $(Product.Class.swatchImage).attr('src', varinatImg).show();
@@ -29,28 +38,56 @@ Product = {
       $(Product.Class.swatchSoldOut).text(soldOut);
     }
 
-    $('body').on('click', Product.Class.swatchLabel, function() {
-      $(this).next().slideToggle(200);
-    });
-
-    $('body').on('change', Product.Class.swatchInput, function() {
-      const name = $(this).val();
-      $(Product.Class.swatchName).text(name);
-      $('.product-form__swatch-dropdown').slideToggle(200);
-
-      if($(Product.Class.swatchImage).length) {
-        const image = $(this).next().find('.product-form__swatch-image').attr('src');
-        const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
-        $(Product.Class.swatchImage).attr('src', image).show();
-        $(Product.Class.swatchSoldOut).text(textSoldOut);
-      }
+    swatchLabel.forEach(function(itemLabel) {
+      itemLabel.addEventListener('click', function () {
+        this.nextElementSibling.classList.toggle('active');
+      });
     })
+
+    swacthIuput.forEach(function(input) {
+      input.addEventListener('change', function() {
+        const name = input.value;
+        this.parentNode.classList.remove('active');
+        const elmTitle = this.parentNode.previousElementSibling;
+        elmTitle.querySelector('.js-option-label').textContent = name;
+        if(swatchSoldOut.length){
+          const textSoldOut = input.nextElementSibling.querySelector('.product-form__swatch-soldout').textContent;
+          swatchSoldOut.textContent = textSoldOut;
+        }
+      })
+    })
+
+    // document.addEventListener('click', (e) => {
+    //   if (!e.target.matches('.product-swatch__label')) {
+    //     for (let i = 0; i < dropdown.length; i++) {
+    //       var openDropdown = dropdown[i];
+    //       if (openDropdown.classList.contains('active')) {
+    //         openDropdown.classList.toggle('active');
+    //       }
+    //     }
+    //   }
+    // });
+    // $('body').on('change', Product.Class.swatchInput, function() {
+    //   const name = $(this).val();
+    //   $(Product.Class.swatchName).text(name);
+    //   $('.product-form__swatch-dropdown').slideToggle(200);
+
+    //   if($(Product.Class.swatchImage).length) {
+    //     const image = $(this).next().find('.product-form__swatch-image').attr('src');
+    //     const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
+    //     $(Product.Class.swatchImage).attr('src', image).show();
+    //     $(Product.Class.swatchSoldOut).text(textSoldOut);
+    //   }
+    // })
   },
 
   readMoreDesc: () => {
-    $('body').on('click', Product.Class.btnReadMore, function() {
-      $('.product__desc-text').removeClass('product__height-desc');
-      $(this).hide();
+    const btnReadmore = document.querySelector(Product.Class.btnReadMore);
+    const desc = document.querySelector('.product__desc-text');
+    btnReadmore.addEventListener('click', function(e) {
+      e.preventDefault();
+      desc.classList.remove('product__height-desc');
+      btnReadmore.style.display = 'none';
     });
   }
 };
