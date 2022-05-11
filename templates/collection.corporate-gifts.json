@@ -14,7 +14,7 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Thank You Gift Ideas",
+        "title": "Thank You Gifts",
         "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes-thank-you-decade-gift-boxes",
         "row": 7,
         "show_view_all": true
@@ -82,6 +82,102 @@
       ],
       "settings": {
       }
+    },
+    "16523012562aab45d7": {
+      "type": "collection-list",
+      "blocks": {
+        "16523012565155053e-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-decade-candy-gift-boxes"
+          }
+        },
+        "16523012565155053e-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-personalized-candy-gift-boxes"
+          }
+        },
+        "16523012565155053e-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes"
+          }
+        },
+        "dd7c6803-28a2-432c-80c4-e50265b61dc2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "retro-candy-assortments"
+          }
+        },
+        "55a02ed0-f604-45a3-aedc-9b5e404a3f66": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-you-ate-as-a-kid-decade-bags-collection"
+          }
+        },
+        "361fefbb-e019-44bd-a8f8-516ff903d937": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gifts-candy-bouquets"
+          }
+        },
+        "cc68e7e5-22c3-405f-a91f-262bc6281bf0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "subscription-boxes"
+          }
+        },
+        "d334937b-45da-4565-bc8d-577a743f1e83": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-candy-plastic-tubs"
+          }
+        },
+        "2957bc5f-26d9-4593-a89b-c23f50860667": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gift-mugs"
+          }
+        },
+        "846c0501-41a1-4293-8862-963e6909b030": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "more-assortments"
+          }
+        },
+        "1179fbd4-b1c4-4775-a3ed-7f99a49501ef": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-lunch-box-candy"
+          }
+        }
+      },
+      "block_order": [
+        "16523012565155053e-0",
+        "16523012565155053e-1",
+        "16523012565155053e-2",
+        "dd7c6803-28a2-432c-80c4-e50265b61dc2",
+        "55a02ed0-f604-45a3-aedc-9b5e404a3f66",
+        "361fefbb-e019-44bd-a8f8-516ff903d937",
+        "cc68e7e5-22c3-405f-a91f-262bc6281bf0",
+        "d334937b-45da-4565-bc8d-577a743f1e83",
+        "2957bc5f-26d9-4593-a89b-c23f50860667",
+        "846c0501-41a1-4293-8862-963e6909b030",
+        "1179fbd4-b1c4-4775-a3ed-7f99a49501ef"
+      ],
+      "settings": {
+        "title": "Corporate Gifts",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -90,6 +186,7 @@
     "candy-chocolate",
     "featured-product",
     "lunch-boxes-with-candy",
-    "banner-with-text"
+    "banner-with-text",
+    "16523012562aab45d7"
   ]
 }
