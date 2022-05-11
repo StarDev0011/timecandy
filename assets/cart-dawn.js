@@ -129,7 +129,7 @@ CartDawn = {
           quantity = item.find(CartDawn.Selector.qty).val(),
           number = parseFloat(quantity) - 1;
 
-      if (quantity >= 2) {
+      if (quantity >= 1) {
         item.find(CartDawn.Selector.qty).val(number);
       }
 

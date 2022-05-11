@@ -296,23 +296,9 @@
           {%- liquid
             if product.selected_or_first_available_variant.featured_media != null
               assign media = product.selected_or_first_available_variant.featured_media
-              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+              render 'product-media', media: media, loop: section.settings.enable_video_looping
             endif
           -%}
-
-          {%- for media in product.media -%}
-            {%- liquid
-              if section.settings.hide_variants and media_to_render contains media.id
-                assign variant_image = true
-              else
-                assign variant_image = false
-              endif
-
-              unless media.id == product.selected_or_first_available_variant.featured_media.id
-                render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
-              endunless
-            -%}
-          {%- endfor -%}
         </div>
       </div>
     </product-modal>
@@ -464,55 +450,10 @@
       "default": true
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
-    },
-    {
       "type": "checkbox",
       "id": "secondary_background",
       "default": false,
       "label": "t:sections.featured-product.settings.secondary_background.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.featured-product.settings.header.content",
-      "info": "t:sections.featured-product.settings.header.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_variants",
-      "default": false,
-      "label": "t:sections.main-product.settings.hide_variants.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_video_looping",
-      "default": false,
-      "label": "t:sections.featured-product.settings.enable_video_looping.label"
     },
     {
       "type": "header",
