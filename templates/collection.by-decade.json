@@ -14,8 +14,8 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1920s",
-        "collection": "candy-by-decade-1920s-candy",
+        "title": "1990s",
+        "collection": "candy-by-decade-1990s-candy",
         "row": 7,
         "show_view_all": true
       }
@@ -23,8 +23,8 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1930s Candy",
-        "collection": "candy-by-decade-1930s-candy",
+        "title": "1980s Candy",
+        "collection": "candy-by-decade-1980s-candy",
         "row": 7,
         "show_view_all": true
       }
@@ -44,8 +44,8 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1940s",
-        "collection": "candy-by-decade-1940s-candy",
+        "title": "1970s",
+        "collection": "candy-by-decade-1970s-candy",
         "row": 7,
         "show_view_all": true
       }
