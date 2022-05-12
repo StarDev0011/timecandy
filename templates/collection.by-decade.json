@@ -14,19 +14,21 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1990s",
         "collection": "candy-by-decade-1990s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1980s Candy",
         "collection": "candy-by-decade-1980s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "featured-product": {
@@ -44,10 +46,11 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1970s",
         "collection": "candy-by-decade-1970s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "16522956411c65eac8": {
@@ -114,7 +117,7 @@
       ],
       "settings": {
         "title": "All Decade Collections",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "image_ratio": "square",
         "columns_desktop": 3,
         "color_scheme": "background-1",

@@ -14,19 +14,21 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Birthday",
         "collection": "candy-by-occasion-birthday-candy-gifts",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "1950s Candy",
         "collection": "candy-by-decade-1950s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "featured-product": {
@@ -44,10 +46,11 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "title": "Candy Classic",
         "collection": "candy-by-decade-1960s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "banner-with-text": {
@@ -81,6 +84,10 @@
         "3b61cf33-8f54-4a74-9079-a6bc35924168"
       ],
       "settings": {
+        "title": "",
+        "desc": "",
+        "padding_top": 20,
+        "padding_bottom": 80
       }
     }
   },
