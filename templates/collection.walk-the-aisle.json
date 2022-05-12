@@ -14,7 +14,7 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-occasion-birthday-candy-gifts",
+        "collection": "top-candy",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -24,7 +24,17 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-decade-1950s-candy",
+        "collection": "walk-the-candy-aisle-candy-sale",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "lunch-boxes-with-candy": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "walk-the-candy-aisle-stick-candy-hard",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -41,16 +51,6 @@
         "secondary_background": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "lunch-boxes-with-candy": {
-      "type": "collection--candy-aisle",
-      "settings": {
-        "collection": "candy-by-decade-1960s-candy",
-        "row": 7,
-        "show_view_all": true,
-        "padding_top": 0,
-        "padding_bottom": 80
       }
     },
     "banner-with-text": {
@@ -93,11 +93,100 @@
     "1652380019a35ab19c": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "",
+        "collection": "candy-by-flavor-chocolate",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
         "padding_bottom": 80
+      }
+    },
+    "16523838361db9ec8b": {
+      "type": "collection-list",
+      "blocks": {
+        "165238383689e85f0f-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "subscription-boxes"
+          }
+        },
+        "165238383689e85f0f-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-lunch-box-candy"
+          }
+        },
+        "165238383689e85f0f-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-new"
+          }
+        },
+        "68aadcc3-4d69-4423-93b9-cdbdf046d5a2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-nostalgia-gums"
+          }
+        },
+        "c69a2422-3c75-4575-8b69-ca3861ce8155": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors"
+          }
+        },
+        "db4a3e9a-0bf1-4fe5-80d0-c578a6321de9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-candy-plastic-tubs"
+          }
+        },
+        "2f4556e2-13c6-4a97-8ea2-78715b175a05": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "movie-theater-candy"
+          }
+        },
+        "32231331-60db-412a-aadb-42189e1e5319": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gifts-cg-remember-when"
+          }
+        },
+        "0987ac1e-d33a-41ed-acad-a30dd90d958a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-retro-toys"
+          }
+        },
+        "7205cce4-d22e-46a7-ba3e-8939186be11b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "165238383689e85f0f-0",
+        "165238383689e85f0f-1",
+        "165238383689e85f0f-2",
+        "68aadcc3-4d69-4423-93b9-cdbdf046d5a2",
+        "c69a2422-3c75-4575-8b69-ca3861ce8155",
+        "db4a3e9a-0bf1-4fe5-80d0-c578a6321de9",
+        "2f4556e2-13c6-4a97-8ea2-78715b175a05",
+        "32231331-60db-412a-aadb-42189e1e5319",
+        "0987ac1e-d33a-41ed-acad-a30dd90d958a",
+        "7205cce4-d22e-46a7-ba3e-8939186be11b"
+      ],
+      "settings": {
+        "title": "All Collections",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -105,9 +194,10 @@
     "candy-header",
     "candy-classics",
     "candy-chocolate",
-    "featured-product",
     "lunch-boxes-with-candy",
+    "featured-product",
     "banner-with-text",
-    "1652380019a35ab19c"
+    "1652380019a35ab19c",
+    "16523838361db9ec8b"
   ]
 }
