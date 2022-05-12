@@ -15,13 +15,15 @@
     <div class="container">
       <div class="collection__header">
         <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
-        {% if collection.description != blank %}
-          <div class="collection__text">
-            {{- collection.description | truncate: 40 -}}
-            {% if section.settings.read_more != blank %}
-              <div><a class="collection__more" href="#collection-desc"> {{- section.settings.read_more -}} </a></div>
-            {% endif %}
-          </div>
+        {% if section.settings.show_desc %}
+          {% if collection.description != blank %}
+            <div class="collection__text">
+              {{- collection.description | truncate: 40 -}}
+              {% if section.settings.read_more != blank %}
+                <div><a class="collection__more" href="#collection-desc"> {{- section.settings.read_more -}} </a></div>
+              {% endif %}
+            </div>
+          {% endif %}
         {% endif %}
       </div>
       <div class="collection__wrapper">
@@ -128,12 +130,6 @@
   {
     "name": "Colections pages",
     "settings": [
-      {
-        "type": "richtext",
-        "id": "text",
-        "label": "Text",
-        "default": "<p>A caramel jacket with a pure sugar cream center.</p>"
-      },
       {
         "type": "checkbox",
         "id": "show_desc",
