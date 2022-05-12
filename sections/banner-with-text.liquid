@@ -15,13 +15,21 @@
               </div>
             {% endif %}
             {% if block.settings.title != blank %}
-              <div class="banner-with-text__label item-label"> {{ block.settings.title }} </div>
+              <div class="banner-with-text__label card-product-label"> {{ block.settings.title }} </div>
             {% endif %}
           </a>
           <style>
-            .banner-item-{{ block.id }} .item-label {
+            .banner-item-{{ block.id }} .card-product-label {
               color: {{ block.settings.color_label }};
               background-color: {{ block.settings.bg_label }};
+            }
+
+            .banner-item-{{ block.id }} .card-product-label:before {
+              border-top-color: {{ block.settings.bg_label }};
+            }
+
+            .banner-item-{{ block.id }} .card-product-label:after {
+              border-bottom-color: {{ block.settings.bg_label }};
             }
           </style>
         </div>

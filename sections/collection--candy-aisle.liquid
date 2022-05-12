@@ -36,36 +36,7 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  const breakpoint = window.matchMedia( '(min-width: 768px)' );
-  var productSlider;
-  const breakpointCheck = function() {
-    if ( breakpoint.matches === true ) {
-      if ( productSlider !== undefined ) productSlider.destroy( true, true );
-        return;
-    } else if ( breakpoint.matches === false ) {
-      return enableSwiper();
-    }
-  };
 
-  const enableSwiper = function() {
-    productSlider = new Swiper ('.js-product-slider', {
-      loop: false,
-      slidesPerView: 1,
-      spaceBetween: 16,
-      centeredSlides: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      }
-    });
-  };
-
-  window.addEventListener('load', (event) => {
-    breakpoint.addListener(breakpointCheck);
-    breakpointCheck();
-  })
-</script>
 {% schema %}
   {
     "name": "Candy Product list",
