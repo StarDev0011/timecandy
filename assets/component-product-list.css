@@ -371,7 +371,10 @@ img {
   z-index: 1;
   left: 0;
   border-radius: 15px;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 50%);
+  transition:all .5s ease;
 }
 
 .quick-add .price__badge-sold-out {
@@ -388,7 +391,9 @@ img {
 }
 
 .quick-add.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
 }
 
 .quick-add .product-form__swatch-dropdown label:hover {
