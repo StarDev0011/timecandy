@@ -1,7 +1,7 @@
 {
   "wrapper": "div.collection-candy",
   "sections": {
-    "header": {
+    "candy-header": {
       "type": "collection--candy-header",
       "settings": {
         "sub_headder": "PICK YOUR DECADE",
@@ -85,7 +85,7 @@
     }
   },
   "order": [
-    "header",
+    "candy-header",
     "candy-classics",
     "candy-chocolate",
     "featured-product",
