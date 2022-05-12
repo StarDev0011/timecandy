@@ -34,7 +34,8 @@ CartDawn = {
       $('.modal-error').fadeOut(500);
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
-        $('.js-mini-cart').html(data);
+        $('.js-mini-cart').html(data).focus();
+        $('.js-mini-cart').click();
         $('.cart-overlay').hide();
       });
 
@@ -50,7 +51,7 @@ CartDawn = {
   },
 
   initAddToCart: () => {
-    $('body').on('click', CartDawn.Selector.btnAddToCart, function(e) {
+    $(document).on('click', CartDawn.Selector.btnAddToCart, function(e) {
       e.preventDefault();
       const productItem = $(this).parents('form[action="/cart/add"]');
       CartDawn.doAjaxAddToCart(productItem);
@@ -129,7 +130,7 @@ CartDawn = {
           quantity = item.find(CartDawn.Selector.qty).val(),
           number = parseFloat(quantity) - 1;
 
-      if (quantity >= 2) {
+      if (quantity >= 1) {
         item.find(CartDawn.Selector.qty).val(number);
       }
 

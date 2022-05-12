@@ -235,5 +235,8 @@
     <!-- End Back in Stock helper snippet -->
     <script src="{{ 'cart-dawn.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'suggested.js' | asset_url }}" defer="defer"></script>
+    {% if template contains 'collection' %}
+      <script src="{{ 'collections.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
   </body>
 </html>

@@ -106,6 +106,9 @@
   const sidebarHeader = document.querySelectorAll('.js-sidebar-title');
   const btnShowMore = document.querySelectorAll('.js-filter-view-more');
   const sidebarItems = document.querySelectorAll('.collection-sidebar__item');
+  const matchMedia = window.matchMedia("(max-width: 980px)");
+  const sideBarItem = document.querySelector('.sidebar-filter__inner')
+
   sidebarHeader.forEach(function(item) {
     item.onclick = function() {
       this.parentElement.classList.toggle('active');
@@ -123,4 +126,10 @@
       })
     })
   });
+
+  if (matchMedia.matches) {
+    sideBarItem.classList.remove('active');
+  } else {
+    sideBarItem.classList.add('active');
+  }
 </script>

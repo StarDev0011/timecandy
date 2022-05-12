@@ -749,6 +749,7 @@ customElements.define('slideshow-component', SlideshowComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
+    this.productDetail = document.querySelector('.template-product');
     this.addEventListener('change', this.onVariantChange);
   }
 
@@ -762,8 +763,10 @@ class VariantSelects extends HTMLElement {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
-      // this.updateMedia();
-      this.updateURL();
+      if(this.productDetail){
+        this.updateMedia();
+        this.updateURL();
+      }
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();

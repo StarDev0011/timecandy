@@ -1,10 +1,31 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
-<div class="collection-candy__header" style="background-color: {{ section.settings.bg_color }}">
+<div class="collection-candy__header">
   <div class="container">
-    <div class="collection-candy__header-sub" style="color: {{ section.settings.color_sub }}"> WALK THE CANDY AISLE </div>
-    <h1 class="collection-candy__header-title" style="color: {{ section.settings.color_title }}"> Discover over 300 different kinds of Candy you ate as a kid® </h1>
+    {% if section.settings.sub_headder != blank %}
+      <div class="collection-candy__header-sub">
+        {{- section.settings.sub_headder -}}
+      </div>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h1 class="collection-candy__header-title">
+        {{- section.settings.title -}}
+      </h1>
+    {% endif %}
   </div>
 </div>
+<style>
+  .collection-candy__header {
+    background-color: {{ section.settings.bg_color }}
+  }
+
+  .collection-candy__header-sub {
+    color: {{ section.settings.color_sub }}
+  }
+
+  .collection-candy__header-title {
+    color: {{ section.settings.color_title }}
+  }
+</style>
 
 {% schema %}
   {

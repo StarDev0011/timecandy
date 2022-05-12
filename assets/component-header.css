@@ -363,7 +363,12 @@ header-drawer {
 	.icon-bag-mb{
 		display: none;
 	}
+	.header__submenu.megamenu .page-width {
+		padding-left: 120px;
+		padding-right: 127px;
+	}
 }
+
 @media (max-width: 749px) {
 	.header-logo img{
 		max-width: 192px;
