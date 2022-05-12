@@ -198,6 +198,9 @@ CartDawn = {
       }).done(function() {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
+        $.get('/cart?view=dawn', function(data) {
+          $('.js-mini-cart').html(data);
+        });
       }).fail(function (jqXHR, textStatus) {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
@@ -216,6 +219,9 @@ CartDawn = {
       }).done(function() {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
+        $.get('/cart?view=dawn', function(data) {
+          $('.js-mini-cart').html(data);
+        });
       }).fail(function (jqXHR, textStatus) {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
