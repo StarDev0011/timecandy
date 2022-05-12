@@ -117,9 +117,9 @@
       ],
       "settings": {
         "title": "All Decade Collections",
-        "heading_size": "h0",
+        "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "color_scheme": "background-1",
         "show_view_all": false,
         "columns_mobile": "1",
