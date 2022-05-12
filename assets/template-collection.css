@@ -507,10 +507,6 @@
     line-height: 28px;
   }
 
-  .collection__menu-link:not(.menu-view-more) {
-    padding: 6px 23px;
-  }
-
   .collection__nav {
     overflow: auto;
     margin-right: -20px;

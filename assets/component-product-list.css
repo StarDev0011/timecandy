@@ -341,6 +341,10 @@ img {
   position: absolute;
 }
 
+.card-product__item:hover .card-product__title {
+  color: rgb(var(--color-link-hover));
+}
+
 .card-product-label::before {
   border-top: 17.5px solid #E2E43D;
   top: 0;
