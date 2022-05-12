@@ -237,6 +237,12 @@
   flex-direction: column;
 }
 
+.collection-view-all__link:hover {
+  color: rgb(var(--color-secondary-button-background));
+  border-color: rgb(var(--color-secondary-button-border));
+  background-color: rgba(var(--color-secondary-button-border),1);
+}
+
 .collection-view-all__link span {
   margin-bottom: 10px;
 }
@@ -440,6 +446,18 @@
   border-bottom: 17.5px solid #777;
 }
 
+.h1,
+.h2 {
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-transform: none;
+  font-family: var(--my-font);
+}
+
+.h2 {
+  font-size: 28px;
+}
+
 @media (min-width: 768px) {
   .collection-candy__wrapper .swiper {
     overflow: inherit;
@@ -497,6 +515,18 @@
 
   .collection-product__inner {
     grid-gap: 40px 20px;
+  }
+}
+
+@media (min-width: 768px){
+  .collection-candy__list {
+    transform: initial !important;
+  }
+
+  .card-product__item {
+    max-width: 100%;
+    width: auto!important;
+    margin-right: 0 !important;
   }
 }
 

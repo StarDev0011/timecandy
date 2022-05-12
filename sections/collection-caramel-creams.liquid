@@ -18,6 +18,9 @@
         {% if section.settings.text != blank %}
           <div class="collection__text">
             {{- section.settings.text -}}
+            {% if section.settings.read_more != blank %}
+              <div><a class="collection__more" href="#collection-desc"> {{- section.settings.read_more -}} </a></div>
+            {% endif %}
           </div>
         {% endif %}
       </div>
@@ -50,7 +53,7 @@
         {%- endpaginate -%}
 
         {% if section.settings.show_desc %}
-          <div class="collection__desc">
+          <div class="collection__desc" id="collection-desc">
             {{- collection.description -}}
           </div>
         {% endif %}
@@ -59,6 +62,10 @@
   </div>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   .collection__wrapper,
   .collection__header {
     display: block;
@@ -127,6 +134,12 @@
         "id": "show_desc",
         "label": "Display Description on Bottom",
         "default": true
+      },
+      {
+        "type": "text",
+        "id": "read_more",
+        "label": "Read more",
+        "default": "Read more history"
       },
       {
         "type": "range",
