@@ -89,6 +89,16 @@
         "padding_top": 20,
         "padding_bottom": 80
       }
+    },
+    "1652380019a35ab19c": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -97,6 +107,7 @@
     "candy-chocolate",
     "featured-product",
     "lunch-boxes-with-candy",
-    "banner-with-text"
+    "banner-with-text",
+    "1652380019a35ab19c"
   ]
 }
