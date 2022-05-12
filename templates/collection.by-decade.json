@@ -127,6 +127,56 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1652384421afe14ba6": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1960s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16523844723424b22c": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1950s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16523844925127e887": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1940s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "1652384510f4b4ed4c": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1930s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "1652384541b6e74573": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1920s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -135,6 +185,11 @@
     "candy-chocolate",
     "featured-product",
     "lunch-boxes-with-candy",
-    "16522956411c65eac8"
+    "16522956411c65eac8",
+    "1652384421afe14ba6",
+    "16523844723424b22c",
+    "16523844925127e887",
+    "1652384510f4b4ed4c",
+    "1652384541b6e74573"
   ]
 }
