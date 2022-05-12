@@ -1,5 +1,7 @@
 
-<div class="collection-candy__inner">
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-candy__inner collection-candy-{{ section.id }}">
   <div class="container">
     {% if section.settings.title != blank %}
       <h3 class="collection-candy__title">
@@ -36,7 +38,12 @@
   </div>
 </div>
 
-
+<style>
+  .collection-candy-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
 {% schema %}
   {
     "name": "Candy Product list",
@@ -66,6 +73,26 @@
         "id": "show_view_all",
         "label": "Show 'View all' button",
         "default": true
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 80
       }
     ],
     "presets": [

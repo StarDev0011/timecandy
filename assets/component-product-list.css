@@ -607,10 +607,6 @@ img {
     margin-right: 30px;
     padding: 30px;
   }
-
-  .collection-candy__list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 @media (max-width: 767px) {

@@ -1,12 +1,18 @@
-<div class="banner-with-text">
+<div class="banner-with-text banner-with-text-{{ section.id }}">
   <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="banner-with-text__header"> {{- section.settings.title -}} </h2>
+    {% endif %}
+    {% if section.settings.desc != blank %}
+      <div class="banner-with-text__desc"> {{- section.settings.desc -}} </div>
+    {% endif %}
     <div class="banner-with-text__content">
       {% for block in section.blocks %}
         <div class="banner-with-text__item banner-item-{{ block.id }}">
           <a class="banner-with-text__link" href="{{ block.settings.link }}">
             {% if block.settings.image != blank %}
               <div class="banner-with-text__picture">
-                <img class="banner-with-text__img" src="{{ block.settings.image | img_url: '1024x' }}">
+                <img width="auto" height="auto" loading="lazy" class="banner-with-text__img" src="{{ block.settings.image | img_url: '1024x' }}">
               </div>
             {% endif %}
             {% if block.settings.btn != blank %}
@@ -39,6 +45,11 @@
 </div>
 
 <style>
+  .banner-with-text-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
   .banner-with-text__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,9 +117,23 @@
     top: 0;
   }
 
-  .banner-with-text {
-    padding-bottom: 80px;
-    padding-top: 20px;
+  .banner-with-text__header {
+    margin-top: 0;
+    font-family: var(--font-default);
+    text-transform: none;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .banner-with-text__desc {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text)
   }
 
   @media (max-width: 767px) {
@@ -123,6 +148,38 @@
   {
     "name": "Banner with Text",
     "max_blocks": 4,
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "desc",
+        "label": "Description"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 80
+      }
+    ],
     "blocks": [
       {
         "name": "Banner",
