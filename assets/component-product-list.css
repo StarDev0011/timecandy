@@ -342,7 +342,7 @@ img {
 }
 
 .card-product__item:hover .card-product__title {
-  color: rgb(var(--color-link-hover));
+  color: var(--color-header);
 }
 
 .card-product-label::before {

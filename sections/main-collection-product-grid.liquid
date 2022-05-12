@@ -11,33 +11,33 @@
   assign limit = section.settings.rows
 -%}
 
-{%- paginate collection.products by limit -%}
-  <div class="collection">
-    <div class="container">
-      <div class="collection__header">
-        <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
-        <div class="collection__nav">
-          <ul class="collection__menu">
-            {% for link in linklists.candy-by-decade.links %}
-              <li class="collection__menu-item{% if link.active %} active{% endif %}" {% if forloop.index > 8 %}style="display: none"{% endif %}>
-                <a class="collection__menu-link" href="{{ link.url }}">
-                  {{- link.title -}}
+<div class="collection">
+  <div class="container">
+    <div class="collection__header">
+      <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
+      <div class="collection__nav">
+        <ul class="collection__menu">
+          {% for link in linklists.candy-by-decade.links %}
+            <li class="collection__menu-item{% if link.active %} active{% endif %}" {% if forloop.index > 8 %}style="display: none"{% endif %}>
+              <a class="collection__menu-link" href="{{ link.url }}">
+                {{- link.title -}}
+              </a>
+            </li>
+            {% if forloop.last and forloop.index > 8 %}
+              <li class="collection__menu-item collection__menu-view-more">
+                <a class="collection__menu-link menu-view-more js-menu-view-more" href="#">
+                  <span> View more</span>
                 </a>
               </li>
-              {% if forloop.last and forloop.index > 8 %}
-                <li class="collection__menu-item collection__menu-view-more">
-                  <a class="collection__menu-link menu-view-more js-menu-view-more" href="#">
-                    <span> View more</span>
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
-      <div class="collection__wrapper">
-        {% render 'include--sidebar' %}
+    </div>
+    <div class="collection__wrapper">
+      {% render 'include--sidebar' %}
         <div class="collection-product__list">
+          {%- paginate collection.products by limit -%}
           <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
             {%- for product in collection.products -%}
               {% render 'include--product-card', product: product %}
@@ -60,12 +60,25 @@
             </div>
             {% endif %}
           {%- endif -%}
+          {%- endpaginate -%}
+          {% if section.settings.show_desc %}
+            <div class="collection__desc">
+              {{- collection.description -}}
+            </div>
+        {% endif %}
         </div>
-      </div>
     </div>
   </div>
-{%- endpaginate -%}
+</div>
 
+<style>
+  .collection__desc {
+    border: 0;
+    padding-top: 10px;
+    color: var(--color-link-text);
+    font-size: 14px;
+  }
+</style>
 <script>
   const items = document.querySelectorAll('.collection__menu-item');
   const btn = document.querySelector('.js-menu-view-more');
@@ -130,6 +143,12 @@
         "min": 2,
         "max": 50,
         "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "show_desc",
+        "label": "Display Description on Bottom",
+        "default": true
       },
       {
         "type": "header",
