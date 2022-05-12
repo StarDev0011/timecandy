@@ -15,9 +15,9 @@
     <div class="container">
       <div class="collection__header">
         <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
-        {% if section.settings.text != blank %}
+        {% if collection.description != blank %}
           <div class="collection__text">
-            {{- section.settings.text -}}
+            {{- collection.description | truncate: 40 -}}
             {% if section.settings.read_more != blank %}
               <div><a class="collection__more" href="#collection-desc"> {{- section.settings.read_more -}} </a></div>
             {% endif %}
@@ -69,6 +69,15 @@
   .collection__wrapper,
   .collection__header {
     display: block;
+  }
+
+  .collection__text h2, .collection__text h2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #484e57;
+    text-transform: none;
+    margin-bottom: 0;
   }
 </style>
 
@@ -124,10 +133,6 @@
         "id": "text",
         "label": "Text",
         "default": "<p>A caramel jacket with a pure sugar cream center.</p>"
-      },
-      {
-        "type": "header",
-        "content": "Description"
       },
       {
         "type": "checkbox",
