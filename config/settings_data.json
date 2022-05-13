@@ -98,7 +98,7 @@
     "predictive_search_enabled": true,
     "collection": "candy-gifts",
     "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
-    "placeholder": "Try searching for \"Gum\", How about \"Licorice\", Are you looking for \"Laffy Taffy\", Interested in \"Pop Rocks\", Search for anything!",
+    "placeholder": "Search for anything!, Try searching for \"Licorice\", Are you looking for \"Laffy Taffy\", Interested in \"Pop Rocks\"",
     "currency_code_enabled": true,
     "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
     "checkout_logo_position": "center",
