@@ -750,7 +750,6 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.productDetail = document.querySelector('.template-product');
-    this.imageCardItems = document.querySelector('.js-card-product-image');
     this.featuredImage = document.querySelector('.js-feature-image');
     this.addEventListener('change', this.onVariantChange);
   }
@@ -835,13 +834,13 @@ class VariantSelects extends HTMLElement {
 
   updateImage() {
     const baseImge = this.currentVariant.featured_image.src;
-    if(this.imageCardItems) {
-      const cardItemImage = this.closest('.card-product__item').querySelector('.js-card-product-image');
-      cardItemImage.setAttribute('src', baseImge);
-    }
+    this.imageCardItems = document.querySelector('.js-card-product-image');
     if(this.featuredImage) {
       this.featuredImage.setAttribute('src', baseImge);
       this.featuredImage.setAttribute('srcset', baseImge);
+    } else {
+      const cardItemImage = this.closest('.card-product__item').querySelector('.js-card-product-image');
+      cardItemImage.setAttribute('src', baseImge);
     }
   }
 
@@ -882,18 +881,18 @@ class VariantSelects extends HTMLElement {
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
-      if($('.quick-add').length) {
-        addButton.style.display = 'none';
-        addBackInstock.style.display = 'block';
-      }
+      // if($('.quick-add').length) {
+      //   addButton.style.display = 'none';
+      //   addBackInstock.style.display = 'block';
+      // }
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
       addButtonText.textContent = window.variantStrings.addToCart;
-      if($('.quick-add').length) {
-        addButton.style.display = 'block';
-        addBackInstock.style.display = 'none';
-      }
+      // if($('.quick-add').length) {
+      //   addButton.style.display = 'block';
+      //   addBackInstock.style.display = 'none';
+      // }
     }
 
     if (!modifyClass) return;
