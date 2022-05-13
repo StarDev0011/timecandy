@@ -14,7 +14,7 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-occasion-birthday-candy-gifts",
+        "collection": "candy-gift-boxes",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
