@@ -17,13 +17,14 @@
     {% endif %}
   </div>
 
+  {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
+  {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
+  {% assign cartTotalPrice = cart.total_price | times: 100 | divided_by: freeshipPrice %}
+  {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
+
   {% if cart.item_count > 0 %}
   {%- if cartTotalPrice >= 25 -%}
     <div class="mini-cart__progress">
-      {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
-      {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
-      {% assign cartTotalPrice = cart.total_price | times: 100 | divided_by: freeshipPrice %}
-      {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
       <div class="mini-cart__progress-text" {{ freeshipPrice | money }}>
         {%- if cartTotalPrice >= 100 -%}
           {{- settings.progress_text -}}
