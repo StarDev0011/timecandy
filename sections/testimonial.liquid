@@ -45,35 +45,37 @@
                                 {%- endif -%}
                             <div class="testimonial__wrap ">
                                 <div class="testimonial__img-wrap">
-                                    <div class="testimonial__img  {%if block.settings.image == blank %} placeholder {% endif %}">
-                                        {%- if block.settings.image == blank -%}
-                                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                                        {%- else -%}
-                                            <img
-                                                srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | img_url: '165x' }} 165w,{%- endif -%}
-                                                {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | img_url: '360x' }} 360w,{%- endif -%}
-                                                {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | img_url: '535x' }} 535w,{%- endif -%}
-                                                {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | img_url: '750x' }} 750w,{%- endif -%}"
-                                                src="{{ block.settings.image | img_url: '750x' }}"
-                                                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                alt="{{ block.settings.image.alt | escape }}"
-                                                loading="lazy"
-                                                width="{{ block.settings.image.width }}"
-                                                height="{{ block.settings.image.height }}"
-                                            >
-                                        {%- endif -%}
-                                        {%- if section.settings.bg_image != blank -%}
-                                            <img class="testimonial-bg-mb"
-                                                src="{{ section.settings.bg_image | img_url: '750x' }}"
-                                                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                alt="{{ section.settings.bg_image.alt | escape }}"
-                                                loading="lazy"
-                                                width="{{ section.settings.bg_image.width }}"
-                                                height="{{ section.settings.bg_image.height }}"
-                                            >
-                                        {%- endif -%}
-                                    </div>
-                                    {%  if block.settings.button_link != blank and block.settings.button_label %}
+                                    <a class="testimonial__link" href="{{block.settings.link_readmore }}">
+                                        <div class="testimonial__img  {%if block.settings.image == blank %} placeholder {% endif %}">
+                                            {%- if block.settings.image == blank -%}
+                                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                            {%- else -%}
+                                                <img
+                                                    srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+                                                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+                                                    {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+                                                    {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | img_url: '750x' }} 750w,{%- endif -%}"
+                                                    src="{{ block.settings.image | img_url: '750x' }}"
+                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                    alt="{{ block.settings.image.alt | escape }}"
+                                                    loading="lazy"
+                                                    width="{{ block.settings.image.width }}"
+                                                    height="{{ block.settings.image.height }}"
+                                                >
+                                            {%- endif -%}
+                                            {%- if section.settings.bg_image != blank -%}
+                                                <img class="testimonial-bg-mb"
+                                                    src="{{ section.settings.bg_image | img_url: '750x' }}"
+                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                    alt="{{ section.settings.bg_image.alt | escape }}"
+                                                    loading="lazy"
+                                                    width="{{ section.settings.bg_image.width }}"
+                                                    height="{{ section.settings.bg_image.height }}"
+                                                >
+                                            {%- endif -%}
+                                        </div>
+                                    </a>
+                                    {% if block.settings.button_link != blank and block.settings.button_label %}
                                         <a href="{{block.settings.button_link}}"> {{ block.settings.button_label }}</a>
                                     {% endif %}
                                 </div>
@@ -85,7 +87,7 @@
                                         {% endif %}
                                         {% if block.settings.state != blank %}
                                             <div class="state-reviewer ">
-                                                {{ block.settings.state}}
+                                                {{ block.settings.state }}
                                             </div>
                                         {% endif %}
                                         {% if block.settings.content_review != blank %}
@@ -94,7 +96,7 @@
                                             </div>
                                         {% endif %}
                                         {% if block.settings.link_readmore != blank %}
-                                            <a href="{{block.settings.link_readmore}}"> Read more</a>
+                                            <a href="{{block.settings.link_readmore }}"> Read more</a>
                                         {% endif %}
                                     </div>
                                 </div>

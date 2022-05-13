@@ -38,6 +38,9 @@
 }
 .icon-card__media img{
 	float: left;
+	height: 76px;
+	width: auto;
+	object-fit: contain;
 }
 @media (max-width: 749px) {
 	.icon-list-wrapper .page-width{
