@@ -330,7 +330,7 @@ class PredictiveSearch extends HTMLElement {
       input.addEventListener("focus", (e) => aw.stop());
       input.addEventListener("blur", (e) => {
         aw = new animationWorker(input, texts);
-        if(e.target.value == '') setTimeout( aw.start, 1000);
+        if(e.target.value == '') setTimeout( aw.start, 5000);
       });
     });
   }

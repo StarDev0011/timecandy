@@ -78,7 +78,7 @@
                             {{ block.settings.subtext }}
                             {%- if section.settings.newsletter_enable -%}
                               <div class="footer-block__newsletter footer-block-item">
-                                {% render 'include--newsletter', list_id: section.settings.list_id, section.settings.key %}
+                                {% render 'include--newsletter', list_id: section.settings.list_id, key: section.settings.key %}
                               </div>
                             {%- endif -%}
                             {%- if section.settings.show_social -%}

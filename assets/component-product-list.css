@@ -637,6 +637,10 @@ img {
     display: none;
   }
 
+  .card-product__price--old {
+    text-decoration: line-through;
+  }
+
   .card-product__btn {
     font-size: 12px;
   }
