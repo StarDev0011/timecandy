@@ -4,9 +4,9 @@
     "candy-header": {
       "type": "collection--candy-header",
       "settings": {
-        "sub_headder": "PICK YOUR DECADE",
+        "sub_headder": "WALK THE CANDY AISLE",
         "color_sub": "#0c5273",
-        "title": "Relive your best childhood memories with the Candy you ate as a kid®",
+        "title": "Discover over 300 different kinds of Candy you ate as a kid®",
         "color_title": "#262626",
         "bg_color": "#bbe2dd"
       }
@@ -16,7 +16,9 @@
       "settings": {
         "collection": "candy-by-occasion-birthday-candy-gifts",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "candy-chocolate": {
@@ -24,7 +26,9 @@
       "settings": {
         "collection": "candy-by-decade-1950s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "featured-product": {
@@ -43,7 +47,9 @@
       "settings": {
         "collection": "candy-by-decade-1960s-candy",
         "row": 7,
-        "show_view_all": true
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
       }
     },
     "banner-with-text": {
@@ -77,6 +83,10 @@
         "3b61cf33-8f54-4a74-9079-a6bc35924168"
       ],
       "settings": {
+        "title": "",
+        "desc": "",
+        "padding_top": 20,
+        "padding_bottom": 80
       }
     }
   },
