@@ -1,6 +1,7 @@
 {
   "current": {
     "colors_text": "#484e57",
+    "link_color_hover": "#262626",
     "type_header_font": "merriweather_sans_n4",
     "heading_scale": 100,
     "type_body_font": "merriweather_sans_n4",
