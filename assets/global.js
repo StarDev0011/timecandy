@@ -750,6 +750,7 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.productDetail = document.querySelector('.template-product');
+    this.featuredImage = document.querySelector('.js-feature-image');
     this.addEventListener('change', this.onVariantChange);
   }
 
@@ -759,6 +760,7 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.removeErrorMessage();
+    this.updateImage();
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -814,7 +816,7 @@ class VariantSelects extends HTMLElement {
       const input = productForm.querySelector('input[name="id"]');
       input.value = this.currentVariant.id;
       input.dispatchEvent(new Event('change', { bubbles: true }));
-      console.log(this.currentVariant)
+
     });
   }
 
@@ -827,6 +829,18 @@ class VariantSelects extends HTMLElement {
     } else {
       pickUpAvailability.removeAttribute('available');
       pickUpAvailability.innerHTML = '';
+    }
+  }
+
+  updateImage() {
+    const baseImge = this.currentVariant.featured_image.src;
+    this.imageCardItems = document.querySelector('.js-card-product-image');
+    if(this.featuredImage) {
+      this.featuredImage.setAttribute('src', baseImge);
+      this.featuredImage.setAttribute('srcset', baseImge);
+    } else {
+      const cardItemImage = this.closest('.card-product__item').querySelector('.js-card-product-image');
+      cardItemImage.setAttribute('src', baseImge);
     }
   }
 
@@ -867,18 +881,18 @@ class VariantSelects extends HTMLElement {
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
-      if($('.quick-add').length) {
-        addButton.style.display = 'none';
-        addBackInstock.style.display = 'block';
-      }
+      // if($('.quick-add').length) {
+      //   addButton.style.display = 'none';
+      //   addBackInstock.style.display = 'block';
+      // }
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
       addButtonText.textContent = window.variantStrings.addToCart;
-      if($('.quick-add').length) {
-        addButton.style.display = 'block';
-        addBackInstock.style.display = 'none';
-      }
+      // if($('.quick-add').length) {
+      //   addButton.style.display = 'block';
+      //   addBackInstock.style.display = 'none';
+      // }
     }
 
     if (!modifyClass) return;

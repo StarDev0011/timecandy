@@ -67,6 +67,7 @@
 .image-with-text__bottom {
   border-top: 1px solid #ccc;
   padding-top: 10px;
+  margin-top: 25px;
 }
 
 .text-bottom {

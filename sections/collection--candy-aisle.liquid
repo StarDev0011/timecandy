@@ -1,13 +1,14 @@
 
-<div class="collection-candy__inner">
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="collection-candy__inner collection-candy-{{ section.id }}">
   <div class="container">
-    {% if section.settings.title != blank %}
-      <h3 class="collection-candy__title">
-        <span>{{ section.settings.title }}</span>
-      </h3>
-    {% endif %}
+    <h3 class="collection-candy__title">
+      <span>{{- collection.title -}} </span>
+    </h3>
+
     <div class="collection-candy__wrapper">
-      {%- assign collection = collections[section.settings.collection] -%}
       <div class="swiper js-product-slider">
         <div class="swiper-wrapper collection-candy__list col-4">
           {%- for product in collection.products limit: section.settings.row -%}
@@ -36,17 +37,16 @@
   </div>
 </div>
 
-
+<style>
+  .collection-candy-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
 {% schema %}
   {
     "name": "Candy Product list",
     "settings": [
-      {
-        "type": "textarea",
-        "id": "title",
-        "label": "Title",
-        "default": "Collection title"
-      },
       {
         "type": "collection",
         "id": "collection",
@@ -66,6 +66,26 @@
         "id": "show_view_all",
         "label": "Show 'View all' button",
         "default": true
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 80
       }
     ],
     "presets": [

@@ -17,16 +17,18 @@
     {% endif %}
   </div>
 
+  {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
+  {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
+  {% assign cartTotalPrice = cart.total_price | times: 100 | divided_by: freeshipPrice %}
+  {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
+
   {% if cart.item_count > 0 %}
+  {%- if cartTotalPrice >= 25 -%}
     <div class="mini-cart__progress">
-      {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
-      {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
-      {% assign cartTotalPrice = cart.total_price | times: 100 | divided_by: freeshipPrice %}
-      {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
       <div class="mini-cart__progress-text" {{ freeshipPrice | money }}>
         {%- if cartTotalPrice >= 100 -%}
           {{- settings.progress_text -}}
-        {%- else -%}
+        {%- elsif cartTotalPrice >= 25 -%}
           {{ settings.pro_hint }} {{ remaining_price | money }} {{ settings.pro_hint_2 }}
           <a href="{{ settings.link_shop }}">shop bulk candy</a>
         {%- endif -%}
@@ -35,6 +37,7 @@
         <div class="mini-cart__progress-percent" style="width: {{ cartTotalPrice }}%"></div>
       </div>
     </div>
+  {%- endif -%}
   {% endif %}
 
   {% if cart.item_count > 0 %}
@@ -149,17 +152,23 @@
           {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
         </div>
         <div class="mini-cart__add-on">
+          {%- liquid
+            assign shipping_product = all_products[settings.shipping_product]
+            assign is_attributes = false
+            if cart.attributes['Delayed Shipping Date'] != nil or cart.attributes['Gift Message'] != nil
+              assign is_attributes = true
+            endif
+          -%}
           {% if settings.enable_gift %}
           <div class="mini-cart__field">
-            <input type="checkbox" value="Gift Message" id="GiftMessage" class="js-gift-message hidden">
+            <input type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message hidden"{% if is_attributes %} checked{% endif %}>
             <label class="mini-cart__label" for="GiftMessage">
-              <span class="mini-cart__gift-add js-gift-add">Add</span>
+              <span class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</span>
               <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
             </label>
           </div>
           {% endif %}
           <div class="mini-cart__field">
-            {%- assign shipping_product = all_products[settings.shipping_product] -%}
             {% assign isInclude = false %}
             {%- for item in cart.items -%}
               {% if item.id == shipping_product.variants[0].id %}
