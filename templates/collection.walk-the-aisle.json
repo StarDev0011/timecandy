@@ -24,7 +24,7 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-decade-1950s-candy",
+        "collection": "deals-of-the-week",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
