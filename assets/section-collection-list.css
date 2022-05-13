@@ -14,7 +14,7 @@
   text-transform: none;
 }
 
-.full-unstyled-link {
+.full-unstyled-link:hover {
   color: rgb(var(--color-link-hover));
 }
 

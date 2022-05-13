@@ -567,6 +567,10 @@ img {
   text-decoration: line-through;
 }
 
+.card-product__price--sale {
+  color: #ac1229;
+}
+
 @media (max-width: 1365px) and (min-width: 1200px) {
   .section-featured-product .page-width {
     margin-left: 20px;
