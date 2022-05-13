@@ -73,29 +73,18 @@
       </div>
     </div>
   </div>
-  {% if section.settings.image_bg_bottom != blank %}
+  {% if section.settings.svg_bg_bottom != blank %}
     <div class="img-bg-bottom">
-      <img
-        srcset="{%- if section.settings.image_bg_bottom.width >= 375 -%}{{ section.settings.image_bg_bottom | image_url: width: 375 }} 375w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 550 -%}{{ section.settings.image_bg_bottom | image_url: width: 550 }} 550w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 750 -%}{{ section.settings.image_bg_bottom | image_url: width: 750 }} 750w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 1100 -%}{{ section.settings.image_bg_bottom | image_url: width: 1100 }} 1100w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 1500 -%}{{ section.settings.image_bg_bottom | image_url: width: 1500 }} 1500w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 1780 -%}{{ section.settings.image_bg_bottom | image_url: width: 1780 }} 1780w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 2000 -%}{{ section.settings.image_bg_bottom | image_url: width: 2000 }} 2000w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 3000 -%}{{ section.settings.image_bg_bottom | image_url: width: 3000 }} 3000w,{%- endif -%}
-        {%- if section.settings.image_bg_bottom.width >= 3840 -%}{{ section.settings.image_bg_bottom | image_url: width: 3840 }} 3840w,{%- endif -%}
-        {{ section.settings.image_bg_bottom | image_url }} {{ section.settings.image_bg_bottom.width }}w"
-        sizes="100vw"
-        src="{{ section.settings.image_bg_bottom | image_url: width: 1500 }}"
-        loading="lazy"
-        alt="{{ section.settings.image_bg_bottom.alt | escape }}"
-        width="{{ section.settings.image_bg_bottom.width }}"
-        height="{{ section.settings.image_bg_bottom.height}}"
-        >
+      {{ section.settings.svg_bg_bottom }}
     </div>
   {% endif %}
 </div>
+<style>
+  .img-bg-bottom svg {
+    width: 100%;
+    height: auto;
+  }
+</style>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
        (function() {
@@ -152,9 +141,10 @@
       "label": "Background Color"
     },
     {
-      "type":"image_picker",
-      "id":"image_bg_bottom",
-      "label": "Background Image Bottom"
+      "type":"textarea",
+      "id":"svg_bg_bottom",
+      "label": "Background code SVG",
+      "default": "<svg width='1440' height='222' viewBox='0 0 1440 222' fill='none' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' clip-rule='evenodd' d='M1440 0.000104212L2.47755e-05 -2.16771e-05L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 0.000104212Z' fill='#E4F1F5'/> </svg>"
     },
     {
       "type": "header",
