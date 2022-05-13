@@ -14,13 +14,13 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-{%- endstyle -%} 
+{%- endstyle -%}
 
 <div class="image-text-list">
   <div class="image-text-list-wrap">
     <div class="page-width section-{{ section.id }}-padding ">
       {% if section.settings.heading != blank %}
-        <h2 class="heading-center h1"> 
+        <h2 class="heading-center h1">
             {{ section.settings.heading }}
         </h2>
       {% endif %}
@@ -29,8 +29,8 @@
             <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
               <div class="swiper-slide">
-                  <div class="image-text-list__item {% if block.settings.layout == 'text_first' %} image-text-list__item--reverse{% endif %}">
-                    <div class="image-with-text__media {% if block.settings.image == blank %} placeholder{% endif %} image-with-text__media-{{ block.settings.mobile_content_alignment }} ">
+                  <div class="image-text-list__item{% if block.settings.layout == 'text_first' %} image-text-list__item--reverse{% endif %} image-text-list__{{ block.settings.shade }}">
+                    <div class="image-with-text__media {% if block.settings.image == blank %} placeholder{% endif %}">
                       {%- if block.settings.image != blank -%}
                         <img
                           srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -42,13 +42,15 @@
                           data-sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
                           alt="{{ block.settings.image.alt | escape }}"
                           loading="lazy"
-                        >
+                          width="auto"
+                          height="auto"
+                          class="image-text-list__img">
                       {%- else -%}
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                       {%- endif -%}
                     </div>
                     {% if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank %}
-                      <div class="image-with-text__content image-with-text__content--mobile-{{ block.settings.mobile_content_alignment }} ">
+                      <div class="image-with-text__content">
                         <h5 class="text--caption" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
                         <h2 class="text--heading h2" {{ block.shopify_attributes }}>
                           {{ block.settings.title | escape }}
@@ -73,7 +75,7 @@
   </div>
   {% if section.settings.image_bg_bottom != blank %}
     <div class="img-bg-bottom">
-      <img 
+      <img
         srcset="{%- if section.settings.image_bg_bottom.width >= 375 -%}{{ section.settings.image_bg_bottom | image_url: width: 375 }} 375w,{%- endif -%}
         {%- if section.settings.image_bg_bottom.width >= 550 -%}{{ section.settings.image_bg_bottom | image_url: width: 550 }} 550w,{%- endif -%}
         {%- if section.settings.image_bg_bottom.width >= 750 -%}{{ section.settings.image_bg_bottom | image_url: width: 750 }} 750w,{%- endif -%}
@@ -183,7 +185,7 @@
     {
         "name": "Image with text",
         "type": "select",
-        "settings": [  
+        "settings": [
           {
             "type": "image_picker",
             "id": "image",
@@ -231,28 +233,24 @@
             "info": "t:sections.image-with-text.settings.layout.info"
           },
           {
-            "type": "header",
-            "content": "Mobile layout"
-          },
-          {
-            "type": "select",
-            "id": "mobile_content_alignment",
+            "type": "radio",
+            "id": "shade",
+            "label": "Shade",
+            "default": "shade_1",
             "options": [
               {
-                "value": "left",
-                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__1.label"
+                "value": "shade_1",
+                "label": "Shade 1"
               },
               {
-                "value": "center",
-                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__2.label"
+                "value": "shade_2",
+                "label": "Shade 2"
               },
               {
-                "value": "right",
-                "label": "t:sections.image-with-text.settings.mobile_content_alignment.options__3.label"
+                "value": "shade_3",
+                "label": "Shade 3"
               }
-            ],
-            "default": "center",
-            "label": "t:sections.image-with-text.settings.mobile_content_alignment.label"
+            ]
           }
         ]
       }
@@ -275,4 +273,3 @@
   ]
 }
 {% endschema %}
- 
