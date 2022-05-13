@@ -7,6 +7,17 @@
   margin: 0;
 }
 
+.collection-list-title {
+  font-size: 28px;
+  line-height: 36px;
+  font-family: var(--my-font);
+  text-transform: none;
+}
+
+.full-unstyled-link {
+  color: rgb(var(--color-link-hover));
+}
+
 @media screen and (max-width: 749px) {
   .collection-list:not(.slider) {
     padding-left: 0;
