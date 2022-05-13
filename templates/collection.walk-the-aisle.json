@@ -88,6 +88,46 @@
         "padding_top": 20,
         "padding_bottom": 80
       }
+    },
+    "16524504416e2a5cfa": {
+      "type": "collection-list",
+      "blocks": {
+        "16524504417b1a9694-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16524504417b1a9694-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16524504417b1a9694-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "16524504417b1a9694-0",
+        "16524504417b1a9694-1",
+        "16524504417b1a9694-2"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -96,6 +136,7 @@
     "candy-chocolate",
     "featured-product",
     "lunch-boxes-with-candy",
-    "banner-with-text"
+    "banner-with-text",
+    "16524504416e2a5cfa"
   ]
 }
