@@ -11,20 +11,20 @@
         "bg_color": "#bbe2dd"
       }
     },
-    "candy-classics": {
+    "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-gift-boxes",
+        "collection": "candy-by-occasion-anniversary-candy-gifts",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
         "padding_bottom": 80
       }
     },
-    "candy-chocolate": {
+    "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-occasion-anniversary-candy-gifts",
+        "collection": "candy-gift-boxes",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -181,8 +181,8 @@
   },
   "order": [
     "candy-header",
-    "candy-classics",
     "candy-chocolate",
+    "candy-classics",
     "featured-product",
     "lunch-boxes-with-candy",
     "banner-with-text",

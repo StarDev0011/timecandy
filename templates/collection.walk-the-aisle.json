@@ -31,17 +31,6 @@
         "padding_bottom": 80
       }
     },
-    "featured-product": {
-      "type": "featured-product",
-      "settings": {
-        "product": "large-decade-candy-gift-box",
-        "sub_title": "looking for a gift?",
-        "desc": "",
-        "show_best_seller": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
@@ -177,15 +166,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "large-decade-candy-gift-box",
+        "sub_title": "looking for a gift?",
+        "desc": "",
+        "show_best_seller": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "candy-header",
     "candy-classics",
     "candy-chocolate",
-    "featured-product",
     "lunch-boxes-with-candy",
     "banner-with-text",
-    "16524504416e2a5cfa"
+    "16524504416e2a5cfa",
+    "featured-product"
   ]
 }
