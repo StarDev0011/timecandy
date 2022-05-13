@@ -88,7 +88,7 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Group_146.png",
+            "image": "shopify:\/\/shop_images\/img_heart.png",
             "title": "Family-owned since 2000",
             "link": ""
           }
@@ -96,7 +96,7 @@
         "icon2": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/illustration.png",
+            "image": "shopify:\/\/shop_images\/img_map.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -104,7 +104,7 @@
         "icon3": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
+            "image": "shopify:\/\/shop_images\/img_candy.png",
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
@@ -131,7 +131,6 @@
         "sub_title": "Need The Perfect Gift?",
         "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
         "show_best_seller": true,
-        "secondary_background": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
