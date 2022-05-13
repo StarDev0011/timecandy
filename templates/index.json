@@ -73,7 +73,7 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 80,
+        "padding_bottom": 140,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
         "show_bottom": false,
@@ -88,7 +88,7 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_heart.png",
+            "image": "shopify:\/\/shop_images\/Group_146.png",
             "title": "Family-owned since 2000",
             "link": ""
           }
@@ -96,7 +96,7 @@
         "icon2": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_map.png",
+            "image": "shopify:\/\/shop_images\/illustration.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -104,7 +104,7 @@
         "icon3": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img_candy.png",
+            "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
@@ -233,9 +233,9 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
-        "padding_bottom": 80,
-        "padding_top_mb": 52,
-        "padding_bottom_mb": 20,
+        "padding_bottom": 140,
+        "padding_top_mb": 80,
+        "padding_bottom_mb": 86,
         "show_bottom": false,
         "column_1": "",
         "column_2": "",
@@ -272,36 +272,36 @@
           "type": "select",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "shopify:\/\/collections\/walk-the-candy-aisle-candy-buttons-on-paper-tape",
-            "button_label": "Shop Candy Buttons",
+            "button_link": "#",
+            "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories"
+            "link_readmore": "#"
           }
         },
         "testimonial2": {
           "type": "select",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "shopify:\/\/collections\/walk-the-candy-aisle-100-grand",
-            "button_label": "Shop 100 Grand Bars",
-            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000. Although we didn't really believe her, we didn't completely not believe her either. She kept us going through most of the party and we kept up hope. When she handed out these candy bars instead we were disappointed. But, the candy was good and I had fun telling my mom about it when I got home.<\/p>",
-            "reviewer": "Cris",
-            "state": "Indiana",
-            "link_readmore": "shopify:\/\/blogs\/candy-blog"
+            "button_link": "#",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": "#"
           }
         },
         "testimonial3": {
           "type": "select",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "shopify:\/\/collections\/walk-the-candy-aisle-good-plenty",
-            "button_label": "Shop Good and Plenty",
-            "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
-            "reviewer": "Juanita",
-            "state": "Kentucky",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories"
+            "button_link": "#",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": "#"
           }
         }
       },

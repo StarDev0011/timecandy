@@ -55,7 +55,8 @@
         {%- endpaginate -%}
 
         {% if section.settings.show_desc %}
-          <div class="collection__desc" id="collection-desc">
+          <div id="collection-desc"></div>
+          <div class="collection__desc">
             {{- collection.description -}}
           </div>
         {% endif %}

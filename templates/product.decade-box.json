@@ -47,7 +47,7 @@
         "63cc3701-5fe9-4ea4-b7b1-9ee5463fec2a": {
           "type": "custom_text",
           "settings": {
-            "custom_text": "<p>Orders placed by midnight usually ship on the next business day.  <a href=\"#\" title=\"#\">Learn more<\/a> <\/p>"
+            "custom_text": "<p>Orders placed by midnight usually ship on the next business day.  <a href=\"#\" title=\"#\">Lean more<\/a> <\/p>"
           }
         }
       },
@@ -148,7 +148,7 @@
         "image": "shopify:\/\/shop_images\/gift-cards.png",
         "image_width": 485,
         "box_text_width": 505,
-        "padding_top": 0,
+        "padding_top": 120,
         "padding_bottom": 120,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
