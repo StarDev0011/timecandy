@@ -69,7 +69,7 @@
         width="973"
         height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
         alt="{{ media.preview_image.alt | escape }}",
-        class="product__media-image"
+        class="product__media-image {{ classImage }}"
       >
     </div>
   {%- endif -%}
@@ -109,7 +109,7 @@
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
       alt="{{ media.preview_image.alt | escape }}",
-      class="product__media-image"
+      class="product__media-image {{ classImage }}"
     >
   </div>
   <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">

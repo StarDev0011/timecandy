@@ -446,18 +446,6 @@
   border-bottom: 17.5px solid #777;
 }
 
-.h1,
-.h2 {
-  margin-top: 0;
-  margin-bottom: 32px;
-  text-transform: none;
-  font-family: var(--my-font);
-}
-
-.h2 {
-  font-size: 28px;
-}
-
 @media (min-width: 768px) {
   .collection-candy__wrapper .swiper {
     overflow: inherit;

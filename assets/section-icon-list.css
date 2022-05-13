@@ -27,6 +27,11 @@
 .icon-list-wrapper .slider.slider--mobile .slider__slide{
 	padding-bottom: 0;
 }
+.icon-card__info h5 a {
+	font-size: 18px;
+	line-height: 24px;
+	text-decoration: none;
+}
 .icon-list-wrapper .icon-list{
 	max-width: 755px;
 	margin: auto;

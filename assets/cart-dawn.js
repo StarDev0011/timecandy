@@ -51,7 +51,7 @@ CartDawn = {
   },
 
   initAddToCart: () => {
-    $(document).on('click', CartDawn.Selector.btnAddToCart, function(e) {
+    $(document).on('click', '[data-add-to-cart]', function(e) {
       e.preventDefault();
       const productItem = $(this).parents('form[action="/cart/add"]');
       CartDawn.doAjaxAddToCart(productItem);
