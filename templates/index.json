@@ -141,37 +141,37 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3d694abe-145e-46b0-9a6f-acaf5a1330e4.png",
+            "image": "shopify:\/\/shop_images\/home-baner-1.png",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "Subscription boxes",
             "button_label": "Shop Now",
             "button_link": "shopify:\/\/collections\/subscription-boxes",
             "layout": "image_first",
-            "mobile_content_alignment": "center"
+            "shade": "shade_1"
           }
         },
         "image_text_list3": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_Lockup_2_2.png",
+            "image": "shopify:\/\/shop_images\/home-baner-1.png",
             "title": "Sometimes you just need 3+ lbs of candy for your next party.",
             "caption": "Retro Candy in Bulk",
             "button_label": "Shop Now",
             "button_link": "shopify:\/\/collections\/bulk-candy",
             "layout": "text_first",
-            "mobile_content_alignment": "center"
+            "shade": "shade_2"
           }
         },
         "29de3973-f22a-4eed-aac7-3e366ba80eab": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_Lockup_2_3.png",
+            "image": "shopify:\/\/shop_images\/home-baner-1.png",
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
             "button_link": "shopify:\/\/collections\/corporate-gifts",
             "layout": "image_first",
-            "mobile_content_alignment": "center"
+            "shade": "shade_3"
           }
         }
       },
