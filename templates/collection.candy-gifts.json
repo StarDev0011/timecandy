@@ -24,7 +24,7 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "deals-of-the-week",
+        "collection": "candy-by-occasion-anniversary-candy-gifts",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -35,7 +35,7 @@
       "type": "featured-product",
       "settings": {
         "product": "large-decade-candy-gift-box",
-        "sub_title": "looking for a gift?",
+        "sub_title": "The #1 gift for any occasion",
         "desc": "",
         "show_best_seller": true,
         "padding_top": 36,
