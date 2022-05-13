@@ -93,6 +93,8 @@
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
     "collection": "candy-by-decade-1920s-candy",
+    "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
+    "placeholder": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks, Search for anything!",
     "currency_code_enabled": true,
     "min_price": "6500",
     "predictive_search_show_vendor": false,
