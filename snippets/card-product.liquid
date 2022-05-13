@@ -38,7 +38,7 @@
       {%- if card_product.featured_media -%}
       <div class="card-product__picture">
         <a class="card-product__link" href="{{ card_product.url | within: collection }}">
-          <img class="card-product__image" src="{{ card_product.featured_image.src | product_img_url: '600x' }}" alt="{{ card_product.featured_image.alt | escape }}">
+          <img loading="lazy" height="auto" width="auto" class="card-product__image" src="{{ card_product.featured_image.src | product_img_url: '600x' }}" alt="{{ card_product.featured_image.alt | escape }}">
         </a>
         {%- if card_product.available == false -%}
         <div class="card__badge">
@@ -79,7 +79,7 @@
         {%- endif -%}
 
         <span class="caption-large light">{{ block.settings.description | escape }}</span>
-        <div class="card-product__price"> 
+        <div class="card-product__price">
           {% if on_sale %}
             <span class="card-product__price--sale">{{ card_product.price | money }}</span>
             <span class="card-product__price--old">{{ card_product.compare_at_price | money }}</span>
@@ -103,7 +103,7 @@
             </button>
           {% else %}
             <button class="button button--primary" type="submit">
-               {{ 'products.product.add_to_cart' | t }} 
+               {{ 'products.product.add_to_cart' | t }}
             </button>
           {% endif %}
         </form>
