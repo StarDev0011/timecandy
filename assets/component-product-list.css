@@ -563,6 +563,9 @@ img {
   font-size: 12px;
 }
 
+.card-product__price--old {
+  text-decoration: line-through;
+}
 
 @media (max-width: 1365px) and (min-width: 1200px) {
   .section-featured-product .page-width {
@@ -635,10 +638,6 @@ img {
 
   .card-product__price-text {
     display: none;
-  }
-
-  .card-product__price--old {
-    text-decoration: line-through;
   }
 
   .card-product__btn {
