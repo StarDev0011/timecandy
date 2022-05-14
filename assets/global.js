@@ -760,7 +760,7 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.removeErrorMessage();
-    // this.updateImage();
+    this.updateImage();
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -838,8 +838,12 @@ class VariantSelects extends HTMLElement {
     if(this.featuredImage) {
       this.featuredImage.setAttribute('src', baseImge);
       this.featuredImage.setAttribute('srcset', baseImge);
-    } else {
-      const cardItemImage = this.closest('.card-product__item').querySelector('.js-card-product-image');
+    }
+
+    const section = this.closest('.card-product__item');
+    if(!section) return;
+    const cardItemImage = section.querySelector('.js-card-product-image');
+    if(cardItemImage) {
       cardItemImage.setAttribute('src', baseImge);
     }
   }
