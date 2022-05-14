@@ -282,6 +282,65 @@
     ]
   },
   {
+    "name": "Product label",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "label_side",
+        "label": "Label is on the",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Label Sold out"
+      },
+      {
+        "type": "text",
+        "id": "label_soldout",
+        "label": "Sold out text",
+        "default": "Sold out"
+      },
+      {
+        "type": "color",
+        "id": "bg_soldout",
+        "label": "Background color",
+        "default": "#777"
+      },
+      {
+        "type": "color",
+        "id": "color_soldout",
+        "label": "Color",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Label limited time offer"
+      },
+      {
+        "type": "color",
+        "id": "bg_limit_time",
+        "label": "Background color",
+        "default": "#E2E43D"
+      },
+      {
+        "type": "color",
+        "id": "color_limit_titme",
+        "label": "Color",
+        "default": "#262626"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.variant_pills.name",
     "settings": [
       {

@@ -21,20 +21,23 @@
               </div>
             {% endif %}
             {% if block.settings.title != blank %}
-              <div class="banner-with-text__label card-product-label"> {{ block.settings.title }} </div>
+              <div class="card-product-label">
+                <div class="banner-with-text__label card-product-label__item"> {{ block.settings.title }} </div>
+              </div>
             {% endif %}
           </a>
           <style>
-            .banner-item-{{ block.id }} .card-product-label {
+            .banner-item-{{ block.id }} .card-product-label__item {
               color: {{ block.settings.color_label }};
               background-color: {{ block.settings.bg_label }};
+              left: 0;
             }
 
-            .banner-item-{{ block.id }} .card-product-label:before {
+            .banner-item-{{ block.id }} .card-product-label__item:before {
               border-top-color: {{ block.settings.bg_label }};
             }
 
-            .banner-item-{{ block.id }} .card-product-label:after {
+            .banner-item-{{ block.id }} .card-product-label__item:after {
               border-bottom-color: {{ block.settings.bg_label }};
             }
           </style>

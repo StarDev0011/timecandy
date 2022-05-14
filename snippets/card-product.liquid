@@ -110,7 +110,9 @@
       </div>
       {% if card_product.metafields.global.limited_time.value  != blank %}
         <div class="card-product-label">
-          {{ card_product.metafields.global.limited_time.value }}
+          <div class="card-product-label__item">
+            {{- card_product.metafields.global.limited_time.value -}}
+          </div>
         </div>
       {% endif %}
   </div>
