@@ -65,7 +65,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Donny_Image.png",
+        "image": "shopify:\/\/shop_images\/Donn-Image.png",
         "image_width": 490,
         "box_text_width": 480,
         "layout": "image_first",
@@ -183,7 +183,7 @@
       "settings": {
         "heading": "Recommended for you",
         "color_bg": "#e4f1f5",
-        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract_5a993792-29bb-4fb3-a0ee-58b2401cab70.png",
+        "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 0.000104212L2.47755e-05 -2.16771e-05L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 0.000104212Z\" fill=\"#E4F1F5\"><\/path> <\/svg>",
         "padding_top": 60,
         "padding_bottom": 0
       }
@@ -250,13 +250,10 @@
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "#f1f3f3",
-        "image_bg_top": "shopify:\/\/shop_images\/Subtract_1.png",
-        "image_bg_bottom": "shopify:\/\/shop_images\/Subtract.png",
+        "svg_bg_top": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
+        "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "show_view_all": true,
         "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": true,
-        "show_rating": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
