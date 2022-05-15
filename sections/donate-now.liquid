@@ -23,7 +23,12 @@
 
 <style>
    .donate-now-section {
-      background-image: url({{ 'dots-background-landing-page.svg' | asset_url }});
+      background-image: url({{ 'dots-background-water-wells.svg' | asset_url }});
+   }
+   @media (max-width: 989px) {
+      .donate-now-section {
+         background-image: url({{ 'dots-background-water-wells-mobile.svg' | asset_url }});
+      }
    }
 </style>
 
