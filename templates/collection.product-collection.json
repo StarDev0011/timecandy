@@ -1,11 +1,11 @@
 {
   "sections": {
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "collection-caramel-creams",
       "settings": {
-        "grid": 3,
-        "rows": 18,
         "show_desc": true,
+        "grid": 4,
+        "rows": 18,
         "page": "scroll"
       }
     }

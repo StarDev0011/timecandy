@@ -1,0 +1,156 @@
+{
+  "wrapper": "div.collection-candy",
+  "sections": {
+    "candy-header": {
+      "type": "collection--candy-header",
+      "settings": {
+        "sub_headder": "Candy By Decade",
+        "color_sub": "#0c5273",
+        "title": "Travel down sweet memory lane and see popular treats during that time period.",
+        "color_title": "#262626",
+        "bg_color": "#bbe2dd"
+      }
+    },
+    "candy-classics": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1990s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "candy-chocolate": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1980s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "large-decade-candy-gift-box",
+        "sub_title": "looking for a gift?",
+        "desc": "",
+        "show_best_seller": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lunch-boxes-with-candy": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1970s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16524549097ae25622": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1960s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "banner-with-text": {
+      "type": "banner-with-text",
+      "blocks": {
+        "524cccb0-9633-418c-adfd-33a14efd4b4a": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_1.png",
+            "btn": "Shop Gift Boxes",
+            "link": "shopify:\/\/collections\/candy-gift-boxes",
+            "title": "Personalized Gifts",
+            "bg_label": "#8ed1cb",
+            "color_label": "#262626"
+          }
+        },
+        "3b61cf33-8f54-4a74-9079-a6bc35924168": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_2.png",
+            "btn": "Shop Sale",
+            "link": "shopify:\/\/collections\/deals-of-the-week",
+            "title": "Deals of the Week",
+            "bg_label": "#ac1229",
+            "color_label": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "524cccb0-9633-418c-adfd-33a14efd4b4a",
+        "3b61cf33-8f54-4a74-9079-a6bc35924168"
+      ],
+      "settings": {
+        "title": "",
+        "desc": "",
+        "padding_top": 20,
+        "padding_bottom": 80
+      }
+    },
+    "16524550513e12ad6d": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1950s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "165245510223e46d7f": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1940s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16524551149738720e": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1930s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16524551241a09040f": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-decade-1920s-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "candy-header",
+    "candy-classics",
+    "candy-chocolate",
+    "featured-product",
+    "lunch-boxes-with-candy",
+    "16524549097ae25622",
+    "banner-with-text",
+    "16524550513e12ad6d",
+    "165245510223e46d7f",
+    "16524551149738720e",
+    "16524551241a09040f"
+  ]
+}

@@ -126,10 +126,6 @@
         "sub_title": "hand-written gift cards",
         "desc": "Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.",
         "show_best_seller": false,
-        "color_scheme": "background-1",
-        "secondary_background": false,
-        "hide_variants": false,
-        "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
