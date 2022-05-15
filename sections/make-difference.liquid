@@ -1,0 +1,85 @@
+{{ 'section-make-difference.min.css' | asset_url | stylesheet_tag }}
+
+<div class="make-difference-section page-width">
+   <h2 class="make-difference__heading">{{ section.settings.heading }}</h2>
+   <div class="make-difference__content">
+      {% for block in section.blocks %}
+         <div class="make-difference__row">
+            <div class="make-difference__image 
+               {% if block.settings.image_pos == 'right' %}make-difference__image--right{% endif %}">
+               {% assign image = block.settings.image %}
+               <img src="{{ image | image_url }}" alt="{{ image.alt }}"
+                  loading="lazy" width="{{ image.width }}" height="{{ image.height }}" />
+            </div>
+
+            <div class="make-difference__text-container">
+               <div class="make-difference__subheading">{{ block.settings.subheading }}</div>
+               <h3 class="make-difference__heading">{{ block.settings.heading }}</h3>
+               <div class="make-difference__desc">{{ block.settings.desc }}</div>
+            </div>
+         </div>   
+      {% endfor %}
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Making a difference",
+      "settings": [
+         {
+            "id": "heading",
+            "label": "Heading",
+            "type": "text",
+            "default": "MAKING A DIFFERENCE IN SIERRA LEONE"
+         }
+      ],
+      "blocks": [
+         {
+            "name": "Block",
+            "type": "row",
+            "settings": [
+               {
+                  "id": "image",
+                  "type": "image_picker",
+                  "label": "Image"
+               },
+               {
+                  "id": "image_pos",
+                  "type": "select",
+                  "label": "Image position",
+                  "options": [
+                     {
+                        "value": "left",
+                        "label": "Left"
+                     },
+                     {
+                        "value": "right",
+                        "label": "Right"
+                     }
+                  ]
+               },
+               {
+                  "id": "heading",
+                  "type": "richtext",
+                  "label": "Heading"
+               },
+               {
+                  "id": "subheading",
+                  "type": "text",
+                  "label": "Subheading"
+               },
+               {
+                  "id": "desc",
+                  "type": "richtext",
+                  "label": "Description"
+               }
+            ]
+         }
+      ],
+      "presets": [
+         {
+            "name": "Making a difference"
+         }
+      ]
+   }
+{% endschema %}

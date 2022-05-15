@@ -1,3 +1,5 @@
+@import "_mq";
+
 .donate-now-section {
 	--heading-color: #0c5273;
 	--text-color: #262626;
@@ -28,6 +30,11 @@
 		color: var(--heading-color);
 		margin-top: 0;
 		margin-bottom: 24px;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 18px;
+		}
 	}
 
 	.donate-now__heading {
@@ -40,6 +47,11 @@
 		text-transform: none;
 		max-width: 919px;
 		margin: 24px auto 28px;
+
+		@include mq("medium") {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 
 	.donate-now__desc {
@@ -50,6 +62,11 @@
 		line-height: 24px;
 		max-width: 499px;
 		margin: 0 auto;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 20px;
+		}
 	}
 
 	.primary-btn {
