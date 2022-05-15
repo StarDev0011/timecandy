@@ -699,6 +699,36 @@
   animation-delay: .4s;
 }
 
+.mini-cart__checkout-btn:not([disabled]) {
+  animation-name: buttonPulse;
+  animation-duration: 8s !important;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  transition: all ease-in-out 0.25s;
+}
+
+@keyframes buttonPulse {
+  9% {
+    transform: none;
+  }
+
+  12% {
+    transform: scale(1.01);
+  }
+
+  16% {
+    transform: scale(.97);
+  }
+
+  20% {
+    transform: scale(1.02);
+  }
+
+  24% {
+    transform: scale(1);
+  }
+}
+
 @keyframes ball-scale-multiple {
   0% {
     opacity: 0;

@@ -2165,23 +2165,23 @@ input[type="checkbox"] {
 header {
 	background-color: rgb(var(--color-background));
 }
-#shopify-section-header {
-	z-index: 3;
-	position: sticky;
-	top: 0;
+
+.section-header {
+  z-index: 3;
+  position: sticky;
+  top: 0;
 }
 
-/* .shopify-section-header-sticky {
-	position: sticky;
-	top: -1px;
-} */
+.shopify-section-header-hidden {
+  transform: translateY(-100%);
+}
 
 .shopify-section-header-hidden.menu-open {
 	transform: translateY(0);
 }
 
 #shopify-section-header.animate {
-	transition: transform 0.15s ease-out;
+	transition: transform .4s ease-out;
 }
 
 /* Main Header Layout */
