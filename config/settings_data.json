@@ -86,10 +86,10 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
-    "social_twitter_link": "",
-    "social_facebook_link": "#",
-    "social_pinterest_link": "#",
-    "social_instagram_link": "#",
+    "social_twitter_link": "https:\/\/twitter.com\/oldtimecandy",
+    "social_facebook_link": "https:\/\/www.facebook.com\/oldtimecandy",
+    "social_pinterest_link": "https:\/\/www.pinterest.com\/oldtimecandy\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/old_time_candy\/",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -190,28 +190,28 @@
           "b9fae957-4b5f-4215-8025-5e0bab5661dc": {
             "type": "link_list",
             "settings": {
-              "heading": "shop",
+              "heading": "Shop",
               "menu": "shop-footer"
             }
           },
           "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
-              "heading": "service",
+              "heading": "Service",
               "menu": "service-footer"
             }
           },
           "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
-              "heading": "about",
+              "heading": "About",
               "menu": "about-footer"
             }
           },
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
             "type": "subscribe",
             "settings": {
-              "heading": "stay in touch",
+              "heading": "Stay in touch",
               "subtext": "<p>Get a 10% discount code just for signing up.<\/p>"
             }
           }
@@ -234,7 +234,9 @@
           "show_social": true,
           "social_heading": "STAY CONNECTED",
           "payment_enable": false,
-          "margin_top": 0
+          "margin_top": 0,
+          "padding_top": 70,
+          "padding_bottom": 0
         }
       },
       "main-password-header": {
@@ -389,12 +391,20 @@
               "settings": {
                 "heading": "Info",
                 "menu": "footer"
+              },
+              "footer-2": {
+                "type": "text",
+                "settings": {
+                  "heading": "Our mission",
+                  "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                }
               }
             }
           },
           "block_order": [
             "footer-0",
-            "footer-1"
+            "footer-1",
+            "footer-2"
           ],
           "settings": {
             "color_scheme": "background-1",
@@ -404,7 +414,9 @@
             "enable_country_selector": false,
             "enable_language_selector": false,
             "payment_enable": true,
-            "margin_top": 48
+            "margin_top": 48,
+            "padding_top": 36,
+            "padding_bottom": 36
           }
         },
         "main-password-header": {
