@@ -1,33 +1,37 @@
 {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-donate-now.min.css' | asset_url | stylesheet_tag }}
 
-<section class="donate-now-section background-medium-blue">
-   <div class="grid">
-      <div class="donate-now__text
-         grid__item
-         small--ten-twelfths
-         small--push-one-twelfth
-         medium-up--five-twelfths 
-         medium-up--push-three-twelfths">
-         {{ section.settings.desc }}
-      </div>
-
-      <div class="grid__item
-         small--ten-twelfths
-         small--push-one-twelfth
-         medium-up--two-twelfths
-         medium-up--push-three-twelfths">
-         <a class="primary-btn btn--wide" href="{{ section.settings.btn_link }}">
-            {{ section.settings.btn_text }}
-         </a>
-      </div>
-   </div>
+<section class="donate-now-section background-teal">
+   <h2 class="donate-now__subheading">{{ section.settings.subheading }}</h2>
+   <h1 class="donate-now__heading">{{ section.settings.heading }}</h1>
+   <div class="donate-now__desc">{{ section.settings.desc }}</div>
+   <a class="primary-btn" href="{{ section.settings.btn_link }}">
+      {{ section.settings.btn_text }}
+   </a>
 </section>
+
+<style>
+   .donate-now-section {
+      background-image: url({{ 'dots-background-landing-page.svg' | asset_url }});
+   }
+</style>
 
 {% schema %}
    {
       "name": "Donate now",
       "settings": [
+         {
+            "id": "heading",
+            "type": "richtext",
+            "label": "Heading",
+            "default": "<p>For just the cost of a bottleof water, you can make a difference.</p>"
+         },
+         {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading",
+            "default": "Water wells for africa"
+         },
          {
             "id": "desc",
             "type": "richtext",

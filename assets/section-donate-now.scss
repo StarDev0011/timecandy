@@ -1,90 +1,59 @@
 .donate-now-section {
-	--button-default-color: #c91835;
-	--button-hover-color: #961228;
+	--heading-color: #0c5273;
+	--text-color: #262626;
+	--button-default-color: #ac1229;
+	--button-hover-color: #ac1229;
 
-	padding: 3rem 0;
+	padding: 110px 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #bbe2dd;
+	background-position: center;
+	text-align: center;
 
 	* {
 		box-sizing: border-box;
 	}
 
-	.grid {
-		all: initial;
-		display: block;
-		list-style: none;
+	p {
 		margin: 0;
-		padding: 0;
 	}
 
-	.grid::after {
-		content: "";
-		display: table;
-		clear: both;
+	.donate-now__subheading {
+		font-family: var(--font-heading);
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 24px;
+		text-transform: uppercase;
+		color: var(--heading-color);
+		margin-bottom: 24px;
 	}
 
-	.grid__item[class*="--push"] {
-		position: relative;
-	}
-
-	.grid__item {
-		all: initial;
-		float: left;
-		padding-left: 5px;
-		width: 100%;
-	}
-
-	.donate-now__text {
-		color: #262626;
+	.donate-now__heading {
 		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 48px;
+		line-height: 59px;
+		text-align: center;
+		color: var(--text-color);
+		text-transform: none;
+		max-width: 919px;
+		margin: 24px auto 28px;
+	}
+
+	.donate-now__desc {
+		color: var(--text-color);
+		font-family: var(--font-default);
+		font-weight: 400;
 		font-size: 16px;
-		line-height: 27px;
+		line-height: 24px;
+		max-width: 499px;
+		margin: 0 auto;
 	}
 
-	@media (min-width: 825px) {
-		.grid {
-			margin-left: -4px;
-		}
-		.grid__item {
-			padding-left: 4px;
-		}
-
-		.medium-up--two-twelfths {
-			width: 16.66667%;
-		}
-		.medium-up--five-twelfths {
-			width: 41.66667%;
-		}
-
-		.medium-up--two-twelfths {
-			width: 16.66667%;
-		}
-		.medium-up--push-three-twelfths {
-			left: 25%;
-		}
-	}
-
-	@media (min-width: 1100px) {
-		.grid {
-			margin-left: -12px;
-		}
-		.grid__item {
-			padding-left: 12px;
-		}
-	}
-
-	@media (max-width: 1099px) {
-		.grid {
-			margin-left: -5px;
-		}
-	}
-
-	@media (max-width: 824px) {
-		.small--ten-twelfths {
-			width: 83.33333%;
-		}
-
-		.small--push-one-twelfth {
-			left: 8.33333%;
-		}
+	.primary-btn {
+		border-radius: 32px;
+		padding: 13px 14px;
+		margin-top: 48px;
 	}
 }
