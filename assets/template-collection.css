@@ -425,9 +425,8 @@
 }
 
 .card-product__sold-out {
-  background-color: #777;
-  color: #fff;
-  left: -2px;
+  background-color: var(--backgound-soldout);
+  color: var(--color-sold-out);
 }
 
 .collection__text a {
@@ -439,11 +438,11 @@
 }
 
 .card-product__sold-out:before {
-  border-top: 17.5px solid #777;
+  border-top: 17.5px solid var(--backgound-soldout);;
 }
 
 .card-product__sold-out::after {
-  border-bottom: 17.5px solid #777;
+  border-bottom: 17.5px solid var(--backgound-soldout);;
 }
 
 @media (min-width: 768px) {

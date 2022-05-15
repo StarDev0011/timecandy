@@ -55,8 +55,7 @@
         {%- endpaginate -%}
 
         {% if section.settings.show_desc %}
-          <div id="collection-desc"></div>
-          <div class="collection__desc">
+          <div class="collection__desc" id="collection-desc">
             {{- collection.description -}}
           </div>
         {% endif %}
@@ -87,7 +86,7 @@
 <script>
   const items = document.querySelectorAll('.collection__menu-item');
   const btn = document.querySelector('.js-menu-view-more');
-  btn.addEventListener('click', function handleClick(e) {
+  btn?.addEventListener('click', function handleClick(e) {
     e.preventDefault();
     items.forEach(function(item) {
       if (item.style.display === 'none') {

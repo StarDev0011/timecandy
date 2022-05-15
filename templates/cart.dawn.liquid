@@ -41,7 +41,7 @@
   {% endif %}
 
   {% if cart.item_count > 0 %}
-    <form class="mini-cart__form" action="/cart" method="post" novalidate>
+    <form class="mini-cart__form" action="/checkout" method="post" novalidate>
       <div class="mini-cart__list js-mini-cart-list">
         {%- for item in cart.items -%}
           {% assign included = false %}

@@ -22,6 +22,16 @@
     <div class="card-product__picture">
       <img height="auto" width="auto" loading="lazy" class="card-product__image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
     </div>
+    <div class="card-product-label">
+      {% if sold_out %}
+        <div class="card-product-label__item card-product__sold-out"> {{- settings.label_soldout -}} </div>
+      {% endif %}
+        {% if product.metafields.global.limited_time.value != blank %}
+          <div class="card-product-label__item">
+            {{ product.metafields.global.limited_time.value }}
+          </div>
+      {% endif %}
+    </div>
   </a>
   <div class="card-product__bottom">
     <a class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
@@ -38,10 +48,4 @@
       {% endif %}
     </div>
   </div>
-
-  {% if product.metafields.global.limited_time.value  != blank %}
-    <div class="card-product-label">
-      {{ product.metafields.global.limited_time.value }}
-    </div>
-  {% endif %}
 </div>

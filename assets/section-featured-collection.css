@@ -72,14 +72,7 @@
 	.featured-collection .grid{
 		display: grid;
 		column-gap: 20px;
-		row-gap: 32px;
-	}
-	.featured-collection .card-product__item .card-product__form {
-		opacity: 0;
-	}	
-	.featured-collection .card-product__item:hover .card-product__form {
-		opacity: 1;
-		transition: all 0.3s ease-in-out;
+		row-gap: 48px;
 	}
 	.featured-collection .grid--2-col-desktop{
 		grid-template-columns: 1fr 1fr;
