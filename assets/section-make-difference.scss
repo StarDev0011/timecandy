@@ -1,3 +1,5 @@
+@import "_mq";
+
 .make-difference-section {
 	--heading-color: #0c5273;
 	--text-color: #484e57;
@@ -6,17 +8,27 @@
 	padding-bottom: 97px;
 }
 
-.make-difference__heading {
+.make-difference__title {
 	font-weight: 300;
 	font-size: 40px;
 	line-height: 50px;
 	text-align: center;
 	color: var(--heading-color);
+
+	@include mq("medium") {
+		font-size: 28px;
+		line-height: 36px;
+	}
 }
 
 .make-difference__row {
 	display: flex;
 	grid-gap: 96px;
+
+	@include mq("medium") {
+		flex-direction: column;
+		grid-gap: 16px;
+	}
 }
 
 .make-difference__image {
@@ -35,6 +47,10 @@
 .make-difference__text-container {
 	flex: 1;
 	text-align: left;
+
+	@include mq("medium") {
+		text-align: center;
+	}
 }
 
 .make-difference__heading {
@@ -43,9 +59,14 @@
 	font-size: 48px;
 	line-height: 59px;
 	color: var(--text-color);
-	text-align: left;
+	text-align: inherit;
 	text-transform: none;
 	margin: 0;
+
+	@include mq("medium") {
+		font-size: 24px;
+		line-height: 32px;
+	}
 
 	p {
 		margin: 0;
@@ -60,6 +81,12 @@
 	text-transform: uppercase;
 	color: var(--heading-color);
 	margin-bottom: 24px;
+
+	@include mq("medium") {
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 16px;
+	}
 }
 
 .make-difference__desc {
@@ -69,6 +96,10 @@
 	line-height: 24px;
 	color: var(--text-color);
 	margin-top: 28px;
+
+	@include mq("medium") {
+		margin-top: 32px;
+	}
 }
 
 .make-difference__content {
@@ -77,4 +108,9 @@
 	grid-gap: 32px;
 	margin-top: 96px;
 	margin-bottom: 97px;
+
+	@include mq("medium") {
+		margin-top: 64px;
+		margin-bottom: 90px;
+	}
 }
