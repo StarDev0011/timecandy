@@ -306,7 +306,7 @@
                                 <img height="200" width="200" loading="lazy" class="js-swatch-image" src="" style="display: none;">
                               {% endunless %}
                               <div class="product-swatch__caption">
-                                <span class="js-option-label" id="option-name-{{ product.id }}{{ forloop.index }}"></span>
+                                <span class="js-option-label"></span>
                                 <span class="product-swatch__sold-out js-option-sold-out"></span>
                               </div>
                             </div>
@@ -520,86 +520,21 @@
               </p>
             {%- endif -%}
           {%- when 'add_on' -%}
-          <div class="product-add-on">
-            <div class="product-add-on__header">
-              <div class="product-add-on__heading"> {{ block.settings.pr_title }} </div>
-              <div class="product-add-on__desc"> {{ block.settings.desc }} </div>
+            {% include 'include--fun-extras' %}
+          {% when 'wishlist' %}
+            <div class="product-wishlist">
+              <a class="btn-wishlist" href="#">
+                <span class="btn-wishlist__icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.21759 1.84891C1.92439 1.08818 2.86819 0.707031 3.81079 0.707031L3.81073 0.707048C4.75333 0.707048 5.69148 1.0882 6.39824 1.84892L7.00011 2.4958L7.60199 1.85455C9.01559 0.333097 11.3692 0.333097 12.7827 1.85455C14.1961 3.376 14.1961 5.7949 12.7827 7.31635C11.8994 8.26717 11.0167 9.21846 10.1339 10.1697C9.2208 11.1538 8.30766 12.1378 7.39394 13.1214C7.29174 13.232 7.14795 13.2948 6.99737 13.2948C6.84677 13.2948 6.70304 13.232 6.6008 13.1214V13.1214L1.21759 7.31071C-0.193988 5.78836 -0.195863 3.37036 1.21759 1.84891Z" fill="#AC1229"/>
+                  </svg>
+                </span>
+                <span>{{ block.settings.btn_wishlist }}</span>
+              </a>
             </div>
-            <div class="product-add-on__content">
-              {%- for i in (1..2) -%}
-                {% capture cap_product %}pr_{{ i }}{% endcapture %}
-                {% assign productAddOn = block.settings[cap_product] %}
-                {% assign soldout = true %}
-                {% if productAddOn.available %}
-                  {% assign soldout = false %}
-                {% endif %}
-                {% if productAddOn != blank %}
-                <div class="product-add-on__item">
-                  <div class="product-add-on__title"> {{ productAddOn.title }} </div>
-                  <div class="product-add-on__price">
-                  {% if productAddOn.compare_at_price > productAddOn.price %}
-                    <span class="product-add-on__price--sale">{{ productAddOn.price | money }}</span>
-                    <span class="product-add-on__price--old">{{ productAddOn.compare_at_price | money }}</span>
-                  {% else %}
-                    <span>{{ productAddOn.price | money }}</span>
-                  {% endif %}
-                  </div>
-                  <div class="product-add-on__form">
-                    {%- form 'product', productAddOn, class: 'product-add-on__form', novalidate: 'novalidate' -%}
-                    {% if productAddOn.has_only_default_variant %}
-                      <input name="id" value="{{ productAddOn.variant.id }}" type="hidden">
-                    {% else %}
-                      <select name="id" class="product-add-on__select">
-                        {% for variant in productAddOn.variants %}
-                          <option value="{{ variant.id }}">{{ variant.title }}</option>
-                        {% endfor %}
-                      </select>
-                    {% endif %}
-                    {% if soldout %}
-                      <button class="button product-add-on__btn" disabled> Sold out</button>
-                    {% else %}
-                      <button class="button product-add-on__btn" type="submit"> Add to bag </button>
-                    {% endif %}
-                    {%- endform -%}
-                  </div>
-                </div>
-                {% endif %}
-              {%- endfor -%}
-            </div>
-          </div>
           {%- endcase -%}
         {%- endfor -%}
 
-        <!-- <div class="product-wishlist">
-          <a class="btn-wishlist" href="#">
-            <span class="btn-wishlist__icon">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.21759 1.84891C1.92439 1.08818 2.86819 0.707031 3.81079 0.707031L3.81073 0.707048C4.75333 0.707048 5.69148 1.0882 6.39824 1.84892L7.00011 2.4958L7.60199 1.85455C9.01559 0.333097 11.3692 0.333097 12.7827 1.85455C14.1961 3.376 14.1961 5.7949 12.7827 7.31635C11.8994 8.26717 11.0167 9.21846 10.1339 10.1697C9.2208 11.1538 8.30766 12.1378 7.39394 13.1214C7.29174 13.232 7.14795 13.2948 6.99737 13.2948C6.84677 13.2948 6.70304 13.232 6.6008 13.1214V13.1214L1.21759 7.31071C-0.193988 5.78836 -0.195863 3.37036 1.21759 1.84891Z" fill="#AC1229"/>
-              </svg>
-            </span>
-            <span>add to wishlist</span>
-          </a>
-        </div> -->
-
-        <!-- <div class="product-buy-more">
-          <div class="product-buy-more__header">Buy more, save more!</div>
-          <div class="product-buy-more__content">
-            <table>
-              <tbody>
-                <tr>
-                  <td>buy 2-5</td>
-                  <td style="color: #AC1229;">Save 10%</td>
-                  <td style="color: #0C5273;">$3.59 each</td>
-                </tr>
-                <tr>
-                  <td>buy 6+</td>
-                  <td style="color: #AC1229;">Save 15%</td>
-                  <td style="color: #0C5273;">$3.39 each</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> -->
         {% if product.has_only_default_variant %}
           {% render 'product-tiered-pricing', product: product %}
         {% endif %}
@@ -902,8 +837,21 @@
       ]
     },
     {
+      "type": "wishlist",
+      "name": "Wishlist",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_wishlist",
+          "label": "Button text",
+          "default": "Add to wishlist"
+        }
+      ]
+    },
+    {
       "type": "add_on",
-      "name": "Add On",
+      "name": "Fun extras",
       "limit": 1,
       "settings": [
         {

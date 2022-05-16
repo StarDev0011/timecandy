@@ -1,0 +1,47 @@
+<div class="product-add-on">
+  <div class="product-add-on__header">
+    <div class="product-add-on__heading"> {{ block.settings.pr_title }} </div>
+    <div class="product-add-on__desc"> {{ block.settings.desc }} </div>
+  </div>
+  <div class="product-add-on__content">
+    {%- for i in (1..2) -%}
+      {% capture cap_product %}pr_{{ i }}{% endcapture %}
+      {% assign productAddOn = block.settings[cap_product] %}
+      {% assign soldout = true %}
+      {% if productAddOn.available %}
+        {% assign soldout = false %}
+      {% endif %}
+      {% if productAddOn != blank %}
+      <div class="product-add-on__item">
+        <div class="product-add-on__title"> {{ productAddOn.title }} </div>
+        <div class="product-add-on__price">
+        {% if productAddOn.compare_at_price > productAddOn.price %}
+          <span class="product-add-on__price--sale">{{ productAddOn.price | money }}</span>
+          <span class="product-add-on__price--old">{{ productAddOn.compare_at_price | money }}</span>
+        {% else %}
+          <span>{{ productAddOn.price | money }}</span>
+        {% endif %}
+        </div>
+        <div class="product-add-on__form">
+          {%- form 'product', productAddOn, class: 'product-add-on__form', novalidate: 'novalidate' -%}
+          {% if productAddOn.has_only_default_variant %}
+            <input name="id" value="{{ productAddOn.variant.id }}" type="hidden">
+          {% else %}
+            <select name="id" class="product-add-on__select">
+              {% for variant in productAddOn.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+          {% endif %}
+          {% if soldout %}
+            <button class="button product-add-on__btn" disabled> Sold out</button>
+          {% else %}
+            <button data-add-to-cart class="button product-add-on__btn" type="submit"> Add to bag </button>
+          {% endif %}
+          {%- endform -%}
+        </div>
+      </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+</div>

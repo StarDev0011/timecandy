@@ -1892,6 +1892,14 @@ div.rc_block__type {
   border-bottom: 1px solid #ccc !important;
 }
 
+.product-buy-more .responsive-table:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.product-buy-more table {
+  border-spacing: 0;
+}
+
 .product-form__swatch-group {
   display: flex;
   justify-content: space-between;
