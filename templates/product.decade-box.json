@@ -44,10 +44,12 @@
             "show_dynamic_checkout": false
           }
         },
-        "63cc3701-5fe9-4ea4-b7b1-9ee5463fec2a": {
-          "type": "custom_text",
+        "18421d80-4dca-4916-be71-418d26c48563": {
+          "type": "popup",
           "settings": {
-            "custom_text": "<p>Orders placed by midnight usually ship on the next business day.  <a href=\"#\" title=\"#\">Lean more<\/a> <\/p>"
+            "desc": "Orders placed by midnight usually ship on the next business day.",
+            "text": "Learn more",
+            "page": "shipping-information"
           }
         },
         "13f5a355-4ba4-442c-9cbe-c223e03cfc88": {
@@ -65,7 +67,7 @@
         "description",
         "variant_picker",
         "buy_buttons",
-        "63cc3701-5fe9-4ea4-b7b1-9ee5463fec2a",
+        "18421d80-4dca-4916-be71-418d26c48563",
         "13f5a355-4ba4-442c-9cbe-c223e03cfc88"
       ],
       "settings": {
