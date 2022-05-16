@@ -1,6 +1,4 @@
 .custom-page-content-section {
-	background-color: #faf9f7;
-
 	.page-width {
 		padding: 0;
 	}
@@ -103,4 +101,18 @@
 
 .custom-page-content--single-col {
 	width: 50%;
+}
+
+.custom-page-content-section--wave {
+	position: relative;
+
+	.page-width {
+		position: relative;
+		z-index: 1;
+	}
+
+	.background-image-wave {
+		position: absolute;
+		bottom: 0;
+	}
 }
