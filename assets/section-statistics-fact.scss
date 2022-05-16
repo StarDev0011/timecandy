@@ -42,8 +42,8 @@
 	text-align: center;
 
 	&__value {
-		width: calc(100% - 30px);
-		padding-top: calc(100% - 30px);
+		width: calc(100% - 15px);
+		padding-top: calc(100% - 15px);
 		margin-left: auto;
 		margin-right: auto;
 		background-color: #e4f1f5;
@@ -60,6 +60,7 @@
 			letter-spacing: -0.1em;
 			text-transform: uppercase;
 			color: var(--text-color);
+			width: 100%;
 			position: absolute;
 			top: 50%;
 			left: 50%;
