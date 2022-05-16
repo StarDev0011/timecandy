@@ -1,4 +1,6 @@
 .statistics-fact-section {
+	--text-color: #0c5273;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -23,9 +25,10 @@
 	}
 
 	&__content {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 		width: 83.33333%;
+		grid-gap: 64px 116px;
 
 		@media (min-width: 825px) {
 			width: 50%;
@@ -37,23 +40,31 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	width: 50%;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-
-	@media (min-width: 825px) {
-		width: 33.33%;
-	}
 
 	&__value {
-		color: black;
-		font-family: var(--font-heading);
-		font-weight: 100;
-		text-transform: uppercase;
-		font-size: 24px;
-		letter-spacing: -1px;
-		line-height: 27px;
-		margin: 0.67em 0;
+		width: calc(100% - 30px);
+		padding-top: calc(100% - 30px);
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #e4f1f5;
+		border-radius: 50%;
+		position: relative;
+
+		&::before {
+			content: attr(data-label);
+			font-family: var(--font-heading);
+			font-weight: 300;
+			font-size: 28px;
+			line-height: 21px;
+			text-align: center;
+			letter-spacing: -0.1em;
+			text-transform: uppercase;
+			color: var(--text-color);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 	&__label {
 		color: #262626;

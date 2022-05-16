@@ -1,11 +1,11 @@
 {{ 'section-statistics-fact.min.css' | asset_url | stylesheet_tag }}
 
-<section class="statistics-fact-section background-medium-blue">
+<section class="statistics-fact-section background-white">
    <h2 class="statistics-fact-section__title">{{ section.settings.title }}</h2>
    <div class="statistics-fact-section__content">
       {% for block in section.blocks %}
          <div class="statistics-fact">
-            <div class="statistics-fact__value">{{ block.settings.value }}</div>
+            <div class="statistics-fact__value" data-label="{{ block.settings.value }}"></div>
             <p class="statistics-fact__label">{{ block.settings.label }}</p>
          </div>
       {% endfor %}
