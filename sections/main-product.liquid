@@ -245,10 +245,13 @@
               </details>
             </div>
           {%- when 'popup' -%}
+            <div class="product-custom-text">
               <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
-                <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog">{{ block.settings.text | default: block.settings.page.title }}</button>
+                {{- block.settings.desc -}}
+                <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog"> {{ block.settings.text | default: block.settings.page.title }}</button>
               </modal-opener>
-              <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">{{ block.settings.text }}</a>
+              <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js"> {{ block.settings.text }}</a>
+            </div>
           {%- when 'share' -%}
             <share-button id="Share-{{ section.id }}" class="share-button" {{ block.shopify_attributes }}>
               <button class="share-button__button hidden">
@@ -575,10 +578,14 @@
   {%- for block in popups -%}
     <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
       <div role="dialog" aria-label="{{ block.settings.text }}" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
-        <button id="ModalClose-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
         <div class="product-popup-modal__content-info">
-          <h1 class="h2">{{ block.settings.page.title }}</h1>
-          {{ block.settings.page.content }}
+          <div class="product-popup-modal__header">
+            <h2 class="product-popup-modal__header-title">{{ block.settings.page.title }}</h2>
+            <button id="ModalClose-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+          </div>
+          <div class="product-popup-modal__text">
+            {{ block.settings.page.content }}
+          </div>
         </div>
       </div>
     </modal-dialog>
@@ -1123,9 +1130,15 @@
       "name": "t:sections.main-product.blocks.popup.name",
       "settings": [
         {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Description",
+          "default": "Orders placed by midnight usually ship on the next business day."
+        },
+        {
           "type": "text",
           "id": "text",
-          "default": "Pop-up link text",
+          "default": "Learn more",
           "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
         },
         {

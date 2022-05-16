@@ -1900,6 +1900,74 @@ div.rc_block__type {
   border-spacing: 0;
 }
 
+.product-popup-modal__button {
+  font-family: var(--my-font);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #484e57;
+  height: auto;
+  padding-right: 0;
+  padding-left: 2px;
+}
+
+.product-popup-modal__content {
+  width: 85%;
+  max-width: 692px;
+  height: auto;
+  max-height: 80vh;
+  box-shadow: 10px 2px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 0;
+  border: 0;
+}
+.product-popup-modal__content-info {
+  padding-right: 0;
+}
+.product-popup-modal__header-title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--my-font);
+  margin-bottom: 0;
+}
+.product-popup-modal__header {
+  display: flex;
+  align-items: center;
+  padding: 15px 32px;
+  background-color: #BBE2DD;
+}
+
+.product-popup-modal__toggle {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.product-popup-modal__toggle .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.product-popup-modal__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #484E57;
+  padding: 32px;
+}
+
+.product-popup-modal__text h2,
+.product-popup-modal__text h3,
+.product-popup-modal__text h4,
+.product-popup-modal__text h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .product-form__swatch-group {
   display: flex;
   justify-content: space-between;
