@@ -6,6 +6,11 @@
 
 	padding-top: 121px;
 	padding-bottom: 97px;
+
+	@include mq("medium") {
+		padding-top: 64px;
+		padding-bottom: 90px;
+	}
 }
 
 .make-difference__title {
@@ -106,11 +111,4 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 32px;
-	margin-top: 96px;
-	margin-bottom: 97px;
-
-	@include mq("medium") {
-		margin-top: 64px;
-		margin-bottom: 90px;
-	}
 }
