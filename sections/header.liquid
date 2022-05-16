@@ -154,7 +154,7 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text focus-inse">
-              <img src="{{ 'logo.svg' | asset_url }}"  width="{{section.settings.logo_size}}"  alt="{{ shop.name }}" itemprop="logo"> 
+              <img src="{{ 'logo.svg' | asset_url }}"  width="{{section.settings.logo_size}}"  alt="{{ shop.name }}" itemprop="logo">
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
@@ -162,6 +162,36 @@
 
       <div class="header-search" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
         <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+          {% if settings.ss_enable %}
+    		<form action="/collections/{{ settings.ss_collection_handle }}" method="get" role="search" class="search search-modal__form">
+              <div class="field">
+                <input class="search__input field__input searchspring-ac"
+                  id="Search-In-Modal-1"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                >
+                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                  <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                    <use href="#icon-search" />
+                  </svg>
+                </button>
+                <div class="close-search">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1970_54029)">
+                    <line x1="1.49491" y1="1.00496" x2="15.4949" y2="15.005" stroke="#262626" stroke-width="1.4"/>
+                    <line x1="1.47561" y1="15.0344" x2="15.4756" y2="1.03443" stroke="#262626" stroke-width="1.4"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1970_54029">
+                    <rect width="16" height="15" fill="white" transform="translate(0 0.499985)"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+		  {% else %}
           {%- if settings.predictive_search_enabled -%}
             <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
           {%- endif -%}
@@ -260,6 +290,7 @@
             </form>
           {%- if settings.predictive_search_enabled -%}
             </predictive-search>
+          {%- endif -%}
           {%- endif -%}
         </div>
       </div>
@@ -393,6 +424,7 @@
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
+      this.animationWorker();
     }
 
     connectedCallback() {
@@ -475,6 +507,94 @@
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
     //  this.searchModal.close(false);
+    }
+
+    animationWorker() {
+      const string = window.placeholder;
+      var texts = string.split(', ');
+      const input = document.querySelector('input[type="search"]');
+      const animationWorker = function (input, texts) {
+        this.input = input;
+        this.defaultPlaceholder = this.input.getAttribute('placeholder');
+        this.texts = texts;
+        this.curTextNum = 0;
+        this.curPlaceholder = '';
+        this.blinkCounter = 0;
+        this.animationFrameId = 0;
+        this.animationActive = false;
+        this.input.setAttribute('placeholder',this.curPlaceholder);
+
+        this.switch = (timeout) => {
+          this.input.classList.add('imitatefocus');
+          setTimeout(
+            () => {
+              this.input.classList.remove('imitatefocus');
+              if (this.curTextNum == 0)
+                this.input.setAttribute('placeholder',this.defaultPlaceholder);
+              else
+                this.input.setAttribute('placeholder',this.curPlaceholder);
+
+              setTimeout(
+                () => {
+                  this.input.setAttribute('placeholder',this.curPlaceholder);
+                  if(this.animationActive)
+                    this.animationFrameId = window.requestAnimationFrame(this.animate)},
+                timeout);
+            },
+            timeout);
+        }
+
+        this.animate = () => {
+          if(!this.animationActive) return;
+          let curPlaceholderFullText = this.texts[this.curTextNum];
+          let timeout = 900;
+          if (this.curPlaceholder == curPlaceholderFullText+'|' && this.blinkCounter==3) {
+            this.blinkCounter = 0;
+            this.curTextNum = (this.curTextNum >= this.texts.length-1)? 0 : this.curTextNum+1;
+            this.curPlaceholder = '|';
+            this.switch(3000);
+            return;
+          }
+          else if (this.curPlaceholder == curPlaceholderFullText+'|' && this.blinkCounter<3) {
+            this.curPlaceholder = curPlaceholderFullText;
+            this.blinkCounter++;
+          }
+          else if (this.curPlaceholder == curPlaceholderFullText && this.blinkCounter<3) {
+            this.curPlaceholder = this.curPlaceholder+'|';
+          }
+          else {
+            this.curPlaceholder = curPlaceholderFullText
+              .split('')
+              .slice(0,this.curPlaceholder.length+1)
+              .join('') + '|';
+            timeout = 150;
+          }
+          this.input.setAttribute('placeholder',this.curPlaceholder);
+          setTimeout(
+            () => { if(this.animationActive) this.animationFrameId = window.requestAnimationFrame(this.animate)},
+            timeout);
+        }
+
+        this.stop = () => {
+          this.animationActive = false;
+          window.cancelAnimationFrame(this.animationFrameId);
+        }
+
+        this.start = () => {
+          this.animationActive = true;
+          this.animationFrameId = window.requestAnimationFrame(this.animate);
+          return this;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        let aw = new animationWorker(input, texts).start();
+        input.addEventListener("focus", (e) => aw.stop());
+        input.addEventListener("blur", (e) => {
+          aw = new animationWorker(input, texts);
+          if(e.target.value == '') setTimeout( aw.start, 5000);
+        });
+      });
     }
   }
 
@@ -611,7 +731,7 @@
           {
               "type": "checkbox",
               "id": "show_tt_child",
-              "label": "Show Title Child", 
+              "label": "Show Title Child",
               "default": true
           },
           {
@@ -661,7 +781,7 @@
           },
           {
              "type":"url",
-             "id":"push_2_url", 
+             "id":"push_2_url",
              "label":"Link"
           },
           {
