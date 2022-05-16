@@ -126,17 +126,6 @@
         "column_3": "<p>Root Beer Barrels<br\/>Saf-T-Pops<br\/>Smarties<br\/>Sour Patch Kids<br\/>Spearmint Gum<br\/>Stick Candy<br\/>Sugar Daddy<br\/>Swedish Fish<br\/>Tootsie Pops<br\/>Tootsie RollWarheads<br\/>Wax LipsZotz<\/p>"
       }
     },
-    "1650857606d9d1e1f2": {
-      "type": "featured-product",
-      "settings": {
-        "product": "10-color-pen",
-        "sub_title": "hand-written gift cards",
-        "desc": "Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.",
-        "show_best_seller": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1650857688b2ff975d": {
       "type": "featured-collection",
       "settings": {
@@ -279,7 +268,6 @@
   "order": [
     "main",
     "image-with-text",
-    "1650857606d9d1e1f2",
     "1650857688b2ff975d",
     "165085778823b445b7",
     "product-recommendations",
