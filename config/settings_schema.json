@@ -1382,5 +1382,28 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Searchspring",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ss_enable",
+        "label": "Enable Searchspring",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "ss_site_id",
+        "label": "Site ID",
+        "default": "y0yjxq"
+      },
+      {
+        "type": "text",
+        "id": "ss_collection_handle",
+        "label": "Search collection handle",
+        "default": "shop"
+      }
+    ]
   }
 ]

@@ -35,6 +35,11 @@
         "accessibility_info": "Our Featured Promotions"
       }
     },
+    "1651788393f52a9cd4": {
+      "type": "ss-recommendations-home",
+      "settings": {
+      }
+    },
     "image_with_text": {
       "type": "image-with-text",
       "blocks": {
@@ -320,6 +325,7 @@
   },
   "order": [
     "slideshow",
+    "1651788393f52a9cd4",
     "image_with_text",
     "icon_with_text",
     "featured_product",

@@ -208,8 +208,14 @@
         "padding_bottom": 120
       }
     },
+    "1651857490c88cc77d": {
+      "type": "ss-recommendations-recently-viewed",
+      "settings": {
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -278,6 +284,7 @@
     "1650857606d9d1e1f2",
     "1650857688b2ff975d",
     "165085778823b445b7",
+    "1651857490c88cc77d",
     "product-recommendations",
     "1650857982f12e2d44"
   ]

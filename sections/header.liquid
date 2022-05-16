@@ -162,6 +162,36 @@
 
       <div class="header-search" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
         <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+          {% if settings.ss_enable %}
+    		<form action="/collections/{{ settings.ss_collection_handle }}" method="get" role="search" class="search search-modal__form">
+              <div class="field">
+                <input class="search__input field__input searchspring-ac"
+                  id="Search-In-Modal-1"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                >
+                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                  <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                    <use href="#icon-search" />
+                  </svg>
+                </button>
+                <div class="close-search">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1970_54029)">
+                    <line x1="1.49491" y1="1.00496" x2="15.4949" y2="15.005" stroke="#262626" stroke-width="1.4"/>
+                    <line x1="1.47561" y1="15.0344" x2="15.4756" y2="1.03443" stroke="#262626" stroke-width="1.4"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1970_54029">
+                    <rect width="16" height="15" fill="white" transform="translate(0 0.499985)"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+		  {% else %}
           {%- if settings.predictive_search_enabled -%}
             <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
           {%- endif -%}
@@ -261,6 +291,7 @@
           {%- if settings.predictive_search_enabled -%}
             </predictive-search>
           {%- endif -%}
+          {%- endif -%}    
         </div>
       </div>
 
