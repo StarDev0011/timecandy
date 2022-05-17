@@ -108,53 +108,12 @@
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
-        },
-        "7d3dde84-8374-4dcb-bcc0-aedd4c40ba46": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Group_146_4dd61e1f-4b4f-4304-a3c1-f0b34cb47c51.png",
-            "title": "Column",
-            "link": ""
-          }
-        },
-        "cbb71cfe-bb88-4ebc-8516-3f663fcfe432": {
-          "type": "icon",
-          "settings": {
-            "title": "Column",
-            "link": ""
-          }
-        },
-        "27dae9f9-15f3-49ed-95e1-46045c52764a": {
-          "type": "icon",
-          "settings": {
-            "title": "Column",
-            "link": ""
-          }
-        },
-        "a5e15db1-5199-472a-9d04-2f9f15b25150": {
-          "type": "icon",
-          "settings": {
-            "title": "Column",
-            "link": ""
-          }
-        },
-        "1b1efcf6-d84d-47c2-b40f-9c174fa24c4a": {
-          "type": "icon",
-          "settings": {
-            "title": "Column",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "icon1",
         "icon2",
-        "icon3",
-        "7d3dde84-8374-4dcb-bcc0-aedd4c40ba46",
-        "cbb71cfe-bb88-4ebc-8516-3f663fcfe432",
-        "27dae9f9-15f3-49ed-95e1-46045c52764a",
-        "a5e15db1-5199-472a-9d04-2f9f15b25150",
-        "1b1efcf6-d84d-47c2-b40f-9c174fa24c4a"
+        "icon3"
       ],
       "settings": {
         "columns_desktop": 3,
