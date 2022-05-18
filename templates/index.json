@@ -253,7 +253,6 @@
         "svg_bg_top": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "show_view_all": true,
-        "image_ratio": "adapt",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
@@ -268,8 +267,7 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "5th-avenue-box",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
@@ -280,8 +278,7 @@
         "testimonial2": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "100-grand-bar-fun-size-laydown-bag",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
@@ -292,8 +289,7 @@
         "testimonial3": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "air-heads-blue-raspberry-box",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young<\/p>",
             "reviewer": "Brian",
