@@ -834,7 +834,7 @@ class VariantSelects extends HTMLElement {
 
   updateImage() {
     const baseImge = this.currentVariant.featured_image.src;
-    this.imageCardItems = document.querySelector('.js-card-product-image');
+    this.imageCardItems = document.querySelector('.card-product__image');
     if(this.featuredImage) {
       this.featuredImage.setAttribute('src', baseImge);
       this.featuredImage.setAttribute('srcset', baseImge);
@@ -842,7 +842,7 @@ class VariantSelects extends HTMLElement {
 
     const section = this.closest('.card-product__item');
     if(!section) return;
-    const cardItemImage = section.querySelector('.js-card-product-image');
+    const cardItemImage = section.querySelector('.card-product__image');
     if(cardItemImage) {
       cardItemImage.setAttribute('src', baseImge);
     }

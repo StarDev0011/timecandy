@@ -8,7 +8,9 @@
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
 }
 .testimonial__link {
-    margin-top: 0;
+    margin-top: 0 !important;
+    display: block;
+    padding: 0 !important;
 }
 .testimonial__img {
     position: relative;

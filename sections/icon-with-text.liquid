@@ -16,9 +16,13 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .icon-list-style-{{ section.settings.columns_desktop }} .icon-list {
+    max-width: 1000px;
+  }
 {%- endstyle -%}
 
-<div class="icon-list-wrapper">
+<div class="icon-list-wrapper icon-list-style-{{ section.settings.columns_desktop }}">
   <div class="page-width section-{{ section.id }}-padding isolate">
     <div class="icon-list">
       <div class="swiper swiper-container ">

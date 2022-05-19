@@ -445,6 +445,10 @@
   border-bottom: 17.5px solid var(--backgound-soldout);;
 }
 
+#searchspring-content div[style="display: block; margin-top: 400px;"] {
+  margin-top: 50px !important;
+}
+
 @media (min-width: 768px) {
   .collection-candy__wrapper .swiper {
     overflow: inherit;

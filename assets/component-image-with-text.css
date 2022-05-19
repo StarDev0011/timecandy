@@ -333,6 +333,7 @@
 	.image-with-text__text+.button {
 		padding-left: 25px;
 		padding-right: 25px;
+    font-size: 14px;
 	}
 }
 
