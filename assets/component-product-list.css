@@ -339,6 +339,21 @@ img {
   left: -2px;
 }
 
+.card-product-label__great-gift {
+  background-color: var(--backgound-great-gift);
+  color: var(--color-great-gift);
+}
+
+.card-product-label__custom-first {
+  background-color: var(--backgound-label-1);
+  color: var(--color-label-1);
+}
+
+.card-product-label__custom-seccond {
+  background-color: var(--backgound-label-2);
+  color: var(--color-label-2);
+}
+
 .card-product-label__side-right {
   left: auto;
   right: 0;
