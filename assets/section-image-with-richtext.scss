@@ -1,0 +1,36 @@
+.image-with-richtext-section {
+	--heading-color: #0c5273;
+	--text-color: #484e57;
+}
+
+.image-with-richtext__title {
+	font-family: var(--font-heading);
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+	color: var(--heading-color);
+	margin: 0 0 32px;
+}
+
+.image-with-richtext__heading {
+	font-family: var(--font-default);
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 32px;
+	color: var(--heading-color);
+	text-transform: none;
+	margin: 0 0 32px;
+}
+
+.image-with-richtext__content {
+	font-family: var(--font-default);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--text-color);
+}
+
+.image-with-richtext__paragraph + .image-with-richtext__paragraph {
+	margin-top: 48px;
+}
