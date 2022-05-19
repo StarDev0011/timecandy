@@ -39,6 +39,11 @@
         <div class="collection-product__list">
           {% if settings.ss_enable %}
           	<div id="searchspring-content"></div>
+            {% if section.settings.show_desc %}
+              <div class="collection__desc">
+                {{- collection.description -}}
+              </div>
+            {% endif %}
 		     {% else %}
          {%- paginate collection.products by limit -%}
           <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
