@@ -114,5 +114,10 @@
 	.background-image-wave {
 		position: absolute;
 		bottom: 0;
+		max-height: 444px;
+
+		@include mq("medium") {
+			max-height: 116px;
+		}
 	}
 }
