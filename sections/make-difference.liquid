@@ -9,7 +9,7 @@
                {% if block.settings.image_pos == 'right' %}make-difference__image--right{% endif %}">
                {% assign image = block.settings.image %}
                <img src="{{ image | image_url }}" alt="{{ image.alt }}"
-                  loading="lazy" width="{{ image.width }}" height="{{ image.height }}" />
+                  loading="lazy" width="{{ image.width }}" height="auto" />
             </div>
 
             <div class="make-difference__text-container">
