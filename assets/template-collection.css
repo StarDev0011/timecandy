@@ -412,6 +412,10 @@
   color: #484e57;
 }
 
+.collection__desc p {
+  text-align: left !important;
+}
+
 .collection__desc h2,
 .collection__desc h3,
 .collection__desc h4 {
