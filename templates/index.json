@@ -41,7 +41,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Find the <span><i>Candy You Ate as a Kid!®<\/i><\/span>"
+            "heading": "<p>Find the <strong>Candy You <br\/>Ate as a Kid!®<\/strong><\/p>"
           }
         },
         "text": {
@@ -200,7 +200,7 @@
         "1648000290f7ac8147-0": {
           "type": "heading",
           "settings": {
-            "heading": "We’re making a difference in Sierra Leone and so can you!"
+            "heading": "<p>We’re making a difference in Sierra Leone and so can you!<\/p>"
           }
         },
         "1648000290f7ac8147-1": {
