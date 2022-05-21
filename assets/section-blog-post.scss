@@ -181,7 +181,7 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-weight: 400;
 		font-size: 48px;
 		line-height: 59px;
-		margin: 0;
+		margin-top: 0;
 		margin-bottom: 24px;
 
 		@media (max-width: $bp-medium) {
@@ -233,6 +233,11 @@ $bp-medium-up: #{$breakpoint + 1}px;
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 24px;
+
+		& > span:last-of-type {
+			display: block;
+			margin-bottom: 32px;
+		}
 	}
 
 	& > p > a {
@@ -259,6 +264,10 @@ $bp-medium-up: #{$breakpoint + 1}px;
 				font: inherit;
 			}
 		}
+	}
+
+	a:hover {
+		color: inherit;
 	}
 }
 
