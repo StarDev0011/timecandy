@@ -47,7 +47,9 @@
 	}
 
 	&--right {
-		order: 1;
+		@include mq("medium", "min-width") {
+			order: 1;
+		}
 	}
 }
 
@@ -103,6 +105,14 @@
 	line-height: 24px;
 	color: var(--text-color);
 	margin-top: 28px;
+
+	p {
+		margin: 0;
+	}
+
+	p + p {
+		margin-top: 24px;
+	}
 
 	@include mq("medium") {
 		margin-top: 32px;
