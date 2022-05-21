@@ -14,6 +14,12 @@
 		padding-bottom: 90px;
 	}
 
+	.content-wrapper {
+		@include mq("medium") {
+			padding: 0;
+		}
+	}
+
 	&__content {
 		@include mq("medium", "min-width") {
 			display: grid;
