@@ -634,9 +634,11 @@
 }
 
 .order__product {
-	display: flex;
-	grid-gap: 12px;
-	align-items: center;
+	@include mq("large", "min-width") {
+		display: flex;
+		grid-gap: 12px;
+		align-items: center;
+	}
 
 	@include mq("medium") {
 		margin-bottom: 16px;
@@ -662,6 +664,22 @@
 
 .order__product-details {
 	flex: 1;
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+
+		svg {
+			width: 14px;
+			height: 14px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+	}
 }
 
 .order__subtotal td {
