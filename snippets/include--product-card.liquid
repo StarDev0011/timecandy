@@ -15,6 +15,33 @@
       assign is_size = true
     endif
   endfor
+
+  assign limited_time = false
+  assign great_gift = false
+  assign custom_label_1 = false
+  assign custom_label_2 = false
+
+  assign tags = product.tags | split: ','
+  for t in tags
+    assign tag = t | strip
+    assign tag_value = tag | handleize
+
+    if tag_value contains 'label-limited-time-offer'
+      assign limited_time = true
+    endif
+
+    if tag_value contains 'label-great-gift'
+      assign great_gift = true
+    endif
+
+    if tag_value contains 'custom-label-1'
+      assign custom_label_1 = true
+    endif
+
+    if tag_value contains 'custom-label-2'
+      assign custom_label_2 = true
+    endif
+  endfor
 %}
 
 <div class="card-product__item {{ slideItem }}">
@@ -25,18 +52,29 @@
         {% if sold_out %}
           <div class="card-product-label__item card-product__sold-out"> {{- settings.label_soldout -}} </div>
         {% endif %}
-        {% if product.metafields.global.limited_time.value != blank %}
-          <div class="card-product-label__item">
-            {{ product.metafields.global.limited_time.value }}
-          </div>
-      {% endif %}
+
+        {% if limited_time %}
+          <div class="card-product-label__item"> {{- settings.label_limited_time -}} </div>
+        {% endif %}
+
+        {% if great_gift %}
+          <div class="card-product-label__item card-product-label__great-gift"> {{- settings.label_great_gift -}} </div>
+        {% endif %}
+
+        {% if custom_label_1 %}
+          <div class="card-product-label__item card-product-label__custom-first"> {{- settings.label_custom_label_1 -}} </div>
+        {% endif %}
+
+        {% if custom_label_2 %}
+          <div class="card-product-label__item card-product-label__custom-seccond"> {{- settings.label_custom_label_2 -}} </div>
+        {% endif %}
       </div>
     </div>
   </a>
   <div class="card-product__bottom">
     <a class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
     {% if is_size %}
-      <div class="card-product__label"> Various sizes</div>
+      <div class="card-product__label"> Various sizes </div>
     {% endif %}
     <div class="card-product__price">
       {% if on_sale %}

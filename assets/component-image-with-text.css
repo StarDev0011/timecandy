@@ -83,13 +83,20 @@
 .image-with-text__text + .button{
   margin-top: 48px;
 }
-@media (min-width: 750px) and (max-width: 1199px) {
-  column-gap:60px;
-}
+
 @media (max-width: 749px) {
   .image-with-text__text-item{
     margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .image-with-text__text {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .image-with-text__content>*+* {
       margin-top: 20px;
   }
@@ -112,6 +119,8 @@
   }
   .image-with-text .image-with-text__media{
     padding-bottom: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
   }
   .image-with-text .image-with-text__media img {
       position: static !important;
