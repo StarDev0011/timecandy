@@ -1,10 +1,6 @@
+@import "_mq";
+
 .custom-page-content-section {
-	background-color: #faf9f7;
-
-	.page-width {
-		padding: 0;
-	}
-
 	@media (min-width: 825px) {
 		.flex-center {
 			display: flex;
@@ -44,10 +40,6 @@
 	font-family: var(--font-default);
 	font-size: 16px;
 	line-height: 27px;
-
-	@media (max-width: 824px) {
-		width: 83.33333%;
-	}
 
 	h1 {
 		color: #c91835;
@@ -99,8 +91,32 @@
 		width: 100%;
 		object-fit: contain;
 	}
+
+	iframe {
+		height: auto;
+		aspect-ratio: 560/315;
+	}
 }
 
 .custom-page-content--single-col {
 	width: 50%;
+}
+
+.custom-page-content-section--wave {
+	position: relative;
+
+	.content-wrapper {
+		position: relative;
+		z-index: 2;
+	}
+
+	.background-image-wave {
+		position: absolute;
+		bottom: 0;
+		max-height: 444px;
+
+		@include mq("medium") {
+			max-height: 116px;
+		}
+	}
 }

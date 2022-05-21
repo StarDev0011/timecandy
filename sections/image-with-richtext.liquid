@@ -1,0 +1,96 @@
+{{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-image-with-richtext.min.css' | asset_url | stylesheet_tag }}
+
+<div class="image-with-richtext-section" style="background-color: {{ section.settings.background_color }}">
+   <div class="content-wrapper">
+      {% if section.settings.image %}
+         <div class="image-with-richtext__image">
+            <img src="{{ section.settings.image | image_url }}" loading="lazy" width="793" height="auto">   
+         </div>
+      {% endif %}
+
+      <div>
+         <h2 class="image-with-richtext__title">{{ section.settings.title }}</h2>
+
+         {% for block in section.blocks %}
+            <div class="image-with-richtext__paragraph">
+               {% if block.settings.heading %}
+                  <h3 class="image-with-richtext__heading">{{ block.settings.heading }}</h3>
+               {% endif %}
+               
+               {% if block.settings.content %}
+                  <div class="image-with-richtext__content">{{ block.settings.content }}</div>                
+               {% endif %}
+
+               {% if block.settings.btn_text and block.settings.btn_link%}
+                  <a href="{{ block.settings.btn_link }}" class="primary-btn">{{ block.settings.btn_text }}</a>
+               {% endif %}
+            </div>
+         {% endfor %}
+      </div>
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Image with richtext",
+      "settings": [
+         {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+         },
+         {
+            "id": "title",
+            "type": "text",
+            "label": "Section title",
+            "default": "Section title"
+         },
+         {
+            "id": "background_color",
+            "type": "color",
+            "label": "Background color",
+            "default": "#fff"
+         }
+      ],
+      "blocks": [
+         {
+            "name": "Paragraph",
+            "type": "paragraph",
+            "settings": [
+               {
+                  "id": "heading",
+                  "type": "text",
+                  "label": "Heading",
+                  "default": "Heading"
+               },
+               {
+                  "id": "content",
+                  "type": "richtext",
+                  "label": "Content",
+                  "default": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione reiciendis mollitia doloribus placeat expedita provident, aperiam amet ea alias ipsam earum, temporibus incidunt! Voluptates sed architecto nostrum rerum incidunt.</p>"
+               },
+               {
+                  "id": "btn_text",
+                  "type": "text",
+                  "label": "Button text",
+                  "default": "Donate now"
+               },
+               {
+                  "id": "btn_link",
+                  "type": "url",
+                  "label": "Button link"
+               }
+            ]
+         }
+      ],
+      "presets": [
+         {
+            "name": "Image with richtext",
+            "blocks": [
+               "paragraph"
+            ]
+         }
+      ]
+   }
+{% endschema %}

@@ -289,7 +289,7 @@
         "id": "label_side",
         "label": "Label is on the",
         "default": "left",
-        "options":[
+        "options": [
           {
             "value": "left",
             "label": "Left"

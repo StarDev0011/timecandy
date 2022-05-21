@@ -4,7 +4,15 @@
    {% assign isSingleCol= true %}   
 {% endif %}
 
-<section class="custom-page-content-section" id="Section{{ section.id }}">
+{% assign background_style = section.settings.background_style %}
+
+<section class="custom-page-content-section {% if background_style == 'wave' %}custom-page-content-section--wave{% endif%}" id="Section{{ section.id }}"
+   {% if background_style == 'solid-color' %}style="background-color: {{ section.settings.background_color }}"{% endif %}
+>
+   {% if background_style == 'wave' %}
+      {% render 'background-image-wave' %}
+   {% endif %}
+   
    <div class="page-width">
       <div class="custom-page-content
          {{ section.settings.container_width }}
@@ -14,7 +22,7 @@
             <div class="custom-page-content__block {{ block.settings.width }}" id="Block{{ block.id }}">
                {% case block.type %}                  
                   {% when 'image' %}
-                     <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt}}" >
+                     <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt }}" loading="lazy">
                   {% else %}
                      {% if block.settings.heading %}
                         {% case block.settings.heading_type %}
@@ -56,6 +64,10 @@
       "name": "Custom page content",
       "settings": [
          {
+            "type": "header",
+            "content": "Container width"
+         },
+         {
             "id": "container_width",
             "type": "select",
             "label": "Container width",
@@ -86,6 +98,35 @@
                   "label": "One-fourth width"
                }
             ]
+         },
+         {
+            "type": "header",
+            "content": "background"
+         },
+         {
+            "id": "background_style",
+            "type": "select",
+            "label": "Background style",
+            "options": [
+               {
+                  "value": "solid-color",
+                  "label": "Solid color"
+               },
+               {
+                  "value": "wave",
+                  "label": "Wave"
+               }
+            ]
+         },
+         {
+            "id": "background_color",
+            "type": "color",
+            "label": "Background color",
+            "default": "#fff"
+         },
+         {
+            "type": "header",
+            "content": "Spacing"
          },
          {
             "id": "padding_top",

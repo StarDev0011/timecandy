@@ -1,5 +1,9 @@
 .primary-btn {
+	--button-default-color: #ac1229;
+	--button-hover-color: #ac1229;
+
 	background-color: var(--button-default-color);
+	border-radius: 32px;
 	color: white;
 	cursor: pointer;
 	appearance: none;
@@ -7,7 +11,6 @@
 	font-weight: 100;
 	text-transform: uppercase;
 	border: 0;
-	border-radius: 3px;
 	display: inline-block;
 	font-size: 16px;
 	letter-spacing: 1px;
