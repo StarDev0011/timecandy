@@ -1,8 +1,6 @@
-.custom-page-content-section {
-	.page-width {
-		padding: 0;
-	}
+@import "_mq";
 
+.custom-page-content-section {
 	@media (min-width: 825px) {
 		.flex-center {
 			display: flex;
@@ -42,10 +40,6 @@
 	font-family: var(--font-default);
 	font-size: 16px;
 	line-height: 27px;
-
-	@media (max-width: 824px) {
-		width: 83.33333%;
-	}
 
 	h1 {
 		color: #c91835;
@@ -97,6 +91,11 @@
 		width: 100%;
 		object-fit: contain;
 	}
+
+	iframe {
+		height: auto;
+		aspect-ratio: 560/315;
+	}
 }
 
 .custom-page-content--single-col {
@@ -106,7 +105,7 @@
 .custom-page-content-section--wave {
 	position: relative;
 
-	.page-width {
+	.content-wrapper {
 		position: relative;
 		z-index: 2;
 	}
