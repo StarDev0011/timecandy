@@ -31,6 +31,7 @@
             <div id="slider-testimonial" class="swiper swiper-container">
                 <div class="swiper-wrapper">
                     {% for block in section.blocks %}
+                    {%- assign product = block.settings.product -%}
                         <div class="swiper-slide">
                             <div class="testimonial-grid">
                                 {%- if section.settings.bg_image != blank -%}
@@ -45,25 +46,25 @@
                                 {%- endif -%}
                             <div class="testimonial__wrap ">
                                 <div class="testimonial__img-wrap">
-                                    <a class="testimonial__link" href="{{block.settings.link_readmore }}">
-                                        <div class="testimonial__img  {%if block.settings.image == blank %} placeholder {% endif %}">
-                                            {%- if block.settings.image == blank -%}
+                                    <a class="testimonial__link" href="{{ product.url }}">
+                                        <div class="testimonial__img  {% if product == blank %} placeholder {% endif %}">
+                                            {%- if product == blank -%}
                                                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                                             {%- else -%}
                                                 <img
-                                                    srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | img_url: '165x' }} 165w,{%- endif -%}
-                                                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | img_url: '360x' }} 360w,{%- endif -%}
-                                                    {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | img_url: '535x' }} 535w,{%- endif -%}
-                                                    {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | img_url: '750x' }} 750w,{%- endif -%}"
-                                                    src="{{ block.settings.image | img_url: '750x' }}"
+                                                    srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | img_url: '165x' }} 165w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | img_url: '360x' }} 360w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | img_url: '535x' }} 535w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | img_url: '750x' }} 750w,{%- endif -%}"
+                                                    src="{{ product.image | img_url: '750x' }}"
                                                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                    alt="{{ block.settings.image.alt | escape }}"
+                                                    alt="{{ product.featured_image.alt | escape }}"
                                                     loading="lazy"
-                                                    width="{{ block.settings.image.width }}"
-                                                    height="{{ block.settings.image.height }}"
+                                                    width="{{ product.featured_image.width }}"
+                                                    height="{{ product.featured_image.height }}"
                                                 >
                                             {%- endif -%}
-                                            {%- if section.settings.bg_image != blank -%}
+                                            {%- if product != blank -%}
                                                 <img class="testimonial-bg-mb"
                                                     src="{{ section.settings.bg_image | img_url: '750x' }}"
                                                     sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
@@ -75,8 +76,8 @@
                                             {%- endif -%}
                                         </div>
                                     </a>
-                                    {% if block.settings.button_link != blank and block.settings.button_label %}
-                                        <a href="{{block.settings.button_link}}"> {{ block.settings.button_label }}</a>
+                                    {% if product != blank %}
+                                        <a href="{{ product.url }}"> {{ block.settings.button_label }}</a>
                                     {% endif %}
                                 </div>
                                 <div class="testimonial__content ">
@@ -195,14 +196,9 @@
             "type": "select",
             "settings": [
                 {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-                },
-                {
-                    "type":"url",
-                    "id":"button_link",
-                    "label":"Button Link"
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select product"
                 },
                 {
                     "type":"text",

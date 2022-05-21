@@ -1,0 +1,27 @@
+{% if template == 'product' or cart.item_count > 0 %}
+	<!-- Searchspring IntelliSuggest Tracking -->
+	<script type="text/javascript" src="//cdn.searchspring.net/intellisuggest/is.min.js"></script>
+	<script type="text/javascript">
+		var ss_site_id = '{{ settings.ss_site_id }}';
+ 
+		try {
+			{% if template == 'product' %}
+				var product_code = '{{ product.variants[0].sku }}';
+				IntelliSuggest.init({siteId: ss_site_id, context: 'Product/' + product_code, seed: product_code});
+				IntelliSuggest.viewItem({sku:product_code});
+			{% endif %}
+			{% if cart.item_count > 0 %}
+				var seed = [];
+				{% for item in cart.items %}
+					seed.push('{{ item.product.variants[0].sku }}');
+				{% endfor %}
+				IntelliSuggest.init({siteId: ss_site_id, context: 'Basket', seed: seed });
+				{% for item in cart.items %}
+					IntelliSuggest.haveItem({sku: '{{ item.product.variants[0].sku }}', qty: '{{ item.quantity }}', price: '{{ item.price | money_without_currency }}'});
+				{% endfor %}
+				IntelliSuggest.inBasket({});
+			{% endif %}
+		} catch(err) {}
+	</script>
+	<!-- END Searchspring IntelliSuggest -->
+{% endif %}

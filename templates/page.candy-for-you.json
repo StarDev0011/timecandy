@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 28
+      }
+    },
+    "1652123851a2e2c166": {
+      "type": "ss-recommendations-home",
+      "settings": {
+      }
+    },
+    "165212386411dc713d": {
+      "type": "ss-recommendations-recently-viewed",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1652123851a2e2c166",
+    "165212386411dc713d"
+  ]
+}
