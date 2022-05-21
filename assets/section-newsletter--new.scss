@@ -6,12 +6,24 @@
 
 	padding-bottom: 120px;
 
+	@include mq("medium") {
+		padding-bottom: 90px;
+	}
+
 	.field {
 		align-items: center;
 
 		&::before,
 		&::after {
 			content: none;
+		}
+	}
+
+	.background-white {
+		width: 100%;
+
+		@include mq("medium") {
+			height: 116px;
 		}
 	}
 
@@ -37,7 +49,7 @@
 		}
 
 		@include mq("medium") {
-			margin: -80% 20px 0;
+			margin: -60% 20px 0;
 			padding-left: 22px;
 			padding-right: 22px;
 		}
