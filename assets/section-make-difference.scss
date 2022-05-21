@@ -28,6 +28,12 @@
 	}
 }
 
+.water-wells-template .make-difference-section {
+	@include mq("medium", "min-width") {
+		max-width: 78%;
+	}
+}
+
 .make-difference__row {
 	display: flex;
 	grid-gap: 96px;
@@ -105,6 +111,10 @@
 	line-height: 24px;
 	color: var(--text-color);
 	margin-top: 28px;
+
+	@include mq("medium", "min-width") {
+		max-width: 424px;
+	}
 
 	p {
 		margin: 0;
