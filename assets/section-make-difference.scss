@@ -11,6 +11,12 @@
 		padding-top: 64px;
 		padding-bottom: 90px;
 	}
+
+	.content-wrapper {
+		@include mq("medium", "min-width") {
+			max-width: 78%;
+		}
+	}
 }
 
 .make-difference__title {
@@ -25,12 +31,6 @@
 		font-size: 28px;
 		line-height: 36px;
 		margin: 0 0 29px;
-	}
-}
-
-.water-wells-template .make-difference-section {
-	@include mq("medium", "min-width") {
-		max-width: 78%;
 	}
 }
 
