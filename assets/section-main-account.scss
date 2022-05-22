@@ -327,7 +327,7 @@
 }
 
 /* Login */
-.login-template {
+.account__form-wrapper {
 	display: block;
 
 	@include mq("medium", "min-width") {
@@ -339,7 +339,9 @@
 	@include mq("medium") {
 		padding: 20px 20px 90px;
 	}
+}
 
+.login-template {
 	h1 {
 		color: var(--color-accent-2);
 		font-family: var(--font-heading);
@@ -493,6 +495,51 @@ p.login__form-note {
 	.activate button[name="decline"] {
 		margin-top: inherit;
 		margin-left: 1rem;
+	}
+}
+
+/* Reset password */
+.reset-password {
+	display: block;
+
+	h1 {
+		font-family: var(--font-heading);
+		font-style: normal;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 24px;
+		color: var(--color-accent-2);
+		text-transform: uppercase;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	p {
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: var(--color-text);
+	}
+
+	form {
+		display: flex;
+		align-items: flex-end;
+		grid-gap: 5px;
+		flex-wrap: wrap;
+
+		@include mq("medium", "min-width") {
+			.account__field + .account__field {
+				margin-top: 0;
+			}
+
+			.primary-btn {
+				margin: 0;
+			}
+		}
 	}
 }
 
