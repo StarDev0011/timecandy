@@ -48,7 +48,6 @@
         id="RegisterForm-FirstName"
         {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
         autocomplete="given-name"
-        placeholder="{{ 'customer.register.first_name' | t }}"
       >
     </div>
 
@@ -63,7 +62,6 @@
         id="RegisterForm-LastName"
         {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
         autocomplete="family-name"
-        placeholder="{{ 'customer.register.last_name' | t }}"
       >
     </div>
 
@@ -85,7 +83,6 @@
           aria-invalid="true"
           aria-describedby="RegisterForm-email-error"
         {% endif %}
-        placeholder="{{ 'customer.register.email' | t }}"
       >
     </div>
 
@@ -97,6 +94,11 @@
         {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
       </span>
     {%- endif -%}
+
+    <div class="register__checkbox">
+      <input type="checkbox" name="customer[accepts_marketing]" checked="checked" value="true" id="marketing">
+      <label for="marketing">Sign Up For Newsletter</label>
+    </div>
 
     <div class="account__field">   
       <label for="RegisterForm-password">
@@ -112,7 +114,6 @@
           aria-invalid="true"
           aria-describedby="RegisterForm-password-error"
         {% endif %}
-        placeholder="{{ 'customer.register.password' | t }}"
       >
     </div>
 
