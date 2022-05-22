@@ -397,6 +397,17 @@
 			width: 100%;
 		}
 	}
+
+	.text-btn {
+		display: block;
+		text-decoration: underline;
+		text-underline-offset: 0.3rem;
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		font-size: 12px;
+		line-height: 18px;
+		text-transform: uppercase;
+	}
 }
 
 .login {
@@ -420,19 +431,6 @@ p.login__form-note {
 	font-size: 16px;
 	line-height: 24px;
 	margin-bottom: 0;
-}
-
-.forgot-password-link {
-	display: block;
-	margin: 0 auto;
-	width: fit-content;
-	text-decoration: underline;
-	text-underline-offset: 0.3rem;
-	color: var(--color-text);
-	font-family: var(--font-heading);
-	font-size: 12px;
-	line-height: 18px;
-	text-transform: uppercase;
 }
 
 .login__button-group {

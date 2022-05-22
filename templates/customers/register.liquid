@@ -131,6 +131,8 @@
       {{ 'customer.register.submit' | t }}
     </button>
 
-    {{ 'customer.register.return' | t | link_to: shop.url }}
+    <a href="{{ shop.url }}" class="text-btn">
+      {{ 'customer.register.return' | t }}
+    </a> 
   {%- endform -%}
 </div>
