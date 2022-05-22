@@ -525,6 +525,26 @@ p.login__form-note {
 	}
 }
 
+.register__checkbox {
+	margin: 16px 0;
+
+	input[type="checkbox"] {
+		width: 18px;
+		height: 18px;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: sub;
+	}
+
+	label {
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: var(--color-text);
+	}
+}
+
 /* Order */
 .customer.order {
 	@include mq("medium") {
