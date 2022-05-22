@@ -336,6 +336,10 @@
 		margin-right: auto;
 	}
 
+	@include mq("medium") {
+		padding: 20px 20px 90px;
+	}
+
 	h1 {
 		color: var(--color-accent-2);
 		font-family: var(--font-heading);
@@ -379,15 +383,25 @@
 		margin: 0;
 	}
 
-	.login__form-note + .primary-btn {
+	.primary-btn {
 		margin: 20px 0 32px;
+	}
+
+	@include mq("medium") {
+		.primary-btn,
+		.secondary-btn {
+			width: 100%;
+		}
 	}
 }
 
 .login {
-	@include mq("medium", "min-width") {
-		display: flex;
-		grid-gap: 128px;
+	display: flex;
+	grid-gap: 128px;
+
+	@include mq("medium") {
+		flex-direction: column;
+		grid-gap: 48px;
 	}
 
 	&__column {
@@ -418,9 +432,13 @@ p.login__form-note {
 }
 
 .login__button-group {
-	margin: 16px 0;
+	margin: 20px 0;
 	display: flex;
 	grid-gap: 10px;
+
+	.primary-btn {
+		margin: 0;
+	}
 }
 
 .login a[href="#recover"] {
