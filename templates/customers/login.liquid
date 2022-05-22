@@ -34,7 +34,7 @@
           {% assign recover_success = form.posted_successfully? %}
           <div class="account__field">
             <label for="RecoverEmail">
-              {{ 'customer.login_page.email' | t }}
+              {{ 'customer.login_page.email' | t }}<span class="required">*</span>
             </label>
 
             <input type="email"
