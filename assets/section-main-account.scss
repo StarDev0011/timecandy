@@ -327,10 +327,96 @@
 }
 
 /* Login */
-.login a {
+.login-template {
+	display: block;
+
+	@include mq("medium", "min-width") {
+		width: 55%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h1 {
+		color: var(--color-accent-2);
+		font-family: var(--font-heading);
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 18px;
+
+		@include mq("medium", "min-width") {
+			font-size: 18px;
+			line-height: 24px;
+		}
+	}
+
+	h2 {
+		font-family: var(--font-heading);
+		font-style: normal;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 24px;
+		color: var(--color-heading);
+		text-transform: uppercase;
+		margin-bottom: 8px;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	p,
+	li {
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: var(--color-text);
+	}
+
+	.primary-btn {
+		padding: 13px 40px;
+		margin: 0;
+	}
+}
+
+.login {
+	@include mq("medium", "min-width") {
+		display: flex;
+		grid-gap: 128px;
+	}
+
+	&__column {
+		flex: 1;
+	}
+}
+
+p.login__form-note {
+	color: var(--color-accent-2);
+	font-family: var(--font-default);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 0;
+}
+
+.forgot-password-link {
 	display: block;
 	margin: 0 auto;
 	width: fit-content;
+	text-decoration: underline;
+	text-underline-offset: 0.3rem;
+	color: var(--color-text);
+	font-family: var(--font-heading);
+	font-size: 12px;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+.login__button-group {
+	margin: 16px 0;
+	display: flex;
+	grid-gap: 10px;
 }
 
 .login a[href="#recover"] {
@@ -340,10 +426,6 @@
 
 .login .field + a {
 	margin-top: 1rem;
-}
-
-.login p {
-	margin: 1.5rem 0;
 }
 
 .login h3 {
@@ -356,8 +438,7 @@
 	margin-top: 0;
 }
 
-#recover,
-#recover + div {
+#recover {
 	display: none;
 }
 
@@ -365,12 +446,7 @@
 	display: block;
 }
 
-#recover:target + div {
-	display: block;
-}
-
-#recover:target ~ #login,
-#recover:target ~ #login + div {
+#recover:target ~ #login {
 	display: none;
 }
 
@@ -990,7 +1066,7 @@
 	}
 }
 
-.addresses__field {
+.account__field {
 	& > div {
 		position: relative;
 	}
@@ -1030,11 +1106,15 @@
 			outline: none;
 		}
 	}
+
+	.required {
+		color: var(--color-accent-2);
+	}
 }
 
-.addresses__field + .addresses__field,
-.addresses__form-row + .addresses__field,
-.addresses__field + .addresses__form-row,
+.account__field + .account__field,
+.addresses__form-row + .account__field,
+.account__field + .addresses__form-row,
 .addresses__form-row + .addresses__form-row {
 	margin-top: 24px;
 }
@@ -1043,7 +1123,7 @@
 	display: flex;
 	grid-gap: 20px;
 
-	.addresses__field {
+	.account__field {
 		flex: 1;
 		margin-top: 0;
 	}

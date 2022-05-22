@@ -352,7 +352,9 @@
       "guest_continue": "Continue",
       "guest_title": "Continue as a guest",
       "password": "Password",
-      "title": "Login",
+      "title": "Registered customers",
+      "desc": "If you have an account with us, please log in.",
+      "register_title": "New customers",
       "sign_in": "Sign in",
       "submit": "Submit"
     },
