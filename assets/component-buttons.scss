@@ -53,10 +53,11 @@
 	height: max-content;
 	white-space: normal;
 
-	// &:hover {
-	// 	background-color: var(--button-hover-color);
-	// 	color: white;
-	// }
+	&:hover {
+		background-color: var(--button-hover-color);
+		border-color: var(--button-hover-color);
+		color: white;
+	}
 }
 
 .btn--wide {

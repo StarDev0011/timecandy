@@ -409,6 +409,10 @@
 	}
 }
 
+.login a:not(.primary-btn, .secondary-btn):hover {
+	color: inherit;
+}
+
 p.login__form-note {
 	color: var(--color-accent-2);
 	font-family: var(--font-default);
