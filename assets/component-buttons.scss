@@ -12,7 +12,8 @@
 	text-transform: uppercase;
 	border: 0;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 15px;
+	line-height: 24px;
 	letter-spacing: 1px;
 	margin: 10px 0;
 	padding: 14px;
@@ -52,10 +53,11 @@
 	height: max-content;
 	white-space: normal;
 
-	// &:hover {
-	// 	background-color: var(--button-hover-color);
-	// 	color: white;
-	// }
+	&:hover {
+		background-color: var(--button-hover-color);
+		border-color: var(--button-hover-color);
+		color: white;
+	}
 }
 
 .btn--wide {
