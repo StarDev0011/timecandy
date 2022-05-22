@@ -339,9 +339,7 @@
 	@include mq("medium") {
 		padding: 20px 20px 90px;
 	}
-}
 
-.login-template {
 	h1 {
 		color: var(--color-accent-2);
 		font-family: var(--font-heading);
@@ -380,6 +378,10 @@
 		color: var(--color-text);
 	}
 
+	a:not(.primary-btn):not(.secondary-btn):hover {
+		color: inherit;
+	}
+
 	.primary-btn {
 		padding: 13px 40px;
 		margin: 0;
@@ -409,10 +411,6 @@
 	&__column {
 		flex: 1;
 	}
-}
-
-.login a:not(.primary-btn, .secondary-btn):hover {
-	color: inherit;
 }
 
 p.login__form-note {
@@ -502,21 +500,6 @@ p.login__form-note {
 .reset-password {
 	display: block;
 
-	h1 {
-		font-family: var(--font-heading);
-		font-style: normal;
-		font-weight: 300;
-		font-size: 18px;
-		line-height: 24px;
-		color: var(--color-accent-2);
-		text-transform: uppercase;
-
-		@include mq("medium") {
-			font-size: 14px;
-			line-height: 18px;
-		}
-	}
-
 	p {
 		font-family: var(--font-default);
 		font-weight: 400;
@@ -540,6 +523,17 @@ p.login__form-note {
 				margin: 0;
 			}
 		}
+	}
+}
+
+/* Register */
+.register {
+	.primary-btn {
+		margin: 32px 0 50px;
+	}
+
+	a {
+		display: block;
 	}
 }
 
