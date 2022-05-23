@@ -25,9 +25,10 @@
         "6bb8cdc1-8117-49de-a82a-c5d1b9b83190": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_Lockup_2_f4e1a570-3c1e-41cf-8ef0-14b7f317bca6.png",
+            "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png",
             "image_pos": "left",
-            "heading": "<p>Sierra Leone is, sadly, the poorest country  in the world.<\/p>",
+            "shade": "shade_1",
+            "heading": "<p>Sierra Leone is, sadly, the poorest country in the world.<\/p>",
             "subheading": "about our mission",
             "desc": "<p>In 2007 Karen and I took a 2 week trip to Sierra Leone in support of our church’s missionary family living there. This experience changed our lives forever. Before leaving, I asked our missionary what he believed to be the greatest need in Sierra Leone. His answer came quickly...water. We decided to get involved with Africa Oasis Project.<\/p>"
           }
@@ -35,8 +36,9 @@
         "6d55c4c5-de84-482f-98ca-268a49cdbbbd": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_Lockup_2_f4e1a570-3c1e-41cf-8ef0-14b7f317bca6.png",
+            "image": "shopify:\/\/shop_images\/africa-1_460x305_crop_center_2x_b9cfbbb9-b607-46e2-9cfb-79098516b7a1.png",
             "image_pos": "right",
+            "shade": "shade_2",
             "heading": "<p>Each well serves around 2,000 people.<\/p>",
             "subheading": "What it costs",
             "desc": "<p>That means it costs only about $3.50 to provide clean water for 20 years. A small donation of just $1 or $2, the cost of a single bottle of water, seems like such a small sacrifice but it truly makes a difference in our world.<\/p>"
