@@ -1,10 +1,10 @@
 <div>
    {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 
+   <script>var reorder_line_items = [];</script>
    {% for line_item in order.line_items %}
       {% unless line_item.variant_id == blank %}
          {% assign reorder = true %}
-         <script>var reorder_line_items = [];</script>
          <script>reorder_line_items.push({ quantity: {{ line_item.quantity | json }}, variant_id: {{ line_item.variant_id | json }} });</script>
       {% endunless %}
    {% endfor %}

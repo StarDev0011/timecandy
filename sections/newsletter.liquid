@@ -1,8 +1,15 @@
 {% case section.settings.style %}
   {% when 'old' %}
     {{ 'section-newsletter--old.min.css' | asset_url | stylesheet_tag }} 
-    {{ 'newsletter-checker.js' | asset_url | script_tag }} 
+     
+    <script src="{{ 'newsletter-checker.js' | asset_url }}" defer></script>
+    
     {% assign background = 'background-light-blue' %}   
+  {% when 'new' %}
+    {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }} 
+    {{ 'section-newsletter--new.min.css' | asset_url | stylesheet_tag }} 
+      
+    <script src="{{ 'newsletter-checker.js' | asset_url }}" defer></script>
   {% else %}
     {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}  
     {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
@@ -27,6 +34,11 @@
 <div class="newsletter center
   {% if section.settings.style != "default" %}newsletter--{{ section.settings.style }}{% endif %}
   {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
+  
+  {% if section.settings.style == 'new' %}
+    {% render 'background-image-wave', class: 'flip' %}
+  {% endif %}
+
   <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} {{ background }} content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -91,6 +103,8 @@
               {%- endif -%}
             {% endform %}
           </div>
+        {% when 'button' %}
+          <a href="{{ block.settings.btn_link }}" class="primary-btn">{{ block.settings.btn_text }}</a>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -114,6 +128,10 @@
         {
           "value": "old",
           "label": "Old style"
+        },
+        {
+          "value": "new",
+          "label": "New style"
         }
       ],
       "default": "default"
@@ -239,6 +257,24 @@
           "label": "Button text",
           "default": "Sign up",
           "info": "Only available in Old style."
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "btn_text",
+          "type": "text",
+          "label": "Button text",
+          "default": "read the newsletter"
+        },
+        {
+          "id": "btn_link",
+          "type": "url",
+          "label": "Button link"
         }
       ]
     },

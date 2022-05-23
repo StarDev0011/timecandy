@@ -1,0 +1,89 @@
+{{ 'section-custom-page-content.min.css' | asset_url | stylesheet_tag }}
+
+{% assign background_style = section.settings.background_style %}
+
+<section class="custom-page-content-section {% if background_style == 'wave' %}custom-page-content-section--wave{% endif%}" id="Section{{ section.id }}"
+   {% if background_style == 'solid-color' %}style="background-color: {{ section.settings.background_color }}"{% endif %}
+>
+   {% if background_style == 'wave' %}
+      {% render 'background-image-wave' %}
+   {% endif %}
+   
+   <div class="content-wrapper">
+      <div class="custom-page-content">     
+         <div class="custom-page-content__content">
+            {{ section.settings.content }}
+         </div>
+      </div>
+   </div>
+</section>
+
+<style>
+   #Section{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | escape }};
+      padding-bottom: {{ section.settings.padding_bottom | escape }};
+   }
+</style>
+
+{% schema %}
+   {
+      "name": "Custom page content 2",
+      "settings": [
+         {
+            "type": "header",
+            "content": "Content"
+         },   
+         {
+            "id": "content",
+            "type": "html",
+            "label": "Content"
+         },
+         {
+            "type": "header",
+            "content": "background"
+         },
+         {
+            "id": "background_style",
+            "type": "select",
+            "label": "Background style",
+            "options": [
+               {
+                  "value": "solid-color",
+                  "label": "Solid color"
+               },
+               {
+                  "value": "wave",
+                  "label": "Wave"
+               }
+            ]
+         },
+         {
+            "id": "background_color",
+            "type": "color",
+            "label": "Background color",
+            "default": "#fff"
+         },
+         {
+            "type": "header",
+            "content": "Spacing"
+         },
+         {
+            "id": "padding_top",
+            "type": "text",
+            "label": "Padding top",
+            "default": "1.5em"
+         },
+         {
+            "id": "padding_bottom",
+            "type": "text",
+            "label": "Padding bottom",
+            "default": "1.5em"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Custom page content 2"
+         }
+      ]
+   }
+{% endschema %}

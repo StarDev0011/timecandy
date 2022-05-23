@@ -1,33 +1,55 @@
 {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-donate-now.min.css' | asset_url | stylesheet_tag }}
 
-<section class="donate-now-section background-medium-blue">
-   <div class="grid">
-      <div class="donate-now__text
-         grid__item
-         small--ten-twelfths
-         small--push-one-twelfth
-         medium-up--five-twelfths 
-         medium-up--push-three-twelfths">
-         {{ section.settings.desc }}
-      </div>
+<section class="donate-now-section background-teal">
+   <div class="content-wrapper">
+      {% if section.settings.subheading %}
+         <h3 class="donate-now__subheading">{{ section.settings.subheading }}</h3>
+      {% endif %}
 
-      <div class="grid__item
-         small--ten-twelfths
-         small--push-one-twelfth
-         medium-up--two-twelfths
-         medium-up--push-three-twelfths">
-         <a class="primary-btn btn--wide" href="{{ section.settings.btn_link }}">
+      {% if section.settings.heading %}
+         <h2 class="donate-now__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.desc %}
+         <div class="donate-now__desc">{{ section.settings.desc }}</div>  
+      {% endif %}
+
+      {% if section.settings.btn_text %}
+         <a class="primary-btn" href="{{ section.settings.btn_link }}">
             {{ section.settings.btn_text }}
          </a>
-      </div>
+      {% endif %}
    </div>
 </section>
+
+<style>
+   .donate-now-section {
+      background-image: url({{ 'dots-background-water-wells.svg' | asset_url }});
+   }
+   @media (max-width: 989px) {
+      .donate-now-section {
+         background-image: url({{ 'dots-background-water-wells-mobile.svg' | asset_url }});
+      }
+   }
+</style>
 
 {% schema %}
    {
       "name": "Donate now",
       "settings": [
+         {
+            "id": "heading",
+            "type": "richtext",
+            "label": "Heading",
+            "default": "<p>For just the cost of a bottleof water, you can make a difference.</p>"
+         },
+         {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading",
+            "default": "Water wells for africa"
+         },
          {
             "id": "desc",
             "type": "richtext",
