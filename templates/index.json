@@ -183,7 +183,7 @@
       "settings": {
         "heading": "Recommended for you",
         "color_bg": "#e4f1f5",
-        "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 0.000104212L2.47755e-05 -2.16771e-05L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 0.000104212Z\" fill=\"#E4F1F5\"><\/path> <\/svg>",
+        "svg_bg_bottom": "",
         "padding_top": 60,
         "padding_bottom": 0
       }
