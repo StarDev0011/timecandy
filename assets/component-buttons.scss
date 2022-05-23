@@ -1,5 +1,9 @@
 .primary-btn {
+	--button-default-color: #ac1229;
+	--button-hover-color: #7f161b;
+
 	background-color: var(--button-default-color);
+	border-radius: 32px;
 	color: white;
 	cursor: pointer;
 	appearance: none;
@@ -7,9 +11,9 @@
 	font-weight: 100;
 	text-transform: uppercase;
 	border: 0;
-	border-radius: 3px;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 15px;
+	line-height: 24px;
 	letter-spacing: 1px;
 	margin: 10px 0;
 	padding: 14px;
@@ -49,10 +53,11 @@
 	height: max-content;
 	white-space: normal;
 
-	// &:hover {
-	// 	background-color: var(--button-hover-color);
-	// 	color: white;
-	// }
+	&:hover {
+		background-color: var(--button-hover-color);
+		border-color: var(--button-hover-color);
+		color: white;
+	}
 }
 
 .btn--wide {
