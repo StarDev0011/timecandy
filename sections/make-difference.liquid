@@ -1,4 +1,3 @@
-{{ 'component-image-text-list.css' | asset_url | stylesheet_tag }}
 {{ 'section-make-difference.min.css' | asset_url | stylesheet_tag }}
 
 <div class="make-difference-section">
@@ -6,10 +5,11 @@
       <h2 class="make-difference__title">{{ section.settings.heading }}</h2>
       <div class="make-difference__content">
          {% for block in section.blocks %}
-            <div class="make-difference__row image-text-list__{{ block.settings.shade }}">
-               <div class="image-with-text__media make-difference__image make-difference__image--{{ block.settings.image_pos }}">
+            <div class="make-difference__row">
+               <div class="make-difference__image 
+                  {% if block.settings.image_pos == 'right' %}make-difference__image--right{% endif %}">
                   {% assign image = block.settings.image %}
-                  <img src="{{ image | image_url }}" alt="{{ image.alt }}" class="image-text-list__img"
+                  <img src="{{ image | image_url }}" alt="{{ image.alt }}"
                      loading="lazy" width="{{ image.width }}" height="auto" />
                </div>
    
@@ -58,26 +58,6 @@
                         "value": "right",
                         "label": "Right"
                      }
-                  ]
-               },
-               {
-                  "type": "radio",
-                  "id": "shade",
-                  "label": "Shade",
-                  "default": "shade_1",
-                  "options": [
-                    {
-                      "value": "shade_1",
-                      "label": "Shade 1"
-                    },
-                    {
-                      "value": "shade_2",
-                      "label": "Shade 2"
-                    },
-                    {
-                      "value": "shade_3",
-                      "label": "Shade 3"
-                    }
                   ]
                },
                {
