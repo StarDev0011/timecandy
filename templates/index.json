@@ -242,6 +242,60 @@
         "column_3": ""
       }
     },
+    "16533557769356a59b": {
+      "type": "image-with-text-3",
+      "blocks": {
+        "a292526d-1357-45b6-9b0b-9cd32ae10f3f": {
+          "type": "caption",
+          "settings": {
+            "caption": "Water Wells for Africa"
+          }
+        },
+        "165335577618ba7b34-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>We’re making a difference in Sierra Leone and so can you!<\/p>"
+          }
+        },
+        "165335577618ba7b34-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A small donation of just $1 or $2, the cost of a single bottle of water, seems like such a small sacrifice but it truly makes a difference in our world.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "165335577618ba7b34-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Donate Now",
+            "button_link": "shopify:\/\/products\/water-wells-donation"
+          }
+        }
+      },
+      "block_order": [
+        "a292526d-1357-45b6-9b0b-9cd32ae10f3f",
+        "165335577618ba7b34-0",
+        "165335577618ba7b34-1",
+        "165335577618ba7b34-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/home-baner-1.png",
+        "image_width": 310,
+        "box_text_width": 455,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -321,6 +375,7 @@
     "featured_product",
     "image_text_list",
     "1648000290d9b3ee64",
+    "16533557769356a59b",
     "featured_collection",
     "testimonial"
   ]
