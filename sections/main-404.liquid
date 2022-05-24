@@ -1,25 +1,24 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
+{{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-404.min.css' | asset_url | stylesheet_tag }}
 
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
-</style>
+<div class="page-404-template page-width">
+  <div class="page-404-template__text">
+    <h1>DOH...</h1>
+    <h3>THE PAGE YOU ARE LOOKING FOR CANNOT BE FOUND.</h3>
+    <ul>
+      <li>If you typed the URL directly, check for spelling errors</li>
+      <li>If you clicked on a link to get here, we may have moved the page</li>
+      <li>Feel free to try the search box above to find an item</li>
+    </ul>
 
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+    <a href="{{ routes.all_products_collection_url }}" class="primary-btn">
+      {{ 'general.continue_shopping' | t }}
+    </a>
+  </div>
+
+  <div class="page-404-template__image">
+    <img src="{{ '404-image.png' | asset_img_url: '500x' }}" loading="lazy" width="auto" height="auto">
+  </div>
 </div>
 
 <script type="searchspring/personalized-recommendations" profile="404">
