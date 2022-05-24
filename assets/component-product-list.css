@@ -349,6 +349,7 @@ img {
   color: var(--color-label-1);
 }
 
+
 .card-product-label__custom-seccond {
   background-color: var(--backgound-label-2);
   color: var(--color-label-2);
@@ -395,6 +396,14 @@ img {
 .card-product-label__item::after {
   border-bottom: 17.5px solid #E2E43D;
   bottom: 0;
+}
+
+.card-product-label__custom-first::before {
+  border-top-color: var(--backgound-label-1);
+}
+
+.card-product-label__custom-first::after {
+  border-bottom-color: var(--backgound-label-1);
 }
 
 .card-product__item:hover .card-product-label__item {
