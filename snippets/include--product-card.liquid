@@ -15,6 +15,33 @@
       assign is_size = true
     endif
   endfor
+
+  assign limited_time = false
+  assign great_gift = false
+  assign custom_label_1 = false
+  assign custom_label_2 = false
+
+  assign tags = product.tags | split: ','
+  for t in tags
+    assign tag = t | strip
+    assign tag_value = tag | handleize
+
+    if tag_value contains 'label-limited-time-offer'
+      assign limited_time = true
+    endif
+
+    if tag_value contains 'label-great-gift'
+      assign great_gift = true
+    endif
+
+    if tag_value contains 'custom-label-1'
+      assign custom_label_1 = true
+    endif
+
+    if tag_value contains 'custom-label-2'
+      assign custom_label_2 = true
+    endif
+  endfor
 %}
 
 <div class="card-product__item {{ slideItem }}">
@@ -26,17 +53,21 @@
           <div class="card-product-label__item card-product__sold-out"> {{- settings.label_soldout -}} </div>
         {% endif %}
 
-        {%- liquid assign tags = product.tags -%}
-        {% for t in tags %}
-          {% assign tag = t | strip %}
-          {% assign tag_value = tag | handleize %}
+        {% if limited_time %}
+          <div class="card-product-label__item"> {{- settings.label_limited_time -}} </div>
+        {% endif %}
 
-          {% if tag_value contains 'label-' %}
-            <div class="card-product-label__item{% if tag_value == 'label-great-gift' %} card-product-label__great-gift{% elsif tag_value == 'label-limited-time-offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
-              {{- tag | split: 'label-' -}}
-            </div>
-          {% endif %}
-        {% endfor %}
+        {% if great_gift %}
+          <div class="card-product-label__item card-product-label__great-gift"> {{- settings.label_great_gift -}} </div>
+        {% endif %}
+
+        {% if custom_label_1 %}
+          <div class="card-product-label__item card-product-label__custom-first"> {{- settings.label_custom_label_1 -}} </div>
+        {% endif %}
+
+        {% if custom_label_2 %}
+          <div class="card-product-label__item card-product-label__custom-seccond"> {{- settings.label_custom_label_2 -}} </div>
+        {% endif %}
       </div>
     </div>
   </a>

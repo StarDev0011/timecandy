@@ -327,6 +327,12 @@
         "content": "Label limited time offer"
       },
       {
+        "type": "text",
+        "id": "label_limited_time",
+        "label": "Limited Time Offer",
+        "default": "Limited Time Offer"
+      },
+      {
         "type": "color",
         "id": "bg_limit_time",
         "label": "Background color",
@@ -341,6 +347,12 @@
       {
         "type": "header",
         "content": "Great Gift"
+      },
+      {
+        "type": "text",
+        "id": "label_great_gift",
+        "label": "Great Gift",
+        "default": "Great Gift"
       },
       {
         "type": "color",
@@ -359,6 +371,12 @@
         "content": "Custom label 1"
       },
       {
+        "type": "text",
+        "id": "label_custom_label_1",
+        "label": "Custom label 1",
+        "default": "Custom label 1"
+      },
+      {
         "type": "color",
         "id": "bg_custom_label_1",
         "label": "Background color",
@@ -367,6 +385,28 @@
       {
         "type": "color",
         "id": "color_custom_label_1",
+        "label": "Color",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Custom label 2"
+      },
+      {
+        "type": "text",
+        "id": "label_custom_label_2",
+        "label": "Custom label 2",
+        "default": "Custom label 2"
+      },
+      {
+        "type": "color",
+        "id": "bg_custom_label_2",
+        "label": "Background color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_custom_label_2",
         "label": "Color",
         "default": "#fff"
       }
