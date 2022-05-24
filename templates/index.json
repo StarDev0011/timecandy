@@ -46,7 +46,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Find the <span><i>Candy You Ate as a Kid!®<\/i><\/span>"
+            "heading": "<p>Find the <strong>Candy You <br\/>Ate as a Kid!®<\/strong><\/p>"
           }
         },
         "text": {
@@ -93,15 +93,15 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Group_146.png",
+            "image": "shopify:\/\/shop_images\/Group_146_4dd61e1f-4b4f-4304-a3c1-f0b34cb47c51.png",
             "title": "Family-owned since 2000",
-            "link": ""
+            "link": "shopify:\/\/collections"
           }
         },
         "icon2": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/illustration.png",
+            "image": "shopify:\/\/shop_images\/illustration_3.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -193,29 +193,29 @@
         "padding_bottom": 0
       }
     },
-    "1648000290d9b3ee64": {
-      "type": "image-with-text",
+    "16533557769356a59b": {
+      "type": "image-with-text-3",
       "blocks": {
-        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a": {
+        "a292526d-1357-45b6-9b0b-9cd32ae10f3f": {
           "type": "caption",
           "settings": {
             "caption": "Water Wells for Africa"
           }
         },
-        "1648000290f7ac8147-0": {
+        "165335577618ba7b34-0": {
           "type": "heading",
           "settings": {
-            "heading": "We’re making a difference in Sierra Leone and so can you!"
+            "heading": "<p>We’re making a difference in Sierra Leone and so can you!<\/p>"
           }
         },
-        "1648000290f7ac8147-1": {
+        "165335577618ba7b34-1": {
           "type": "text",
           "settings": {
             "text": "<p>A small donation of just $1 or $2, the cost of a single bottle of water, seems like such a small sacrifice but it truly makes a difference in our world.<\/p>",
             "text_style": "body"
           }
         },
-        "1648000290f7ac8147-2": {
+        "165335577618ba7b34-2": {
           "type": "button",
           "settings": {
             "button_label": "Donate Now",
@@ -224,23 +224,23 @@
         }
       },
       "block_order": [
-        "63eb75be-5d42-4b9b-9b80-beae67dc2d2a",
-        "1648000290f7ac8147-0",
-        "1648000290f7ac8147-1",
-        "1648000290f7ac8147-2"
+        "a292526d-1357-45b6-9b0b-9cd32ae10f3f",
+        "165335577618ba7b34-0",
+        "165335577618ba7b34-1",
+        "165335577618ba7b34-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Image_Lockup_2.png",
-        "image_width": 485,
-        "box_text_width": 600,
+        "image": "shopify:\/\/shop_images\/home-baner-1.png",
+        "image_width": 310,
+        "box_text_width": 455,
         "layout": "image_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
         "padding_top": 90,
         "padding_bottom": 140,
-        "padding_top_mb": 80,
-        "padding_bottom_mb": 86,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
         "show_bottom": false,
         "column_1": "",
         "column_2": "",
@@ -258,7 +258,6 @@
         "svg_bg_top": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "show_view_all": true,
-        "image_ratio": "adapt",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
@@ -273,8 +272,7 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "5th-avenue-box",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
@@ -285,8 +283,7 @@
         "testimonial2": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "100-grand-bar-fun-size-laydown-bag",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
@@ -297,10 +294,9 @@
         "testimonial3": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_92.png",
-            "button_link": "#",
+            "product": "air-heads-blue-raspberry-box",
             "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
+            "content_review": "<p>When my 2 sisters and I were young<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
             "link_readmore": "#"
@@ -330,7 +326,7 @@
     "icon_with_text",
     "featured_product",
     "image_text_list",
-    "1648000290d9b3ee64",
+    "16533557769356a59b",
     "featured_collection",
     "testimonial"
   ]
