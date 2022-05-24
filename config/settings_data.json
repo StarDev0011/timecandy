@@ -391,6 +391,13 @@
                 "heading": "Info",
                 "menu": "footer"
               }
+            },
+            "footer-2": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Info",
+                "menu": "footer"
+              }
             }
           },
           "block_order": [
