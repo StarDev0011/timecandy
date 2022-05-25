@@ -24,6 +24,7 @@ h2 {
 	font-weight: 400;
 	font-size: 48px;
 	line-height: 59px;
+	margin-top: revert;
 
 	@include mq("medium") {
 		font-size: 24px;
@@ -117,4 +118,10 @@ a {
 .page-placeholder {
 	width: 52.5rem;
 	height: 52.5rem;
+}
+
+.rte__table-wrapper {
+	max-width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
