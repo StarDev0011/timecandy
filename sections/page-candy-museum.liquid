@@ -1,0 +1,74 @@
+{{ 'page-candy-museum.css' | asset_url | stylesheet_tag }}
+
+<div class="page-candy-museum page-width">
+  <div class="page-candy-museum_heading">
+    <h1>{{ page.title }}</h1>
+    <p>
+      {{ page.content }}
+    </p>
+  </div>
+  <div class="page-candy-museum-grid">
+    {% for block in section.blocks limit: section.blocks.size %}
+      <div class="page-candy-museum-grid-item">
+        {% if block.settings.main_image != blank%}
+          <a class="unstyled" href="{{block.settings.cta_url}}">
+            <div class="page-candy-museum__item">
+              <div class="page-candy-museum__image">
+                <img class="lazyload" src="{{ block.settings.main_image | img_url: '225x190', scale: 2 }}" data-src="{{ block.settings.main_image | img_url: '225x190', scale: 2 }}" alt="{% if block.settings.main_image.alt != blank %}{{  block.settings.main_image.alt }}{% else %}An old image of {{block.settings.candy_title}}{% endif %}">
+                <img class="lazyload page-candy-museum__image-hovered" src="{{ block.settings.hover_image | img_url: '225x190', scale: 2 }}" data-src="{{ block.settings.hover_image | img_url: '225x190', scale: 2 }}" alt="{% if block.settings.hover_image.alt != blank %}{{  block.settings.hover_image.alt }}{% else %}An old image of {{block.settings.candy_title}}{% endif %}">
+              </div>
+              <h3 class="text-center color-dark-grey">{{block.settings.candy_title}}</h3>
+            </div>
+          </a>
+        {% else %}
+          <a class="unstyled" href="{{block.settings.cta_url}}">
+            <div class="page-candy-museum__item">
+              <div class="page-candy-museum__image">
+                {{ 'image' | placeholder_svg_tag: 'lazyload' }}
+              </div>
+              <h3 class="text-center color-dark-grey">{{block.settings.candy_title}}</h3>
+            </div>
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+  
+  {% schema %}
+    {
+      "name": "Candy Museum",
+      "blocks": [
+        {
+          "type": "candy",
+          "name": "Candy Item",
+          "settings": [
+            {
+              "type": "text",
+              "id": "candy_title",
+              "label": "Candy Title",
+              "default": "Candy"
+            },
+            {
+              "type": "image_picker",
+              "id": "main_image",
+              "label": "Main Candy Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "hover_image",
+              "label": "On Hover Image",
+              "info": "Image shows when user hovers over main candy image."
+            },
+            {
+              "type": "url",
+              "id": "cta_url",
+              "label": "Link",
+              "info": "The url the image should lead to when clicked."
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}
+  

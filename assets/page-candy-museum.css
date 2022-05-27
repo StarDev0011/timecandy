@@ -1,0 +1,102 @@
+.page-candy-museum_heading{
+  width: 75%;
+  margin: auto;
+}
+
+.page-candy-museum_heading h1 {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 27px;
+}
+
+p{
+  font-size: 16px;
+  line-height: 27px;
+}
+
+@media (max-width: 824px) {
+  .page-candy-museum_heading{
+    width: 100%;
+  }
+}
+
+@media (min-width: 825px) and (max-width: 1099px) {
+  .page-candy-museum_heading{
+    width: 60%;
+  }
+}
+
+.page-candy-museum__item{
+  padding: 15px;
+}
+
+.page-candy-museum .page-candy-museum-grid {
+  display: grid;
+  grid-template-columns: 225px;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 825px) {
+  .page-candy-museum .page-candy-museum-grid {
+    justify-content: space-between;
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 825px) and (max-width: 1099px) {
+  .page-candy-museum .page-candy-museum-grid {
+    grid-template-columns: repeat(2, 225px);
+    justify-content: space-between;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .page-candy-museum .page-candy-museum-grid {
+    grid-template-columns: repeat(4, 225px);
+  }
+}
+
+.page-candy-museum__image {
+  position: relative;
+}
+
+.page-candy-museum__image:hover img,
+.page-candy-museum__image:focus img {
+  opacity: 0;
+}
+
+.page-candy-museum__image:hover .page-candy-museum__image-hovered {
+  opacity: 1;
+}
+
+.transition--all {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: all;
+}
+
+img, svg {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: all;
+  width: 100%;
+}
+
+svg{
+  border: 1px solid #000;
+}
+
+.page-candy-museum__image-hovered {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
