@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "main": {
+        "type": "page-candy-museum",
+        "settings": {}
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  

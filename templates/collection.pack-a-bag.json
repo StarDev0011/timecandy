@@ -1,0 +1,12 @@
+{
+    "sections": {
+      "product-grid": {
+        "type": "collection-pack-a-bag",
+        "settings": {}
+      }
+    },
+    "order": [
+      "product-grid"
+    ]
+  }
+  
