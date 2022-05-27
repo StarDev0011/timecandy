@@ -588,3 +588,55 @@
     margin-bottom: 12px;
   }
 }
+
+/* COLLECTION PACK A BAG */
+
+.collection-pack-a-bag{
+  position: relative;
+}
+
+.packabag-sidebar {
+  position: fixed;
+  width: 170px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+#drop-zone {
+  background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKG_side.png?v=1611110…) no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 191px;
+  cursor: pointer;
+}
+
+.packabag-sidebar__logo {
+  max-width: 135px;
+  margin-left: 5px;
+  padding: 30px 0 10px;
+}
+
+.packabag-sidebar__bag {
+  background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BAG.png?v=1315517…) no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  position: relative;
+  margin-left: 26px;
+  margin-top: -30px;
+}
+
+.packabag-sidebar__count {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-family: Trend Sans One,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+}
