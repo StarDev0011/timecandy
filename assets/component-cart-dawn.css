@@ -76,7 +76,7 @@
 
 .mini-cart__list {
   padding: 20px 15px;
-  max-height: calc(100vh - 400px);
+  max-height: calc(100vh - 420px);
   overflow: auto;
 }
 

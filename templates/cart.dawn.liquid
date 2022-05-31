@@ -147,6 +147,15 @@
           <div class="mini-cart-bottom__text"> Subtotal ({{ cart.item_count }} items) </div>
           <div class="mini-cart-bottom__total-price"> {{ cart.total_price | money }} </div>
         </div>
+        <div class="mini-cart__field shipping-insurance">
+          <input type="checkbox" id="shipping-insurance" class="gift-include  js-shipping-insurance hidden">
+          <label class="mini-cart__label" for="shipping-insurance">
+            <span class="mini-cart__gift-add">Add</span>
+            <span class="mini-cart__gift-text">
+              Include shipping protection for only <strong id="insurance-cost"></strong>  extra. </span>
+            </span>
+          </label>
+        </div>
         <div class="mini-cart-bottom__item">
           <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
           {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
@@ -160,13 +169,13 @@
             endif
           -%}
           {% if settings.enable_gift %}
-          <div class="mini-cart__field">
-            <input type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message hidden"{% if is_attributes %} checked{% endif %}>
-            <label class="mini-cart__label" for="GiftMessage">
-              <span class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</span>
-              <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
-            </label>
-          </div>
+            <div class="mini-cart__field">
+              <input type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message hidden"{% if is_attributes %} checked{% endif %}>
+              <label class="mini-cart__label" for="GiftMessage">
+                <span class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</span>
+                <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
+              </label>
+            </div>
           {% endif %}
           <div class="mini-cart__field">
             {% assign isInclude = false %}
