@@ -73,9 +73,17 @@
 }
 
 .cart-item__name {
-  color: rgb(var(--color-foreground));
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-family: var(--my-font);
   text-decoration: none;
+  margin-bottom: 5px;
+  padding-right: 30px;
   display: block;
+  text-decoration: none;
 }
 
 .cart-item__name:hover {
