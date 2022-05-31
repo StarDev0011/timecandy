@@ -206,6 +206,11 @@
                           <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
                           {% render 'icon-minus' %}
                         </button>
+                        <button type="button" class="quantity__button no-js-hidden" name="minus">
+                          <svg width="21" height="3" viewBox="0 0 21 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.2852 1.51084C20.2852 2.05185 19.8466 2.49043 19.3056 2.49043H1.67295C1.13194 2.49043 0.693359 2.05185 0.693359 1.51084C0.693359 0.969828 1.13194 0.53125 1.67295 0.53125H19.3056C19.8466 0.53125 20.2852 0.969828 20.2852 1.51084Z" fill="white"></path>
+                          </svg>
+                        </button>                        
                         <input class="quantity__input"
                           type="number"
                           name="updates[]"
@@ -219,6 +224,11 @@
                           <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
                           {% render 'icon-plus' %}
                         </button>
+                        <button type="button" class="quantity__button no-js-hidden" name="plus">
+                          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.2852 12.5108C22.2852 13.0518 21.8466 13.4904 21.3056 13.4904H13.4689V21.3271C13.4689 21.8681 13.0303 22.3067 12.4893 22.3067C11.9483 22.3067 11.5097 21.8681 11.5097 21.3271V13.4904H3.67295C3.13194 13.4904 2.69336 13.0518 2.69336 12.5108C2.69336 11.9697 3.13194 11.5312 3.67295 11.5312H11.5097V3.69444C11.5097 3.15342 11.9483 2.71484 12.4893 2.71484C13.0303 2.71484 13.4689 3.15342 13.4689 3.69444V11.5312H21.3056C21.8466 11.5312 22.2852 11.9697 22.2852 12.5108Z" fill="white"></path>
+                          </svg>
+                        </button>                        
                       </quantity-input>
 
                       <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
