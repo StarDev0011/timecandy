@@ -2,6 +2,20 @@
   "sections": {
     "main": {
       "type": "page-candy-museum",
+      "blocks": {
+        "4636500e-73d1-494d-b6a1-ad359cc54daa": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "baby ruth",
+            "main_image": "shopify:\/\/shop_images\/museum-image_225x190_2x_e3b1da07-8378-4c59-b1cb-d89a2580cce1.webp",
+            "hover_image": "shopify:\/\/shop_images\/museum-image-hoverd_225x190_2x_abcd9e38-2054-4e40-bce5-1dcbe3629d40.webp",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "4636500e-73d1-494d-b6a1-ad359cc54daa"
+      ],
       "settings": {
       }
     }
