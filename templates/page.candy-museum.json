@@ -250,6 +250,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_29818b0a-e121-4341-9631-68690a302c13.webp",
+            "hover_image": "shopify:\/\/shop_images\/powerHouse-over_225x190_2x_9f74ca29-db23-4d67-a914-a32db0098500.webp",
             "cta_url": ""
           }
         },
@@ -257,6 +259,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_5a2efc5d-a0cc-48aa-85a9-e17bfba26345.webp",
+            "hover_image": "shopify:\/\/shop_images\/salted-nut-roll-over_225x190_2x_1ca1097f-1ff6-4bf6-be67-6b9407e829cf.jpg",
             "cta_url": ""
           }
         },
@@ -264,6 +268,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_84bce747-0b64-4dc8-a0a9-984d86ad0885.webp",
+            "hover_image": "shopify:\/\/shop_images\/sevenUp-over_225x190_2x_8299d94c-504e-43e0-8c94-7f9472c805c7.webp",
             "cta_url": ""
           }
         },
@@ -271,6 +277,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_8cb8ebe7-a5d1-4a46-bd9a-e8989e8bb43d.webp",
+            "hover_image": "shopify:\/\/shop_images\/skyBar-over_225x190_2x_0f412374-ec7a-490c-b8f2-770f6ee3a84f.jpg",
             "cta_url": ""
           }
         },
@@ -278,6 +286,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_412bc3af-e0dd-44ce-8feb-53f29beb2d77.webp",
+            "hover_image": "shopify:\/\/shop_images\/snickers-over_225x190_2x_7700faf8-547e-4a23-a5c4-e7580cac4bed.webp",
             "cta_url": ""
           }
         },
@@ -285,6 +295,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_a2326cb3-f78f-4d6f-8ea9-ccc2f0ca17b5.webp",
+            "hover_image": "shopify:\/\/shop_images\/tootsieRollPops-over_225x190_2x_29b8f219-9c62-4d3b-8f2d-8ba29859eb62.webp",
             "cta_url": ""
           }
         },
@@ -292,6 +304,26 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_a65df0d8-c605-4235-acc5-d081b15bde0f.webp",
+            "hover_image": "shopify:\/\/shop_images\/valomilk-candy-cup-over_225x190_2x_40ac575f-acc8-4089-8018-8ebf4c2a20b7.jpg",
+            "cta_url": ""
+          }
+        },
+        "7ec694c8-d03a-4cf2-b3f6-42b3b7913f16": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_0f7917d8-36f2-4e6e-ab6c-c085a4b5840b.webp",
+            "hover_image": "shopify:\/\/shop_images\/zagnut-over_225x190_2x_12d3968a-c6b0-43eb-9709-84352ca4184d.jpg",
+            "cta_url": ""
+          }
+        },
+        "f600f27c-d038-4228-9ab4-b20725088461": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_0aef3fe2-8f99-47de-9738-0f96c6791ca3.webp",
+            "hover_image": "shopify:\/\/shop_images\/zero-over_225x190_2x_60e02412-0cf2-44d9-ad71-4973f4205081.jpg",
             "cta_url": ""
           }
         }
@@ -330,7 +362,9 @@
         "55e79e83-0675-4a89-9eff-45eacdb2917a",
         "07a12626-f4f1-41b1-a9fa-60ac6a934bfb",
         "7c28eeb0-0459-446f-bf3c-8030efc4040b",
-        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8"
+        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8",
+        "7ec694c8-d03a-4cf2-b3f6-42b3b7913f16",
+        "f600f27c-d038-4228-9ab4-b20725088461"
       ],
       "settings": {
       }
