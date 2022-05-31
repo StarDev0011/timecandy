@@ -178,6 +178,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_6641d169-a6d0-4d0f-8d3d-b695f9d487f6.webp",
             "hover_image": "shopify:\/\/shop_images\/goldenberg-over_225x190_2x_2b74ed94-d4b9-42bb-ae67-a202991a427a.jpg",
             "cta_url": ""
           }
@@ -186,6 +187,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_beb623a9-dd6b-4237-8637-51db851e09d8.webp",
+            "hover_image": "shopify:\/\/shop_images\/download_a5148963-26de-442d-aebd-2e20444ec6f8.jpg",
             "cta_url": ""
           }
         },
