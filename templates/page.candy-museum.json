@@ -97,6 +97,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_5ea47362-0abb-4871-a5ea-2118a50b6795.webp",
+            "hover_image": "shopify:\/\/shop_images\/chicken-bones-over_1_225x190_2x_96afd8ef-c0ea-4614-93f8-43cc725a4d75.webp",
             "cta_url": ""
           }
         },
@@ -104,6 +106,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "hover_image": "shopify:\/\/shop_images\/clark-over_225x190_2x_15026143-60af-407f-944f-28cb6b39f4e5.jpg",
             "cta_url": ""
           }
         },
@@ -111,6 +114,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_225x190_2x_b63f0d8d-b99d-478a-952c-f82f6b93130c.webp",
             "cta_url": ""
           }
         },
@@ -118,6 +122,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_e6a16853-ad88-4bf4-9839-adfd15dc18fe.webp",
+            "hover_image": "shopify:\/\/shop_images\/denverSandwich-over_225x190_2x_4eeaedc0-cb3a-4bcc-99a7-2544e395c9b6.webp",
             "cta_url": ""
           }
         },
