@@ -1,12 +1,413 @@
 {
-    "sections": {
-      "main": {
-        "type": "page-candy-museum",
-        "settings": {}
+  "sections": {
+    "main": {
+      "type": "page-candy-museum",
+      "blocks": {
+        "4636500e-73d1-494d-b6a1-ad359cc54daa": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "baby ruth",
+            "main_image": "shopify:\/\/shop_images\/museum-image_225x190_2x_e3b1da07-8378-4c59-b1cb-d89a2580cce1.webp",
+            "hover_image": "shopify:\/\/shop_images\/museum-image-hoverd_225x190_2x_abcd9e38-2054-4e40-bce5-1dcbe3629d40.webp",
+            "cta_url": ""
+          }
+        },
+        "882153cc-ad3f-49e7-9a53-ee527ef75b23": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "BIT-O-HONEY",
+            "main_image": "shopify:\/\/shop_images\/bitOHoney-over_1_225x190_2x_7ded3fa5-6c12-4841-8296-d35d380f4583.jpg",
+            "hover_image": "shopify:\/\/shop_images\/download.webp",
+            "cta_url": ""
+          }
+        },
+        "b1e2873d-46f6-4020-b2fe-cb4f4e549282": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "BIG TIME",
+            "main_image": "shopify:\/\/shop_images\/download_fded02b4-70ec-422d-9613-dd4da4e2f907.webp",
+            "hover_image": "shopify:\/\/shop_images\/big-time-candy-bar-over_1_225x190_2x_d40daf32-b89c-4819-affa-b74f0977fd09.jpg",
+            "cta_url": ""
+          }
+        },
+        "30839829-22a7-45c8-9c85-e32350982f9c": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "bun",
+            "main_image": "shopify:\/\/shop_images\/download_4ab8d16f-5911-488e-b475-94d2177e7d28.webp",
+            "hover_image": "shopify:\/\/shop_images\/bun-over_1_225x190_2x_51dfd5fb-50db-46c1-a1a1-a81a30132dc8.webp",
+            "cta_url": ""
+          }
+        },
+        "b33fdb98-93c2-4535-8329-d60cc14f26fc": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "BUTTERFINGER",
+            "main_image": "shopify:\/\/shop_images\/download_a9c5050a-0d58-4cbe-a8a8-5a52ad29051b.webp",
+            "hover_image": "shopify:\/\/shop_images\/butterfinger-over_1_225x190_2x_e108e3bb-27be-4236-8f84-7bf213178949.jpg",
+            "cta_url": ""
+          }
+        },
+        "f9c6981c-185f-4e79-b440-bad4e78dcce8": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "BUTTER NUT",
+            "main_image": "shopify:\/\/shop_images\/download_d1c07783-f0a8-4a52-b2fc-4ca066f1b3e2.webp",
+            "hover_image": "shopify:\/\/shop_images\/butter-nut-candy-bar-over_1_225x190_2x_be1df3f8-a2a3-4f33-8fd3-faa69cc70419.jpg",
+            "cta_url": ""
+          }
+        },
+        "9fb77383-6262-4e0d-90ae-890e873c9d5c": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CARAVELLE",
+            "main_image": "shopify:\/\/shop_images\/download_e7368e2f-fd96-44e8-8383-a621b4e0c550.webp",
+            "hover_image": "shopify:\/\/shop_images\/caravelle-candy-bar-over_1_225x190_2x_bf227bba-3f66-4849-8a3c-66056733eb95.webp",
+            "cta_url": ""
+          }
+        },
+        "63b7f897-a299-44b6-a7ad-a8e04833fd31": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CANDY CIGARETTES",
+            "main_image": "shopify:\/\/shop_images\/download_9e717110-a43a-4c14-b414-9a3add8029a9.webp",
+            "hover_image": "shopify:\/\/shop_images\/candyCigarettes-over_1_225x190_2x_1eede46a-9a0d-4a7f-a12b-874292c5d969.webp",
+            "cta_url": ""
+          }
+        },
+        "d8dc6a88-a284-4bd3-8ea3-e34fd4179ade": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CHARLESTON CHEW",
+            "main_image": "shopify:\/\/shop_images\/download_fc202a00-15bd-4d9d-8e6d-99bcdaf3e46f.webp",
+            "hover_image": "shopify:\/\/shop_images\/charlestonChew-over_1_225x190_2x_b6ad90ba-e102-458b-80d7-e3873367bf81.jpg",
+            "cta_url": ""
+          }
+        },
+        "f80bb5fe-30bd-46b8-8b07-24fd81b56d1e": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CHARMS POP",
+            "main_image": "shopify:\/\/shop_images\/download_bee7ab2b-26d6-4fa8-9235-226ec990aa72.webp",
+            "hover_image": "shopify:\/\/shop_images\/charmsPop-over_1_225x190_2x_a88f69af-16c2-4389-bb4f-e647837cb37d.jpg",
+            "cta_url": ""
+          }
+        },
+        "77589bb3-f43b-449d-9084-ccc8228d8e88": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CHICKEN BONES",
+            "main_image": "shopify:\/\/shop_images\/download_31132eb3-ca1b-486b-b8d7-38eed36a90a5.webp",
+            "hover_image": "shopify:\/\/shop_images\/chicken-bones-over_1_225x190_2x_96afd8ef-c0ea-4614-93f8-43cc725a4d75.webp",
+            "cta_url": ""
+          }
+        },
+        "4de71f2a-18e0-4db7-8320-23478f7f363d": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CHICKEN DINNER",
+            "main_image": "shopify:\/\/shop_images\/download_6e3380df-637b-42ae-8184-e029a16dc1e2.webp",
+            "hover_image": "shopify:\/\/shop_images\/chicken-dinner-candy-bar-over_1_225x190_2x_4dc83b65-9dfc-4753-bd48-2b0d387bd385.jpg",
+            "cta_url": ""
+          }
+        },
+        "9b879937-4ea8-473f-8b8a-35f011afad6b": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CHICK-O-STICK",
+            "main_image": "shopify:\/\/shop_images\/download_e2e3f864-a104-44e4-a1a4-22b1758c8834.webp",
+            "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_225x190_2x_b63f0d8d-b99d-478a-952c-f82f6b93130c.webp",
+            "cta_url": ""
+          }
+        },
+        "9a562ec7-41c7-40ee-96b3-afcc959be225": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CLARK",
+            "main_image": "shopify:\/\/shop_images\/download_e6a16853-ad88-4bf4-9839-adfd15dc18fe.webp",
+            "hover_image": "shopify:\/\/shop_images\/denverSandwich-over_225x190_2x_4eeaedc0-cb3a-4bcc-99a7-2544e395c9b6.webp",
+            "cta_url": ""
+          }
+        },
+        "673cb20a-a396-454b-a9be-a9b148003da6": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "CUP-O-GOLD",
+            "main_image": "shopify:\/\/shop_images\/download_82cbb8d3-380b-45f5-bd51-d830fbd34fc5.webp",
+            "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_225x190_2x_4ff8f461-5b00-43e9-a865-cbab8cb9c21d.webp",
+            "cta_url": ""
+          }
+        },
+        "709be1cf-af79-4f53-a4e0-3e8f57cdef7a": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "DENVER SANDWHICH",
+            "main_image": "shopify:\/\/shop_images\/download_8dc3e630-67a1-492e-a109-1171d4d7aae4.webp",
+            "hover_image": "shopify:\/\/shop_images\/denverSandwich-over_225x190_2x_28539254-2d87-46a2-ad5e-2d1e92f20209.webp",
+            "cta_url": ""
+          }
+        },
+        "94bf8292-bc92-451e-ac50-68d0c42abace": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "DUM DUM POPS",
+            "main_image": "shopify:\/\/shop_images\/download_7d468f67-420d-4f0a-9e44-edb575a9f9e3.webp",
+            "hover_image": "shopify:\/\/shop_images\/dumDumPops-over_225x190_2x_3dadaffe-c8cb-46db-a64b-429e4d236b8a.jpg",
+            "cta_url": ""
+          }
+        },
+        "03b205cb-ba9b-48e6-bced-19bfda923ab6": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "FIFTH AVENUE",
+            "main_image": "shopify:\/\/shop_images\/download_e8645bf7-823b-4acd-b4f7-2d410c3f9abe.webp",
+            "hover_image": "shopify:\/\/shop_images\/FifthAvenue-over_225x190_2x_f8c8f2ce-cb40-4628-92cb-092c2c332e68.jpg",
+            "cta_url": ""
+          }
+        },
+        "f113b44d-92a5-4f86-b06d-8c4f85f8c713": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "FOREVER YOURS",
+            "main_image": "shopify:\/\/shop_images\/download_4d3746fa-7d06-4f63-b2ff-c146dff53b4f.webp",
+            "hover_image": "shopify:\/\/shop_images\/foreverYours-over_225x190_2x_1caae8a5-a2d7-4ca3-adee-045824912c3a.jpg",
+            "cta_url": ""
+          }
+        },
+        "c1392dbd-b104-47a2-bc1e-fc8579644e06": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "GOLDENBERG'S PEANUT CHEWS",
+            "main_image": "shopify:\/\/shop_images\/download_6641d169-a6d0-4d0f-8d3d-b695f9d487f6.webp",
+            "hover_image": "shopify:\/\/shop_images\/goldenberg-over_225x190_2x_2b74ed94-d4b9-42bb-ae67-a202991a427a.jpg",
+            "cta_url": ""
+          }
+        },
+        "838962e1-fab4-460a-bc44-ce9c48eb1638": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "HOLLYWOOD",
+            "main_image": "shopify:\/\/shop_images\/download_beb623a9-dd6b-4237-8637-51db851e09d8.webp",
+            "hover_image": "shopify:\/\/shop_images\/download_a5148963-26de-442d-aebd-2e20444ec6f8.jpg",
+            "cta_url": ""
+          }
+        },
+        "296847dd-8631-4e16-ad6c-6ea8eaa2065f": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "KITS TAFFY",
+            "main_image": "shopify:\/\/shop_images\/download_0254031f-49e3-4d8f-bc5d-33cb7ed9d27e.webp",
+            "hover_image": "shopify:\/\/shop_images\/kits-taffy-over_225x190_2x_a5cf4bcb-4385-4039-a226-11d1f797b67e.jpg",
+            "cta_url": ""
+          }
+        },
+        "2c37eee9-4bbe-472f-b76c-feeb12a8e760": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "MILK DUDS",
+            "main_image": "shopify:\/\/shop_images\/download_abca857d-7d03-4e8d-a279-48e91424cfe3.webp",
+            "hover_image": "shopify:\/\/shop_images\/milkDuds-over_225x190_2x_fd4647b3-64f2-455e-8678-e0e5db28270f.jpg",
+            "cta_url": ""
+          }
+        },
+        "4c90b01c-b99a-4dc0-8c97-703d056c8203": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "MILKSHAKE",
+            "main_image": "shopify:\/\/shop_images\/download_8d118fb9-094e-4933-aab1-143ad8761330.webp",
+            "hover_image": "shopify:\/\/shop_images\/milkshake-over_225x190_2x_e4833e12-4817-4b80-ab2f-442b9a3db142.jpg",
+            "cta_url": ""
+          }
+        },
+        "5966505c-d873-4908-8846-a3e7a73ebc49": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "MILKY WAY",
+            "main_image": "shopify:\/\/shop_images\/download_055034ce-7793-4f53-a6fa-d14172293e42.webp",
+            "hover_image": "shopify:\/\/shop_images\/milkyWay-over_225x190_2x_343fb68d-63a5-4ec3-afe5-47a2ad5f49cf.jpg",
+            "cta_url": ""
+          }
+        },
+        "a4b0c712-bc82-4579-9e25-ad51d0768b18": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "OH HENRY",
+            "main_image": "shopify:\/\/shop_images\/download_10d9ac4b-fae3-4ac3-923b-b2f1f143c8e6.webp",
+            "hover_image": "shopify:\/\/shop_images\/oh-henry-candy-bar-over_225x190_2x_c96eb56d-b45c-4ecb-a664-4dca5053d8c3.jpg",
+            "cta_url": ""
+          }
+        },
+        "a09e1819-adb8-4047-aed9-be8b7aa93186": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "PAY DAY",
+            "main_image": "shopify:\/\/shop_images\/download_78d32577-2d6d-4aef-883a-d6ac47d494a4.webp",
+            "hover_image": "shopify:\/\/shop_images\/payday-over_225x190_2x_acb6fa07-a897-4a95-951e-daafa13bf67c.jpg",
+            "cta_url": ""
+          }
+        },
+        "2470b7f3-a3db-4cf5-8962-e22291fd2363": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "POWERHOUSE",
+            "main_image": "shopify:\/\/shop_images\/download_29818b0a-e121-4341-9631-68690a302c13.webp",
+            "hover_image": "shopify:\/\/shop_images\/powerHouse-over_225x190_2x_9f74ca29-db23-4d67-a914-a32db0098500.webp",
+            "cta_url": ""
+          }
+        },
+        "632e4636-11cd-4461-b003-0832807cc99e": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "SALTED NUT ROLLS",
+            "main_image": "shopify:\/\/shop_images\/download_5a2efc5d-a0cc-48aa-85a9-e17bfba26345.webp",
+            "hover_image": "shopify:\/\/shop_images\/salted-nut-roll-over_225x190_2x_1ca1097f-1ff6-4bf6-be67-6b9407e829cf.jpg",
+            "cta_url": ""
+          }
+        },
+        "10e85627-5102-485e-ada4-c22cb8c4b8db": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "SEVEN UP",
+            "main_image": "shopify:\/\/shop_images\/download_84bce747-0b64-4dc8-a0a9-984d86ad0885.webp",
+            "hover_image": "shopify:\/\/shop_images\/sevenUp-over_225x190_2x_8299d94c-504e-43e0-8c94-7f9472c805c7.webp",
+            "cta_url": ""
+          }
+        },
+        "55e79e83-0675-4a89-9eff-45eacdb2917a": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "SKY BAR",
+            "main_image": "shopify:\/\/shop_images\/download_8cb8ebe7-a5d1-4a46-bd9a-e8989e8bb43d.webp",
+            "hover_image": "shopify:\/\/shop_images\/skyBar-over_225x190_2x_0f412374-ec7a-490c-b8f2-770f6ee3a84f.jpg",
+            "cta_url": ""
+          }
+        },
+        "07a12626-f4f1-41b1-a9fa-60ac6a934bfb": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "SNICKERS",
+            "main_image": "shopify:\/\/shop_images\/download_412bc3af-e0dd-44ce-8feb-53f29beb2d77.webp",
+            "hover_image": "shopify:\/\/shop_images\/snickers-over_225x190_2x_7700faf8-547e-4a23-a5c4-e7580cac4bed.webp",
+            "cta_url": ""
+          }
+        },
+        "7c28eeb0-0459-446f-bf3c-8030efc4040b": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "TOOTSIE ROLL POPS",
+            "main_image": "shopify:\/\/shop_images\/download_a2326cb3-f78f-4d6f-8ea9-ccc2f0ca17b5.webp",
+            "hover_image": "shopify:\/\/shop_images\/tootsieRollPops-over_225x190_2x_29b8f219-9c62-4d3b-8f2d-8ba29859eb62.webp",
+            "cta_url": ""
+          }
+        },
+        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "VALOMILK",
+            "main_image": "shopify:\/\/shop_images\/download_a65df0d8-c605-4235-acc5-d081b15bde0f.webp",
+            "hover_image": "shopify:\/\/shop_images\/valomilk-candy-cup-over_225x190_2x_40ac575f-acc8-4089-8018-8ebf4c2a20b7.jpg",
+            "cta_url": ""
+          }
+        },
+        "7ec694c8-d03a-4cf2-b3f6-42b3b7913f16": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "ZAGNUT",
+            "main_image": "shopify:\/\/shop_images\/download_0f7917d8-36f2-4e6e-ab6c-c085a4b5840b.webp",
+            "hover_image": "shopify:\/\/shop_images\/zagnut-over_225x190_2x_12d3968a-c6b0-43eb-9709-84352ca4184d.jpg",
+            "cta_url": ""
+          }
+        },
+        "f600f27c-d038-4228-9ab4-b20725088461": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "ZERO",
+            "main_image": "shopify:\/\/shop_images\/download_0aef3fe2-8f99-47de-9738-0f96c6791ca3.webp",
+            "hover_image": "shopify:\/\/shop_images\/zero-over_225x190_2x_60e02412-0cf2-44d9-ad71-4973f4205081.jpg",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "4636500e-73d1-494d-b6a1-ad359cc54daa",
+        "882153cc-ad3f-49e7-9a53-ee527ef75b23",
+        "b1e2873d-46f6-4020-b2fe-cb4f4e549282",
+        "30839829-22a7-45c8-9c85-e32350982f9c",
+        "b33fdb98-93c2-4535-8329-d60cc14f26fc",
+        "f9c6981c-185f-4e79-b440-bad4e78dcce8",
+        "9fb77383-6262-4e0d-90ae-890e873c9d5c",
+        "63b7f897-a299-44b6-a7ad-a8e04833fd31",
+        "d8dc6a88-a284-4bd3-8ea3-e34fd4179ade",
+        "f80bb5fe-30bd-46b8-8b07-24fd81b56d1e",
+        "77589bb3-f43b-449d-9084-ccc8228d8e88",
+        "4de71f2a-18e0-4db7-8320-23478f7f363d",
+        "9b879937-4ea8-473f-8b8a-35f011afad6b",
+        "9a562ec7-41c7-40ee-96b3-afcc959be225",
+        "673cb20a-a396-454b-a9be-a9b148003da6",
+        "709be1cf-af79-4f53-a4e0-3e8f57cdef7a",
+        "94bf8292-bc92-451e-ac50-68d0c42abace",
+        "03b205cb-ba9b-48e6-bced-19bfda923ab6",
+        "f113b44d-92a5-4f86-b06d-8c4f85f8c713",
+        "c1392dbd-b104-47a2-bc1e-fc8579644e06",
+        "838962e1-fab4-460a-bc44-ce9c48eb1638",
+        "296847dd-8631-4e16-ad6c-6ea8eaa2065f",
+        "2c37eee9-4bbe-472f-b76c-feeb12a8e760",
+        "4c90b01c-b99a-4dc0-8c97-703d056c8203",
+        "5966505c-d873-4908-8846-a3e7a73ebc49",
+        "a4b0c712-bc82-4579-9e25-ad51d0768b18",
+        "a09e1819-adb8-4047-aed9-be8b7aa93186",
+        "2470b7f3-a3db-4cf5-8962-e22291fd2363",
+        "632e4636-11cd-4461-b003-0832807cc99e",
+        "10e85627-5102-485e-ada4-c22cb8c4b8db",
+        "55e79e83-0675-4a89-9eff-45eacdb2917a",
+        "07a12626-f4f1-41b1-a9fa-60ac6a934bfb",
+        "7c28eeb0-0459-446f-bf3c-8030efc4040b",
+        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8",
+        "7ec694c8-d03a-4cf2-b3f6-42b3b7913f16",
+        "f600f27c-d038-4228-9ab4-b20725088461"
+      ],
+      "settings": {
       }
     },
-    "order": [
-      "main"
-    ]
-  }
-  
+    "1653969137646964d3": {
+      "type": "newsletter",
+      "blocks": {
+        "165396913737aba1ff-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "165396913737aba1ff-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "165396913737aba1ff-2": {
+          "type": "email_form",
+          "settings": {
+            "btn_text": "Sign up"
+          }
+        }
+      },
+      "block_order": [
+        "165396913737aba1ff-0",
+        "165396913737aba1ff-1",
+        "165396913737aba1ff-2"
+      ],
+      "settings": {
+        "style": "old",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1653969137646964d3"
+  ]
+}
