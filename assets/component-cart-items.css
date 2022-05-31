@@ -113,7 +113,11 @@
 .cart-item__final-price {
   font-weight: 400;
 }
-
+.cart-item .quantity__button {
+  border: 0;
+  background: var(--color-link-text);
+  cursor: pointer;  
+}
 .product-option {
   font-size: 1.4rem;
   word-break: break-all;
