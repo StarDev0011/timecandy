@@ -70,6 +70,194 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_9e717110-a43a-4c14-b414-9a3add8029a9.webp",
+            "hover_image": "shopify:\/\/shop_images\/candyCigarettes-over_1_225x190_2x_1eede46a-9a0d-4a7f-a12b-874292c5d969.webp",
+            "cta_url": ""
+          }
+        },
+        "d8dc6a88-a284-4bd3-8ea3-e34fd4179ade": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_fc202a00-15bd-4d9d-8e6d-99bcdaf3e46f.webp",
+            "hover_image": "shopify:\/\/shop_images\/charlestonChew-over_1_225x190_2x_b6ad90ba-e102-458b-80d7-e3873367bf81.jpg",
+            "cta_url": ""
+          }
+        },
+        "f80bb5fe-30bd-46b8-8b07-24fd81b56d1e": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_bee7ab2b-26d6-4fa8-9235-226ec990aa72.webp",
+            "hover_image": "shopify:\/\/shop_images\/charmsPop-over_1_225x190_2x_a88f69af-16c2-4389-bb4f-e647837cb37d.jpg",
+            "cta_url": ""
+          }
+        },
+        "77589bb3-f43b-449d-9084-ccc8228d8e88": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "4de71f2a-18e0-4db7-8320-23478f7f363d": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "9b879937-4ea8-473f-8b8a-35f011afad6b": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "9a562ec7-41c7-40ee-96b3-afcc959be225": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "673cb20a-a396-454b-a9be-a9b148003da6": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "709be1cf-af79-4f53-a4e0-3e8f57cdef7a": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "94bf8292-bc92-451e-ac50-68d0c42abace": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "03b205cb-ba9b-48e6-bced-19bfda923ab6": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "f113b44d-92a5-4f86-b06d-8c4f85f8c713": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "c1392dbd-b104-47a2-bc1e-fc8579644e06": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "838962e1-fab4-460a-bc44-ce9c48eb1638": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "296847dd-8631-4e16-ad6c-6ea8eaa2065f": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "2c37eee9-4bbe-472f-b76c-feeb12a8e760": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "4c90b01c-b99a-4dc0-8c97-703d056c8203": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "5966505c-d873-4908-8846-a3e7a73ebc49": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "a4b0c712-bc82-4579-9e25-ad51d0768b18": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "a09e1819-adb8-4047-aed9-be8b7aa93186": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "2470b7f3-a3db-4cf5-8962-e22291fd2363": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "632e4636-11cd-4461-b003-0832807cc99e": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "10e85627-5102-485e-ada4-c22cb8c4b8db": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "55e79e83-0675-4a89-9eff-45eacdb2917a": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "07a12626-f4f1-41b1-a9fa-60ac6a934bfb": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "7c28eeb0-0459-446f-bf3c-8030efc4040b": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
+        },
+        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
             "cta_url": ""
           }
         }
@@ -82,7 +270,33 @@
         "b33fdb98-93c2-4535-8329-d60cc14f26fc",
         "f9c6981c-185f-4e79-b440-bad4e78dcce8",
         "9fb77383-6262-4e0d-90ae-890e873c9d5c",
-        "63b7f897-a299-44b6-a7ad-a8e04833fd31"
+        "63b7f897-a299-44b6-a7ad-a8e04833fd31",
+        "d8dc6a88-a284-4bd3-8ea3-e34fd4179ade",
+        "f80bb5fe-30bd-46b8-8b07-24fd81b56d1e",
+        "77589bb3-f43b-449d-9084-ccc8228d8e88",
+        "4de71f2a-18e0-4db7-8320-23478f7f363d",
+        "9b879937-4ea8-473f-8b8a-35f011afad6b",
+        "9a562ec7-41c7-40ee-96b3-afcc959be225",
+        "673cb20a-a396-454b-a9be-a9b148003da6",
+        "709be1cf-af79-4f53-a4e0-3e8f57cdef7a",
+        "94bf8292-bc92-451e-ac50-68d0c42abace",
+        "03b205cb-ba9b-48e6-bced-19bfda923ab6",
+        "f113b44d-92a5-4f86-b06d-8c4f85f8c713",
+        "c1392dbd-b104-47a2-bc1e-fc8579644e06",
+        "838962e1-fab4-460a-bc44-ce9c48eb1638",
+        "296847dd-8631-4e16-ad6c-6ea8eaa2065f",
+        "2c37eee9-4bbe-472f-b76c-feeb12a8e760",
+        "4c90b01c-b99a-4dc0-8c97-703d056c8203",
+        "5966505c-d873-4908-8846-a3e7a73ebc49",
+        "a4b0c712-bc82-4579-9e25-ad51d0768b18",
+        "a09e1819-adb8-4047-aed9-be8b7aa93186",
+        "2470b7f3-a3db-4cf5-8962-e22291fd2363",
+        "632e4636-11cd-4461-b003-0832807cc99e",
+        "10e85627-5102-485e-ada4-c22cb8c4b8db",
+        "55e79e83-0675-4a89-9eff-45eacdb2917a",
+        "07a12626-f4f1-41b1-a9fa-60ac6a934bfb",
+        "7c28eeb0-0459-446f-bf3c-8030efc4040b",
+        "ff10b417-0a65-4ff6-a9de-5f66e8e488b8"
       ],
       "settings": {
       }
