@@ -5,9 +5,26 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
+  .main-page-title{
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 27px;
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  #messages table:not([class]) {
+    box-shadow: none;
+    border: none;
+  }
+
+  #messages table:not([class]) td{
+    border: none;
   }
 
   @media screen and (min-width: 750px) {
@@ -19,7 +36,7 @@
 {%- endstyle -%}
 
 <div class="main-page-template page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0">
+  <h1 class="main-page-title page-title ">
     {{ page.title | escape }}
   </h1>
   <div class="rte">

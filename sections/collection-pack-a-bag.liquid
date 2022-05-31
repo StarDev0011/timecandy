@@ -1,12 +1,198 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  case section.settings.grid
+    when 3
+      assign grid_item_width = 'col-3'
+    when 4
+      assign grid_item_width = 'col-4'
+    when 5
+      assign grid_item_width = 'col-5'
+  endcase
+  assign limit = section.settings.rows
+-%}
+
+<div class="collection collection-pack-a-bag">
+    <div class="packabag-sidebar">
+        <div id="drop-zone" class="animated">
+            <div class="packabag-sidebar__logo">
+                <img src="//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_LOGO_4.png?v=1424973364437215331649261733" alt="Click and Drag to Pack-a-Bag">
+            </div>
+            <div class="packabag-sidebar__bag">
+                <span class="packabag-sidebar__count" data-cart-render="item_count">{{ cart.item_count }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="collection__header">
+        <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
+        <div class="collection__nav">
+            <ul class="collection__menu">
+            {% for link in linklists.candy-by-decade.links %}
+                <li class="collection__menu-item{% if link.active %} active{% endif %}" {% if forloop.index > 8 %}style="display: none"{% endif %}>
+                <a class="collection__menu-link" href="{{ link.url }}">
+                    {{- link.title -}}
+                </a>
+                </li>
+                {% if forloop.last and forloop.index > 8 %}
+                <li class="collection__menu-item collection__menu-view-more">
+                    <a class="collection__menu-link menu-view-more js-menu-view-more" href="#">
+                    <span> View more</span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        </div>
+        <div class="collection__wrapper">
+            {% render 'include--sidebar' %}
+            <div class="collection-product__list">
+                {% if settings.ss_enable %}
+                    <div id="searchspring-content"></div>
+                        {% if section.settings.show_desc %}
+                            <div class="collection__desc">
+                                {{- collection.description -}}
+                            </div>
+                        {% endif %}
+                {% else %}
+                    {%- paginate collection.products by limit -%}
+                        <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
+                            {%- for product in collection.products -%}
+                                {% render 'include--product-card', product: product %}
+                            {%- endfor -%}
+                        </div>
+                        {%- if paginate.pages > 1 -%}
+                            {% if section.settings.page == 'page' %}
+                                {% render 'pagination', paginate: paginate, anchor: '' %}
+                            {% else %}
+                                <div class="product-paginate" data-paginate>
+                                    {% unless paginate.next.is_link %}
+                                    <!-- <button class="btn no-product" type="button">
+                                        No products
+                                    </button> -->
+                                    {% else %}
+                                        <a href="{{ paginate.next.url }}" class="js-infinite-scroll">
+                                        <span class="loader"></span>
+                                        </a>
+                                    {% endunless %}
+                                </div>
+                            {% endif %}
+                        {%- endif -%}
+                    {%- endpaginate -%}
+                    {% if section.settings.show_desc %}
+                        <div class="collection__desc">
+                        {{- collection.description -}}
+                        </div>
+                    {% endif %}
+                    </div>
+                {%- endif -%}
+            </div>
+        </div>
+        {% if settings.ss_enable %}
+            <div id="searchspring-no-results-recs"></div>
+        {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .collection__desc {
+    border: 0;
+    padding-top: 10px;
+    color: var(--color-link-text);
+    font-size: 14px;
+  }
+</style>
+<script>
+  const items = document.querySelectorAll('.collection__menu-item');
+  const btn = document.querySelector('.js-menu-view-more');
+  btn?.addEventListener('click', function handleClick(e) {
+    e.preventDefault();
+    items.forEach(function(item) {
+      if (item.style.display === 'none') {
+        item.style.display = 'block';
+        btn.style.display = 'none';
+      }
+    })
+  });
+  window.addEventListener('load', (event) => {
+    var isBusy = false;
+    $(window).scroll(function() {
+      var btnLoadMore = $('.js-infinite-scroll');
+      let url = btnLoadMore.attr('href');
+      if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
+        if(isBusy) {
+          return;
+        }
+        if(btnLoadMore.length) {
+          isBusy = true;
+          $('[data-btn-text]').hide();
+          btnLoadMore.show();
+          var listData = $('#collection-products');
+          var product;
+          $.get(url).done(function (data) {
+            btnLoadMore.hide();
+            product = $(data).find('#collection-products');
+            listData.append(product.children());
+            $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
+            initQuickAdd();
+          }).always (function() {
+            isBusy = false;
+          });
+        }
+      }
+    });
+  });
+
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Colections pages",
+    "settings": [
+      {
+        "type": "range",
+        "id": "grid",
+        "label": "Products per row",
+        "default": 3,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Products per page",
+        "default": 18,
+        "min": 2,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "show_desc",
+        "label": "Display Description on Bottom",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Paginate"
+      },
+      {
+        "type": "radio",
+        "id": "page",
+        "label": "Paginate",
+        "default": "scroll",
+        "options": [
+          {
+            "value": "page",
+            "label": "Paginate"
+          },
+          {
+            "value": "scroll",
+            "label": "Scroll load"
+          }
+        ]
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
