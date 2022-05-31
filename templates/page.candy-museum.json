@@ -133,6 +133,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_82cbb8d3-380b-45f5-bd51-d830fbd34fc5.webp",
+            "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_225x190_2x_4ff8f461-5b00-43e9-a865-cbab8cb9c21d.webp",
             "cta_url": ""
           }
         },
@@ -140,6 +142,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_8dc3e630-67a1-492e-a109-1171d4d7aae4.webp",
+            "hover_image": "shopify:\/\/shop_images\/denverSandwich-over_225x190_2x_28539254-2d87-46a2-ad5e-2d1e92f20209.webp",
             "cta_url": ""
           }
         },
@@ -147,6 +151,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_7d468f67-420d-4f0a-9e44-edb575a9f9e3.webp",
+            "hover_image": "shopify:\/\/shop_images\/dumDumPops-over_225x190_2x_3dadaffe-c8cb-46db-a64b-429e4d236b8a.jpg",
             "cta_url": ""
           }
         },
@@ -154,6 +160,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_e8645bf7-823b-4acd-b4f7-2d410c3f9abe.webp",
+            "hover_image": "shopify:\/\/shop_images\/FifthAvenue-over_225x190_2x_f8c8f2ce-cb40-4628-92cb-092c2c332e68.jpg",
             "cta_url": ""
           }
         },
@@ -161,6 +169,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_4d3746fa-7d06-4f63-b2ff-c146dff53b4f.webp",
+            "hover_image": "shopify:\/\/shop_images\/foreverYours-over_225x190_2x_1caae8a5-a2d7-4ca3-adee-045824912c3a.jpg",
             "cta_url": ""
           }
         },
@@ -168,6 +178,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "hover_image": "shopify:\/\/shop_images\/goldenberg-over_225x190_2x_2b74ed94-d4b9-42bb-ae67-a202991a427a.jpg",
             "cta_url": ""
           }
         },
