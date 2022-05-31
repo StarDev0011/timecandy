@@ -100,20 +100,10 @@ cart-items {
 }
 
 .cart__note .field__input {
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 0;
-    border: 1px solid #ccc;
-    color: var(--color-text);
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 21px;
-    text-transform: uppercase;
-    font-family: var(--my-font);
+  height: 100%;
+  position: relative;
+  border-radius: var(--inputs-radius);
+  padding: 1rem 2rem;
 }
 
 .cart__note .text-area {
