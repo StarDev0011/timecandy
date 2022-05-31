@@ -123,11 +123,11 @@
   border-radius: 0;
   border: 1px solid #ccc;
   color: var(--color-text);
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 21px;
-    text-transform: uppercase;
-    font-family: var(--my-font);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-family: var(--my-font);
 }
 .product-option {
   font-size: 1.4rem;
