@@ -106,6 +106,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_6e3380df-637b-42ae-8184-e029a16dc1e2.webp",
             "hover_image": "shopify:\/\/shop_images\/clark-over_225x190_2x_15026143-60af-407f-944f-28cb6b39f4e5.jpg",
             "cta_url": ""
           }
@@ -114,6 +115,7 @@
           "type": "candy",
           "settings": {
             "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_e2e3f864-a104-44e4-a1a4-22b1758c8834.webp",
             "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_225x190_2x_b63f0d8d-b99d-478a-952c-f82f6b93130c.webp",
             "cta_url": ""
           }
