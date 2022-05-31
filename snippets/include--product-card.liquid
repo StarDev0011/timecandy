@@ -31,9 +31,9 @@
           {% assign tag = t | strip %}
           {% assign tag_value = tag | handleize %}
 
-          {% if tag_value contains 'Label:' %}
-            <div class="card-product-label__item{% if tag_value == 'Label: Great Gift' %} card-product-label__great-gift{% elsif tag_value == 'Label: Limited Time Offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
-              {{- tag | split: 'Label: ' -}}
+          {% if tag_value contains 'label-' %}
+            <div class="card-product-label__item{% if tag_value == 'label-great-gift' %} card-product-label__great-gift{% elsif tag_value == 'label-limited-time-offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
+              {{- tag | split: 'label-' -}}
             </div>
           {% endif %}
         {% endfor %}
