@@ -11,10 +11,78 @@
             "hover_image": "shopify:\/\/shop_images\/museum-image-hoverd_225x190_2x_abcd9e38-2054-4e40-bce5-1dcbe3629d40.webp",
             "cta_url": ""
           }
+        },
+        "882153cc-ad3f-49e7-9a53-ee527ef75b23": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/bitOHoney-over_1_225x190_2x_7ded3fa5-6c12-4841-8296-d35d380f4583.jpg",
+            "hover_image": "shopify:\/\/shop_images\/download.webp",
+            "cta_url": ""
+          }
+        },
+        "b1e2873d-46f6-4020-b2fe-cb4f4e549282": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_fded02b4-70ec-422d-9613-dd4da4e2f907.webp",
+            "hover_image": "shopify:\/\/shop_images\/big-time-candy-bar-over_1_225x190_2x_d40daf32-b89c-4819-affa-b74f0977fd09.jpg",
+            "cta_url": ""
+          }
+        },
+        "30839829-22a7-45c8-9c85-e32350982f9c": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_4ab8d16f-5911-488e-b475-94d2177e7d28.webp",
+            "hover_image": "shopify:\/\/shop_images\/bun-over_1_225x190_2x_51dfd5fb-50db-46c1-a1a1-a81a30132dc8.webp",
+            "cta_url": ""
+          }
+        },
+        "b33fdb98-93c2-4535-8329-d60cc14f26fc": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_a9c5050a-0d58-4cbe-a8a8-5a52ad29051b.webp",
+            "hover_image": "shopify:\/\/shop_images\/butterfinger-over_1_225x190_2x_e108e3bb-27be-4236-8f84-7bf213178949.jpg",
+            "cta_url": ""
+          }
+        },
+        "f9c6981c-185f-4e79-b440-bad4e78dcce8": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_d1c07783-f0a8-4a52-b2fc-4ca066f1b3e2.webp",
+            "hover_image": "shopify:\/\/shop_images\/butter-nut-candy-bar-over_1_225x190_2x_be1df3f8-a2a3-4f33-8fd3-faa69cc70419.jpg",
+            "cta_url": ""
+          }
+        },
+        "9fb77383-6262-4e0d-90ae-890e873c9d5c": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "main_image": "shopify:\/\/shop_images\/download_e7368e2f-fd96-44e8-8383-a621b4e0c550.webp",
+            "hover_image": "shopify:\/\/shop_images\/caravelle-candy-bar-over_1_225x190_2x_bf227bba-3f66-4849-8a3c-66056733eb95.webp",
+            "cta_url": ""
+          }
+        },
+        "63b7f897-a299-44b6-a7ad-a8e04833fd31": {
+          "type": "candy",
+          "settings": {
+            "candy_title": "",
+            "cta_url": ""
+          }
         }
       },
       "block_order": [
-        "4636500e-73d1-494d-b6a1-ad359cc54daa"
+        "4636500e-73d1-494d-b6a1-ad359cc54daa",
+        "882153cc-ad3f-49e7-9a53-ee527ef75b23",
+        "b1e2873d-46f6-4020-b2fe-cb4f4e549282",
+        "30839829-22a7-45c8-9c85-e32350982f9c",
+        "b33fdb98-93c2-4535-8329-d60cc14f26fc",
+        "f9c6981c-185f-4e79-b440-bad4e78dcce8",
+        "9fb77383-6262-4e0d-90ae-890e873c9d5c",
+        "63b7f897-a299-44b6-a7ad-a8e04833fd31"
       ],
       "settings": {
       }
