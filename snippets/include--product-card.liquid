@@ -33,7 +33,7 @@
 
           {% if tag_value contains 'label-' %}
             <div class="card-product-label__item{% if tag_value == 'label-great-gift' %} card-product-label__great-gift{% elsif tag_value == 'label-limited-time-offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
-              {{- tag | remove: 'Label: ' -}}
+              {{- tag | remove: 'Label:' -}}
             </div>
           {% endif %}
         {% endfor %}
