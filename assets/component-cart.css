@@ -221,3 +221,28 @@ cart-items {
     gap: 1rem;
   }
 }
+
+.quantity__button {
+  background-color: #0C5273 !important;
+}
+
+.quantity__button[name=minus] {
+  border-radius: 3px 0 0 3px;
+}
+
+.quantity__button[name=plus] {
+  border-radius: 0 3px 3px 0;
+}
+
+.quantity {
+  height: 43px;
+  border-radius: 3px;
+}
+
+.quantity::after {
+  border-radius: 3px;
+}
+
+.quantity__button svg {
+  width: 14px;
+}
