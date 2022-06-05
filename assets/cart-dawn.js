@@ -15,6 +15,7 @@ CartDawn = {
     this.onCheckedDelay();
     this.openPopupGift();
     this.openModalCart();
+    this.toggleButton();
   },
 
   Selector: {
@@ -400,8 +401,16 @@ CartDawn = {
         $('#shipping-insurance').prop('checked', 'checked');
       }
     })
-  }
+  },
 
+  toggleButton: () => {
+    const cartToggleTitle = document.querySelectorAll('.js-toggle-title');
+    cartToggleTitle.forEach(function(items) {
+      items.onclick = function() {
+      items.parentNode.classList.toggle('acitve');
+      }
+    })
+  }
 }
 
 $(function() {
