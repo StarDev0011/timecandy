@@ -46,12 +46,14 @@
 				<label class="modal-cart-gift__label">desired arrival date</label>
 				{%- liquid
 					assign date = "now" | date: '%s'
-					assign seconds = 1 | times: 24 | times: 60 | times: 60
-					assign day = date | date: "%s" | plus: seconds | date: "%e" | plus: 7
+					assign seconds = 7 | times: 24 | times: 60 | times: 60
+					assign day = date | date: "%s" | plus: seconds | date: "%e"
 					assign month = date | date: "%s" | plus: seconds | date: "%m"
 					assign endDay = date | date: "%s" | plus: seconds | date: "%e" | plus: 0
-					assign endMonth = date | date: "%s" | plus: seconds | date: "%m" | plus: 3
-					assign year = date | date: "%s" | plus: seconds | date: "%Y"
+
+					assign endseconds = 90 | times: 24 | times: 60 | times: 60
+					assign endMonth = date | date: "%s" | plus: endseconds | date: "%m"
+					assign year = date | date: "%s" | plus: endseconds | date: "%Y"
 				-%}
 				<input type="date" class="modal-cart-gift__date"  name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
@@ -65,7 +67,7 @@
 </div>
 
 <div class="modal-mini-cart__overlay js-close-minicart"></div>
-<script>
+<!-- <script>
 	function leftFillNum(num, targetLength) {
 		return num.toString().padStart(targetLength, '0');
 	}
@@ -75,4 +77,4 @@
 	const endMoth = leftFillNum(month, 2);
 	const cartDate = document.querySelector('.modal-cart-gift__date');
 	cartDate.setAttribute('max', year + '-' + endMoth +'-'+ day);
-</script>
+</script> -->

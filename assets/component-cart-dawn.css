@@ -637,7 +637,8 @@
   padding: 12px 16px;
 }
 
-.modal-cart-gift__btn-icon {
+.modal-cart-gift__btn-icon,
+.btn-donation-icon {
   width: 30px;
   height: 30px;
   border-radius: 50%;
