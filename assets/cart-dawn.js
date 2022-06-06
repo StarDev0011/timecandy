@@ -268,27 +268,6 @@ CartDawn = {
     });
   },
 
-  setCookie: (name,value,days) => {
-    var expires = "";
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-  },
-
-  getCookie: (name) => {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
-    }
-    return null;
-  },
-
   shippingInsurance: () => {
     window.OTCIns = {"id":7676481667299,"title":"Shipping Insurance","price":98,"price_min":98,"price_max":14038,"available":true,"variants":[{ "id": 42837795668195, "title": "$0.98", "price": 98, "sku": "OTCINS10" }, { "id": 42837795700963, "title": "$1.15", "price": 115, "sku": "OTCINS11" }, { "id": 42837795733731, "title": "$1.35", "price": 135, "sku": "OTCINS12" }, { "id": 42837795766499, "title": "$1.55", "price": 155, "sku": "OTCINS13" }, { "id": 42837795799267, "title": "$1.75", "price": 175, "sku": "OTCINS14" }, { "id": 42837795832035, "title": "$1.95", "price": 195, "sku": "OTCINS15" }, { "id": 42837795864803, "title": "$2.15", "price": 215, "sku": "OTCINS16" }, { "id": 42837795897571, "title": "$2.35", "price": 235, "sku": "OTCINS17" }, { "id": 42837795930339, "title": "$2.55", "price": 255, "sku": "OTCINS18" }, { "id": 42837795963107, "title": "$2.75", "price": 275, "sku": "OTCINS19" }, { "id": 42837795995875, "title": "$2.95", "price": 295, "sku": "OTCINS20" }, { "id": 42837796028643, "title": "$3.15", "price": 315, "sku": "OTCINS21" }, { "id": 42837796061411, "title": "$3.35", "price": 335, "sku": "OTCINS22" }, { "id": 42837796094179, "title": "$3.55", "price": 355, "sku": "OTCINS23" }, { "id": 42837796126947, "title": "$3.75", "price": 375, "sku": "OTCINS24" }, { "id": 42837796159715, "title": "$3.95", "price": 395, "sku": "OTCEINS25" }, { "id": 42837796192483, "title": "$4.15", "price": 415, "sku": "OTCINS26" }, { "id": 42837796225251, "title": "$4.35", "price": 435, "sku": "OTCINS27" }, { "id": 42837796258019, "title": "$4.55", "price": 455, "sku": "OTCINS28" }, { "id": 42837796290787, "title": "$4.75", "price": 475, "sku": "OTCINS29" }, { "id": 42837796323555, "title": "$4.95", "price": 495, "sku": "OTCINS30" }, { "id": 42837796356323, "title": "$5.15", "price": 515, "sku": "OTCINS31" }, { "id": 42837796389091, "title": "$5.35", "price": 535, "sku": "OTCINS32" }, { "id": 42837796421859, "title": "$5.55", "price": 555, "sku": "OTCINS33" }, { "id": 42837796454627, "title": "$5.75", "price": 575, "sku": "OTCINS34" }, { "id": 42837796487395, "title": "$5.95", "price": 595, "sku": "OTCINS35" }, { "id": 42837796520163, "title": "$6.15", "price": 615, "sku": "OTCINS36" }, { "id": 42837796552931, "title": "$6.35", "price": 635, "sku": "OTCINS37" }, { "id": 42837796585699, "title": "$6.55", "price": 655, "sku": "OTCINS38" }, { "id": 42837796618467, "title": "$6.75", "price": 675, "sku": "OTCINS39" }, { "id": 42837796651235, "title": "$6.95", "price": 695, "sku": "OTCINS40" }, { "id": 42837796684003, "title": "$7.15", "price": 715, "sku": "OTCINS41" }, { "id": 42837796716771, "title": "$7.35", "price": 735, "sku": "OTCINS42" }, { "id": 42837796749539, "title": "$7.55", "price": 755, "sku": "OTCINS43" }, { "id": 42837796782307, "title": "$7.75", "price": 775, "sku": "OTCINS44" }, { "id": 42837796815075, "title": "$7.95", "price": 795, "sku": "OTCINS45" }, { "id": 42837796847843, "title": "$8.15", "price": 815, "sku": "OTCINS46" }, { "id": 42837796880611, "title": "$8.35", "price": 835, "sku": "OTCINS47" }, { "id": 42837796913379, "title": "$8.55", "price": 855, "sku": "OTCINS48" }, { "id": 42837796946147, "title": "$8.75", "price": 875, "sku": "OTCINS49" }, { "id": 42837796978915, "title": "$8.95", "price": 895, "sku": "OTCINS50" }, { "id": 42837797011683, "title": "$9.38", "price": 938, "sku": "OTCINS51" }, { "id": 42837797044451, "title": "$10.03", "price": 1003, "sku": "OTCINS52" }, { "id": 42837797077219, "title": "$10.68", "price": 1068, "sku": "OTCINS53" }, { "id": 42837797109987, "title": "$11.33", "price": 1133, "sku": "OTCINS54" }, { "id": 42837797142755, "title": "$11.98", "price": 1198, "sku": "OTCINS55" }, { "id": 42837797175523, "title": "$12.63", "price": 1263, "sku": "OTCINS56" }, { "id": 42837797208291, "title": "$13.28", "price": 1328, "sku": "OTCINS57" }, { "id": 42837797241059, "title": "$13.93", "price": 1393, "sku": "OTCINS58" }, { "id": 42837797273827, "title": "$14.58", "price": 1458, "sku": "OTCINS59" }, { "id": 42837797306595, "title": "$15.23", "price": 1523, "sku": "OTCINS60" }, { "id": 42837797339363, "title": "$15.88", "price": 1588, "sku": "OTCINS61" }, { "id": 42837797372131, "title": "$16.53", "price": 1653, "sku": "OTCINS62" }, { "id": 42837797404899, "title": "$17.18", "price": 1718, "sku": "OTCINS63" }, { "id": 42837797437667, "title": "$17.83", "price": 1783, "sku": "OTCINS64" }, { "id": 42837797470435, "title": "$18.48", "price": 1848, "sku": "OTCINS65" }, { "id": 42837797503203, "title": "$19.13", "price": 1913, "sku": "OTCINS66" }, { "id": 42837797535971, "title": "$19.78", "price": 1978, "sku": "OTCINS67" }, { "id": 42837797568739, "title": "$20.43", "price": 2043, "sku": "OTCINS68" }, { "id": 42837797601507, "title": "$24.38", "price": 2438, "sku": "OTCINS69" }, { "id": 42837797634275, "title": "$31.63", "price": 3163, "sku": "OTCINS70" }, { "id": 42837797667043, "title": "$38.88", "price": 3888, "sku": "OTCINS71" }, { "id": 42837797699811, "title": "$46.13", "price": 4613, "sku": "OTCINS72" }, { "id": 42837797732579, "title": "$53.38", "price": 5338, "sku": "OTCINS73" }, { "id": 42837797765347, "title": "$60.63", "price": 6063, "sku": "OTCINS74" }, { "id": 42837797798115, "title": "$67.88", "price": 6788, "sku": "OTCINS75" }, { "id": 42837797830883, "title": "$75.13", "price": 7513, "sku": "OTCINS76" }, { "id": 42837797863651, "title": "$82.38", "price": 8238, "sku": "OTCINS77" }, { "id": 42837797896419, "title": "$89.63", "price": 8963, "sku": "OTCINS78" }, { "id": 42837797929187, "title": "$96.88", "price": 9688, "sku": "OTCINS79" }, { "id": 42837797961955, "title": "$104.13", "price": 10413, "sku": "OTCINS80" }, { "id": 42837797994723, "title": "$111.38", "price": 11138, "sku": "OTCINS81" }, { "id": 42837798027491, "title": "$118.63", "price": 11863, "sku": "OTCINS82" }, { "id": 42837798060259, "title": "$125.88", "price": 12588, "sku": "OTCINS83" }, { "id": 42837798093027, "title": "$133.13", "price": 13313, "sku": "OTCINS84" }, { "id": 42837798125795, "title": "$140.38", "price": 14038, "sku": "OTCINS85" }]};
     window.variantArray = window.OTCIns.variants.map(function(v) {
@@ -356,16 +335,6 @@ CartDawn = {
                 shippingValue = 85;
             }
         }
-        // if (cart_val == 0) {
-        //   $('.shipping-insurance').hide();
-        //   $('#shipping-insurance').prop('checked', '');
-        //   CartDawn.setCookie('shippingInsurance', 'false', 365);
-        // } else {
-        //   $('.shipping-insurance').show();
-        //   if (CartDawn.getCookie('shippingInsurance') != 'false') {
-        //     $('#shipping-insurance').prop('checked', 'checked');
-        //   }
-        // }
         return shippingValue;
       }
       shippingLevel = cart_price_loop(cart.total_price, cart.items);
@@ -381,28 +350,9 @@ CartDawn = {
         }
       });
 
-      CartDawn.setCookie('shippingInsuranceVariant', variantId, 365);
       localStorage.setItem('shippingInsuranceVariant', variantId);
       $('.js-add-gift-card').val(variantId);
       $('#insurance-cost').text(variantPrice);
-
-      // $('#shipping-insurance').on('change', function(e){
-      //   if($(this).prop('checked')){
-      //     CartDawn.setCookie('shippingInsurance', 'true', 365);
-      //   } else {
-      //     CartDawn.setCookie('shippingInsurance', 'false', 365);
-      //   }
-      // });
-
-      // // Initial set up from cookie
-      // if(CartDawn.getCookie('shippingInsurance') == 'true') {
-      //   $('#shipping-insurance').prop('checked', 'checked');
-      // } else if (CartDawn.getCookie('shippingInsurance') == 'false') {
-      //   $('#shipping-insurance').prop('checked', '');
-      // } else {
-      //   // Default to true
-      //   $('#shipping-insurance').prop('checked', 'checked');
-      // }
     })
   },
 
