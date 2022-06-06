@@ -61,7 +61,7 @@ CartDawn = {
   },
 
   addProductDonate: () => {
-    $('body').on('change', '.js-product-donate:not([checked])', function(e) {
+    $('body').on('change', '.js-add-gift-card:not([checked])', function(e) {
       e.preventDefault();
       $('.cart-overlay').show();
       data = {
@@ -355,16 +355,16 @@ CartDawn = {
                 shippingValue = 85;
             }
         }
-        if (cart_val == 0) {
-          $('.shipping-insurance').hide();
-          $('#shipping-insurance').prop('checked', '');
-          CartDawn.setCookie('shippingInsurance', 'false', 365);
-        } else {
-          $('.shipping-insurance').show();
-          if (CartDawn.getCookie('shippingInsurance') != 'false') {
-            $('#shipping-insurance').prop('checked', 'checked');
-          }
-        }
+        // if (cart_val == 0) {
+        //   $('.shipping-insurance').hide();
+        //   $('#shipping-insurance').prop('checked', '');
+        //   CartDawn.setCookie('shippingInsurance', 'false', 365);
+        // } else {
+        //   $('.shipping-insurance').show();
+        //   if (CartDawn.getCookie('shippingInsurance') != 'false') {
+        //     $('#shipping-insurance').prop('checked', 'checked');
+        //   }
+        // }
         return shippingValue;
       }
       shippingLevel = cart_price_loop(cart.total_price, cart.items);
@@ -381,25 +381,27 @@ CartDawn = {
       });
 
       CartDawn.setCookie('shippingInsuranceVariant', variantId, 365);
+      localStorage.setItem('shippingInsuranceVariant', variantId);
+      $('.js-add-gift-card').val(variantId);
       $('#insurance-cost').text(variantPrice);
 
-      $('#shipping-insurance').on('change', function(e){
-        if($(this).prop('checked')){
-          CartDawn.setCookie('shippingInsurance', 'true', 365);
-        } else {
-          CartDawn.setCookie('shippingInsurance', 'false', 365);
-        }
-      });
+      // $('#shipping-insurance').on('change', function(e){
+      //   if($(this).prop('checked')){
+      //     CartDawn.setCookie('shippingInsurance', 'true', 365);
+      //   } else {
+      //     CartDawn.setCookie('shippingInsurance', 'false', 365);
+      //   }
+      // });
 
-      // Initial set up from cookie
-      if(CartDawn.getCookie('shippingInsurance') == 'true') {
-        $('#shipping-insurance').prop('checked', 'checked');
-      } else if (CartDawn.getCookie('shippingInsurance') == 'false') {
-        $('#shipping-insurance').prop('checked', '');
-      } else {
-        // Default to true
-        $('#shipping-insurance').prop('checked', 'checked');
-      }
+      // // Initial set up from cookie
+      // if(CartDawn.getCookie('shippingInsurance') == 'true') {
+      //   $('#shipping-insurance').prop('checked', 'checked');
+      // } else if (CartDawn.getCookie('shippingInsurance') == 'false') {
+      //   $('#shipping-insurance').prop('checked', '');
+      // } else {
+      //   // Default to true
+      //   $('#shipping-insurance').prop('checked', 'checked');
+      // }
     })
   },
 

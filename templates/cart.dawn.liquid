@@ -147,6 +147,7 @@
           <div class="mini-cart-bottom__text"> Subtotal ({{ cart.item_count }} items) </div>
           <div class="mini-cart-bottom__total-price"> {{ cart.total_price | money }} </div>
         </div>
+        {% comment %}
         <div class="mini-cart__field shipping-insurance">
           <input type="checkbox" id="shipping-insurance" class="gift-include  js-shipping-insurance hidden">
           <label class="mini-cart__label" for="shipping-insurance">
@@ -156,6 +157,7 @@
             </span>
           </label>
         </div>
+        {% endcomment %}
         <div class="mini-cart-bottom__item">
           <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
           {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
@@ -184,11 +186,13 @@
                 {% assign isInclude = true %}
               {% endif %}
             {% endfor %}
-            <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-product-donate hidden" {% if isInclude %} checked {% endif %}>
+            <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card hidden" {% if isInclude %} checked {% endif %}>
             <label class="mini-cart__label" for="CartInclude">
               <span class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
               <span class="mini-cart__gift-text">
-                {{ settings.cart_label }}
+               {% comment %} {{ settings.cart_label }} {% endcomment %}
+                Include shipping protection for only <strong id="insurance-cost">$0.98</strong> extra.
+                <a href="/pages/shipping-insurance"> Learn more </a>
               </span>
             </label>
           </div>
