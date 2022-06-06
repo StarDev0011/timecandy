@@ -182,17 +182,19 @@
           <div class="mini-cart__field">
             {% assign isInclude = false %}
             {%- for item in cart.items -%}
-              {% if item.id == shipping_product.variants[0].id %}
-                {% assign isInclude = true %}
-              {% endif %}
+              {% for variant in shipping_product.variants %}
+                {% if item.id == variant.id %}
+                  {% assign isInclude = true %}
+                {% endif %}
+              {% endfor %}
             {% endfor %}
-            <input type="radio" data-value="{{ shipping_product.variants[0].id }}" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate hidden" {% if isInclude %} checked {% endif %}>
+            <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate hidden" {% if isInclude %} checked {% endif %}>
             <label class="mini-cart__label" for="CartInclude">
               <span class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
               <span class="mini-cart__gift-text">
                {% comment %} {{ settings.cart_label }} {% endcomment %}
                 Include shipping protection for only <strong id="insurance-cost">$0.98</strong> extra.
-                <a href="/pages/shipping-insurance"> Learn more </a>
+                <a href="/pages/shipping-insurance" target="_blank"> Learn more </a>
               </span>
             </label>
           </div>
