@@ -186,7 +186,7 @@
                 {% assign isInclude = true %}
               {% endif %}
             {% endfor %}
-            <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card hidden" {% if isInclude %} checked {% endif %}>
+            <input type="radio" data-value="{{ shipping_product.variants[0].id }}" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate hidden" {% if isInclude %} checked {% endif %}>
             <label class="mini-cart__label" for="CartInclude">
               <span class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
               <span class="mini-cart__gift-text">

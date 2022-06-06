@@ -61,9 +61,10 @@ CartDawn = {
   },
 
   addProductDonate: () => {
-    $('body').on('change', '.js-add-gift-card:not([checked])', function(e) {
+    $('body').on('change', '.js-product-donate:not([checked])', function(e) {
       e.preventDefault();
       $('.cart-overlay').show();
+      console.log($(this).val());
       data = {
         items: [
           {
