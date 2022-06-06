@@ -246,8 +246,10 @@
       		<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     	{%- endif -%}
     {%- endif -%}
-    
-    {% render 'include--cart-dawn' %}
+
+    {% unless template contains 'cart' %}
+      {% render 'include--cart-dawn' %}
+    {% endunless %}
     <!-- Back in Stock helper snippet -->
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
