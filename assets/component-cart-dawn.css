@@ -76,7 +76,7 @@
 
 .mini-cart__list {
   padding: 20px 15px;
-  max-height: calc(100vh - 400px);
+  max-height: calc(100vh - 420px);
   overflow: auto;
 }
 
@@ -637,7 +637,8 @@
   padding: 12px 16px;
 }
 
-.modal-cart-gift__btn-icon {
+.modal-cart-gift__btn-icon,
+.btn-donation-icon {
   width: 30px;
   height: 30px;
   border-radius: 50%;

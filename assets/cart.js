@@ -48,9 +48,9 @@ class CartItems extends HTMLElement {
         selector: '.shopify-section'
       },
       {
-        id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
-        selector: '.js-contents',
+        id: 'cart-totals',
+        section: document.getElementById('main-cart-items').dataset.id,
+        selector: '.js-cart-totals'
       }
     ];
   }
@@ -72,9 +72,6 @@ class CartItems extends HTMLElement {
       .then((state) => {
         const parsedState = JSON.parse(state);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
-        const cartFooter = document.getElementById('main-cart-footer');
-
-        if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
 
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
@@ -135,3 +132,41 @@ class CartItems extends HTMLElement {
 }
 
 customElements.define('cart-items', CartItems);
+
+const btnAddDonation = document.getElementById('addWaterWellDonation');
+if(btnAddDonation) {
+  btnAddDonation.addEventListener('click', function() {
+    let variantID = document.getElementById('donationSelectVariant').value;
+    const cartItem = document.querySelector('cart-items');
+    const btnText = document.querySelector('.btn-donation-text');
+    const btnIcon = document.querySelector('.btn-donation-icon');
+    btnText.style.display = 'none';
+    btnIcon.style.display = 'block';
+    const body = JSON.stringify({
+      sections: cartItem.getSectionsToRender().map((section) => section.section),
+      sections_url: window.location.pathname,
+      'id': variantID,
+      'quantity': 1
+    });
+    fetch(`${routes.cart_add_url}`, {
+      ...fetchConfig(), ...{ body }
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then((data) => {
+        btnText.style.display = 'block';
+        btnIcon.style.display = 'none';
+        console.log(data)
+        const parsedState = data;
+        cartItem.getSectionsToRender().forEach((section => {
+          const elementToReplace = document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+          elementToReplace.innerHTML = cartItem.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+        })
+      );
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+}
