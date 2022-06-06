@@ -12,7 +12,7 @@
 -%}
 
 <div class="collection collection-pack-a-bag">
-    <div class="packabag-sidebar">
+    <a href="{{ routes.cart_url }}"  class="packabag-sidebar js-open-cart">
         <div id="drop-zone" class="animated">
             <div class="packabag-sidebar__logo">
                 <img src="//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_LOGO_4.png?v=1424973364437215331649261733" alt="Click and Drag to Pack-a-Bag">
@@ -21,7 +21,7 @@
                 <span class="packabag-sidebar__count" data-cart-render="item_count">{{ cart.item_count }}</span>
             </div>
         </div>
-    </div>
+    </a>
     <div class="container">
         <div class="collection__header">
         <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
@@ -49,11 +49,11 @@
             <div class="collection-product__list">
                 {% if settings.ss_enable %}
                     <div id="searchspring-content"></div>
-                        {% if section.settings.show_desc %}
-                            <div class="collection__desc">
-                                {{- collection.description -}}
-                            </div>
-                        {% endif %}
+                    {% if section.settings.show_desc %}
+                        <div class="collection__desc">
+                            {{- collection.description -}}
+                        </div>
+                    {% endif %}
                 {% else %}
                     {%- paginate collection.products by limit -%}
                         <div class="collection-product__inner {{ grid_item_width }}" id="collection-products">
@@ -142,9 +142,9 @@
       }
     });
   });
-
 </script>
 
+<script src="{{ 'cart-drag-drop.js' | asset_url }}" defer="defer"></script>
 {% schema %}
   {
     "name": "Colections pages",
