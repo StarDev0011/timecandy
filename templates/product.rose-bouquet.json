@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "product-rose-bouquet",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -35,7 +35,6 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
           }
         },
         "buy_buttons": {
