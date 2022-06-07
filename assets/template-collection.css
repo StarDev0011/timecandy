@@ -595,6 +595,10 @@
   position: relative;
 }
 
+.collection-pack-a-bag .card-product__picture{
+  cursor: grab;
+}
+
 .packabag-sidebar {
   position: fixed;
   width: 170px;
@@ -639,4 +643,35 @@
   font-size: 18px;
   line-height: 18px;
   font-weight: 700;
+}
+
+@media (max-width: 830px) {
+  .packabag-sidebar {
+    left: 0;
+    top: unset;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #drop-zone{
+    background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKGD_bottom.png?v=101638301398981902281649261730) no-repeat;
+    background-size: contain;
+    width: 170px;
+    height: 160px;
+    left: 50%;
+    top: unset;
+    bottom: -5px;
+    transform: translate(-50%);
+    position: absolute;
+  }
+
+  .packabag-sidebar__logo {
+    padding-top: 40px;
+    max-width: 120px;
+    margin: 0 auto;
+  }
+
+  .packabag-sidebar__bag {
+    margin: -30px auto 0;
+  }
 }

@@ -19,7 +19,7 @@
 
 <div class="card-product__item {{ slideItem }}">
   <a class="card-product__link" href="{{ product.url | within: collection }}">
-    <div class="card-product__picture">
+    <div class="card-product__picture" data-product-id="{{product.variants[0].id}}" style="transform-origin: center">
       <img width="auto" height="auto" loading="lazy" class="card-product__image js-card-product-image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
       <div class="card-product-label{% if settings.label_side == 'right' %} card-product-label__side-right{% endif %}">
         {% if sold_out %}
@@ -68,7 +68,7 @@
           <span class="card-product__btn-text"> Quick add </span>
         </button>
       {% else %}
-        <button class="card-product__btn" type="submit" data-add-to-cart>
+        <button class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart>
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>

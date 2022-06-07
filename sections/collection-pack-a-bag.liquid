@@ -135,6 +135,8 @@
             listData.append(product.children());
             $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
             initQuickAdd();
+            addToBag();
+            initDraggable();
           }).always (function() {
             isBusy = false;
           });
@@ -143,8 +145,7 @@
     });
   });
 </script>
-
-<script src="{{ 'cart-drag-drop.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-drag-drop.js' | asset_url }}"></script>
 {% schema %}
   {
     "name": "Colections pages",

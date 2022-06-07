@@ -108,6 +108,7 @@ CartDawn = {
         });
 
         $('.js-cart-count').html(cart.item_count);
+        $('.packabag-sidebar__count').html(cart.item_count);
 
         $(CartDawn.Selector.count).text(cart.item_count);
         if(qty == '') {
