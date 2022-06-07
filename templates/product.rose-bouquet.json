@@ -56,15 +56,6 @@
           "settings": {
             "btn_wishlist": "Add to wishlist"
           }
-        },
-        "671f3cfa-ea66-44e3-8413-d7997c5f9d05": {
-          "type": "add_on",
-          "settings": {
-            "pr_title": "Fun Extras!",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "pr_1": "100-grand-bar",
-            "pr_2": "air-heads-bar"
-          }
         }
       },
       "block_order": [
@@ -76,8 +67,7 @@
         "variant_picker",
         "buy_buttons",
         "9314d269-9aa5-4d88-8f23-e034ebd3d8ed",
-        "41884624-41f9-4374-bde9-2bd73becdb9e",
-        "671f3cfa-ea66-44e3-8413-d7997c5f9d05"
+        "41884624-41f9-4374-bde9-2bd73becdb9e"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -85,7 +75,8 @@
         "media_size": "large",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false
+        "enable_video_looping": false,
+        "chocolate_rose_collection": "build-your-chocolate-rose-bouquet"
       }
     },
     "1650857688b2ff975d": {
