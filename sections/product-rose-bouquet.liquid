@@ -17,12 +17,13 @@
   <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-{%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
-<section class="product-detail product-individual section-{{ section.id }}-padding">
+
+<section class="product-detail product-rose-bouquet section-{{ section.id }}-padding">
   <div class="container">
   <div class="product">
     <div class="product__media-wrapper">
       <div class="product__media-content">
+        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
@@ -154,9 +155,9 @@
             <div class="product__media-thumnail swiper js-swiper-thumnail">
               <div class="product-thumbnails swiper-wrapper">
                 {% for media in product.media %}
-                    <div class="product-thumbnails__item swiper-slide">
-                      <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}">
-                    </div>
+                  <div class="product-thumbnails__item swiper-slide">
+                    <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}">
+                  </div>
                 {% endfor %}
               </div>
             </div>
@@ -288,79 +289,16 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
-              {% assign variantCount = product.options_with_values | size %}
-              {%- if block.settings.picker_type == 'button' -%}
-                <variant-radios class="no-js-hidden product-detail__variants{% if variantCount > 1 %} product-detail__many-options{% endif %}" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                  {%- for option in product.options_with_values -%}
-                    {% assign optionName = option.name | downcase %}
-                    {% assign is_size = true %}
-                    {% if optionName == 'size' %}
-                      {% assign is_size = false %}
-                    {% endif %}
-                      <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}">
-                        <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
-                        {% if is_size %}
-                          <div class="product-swatch__label">
-                            <div class="product-swatch__content">
-                              {% unless variantCount > 1 %}
-                                <img height="200" width="200" loading="lazy" class="js-swatch-image" src="" style="display: none;">
-                              {% endunless %}
-                              <div class="product-swatch__caption">
-                                <span class="js-option-label"></span>
-                                <span class="product-swatch__sold-out js-option-sold-out"></span>
-                              </div>
-                            </div>
-                            <span>
-                              {% render 'icon-caret' %}
-                            </span>
-                          </div>
-                        {% endif %}
-                        <div class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
-                          {%- for value in option.values -%}
-                            <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                                  name="{{ option.name }}"
-                                  value="{{ value | escape }}"
-                                  form="{{ product_form_id }}"
-                                  {% if is_size %} class="js-variant-input" {% endif %}
-                                  {% if option.selected_value == value %}checked{% endif %}
-                            >
-                            <label {% if is_size %}class="js-variant-item{% if option.selected_value == value %} js-variant-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                              {% unless variantCount > 1 %}
-                                {% if product.variants[forloop.index0].featured_media != blank %}
-                                  <img height="auto" width="50" loading="lazy"  class="product-form__swatch-image" src="{{ product.variants[forloop.index0].featured_media  | img_url: "small" }}">
-                                {% endif %}
-                              {% endunless %}
-                              <span class="product-form__swatch-group">
-                                {% if value contains 'decade gift box' %}
-                                  <span>{{ value | split: 'decade gift box' }}</span>
-                                {% else %}
-                                  <span>{{ value }}</span>
-                                {% endif %}
-                                {% unless variantCount > 1 %}
-                                  {% if product.variants[forloop.index0].available == false %}
-                                    <span class="product-form__swatch-soldout">Temporarily out of stock</span>
-                                  {% endif %}
-                                {% endunless %}
-                              </span>
-                            </label>
-                          {%- endfor -%}
-                        </div>
-                      </fieldset>
-                  {%- endfor -%}
-                  <script type="application/json">
-                    {{ product.variants | json }}
-                  </script>
-                </variant-radios>
-              {%- else -%}
-                <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                {%- assign variantCount = product.options_with_values | size -%}
+                <variant-selects class="no-js-hidden product-detail-selects" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                     <div class="product-form__input product-form__input--dropdown">
                       <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                        {{ option.name }}
+                        Choose a {{ option.name }} <span style="color: #AC1229"> *</span>
                       </label>
                       <div class="select">
                         <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select"
+                          class="select__select product-detail__select"
                           name="options[{{ option.name | escape }}]"
                           form="{{ product_form_id }}"
                         >
@@ -379,7 +317,6 @@
                     {{ product.variants | json }}
                   </script>
                 </variant-selects>
-              {%- endif -%}
             {%- endunless -%}
 
             <noscript class="product-form__noscript-wrapper-{{ section.id }}">
@@ -421,49 +358,65 @@
                   {% if product.available %}{% render 'subscription-product' with product as product %}{% endif %}
                   <!-- End ReCharge code -->
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
-                  <div class="product-form__buttons">
-                    <div class="product-form__group">
-                      <div class="product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-                        <quantity-input class="quantity">
-                          <button class="quantity__button no-js-hidden" name="minus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-                            {% render 'icon-minus' %}
-                          </button>
-                          <input class="quantity__input"
-                              type="number"
-                              name="quantity"
-                              id="Quantity-{{ section.id }}"
-                              min="1"
-                              value="1"
-                              form="{{ product_form_id }}"
-                            >
-                          <button class="quantity__button no-js-hidden" name="plus" type="button">
-                            <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-                            {% render 'icon-plus' %}
-                          </button>
-                        </quantity-input>
-                      </div>
-                      <button
-                        data-add-to-cart
-                        type="submit"
-                        name="add"
-                        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
-                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                      >
-                          <span>
-                            {%- if product.selected_or_first_available_variant.available -%}
-                              {{ 'products.product.add_to_cart' | t }}
-                            {%- else -%}
-                              {{ 'products.product.sold_out' | t }}
-                            {%- endif -%}
-                          </span>
-                          <div class="loading-overlay__spinner hidden">
-                            <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                            </svg>
+                  {%- if section.settings.chocolate_rose_collection != blank -%}
+
+                  <div class="product-rose-color">
+                    <label class="product-rose-color__label">CHOOSE FOIL COLOR QUANTITIES:</label>
+                    {% for product in collections[section.settings.chocolate_rose_collection].products %}
+                      {%- assign title = product.title | downcase -%}
+
+                      {% unless title contains 'case' or title contains 'bouquet' %}
+                        {%- assign roseColor = product.title | split: 'Chocolate Rose -' | last | strip -%}
+                          <div class="product-rose-color-option">
+                            <div class="product-rose-color__title">{{ roseColor }}</div>
+
+                            <div class="product-rose-color__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
+                              <quantity-input class="quantity">
+                                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                                  <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                                  {% render 'icon-minus' %}
+                                </button>
+                                <input class="quantity__input"
+                                    type="number"
+                                    name="properties[{{ roseColor | strip }} Rose]" placeholder="0"
+                                    id="Quantity-{{ section.id }}"
+                                    min="0"
+                                    max="12"
+                                    value=""
+                                  >
+                                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                                  <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                                  {% render 'icon-plus' %}
+                                </button>
+                              </quantity-input>
+                            </div>
+                            <input id="rose-sku" class="product-form__roses-hidden-sku hidden" type="text" name="properties[_{{ roseColor | downcase }}-sku]" value="{{ product.variants.first.sku }}b">
                           </div>
-                      </button>
-                    </div>
+                      {% endunless %}
+                   {% endfor %}
+                  </div>
+                {%- endif -%}
+                  <div class="product-form__buttons" style="margin-bottom: 20px;">
+                    <button
+                      data-add-to-cart
+                      type="submit"
+                      name="add"
+                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
+                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                    </button>
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
                     {%- endif -%}
@@ -520,7 +473,7 @@
               </p>
             {%- endif -%}
           {%- when 'add_on' -%}
-            {% include 'include--fun-extras' %}
+          {% include 'include--fun-extras' %}
           {% when 'wishlist' %}
             <div class="product-wishlist">
               <a class="btn-wishlist" href="#">
@@ -589,7 +542,7 @@
   {%- endfor -%}
   </div>
 </section>
-  
+
 <script type="searchspring/personalized-recommendations" profile="cross-sell">
 	seed = "{{ product.variants[0].sku }}";
     options = {
@@ -693,6 +646,32 @@
       },
     });
   });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const qtyInput = document.querySelectorAll('.product-rose-color .quantity__input');
+  const btnQty = document.querySelectorAll('.product-rose-color .quantity__button');
+  const selected = document.querySelector('.product-rose-bouquet .product-detail__select');
+  btnQty.forEach(function(button) {
+    button.onclick = function() {
+      const btnPlus = document.querySelectorAll('.product-rose-color .quantity__button[name="plus"]');
+      let sum = 0;
+      let totalQty = parseInt(selected.value);
+      qtyInput.forEach(function(item) {
+        let value = parseInt(item.value);
+        if(item.value == '' ) return;
+        sum += value
+      });
+      btnPlus.forEach(function(btn, i) {
+      if(sum >= totalQty) {
+        btnPlus[i].setAttribute('disabled', true);
+      } else {
+        btnPlus[i].removeAttribute('disabled');
+      }
+      })
+    }
+  })
+})
+
 </script>
 
 
@@ -803,25 +782,7 @@
     {
       "type": "variant_picker",
       "name": "t:sections.main-product.blocks.variant_picker.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "select",
-          "id": "picker_type",
-          "options": [
-            {
-              "value": "dropdown",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
-            },
-            {
-              "value": "button",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
-            }
-          ],
-          "default": "button",
-          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "buy_buttons",
@@ -1252,6 +1213,16 @@
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "Chocolate Rose Bouquets"
+    },
+    {
+      "type": "collection",
+      "id": "chocolate_rose_collection",
+      "label": "Chocolate Roses Collection",
+      "info": "Choose the collection that contains all Chocolate Roses. Bulk Roses can be included in the collection, they will be disregarded in the color list."
     }
   ]
 }
