@@ -467,7 +467,97 @@
   }
 }
 
+.filter-mobile {
+  display: none;
+}
+
+.filter-mobile__header {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 21px;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  color: var(--color-link-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-mobile-title {
+  display: none;
+}
+
+.filter-mobile__icon svg {
+  vertical-align: middle;
+}
+
 @media (max-width: 980px) {
+  .sidebar-filter__inner:first-child {
+    border-top: 0;
+  }
+
+  .collection__sort-by {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sidebar-mobile-title {
+    display: block;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 21px;
+    text-transform: uppercase;
+    font-family: var(--my-font);
+    color: var(--color-link-text);
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+  }
+
+  .sidebar-mobile-title__icon {
+    position: absolute;
+    left: 20px;
+  }
+
+  .sidebar-mobile-title__icon svg {
+    vertical-align: middle;
+  }
+
+  .filter-mobile {
+    display: block;
+  }
+
+  .collection-sidebar.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #e4f1f5;
+    z-index: 1001;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+  }
+
+  .open-filter .collection-sidebar.sidebar {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+
   .collection__wrapper,
   .collection__header {
     grid-template-columns: 1fr;
@@ -503,8 +593,6 @@
   }
 
   .sidebar-filter__inner {
-    margin-left: -20px;
-    margin-right: -20px;
     padding: 20px;
   }
 
