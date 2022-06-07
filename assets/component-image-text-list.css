@@ -32,6 +32,10 @@
 	margin: 0;
 }
 
+.image-with-text__heading p {
+	margin: 0;
+}
+
 .image-with-text__heading strong {
 	font-family: 'Merriweather Bold';
 }

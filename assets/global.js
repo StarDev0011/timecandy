@@ -833,18 +833,20 @@ class VariantSelects extends HTMLElement {
   }
 
   updateImage() {
-    const baseImge = this.currentVariant.featured_image.src;
-    this.imageCardItems = document.querySelector('.card-product__image');
-    if(this.featuredImage) {
-      this.featuredImage.setAttribute('src', baseImge);
-      this.featuredImage.setAttribute('srcset', baseImge);
-    }
+    if(this.currentVariant.featured_image != null ) {
+      const baseImge = this.currentVariant.featured_image.src;
+      this.imageCardItems = document.querySelector('.card-product__image');
+      if(this.featuredImage) {
+        this.featuredImage.setAttribute('src', baseImge);
+        this.featuredImage.setAttribute('srcset', baseImge);
+      }
 
-    const section = this.closest('.card-product__item');
-    if(!section) return;
-    const cardItemImage = section.querySelector('.card-product__image');
-    if(cardItemImage) {
-      cardItemImage.setAttribute('src', baseImge);
+      const section = this.closest('.card-product__item');
+      if(!section) return;
+      const cardItemImage = section.querySelector('.card-product__image');
+      if(cardItemImage) {
+        cardItemImage.setAttribute('src', baseImge);
+      }
     }
   }
 
