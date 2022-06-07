@@ -65,6 +65,25 @@
                 <div class="mini-cart__variants"> {{- item.variant.title -}} </div>
               {%- endif -%}
 
+              <dl class="mini-cart__options">
+              {%- for property in item.properties -%}
+                {%- assign property_first_char = property.first | slice: 0 -%}
+                {%- if property.last != blank and property_first_char != '_' -%}
+                  <div class="mini-cart__product-option">
+                    <dt>{{ property.first }}: </dt>
+                    <dd>
+                      {%- if property.last contains '/uploads/' -%}
+                        <a href="{{ property.last }}" class="link" target="_blank">
+                          {{ property.last | split: '/' | last }}
+                        </a>
+                      {%- else -%}
+                        {{ property.last }}
+                      {%- endif -%}
+                    </dd>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+              </dl>
               <div class="mini-cart__group">
                 <div class="mini-cart__wrapper">
                   <div class="mini-cart__qty">
