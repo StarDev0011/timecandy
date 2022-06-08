@@ -257,6 +257,53 @@
         "padding_bottom_mb": 130
       }
     },
+    "1654699404908018cb": {
+      "type": "image-with-text",
+      "blocks": {
+        "1654699404f973a2eb-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Pack-a-Bag<\/p>"
+          }
+        },
+        "1654699404f973a2eb-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Choose from hundreds of candies to make a unique assortment for you or a friend.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "1654699404f973a2eb-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Start your bag",
+            "button_link": "shopify:\/\/collections\/pack-a-bag"
+          }
+        }
+      },
+      "block_order": [
+        "1654699404f973a2eb-0",
+        "1654699404f973a2eb-1",
+        "1654699404f973a2eb-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pack-a-bag_3a0c4bab-7c7d-4f8c-bb15-34e055182c6e.jpg",
+        "image_width": 485,
+        "box_text_width": 455,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 60,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
     "testimonial": {
       "type": "testimonial",
       "blocks": {
@@ -308,53 +355,6 @@
         "padding_top": 90,
         "padding_bottom": 120
       }
-    },
-    "1654699404908018cb": {
-      "type": "image-with-text",
-      "blocks": {
-        "1654699404f973a2eb-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Pack-a-Bag<\/p>"
-          }
-        },
-        "1654699404f973a2eb-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Choose from hundreds of candies to make a unique assortment for you or a friend.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "1654699404f973a2eb-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Start your bag",
-            "button_link": "shopify:\/\/collections\/pack-a-bag"
-          }
-        }
-      },
-      "block_order": [
-        "1654699404f973a2eb-0",
-        "1654699404f973a2eb-1",
-        "1654699404f973a2eb-2"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/pack-a-bag_3a0c4bab-7c7d-4f8c-bb15-34e055182c6e.jpg",
-        "image_width": 485,
-        "box_text_width": 455,
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "center",
-        "padding_top": 90,
-        "padding_bottom": 140,
-        "padding_top_mb": 60,
-        "padding_bottom_mb": 64,
-        "show_bottom": false,
-        "column_1": "",
-        "column_2": "",
-        "column_3": ""
-      }
     }
   },
   "order": [
@@ -365,7 +365,7 @@
     "image_text_list",
     "16533557769356a59b",
     "featured_collection",
-    "testimonial",
-    "1654699404908018cb"
+    "1654699404908018cb",
+    "testimonial"
   ]
 }
