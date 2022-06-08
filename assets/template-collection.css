@@ -502,6 +502,11 @@
     border-top: 0;
   }
 
+  .collection-sidebar__link {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .collection__sort-by {
     padding-left: 20px;
     padding-right: 20px;
