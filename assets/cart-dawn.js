@@ -31,12 +31,11 @@ CartDawn = {
 
   doAjaxAddToCart: (item) => {
     $('.cart-overlay').show();
-    $.post('/cart/add.js', item.serialize(), null, 'json').done(function (item) {
+    $.post(window.Shopify.routes.root + 'cart/add.js', item.serialize(), null, 'json').done(function (item) {
       $('.modal-error').fadeOut(500);
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
-        $('.js-mini-cart').html(data).focus();
-        $('.js-mini-cart').click();
+        $('.js-mini-cart').html(data);
         $('.cart-overlay').hide();
       });
 
@@ -53,9 +52,9 @@ CartDawn = {
   },
 
   initAddToCart: () => {
-    $(document).on('click', '[data-add-to-cart]', function(e) {
+    $('body').on('click', CartDawn.Selector.btnAddToCart, function(e) {
       e.preventDefault();
-      const productItem = $(this).parents('form[action="/cart/add"]');
+      const productItem = $(this).parents('form');
       CartDawn.doAjaxAddToCart(productItem);
     });
   },
@@ -83,8 +82,8 @@ CartDawn = {
           $.get('/cart?view=dawn', function(data) {
             $('body').addClass('open-minicart');
             $('.cart-overlay').hide();
-            $('.js-mini-cart').html(data);
             CartDawn.shippingInsurance();
+            $('.js-mini-cart').html(data);
           });
 
           $.get('/cart.js', null, null, 'json').done(function (cart) {
@@ -103,8 +102,8 @@ CartDawn = {
       }).done(function(cart) {
         $.get('/cart?view=dawn', function(data) {
           $('.cart-overlay').hide();
-          $('.js-mini-cart').html(data);
           CartDawn.shippingInsurance();
+          $('.js-mini-cart').html(data);
         });
 
         $('.js-cart-count').html(cart.item_count);

@@ -2868,3 +2868,10 @@ div.modal-background {
 	z-index: 98;
 	display: block;
 }
+
+.ss__autocomplete a {
+  color: #262626 !important;
+}
+.ss__autocomplete a:hover {
+  color: rgb(var(--color-link-hover)) !important;
+}

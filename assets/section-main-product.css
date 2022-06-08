@@ -2066,9 +2066,10 @@ div.rc_block__type {
 }
 
 .product-rose-color__title {
-  width: 25%;
+  width: 32%;
   font-size: 16px;
   color: var(--color-text);
+  padding-right: 10px;
 }
 
 @media (max-width: 1150px) and (min-width: 900px) {

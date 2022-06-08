@@ -1,7 +1,7 @@
 .image-text-list__img {
   width: 284px;
   height: 284px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 100%;
   border: 10px solid #0C5273;
   background-color: #fff;
