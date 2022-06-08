@@ -6,12 +6,12 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Scroller_Image.png",
-            "image_mb": "shopify:\/\/shop_images\/Scroller_Image-mb.png",
-            "heading": "Get Valentine’s Day Candy and More 14% Off with Code “BEMINE”",
-            "subheading": "Create a candy bouquet",
+            "image": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderDesktop-02-Output-2880x900_2x_2160x675_crop_center_3bef3693-ed84-4df3-a11b-29b9a3ef2add.png",
+            "image_mb": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderMobile-02-Output-1200x1200_2x_600x600_crop_center_b2801cbb-e3a1-46f3-b683-de93e4b71849.png",
+            "heading": "Save 15% on All Novelty Candy this week with code 'OTC15'",
+            "subheading": "It's National Candy Month!",
             "button_label": "shop now",
-            "link": "#",
+            "link": "shopify:\/\/collections\/deals-of-the-week",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
