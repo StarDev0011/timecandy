@@ -36,13 +36,13 @@ CartDawn = {
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
         $('.js-mini-cart').html(data);
+        CartDawn.shippingInsurance();
         $('.cart-overlay').hide();
       });
 
       $.get('/cart.js', null, null, 'json').done(function (data) {
         $(CartDawn.Selector.count).text(data.item_count);
         $('.js-cart-count').html(data.item_count);
-        CartDawn.shippingInsurance();
       });
     }).fail(function ({ responseJSON }) {
         const { description } = responseJSON;
@@ -102,8 +102,8 @@ CartDawn = {
       }).done(function(cart) {
         $.get('/cart?view=dawn', function(data) {
           $('.cart-overlay').hide();
-          CartDawn.shippingInsurance();
           $('.js-mini-cart').html(data);
+          CartDawn.shippingInsurance();
         });
 
         $('.js-cart-count').html(cart.item_count);
