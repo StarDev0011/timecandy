@@ -2049,6 +2049,11 @@ div.rc_block__type {
   background-color: #fff !important;
 }
 
+.product-detail .product-form__input-first {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
 .product-rose-color-option {
   display: flex;
   align-items: center;
