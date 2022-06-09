@@ -36,14 +36,15 @@ CartDawn = {
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
         $('.js-mini-cart').html(data);
+        CartDawn.shippingInsurance();
         $('.cart-overlay').hide();
       });
 
       $.get('/cart.js', null, null, 'json').done(function (data) {
         $(CartDawn.Selector.count).text(data.item_count);
         $('.js-cart-count').html(data.item_count);
-        CartDawn.shippingInsurance();
       });
+
     }).fail(function ({ responseJSON }) {
         const { description } = responseJSON;
         $('.modal-error').fadeIn(500);
@@ -54,8 +55,19 @@ CartDawn = {
   initAddToCart: () => {
     $('body').on('click', CartDawn.Selector.btnAddToCart, function(e) {
       e.preventDefault();
-      const productItem = $(this).parents('form');
-      CartDawn.doAjaxAddToCart(productItem);
+      const personalizedMessage = document.querySelector('#personalized-message');
+      if(personalizedMessage) {
+        if(personalizedMessage.value.length == '') {
+          personalizedMessage.classList.add('error');
+        } else {
+          personalizedMessage.classList.remove('error');
+          const productItem = $(this).parents('form');
+          CartDawn.doAjaxAddToCart(productItem);
+        }
+      } else {
+        const productItem = $(this).parents('form');
+        CartDawn.doAjaxAddToCart(productItem);
+      }
     });
   },
 
@@ -102,8 +114,8 @@ CartDawn = {
       }).done(function(cart) {
         $.get('/cart?view=dawn', function(data) {
           $('.cart-overlay').hide();
-          CartDawn.shippingInsurance();
           $('.js-mini-cart').html(data);
+          CartDawn.shippingInsurance();
         });
 
         $('.js-cart-count').html(cart.item_count);
