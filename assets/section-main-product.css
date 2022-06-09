@@ -2046,7 +2046,7 @@ div.rc_block__type {
 
 .product-rose-color .quantity__input {
   font-size: 16px;
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 .product-rose-color-option {
