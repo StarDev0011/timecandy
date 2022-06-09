@@ -39,7 +39,7 @@
                   >
                   <label {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                     {% if value contains 'decade gift box' %}
-                      {{ value | split: 'decade gift box' }}
+                    {{ value | downcase | split: 'decade gift box' }}
                     {% else %}
                       {{ value }}
                     {% endif %}

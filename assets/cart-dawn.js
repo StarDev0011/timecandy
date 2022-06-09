@@ -44,6 +44,7 @@ CartDawn = {
         $(CartDawn.Selector.count).text(data.item_count);
         $('.js-cart-count').html(data.item_count);
       });
+
     }).fail(function ({ responseJSON }) {
         const { description } = responseJSON;
         $('.modal-error').fadeIn(500);
@@ -54,8 +55,19 @@ CartDawn = {
   initAddToCart: () => {
     $('body').on('click', CartDawn.Selector.btnAddToCart, function(e) {
       e.preventDefault();
-      const productItem = $(this).parents('form');
-      CartDawn.doAjaxAddToCart(productItem);
+      const personalizedMessage = document.querySelector('#personalized-message');
+      if(personalizedMessage) {
+        if(personalizedMessage.value.length == '') {
+          personalizedMessage.classList.add('error');
+        } else {
+          personalizedMessage.classList.remove('error');
+          const productItem = $(this).parents('form');
+          CartDawn.doAjaxAddToCart(productItem);
+        }
+      } else {
+        const productItem = $(this).parents('form');
+        CartDawn.doAjaxAddToCart(productItem);
+      }
     });
   },
 

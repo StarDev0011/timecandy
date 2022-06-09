@@ -370,6 +370,8 @@
                   <!-- Begin ReCharge code -->
                   {% if product.available %}{% render 'subscription-product' with product as product %}{% endif %}
                   <!-- End ReCharge code -->
+                  {% render 'product-personalized-fields' %}
+
                   {% if section.settings.enable %}
                     {% if section.settings.optional_extras != blank %}
                       <div class="product-optional-extras">
@@ -409,6 +411,7 @@
                       <button
                         type="submit"
                         name="add"
+                        data-add-to-cart
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                       >
