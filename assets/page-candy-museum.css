@@ -18,6 +18,10 @@ p{
   line-height: 27px;
 }
 
+.page-candy-museum-grid-item a{
+  text-decoration: none;
+}
+
 @media (max-width: 824px) {
   .page-candy-museum_heading{
     width: 100%;
@@ -34,12 +38,18 @@ p{
   padding: 15px;
 }
 
+.page-candy-museum__item h3{
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
 .page-candy-museum .page-candy-museum-grid {
   display: grid;
   grid-template-columns: 225px;
   justify-content: center;
   padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 }
 
 @media (min-width: 825px) {
