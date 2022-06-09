@@ -75,7 +75,9 @@
         "media_size": "large",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
-        "enable_video_looping": false
+        "enable_video_looping": false,
+        "enable": true,
+        "optional_extras": "candy-gifts-cg-remember-when"
       }
     },
     "16518009138973d5b1": {
@@ -153,6 +155,7 @@
         "165085778836ad72b0-0": {
           "type": "select",
           "settings": {
+            "product": "",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -163,6 +166,7 @@
         "165085778836ad72b0-1": {
           "type": "select",
           "settings": {
+            "product": "",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -173,6 +177,7 @@
         "165085778836ad72b0-2": {
           "type": "select",
           "settings": {
+            "product": "",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
