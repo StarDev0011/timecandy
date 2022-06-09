@@ -1,0 +1,90 @@
+{% comment %}
+    Tags can be added to any product to enable personalized
+    fields on the front-end. While intended for Decade Gift Boxes,
+    the fields are loaded on all products.
+
+    Available Fields
+    personalized-birthday | Front-end Label
+    personalized-image | Front-end Label
+    personalized-message | Front-end Label
+{% endcomment %}
+
+{% for tag in product.tags limit: 1000 %}
+    {% if tag contains 'personalized-birthday' %}
+        {% comment %} Short circuit if no label is present {% endcomment %}
+        {% if tag contains '|' %}
+            {%- assign personalized-birthday = tag | split: '|' | last -%}
+
+            {% if tag contains '-required' %}
+                {%- assign personalized-birthday-required = true -%}
+            {% endif %}
+
+        {% endif %}
+    {% endif %}
+
+    {% if tag contains 'personalized-image' %}
+        {% comment %} Short circuit if no label is present {% endcomment %}
+        {% if tag contains '|' %}
+            {%- assign personalized-image = tag | split: '|' | last -%}
+
+            {% if tag contains '-required' %}
+                {%- assign personalized-image-required = true -%}
+            {% endif %}
+
+        {% endif %}
+    {% endif %}
+
+    {% if tag contains 'personalized-message' or tag contains 'personalized-message-short' %}
+        {% comment %} Short circuit if no label is present {% endcomment %}
+        {% if tag contains '|' %}
+            {%- assign personalized-message = tag | split: '|' | last -%}
+
+            {% if tag contains '-required' %}
+                {%- assign personalized-message-required = true -%}
+            {% endif %}
+
+            {% if tag contains '-short' %}
+                {%- assign personalized-message-count = '75' -%}
+            {% else %}
+                {%- assign personalized-message-count = '250' -%}
+            {% endif %}
+
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% comment %} Birthday {% endcomment %}
+{% if personalized-birthday != blank %}
+    <div class="product-form__line-item-wrapper mt-3 mb-3">
+        <label for="enter-birthday-number" class="product-form__line-item-label--infield">{{ personalized-birthday }}{% if personalized-birthday-required %}<span class="color-red">*<span>{% endif %}</label>
+        <input data-property-name="Birthday Number" id="enter-birthday-number" class="product__line-item-prop product-form__line-item-field--infield" type="number" min="1" max="150" name="properties[Birthday Number]" {% if personalized-birthday-required %}required{% endif %}>
+    </div>
+{% endif %}
+
+{% comment %} Custom Image {% endcomment %}
+{% if personalized-image != blank %}
+    <div class="product-form__line-item-wrapper product-form__upload">
+        <label for="personalized-image" class="product__decade-label" id="personalized-image-label">{{ personalized-image }}{% if personalized-image-required %}<span class="color-red">*<span>{% endif %}</label>
+        <input data-property-name="Photo Upload" id="personalized-image" class="product__line-item-prop product-form__line-item-field--infield mt-2" type="file" name="properties[Photo Upload]" {% if personalized-image-required %}required{% endif %}>
+    </div>
+    <div id="personalized-image-message" class="form-success visually-hidden"></div>
+{% endif %}
+
+{% comment %} Boxtop Message {% endcomment %}
+{% if personalized-message != blank %}
+    <p class="product__decade-label">{{ personalized-message }} <span style="color: #AC1229"> *</span></p>
+    <div class="product-form__line-item-wrapper">
+        <textarea onkeyup="limitText(this)" onpaste="limitText(this)" onchange="limitText(this)" placeholder="Type your message here…" data-property-name="Personalized Message" id="personalized-message" class="product__line-item-prop product-form__line-item-field--infield" rows="8" maxlength="{{ personalized-message-count }}" name="properties[Personalized Message]" {% if personalized-message-required %}required{% endif %}></textarea>
+        <div class="product__decade-message"><span id="personalized-message-count">{{ personalized-message-count }}</span> Characters Remaining.</div>
+    </div>
+{% endif %}
+
+{% comment %} End Custom Line Item Props {% endcomment %}
+
+<script>
+    function limitText(_this) {
+        const messageCount = document.querySelector('#personalized-message-count');
+        let limit = parseInt(_this.getAttribute('maxlength'));
+        messageCount.textContent = limit - _this.value.length;
+    }
+</script>

@@ -428,6 +428,7 @@ img {
   visibility: hidden;
   transform: translate(0, 50%);
   transition:all .5s ease;
+  z-index: 99;
 }
 
 .quick-add .price__badge-sold-out {

@@ -332,7 +332,7 @@
                               {% endunless %}
                               <span class="product-form__swatch-group">
                                 {% if value contains 'decade gift box' %}
-                                  <span>{{ value | split: 'decade gift box' }}</span>
+                                  <span>{{ value | downcase | split: 'decade gift box' }}</span>
                                 {% else %}
                                   <span>{{ value }}</span>
                                 {% endif %}

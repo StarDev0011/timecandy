@@ -12,9 +12,29 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {% if section.settings.image_2 != blank %}
+    .section-image-{{ section.id }} .image-with-text__media {
+      background-image: url({{ section.settings.image_2 | img_url: '600x' }});
+      background-repeat: no-repeat;
+      background-position: bottom 10px left;
+      background-size: calc(90% - 100px);
+    }
+
+    .section-image-{{ section.id }} .image-with-text__media img {
+      max-width: calc(100% - 100px) !important;
+      top: auto !important;
+      bottom: 0px;
+      right: 0;
+      left: auto!important;
+      height: calc(100% - 75px) !important;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  {% endif %}
 {%- endstyle -%}
 
-<div class="image-with-text test  page-width section-{{ section.id }}-padding">
+<div class="image-with-text page-width section-{{ section.id }}-padding section-image-{{ section.id }}">
   <div class="image-with-text__container">
     <div class="image-with-text__grid {% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
       <div class="image-with-text__media-item  image-with-text__media-item--{{ section.settings.desktop_content_position }}">
@@ -117,6 +137,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Background Image"
     },
     {
       "type": "range",
