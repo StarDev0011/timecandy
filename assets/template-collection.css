@@ -689,7 +689,27 @@
 }
 
 .collection-pack-a-bag .card-product__picture{
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
   cursor: grab;
+}
+
+.collection-pack-a-bag .card-product__picture:hover{
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -o-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+
+.collection-pack-a-bag .card-product__picture:active{
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: -o-grabbing;
+  cursor: -ms-grabbing;
+  cursor: grabbing;
 }
 
 .packabag-sidebar {
