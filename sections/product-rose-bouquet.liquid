@@ -371,24 +371,23 @@
                             <div class="product-rose-color__title">{{ roseColor }}</div>
 
                             <div class="product-rose-color__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-                              <quantity-input class="quantity">
-                                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                              <div class="quantity">
+                                <button class="quantity__button no-js-hidden qty-btn" name="minus" type="button">
                                   <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                                   {% render 'icon-minus' %}
                                 </button>
-                                <input class="quantity__input"
+                                <input class="quantity__input qty-input"
                                     type="number"
                                     name="properties[{{ roseColor | strip }} Rose]" placeholder="0"
                                     id="Quantity-{{ section.id }}"
                                     min="0"
                                     max="12"
-                                    val="0"
                                   >
-                                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                                <button class="quantity__button no-js-hidden qty-btn" name="plus" type="button">
                                   <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                                   {% render 'icon-plus' %}
                                 </button>
-                              </quantity-input>
+                              </div>
                             </div>
                             <input id="rose-sku" class="product-form__roses-hidden-sku hidden" type="text" name="properties[_{{ roseColor | downcase }}-sku]" value="{{ product.variants.first.sku }}b">
                           </div>
@@ -648,12 +647,29 @@
   });
 
 window.addEventListener('DOMContentLoaded', () => {
-  const qtyInput = document.querySelectorAll('.product-rose-color .quantity__input');
-  const btnQty = document.querySelectorAll('.product-rose-color .quantity__button');
+  const btnQty = document.querySelectorAll('.qty-btn');
+  const qtyInput = document.querySelectorAll('.product-rose-color .qty-input');
+  const all_count = 12;
   const selected = document.querySelector('.product-rose-bouquet .product-detail__select');
-  btnQty.forEach(function(button) {
-    button.onclick = function() {
-      const btnPlus = document.querySelectorAll('.product-rose-color .quantity__button[name="plus"]');
+  btnQty.forEach(function(btn) {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      let type = btn.getAttribute('name');
+      switch (type) {
+        case 'plus':
+          var adult_count = btn.previousElementSibling.value;
+          if (adult_count < all_count)
+          adult_count++;
+          btn.previousElementSibling.value = adult_count;
+        break;
+        case 'minus':
+          var adult_count = btn.nextElementSibling.value;
+          if (adult_count != 0)
+          adult_count--;
+          btn.nextElementSibling.value = adult_count;
+          break;
+      }
+
       let sum = 0;
       let totalQty = parseInt(selected.value);
       qtyInput.forEach(function(item) {
@@ -661,15 +677,16 @@ window.addEventListener('DOMContentLoaded', () => {
         if(item.value == '' ) return;
         sum += value
       });
+      const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
       btnPlus.forEach(function(btn, i) {
-      if(sum >= totalQty) {
-        btnPlus[i].setAttribute('disabled', true);
-      } else {
-        btnPlus[i].removeAttribute('disabled');
-      }
+        if(sum >= totalQty) {
+          btnPlus[i].setAttribute('disabled', true);
+        } else {
+          btnPlus[i].removeAttribute('disabled');
+        }
       })
     }
-  })
+  });
 })
 
 </script>
