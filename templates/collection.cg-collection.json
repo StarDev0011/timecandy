@@ -2,6 +2,87 @@
   "sections": {
     "corporate-gifts": {
       "type": "collection--corporate-gifts",
+      "blocks": {
+        "734471e4-686b-436e-8ae0-35e1c8e15168": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-decade-candy-gift-boxes"
+          }
+        },
+        "69c29a76-870c-4855-947a-b77b6c3180dd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-personalized-candy-gift-boxes"
+          }
+        },
+        "8549fcdc-55b4-43aa-8b71-239f8c66b61e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes"
+          }
+        },
+        "e83fb5d9-21e5-445b-ad35-eaa80ee8ebbd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "retro-candy-assortments"
+          }
+        },
+        "2b44408b-9a0e-40f0-8fe4-6417d9ea5078": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-you-ate-as-a-kid-decade-bags-collection"
+          }
+        },
+        "840436ca-a270-437f-a013-8687edf5e80a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-gifts-candy-bouquets"
+          }
+        },
+        "038a237f-a179-42a1-a941-43c4cf2ad5c0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "subscription-boxes"
+          }
+        },
+        "cfa1e037-ad9d-4954-84c7-ed663314f8b8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-candy-plastic-tubs"
+          }
+        },
+        "00d0f32f-4aa2-4494-ad34-77a0aa92c66a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gift-mugs"
+          }
+        },
+        "96098b40-b8d4-432e-820d-32c17e7be7f6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "more-assortments"
+          }
+        },
+        "e0f10097-9bba-4311-b262-cc3ffb66e949": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-lunch-box-candy"
+          }
+        }
+      },
+      "block_order": [
+        "734471e4-686b-436e-8ae0-35e1c8e15168",
+        "69c29a76-870c-4855-947a-b77b6c3180dd",
+        "8549fcdc-55b4-43aa-8b71-239f8c66b61e",
+        "e83fb5d9-21e5-445b-ad35-eaa80ee8ebbd",
+        "2b44408b-9a0e-40f0-8fe4-6417d9ea5078",
+        "840436ca-a270-437f-a013-8687edf5e80a",
+        "038a237f-a179-42a1-a941-43c4cf2ad5c0",
+        "cfa1e037-ad9d-4954-84c7-ed663314f8b8",
+        "00d0f32f-4aa2-4494-ad34-77a0aa92c66a",
+        "96098b40-b8d4-432e-820d-32c17e7be7f6",
+        "e0f10097-9bba-4311-b262-cc3ffb66e949"
+      ],
       "settings": {
       }
     }
