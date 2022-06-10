@@ -1,26 +1,20 @@
 {% assign count_block = 0 %}
-{% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
-    {% assign count_block = count_block | plus: 1 %}
-{% endif %}
-{% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
-    {% assign count_block = count_block | plus: 1 %}
-{% endif %}
-{% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
-    {% assign count_block = count_block | plus: 1 %}
-{% endif %}
-{% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
-    {% assign count_block = count_block | plus: 1 %}
-{% endif %}
+
 {% for submenu in links %}
     {% if links.size > 1 %}
         {% assign megamenu_slide = true %} 
     {% endif %}
-
+	{% if submenu.title == "Top Products" and submenu.links != blank %}
+		{% for top_product in submenu.links %}
+  	      {% assign count_block = count_block | plus: 1 %}
+	    {% endfor %}
+	{% endif %}
 {% endfor%}
 <div class="page-width">
     <div class="mega-menu-wrapper">
         <div class="d-flex menu-child">
         {% for submenu in links %}
+          {% unless submenu.title == "Top Products" %}
             <div class="last-level-menu {{ childlink.title | handleize }} col-ds__{{ 100 | divided_by: links.size | ceil }} js-parent">
                 {% if datas.show_tt_child %}
                     <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
@@ -31,6 +25,7 @@
                     {% endfor %}
                 </ul>  
             </div>
+          {% endunless %}
         {% endfor %}
         </div>
     </div>
@@ -39,98 +34,40 @@
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
             <div  id="megamenu-image" class="megamenu-image-container {% if megamenu_slide %} swiper swiper-container  {% endif %} ">  
                 <div class="image-container-wrapper {% if megamenu_slide %} swiper-wrapper {% else %}d-flex__end{% endif %}">
-                    {% if datas.push_1_image != blank or datas.push_1_heading != blank or datas.push_1_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
-                            <div class="image-container-item">
-                                <a class="image p-relative {% if datas.push_1_url == blank %} not-link {% endif %}" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}" {% endif %}>
-                                    {% if datas.push_1_image != blank %}
-                                        <img class="p-center" 
-                                            src="{{ datas.push_1_image | img_url: '217x199' }}"
-                                            alt="{{ datas.push_1_image.alt }}"
-                                            width="{{ datas.push_1_image.width }}"
-                                            height="{{ datas.push_1_image.height }}"
-                                            loading="lazy"
-                                        />
-                                    {% endif %}
-                                    {% if datas.push_1_label != blank %}
-                                        <span class="text-label h6">{{ datas.push_1_label }}</span>
-                                    {% endif %}
-                                </a>
-                                {% if datas.push_1_heading != blank %}
-                                    <a class="text-container link h6 {% if datas.push_1_url == blank %} not-link {% endif %}" {% if datas.push_1_url != blank %}href="{{ datas.push_1_url }}"{% endif %}>{{ datas.push_1_heading }}</a>
-                                {% endif %}
-                            </div>
-                        </div>
+                  {% for submenu in links %}
+                    {% if submenu.title == "Top Products" %}
+                  	  {% for top_product in submenu.links %}
+                  		  {% assign top_product_handle = top_product.url | remove: '/products/' %}
+                    	  {% assign top_product_s = all_products[top_product_handle] %}
+	                      <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
+    	                    <div class="image-container-item">
+        	                  <a class="image p-relative {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}" {% endif %}>
+            	                {% if top_product_s.featured_image %}
+                	            <img class="p-center" 
+                    	             src="{{ top_product_s.featured_image | img_url: '217x199' }}"
+                        	         alt="{{ top_product_s.featured_image.alt }}"
+                            	     width="{{ top_product_s.featured_image.width }}"
+                                	 height="{{ top_product_s.featured_image.height }}"
+	                                 loading="lazy"
+    	                             />
+        	                    {% endif %}
+                                {% for t in top_product_s.tags %}
+                                  {% assign tag = t | strip %}
+                                  {% assign tag_value = tag | handleize %}
+
+                                  {% if tag_value contains 'label-' %}
+	                                <span class="text-label h6">{{- tag | split: 'Label:' -}}</span>
+                                  {% endif %}
+                                {% endfor %}
+                        	  </a>
+	                          {% if top_product_s.title != blank %}
+    	                      <a class="text-container link h6 {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}"{% endif %}>{{ top_product_s.title }}</a>
+        	                  {% endif %}
+            	            </div>
+                	      </div>                  
+                  		{% endfor %}
                     {% endif %}
-                    {% if datas.push_2_image != blank or datas.push_2_heading != blank or datas.push_2_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
-                            <div class="image-container-item">
-                                <a class="image p-relative {% if datas.push_2_url == blank %} not-link {% endif %} " {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>
-                                    {% if datas.push_2_image != blank %}
-                                        <img class="p-center" 
-                                            src="{{ datas.push_2_image | img_url: '217x199'}}"
-                                            alt="{{ datas.push_2_image.alt }}"
-                                            width="{{ datas.push_2_image.width }}"
-                                            height="{{ datas.push_2_image.height }}"
-                                            loading="lazy"
-                                        />
-                                    {% endif %}
-                                    {% if datas.push_2_label != blank %}
-                                        <span class="text-label h6">{{ datas.push_2_label }}</span>
-                                    {% endif %}
-                                </a>
-                                {% if datas.push_2_heading != blank %}
-                                    <a class="text-container link h6 {% if datas.push_2_url == blank %} not-link {% endif %}" {% if datas.push_2_url != blank %}href="{{ datas.push_2_url }}"{% endif %}>{{ datas.push_2_heading }}</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
-                    {% if datas.push_3_image != blank or datas.push_3_heading != blank or datas.push_3_url != blank %}
-                        <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
-                            <div class="image-container-item">
-                                <a class="image p-relative {% if datas.push_3_url == blank %} not-link {% endif %} " {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>
-                                    {% if datas.push_3_image != blank %}
-                                        <img class="p-center" 
-                                            src="{{ datas.push_3_image | img_url: '217x199'}}"
-                                            alt="{{ datas.push_3_image.alt }}"
-                                            width="{{ datas.push_3_image.width }}"
-                                            height="{{ datas.push_3_image.height }}"
-                                            loading="lazy"
-                                        />
-                                    {% endif %}
-                                    {% if datas.push_3_label != blank %}
-                                        <span class="text-label h6">{{ datas.push_3_label }}</span>
-                                    {% endif %}
-                                </a>
-                                {% if datas.push_3_heading != blank %}
-                                    <a class="text-container link h6 {% if datas.push_3_url == blank %} not-link {% endif %}" {% if datas.push_3_url != blank %}href="{{ datas.push_3_url }}"{% endif %}>{{ datas.push_3_heading }}</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
-                    {% if datas.push_4_image != blank or datas.push_4_heading != blank or datas.push_4_url != blank %}
-                       <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
-                            <div class="image-container-item">
-                                <a class="image p-relative {% if datas.push_4_url == blank %} not-link {% endif %}" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>
-                                    {% if datas.push_4_image != blank %}
-                                        <img class="p-center" 
-                                            src="{{ datas.push_4_image | img_url: '217x199'}}"
-                                            alt="{{ datas.push_4_image.alt }}"
-                                            width="{{ datas.push_4_image.width }}"
-                                            height="{{ datas.push_4_image.height }}"
-                                            loading="lazy"
-                                        />
-                                    {% endif %}
-                                    {% if datas.push_4_label != blank %}
-                                        <span class="text-label h6">{{ datas.push_4_label }}</span>
-                                    {% endif %}
-                                </a>
-                                {% if datas.push_4_heading != blank %}
-                                    <a class="text-container link h6 {% if datas.push_4_url == blank %} not-link {% endif %}" {% if datas.push_4_url != blank %}href="{{ datas.push_4_url }}"{% endif %}>{{ datas.push_4_heading }}</a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
+                  {% endfor %}
                 </div>
             </div>
         </div>
