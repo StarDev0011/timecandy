@@ -1,12 +1,12 @@
 {
   "sections": {
-    "corporate-gifts": {
-      "type": "collection--corporate-gifts",
+    "party-favors": {
+      "type": "collection--party-favors",
       "settings": {
       }
     }
   },
   "order": [
-    "corporate-gifts"
+    "party-favors"
   ]
 }
