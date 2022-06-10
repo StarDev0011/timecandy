@@ -1,12 +1,37 @@
 {
   "sections": {
-    "party-favors": {
-      "type": "collection--party-favors",
+    "corporate-gifts": {
+      "type": "collection--corporate-gifts",
+      "blocks": {
+        "55f1c056-4dcf-4e20-ad7a-b50e4c8745fd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-prepack-party-favors"
+          }
+        },
+        "d203dea0-d78e-4285-bc86-2c764e2341b5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-upack-party-favors"
+          }
+        },
+        "707d1379-8a52-4946-b6f9-1b66ddaaf7b4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-bags-ribbons"
+          }
+        }
+      },
+      "block_order": [
+        "55f1c056-4dcf-4e20-ad7a-b50e4c8745fd",
+        "d203dea0-d78e-4285-bc86-2c764e2341b5",
+        "707d1379-8a52-4946-b6f9-1b66ddaaf7b4"
+      ],
       "settings": {
       }
     }
   },
   "order": [
-    "party-favors"
+    "corporate-gifts"
   ]
 }
