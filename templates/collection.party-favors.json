@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "corporate-gifts": {
+      "type": "collection--corporate-gifts",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "corporate-gifts"
+  ]
+}
