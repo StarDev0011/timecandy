@@ -1,16 +1,12 @@
 {
   "sections": {
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "corporate-gifts": {
+      "type": "collection--corporate-gifts",
       "settings": {
-        "grid": 3,
-        "rows": 18,
-        "show_desc": true,
-        "page": "scroll"
       }
     }
   },
   "order": [
-    "product-grid"
+    "corporate-gifts"
   ]
 }
