@@ -93,14 +93,14 @@ p{
   transition-property: all;
 }
 
-img, svg {
+.page-candy-museum__image img, .page-candy-museum__image svg {
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
   transition-property: all;
   width: 100%;
 }
 
-svg{
+.page-candy-museum__image svg{
   border: 1px solid #000;
 }
 

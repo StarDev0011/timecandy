@@ -57,14 +57,12 @@ function initDraggable() {
             initialPosY = item.getBoundingClientRect().top;
             item.style.opacity = '0.2';
             item.style.zIndex = '3';
-            item.style.cursor = 'grabbing';
         });
         item.addEventListener('touchmove', function(e) {
             var touchLocation = e.targetTouches[0];
             var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
             var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
             // // assign box new coordinates based on the touch.
-            item.style.cursor = 'grabbing';
             
             item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
           })
@@ -111,12 +109,10 @@ function initDraggable() {
 
     function dragStart() {
         dragItem = this;
-        dragItem.style.cursor = 'grabbing';
     }
 
     function dragEnd() {
         dragItem = null;
-        dragItem.style.cursor = 'grab';
     }
 
     function dragOver(e) {
