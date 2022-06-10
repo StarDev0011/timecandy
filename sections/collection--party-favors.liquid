@@ -1,0 +1,39 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+<div class="custom-collection">
+  <div class="container">
+    <h1 class="custom-collection__header">
+      {{- collection.title -}}
+    </h1>
+    <div class="custom-collection__desc">
+      {{- collection.description -}}
+    </div>
+    <div class="custom-collection__content">
+      <div class="custom-collection__list col-4">
+        {%- for block in section.blocks -%}
+          <div class="custom-collection__list-item">
+            {% render 'include--card-collection', card_collection: block.settings.collection %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Party Favors",
+    "blocks": [
+      {
+        "type": "featured_collection",
+        "name": "t:sections.collection-list.blocks.featured_collection.name",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
