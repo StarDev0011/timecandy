@@ -105,6 +105,7 @@
                               {%- endif -%}
 
                               {%- for property in item.properties -%}
+                              {%- unless property.last == blank or property.first == "subscription_id" or property.first == "shipping_interval_frequency" or property.first == "shipping_interval_unit_type" -%}
                                 {%- assign property_first_char = property.first | slice: 0 -%}
                                 {%- if property.last != blank and property_first_char != '_' -%}
                                   <div class="product-option">
@@ -120,6 +121,7 @@
                                     </dd>
                                   </div>
                                 {%- endif -%}
+                                {% endunless %}
                               {%- endfor -%}
                             </dl>
 

@@ -50,7 +50,7 @@ Product = {
         this.parentNode.classList.remove('active');
         const elmTitle = this.parentNode.previousElementSibling;
         elmTitle.querySelector('.js-option-label').textContent = name;
-        if(swatchSoldOut.length){
+        if(swatchSoldOut){
           const textSoldOut = input.nextElementSibling.querySelector('.product-form__swatch-soldout').textContent;
           swatchSoldOut.textContent = textSoldOut;
         }

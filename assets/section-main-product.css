@@ -2032,6 +2032,8 @@ div.rc_block__type {
 .product-rose-color .quantity {
   min-height: 30px;
   width: 110px;
+  border: 0;
+  background-color: transparent;
 }
 
 .product-rose-color .quantity__button {
@@ -2044,6 +2046,12 @@ div.rc_block__type {
 
 .product-rose-color .quantity__input {
   font-size: 16px;
+  background-color: #fff !important;
+}
+
+.product-detail .product-form__input-first {
+  flex-basis: 100%;
+  max-width: 100%;
 }
 
 .product-rose-color-option {
