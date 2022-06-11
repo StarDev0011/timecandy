@@ -497,6 +497,116 @@
   vertical-align: middle;
 }
 
+.custom-collection {
+  padding-top: 50px;
+  padding-bottom: 120px;
+}
+
+.custom-collection .container {
+  max-width: 920px;
+}
+
+.custom-collection__header {
+  margin-top: 0;
+  color: #c91835;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.custom-collection__desc {
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-text);
+}
+
+.custom-collection__desc a {
+  text-transform: none;
+  font-family: var(--font-2);
+  font-size: 16px;
+  color: var(--color-link);
+}
+
+.page-corporate-gifts__cta-btn {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.page-corporate-gifts__cta-btn a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(var(--color-button),var(--alpha-button-background));
+  background-color: #ad1128;
+  height: 50px;
+  border-radius: var(--buttons-radius-outset);
+  padding: 13px 40px 14px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  letter-spacing: .02em;
+  font-size: 15px;
+  box-sizing: border-box;
+  line-height: 24px;
+  text-decoration: none;
+  color: rgb(var(--color-button-text));
+  transition: box-shadow var(--duration-short) ease;
+  -webkit-appearance: none;
+  color: #fff;
+}
+
+.page-corporate-gifts__cta-btn a:hover {
+  color: rgb(var(--color-secondary-button-background));
+  border-color: rgb(var(--color-secondary-button-border));
+  background-color: rgba(var(--color-secondary-button-border),1);
+}
+
+.custom-collection__list {
+  display: grid;
+  margin-top: 90px;
+  grid-gap: 40px 15px;
+}
+
+.card-collection__picture {
+  position: relative;
+  padding-top: 100%;
+}
+
+.card-collection__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card-collection__link {
+  text-decoration: none;
+  display: block;
+}
+
+.custom-collection__list-item {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+  transition: all .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.custom-collection__list-item:hover {
+  box-shadow:0 5px 15px rgba(0, 0, 0, .15);
+}
+
+.card-collection__title {
+  font-size: 14px;
+  padding: 0 10px;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 18px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
 @media (max-width: 980px) {
   .sidebar-filter__inner:first-child {
     border-top: 0;
@@ -635,6 +745,10 @@
 }
 
 @media (max-width: 767px) {
+  .custom-collection__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .collection-candy__list {
     grid-template-columns: 1fr;
     display: flex;
