@@ -86,10 +86,11 @@
 }
 
 .image-with-text-v3 img {
-  height: 100% !important;
-  border: 14px solid #0C5273;
+  border: 10px solid #0C5273;
   border-radius: 50%;
   object-fit: cover;
+  width: 310px !important;
+  height: 310px !important;
 }
 .image-with-text-v3 .image-with-text__media {
   padding-bottom: 79.4% !important;
@@ -153,6 +154,7 @@
     padding: 0;
     border-width: 10px;
     max-width: 270px !important;
+    height: 270px !important;
     right: 0;
     margin-left: auto;
   }
