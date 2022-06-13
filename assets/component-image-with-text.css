@@ -41,6 +41,7 @@
   .image-with-text__media.media{
       margin-left: auto;
       width: 100%;
+      max-width: 70%;
   }
   .image-with-text__media-item{
     align-items: flex-start;
