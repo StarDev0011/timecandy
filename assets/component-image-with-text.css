@@ -134,13 +134,13 @@
     padding:  0 28px;
   }
   .image-with-text .image-with-text__media{
-    padding-bottom: 0 !important;
+    /* padding-bottom: 0 !important; */
     margin-left: auto;
     margin-right: auto;
   }
-  .image-with-text .image-with-text__media img {
+  /* .image-with-text .image-with-text__media img {
       position: static !important;
-  }
+  } */
 }
 
 @media (max-width: 1100px){

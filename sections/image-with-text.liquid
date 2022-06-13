@@ -17,19 +17,47 @@
     .section-image-{{ section.id }} .image-with-text__media {
       background-image: url({{ section.settings.image_2 | img_url: '600x' }});
       background-repeat: no-repeat;
-      background-position: bottom 10px left;
-      background-size: calc(90% - 100px);
+      background-position: left 15% center;
+      background-size: 68%;
+      z-index: -1;
     }
 
     .section-image-{{ section.id }} .image-with-text__media img {
-      max-width: calc(100% - 100px) !important;
-      top: auto !important;
+      max-width: 73% !important;
       bottom: 0px;
       right: 0;
       left: auto!important;
-      height: calc(100% - 75px) !important;
+      height: 66% !important;
       border-radius: 15px;
       object-fit: cover;
+      margin: auto;
+    }
+
+    .section-image-{{ section.id }} .image-with-text__media-item {
+      background-image: url({{ section.settings.image_3 | img_url: '450x' }});
+      background-repeat: no-repeat;
+      background-position: bottom right 15%;
+      background-size: 22%;
+    }
+
+    @media (max-width: 749px) {
+      .section-image-{{ section.id }} .image-with-text__media {
+        background-size: calc(85% - 75px);
+      }
+
+      .section-image-{{ section.id }} .image-with-text__media img {
+        padding: 0 !important;
+      }
+      .section-image-{{ section.id }} .image-with-text__media img {
+        max-width: calc(95% - 100px) !important;
+        right: 9%;
+        height: calc(95% - 65px) !important;
+      }
+
+      .section-image-{{ section.id }} .image-with-text__media-item {
+        background-size: 23%;
+        background-position: bottom right 25%;
+      }
     }
   {% endif %}
 {%- endstyle -%}
@@ -137,6 +165,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Select logo Image"
     },
     {
       "type": "image_picker",
