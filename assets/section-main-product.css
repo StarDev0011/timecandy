@@ -1272,9 +1272,9 @@ fieldset.product-form__input .form__label {
   position: absolute;
   left: 0;
   width: 100%;
-  z-index: 11;
+  z-index: 2;
   max-height: 350px;
-  overflow: auto;
+  overflow-x: auto;
   display: none;
 }
 
@@ -1328,9 +1328,8 @@ fieldset.product-form__input .form__label {
 }
 
 .product-detail .product-form__input .product-form__swatch-dropdown label {
-  padding: 7px 16px;
   color: var(--color-text);
-  padding: 7px 16px !important;
+  padding: 12px 16px !important;
   color: var(--color-text) !important;
   background-color: transparent !important;
   text-align: left !important;
@@ -1341,6 +1340,24 @@ fieldset.product-form__input .form__label {
   font-size: 16px !important;
   line-height: 24px !important;
   font-family: var(--font-2) !important;
+}
+
+.product-form__swatch-dropdown input[type=radio]:checked+label:before {
+  width: calc(100% + 32px);
+  left: -16px;
+  right: 0;
+  height: 100%;
+  border-radius: 0;
+  background-color: #e4f1f566;
+}
+
+.product-form__input .product-form__swatch-dropdown label:not(:last-child) {
+  border-bottom: 1px solid #ccc!important;
+  border-radius: 0
+}
+
+.product-detail .product-form__input .product-form__swatch-dropdown.active {
+  padding: 0 16px;
 }
 
 .product-buy-more {
