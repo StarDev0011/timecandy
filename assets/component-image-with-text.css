@@ -100,6 +100,7 @@
   background-repeat: no-repeat;
   background-position: top left 55%;
   padding-top: 20px;
+  background-size: 60%;
 }
 
 @media (max-width: 749px) {
