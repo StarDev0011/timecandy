@@ -14,10 +14,7 @@
     <div class="mega-menu-wrapper">
         <div class="d-flex menu-child">
         {% for submenu in links %}
-            <div class="last-level-menu {{ childlink.title | handleize }} js-parent">
-                {% if datas.show_tt_child %}
-                    <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
-                {% endif %}
+                <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 <ul class="list-menu">
                     {% for childlink in submenu.links %}
                         <li class="child-link"><a class="header__menu-item list-menu__item link link--text focus-inset caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
