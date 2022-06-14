@@ -1,9 +1,6 @@
 {% assign count_block = 0 %}
 
 {% for submenu in links %}
-    {% if links.size > 1 %}
-        {% assign megamenu_slide = true %} 
-    {% endif %}
 	{% if submenu.title == "Top Products" and submenu.links != blank %}
 		{% for top_product in submenu.links %}
   	      {% assign count_block = count_block | plus: 1 %}
@@ -14,65 +11,63 @@
     <div class="mega-menu-wrapper">
         <div class="d-flex menu-child">
         {% for submenu in links %}
-          {% unless submenu.title == "Top Products" %}
+            {% unless submenu.title == 'Top Products' %}
             <div class="last-level-menu {{ childlink.title | handleize }} col-ds__{{ 100 | divided_by: links.size | ceil }} js-parent">
-                {% if datas.show_tt_child %}
-                    <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
-                {% endif %}
+                <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 <ul class="list-menu">
                     {% for childlink in submenu.links %}
                         <li class="child-link"><a class="header__menu-item list-menu__item link link--text focus-inset caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
                     {% endfor %}
                 </ul>  
             </div>
-          {% endunless %}
+            {% endunless %}
         {% endfor %}
         </div>
     </div>
     {% if count_block > 0%}
-        <div class="mega-menu-image {% if megamenu_slide %} has-slide {% endif %}">
+        <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-            <div  id="megamenu-image" class="megamenu-image-container {% if megamenu_slide %} swiper swiper-container  {% endif %} ">  
-                <div class="image-container-wrapper {% if megamenu_slide %} swiper-wrapper {% else %}d-flex__end{% endif %}">
-                  {% for submenu in links %}
-                    {% if submenu.title == "Top Products" %}
-                  	  {% for top_product in submenu.links %}
-                  		  {% assign top_product_handle = top_product.url | remove: '/products/' %}
-                    	  {% assign top_product_s = all_products[top_product_handle] %}
-	                      <div class="image_item {% if megamenu_slide %} swiper-slide  {% else %}d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }} {% endif %}">
-    	                    <div class="image-container-item">
-        	                  <a class="image p-relative {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}" {% endif %}>
-            	                {% if top_product_s.featured_image %}
-                	            <img class="p-center" 
-                    	             src="{{ top_product_s.featured_image | img_url: '217x199' }}"
-                        	         alt="{{ top_product_s.featured_image.alt }}"
-                            	     width="{{ top_product_s.featured_image.width }}"
-                                	 height="{{ top_product_s.featured_image.height }}"
-	                                 loading="lazy"
-    	                             />
-        	                    {% endif %}
-                                {% for t in top_product_s.tags %}
-                                  {% assign tag = t | strip %}
-                                  {% assign tag_value = tag | handleize %}
+            <div id="megamenu-image" class="megamenu-image-container">  
+              {% for submenu in links %}
+                {% if submenu.title == "Top Products" %}
+                  <div class="image-container-wrapper d-flex__end">
+                  {% for top_product in submenu.links %}
+                    {% assign top_product_handle = top_product.url | remove: '/products/' %}
+                    {% assign top_product_s = all_products[top_product_handle] %}   
+                      <div class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                            <div class="image-container-item">
+                                <a class="image p-relative {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}" {% endif %}>
+                                    {% if top_product_s.featured_image %}
+                                        <img class="p-center" 
+                                            src="{{ top_product_s.featured_image | img_url: '217x199' }}"
+                                            alt="{{ top_product_s.featured_image.alt }}"
+                                            width="{{ top_product_s.featured_image.width }}"
+                                            height="{{ top_product_s.featured_image.height }}"
+                                            loading="lazy"
+                                        />
+                                    {% endif %}
+                                    {% for t in top_product_s.tags %}
+                                      {% assign tag = t | strip %}
+                                      {% assign tag_value = tag | handleize %}
 
-                                  {% if tag_value contains 'label-' %}
-	                                <span class="text-label h6">{{- tag | split: 'Label:' -}}</span>
-                                  {% endif %}
-                                {% endfor %}
-                        	  </a>
-	                          {% if top_product_s.title != blank %}
-    	                      <a class="text-container link h6 {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}"{% endif %}>{{ top_product_s.title }}</a>
-        	                  {% endif %}
-            	            </div>
-                	      </div>                  
-                  		{% endfor %}
-                    {% endif %}
-                  {% endfor %}
-                </div>
+                                      {% if tag_value contains 'label-' %}
+                                        <span class="text-label h6">{{- tag | split: 'Label:' -}}</span>
+                                      {% endif %}
+                                    {% endfor %}
+                                </a>
+                                {% if top_product.title != blank %}
+                                    <a class="text-container link h6 {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}"{% endif %}>{{ top_product.title }}</a>
+                                {% endif %}
+                            </div>
+                        </div>              
+              	  {% endfor %}
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
         </div>
     {% endif %}
-</div> 
+</div>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
        (function() {
