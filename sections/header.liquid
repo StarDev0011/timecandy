@@ -62,15 +62,21 @@
                   <nav class="menu-drawer__navigation">
                     <ul class="menu-drawer__menu list-menu" role="list">
                       {%- for link in section.settings.menu.links -%}
-                        {%- liquid
-                          assign has_mega_menu = false
-                          assign link_handle = link.title | handleize
-                          assign type_menu = 'default'
-                          if link.links != blank
+                      {%- liquid
+                        assign has_mega_menu = false
+                        assign link_handle = link.title | handleize
+                        assign type_menu = 'default'
+                        for block in section.blocks
+                          if block.settings.navigation_mega_menu == link_handle
                             assign has_mega_menu = true
-                            assign type_menu = 'megamenu'                          
+                            if block.type == 'mega_menu'
+                              assign type_menu = 'megamenu'
+                              assign datas = block.settings
+                              break
+                            endif
                           endif
-                        -%}
+                        endfor
+                      -%}
                         <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -324,15 +330,21 @@
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
             {%- for link in section.settings.menu.links -%}
-            {%- liquid
+              {%- liquid
                 assign has_mega_menu = false
                 assign link_handle = link.title | handleize
                 assign type_menu = 'default'
-                if link.links != blank
-                   assign has_mega_menu = true
-                   assign type_menu = 'megamenu'                          
-                endif
-            -%}
+                for block in section.blocks
+                  if block.settings.navigation_mega_menu == link_handle
+                    assign has_mega_menu = true
+                    if block.type == 'mega_menu'
+                      assign type_menu = 'megamenu'
+                      assign datas = block.settings
+                      break
+                    endif
+                  endif
+                endfor
+              -%}
               <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
               %}">
                 {%- if link.links != blank -%}

@@ -7,8 +7,9 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
-
+{% comment %}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% endcomment %}
 <script src="{{ 'product-detail.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -366,7 +367,7 @@
                   <span class="product-form__error-message"></span>
                 </div>
 
-                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form', data-productid: product.id -%}
+                {%- form 'product', product, id: product_form_id, class: 'form', data-type: 'add-to-cart-form', data-productid: product.id -%}
                   <!-- Begin ReCharge code -->
                   {% if product.available %}{% render 'subscription-product' with product as product %}{% endif %}
                   <!-- End ReCharge code -->
@@ -411,7 +412,6 @@
                       <button
                         type="submit"
                         name="add"
-                        data-add-to-cart
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                       >

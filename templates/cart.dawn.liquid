@@ -78,9 +78,12 @@
                     <dt>{{ property.first }}: </dt>
                     <dd>
                       {%- if property.last contains '/uploads/' -%}
+                      {% comment %}
                         <a href="{{ property.last }}" class="link" target="_blank">
-                          {{ property.last | split: '/' | last }}
+                          Upload Succesfull
                         </a>
+                      {% endcomment %}
+                        Upload Succesfull
                       {%- else -%}
                         {{ property.last }}
                       {%- endif -%}
