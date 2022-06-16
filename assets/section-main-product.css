@@ -2305,6 +2305,7 @@ div.rc_block__type {
   .template-product .image-with-text__media img {
     padding: 0;
     margin-top: -95px;
+    object-fit: contain;
   }
 
   .template-product .image-with-text__grid {
