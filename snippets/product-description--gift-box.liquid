@@ -36,7 +36,21 @@
     </div>
   </div>
 </div>
+<style>
+  @media(max-width: 899px) {
+    .template-product .image-with-text__media {
+      padding-bottom: 75% !important;
+    }
 
+    .template-product .image-with-text__media img {
+      margin-top: -35px;
+    }
+
+    .template-product .image-with-text__heading {
+      text-align: center;
+    }
+  }
+</style>
 {% capture 'meta_data' %}
 {% for variant in gift_box.variants %}
   "{{ variant.option1 }}-{{ variant.option2 }}": "{{ variant.metafields.box.candy_list | strip_newlines }}"
