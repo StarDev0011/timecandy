@@ -556,6 +556,11 @@
   {%- endfor -%}
   </div>
 </section>
+{% if section.settings.show_desc %}
+  {% if product.description %}
+    {% render 'product-description--gift-box', image: section.settings.image_meta %}
+  {% endif %}
+{% endif %}
 
 {% javascript %}
   class ProductModal extends ModalDialog {
@@ -1134,6 +1139,21 @@
       "id": "enable_sticky_info",
       "default": true,
       "label": "t:sections.main-product.settings.enable_sticky_info.label"
+    },
+    {
+      "type": "header",
+      "content": "Metafield Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desc",
+      "label": "Show Metafield Description",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image_meta",
+      "label": "Select Image"
     },
     {
       "type": "header",

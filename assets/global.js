@@ -833,6 +833,16 @@ class VariantSelects extends HTMLElement {
   }
 
   updateImage() {
+    if (typeof(candyList) !== "undefined") {
+      const variantString = document.querySelector('#selected-variant-name');
+      const metafieldList = document.querySelector('#candy-list');
+      if(variantString) {
+        var variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
+        variantString.textContent = this.currentVariant.option1 +' '+ this.currentVariant.option2;
+        metafieldList.innerHTML = candyList[variantsText];
+      }
+    }
+
     if(this.currentVariant.featured_image != null ) {
       const baseImge = this.currentVariant.featured_image.src+'&width=670';
       this.imageCardItems = document.querySelector('.card-product__image');
