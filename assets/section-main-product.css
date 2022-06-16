@@ -453,10 +453,6 @@ fieldset.product-form__input .form__label {
   }
 }
 
-.product__media-item.product__media-item--variant {
-  display: none;
-}
-
 .product__media-item--variant:first-child {
   display: block;
 }
