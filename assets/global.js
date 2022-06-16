@@ -833,13 +833,18 @@ class VariantSelects extends HTMLElement {
   }
 
   updateImage() {
+    const variantString = document.querySelector('#selected-variant-name');
+    const metafieldList = document.querySelector('#candy-list');
     if (typeof(candyList) !== "undefined") {
-      const variantString = document.querySelector('#selected-variant-name');
-      const metafieldList = document.querySelector('#candy-list');
       if(variantString) {
         var variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
         variantString.textContent = this.currentVariant.option1 +' '+ this.currentVariant.option2;
         metafieldList.innerHTML = candyList[variantsText];
+        if(metafieldList.textContent == 'undefined') {
+          metafieldList.style.display = 'none'
+        } else {
+          metafieldList.style.display = 'block'
+        }
       }
     }
 
@@ -849,7 +854,6 @@ class VariantSelects extends HTMLElement {
       if(this.featuredImage) {
         this.featuredImage.setAttribute('src', baseImge);
         this.featuredImage.setAttribute('srcset', baseImge);
-        console.log(this.currentVariant, baseImge);
       }
 
       const section = this.closest('.card-product__item');
