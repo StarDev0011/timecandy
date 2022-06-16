@@ -71,6 +71,8 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "show_desc": true,
+        "image_meta": "shopify:\/\/shop_images\/imgage_text.png",
         "gallery_layout": "stacked",
         "media_size": "large",
         "mobile_thumbnails": "hide",
