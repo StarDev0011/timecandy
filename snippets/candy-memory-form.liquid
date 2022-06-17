@@ -6,6 +6,11 @@
 
     {% if form.posted_successfully? %}
         <p class="form-success">Thanks for submitting your candy memory! Check back later to see it published.</p>
+        <style>
+            .candy-memory-form {
+                display: block;
+            }
+        </style>
     {% endif %}
 
     {{ form.errors | default_errors }}
@@ -33,7 +38,7 @@
                     class="field-input"
                     name="contact[email]"
                     id="ContactFormEmail"
-                    placeholder="Email Address"
+                    placeholder=""
                     value="{% if form.email %}{{ form.email }}{% endif %}"
                     spellcheck="false"
                     autocomplete="off"
@@ -50,7 +55,7 @@
                     class="field-input"
                     name="contact[candy]"
                     id="Candy"
-                    placeholder="Candy"
+                    placeholder=""
                     required>
         </div>
     </div>
@@ -58,7 +63,7 @@
     {% comment %} State {% endcomment %}
     <div class="field mb-3">
         <div class="field-input-wrapper">
-            <label for="State" class="visually-hidden">State</label>
+            <label for="State"  class="field-label">State</label>
             <select id="State" class="unstyled" name="contact[State]">
                 <option disabled selected>State</option>
                 <option value="Alabama">Alabama</option>
@@ -125,14 +130,12 @@
                     name="contact[memory]"
                     id="Memory"
                     rows="8"
-                    placeholder="What's Your Memory?"
+                    placeholder=""
                     required></textarea>
         </div>
     </div>
 
-    <p class="color-red font-secondary mb-3">Required Fields*</p>
-
-    <input type="submit" class="btn btn--secondary m-0" value="Submit Memory">
+    <input type="submit" class="btn--secondary button" value="Submit Memory">
     
     {% endunless %} {% comment %} End Unless Posted {% endcomment %}
 
