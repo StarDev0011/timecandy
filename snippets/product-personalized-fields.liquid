@@ -65,7 +65,7 @@
 {% if personalized-image != blank %}
     <div class="product-form__line-item-wrapper product-form__upload">
         <label for="personalized-image" class="product__decade-label" id="personalized-image-label">{{ personalized-image }}{% if personalized-image-required %}<span class="color-red">*<span>{% endif %}</label>
-        <input data-property-name="Photo Upload" id="personalized-image" class="product__line-item-prop product-form__line-item-field--infield mt-2" type="file" name="properties[Photo Upload]" {% if personalized-image-required %}required{% endif %}>
+        <input data-property-name="Photo Upload" id="personalized-image" class="product__line-item-prop product-form__line-item-field--infield mt-2" type="file" accept="image/*" name="properties[Photo Upload]" {% if personalized-image-required %}required{% endif %}>
     </div>
     <div id="personalized-image-message" class="form-success visually-hidden"></div>
 {% endif %}

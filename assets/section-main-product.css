@@ -453,10 +453,6 @@ fieldset.product-form__input .form__label {
   }
 }
 
-.product__media-item.product__media-item--variant {
-  display: none;
-}
-
 .product__media-item--variant:first-child {
   display: block;
 }
@@ -2305,6 +2301,7 @@ div.rc_block__type {
   .template-product .image-with-text__media img {
     padding: 0;
     margin-top: -95px;
+    object-fit: contain;
   }
 
   .template-product .image-with-text__grid {

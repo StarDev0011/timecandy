@@ -1,0 +1,63 @@
+{% assign gift_box = all_products["large-decade-candy-gift-box"] %}
+<div class="image-with-text page-width">
+  <div class="image-with-text__container">
+    <div class="image-with-text__grid">
+      <div class="image-with-text__media-item" style="justify-content:flex-start">
+        <div class="image-with-text__media media" style="max-width: min(100%, 485px);  padding-bottom: 90%;">
+          {% if image != blank %}
+            <img
+                srcset="{%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if image.width >= 535 -%}{{ image | image_url: width: 535 }} 535w,{%- endif -%}
+                  {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if image.width >= 1070 -%}{{ image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                  {%- if image.width >= 1500 -%}{{ image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ image | image_url }} {{ image.width }}w"
+                src="{{ image | image_url: width: 1500 }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ image.alt | escape }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+          {% endif %}
+        </div>
+      </div>
+      <div class="image-with-text__text-item" style="max-width: min(100%, 455px); padding-top: 100px;">
+        <h2 class="image-with-text__heading h2">What's in the
+          <label id="selected-variant-name">
+            {{- product.selected_or_first_available_variant.title | split: '/' -}}
+          </label>?
+        </h2>
+        <div class="image-with-text__text" id="candy-list">
+          {{ gift_box.selected_or_first_available_variant.metafields.box.candy_list }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  @media(max-width: 899px) {
+    .template-product .image-with-text__media {
+      padding-bottom: 75% !important;
+    }
+
+    .template-product .image-with-text__media img {
+      margin-top: -35px;
+    }
+
+    .template-product .image-with-text__text-item {
+      padding-top: 0 !important;
+    }
+  }
+</style>
+{% capture 'meta_data' %}
+{% for variant in gift_box.variants %}
+  "{{ variant.option1 }}-{{ variant.option2 }}": "{{ variant.metafields.box.candy_list | strip_newlines }}"
+  {% unless forloop.last %},{% endunless %}
+{% endfor %}
+{% endcapture %}
+
+<script>
+  const candyList = { {{ meta_data }} };
+</script>
