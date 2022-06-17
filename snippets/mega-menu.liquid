@@ -18,7 +18,7 @@
                     {% for childlink in submenu.links %}
                         <li class="child-link"><a class="header__menu-item list-menu__item link link--text focus-inset caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
                     {% endfor %}
-                </ul>  
+                </ul>
             </div>
             {% endunless %}
         {% endfor %}
@@ -27,18 +27,18 @@
     {% if count_block > 0%}
         <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-            <div id="megamenu-image" class="megamenu-image-container">  
+            <div id="megamenu-image" class="megamenu-image-container">
               {% for submenu in links %}
                 {% if submenu.title == "Top Products" %}
                   <div class="image-container-wrapper d-flex__end">
                   {% for top_product in submenu.links %}
                     {% assign top_product_handle = top_product.url | remove: '/products/' %}
-                    {% assign top_product_s = all_products[top_product_handle] %}   
+                    {% assign top_product_s = all_products[top_product_handle] %}
                       <div class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
                             <div class="image-container-item">
                                 <a class="image p-relative {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}" {% endif %}>
                                     {% if top_product_s.featured_image %}
-                                        <img class="p-center" 
+                                        <img class="p-center"
                                             src="{{ top_product_s.featured_image | img_url: '217x199' }}"
                                             alt="{{ top_product_s.featured_image.alt }}"
                                             width="{{ top_product_s.featured_image.width }}"
@@ -59,7 +59,7 @@
                                     <a class="text-container link h6 {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}"{% endif %}>{{ top_product.title }}</a>
                                 {% endif %}
                             </div>
-                        </div>              
+                        </div>
               	  {% endfor %}
                   </div>
                 {% endif %}
@@ -77,12 +77,12 @@
           loop: false,
           slidesPerView: 3,
           breakpoints: {
-              0: { 
+              0: {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 slidesOffsetBefore: 0,
               },
-              375: { 
+              375: {
                 slidesPerView: 1.5,
                 spaceBetween: 20,
                 slidesOffsetBefore: 0,
