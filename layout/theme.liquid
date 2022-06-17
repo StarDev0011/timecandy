@@ -247,9 +247,7 @@
     	{%- endif -%}
     {%- endif -%}
 
-    {% unless template contains 'cart' %}
-      {% render 'include--cart-dawn' %}
-    {% endunless %}
+    {% render 'include--message' %}
     <!-- Back in Stock helper snippet -->
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
