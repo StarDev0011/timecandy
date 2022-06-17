@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "product-decade-box",
+      "type": "product-rose-bouquet",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -43,7 +43,7 @@
             "show_dynamic_checkout": false
           }
         },
-        "18421d80-4dca-4916-be71-418d26c48563": {
+        "9314d269-9aa5-4d88-8f23-e034ebd3d8ed": {
           "type": "popup",
           "settings": {
             "desc": "Orders placed by midnight usually ship on the next business day.",
@@ -51,7 +51,7 @@
             "page": "shipping-information"
           }
         },
-        "13f5a355-4ba4-442c-9cbe-c223e03cfc88": {
+        "41884624-41f9-4374-bde9-2bd73becdb9e": {
           "type": "wishlist",
           "settings": {
             "btn_wishlist": "Add to wishlist"
@@ -66,70 +66,56 @@
         "description",
         "variant_picker",
         "buy_buttons",
-        "18421d80-4dca-4916-be71-418d26c48563",
-        "13f5a355-4ba4-442c-9cbe-c223e03cfc88"
+        "9314d269-9aa5-4d88-8f23-e034ebd3d8ed",
+        "41884624-41f9-4374-bde9-2bd73becdb9e"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "show_desc": true,
-        "image_meta": "shopify:\/\/shop_images\/imgage_text.png",
         "gallery_layout": "stacked",
         "media_size": "large",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "enable": true,
-        "optional_extras": "candy-gifts-cg-remember-when"
+        "chocolate_rose_collection": "build-your-chocolate-rose-bouquet"
       }
     },
-    "16518009138973d5b1": {
-      "type": "product--gift-cards",
+    "1654593901ef64f634": {
+      "type": "image-with-text",
       "blocks": {
-        "16518009137f8d1de2-0": {
-          "type": "sub",
-          "settings": {
-            "sub_title": "hand-written gift cards"
-          }
-        },
-        "16518009137f8d1de2-1": {
+        "16545939019b8a69d9-0": {
           "type": "heading",
           "settings": {
-            "heading": "Yes, a card written by an actual human being. And it’s free."
+            "heading": "<p>What’s in the 2lb 1950s decade box?<\/p>"
           }
         },
-        "16518009137f8d1de2-2": {
+        "16545939019b8a69d9-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Look for the “Is This Order a Gift?” message box while you are viewing your bag before checkout.<\/p>",
+            "text": "<p>Our 2lb assortment is jammed with over 35 pieces of candy! Each box includes 12 or more full-size candies in a colorful gift box that measures 9.5 x 7 x 3 inches. Please keep in mind that these are typical lists. The actual candy you receive may vary according to availability from our suppliers.<\/p>",
             "text_style": "body"
-          }
-        },
-        "16518009137f8d1de2-3": {
-          "type": "button",
-          "settings": {
-            "button_label": "Add to bag"
           }
         }
       },
       "block_order": [
-        "16518009137f8d1de2-0",
-        "16518009137f8d1de2-1",
-        "16518009137f8d1de2-2",
-        "16518009137f8d1de2-3"
+        "16545939019b8a69d9-0",
+        "16545939019b8a69d9-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/gift-cards.png",
+        "image": "shopify:\/\/shop_images\/imgage_text.png",
         "image_width": 485,
-        "box_text_width": 505,
-        "padding_top": 120,
-        "padding_bottom": 120,
+        "box_text_width": 455,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
-        "heading": "Making it a gift? add these specials!",
-        "collection": "candy-by-decade-1940s-candy",
-        "show_product_like": true,
-        "heading_2": "You May Also Like",
-        "collection_2": "candy-by-decade-1960s-candy"
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
       }
     },
     "1650857688b2ff975d": {
@@ -269,7 +255,7 @@
   },
   "order": [
     "main",
-    "16518009138973d5b1",
+    "1654593901ef64f634",
     "1650857688b2ff975d",
     "165085778823b445b7",
     "product-recommendations",
