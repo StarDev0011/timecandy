@@ -161,6 +161,7 @@ body {
 	letter-spacing: 0.06rem;
 	line-height: 21px;
 	font-family: var(--font-default);
+	overflow-x: hidden;
 }
 .no-js:not(html) {
 	display: none !important;
