@@ -55,11 +55,11 @@
             {% endif %}
           {% endfor %}
           <div class="mini-cart__item" data-id="{{ item.id }}">
-            <div class="mini-cart__picture">
               <a class="mini-cart__link" href="{{ item.url }}">
-                <img loading="lazy" width="100" height="100" class="mini-cart__image" src="{{ item | img_url: 'x250' }}" alt="{{ item.image.alt | escape }}">
+                <div class="mini-cart__picture">
+                  <img loading="lazy" width="100" height="100" class="mini-cart__image" src="{{ item | img_url: 'x250' }}" alt="{{ item.image.alt | escape }}">
+                </div>
               </a>
-            </div>
             <div class="mini-cart__info">
               <a class="mini-cart__link mini-cart__title" href="{{ item.url }}">
                 {{- item.product.title -}}

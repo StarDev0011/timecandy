@@ -133,9 +133,11 @@
 
         const btnForm = document.querySelector('.js-btn-form');
         const form = document.querySelector('.candy-memory-form');
-        btnForm.onclick = (e) => {
-            e.preventDefault();
-            form.classList.toggle('active');
+        if(btnForm) {
+            btnForm.onclick = (e) => {
+                e.preventDefault();
+                form.classList.toggle('active');
+            }
         }
     });
 
