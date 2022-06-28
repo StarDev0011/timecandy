@@ -4,8 +4,21 @@
       {{- collection.title -}}
     </h1>
     <div class="h1 collection-candy__header-title">
-      {{- collection.description | strip_html | truncate: 300 -}}
-    </div>
+      {%- if collection.description != blank -%}
+      {% liquid
+                assign desc = collection.description | truncatewords
+                assign count_desc = desc | size
+            %}
+      <div class="product__description rte">
+        <div class="product__desc-text {% if count_desc > 50 %}product__height-desc{% endif %}">
+          {{ collection.description }}
+        </div>
+        {% if count_desc > 50 %}
+        <a class="js-read-more product__read-more" href="#"> Read more</a>
+        {% endif %}
+      </div>
+      {%- endif -%}
+    </div>    
   </div>
 </div>
 
