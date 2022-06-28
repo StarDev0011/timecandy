@@ -10,10 +10,10 @@
                 assign count_desc = desc | size
             %}
       <div class="collection__description rte">
-        <div class="collection__desc-text {% if count_desc > 50 %}collection__height-desc{% endif %}">
+        <div class="collection__desc-text {% if count_desc > 150 %}collection__height-desc{% endif %}">
           {{ collection.description }}
         </div>
-        {% if count_desc > 50 %}
+        {% if count_desc > 150 %}
         <a class="js-read-more collection__read-more" href="#"> Read more</a>
         {% endif %}
       </div>
