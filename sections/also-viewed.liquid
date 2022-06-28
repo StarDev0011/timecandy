@@ -4,7 +4,7 @@
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
   }
   .featured-collection{
-    background: {{ section.settings.color_scheme }};
+    background: {{ section.settings.background_color }};
   }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -71,6 +71,13 @@
         "label": "Background SVG Bottom",
         "default": "<svg width='1440' height='222' viewBox='0 0 1440 222' fill='none' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' clip-rule='evenodd' d='M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z' fill='#F1F3F3'/> </svg>"
     },
+    {
+      "type": "color",
+      "id": "background_color",
+      "default": "#f1f3f3",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info"
+    },  
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
