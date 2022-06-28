@@ -1,22 +1,22 @@
-$screens: (
-	"small": 375,
-	"medium": 989,
-	"large": 1279,
-);
-
-@mixin mq($mq-screen, $type: "max-width") {
-	@each $screen, $value in $screens {
-		@if ($mq-screen == $screen) {
-			@if ($type == "max-width") {
-				@media (max-width: #{$value}px) {
-					@content;
-				}
-			}
-			@if ($type == "min-width") {
-				@media (min-width: #{$value + 1}px) {
-					@content;
-				}
-			}
-		}
-	}
-}
+$screens: (
+	"small": 375,
+	"medium": 989,
+	"large": 1279,
+);
+
+@mixin mq($mq-screen, $type: "max-width") {
+	@each $screen, $value in $screens {
+		@if ($mq-screen == $screen) {
+			@if ($type == "max-width") {
+				@media (max-width: #{$value}px) {
+					@content;
+				}
+			}
+			@if ($type == "min-width") {
+				@media (min-width: #{$value + 1}px) {
+					@content;
+				}
+			}
+		}
+	}
+}
