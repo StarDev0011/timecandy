@@ -157,7 +157,7 @@
         "165085778836ad72b0-0": {
           "type": "select",
           "settings": {
-            "product": "",
+            "product": "10-color-pen",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -168,7 +168,7 @@
         "165085778836ad72b0-1": {
           "type": "select",
           "settings": {
-            "product": "",
+            "product": "100-grand-bar",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -179,7 +179,7 @@
         "165085778836ad72b0-2": {
           "type": "select",
           "settings": {
-            "product": "",
+            "product": "100-grand-box",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -197,7 +197,6 @@
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "share a memory",
-        "btn_link": "#",
         "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
         "padding_top": 90,
         "padding_bottom": 120
