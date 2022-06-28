@@ -1,14 +1,12 @@
 <div class="collection-candy__header">
-  <div class="container">
-    {% if section.settings.sub_headder != blank %}
-      <div class="collection-candy__header-sub">
-        {{- section.settings.sub_headder -}}
-      </div>
-    {% endif %}
+  <div class="container">    
+    <h1 class="collection-candy__header-sub">
+      {{- collection.title -}}
+    </h1>
     {% if section.settings.title != blank %}
-      <h1 class="collection-candy__header-title">
-        {{- section.settings.title -}}
-      </h1>
+      <div class="h1 collection-candy__header-title">
+        {{- collection.description | strip_html | truncate: 30 -}}
+      </div>
     {% endif %}
   </div>
 </div>
