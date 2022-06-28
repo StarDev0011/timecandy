@@ -1070,7 +1070,10 @@ summary::-webkit-details-marker {
 .grid--3-col .grid__item {
 	width: calc(33.33% - var(--grid-mobile-horizontal-spacing) * 2 / 3);
 }
-
+.rte h2 {
+  font-size: 24px;
+  line-height: 1.5;
+}
 .rte ul li {
   margin-bottom: 10px;
 }
