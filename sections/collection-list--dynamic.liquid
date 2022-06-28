@@ -71,12 +71,12 @@
                 {% if link.url contains '/collections/' %}
                   {% assign collection = link.object %}
                   <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-                    {% render 'card-collection--dynamic', card_collection: collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+                    {% render 'card-collection--dynamic', card_collection: collection, media_aspect_ratio: section.settings.image_ratio, columns: columns %}
                   </li>          
           		{% elsif link.url contains '/pages/' %}
           			{% assign page = link.object %}
                   <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-                    {% render 'card-collection--dynamic', card_collection:link.object , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+                    {% render 'card-collection--dynamic-page', page:link.object, media_aspect_ratio: section.settings.image_ratio, columns: columns %}
                   </li>          
           		{% endif %}
           	  {% endfor %}
