@@ -90,6 +90,29 @@
         "optional_extras": "candy-gifts-cg-remember-when"
       }
     },
+    "1656448940f0011bdd": {
+      "type": "apps",
+      "blocks": {
+        "e60044ed-515f-48f4-aa41-3375e536f60f": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": true,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "e60044ed-515f-48f4-aa41-3375e536f60f"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "16518009138973d5b1": {
       "type": "product--gift-cards",
       "blocks": {
@@ -140,19 +163,13 @@
         "collection_2": "candy-by-decade-1960s-candy"
       }
     },
-    "1650857688b2ff975d": {
-      "type": "featured-collection",
+    "1656448901397e1f83": {
+      "type": "also-viewed",
       "settings": {
-        "title": "Explore the family",
-        "collection": "candy-by-decade-1920s-candy",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "#f1f3f3",
+        "title": "SS Also Viewed",
         "svg_bg_top": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "background_color": "#f1f3f3",
         "padding_top": 0,
         "padding_bottom": 40,
         "padding_top_mb": 72,
@@ -266,8 +283,9 @@
   },
   "order": [
     "main",
+    "1656448940f0011bdd",
     "16518009138973d5b1",
-    "1650857688b2ff975d",
+    "1656448901397e1f83",
     "165085778823b445b7",
     "product-recommendations",
     "1650857982f12e2d44"
