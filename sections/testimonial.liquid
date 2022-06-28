@@ -145,7 +145,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    $.getJSON( "/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json", function( data ) {
+    $.getJSON( "/blogs/candy-memories/tagged/{{ product.url }}?view=candy-memories-json", function( data ) {
       if (data.length) {
         debugger;
 //         var $memoriesContainer = $( "#memories-container");
