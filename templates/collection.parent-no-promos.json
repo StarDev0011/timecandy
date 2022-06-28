@@ -1,0 +1,18 @@
+{
+  "wrapper": "div.collection-candy",
+  "sections": {
+    "candy-header": {
+      "type": "collection--candy-header",
+      "settings": {
+        "sub_headder": "Candy Gifts",
+        "color_sub": "#0c5273",
+        "title": "What could be a better combo? We have the perfect gifts for all your needs!",
+        "color_title": "#262626",
+        "bg_color": "#bbe2dd"
+      }
+    }
+  },
+  "order": [
+    "candy-header"
+  ]
+}
