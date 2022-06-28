@@ -47,7 +47,7 @@
                                 {%- endif -%}
                             <div class="testimonial__wrap ">
                                 <div class="testimonial__img-wrap">
-                                    <a class="testimonial__link" href="{{ product.url }}">
+                                    <a class="testimonial__link" href="{% if block.settings.product != blank %}{{ product.url }}{% else %}{{ routes.collections_url }}{% endif %}">
                                         <div class="testimonial__img  {% if product == blank %} placeholder {% endif %}">
                                             {%- if product == blank -%}
                                                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
