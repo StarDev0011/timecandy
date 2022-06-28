@@ -2,7 +2,7 @@
 [{%- for article in blog.articles -%}
     { 
         "title": {{ article.title | json }},
-        "content": {{ article.content | strip_html | json }},
+        "content": {{ article.content | strip_html | truncate: 45 | json }},
 		"url": {{ article.url | json }}
     }{% unless forloop.last %},{% endunless %}
 {%- endfor -%}]
