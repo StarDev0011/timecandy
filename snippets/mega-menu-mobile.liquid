@@ -4,11 +4,11 @@
     {% if links.size > 1 %}
         {% assign megamenu_slide = true %} 
     {% endif %}
-	{% if submenu.title == "Top Products" and submenu.links != blank %}
-		{% for top_product in submenu.links %}
-  	      {% assign count_block = count_block | plus: 1 %}
-	    {% endfor %}
-	{% endif %}
+    {% if submenu.title == "Top Products" and submenu.links != blank %}
+        {% for top_product in submenu.links %}
+          {% assign count_block = count_block | plus: 1 %}
+        {% endfor %}
+    {% endif %}
 {% endfor%}
 <div class="page-width">
     <div class="mega-menu-wrapper">
@@ -30,7 +30,7 @@
     {% if count_block > 0%}
         <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
-            <div  id="megamenu-image-mobile" class="megamenu-image-container swiper swiper-container">  
+            <div id="megamenu-image-mobile-{{ index }}" class="megamenu-image-container swiper swiper-container">  
                 <div class="image-container-wrapper swiper-wrapper">
                     {% for submenu in links %}
                       {% if submenu.title == "Top Products" %}
