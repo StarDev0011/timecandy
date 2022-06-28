@@ -122,7 +122,7 @@
         "165085778836ad72b0-0": {
           "type": "select",
           "settings": {
-            "product": "",
+            "product": "candy-buttons-2pack",
             "button_label": "shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -162,6 +162,7 @@
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "share a memory",
+        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
@@ -169,16 +170,6 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You might also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "accent-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
       }
