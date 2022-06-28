@@ -338,7 +338,7 @@
                 <label for="DelayShipping" class="modal-cart-gift__text">Delay Shipping (Optional)</label>
               </div>
               <div class="modal-cart-gift__field">
-                <label class="modal-cart-gift__label">Desired arrival date</label>
+                <label for="trip-start" class="modal-cart-gift__label">Desired arrival date</label>
                 {%- liquid
                   assign date = "now" | date: '%s'
                   assign seconds = 7 | times: 24 | times: 60 | times: 60
@@ -350,7 +350,7 @@
                   assign endMonth = date | date: "%s" | plus: endseconds | date: "%m"
                   assign year = date | date: "%s" | plus: endseconds | date: "%Y"
                 -%}
-                <input type="date" class="modal-cart-gift__date"  name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
+                <input type="date" class="modal-cart-gift__date" id="trip-start" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
                 <button class="modal-cart-gift__btn js-attr-date button">
                   <span class="modal-cart-gift__btn-text">Confirm date</span>

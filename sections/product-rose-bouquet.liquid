@@ -27,7 +27,7 @@
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
-            <ul id="Slider-Gallery-{{ section.id }}" class="swiper-wrapper product__media-list" role="list">
+            <ul id="Slider-Gallery-{{ section.id }}" class="swiper-wrapper product__media-list">
               {%- liquid
                 assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
                 assign media_count = product.media.size
@@ -156,7 +156,7 @@
               <div class="product-thumbnails swiper-wrapper">
                 {% for media in product.media %}
                   <div class="product-thumbnails__item swiper-slide">
-                    <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}">
+                    <img height="200" width="200" loading="lazy" class="product-thumbnails__image" src="{{ media.preview_image | img_url: '190x' }}" alt="{% if media.alt != blank %}{{ media.alt }}{% else %}Thumbnail image of {{ product.title }}{% endif %}">
                   </div>
                 {% endfor %}
               </div>
@@ -371,6 +371,9 @@
                             <div class="product-rose-color__title">{{ roseColor }}</div>
 
                             <div class="product-rose-color__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
+                              <label class="visually-hidden" for="Quantity-{{ section.id }}">
+                                {{ 'products.product.quantity.label' | t }}
+                              </label>
                               <div class="quantity">
                                 <button class="quantity__button no-js-hidden qty-btn" name="minus" type="button">
                                   <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
