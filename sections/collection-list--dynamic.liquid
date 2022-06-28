@@ -50,11 +50,42 @@
               assign columns = 3
             endif
           -%}
-          {%- for block in section.blocks -%}
-            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-              {% render 'card-collection', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
-            </li>
-          {%- endfor -%}
+          
+          {% comment %}
+              Loop all our linklists and find which one contains
+              the collection links for this parent collection.
+          {% endcomment %}
+          {% for linklist in linklists %}
+              {%- if linklist.links.first.title == 'Parent:Collection' and linklist.links.first.url == collection.url -%}
+                  {%- assign parentCollectionList = linklist.handle -%}
+              {% endif %}
+          {% endfor %}
+
+          {% if parentCollectionList %}
+
+              {% comment %}
+                  Loop through the collections in linklist
+                  and load up the data.
+              {% endcomment %}
+              {% for link in linklists[parentCollectionList].links offset:1 %}
+                {% if link.url contains '/collections/' %}
+                  {% assign collection = link.object %}
+                  <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
+                    {% render 'card-collection--dynamic', card_collection: collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+                  </li>          
+          		{% elsif link.url contains '/pages/' %}
+          			{% assign page = link.object %}
+                  <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
+                    {% render 'card-collection--dynamic', card_collection:link.object , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+                  </li>          
+          		{% endif %}
+          	  {% endfor %}
+          {% else %}
+              {% comment %}
+                  Show a friendly error message.
+              {% endcomment %}
+              <h3>Sorry, no collections available right now.</h3>
+          {% endif %} {% comment %} End if parentCollectionList {% endcomment %}          
         </ul>
         {%- if show_mobile_slider -%}
           <div class="slider-buttons no-js-hidden">
