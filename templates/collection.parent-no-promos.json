@@ -1,14 +1,12 @@
 {
   "wrapper": "div.collection-candy",
   "sections": {
-    "candy-header": {
-      "type": "collection--candy-header",
+    "16564426915a40a36f": {
+      "type": "dynamic-banner-header",
       "settings": {
-        "sub_headder": "Candy Gifts",
-        "color_sub": "#0c5273",
-        "title": "What could be a better combo? We have the perfect gifts for all your needs!",
+        "color_sub": "#0C5273",
         "color_title": "#262626",
-        "bg_color": "#bbe2dd"
+        "bg_color": "#BBE2DD"
       }
     },
     "165644041035f26718": {
@@ -28,7 +26,7 @@
     }
   },
   "order": [
-    "candy-header",
+    "16564426915a40a36f",
     "165644041035f26718"
   ]
 }
