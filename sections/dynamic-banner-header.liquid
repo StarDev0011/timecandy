@@ -9,12 +9,12 @@
                 assign desc = collection.description | truncatewords
                 assign count_desc = desc | size
             %}
-      <div class="product__description rte">
-        <div class="product__desc-text {% if count_desc > 50 %}product__height-desc{% endif %}">
+      <div class="collection__description rte">
+        <div class="collection__desc-text {% if count_desc > 50 %}collection__height-desc{% endif %}">
           {{ collection.description }}
         </div>
         {% if count_desc > 50 %}
-        <a class="js-read-more product__read-more" href="#"> Read more</a>
+        <a class="js-read-more collection__read-more" href="#"> Read more</a>
         {% endif %}
       </div>
       {%- endif -%}
@@ -23,7 +23,7 @@
 </div>
 
 <style>
-  .collection-candy__header-title {
+  .collection__height-desc {
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
