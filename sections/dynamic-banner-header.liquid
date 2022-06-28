@@ -15,6 +15,8 @@
         </div>
         {% if count_desc > 150 %}
         <a class="js-read-more collection__read-more" href="#"> Read more</a>
+        {% else %}
+        {{ count_desc }}
         {% endif %}
       </div>
       {%- endif -%}
