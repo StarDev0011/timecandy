@@ -485,8 +485,18 @@
                 <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
               </p>
             {%- endif -%}
-            {%- when 'add_on' -%}
+          {%- when 'add_on' -%}
+            {% if settings.ss_enable %}
+              <script type="searchspring/personalized-recommendations" profile="fun-extras">
+                seed = "{{ product.variants[0].sku }}";
+                options = {
+                    siteId : "mb4gls",
+                };
+              </script>
+            {% else %}               
               {% include 'include--fun-extras' %}
+            {% endif %}
+
             {% when 'wishlist' %}
               <div class="product-wishlist">
                 <a class="btn-wishlist" href="#">
