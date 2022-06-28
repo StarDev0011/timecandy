@@ -513,6 +513,7 @@
               </p>
             {%- endif -%}
           {%- when 'add_on' -%}
+            {% comment %}
             {% if settings.ss_enable %}
               <script type="searchspring/personalized-recommendations" profile="fun-extras">
                 seed = "{{ product.variants[0].sku }}";
@@ -523,6 +524,7 @@
             {% else %}               
               {% include 'include--fun-extras' %}
             {% endif %}
+            {% endcomment %}
           {% when 'wishlist' %}
             <div class="product-wishlist">
               <a class="btn-wishlist" href="#">
