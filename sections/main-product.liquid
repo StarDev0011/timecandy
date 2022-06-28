@@ -514,12 +514,12 @@
             {%- endif -%}
           {%- when 'add_on' -%}
             {% if settings.ss_enable %}
-            <script type="searchspring/personalized-recommendations" profile="fun-extras">
-              seed = "{{ product.variants[0].sku }}";
-              options = {
-                  siteId : "mb4gls",
-              };
-            </script>
+              <script type="searchspring/personalized-recommendations" profile="fun-extras">
+                seed = "{{ product.variants[0].sku }}";
+                options = {
+                    siteId : "mb4gls",
+                };
+              </script>
             {% else %}               
               {% include 'include--fun-extras' %}
             {% endif %}
