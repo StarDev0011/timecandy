@@ -158,7 +158,7 @@ CartDawn = {
   },
 
   updateQty: () => {
-    $('body').on('focusout', CartDawn.Selector.qty, function() {
+    $('body').on('change', CartDawn.Selector.qty, function() {
         let id = $(this).attr('data-cart-id'),
             qty = $(this).val();
         CartDawn.updateCartAjax(qty, id);

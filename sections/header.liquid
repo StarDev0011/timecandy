@@ -68,7 +68,7 @@
                           assign type_menu = 'default'
                           if link.links != blank
                             assign has_mega_menu = true
-                            assign type_menu = 'megamenu'                          
+                            assign type_menu = 'megamenu'
                           endif
                         -%}
                         <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
@@ -318,6 +318,8 @@
         </a>
       </div>
   </div>
+  {% render 'include--cart-dawn' %}
+
   <div class="header-bottom">
     <div class="page-width">
       {%- if section.settings.menu != blank -%}
@@ -330,7 +332,7 @@
                 assign type_menu = 'default'
                 if link.links != blank
                    assign has_mega_menu = true
-                   assign type_menu = 'megamenu'                          
+                   assign type_menu = 'megamenu'
                 endif
             -%}
               <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
