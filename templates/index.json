@@ -143,6 +143,7 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/featured-subscription-box.jpg",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "Subscription boxes",
             "button_label": "Shop Now",
@@ -154,6 +155,7 @@
         "image_text_list3": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/bulk-candy--homepage.png",
             "title": "Sometimes you just need 3+ lbs of candy for your next party.",
             "caption": "Retro Candy in Bulk",
             "button_label": "Shop Now",
