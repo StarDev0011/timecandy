@@ -312,34 +312,34 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "product": "candy-buttons-48ct",
-            "button_label": "shop candy buttons",
+            "product": "candy-buttons-2pack",
+            "button_label": "Shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-candy-buttons-on-paper-tape"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/brian-from-maryland"
           }
         },
         "testimonial2": {
           "type": "select",
           "settings": {
             "product": "100-grand-bar-fun-size-laydown-bag",
-            "button_label": "shop candy 100 grand",
-            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000. Although we didn't really believe her, we didn't completely not believe her either. She kept us going through most of the party and we kept up hope. When she handed out these candy bars instead we were disappointed. But, the candy was good and I had fun telling my mom about it when I got home.<\/p>",
+            "button_label": "Shop 100 grand",
+            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000...<\/p>",
             "reviewer": "Kris",
             "state": "Indiana",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-100-grand"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/100-grand-bar-candy-memory-kris-from-indiana"
           }
         },
         "testimonial3": {
           "type": "select",
           "settings": {
             "product": "good-plenty-box",
-            "button_label": "shop good and plenty",
+            "button_label": "Shop good and plenty",
             "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
             "reviewer": "Juanita",
             "state": "Kentucky",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-good-plenty"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/juanita-from-kentucky"
           }
         }
       },
