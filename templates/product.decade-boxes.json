@@ -66,6 +66,7 @@
         },
         "df3c808d-1e09-4c34-991c-d1ad2eb0b1b4": {
           "type": "add_on",
+          "disabled": true,
           "settings": {
             "pr_title": "Fun Extras!",
             "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
