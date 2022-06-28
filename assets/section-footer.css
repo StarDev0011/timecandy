@@ -24,6 +24,9 @@
 .footer .grid{
   row-gap: 0;
 }
+.logo__image img {
+  height: auto;
+}
 @media screen and (max-width: 749px) {
   .footer-block.grid__item {
     padding: 0;
