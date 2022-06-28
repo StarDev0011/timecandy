@@ -3,11 +3,9 @@
     <h1 class="collection-candy__header-sub">
       {{- collection.title -}}
     </h1>
-    {% if section.settings.title != blank %}
-      <div class="h1 collection-candy__header-title">
-        {{- collection.description | strip_html | truncate: 30 -}}
-      </div>
-    {% endif %}
+    <div class="h1 collection-candy__header-title">
+      {{- collection.description | strip_html | truncate: 30 -}}
+    </div>
   </div>
 </div>
 
