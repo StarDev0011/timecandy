@@ -11,33 +11,8 @@
         "bg_color": "#bbe2dd"
       }
     },
-    "1656440151231fd740": {
-      "type": "collection-list",
-      "blocks": {
-        "1656440151827250ef-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "1656440151827250ef-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "1656440151827250ef-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "1656440151827250ef-0",
-        "1656440151827250ef-1",
-        "1656440151827250ef-2"
-      ],
+    "165644041035f26718": {
+      "type": "collection-list--dynamic",
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
@@ -54,6 +29,6 @@
   },
   "order": [
     "candy-header",
-    "1656440151231fd740"
+    "165644041035f26718"
   ]
 }
