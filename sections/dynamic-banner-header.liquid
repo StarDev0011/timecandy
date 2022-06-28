@@ -89,6 +89,35 @@
   }
 </style>
 
+{% javascript %}
+var Collection = Collection || {};
+
+Collection = {
+  Class: {
+    btnReadMore: '.js-read-more'
+  },
+
+  init: function() {
+    this.readMoreDesc();
+  },
+
+  readMoreDesc: () => {
+    const btnReadmore = document.querySelector(Collection.Class.btnReadMore);
+    const desc = document.querySelector('.collection__desc-text');
+    btnReadmore.addEventListener('click', function(e) {
+      e.preventDefault();
+      desc.classList.remove('collection__height-desc');
+      btnReadmore.style.display = 'none';
+    });
+  }
+};
+
+$(function() {
+  Collection.init();
+})
+
+{% endjavascript %}
+
 {% schema %}
   {
     "name": "Dynamic banner",
