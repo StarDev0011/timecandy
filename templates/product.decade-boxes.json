@@ -205,6 +205,7 @@
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "share a memory",
+        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
