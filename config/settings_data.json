@@ -161,21 +161,21 @@
             "type": "link_list",
             "settings": {
               "heading": "Shop",
-              "menu": ""
+              "menu": "new-footer-shop"
             }
           },
           "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
               "heading": "Service",
-              "menu": ""
+              "menu": "new-footer-service"
             }
           },
           "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
               "heading": "About",
-              "menu": ""
+              "menu": "new-footer-about"
             }
           },
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
