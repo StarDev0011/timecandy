@@ -126,6 +126,7 @@
         "16518009137f8d1de2-3"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/gift-cards.webp",
         "image_width": 485,
         "box_text_width": 505,
         "padding_top": 120,
