@@ -142,6 +142,22 @@
     });
 
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    $.getJSON( "/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json", function( data ) {
+      if (data.length) {
+        debugger;
+//         var $memoriesContainer = $( "#memories-container");
+
+//         $.each(data, function( key, val ) {
+//           $memoriesContainer.append( "<div><p class='color-blue'>" + val.title + "</p><p class='font-secondary color-dark-grey'>"+ val.content + "</p></div>" );
+//         });
+
+      }
+    });
+  });
+</script>
 {% schema %}
 {
     "name": "Testimonials",
