@@ -594,7 +594,12 @@
   </div>
 </section>
 
-
+<script type="searchspring/personalized-recommendations" profile="similar">
+	seed = "{{ product.variants[0].sku }}";
+    options = {
+		siteId : "y0yjxq",
+	};
+</script>
 
 {% javascript %}
   class ProductModal extends ModalDialog {
