@@ -25,11 +25,8 @@
 <div class="icon-list-wrapper icon-list-style-{{ section.settings.columns_desktop }}">
   <div class="page-width section-{{ section.id }}-padding isolate">
     <div class="icon-list">
-      <div class="swiper swiper-container ">
-        <div class="swiper-wrapper contains-content-container"
-          id="Slider-{{ section.id }}"
-          role="list"
-        >
+      <div class="swiper swiper-container">
+        <div class="swiper-wrapper contains-content-container">
           {%- liquid
             assign highest_ratio = 0
             for block in section.blocks
@@ -71,18 +68,22 @@
                 {%- endif -%}
                 <div class="icon-card__info">
                   {%- if block.settings.title != blank -%}
-                    <h5>
-                      {%- if block.settings.link != blank -%}<a class="link animate-arrow" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}" {% endif %}>{% endif %}
-                      {{ block.settings.title | escape }}
-                      {%- if block.settings.link != blank -%}</a>{% endif %}
-                    </h5>
+                  {%- if block.settings.link != blank -%}
+                    <a class="icon-card__title link animate-arrow" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
+                      {{- block.settings.title | escape -}}
+                    </a>
+                  {% else -%}
+                    <div class="icon-card__title">
+                      {{- block.settings.title | escape -}}
+                    </div>
                   {%- endif -%}
+                  {%- endif %}
                 </div>
               </div>
             </div>
           {%- endfor -%}
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </div>

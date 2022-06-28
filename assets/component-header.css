@@ -380,7 +380,14 @@ header-drawer {
 		padding-right: 127px;
 	}
 }
+.header-logo img {
+	height: auto;
+}
 
+.header__icon--account img,
+.header__icon--cart img {
+	width: auto;
+}
 @media (max-width: 749px) {
 	.header-logo img{
 		max-width: 192px;

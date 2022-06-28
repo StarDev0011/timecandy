@@ -42,6 +42,15 @@
 	width: auto;
 	object-fit: contain;
 }
+.icon-card__title {
+  font-size: 18px;
+  line-height: 24px;
+  display: inline-block;
+  margin-top: 32px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  color: rgb(var(--color-heading));
+}
 @media (max-width: 749px) {
 	.icon-list-wrapper .page-width{
 		padding-left: 0;
