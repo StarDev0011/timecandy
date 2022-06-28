@@ -122,28 +122,6 @@
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "8121eb0d-4ef4-42d5-974a-7c566b145734": {
-            "type": "mega_menu",
-            "disabled": true,
-            "settings": {
-              "navigation_mega_menu": "shop-all",
-              "width_megamenu_link": 50
-            }
-          },
-          "95918a9a-7581-4b5d-b684-26ed10f073b8": {
-            "type": "mega_menu",
-            "disabled": true,
-            "settings": {
-              "navigation_mega_menu": "occassions",
-              "width_megamenu_link": 15
-            }
-          }
-        },
-        "block_order": [
-          "8121eb0d-4ef4-42d5-974a-7c566b145734",
-          "95918a9a-7581-4b5d-b684-26ed10f073b8"
-        ],
         "settings": {
           "logo_size": 255,
           "menu": "new-header-menu",
