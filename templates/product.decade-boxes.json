@@ -63,6 +63,15 @@
           "settings": {
             "btn_wishlist": "Add to wishlist"
           }
+        },
+        "df3c808d-1e09-4c34-991c-d1ad2eb0b1b4": {
+          "type": "add_on",
+          "settings": {
+            "pr_title": "Fun Extras!",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "pr_1": "",
+            "pr_2": ""
+          }
         }
       },
       "block_order": [
@@ -75,7 +84,8 @@
         "variant_picker",
         "buy_buttons",
         "18421d80-4dca-4916-be71-418d26c48563",
-        "13f5a355-4ba4-442c-9cbe-c223e03cfc88"
+        "13f5a355-4ba4-442c-9cbe-c223e03cfc88",
+        "df3c808d-1e09-4c34-991c-d1ad2eb0b1b4"
       ],
       "settings": {
         "enable_sticky_info": true,
