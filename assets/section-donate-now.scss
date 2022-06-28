@@ -1,79 +1,79 @@
-@import "_mq";
-
-.donate-now-section {
-	--heading-color: #0c5273;
-	--text-color: #262626;
-	--button-default-color: #ac1229;
-	--button-hover-color: #7f161b;
-
-	padding: 110px 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #bbe2dd;
-	background-position: center;
-	text-align: center;
-
-	* {
-		box-sizing: border-box;
-	}
-
-	p {
-		margin: 0;
-	}
-
-	.donate-now__subheading {
-		font-family: var(--font-heading);
-		font-weight: 300;
-		font-size: 18px;
-		line-height: 24px;
-		text-transform: uppercase;
-		color: var(--heading-color);
-		margin-top: 0;
-		margin-bottom: 24px;
-
-		@include mq("medium") {
-			font-size: 14px;
-			line-height: 18px;
-		}
-	}
-
-	.donate-now__heading {
-		font-family: var(--font-default);
-		font-weight: 400;
-		font-size: 48px;
-		line-height: 59px;
-		text-align: center;
-		color: var(--text-color);
-		text-transform: none;
-		max-width: 919px;
-		margin: 24px auto 28px;
-
-		@include mq("medium") {
-			font-size: 24px;
-			line-height: 32px;
-		}
-	}
-
-	.donate-now__desc {
-		color: var(--text-color);
-		font-family: var(--font-default);
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 24px;
-		max-width: 499px;
-		margin: 0 auto;
-
-		@include mq("medium") {
-			font-size: 14px;
-			line-height: 20px;
-		}
-	}
-
-	.primary-btn {
-		border-radius: 32px;
-		padding: 13px 14px;
-		margin-top: 48px;
-		font-size: 15px;
-		line-height: 24px;
-	}
-}
+@import "_mq";
+
+.donate-now-section {
+	--heading-color: #0c5273;
+	--text-color: #262626;
+	--button-default-color: #ac1229;
+	--button-hover-color: #7f161b;
+
+	padding: 110px 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #bbe2dd;
+	background-position: center;
+	text-align: center;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.donate-now__subheading {
+		font-family: var(--font-heading);
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 24px;
+		text-transform: uppercase;
+		color: var(--heading-color);
+		margin-top: 0;
+		margin-bottom: 24px;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	.donate-now__heading {
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 48px;
+		line-height: 59px;
+		text-align: center;
+		color: var(--text-color);
+		text-transform: none;
+		max-width: 919px;
+		margin: 24px auto 28px;
+
+		@include mq("medium") {
+			font-size: 24px;
+			line-height: 32px;
+		}
+	}
+
+	.donate-now__desc {
+		color: var(--text-color);
+		font-family: var(--font-default);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 499px;
+		margin: 0 auto;
+
+		@include mq("medium") {
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+
+	.primary-btn {
+		border-radius: 32px;
+		padding: 13px 14px;
+		margin-top: 48px;
+		font-size: 15px;
+		line-height: 24px;
+	}
+}
