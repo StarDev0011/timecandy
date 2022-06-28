@@ -3,8 +3,12 @@
     padding-top: {{ section.settings.padding_top_mb }}px;
       padding-bottom: {{ section.settings.padding_bottom_mb }}px;
   }
-  .featured-collection{
+  .featured-collection {
     background: {{ section.settings.background_color }};
+  }
+  .featured-collection .ss__searchspring__recommendations{
+    margin-top: 0;
+	margin-bottom: 0;
   }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
