@@ -2429,3 +2429,6 @@ div.rc_block__type {
   }
 }
 
+  [data-widget-type=masonry] .stamped-reviews {
+    margin-bottom: 20px !important;
+  }
