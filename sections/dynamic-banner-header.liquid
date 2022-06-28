@@ -1,12 +1,102 @@
+<div class="collection-candy__header">
+  <div class="container">
+    {% if section.settings.sub_headder != blank %}
+      <div class="collection-candy__header-sub">
+        {{- section.settings.sub_headder -}}
+      </div>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h1 class="collection-candy__header-title">
+        {{- section.settings.title -}}
+      </h1>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .collection-candy__header {
+    background-color: {{ section.settings.bg_color }}
+  }
+
+  .collection-candy__header-sub {
+    color: {{ section.settings.color_sub }}
+  }
+
+  .collection-candy__header-title {
+    color: {{ section.settings.color_title }}
+  }
+
+  .collection-candy__header {
+    padding: 81px 0;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .collection-candy__header-sub {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-family: var(--my-font);
+    margin-bottom: 16px;
+  }
+
+  .collection-candy__header-title {
+    margin: 0 auto;
+    font-weight: 400;
+    max-width: 812px;
+    font-size: 48px;
+    line-height: 59px;
+    text-transform: none;
+    font-family: var(--font-2);
+  }
+
+  @media (max-width: 767px) {
+    .collection-candy__header-sub {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+
+    .collection-candy__header-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .collection-candy__header {
+      padding: 48px 0;
+      margin-bottom: 48px;
+    }
+  }
+</style>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Dynamic banner",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_sub",
+        "label": "Color Sub tilte",
+        "default": "#0C5273"
+      },
+      {
+        "type": "color",
+        "id": "color_title",
+        "label": "Color Tilte",
+        "default": "#262626"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#BBE2DD"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dynamic collection banner"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
