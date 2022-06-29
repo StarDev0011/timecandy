@@ -1370,7 +1370,14 @@ button.shopify-payment-button__button--unbranded {
 .button--secondary:hover,
 .button--alternative:hover,
 .button--secondary:not([disabled]):hover,
-.button--alternative:not([disabled]):hover {
+.button--alternative:not([disabled]):hover,
+.button:focus-visible,
+.button:focus,
+.button.focused,
+.shopify-payment-button__button--unbranded:focus-visible,
+.shopify-payment-button [role="button"]:focus-visible,
+.shopify-payment-button__button--unbranded:focus,
+.shopify-payment-button [role="button"]:focus {
 	color: rgb(var(--color-secondary-button-background));
 	border-color: rgb(var(--color-secondary-button-border));
 	background-color: rgba(var(--color-secondary-button-border), 1);
