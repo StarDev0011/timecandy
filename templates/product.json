@@ -3,8 +3,14 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "e562f55b-56e7-4c06-871c-11955de3986f": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -76,6 +82,7 @@
         }
       },
       "block_order": [
+        "e562f55b-56e7-4c06-871c-11955de3986f",
         "vendor",
         "title",
         "caption",
