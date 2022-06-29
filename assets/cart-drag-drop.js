@@ -1,4 +1,4 @@
-['load', 'searchspring.domReady'].forEach(function(e) {
+['window.load', 'searchspring.domReady'].forEach(function(e) {
   window.addEventListener(e, (event) => {
       addToBag();
       initDraggable();
