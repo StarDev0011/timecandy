@@ -7,7 +7,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "Baby Ruth",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/museum-image_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/museum-image-hoverd_225x1902x.png",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-baby-ruth"
           }
         },
         "882153cc-ad3f-49e7-9a53-ee527ef75b23": {
