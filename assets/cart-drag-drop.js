@@ -1,6 +1,8 @@
-window.addEventListener('load', (event) => {
-    addToBag();
-    initDraggable();
+['load', 'searchspring.domReady'].forEach(function(e) {
+  window.addEventListener(e, (event) => {
+      addToBag();
+      initDraggable();
+  });
 });
 
 function updateBagItem() {
@@ -41,6 +43,7 @@ function addToBag() {
 }
 
 function initDraggable() {
+    debugger;
     let productItems = document.querySelectorAll('.card-product__picture');
     let bag = document.querySelector('#drop-zone');
     let dragItem = null;
