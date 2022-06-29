@@ -151,7 +151,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "DUM DUM POPS",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/dumDumPops-up_e77f8a05-d87a-4b18-a2c0-9acafe10867c_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/dumDumPops-over_b5c5b267-31d8-48f7-97cd-ed52e6576140_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-dum-dum-pops"
           }
         },
         "03b205cb-ba9b-48e6-bced-19bfda923ab6": {
