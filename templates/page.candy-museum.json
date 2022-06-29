@@ -241,6 +241,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "PAY DAY",
+            "main_image": "shopify:\/\/shop_images\/payday-up_76e0dc2f-54f0-4c2b-98b4-9c550881965c_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/payday-over_00138453-f996-445e-a0cd-b7abf1624b4d_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -248,6 +250,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "POWERHOUSE",
+            "main_image": "shopify:\/\/shop_images\/powerHouse-up_4b13be25-5359-4acd-9d4a-b2c15cbdcb4f_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/powerHouse-over_ede64440-ada6-4c25-98e2-911f0d573f05_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -255,6 +259,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "SALTED NUT ROLLS",
+            "main_image": "shopify:\/\/shop_images\/salted-nut-roll_6908a121-b6a7-440d-a48b-ddacd0d072a8_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/salted-nut-roll-over_83e86d93-5007-4878-a2ac-2e223ef6ce4d_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -262,6 +268,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "SEVEN UP",
+            "main_image": "shopify:\/\/shop_images\/sevenUp-up_3b347396-c3f3-4e96-9fed-c25300b17895_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/sevenUp-over_9ccde9a7-1fae-4447-9fb4-f3a06390d452_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -269,6 +277,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "SKY BAR",
+            "main_image": "shopify:\/\/shop_images\/skyBar-up_a34deb6d-a91a-4663-85c5-9db3cec5045c_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/skyBar-over_bad2d336-de78-4284-9488-1d86a25c4374_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -276,6 +286,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "SNICKERS",
+            "main_image": "shopify:\/\/shop_images\/snickers-up_3ef0c129-9479-4819-b9b6-e46960757d58_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/snickers-over_8b9bae96-450c-4f93-bf4e-5126449740cb_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -283,6 +295,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "TOOTSIE ROLL POPS",
+            "main_image": "shopify:\/\/shop_images\/tootsieRollPops-up_bfa68b1b-51d9-4eb1-944d-d5ccc2512fcd_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/tootsieRollPops-over_b7d3e900-4e7a-4fa1-ac50-12d41d214f50_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -290,6 +304,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "VALOMILK",
+            "main_image": "shopify:\/\/shop_images\/valomilk-candy-cup_899e7fbd-8851-4cf7-8e13-568e2d3f3840_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/valomilk-candy-cup-over_5f0dbfa4-36e8-4e6f-8834-36282fbad61f_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -297,6 +313,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "ZAGNUT",
+            "main_image": "shopify:\/\/shop_images\/zagnut-up_75a6d224-4bd5-4d6e-965d-ce39a9d5fcb7_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/zagnut-over_2f34ecbb-ff62-43fb-9fcd-e716e63fd234_225x1902x.jpg",
             "cta_url": ""
           }
         },
@@ -304,6 +322,8 @@
           "type": "candy",
           "settings": {
             "candy_title": "ZERO",
+            "main_image": "shopify:\/\/shop_images\/zero-up_d2cb2a6c-0676-4bda-b695-8c62a98eaebf_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/zero-over_f0fccbec-737c-431b-a344-1aa873310463_225x1902x.jpg",
             "cta_url": ""
           }
         }
