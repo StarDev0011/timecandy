@@ -1639,6 +1639,7 @@ div.rc_block__type {
   border-radius: 100%;
   max-height: 88px;
   margin-bottom: 8px;
+  height: 100%;
 }
 
 .product-detail .product-thumbnails__image {
