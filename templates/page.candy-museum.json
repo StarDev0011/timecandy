@@ -205,7 +205,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "MILK DUDS",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/milkDuds-up_029ea78d-045f-4534-9375-2cde547444f5_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/milkDuds-over_3e5db562-eac8-44e1-88cc-4fd6aa5f06e0_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-milk-duds"
           }
         },
         "4c90b01c-b99a-4dc0-8c97-703d056c8203": {
