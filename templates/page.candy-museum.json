@@ -232,7 +232,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "OH HENRY",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/oh-henry-candy-bar_0a82bb25-84ac-48d1-b8fd-f6e2a13fa093_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/oh-henry-candy-bar-over_5da3816b-7f66-4263-bf06-789bcf4f4e58_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-oh-henry"
           }
         },
         "a09e1819-adb8-4047-aed9-be8b7aa93186": {
