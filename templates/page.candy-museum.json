@@ -133,7 +133,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "CUP-O-GOLD",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/cup-o-gold_ce8a640d-10b4-4f99-9561-3d93ea6e5907_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/cup-o-gold-over_6a7ab840-bdfa-4466-9969-7552ce0fc09a_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-cup-o-gold"
           }
         },
         "709be1cf-af79-4f53-a4e0-3e8f57cdef7a": {
