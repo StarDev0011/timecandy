@@ -178,7 +178,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "GOLDENBERG'S PEANUT CHEWS",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/goldenberg-up_95c43672-2851-449a-a2ec-fce58990db11_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/goldenberg-over_2170485f-4071-42d0-964c-235df654c287_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-goldenberg-s-peanut-chews"
           }
         },
         "838962e1-fab4-460a-bc44-ce9c48eb1638": {
