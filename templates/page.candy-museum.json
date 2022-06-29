@@ -187,14 +187,18 @@
           "type": "candy",
           "settings": {
             "candy_title": "HOLLYWOOD",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/hollywood-up_b528f703-efe7-4bc3-a0b2-043d4c4dd076_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/hollywood-over_bce27b68-24f7-4b94-90cf-0402f79c8cdb_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "296847dd-8631-4e16-ad6c-6ea8eaa2065f": {
           "type": "candy",
           "settings": {
             "candy_title": "KITS TAFFY",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/kits-taffy_8d1523f4-812a-49ed-b729-65ff10867a4a_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/kits-taffy-over_ff8a71da-81de-4cdd-8546-4ecab825758d_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-kits-taffy"
           }
         },
         "2c37eee9-4bbe-472f-b76c-feeb12a8e760": {
