@@ -186,6 +186,13 @@
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+          {% when 'vendor' %}
+        	{% if product.vendor %}
+        	  {% assign vendor = product.vendor | prepend: 'brands-' %}
+              {% unless collections[vendor] == blank or collections[vendor].products_count == 0 %}
+                <p class="product__text caption-with-letter-spacing"><a href="/collections/brands-{{ product.vendor | handleize }}">{{ product.vendor }}</a></p>
+              {% endunless %}      
+          	{% endif %}
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} {{ section.id }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
