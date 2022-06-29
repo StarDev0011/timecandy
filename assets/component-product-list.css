@@ -36,7 +36,18 @@
 img {
   max-width: 100%;
 }
+.card-product__sold-out {
+  background-color: var(--backgound-soldout);
+  color: var(--color-sold-out);
+}
 
+.card-product__sold-out:before {
+  border-top: 17.5px solid var(--backgound-soldout);;
+}
+
+.card-product__sold-out::after {
+  border-bottom: 17.5px solid var(--backgound-soldout);;
+}
 .card-product__picture {
   position: relative;
   padding-top: 80%;
