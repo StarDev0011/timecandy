@@ -214,14 +214,18 @@
           "type": "candy",
           "settings": {
             "candy_title": "MILKSHAKE",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/milkshake-up_0fedfb56-736f-4e94-8e54-375f48664cdd_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/milkshake-over_82f98b05-b2f9-4ac4-9980-a7ab170d038d_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "5966505c-d873-4908-8846-a3e7a73ebc49": {
           "type": "candy",
           "settings": {
             "candy_title": "MILKY WAY",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/milkyWay-up_65d71004-543b-4e05-ac5c-6b203241f8bf_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/milkyWay-over_aaf1d5e2-ffa1-4c1b-898f-828cb5994700_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-milky-way"
           }
         },
         "a4b0c712-bc82-4579-9e25-ad51d0768b18": {
