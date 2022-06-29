@@ -188,11 +188,11 @@
             </h1>
           {% when 'vendor' %}
         	{% if product.vendor %}
-        	  {% assign vendor = product.vendor | handleize | prepend: 'brands-' %}
-              {% if collections[vendor] == blank or collections[vendor].products_count == 0 %}
-        		<p class="product__text caption-with-letter-spacing">{{ product.vendor }} - {{ vendor }}</p>
+        	  {% assign vendor_collection = product.vendor | handleize | prepend: 'brands-' %}
+              {% if collections[vendor_collection] == blank or collections[vendor_collection].products_count == 0 %}
+        		<p class="product__text caption-with-letter-spacing">{{ product.vendor }}</p>
         	  {% else %}
-                <p class="product__text caption-with-letter-spacing"><a href="/collections/brands-{{ product.vendor | handleize }}">{{ product.vendor }}</a></p>
+                <p class="product__text caption-with-letter-spacing"><a href="/collections/{{ vendor_collection }}">{{ product.vendor }}</a></p>
               {% endif %}      
           	{% endif %}
           {%- when 'price' -%}
