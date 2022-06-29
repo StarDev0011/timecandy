@@ -70,6 +70,7 @@
       "settings": {
         "enable_sticky_info": true,
         "show_desc": true,
+        "image_meta": "shopify:\/\/shop_images\/decade-gift-box-samples.webp",
         "gallery_layout": "stacked",
         "media_size": "large",
         "mobile_thumbnails": "hide",
@@ -115,6 +116,7 @@
         "16518009137f8d1de2-3"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/gift-cards.webp",
         "image_width": 485,
         "box_text_width": 505,
         "padding_top": 120,
@@ -122,8 +124,8 @@
         "padding_top_mb": 60,
         "padding_bottom_mb": 64,
         "heading": "Making it a gift? add these specials!",
-        "collection": "candy-by-decade-1940s-candy",
-        "show_product_like": true,
+        "collection": "candy-gifts-greeting-cards",
+        "show_product_like": false,
         "heading_2": "You May Also Like",
         "collection_2": "candy-by-decade-1960s-candy"
       }
