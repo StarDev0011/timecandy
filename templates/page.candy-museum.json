@@ -25,14 +25,18 @@
           "type": "candy",
           "settings": {
             "candy_title": "BIG TIME",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/big-time-candy-bar2_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/big-time-candy-bar-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "30839829-22a7-45c8-9c85-e32350982f9c": {
           "type": "candy",
           "settings": {
-            "candy_title": "bun",
-            "cta_url": ""
+            "candy_title": "Bun",
+            "main_image": "shopify:\/\/shop_images\/bun-up_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/bun-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-bun-candy-bar"
           }
         },
         "b33fdb98-93c2-4535-8329-d60cc14f26fc": {
