@@ -189,9 +189,11 @@
           {% when 'vendor' %}
         	{% if product.vendor %}
         	  {% assign vendor = product.vendor | prepend: 'brands-' %}
-              {% unless collections[vendor] == blank or collections[vendor].products_count == 0 %}
+              {% if collections[vendor] == blank or collections[vendor].products_count == 0 %}
+        		<p class="product__text caption-with-letter-spacing">{{ product.vendor }}</p>
+        	  {% else %}
                 <p class="product__text caption-with-letter-spacing"><a href="/collections/brands-{{ product.vendor | handleize }}">{{ product.vendor }}</a></p>
-              {% endunless %}      
+              {% endif %}      
           	{% endif %}
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} {{ section.id }}>
