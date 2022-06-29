@@ -126,6 +126,7 @@ function initDraggable() {
     function dragLeave() {}
 
     async function dragDrop() {
+        debugger;
         let formData = {
             'items': [{
                 'id': dragItem.dataset.productId,
