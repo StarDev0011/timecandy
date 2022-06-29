@@ -61,7 +61,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "CARAVELLE",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/caravelle-candy-bar_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/caravelle-candy-bar-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "63b7f897-a299-44b6-a7ad-a8e04833fd31": {
