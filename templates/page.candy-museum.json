@@ -142,7 +142,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "DENVER SANDWHICH",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/denverSandwich-up_e6b4d07d-7cdc-4a7b-a79c-75d8399e4856_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/denverSandwich-over_9ac8f0c8-3c7a-418c-89f7-18f91165d8ea_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "94bf8292-bc92-451e-ac50-68d0c42abace": {
