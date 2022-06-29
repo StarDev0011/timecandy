@@ -16,7 +16,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "BIT-O-HONEY",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/bitOHoney-up_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/bitOHoney-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-bit-o-honey"
           }
         },
         "b1e2873d-46f6-4020-b2fe-cb4f4e549282": {
