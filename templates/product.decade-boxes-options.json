@@ -80,6 +80,29 @@
         "optional_extras": "candy-gifts-cg-remember-when"
       }
     },
+    "1656534043b575a788": {
+      "type": "apps",
+      "blocks": {
+        "651a43a0-52c8-4e5f-a684-a4d1988b55b2": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": true,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "651a43a0-52c8-4e5f-a684-a4d1988b55b2"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "16518009138973d5b1": {
       "type": "product--gift-cards",
       "blocks": {
@@ -255,6 +278,7 @@
   },
   "order": [
     "main",
+    "1656534043b575a788",
     "16518009138973d5b1",
     "1650857688b2ff975d",
     "165085778823b445b7",
