@@ -187,6 +187,15 @@
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+          {% when 'vendor' %}
+        	{% if product.vendor %}
+        	  {% assign vendor_collection = product.vendor | handleize | prepend: 'brands-' %}
+              {% if collections[vendor_collection] == blank or collections[vendor_collection].products_count == 0 %}
+        		<p class="product__text caption-with-letter-spacing">{{ product.vendor }}</p>
+        	  {% else %}
+                <p class="product__text caption-with-letter-spacing"><a href="/collections/{{ vendor_collection }}">{{ product.vendor }}</a></p>
+              {% endif %}      
+          	{% endif %}        
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} {{ section.id }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -772,6 +781,11 @@
         }
       ]
     },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },   
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
