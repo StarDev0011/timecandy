@@ -3,11 +3,9 @@
     "main": {
       "type": "product-decade-box",
       "blocks": {
-        "vendor": {
-          "type": "text",
+        "d6ae1025-b54d-4e73-b949-5190dd78f09a": {
+          "type": "vendor",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
           }
         },
         "title": {
@@ -76,7 +74,7 @@
         }
       },
       "block_order": [
-        "vendor",
+        "d6ae1025-b54d-4e73-b949-5190dd78f09a",
         "title",
         "caption",
         "price",
