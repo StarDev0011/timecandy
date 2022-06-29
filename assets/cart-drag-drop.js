@@ -123,6 +123,7 @@ function initDraggable() {
     function dragLeave() {}
 
     async function dragDrop() {
+      	console.log(dragItem);
         debugger;
         let formData = {
             'items': [{
