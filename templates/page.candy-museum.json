@@ -70,7 +70,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "CANDY CIGARETTES",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/candyCigarettes-up_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/candyCigarettes-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-candy-cigarettes"
           }
         },
         "d8dc6a88-a284-4bd3-8ea3-e34fd4179ade": {
