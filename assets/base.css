@@ -1357,6 +1357,7 @@ button.shopify-payment-button__button--unbranded {
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: rgba(var(--color-button), var(--alpha-button-background));
+    transform: scale(1);
 }
 
 .button--secondary,
@@ -1382,6 +1383,7 @@ button.shopify-payment-button__button--unbranded {
 	border-color: rgb(var(--color-secondary-button-border));
 	background-color: rgba(var(--color-secondary-button-border), 1);
     box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
+    transform: scale(.98);
 }
 
 .button:focus-visible,
