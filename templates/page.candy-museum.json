@@ -160,14 +160,18 @@
           "type": "candy",
           "settings": {
             "candy_title": "FIFTH AVENUE",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/FifthAvenue-up_4d80f87c-b7f6-43a1-bb9f-513a855724e1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/FifthAvenue-over_47f49b78-aec2-468c-90cd-5b43c06aa3fe_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-5th-avenue"
           }
         },
         "f113b44d-92a5-4f86-b06d-8c4f85f8c713": {
           "type": "candy",
           "settings": {
             "candy_title": "FOREVER YOURS",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/foreverYours-up_f1675ee6-8f27-49fe-9358-ac6573bd3532_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/foreverYours-over_a28a215d-3a98-44f1-a747-4bede2843c1e_225x1902x.jpg",
+            "cta_url": "shopify:\/\/products\/milkly-way-midnight-box"
           }
         },
         "c1392dbd-b104-47a2-bc1e-fc8579644e06": {
