@@ -124,7 +124,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "CLARK",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/clark-up_0535f4b9-4ac5-4bed-863d-b912c1948b60_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/clark-over_b8cbceb6-7ab8-4fb3-9a9c-cb5be8d1a3e8_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-clark-bars"
           }
         },
         "673cb20a-a396-454b-a9be-a9b148003da6": {
