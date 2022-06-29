@@ -52,7 +52,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "BUTTER NUT",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/butter-nut-candy-bar_1_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/butter-nut-candy-bar-over_1_225x1902x.jpg",
+            "cta_url": "shopify:\/\/pages\/discontinued-candy"
           }
         },
         "9fb77383-6262-4e0d-90ae-890e873c9d5c": {
