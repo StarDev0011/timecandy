@@ -115,7 +115,9 @@
           "type": "candy",
           "settings": {
             "candy_title": "CHICK-O-STICK",
-            "cta_url": ""
+            "main_image": "shopify:\/\/shop_images\/chickOSticks-up_fbc1a6e4-003e-499f-a038-8d8c37ba008e_225x1902x2.png",
+            "hover_image": "shopify:\/\/shop_images\/chickOSticks-over_79afdbe8-9e87-4afc-8853-4ef579a919e6_225x1902x.jpg",
+            "cta_url": "shopify:\/\/collections\/walk-the-candy-aisle-chick-o-sticks"
           }
         },
         "9a562ec7-41c7-40ee-96b3-afcc959be225": {
