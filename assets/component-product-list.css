@@ -123,6 +123,12 @@ img {
 
 .card-product__btn-icon svg {
   vertical-align: middle;
+  transform: rotate(0);
+  transition: all .25s ease-in-out;
+}
+  
+.card-product__item :hover .card-product__btn-icon svg {
+  transform: rotate(270deg); 
 }
 
 .card-product__btn-text {
