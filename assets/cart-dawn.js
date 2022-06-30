@@ -73,6 +73,7 @@ CartDawn = {
 
   addProductDonate: () => {
     $('body').on('change', '.js-product-donate:not([checked])', function(e) {
+      debugger;
       e.preventDefault();
       $('.cart-overlay').show();
       console.log($(this).val());
