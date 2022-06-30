@@ -156,11 +156,10 @@
                   {{ 'products.product.quantity.label' | t }}
                 </label>
                 <div class="select">
-                  <select id="Option-{{ section.id }}"
+                  <select id="Quantity-{{ section.id }}"
                     class="select__select"
                     type="number"
                     name="quantity"
-                    id="Quantity-{{ section.id }}"
                     form="{{ product_form_id }}"
                   >
                     {%- for i in (1..10) -%}
