@@ -19,11 +19,12 @@
 	padding: 14px;
 	text-decoration: none;
 	text-align: center;
-	transition: all ease-in-out 0.25s;
+	transition: all .35s cubic-bezier(0.5, -2, 0.5, 2);
 	vertical-align: middle;
 	width: auto;
 	height: max-content;
 	white-space: normal;
+    transform: scale(1);
 
 	&:hover {
 		background-color: var(--button-hover-color);
