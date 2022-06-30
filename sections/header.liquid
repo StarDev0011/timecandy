@@ -307,7 +307,7 @@
 
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link js-open-cart" id="cart-icon-bubble">
           <img src="{{ 'bag.svg' | asset_url }}" width="33" height="45" loading="lazy" class="icon-bag-desktop" alt="bag">
-          <img src="{{ 'icon-bag-mb.png' | asset_url }}" width="25" height="28" loading="lazy" class="icon-bag-mb" alt="bag">
+          <img src="{{ 'bag.svg' | asset_url }}" width="25" height="28" loading="lazy" class="icon-bag-mb" alt="bag">
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
             <div class="cart-count-bubble">
               {%- if cart.item_count < 100 -%}
