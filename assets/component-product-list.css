@@ -310,10 +310,10 @@ img {
   right: -30px;
   top: -59px;
   transition: all .25s ease-in-out;
-  transform: scale(1);
+  transform: scale(1) rotate(0);
 }
 :hover + .featured-product__best-seller {
-  transform: scale(1.125);
+  transform: scale(1.125) rotate(15);
 }
 .section-featured-product .select .icon-caret {
   height: 9px;
