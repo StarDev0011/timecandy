@@ -27,12 +27,12 @@
   {% assign remaining_price = freeshipPrice | minus: cart.total_price %}
 
   {% if cart.item_count > 0 %}
-  {%- if cartTotalPrice >= 25 -%}
+  {%- if cartTotalPrice >= 50 -%}
     <div class="mini-cart__progress">
       <div class="mini-cart__progress-text" {{ freeshipPrice | money }}>
         {%- if cartTotalPrice >= 100 -%}
           {{- settings.progress_text -}}
-        {%- elsif cartTotalPrice >= 25 -%}
+        {%- elsif cartTotalPrice >= 50 -%}
           {{ settings.pro_hint }} {{ remaining_price | money }} {{ settings.pro_hint_2 }}
           <a href="{{ settings.link_shop }}">shop bulk candy</a>
         {%- endif -%}
