@@ -127,7 +127,7 @@ img {
   transition: all .25s ease-in-out;
 }
   
-.card-product__item :hover .card-product__btn-icon svg {
+.card-product__item:hover .card-product__btn-icon svg {
   transform: rotate(270deg); 
 }
 
