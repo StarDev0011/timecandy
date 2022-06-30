@@ -255,6 +255,18 @@
       },
       "footer-misc-scripts": {
         "type": "footer-misc-scripts",
+        "blocks": {
+          "7c37eb71-da3d-43f0-a551-91a4f42c396b": {
+            "type": "script",
+            "settings": {
+              "script": "<script src=\"https:\/\/apis.google.com\/js\/platform.js?onload=renderBadge\" async=\"\" defer><\/script>\n<script>\n\/\/  Google Trusted Reviews Render\n  window.renderBadge = function() {\n    var ratingBadgeContainer = document.getElementById('footer__google-trusted-reviews');\n    window.gapi.load('ratingbadge', function() {\n      window.gapi.ratingbadge.render(ratingBadgeContainer, {\"merchant_id\": 10386568});\n    });\n  }\n<\/script>",
+              "enable-checkout": true
+            }
+          }
+        },
+        "block_order": [
+          "7c37eb71-da3d-43f0-a551-91a4f42c396b"
+        ],
         "settings": {
           "footer-misc-scripts-enable": false
         }
