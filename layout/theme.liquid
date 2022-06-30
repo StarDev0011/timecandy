@@ -267,7 +267,7 @@
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
       {% endcapture %}              
-      var window.OTCIns = {
+      window.OTCIns = {
         "id": {{ insurance_product.id }},
         "title": {{ insurance_product.title }},
         "price":{{ insurance_product.price }},
