@@ -138,6 +138,7 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-feature-box_2a7978f2-4410-4b99-b80d-b43427694a9b.webp",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "Subscription boxes",
             "button_label": "Shop Now",
@@ -161,6 +162,7 @@
         "29de3973-f22a-4eed-aac7-3e366ba80eab": {
           "type": "select",
           "settings": {
+            "image": "shopify:\/\/shop_images\/corporate-gift--homepage_e1c88828-e2d8-469c-8978-888b23f89ea5.webp",
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
@@ -220,6 +222,7 @@
         "165335577618ba7b34-2"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/children-collecting-water-stream.jpg",
         "image_width": 390,
         "box_text_width": 455,
         "layout": "image_first",
