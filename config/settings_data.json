@@ -210,6 +210,54 @@
           "color_text": "#0c5273",
           "color_bg": "#bbe2dd"
         }
+      },
+      "header-misc-scripts": {
+        "type": "header-misc-scripts",
+        "blocks": {
+          "3d891d24-34a7-47aa-88b6-3bbeacccc570": {
+            "type": "script",
+            "settings": {
+              "script": "<meta name=\"google-site-verification\" content=\"LqTdPK75EuhdQUvtFDrKQcJ5p4SDcFNMasY4UCipyNE\">",
+              "enable-checkout": false
+            }
+          },
+          "d542ae9e-ff8b-407b-942c-4959404653a1": {
+            "type": "script",
+            "settings": {
+              "script": "<meta name=\"google-site-verification\" content=\"thZsOoFioqgb6MxEfwv-RAwliCoWS6kpzfbiF8OTs9Y\">",
+              "enable-checkout": false
+            }
+          },
+          "43514fa4-fc24-40f2-a096-be1e187d55f7": {
+            "type": "script",
+            "settings": {
+              "script": "<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async=\"\" src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-18912381-1\"><\/script>\n<script>\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-968343338');\n<\/script>",
+              "enable-checkout": false
+            }
+          },
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1": {
+            "type": "script",
+            "settings": {
+              "script": "<!-- Hotjar Tracking Code for http:\/\/www.oldtimecandy.com -->\n<script>\n    (function(h,o,t,j,a,r){\n        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n        h._hjSettings={hjid:120850,hjsv:6};\n        a=o.getElementsByTagName('head')[0];\n        r=o.createElement('script');r.async=1;\n        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n        a.appendChild(r);\n    })(window,document,'https:\/\/static.hotjar.com\/c\/hotjar-','.js?sv=');\n<\/script>",
+              "enable-checkout": true
+            }
+          }
+        },
+        "block_order": [
+          "3d891d24-34a7-47aa-88b6-3bbeacccc570",
+          "d542ae9e-ff8b-407b-942c-4959404653a1",
+          "43514fa4-fc24-40f2-a096-be1e187d55f7",
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1"
+        ],
+        "settings": {
+          "header-misc-scripts-enable": false
+        }
+      },
+      "footer-misc-scripts": {
+        "type": "footer-misc-scripts",
+        "settings": {
+          "footer-misc-scripts-enable": false
+        }
       }
     },
     "content_for_index": [
