@@ -292,7 +292,7 @@
       <div class="header__icons">
         {%- if shop.customer_accounts_enabled -%}
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link">
-            <img src="{{ 'account.png' | asset_url }}" width="42" height="42" loading="lazy" alt="account">
+            <img src="{{ 'account.svg' | asset_url }}" width="42" height="42" loading="lazy" alt="account">
             <span class="visually-hidden">
               {%- liquid
                 if customer
@@ -306,7 +306,7 @@
         {%- endif -%}
 
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link js-open-cart" id="cart-icon-bubble">
-          <img src="{{ 'bag.png' | asset_url }}" width="33" height="45" loading="lazy" class="icon-bag-desktop" alt="bag">
+          <img src="{{ 'bag.svg' | asset_url }}" width="33" height="45" loading="lazy" class="icon-bag-desktop" alt="bag">
           <img src="{{ 'icon-bag-mb.png' | asset_url }}" width="25" height="28" loading="lazy" class="icon-bag-mb" alt="bag">
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
             <div class="cart-count-bubble">
