@@ -11,8 +11,8 @@ function updateBagItem() {
     .then(data => {
         document.querySelector('.js-cart-count').innerHTML = data.item_count;
         document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
-      	document.querySelector('.packabag-sidebar__bag').addClass('animated tada');
-        setTimeout(function(){ document.querySelector('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+      	//document.querySelector('.packabag-sidebar__bag').addClass('animated tada');
+        //setTimeout(function(){ document.querySelector('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
       
     });
 }
