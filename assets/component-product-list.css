@@ -127,7 +127,7 @@ img {
   transition: all .25s ease-in-out;
 }
   
-.card-product__item:hover .card-product__btn-icon svg {
+.card-product__btn:hover .card-product__btn-icon svg {
   transform: rotate(180deg); 
 }
 .card-product__btn:active .card-product__btn-icon svg {
