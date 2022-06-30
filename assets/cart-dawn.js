@@ -102,6 +102,9 @@ CartDawn = {
           $.get('/cart.js', null, null, 'json').done(function (cart) {
             $(CartDawn.Selector.count).text(cart.item_count);
           });
+        },
+        error:function(data){
+          console.log(data); 
         }
       });
     });
