@@ -128,7 +128,7 @@ img {
 }
   
 .card-product__item:hover .card-product__btn-icon svg {
-  transform: rotate(270deg); 
+  transform: rotate(180deg); 
 }
 
 .card-product__btn-text {
