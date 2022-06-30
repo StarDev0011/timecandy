@@ -339,9 +339,9 @@
               %}">
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}
-                    <div class="list-menu__item">
+                    <summary class="list-menu__item">
                       <a class="item-parent header__menu-item link" href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span></a>
-                    </div>
+                    </summary>
                     <div class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce megamenu" tabindex="-1">
                       {% render 'mega-menu' with links: link.links, datas: datas, index: forloop.index %}
                        <style>
