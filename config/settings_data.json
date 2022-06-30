@@ -125,7 +125,7 @@
         "type": "header",
         "settings": {
           "logo_size": 255,
-          "menu": "menu-home",
+          "menu": "new-header-menu",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
           "show_line_separator": true,
