@@ -253,6 +253,30 @@
     <!-- Back in Stock helper snippet -->
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
+
+    //needed for shipping insurance
+    <script>
+      {% assign insurance_product = all_products['routeins-1'] %}
+      {% for variant in insurance_product.variants %}
+        {% capture insurance_variants %}
+            {
+              "id": {{ variant.id }}, 
+              "title": "{{ variant.title }}", 
+              "price": {{ variant.price }}, 
+              "sku": "{{ variant.sku }}"
+            }{% unless forloop.last %},{% endunless %}
+        {% endcapture %}
+      {% endfor %}
+      var window.OTCIns = {
+        "id": {{ insurance_product.id }},
+        "title": {{ insurance_product.title }},
+        "price":{{ insurance_product.price }},
+        "price_min":{{ insurance_product.price_min }},
+        "price_max":{{ insurance_product.price_max }},
+        "available":{{ insurance_product.available }},
+        "variants": [{{ insurance_variants }}]
+      };
+    </script>    
     <script src="{{ 'cart-dawn.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'suggested.js' | asset_url }}" defer="defer"></script>
     {% if template contains 'collection' %}
