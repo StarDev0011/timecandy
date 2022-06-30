@@ -130,6 +130,9 @@ img {
 .card-product__item:hover .card-product__btn-icon svg {
   transform: rotate(180deg); 
 }
+.card-product__item:hover .card-product__btn:active .card-product__btn-icon svg {
+  transform: rotate(180deg); 
+}
 
 .card-product__btn-text {
   margin-left: 4px;
