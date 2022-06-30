@@ -125,7 +125,7 @@
         "type": "header",
         "settings": {
           "logo_size": 255,
-          "menu": "new-header-menu",
+          "menu": "menu-home",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
           "show_line_separator": true,
@@ -140,21 +140,21 @@
             "type": "link_list",
             "settings": {
               "heading": "Shop",
-              "menu": "new-footer-shop"
+              "menu": ""
             }
           },
           "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
               "heading": "Service",
-              "menu": "new-footer-service"
+              "menu": ""
             }
           },
           "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
               "heading": "About",
-              "menu": "new-footer-about"
+              "menu": ""
             }
           },
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
