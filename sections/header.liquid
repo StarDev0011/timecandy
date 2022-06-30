@@ -344,10 +344,16 @@
                     </summary>
                     <div class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce megamenu" tabindex="-1">
                       {% render 'mega-menu' with links: link.links, datas: datas, index: forloop.index %}
+                      {%- liquid
+                      assign link_columns = 0
+                      for link in link.links
+                        assign link_columns = link_columns | plus: 1 
+                      endfor
+                      -%}
                        <style>
                           @media(min-width: 992px){
                               .index-{{ forloop.index }} .megamenu .mega-menu-wrapper{
-                                width: 35%;
+                                width: {{- link_columns | times: 10 -}}%;
 
                               }
                               .index-{{ forloop.index }} .megamenu .mega-menu-image{
