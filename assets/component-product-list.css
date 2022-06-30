@@ -313,7 +313,7 @@ img {
   transform: scale(1) rotate(0);
 }
 :hover + .featured-product__best-seller {
-  transform: scale(1.125) rotate(15);
+  transform: scale(1.125) rotate(9deg);
 }
 .section-featured-product .select .icon-caret {
   height: 9px;
