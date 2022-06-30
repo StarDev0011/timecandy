@@ -6,8 +6,8 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderDesktop-05-Output-2880x900_2x_77a5cd49-5da4-451b-9c28-37f293af8efb.jpg",
-            "image_mb": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderMobile-05-Output-1200x1200_2x_d5d3a722-b78e-4f8e-a966-d4f61c0b422c.jpg",
+            "image": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderDesktop-02-Output-2880x900_2x_2160x675_crop_center_3bef3693-ed84-4df3-a11b-29b9a3ef2add.png",
+            "image_mb": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderMobile-02-Output-1200x1200_2x_600x600_crop_center_b2801cbb-e3a1-46f3-b683-de93e4b71849.png",
             "heading": "Save 15% on all peanut butter candy this week only with code 'OTC15'",
             "subheading": "National Candy Month",
             "button_label": "shop now",
@@ -66,7 +66,6 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/home-feature-candy-assortment.png",
-        "image_3": "shopify:\/\/shop_images\/home-feature-donny.png",
         "image_2": "shopify:\/\/shop_images\/home-feature-dots.png",
         "image_width": 490,
         "box_text_width": 480,
@@ -90,7 +89,6 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/icon-heart.png",
             "title": "Family-owned since 2000",
             "link": ""
           }
@@ -98,7 +96,6 @@
         "icon2": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/icon-ohio.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -106,7 +103,6 @@
         "icon3": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/icon-candy.webp",
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
@@ -143,7 +139,6 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/featured-subscription-box.jpg",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "Subscription boxes",
             "button_label": "Shop Now",
@@ -167,7 +162,6 @@
         "29de3973-f22a-4eed-aac7-3e366ba80eab": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/corporate-gift--homepage.webp",
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
@@ -227,7 +221,6 @@
         "165335577618ba7b34-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/water-wells--homepage.webp",
         "image_width": 390,
         "box_text_width": 455,
         "layout": "image_first",
@@ -289,7 +282,6 @@
         "1654699404f973a2eb-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/pack-a-bag.webp",
         "image_width": 485,
         "box_text_width": 455,
         "layout": "image_first",
@@ -352,7 +344,6 @@
         "title": "Candy memories",
         "desc": "",
         "btn": "",
-        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
