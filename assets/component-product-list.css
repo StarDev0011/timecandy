@@ -309,8 +309,12 @@ img {
   position: absolute;
   right: -30px;
   top: -59px;
+  transition: all .25s ease-in-out;
+  transform: scale(1);
 }
-
+:hover + .featured-product__best-seller {
+  transform: scale(1.125);
+}
 .section-featured-product .select .icon-caret {
   height: 9px;
 }
