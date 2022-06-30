@@ -88,6 +88,7 @@
         "icon1": {
           "type": "icon",
           "settings": {
+            "image": "shopify:\/\/shop_images\/icon-heart.png",
             "title": "Family-owned since 2000",
             "link": ""
           }
@@ -95,6 +96,7 @@
         "icon2": {
           "type": "icon",
           "settings": {
+            "image": "shopify:\/\/shop_images\/icon-ohio.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -102,6 +104,7 @@
         "icon3": {
           "type": "icon",
           "settings": {
+            "image": "shopify:\/\/shop_images\/icon-candy.webp",
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
