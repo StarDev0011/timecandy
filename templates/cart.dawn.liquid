@@ -266,3 +266,26 @@
     </div>
   </div>
 </div>
+
+<script>
+  {% assign insurance_product = all_products['routeins-1'] %}
+  {% for variant in insurance_product.variants %}
+    {% capture insurance_variants %}
+		{
+          "id": {{ variant.id }}, 
+		  "title": "{{ variant.title }}", 
+		  "price": {{ variant.price }}, 
+		  "sku": "{{ variant.sku }}"
+        }{% unless forloop.last %},{% endunless %}
+    {% endcapture %}
+  {% endfor %}
+  var window.OTCIns = {
+    "id": {{ insurance_product.id }},
+    "title": {{ insurance_product.title }},
+    "price":{{ insurance_product.price }},
+    "price_min":{{ insurance_product.price_min }},
+    "price_max":{{ insurance_product.price_max }},
+    "available":{{ insurance_product.available }},
+    "variants": [{{ insurance_variants }}]
+  };
+</script>
