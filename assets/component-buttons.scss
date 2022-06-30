@@ -29,6 +29,8 @@
 	&:hover {
 		background-color: var(--button-hover-color);
 		color: white;
+        box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
+        transform: scale(.98);          
 	}
 }
 
