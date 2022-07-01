@@ -35,6 +35,9 @@
   height: 20px;
   margin-right: 14px;
   cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 .mini-cart__inner {

@@ -46,7 +46,6 @@ function addToBag() {
 }
 
 function initDraggable() {
-    //debugger;
     let productItems = document.querySelectorAll('.card-product__picture');
     let bag = document.querySelector('#drop-zone');
     let dragItem = null;
@@ -129,7 +128,6 @@ function initDraggable() {
     function dragLeave() {}
 
     async function dragDrop() {
-        //debugger;
         let formData = {
             'items': [{
                 'id': dragItem.dataset.productId,
