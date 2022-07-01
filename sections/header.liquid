@@ -51,7 +51,7 @@
       {%- if section.settings.menu != blank -%}
         <header-drawer data-breakpoint="tablet">
           <details id="Details-menu-drawer-container" class="menu-drawer-container">
-            <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+            <summary class="header__icon header__icon--menu header__icon--summary link" aria-label="{{ 'sections.header.menu' | t }}">
               <div class="header-icon__line">
                 <span class="header-icon__line-item"></span>
               </div>
@@ -74,14 +74,14 @@
                         <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                              <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                              <summary class="menu-drawer__menu-item list-menu__item link link--text {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                                 {{ link.title | escape }}
                                 {% render 'icon-angle-right' %}
                                 {% render 'icon-caret' %}
                               </summary>
                               <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu gradient motion-reduce" tabindex="-1">
                                 <div class="menu-drawer__inner-submenu">
-                                  <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                  <button class="menu-drawer__close-button link link--text" aria-expanded="true">
                                     {% render 'icon-angle-right' %}
                                     {{ link.title | escape }}
                                   </button>
@@ -94,25 +94,25 @@
                                       {%- for childlink in link.links -%}
                                         <li>
                                           {%- if childlink.links == blank -%}
-                                            <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                            <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item {% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                               {{ childlink.title | escape }}
                                             </a>
                                           {%- else -%}
                                             <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
-                                              <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                              <summary class="menu-drawer__menu-item link link--text list-menu__item">
                                                 {{ childlink.title | escape }}
                                                 {% render 'icon-angle-right' %}
                                                 {% render 'icon-caret' %}
                                               </summary>
                                               <div id="childlink-{{ childlink.title | escape }}" class="menu-drawer__submenu gradient motion-reduce">
-                                                <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                                <button class="menu-drawer__close-button link link--text" aria-expanded="true">
                                                   {% render 'icon-angle-right' %}
                                                   {{ childlink.title | escape }}
                                                 </button>
                                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                                   {%- for grandchildlink in childlink.links -%}
                                                     <li>
-                                                      <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                      <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item {% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
                                                         {{ grandchildlink.title | escape }}
                                                       </a>
                                                     </li>
@@ -129,7 +129,7 @@
                               </div>
                             </details>
                           {%- else -%}
-                            <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                            <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                               {{ link.title | escape }}
                             </a>
                           {%- endif -%}
@@ -147,7 +147,7 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text focus-inse">
+          <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text">
               <img src="{{ 'logo.svg' | asset_url }}" loading="lazy"  width="{{ section.settings.logo_size }}" height="64"  alt="{{ shop.name }}" itemprop="logo">
           </a>
       {%- if request.page_type == 'index' -%}
@@ -291,7 +291,7 @@
 
       <div class="header__icons">
         {%- if shop.customer_accounts_enabled -%}
-          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset">
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link">
             <img src="{{ 'account.svg' | asset_url }}" width="42" height="42" loading="lazy" alt="account">
             <span class="visually-hidden">
               {%- liquid
@@ -305,7 +305,7 @@
           </a>
         {%- endif -%}
 
-        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset js-open-cart" id="cart-icon-bubble">
+        <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link js-open-cart" id="cart-icon-bubble">
           <img src="{{ 'bag.svg' | asset_url }}" width="33" height="45" loading="lazy" class="icon-bag-desktop" alt="bag">
           <img src="{{ 'bag.svg' | asset_url }}" width="25" height="28" loading="lazy" class="icon-bag-mb" alt="bag">
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
@@ -347,11 +347,11 @@
                        <style>
                           @media(min-width: 992px){
                               .index-{{ forloop.index }} .megamenu .mega-menu-wrapper{
-                                width: {{ datas.width_megamenu_link }}%;
+                                width: 35%;
 
                               }
                               .index-{{ forloop.index }} .megamenu .mega-menu-image{
-                                 width: calc(100% - {{ datas.width_megamenu_link }}%);
+                                 width: calc(100% - 35%);
                               }
                           }
                       </style>
@@ -359,7 +359,7 @@
                   {% else %}
                     <header-menu>
                       <details id="Details-HeaderMenu-{{ forloop.index }}">
-                        <summary class="item-parent header__menu-item list-menu__item link focus-inset">
+                        <summary class="item-parent header__menu-item list-menu__item link">
                           <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                           {% render 'icon-caret' %}
                         </summary>
@@ -367,19 +367,19 @@
                           {%- for childlink in link.links -%}
                             <li>
                               {%- if childlink.links == blank -%}
-                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                   {{ childlink.title | escape }}
                                 </a>
                               {%- else -%}
                                 <details id="Details-HeaderSubMenu-{{ forloop.index }}">
-                                  <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
+                                  <summary class="header__menu-item link link--text list-menu__item caption-large">
                                     <span>{{ childlink.title | escape }}</span>
                                     {% render 'icon-caret' %}
                                   </summary>
                                   <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce">
                                     {%- for grandchildlink in childlink.links -%}
                                       <li>
-                                        <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                        <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
                                           {{ grandchildlink.title | escape }}
                                         </a>
                                       </li>
@@ -394,7 +394,7 @@
                     </header-menu>
                   {% endif %}
                 {%- else -%}
-                  <a href="{{ link.url }}" class="item-parent header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="item-parent header__menu-item header__menu-item list-menu__item link link--text"{% if link.current %} aria-current="page"{% endif %}>
                     <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
@@ -708,134 +708,7 @@
     }
   ],
   "blocks":[
-    {
-       "type":"mega_menu",
-       "name":"Mega menu",
-       "settings":[
-          {
-             "type":"text",
-             "id":"navigation_mega_menu",
-             "label":"Menu item",
-             "info":"Enter menu item to apply a mega menu dropdown. [Learn more](http://support.maestrooo.com/article/149-navigation-enabling-and-configuring-mega-menu). Use only lowercase letter, no space allowed, replace special characters with \"-\". For example: \"shop-all\" instead of \"shop all\"."
-          },
-          {
-              "type": "checkbox",
-              "id": "show_tt_child",
-              "label": "Show Title Child",
-              "default": true
-          },
-          {
-             "type":"header",
-             "content":"Image push 1"
-          },
-          {
-             "type":"image_picker",
-             "id":"push_1_image",
-             "label":"Image",
-             "info":"217 x 199px .jpg recommended"
-          },
-          {
-             "type":"text",
-             "id":"push_1_label",
-             "label":"Label"
-          },
-          {
-             "type":"text",
-             "id":"push_1_heading",
-             "label":"Heading"
-          },
-          {
-             "type":"url",
-             "id":"push_1_url",
-             "label":"Link"
-          },
-          {
-             "type":"header",
-             "content":"Image push 2"
-          },
-          {
-             "type":"image_picker",
-             "id":"push_2_image",
-             "label":"Image",
-             "info":"217 x 199px .jpg recommended"
-          },
-          {
-             "type":"text",
-             "id":"push_2_label",
-             "label":"Label"
-          },
-          {
-             "type":"text",
-             "id":"push_2_heading",
-             "label":"Heading"
-          },
-          {
-             "type":"url",
-             "id":"push_2_url",
-             "label":"Link"
-          },
-          {
-             "type":"header",
-             "content":"Image push 3"
-          },
-          {
-             "type":"image_picker",
-             "id":"push_3_image",
-             "label":"Image",
-             "info":"217 x 199px .jpg recommended"
-          },
-          {
-             "type":"text",
-             "id":"push_3_label",
-             "label":"Label"
-          },
-          {
-             "type":"text",
-             "id":"push_3_heading",
-             "label":"Heading"
-          },
-          {
-             "type":"url",
-             "id":"push_3_url",
-             "label":"Link"
-          },
-          {
-             "type":"header",
-             "content":"Image push 4"
-          },
-          {
-             "type":"image_picker",
-             "id":"push_4_image",
-             "label":"Image",
-             "info":"217 x 199px .jpg recommended"
-          },
-          {
-             "type":"text",
-             "id":"push_4_label",
-             "label":"Label"
-          },
-          {
-             "type":"text",
-             "id":"push_4_heading",
-             "label":"Heading"
-          },
-          {
-             "type":"url",
-             "id":"push_4_url",
-             "label":"Link"
-          },
-          {
-            "type":"range",
-            "id":"width_megamenu_link",
-            "label": "Width Megamenu Link",
-            "unit": "%",
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "default": 50
-          }
-       ]
-    }
+
   ]
 }
 {% endschema %}
