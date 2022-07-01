@@ -134,7 +134,13 @@
   margin-bottom: 20px;
 }
 .footer .list-social__link {
-   padding: 0;
+  padding: 0;
+  transform: scale(1) rotate(0);
+  transition: all .25s ease-in-out;
+}
+.footer .list-social__link:hover, .footer .list-social__link:focus {
+  transform: scale(1.25);
+  
 }
 .footer .list-social__item {
    margin-right: 20px;

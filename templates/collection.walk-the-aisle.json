@@ -14,7 +14,7 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-occasion-birthday-candy-gifts",
+        "collection": "candy-by-occasion-baseball-candy",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -24,7 +24,7 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "deals-of-the-week",
+        "collection": "walk-the-candy-aisle-salt-water-taffy",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -34,7 +34,7 @@
     "lunch-boxes-with-candy": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-decade-1960s-candy",
+        "collection": "movie-theater-candy",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
@@ -47,7 +47,7 @@
         "524cccb0-9633-418c-adfd-33a14efd4b4a": {
           "type": "banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner_1.png",
+            "image": "shopify:\/\/shop_images\/4lb-gift-box-spill1_1024x1024_a09a35d1-4fdd-4303-b852-e43f09de19f2.webp",
             "btn": "Shop Gift Boxes",
             "link": "shopify:\/\/collections\/candy-gift-boxes",
             "title": "Personalized Gifts",
@@ -58,7 +58,7 @@
         "3b61cf33-8f54-4a74-9079-a6bc35924168": {
           "type": "banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner_2.png",
+            "image": "shopify:\/\/shop_images\/gummi-peach-rings_450x_crop_center_68a2c9c1-ed53-47f2-ab09-c2bfc7572c12.webp",
             "btn": "Shop Sale",
             "link": "shopify:\/\/collections\/deals-of-the-week",
             "title": "Deals of the Week",
@@ -155,7 +155,7 @@
         "346115e6-844f-4161-95e2-101b048da9f7"
       ],
       "settings": {
-        "title": "Collections",
+        "title": "More Collections",
         "heading_size": "h1",
         "image_ratio": "square",
         "columns_desktop": 5,
@@ -171,8 +171,8 @@
       "type": "featured-product",
       "settings": {
         "product": "large-decade-candy-gift-box",
-        "sub_title": "looking for a gift?",
-        "desc": "",
+        "sub_title": "Need a quick gift idea?",
+        "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
         "show_best_seller": true,
         "padding_top": 36,
         "padding_bottom": 36

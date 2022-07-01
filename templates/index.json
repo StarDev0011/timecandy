@@ -6,17 +6,16 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderDesktop-02-Output-2880x900_2x_2160x675_crop_center_3bef3693-ed84-4df3-a11b-29b9a3ef2add.png",
-            "image_mb": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderMobile-02-Output-1200x1200_2x_600x600_crop_center_b2801cbb-e3a1-46f3-b683-de93e4b71849.png",
-            "heading": "Save 15% on All Novelty Candy this week with code 'OTC15'",
-            "subheading": "It's National Candy Month!",
+            "image": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderDesktop-05-Output-2880x900_2x_77a5cd49-5da4-451b-9c28-37f293af8efb.jpg",
+            "heading": "Save 15% on all peanut butter candy this week only with code 'OTC15'",
+            "subheading": "National Candy Month",
             "button_label": "shop now",
             "link": "shopify:\/\/collections\/deals-of-the-week",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
-            "color_scheme": "#e4f1f5",
+            "color_scheme": "#ffffff",
             "bg_container_scheme": "#fcf0ee",
             "text_alignment_mobile": "left"
           }
@@ -66,7 +65,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/home-feature-candy-assortment.png",
-        "image_3": "shopify:\/\/shop_images\/Donny_a1fa8dd0-ff53-4ded-a864-95b297effbdc.png",
+        "image_3": "shopify:\/\/shop_images\/home-feature-donny.png",
         "image_2": "shopify:\/\/shop_images\/home-feature-dots.png",
         "image_width": 490,
         "box_text_width": 480,
@@ -90,15 +89,15 @@
         "icon1": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Group_146_4dd61e1f-4b4f-4304-a3c1-f0b34cb47c51.png",
+            "image": "shopify:\/\/shop_images\/icon-heart.png",
             "title": "Family-owned since 2000",
-            "link": "shopify:\/\/collections"
+            "link": ""
           }
         },
         "icon2": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/illustration_3.png",
+            "image": "shopify:\/\/shop_images\/icon-ohio.png",
             "title": "LaGrange, Ohio-based",
             "link": ""
           }
@@ -106,7 +105,7 @@
         "icon3": {
           "type": "icon",
           "settings": {
-            "image": "shopify:\/\/shop_images\/illustration_d20d97ad-95f5-4896-9901-5e5a87d00827.png",
+            "image": "shopify:\/\/shop_images\/icon-candy.webp",
             "title": "By candy lovers, for candy lovers",
             "link": ""
           }
@@ -143,7 +142,7 @@
         "image_text_list2": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-baner-1.png",
+            "image": "shopify:\/\/shop_images\/home-feature-box_2a7978f2-4410-4b99-b80d-b43427694a9b.webp",
             "title": "Send yourself or a friend a box of candy automatically.",
             "caption": "Subscription boxes",
             "button_label": "Shop Now",
@@ -155,7 +154,7 @@
         "image_text_list3": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bulk-candy--homepage_551b41ac-ac8d-4a11-9d41-5fa59bf4c9a3.png",
+            "image": "shopify:\/\/shop_images\/bulk-candy--homepage.png",
             "title": "Sometimes you just need 3+ lbs of candy for your next party.",
             "caption": "Retro Candy in Bulk",
             "button_label": "Shop Now",
@@ -167,7 +166,7 @@
         "29de3973-f22a-4eed-aac7-3e366ba80eab": {
           "type": "select",
           "settings": {
-            "image": "shopify:\/\/shop_images\/corporate-gift--homepage.png",
+            "image": "shopify:\/\/shop_images\/corporate-gift--homepage_e1c88828-e2d8-469c-8978-888b23f89ea5.webp",
             "title": "Send a personalized candy gift to your employees or clients.",
             "caption": "Corporate Gifts",
             "button_label": "Shop now",
@@ -227,7 +226,7 @@
         "165335577618ba7b34-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/water-wells--homepage.png",
+        "image": "shopify:\/\/shop_images\/children-collecting-water-stream.jpg",
         "image_width": 390,
         "box_text_width": 455,
         "layout": "image_first",
@@ -289,7 +288,7 @@
         "1654699404f973a2eb-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/pack-a-bag_3a0c4bab-7c7d-4f8c-bb15-34e055182c6e.jpg",
+        "image": "shopify:\/\/shop_images\/pack-a-bag.webp",
         "image_width": 485,
         "box_text_width": 455,
         "layout": "image_first",
@@ -312,34 +311,34 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "product": "candy-buttons-48ct",
-            "button_label": "shop candy buttons",
+            "product": "candy-buttons-2pack",
+            "button_label": "Shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-candy-buttons-on-paper-tape"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/brian-from-maryland"
           }
         },
         "testimonial2": {
           "type": "select",
           "settings": {
             "product": "100-grand-bar-fun-size-laydown-bag",
-            "button_label": "shop candy 100 grand",
-            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000. Although we didn't really believe her, we didn't completely not believe her either. She kept us going through most of the party and we kept up hope. When she handed out these candy bars instead we were disappointed. But, the candy was good and I had fun telling my mom about it when I got home.<\/p>",
+            "button_label": "Shop 100 grand",
+            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000...<\/p>",
             "reviewer": "Kris",
             "state": "Indiana",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-100-grand"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/100-grand-bar-candy-memory-kris-from-indiana"
           }
         },
         "testimonial3": {
           "type": "select",
           "settings": {
             "product": "good-plenty-box",
-            "button_label": "shop good and plenty",
+            "button_label": "Shop good and plenty",
             "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
             "reviewer": "Juanita",
             "state": "Kentucky",
-            "link_readmore": "shopify:\/\/collections\/walk-the-candy-aisle-good-plenty"
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/juanita-from-kentucky"
           }
         }
       },
@@ -352,8 +351,7 @@
         "title": "Candy memories",
         "desc": "",
         "btn": "",
-        "btn_link": "",
-        "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
+        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }

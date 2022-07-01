@@ -1,0 +1,140 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mb }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mb }}px;
+  }
+  .featured-collection {
+    background: {{ section.settings.background_color }};
+  }
+  .featured-collection .ss__searchspring__recommendations{
+    margin-top: 0;
+	margin-bottom: 0;
+  }
+  .featured-collection .ss__searchspring__recommendations .ss__recommendations-title {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="p-relative {% if section.settings.svg_bg_top != blank %}has-image-background-top{% endif %} {% if section.settings.svg_bg_top != blank %}has-image-background-bottom{% endif %}">
+  {% if section.settings.svg_bg_top != blank %}
+  <div class="img-bg-top" >
+    {{ section.settings.svg_bg_top }}
+    </div>
+  {% endif %}
+
+  <div class="featured-collection page-width">
+    <script type="searchspring/personalized-recommendations" profile="similar">
+      seed = "{{ product.variants[0].sku }}";
+      options = {
+          siteId : "y0yjxq",
+      };
+    </script>
+  </div>
+  {% if section.settings.svg_bg_top != blank %}
+  <div class="img-bg-bottom">
+    {{ section.settings.svg_bg_bottom }}
+  {% endif %}
+
+</div>
+<style>
+  .img-bg-bottom svg,
+  .img-bg-top svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-bg-top {
+    position: relative;
+    bottom: -7px;
+  }
+</style>
+{% schema %}
+{
+  "name": "SS Also Viewed",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "SS Also Viewed",
+      "label": "Searchspring component"
+    },
+    {
+        "type": "textarea",
+        "id": "svg_bg_top",
+        "label": "Background SVG Top",
+        "default": "<svg width='1440' height='222' viewBox='0 0 1440 222' fill='none' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' clip-rule='evenodd' d='M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z' fill='#F1F3F3'/> </svg>"
+    },
+    {
+        "type": "textarea",
+        "id": "svg_bg_bottom",
+        "label": "Background SVG Bottom",
+        "default": "<svg width='1440' height='222' viewBox='0 0 1440 222' fill='none' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' clip-rule='evenodd' d='M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z' fill='#F1F3F3'/> </svg>"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "default": "#f1f3f3",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info"
+    },  
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100 ,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+     {
+      "type": "range",
+      "id": "padding_top_mb",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "padding top for mobile",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mb",
+      "min": 30,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom for mobile",
+      "default": 130
+    }
+  ],
+  "presets": [
+    {
+      "name": "SS Also Viewed"
+    }
+  ]
+}
+{% endschema %}

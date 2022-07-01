@@ -187,20 +187,19 @@
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+          {% when 'vendor' %}
+        	{% if product.vendor %}
+        	  {% assign vendor_collection = product.vendor | handleize | prepend: 'brands-' %}
+              {% if collections[vendor_collection] == blank or collections[vendor_collection].products_count == 0 %}
+        		<p class="product__text caption-with-letter-spacing">{{ product.vendor }}</p>
+        	  {% else %}
+                <p class="product__text caption-with-letter-spacing"><a href="/collections/{{ vendor_collection }}">{{ product.vendor }}</a></p>
+              {% endif %}      
+          	{% endif %}        
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} {{ section.id }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
-            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-              <div class="product__tax caption rte">
-                {%- if shop.taxes_included -%}
-                  {{ 'products.product.include_taxes' | t }}
-                {%- endif -%}
-                {%- if shop.shipping_policy.body != blank -%}
-                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- endif -%}
-              </div>
-            {%- endif -%}
             <div {{ block.shopify_attributes }}>
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -485,8 +484,18 @@
                 <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
               </p>
             {%- endif -%}
-            {%- when 'add_on' -%}
+          {%- when 'add_on' -%}
+            {% if settings.ss_enable %}
+              <script type="searchspring/personalized-recommendations" profile="fun-extras">
+                seed = "{{ product.variants[0].sku }}";
+                options = {
+                    siteId : "mb4gls",
+                };
+              </script>
+            {% else %}               
               {% include 'include--fun-extras' %}
+            {% endif %}
+
             {% when 'wishlist' %}
               <div class="product-wishlist">
                 <a class="btn-wishlist" href="#">
@@ -772,6 +781,11 @@
         }
       ]
     },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },   
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",

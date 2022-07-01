@@ -19,7 +19,10 @@
   border-radius: var(--card-corner-radius);
   border: var(--card-border-width) solid rgba(var(--color-foreground), var(--card-border-opacity));
   position: relative;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px #00000040;
+    border-radius: 14px;    
+    overflow: hidden;
 }
 
 .card--card:after,

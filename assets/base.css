@@ -1070,7 +1070,10 @@ summary::-webkit-details-marker {
 .grid--3-col .grid__item {
 	width: calc(33.33% - var(--grid-mobile-horizontal-spacing) * 2 / 3);
 }
-
+.rte h2 {
+  font-size: 24px;
+  line-height: 1.5;
+}
 .rte ul li {
   margin-bottom: 10px;
 }
@@ -1350,10 +1353,11 @@ button.shopify-payment-button__button--unbranded {
 	line-height: 24px;
 	text-decoration: none;
 	color: rgb(var(--color-button-text));
-	transition: box-shadow var(--duration-short) ease;
+	transition: all .35s cubic-bezier(0.5, -2, 0.5, 2);
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: rgba(var(--color-button), var(--alpha-button-background));
+    transform: scale(1);
 }
 
 .button--secondary,
@@ -1367,10 +1371,19 @@ button.shopify-payment-button__button--unbranded {
 .button--secondary:hover,
 .button--alternative:hover,
 .button--secondary:not([disabled]):hover,
-.button--alternative:not([disabled]):hover {
+.button--alternative:not([disabled]):hover,
+.button:focus-visible,
+.button:focus,
+.button.focused,
+.shopify-payment-button__button--unbranded:focus-visible,
+.shopify-payment-button [role="button"]:focus-visible,
+.shopify-payment-button__button--unbranded:focus,
+.shopify-payment-button [role="button"]:focus {
 	color: rgb(var(--color-secondary-button-background));
 	border-color: rgb(var(--color-secondary-button-border));
 	background-color: rgba(var(--color-secondary-button-border), 1);
+    box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
+    transform: scale(.98);
 }
 
 .button:focus-visible,
@@ -2737,7 +2750,7 @@ details-disclosure > details {
 		column-gap: 10px;
 	}
 	.header__icon--cart img {
-		height: 28px;
+		height: 32px;
 	}
 }
 

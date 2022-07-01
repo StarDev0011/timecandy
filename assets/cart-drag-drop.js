@@ -11,6 +11,9 @@ function updateBagItem() {
     .then(data => {
         document.querySelector('.js-cart-count').innerHTML = data.item_count;
         document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+      	//document.querySelector('.packabag-sidebar__bag').addClass('animated tada');
+        //setTimeout(function(){ document.querySelector('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+      
     });
 }
 
@@ -43,7 +46,6 @@ function addToBag() {
 }
 
 function initDraggable() {
-    debugger;
     let productItems = document.querySelectorAll('.card-product__picture');
     let bag = document.querySelector('#drop-zone');
     let dragItem = null;
@@ -126,7 +128,6 @@ function initDraggable() {
     function dragLeave() {}
 
     async function dragDrop() {
-        debugger;
         let formData = {
             'items': [{
                 'id': dragItem.dataset.productId,

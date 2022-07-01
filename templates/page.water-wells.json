@@ -16,7 +16,7 @@
         "subheading": "Water wells for Africa",
         "desc": "<p>A small donation of just $1.00 or $2.00 may seem like a small sacrifice, but it truly does make a difference in our world.<\/p>",
         "btn_text": "Donate Now",
-        "btn_link": "https:\/\/www.oldtimecandy.com\/products\/water-wells-donation"
+        "btn_link": "shopify:\/\/products\/water-wells-donation"
       }
     },
     "165263200509035721": {
@@ -25,7 +25,7 @@
         "6bb8cdc1-8117-49de-a82a-c5d1b9b83190": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/africa-4_355x260_crop_center_2x_607d7477-1915-47c3-aff4-f89f87879146.png",
+            "image": "shopify:\/\/shop_images\/child-collecting-water.jpg",
             "image_pos": "left",
             "shade": "shade_1",
             "heading": "<p>Sierra Leone is, sadly, the poorest country in the world.<\/p>",
@@ -36,7 +36,7 @@
         "6d55c4c5-de84-482f-98ca-268a49cdbbbd": {
           "type": "row",
           "settings": {
-            "image": "shopify:\/\/shop_images\/africa-1_460x305_crop_center_2x_b9cfbbb9-b607-46e2-9cfb-79098516b7a1.png",
+            "image": "shopify:\/\/shop_images\/children-collecting-water-stream.jpg",
             "image_pos": "right",
             "shade": "shade_2",
             "heading": "<p>Each well serves around 2,000 people.<\/p>",
@@ -147,7 +147,7 @@
             "heading": "",
             "content": "<p>The study, which covered one quarter of the world's population, ranked Sierra Leone last among nations surveyed. Our Christian faith teaches that it is not enough to tell people about Jesus without attempting to provide for their human needs (James 2:14-17).<\/p>",
             "btn_text": "Donate now",
-            "btn_link": "shopify:\/\/collections"
+            "btn_link": "shopify:\/\/products\/water-wells-donation"
           }
         }
       },
@@ -157,7 +157,6 @@
         "64ab6f2b-85f0-4880-9f14-7209aa2c2649"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/2022-05-21_11-33.png",
         "title": "the book of hope",
         "background_color": "#ffffff"
       }
@@ -181,8 +180,8 @@
         "a1946012-9d00-41b0-8a93-88c44946caf0": {
           "type": "button",
           "settings": {
-            "btn_text": "read the newsletter",
-            "btn_link": ""
+            "btn_text": "Read the newsletter",
+            "btn_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/steve_and_glenda_newsletter.pdf"
           }
         }
       },

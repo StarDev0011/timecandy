@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=6">
@@ -195,6 +196,7 @@
   </head>
 
   <body class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
+    {% section 'header-misc-scripts' %}    
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -251,6 +253,30 @@
     <!-- Back in Stock helper snippet -->
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
+
+    //needed for shipping insurance
+    <script>
+      {% assign insurance_product = all_products['routeins-1'] %}
+      {% capture insurance_variants %}
+      {% for variant in insurance_product.variants %}
+        {
+          "id": {{ variant.id }}, 
+            "title": "{{ variant.title }}", 
+            "price": {{ variant.price }}, 
+              "sku": "{{ variant.sku }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {% endcapture %}              
+      window.OTCIns = {
+        "id": {{ insurance_product.id }},
+        "title": "{{ insurance_product.title }}",
+        "price":{{ insurance_product.price }},
+        "price_min":{{ insurance_product.price_min }},
+        "price_max":{{ insurance_product.price_max }},
+        "available":{{ insurance_product.available }},
+        "variants": [{{ insurance_variants }}]
+      };
+    </script>    
     <script src="{{ 'cart-dawn.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'suggested.js' | asset_url }}" defer="defer"></script>
     {% if template contains 'collection' %}
@@ -259,5 +285,6 @@
     {% if settings.ss_enable %}
 		{% render 'ss-intellisuggest' %}
 	{% endif %}
+    {% section 'footer-misc-scripts' %}
   </body>
 </html>

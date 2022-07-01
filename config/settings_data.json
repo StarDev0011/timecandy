@@ -8,7 +8,7 @@
     "body_scale": 100,
     "page_width": 1440,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
+    "spacing_grid_horizontal": 20,
     "spacing_grid_vertical": 40,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
@@ -17,6 +17,7 @@
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 4,
     "buttons_shadow_blur": 5,
+    "bg_soldout": "#6b6b6b",
     "variant_pills_border_thickness": 1,
     "variant_pills_border_opacity": 55,
     "variant_pills_radius": 40,
@@ -38,7 +39,7 @@
     "cart_desc": "<p>A small donation of just $1.00 or $2.00, the cost of a single bottle of water, will have an impact. To show our appreciation we will match your donation dollar for dollar.<\/p>",
     "donation_product": "water-wells-donation",
     "shipping_product": "routeins-1",
-    "gif_img": "shopify:\/\/shop_images\/donny_2gif.gif",
+    "gif_img": "shopify:\/\/shop_images\/donny-takeoff.gif",
     "link_1": "shopify:\/\/collections\/top-candy",
     "cart_btn_2": "Shop Best Sellers",
     "link_2": "shopify:\/\/collections\/candy-gift-boxes-decade-candy-gift-boxes",
@@ -100,9 +101,10 @@
     "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
     "placeholder": "Search for anything!, Licorice, Laffy Taffy, Pop Rocks, Zagnut, Bubble Gum, Rock Candy, Jelly Beans, Now and Laters, Chocolate, Nerds, Jolly Rancher, Sugar Free, Runts",
     "currency_code_enabled": true,
-    "ss_enable": false,
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "ss_enable": true,
+    "checkout_logo_image": "shopify:\/\/shop_images\/otc-checkout-logo_a0a8433d-714d-4695-8dd7-8367f6eeaa7e.png",
     "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
     "checkout_accent_color": "#0C5273",
     "checkout_button_color": "#0C5273",
     "checkout_error_color": "#AC1229",
@@ -122,62 +124,9 @@
     "sections": {
       "header": {
         "type": "header",
-        "blocks": {
-          "8121eb0d-4ef4-42d5-974a-7c566b145734": {
-            "type": "mega_menu",
-            "settings": {
-              "navigation_mega_menu": "shop-all",
-              "show_tt_child": true,
-              "push_1_image": "shopify:\/\/shop_images\/image.png",
-              "push_1_label": "Great gift!",
-              "push_1_heading": "Decade Candy Gift Box",
-              "push_1_url": "shopify:\/\/products\/100-grand-box",
-              "push_2_image": "shopify:\/\/shop_images\/image.png",
-              "push_2_label": "",
-              "push_2_heading": "RED VINES ORIGINAL",
-              "push_2_url": "shopify:\/\/products\/3-musketeers-box",
-              "push_3_image": "shopify:\/\/shop_images\/image.png",
-              "push_3_label": "",
-              "push_3_heading": "HARIBO GUMMI WATERMELON WEDGES",
-              "push_3_url": "shopify:\/\/products\/3-musketeers-bar",
-              "push_4_label": "no",
-              "push_4_heading": "",
-              "push_4_url": "",
-              "width_megamenu_link": 45
-            }
-          },
-          "95918a9a-7581-4b5d-b684-26ed10f073b8": {
-            "type": "mega_menu",
-            "settings": {
-              "navigation_mega_menu": "occassions",
-              "show_tt_child": true,
-              "push_1_image": "shopify:\/\/shop_images\/image_f0aef60c-112b-4332-9bc2-b0bc6832312e.png",
-              "push_1_label": "",
-              "push_1_heading": "Andes Mints",
-              "push_1_url": "shopify:\/\/products\/5th-avenue-box",
-              "push_2_image": "shopify:\/\/shop_images\/image_516c9ae6-f2c8-4344-9438-d919e23e9f3b.png",
-              "push_2_label": "Great gift",
-              "push_2_heading": "Chocolate lovers box",
-              "push_2_url": "shopify:\/\/products\/100-grand-bar",
-              "push_3_image": "shopify:\/\/shop_images\/image_4a621c87-a00f-4e31-8a51-78950e1b58de.png",
-              "push_3_label": "",
-              "push_3_heading": "Birthday decade gift box",
-              "push_3_url": "shopify:\/\/products\/15-puzzle",
-              "push_4_image": "shopify:\/\/shop_images\/image_47d09e08-04d9-4c93-9a40-283b6918b7c9.png",
-              "push_4_label": "",
-              "push_4_heading": "movie night gift bucket",
-              "push_4_url": "shopify:\/\/products\/3-musketeers-box",
-              "width_megamenu_link": 15
-            }
-          }
-        },
-        "block_order": [
-          "8121eb0d-4ef4-42d5-974a-7c566b145734",
-          "95918a9a-7581-4b5d-b684-26ed10f073b8"
-        ],
         "settings": {
           "logo_size": 255,
-          "menu": "menu-home",
+          "menu": "new-header-menu",
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
           "show_line_separator": true,
@@ -192,21 +141,21 @@
             "type": "link_list",
             "settings": {
               "heading": "Shop",
-              "menu": "shop-footer"
+              "menu": "new-footer-shop"
             }
           },
           "8fdf852d-ce4b-4960-80a2-f97a190ad691": {
             "type": "link_list",
             "settings": {
               "heading": "Service",
-              "menu": "service-footer"
+              "menu": "new-footer-service"
             }
           },
           "9e87bb31-1098-4bac-bcc4-ef91da13c935": {
             "type": "link_list",
             "settings": {
               "heading": "About",
-              "menu": "about-footer"
+              "menu": "new-footer-about"
             }
           },
           "d7bc321f-ef27-4a6b-b63e-3b523788d979": {
@@ -261,6 +210,82 @@
           "link": "",
           "color_text": "#0c5273",
           "color_bg": "#bbe2dd"
+        }
+      },
+      "header-misc-scripts": {
+        "type": "header-misc-scripts",
+        "blocks": {
+          "3d891d24-34a7-47aa-88b6-3bbeacccc570": {
+            "type": "script",
+            "settings": {
+              "script": "<meta name=\"google-site-verification\" content=\"LqTdPK75EuhdQUvtFDrKQcJ5p4SDcFNMasY4UCipyNE\">",
+              "enable-checkout": false
+            }
+          },
+          "d542ae9e-ff8b-407b-942c-4959404653a1": {
+            "type": "script",
+            "settings": {
+              "script": "<meta name=\"google-site-verification\" content=\"thZsOoFioqgb6MxEfwv-RAwliCoWS6kpzfbiF8OTs9Y\">",
+              "enable-checkout": false
+            }
+          },
+          "43514fa4-fc24-40f2-a096-be1e187d55f7": {
+            "type": "script",
+            "settings": {
+              "script": "<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async=\"\" src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-18912381-1\"><\/script>\n<script>\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-968343338');\n<\/script>",
+              "enable-checkout": false
+            }
+          },
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1": {
+            "type": "script",
+            "settings": {
+              "script": "<!-- Hotjar Tracking Code for http:\/\/www.oldtimecandy.com -->\n<script>\n    (function(h,o,t,j,a,r){\n        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n        h._hjSettings={hjid:120850,hjsv:6};\n        a=o.getElementsByTagName('head')[0];\n        r=o.createElement('script');r.async=1;\n        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n        a.appendChild(r);\n    })(window,document,'https:\/\/static.hotjar.com\/c\/hotjar-','.js?sv=');\n<\/script>",
+              "enable-checkout": true
+            }
+          },
+          "e3679f1f-6f75-42f6-bf21-90d222d80572": {
+            "type": "script",
+            "settings": {
+              "script": "<meta name=\"facebook-domain-verification\" content=\"hrkju3xgogfc6i8m0vetapsampa796\">",
+              "enable-checkout": false
+            }
+          }
+        },
+        "block_order": [
+          "3d891d24-34a7-47aa-88b6-3bbeacccc570",
+          "d542ae9e-ff8b-407b-942c-4959404653a1",
+          "43514fa4-fc24-40f2-a096-be1e187d55f7",
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1",
+          "e3679f1f-6f75-42f6-bf21-90d222d80572"
+        ],
+        "settings": {
+          "header-misc-scripts-enable": false
+        }
+      },
+      "footer-misc-scripts": {
+        "type": "footer-misc-scripts",
+        "blocks": {
+          "7c37eb71-da3d-43f0-a551-91a4f42c396b": {
+            "type": "script",
+            "settings": {
+              "script": "<script src=\"https:\/\/apis.google.com\/js\/platform.js?onload=renderBadge\" async=\"\" defer><\/script>\n<script>\n\/\/  Google Trusted Reviews Render\n  window.renderBadge = function() {\n    var ratingBadgeContainer = document.getElementById('footer__google-trusted-reviews');\n    window.gapi.load('ratingbadge', function() {\n      window.gapi.ratingbadge.render(ratingBadgeContainer, {\"merchant_id\": 10386568});\n    });\n  }\n<\/script>",
+              "enable-checkout": true
+            }
+          },
+          "05c2ef11-018d-4cd4-90a3-19ac39c78b60": {
+            "type": "script",
+            "settings": {
+              "script": "<script>var shareasaleShopifySSCID=shareasaleShopifyGetParameterByName(\"sscid\");function shareasaleShopifySetCookie(e,a,o,i,r){if(e&&a){var s,S=i?\"; path=\"+i:\"\",h=r?\"; domain=\"+r:\"\",t=\"\";o&&((s=new Date).setTime(s.getTime()+o),t=\"; expires=\"+s.toUTCString()),document.cookie=e+\"=\"+a+t+S+h}}function shareasaleShopifyGetParameterByName(e,a){a||(a=window.location.href),e=e.replace(\/[\\[\\]]\/g,\"\\\\$&\");var o=new RegExp(\"[?&]\"+e+\"(=([^&#]*)|&|#|$)\").exec(a);return o?o[2]?decodeURIComponent(o[2].replace(\/\\+\/g,\" \")):\"\":null}shareasaleShopifySSCID&&shareasaleShopifySetCookie(\"shareasaleShopifySSCID\",shareasaleShopifySSCID,94670778e4,\"\/\");<\/script>",
+              "enable-checkout": false
+            }
+          }
+        },
+        "block_order": [
+          "7c37eb71-da3d-43f0-a551-91a4f42c396b",
+          "05c2ef11-018d-4cd4-90a3-19ac39c78b60"
+        ],
+        "settings": {
+          "footer-misc-scripts-enable": false
         }
       }
     },
@@ -371,6 +396,8 @@
           "type": "header",
           "settings": {
             "menu": "main-menu",
+            "bg_menu": "#0C5273",
+            "color_menu": "#fff",
             "show_line_separator": true,
             "enable_sticky_header": true,
             "margin_bottom": 0
@@ -406,6 +433,9 @@
             "footer-1"
           ],
           "settings": {
+            "footer_bg": "#0C5273",
+            "footer_bottom_bg": "#8ED1CB",
+            "text_color": "#fff",
             "newsletter_enable": true,
             "newsletter_heading": "Subscribe to our emails",
             "show_social": true,

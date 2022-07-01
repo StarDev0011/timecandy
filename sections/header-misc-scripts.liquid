@@ -1,0 +1,50 @@
+{% comment %}
+    Header Misc Scripts Section File
+    This file allows for adding individual blocks with scripts
+    as well as optionally disabling on the checkout page.
+{% endcomment %}
+
+{% if section.settings.header-misc-scripts-enable %}
+  {% for block in section.blocks limit: section.blocks.size %}
+      {% unless block.settings.enable-checkout == false and checkout.id != blank %}
+          {{ block.settings.script }}
+      {% endunless %}
+  {% endfor %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Header Misc Scripts",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Add any Misc Scripts for the header below, use a new block for each script."
+      },
+      {
+        "type": "checkbox",
+        "id": "header-misc-scripts-enable",
+        "label": "Enable misc scripts",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "script",
+        "name": "Misc Script",
+        "settings": [
+          {
+            "type": "html",
+            "id": "script",
+            "label": "Individual Misc Script"
+          },
+          {
+              "type": "checkbox",
+              "id": "enable-checkout",
+              "label": "Enable Script on Checkout & Order Status page.",
+              "default": true
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -19,12 +19,12 @@
   <div id="searchspring-sidebar">
   <div class="collection-sidebar__filter sidebar-filter">
     <div class="sidebar-filter__inner active">
-      <h3 class="collection-sidebar__header js-sidebar-title">
+      <h2 class="h3 collection-sidebar__header js-sidebar-title">
         <span>By type</span>
         <span class="collection-sidebar__header-icon">
           {% render 'icon-arrow-down' %}
         </span>
-      </h3>
+      </h2>
       <div class="collection-sidebar__content">
         <ul class="collection-sidebar__list">
           {% for item in arrayItem %}
@@ -46,12 +46,12 @@
     </div>
 
     <div class="sidebar-filter__inner">
-      <h3 class="collection-sidebar__header js-sidebar-title">
+      <h2 class="h3 collection-sidebar__header js-sidebar-title">
         <span>by flavor</span>
         <span class="collection-sidebar__header-icon">
           {% render 'icon-arrow-down' %}
         </span>
-      </h3>
+      </h2>
       <div class="collection-sidebar__content">
         <ul class="collection-sidebar__list">
           {% for item in arrayItem %}
@@ -65,12 +65,12 @@
     </div>
 
     <div class="sidebar-filter__inner">
-      <h3 class="collection-sidebar__header js-sidebar-title">
+      <h2 class="h3 collection-sidebar__header js-sidebar-title">
         <span>by occassion</span>
         <span class="collection-sidebar__header-icon">
           {% render 'icon-arrow-down' %}
         </span>
-      </h3>
+      </h2>
       <div class="collection-sidebar__content">
         <ul class="collection-sidebar__list">
           {% for item in arrayItem %}
@@ -84,12 +84,12 @@
     </div>
 
     <div class="sidebar-filter__inner">
-      <h3 class="collection-sidebar__header js-sidebar-title">
+      <h2 class="h3 collection-sidebar__header js-sidebar-title">
         <span>by decade</span>
         <span class="collection-sidebar__header-icon">
           {% render 'icon-arrow-down' %}
         </span>
-      </h3>
+      </h2>
       <div class="collection-sidebar__content">
         <ul class="collection-sidebar__list">
           {% for item in arrayItem %}
@@ -106,9 +106,9 @@
     </a>
   </div>
   <div class="collection__sort-by">
-    <h3 class="collection-sidebar__header">Sort by</h3>
+    <h2 class="h3 collection-sidebar__header">Sort by</h2>
     <div class="sort-by__wrapper">
-      <label class="sort-by__label">Name:</label>
+      <label class="sort-by__label" for="SortBy">Sort results by:</label>
       <select name="SortBy" id="SortBy" class="sort-by__select" onchange="location = this.value;">
         {% for option in collection.sort_options %}
           <option value="?sort_by={{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>

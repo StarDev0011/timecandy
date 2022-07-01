@@ -1,0 +1,152 @@
+<div class="collection-candy__header">
+  <div class="container">    
+    <h1 class="collection-candy__header-sub">
+      {{- collection.title -}}
+    </h1>
+    <div class="h1 collection-candy__header-title">
+      {%- if collection.description != blank -%}
+      {% liquid
+                assign desc = collection.description | truncatewords
+                assign count_desc = desc | size
+            %}
+      <div class="collection__description rte">
+        <div class="collection__desc-text {% if count_desc > 35 %}collection__height-desc{% endif %}">
+          {{ collection.description }}
+        </div>
+        {% if count_desc > 35 %}
+        <a class="js-read-more collection__read-more" href="#"> Read more</a>
+        {% else %}
+        {{ count_desc }}
+        {% endif %}
+      </div>
+      {%- endif -%}
+    </div>    
+  </div>
+</div>
+
+<style>
+  .collection__height-desc {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    max-height: 160px;
+    padding-bottom: 3px;  
+  }
+  .collection-candy__header {
+    background-color: {{ section.settings.bg_color }}
+  }
+
+  .collection-candy__header-sub {
+    color: {{ section.settings.color_sub }}
+  }
+
+  .collection-candy__header-title {
+    color: {{ section.settings.color_title }}
+  }
+
+  .collection-candy__header {
+    padding: 81px 0;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .collection-candy__header-sub {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-family: var(--my-font);
+    margin-bottom: 16px;
+  }
+
+  .collection-candy__header-title {
+    margin: 0 auto;
+    font-weight: 400;
+    max-width: 812px;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: none;
+    font-family: var(--font-2);
+  }
+
+  @media (max-width: 767px) {
+    .collection-candy__header-sub {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+
+    .collection-candy__header-title {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .collection-candy__header {
+      padding: 48px 0;
+      margin-bottom: 0px;
+    }
+  }
+</style>
+
+{% javascript %}
+var Collection = Collection || {};
+
+Collection = {
+  Class: {
+    btnReadMore: '.js-read-more'
+  },
+
+  init: function() {
+    this.readMoreDesc();
+  },
+
+  readMoreDesc: () => {
+    const btnReadmore = document.querySelector(Collection.Class.btnReadMore);
+    const desc = document.querySelector('.collection__desc-text');
+    btnReadmore.addEventListener('click', function(e) {
+      e.preventDefault();
+      desc.classList.remove('collection__height-desc');
+      btnReadmore.style.display = 'none';
+    });
+  }
+};
+
+$(function() {
+  Collection.init();
+})
+
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Dynamic banner",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_sub",
+        "label": "Color Sub tilte",
+        "default": "#0C5273"
+      },
+      {
+        "type": "color",
+        "id": "color_title",
+        "label": "Color Tilte",
+        "default": "#262626"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#BBE2DD"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dynamic collection banner"
+      }
+    ]
+  }
+{% endschema %}

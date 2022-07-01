@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NPDCTQW');</script>
+    <!-- End Google Tag Manager -->      
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0">
+    <meta name="referrer" content="origin">
+    
+    {% comment %} Google Tag Manager {% endcomment %}
+    {% comment %} End Google Tag Manager {% endcomment %}
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    {{ 'checkout-gravatar.js' | asset_url | script_tag }}
+
+    {% section 'header-misc-scripts' %}
+	<script>window.RiseStoreFront={customer_id:"{{ customer.id }}"};</script>
+	<script src="https://str.rise-ai.com/checkout?shop=oldtimecandy.myshopify.com"></script>
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDCTQW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->    
+  {{ skip_to_content_link }}
+
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    <script>
+        // Check if we have a Gravatar Image
+        (function () {
+
+          // Vars
+          var encryptedEmail = "{{ customer.email | remove: ' ' | strip_newlines | downcase | md5 }}";
+          var image_url = "http://www.gravatar.com/avatar/" + encryptedEmail + "?s=80&d=404";
+
+          function success() {
+          }
+
+          function failure() {
+            var gravatar = document.getElementsByClassName("logged-in-customer-information__avatar gravatar");
+            gravatar[0].setAttribute("id", "no-gravatar");
+          }
+
+          checkImage(image_url, success, failure);
+
+        })();
+    </script>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>
+          <div class="main__content">
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+
+    {% comment %}
+      Load up our default customer image if they dont have a gravatar
+      depends on id added by /assets/checkout-gravatar.js
+    {% endcomment %}
+    <style>
+      #no-gravatar {
+        background-image: url('{{ 'default-customer-gravatar.webp' | asset_url }}') !important;
+      }
+    </style>
+
+    {% section 'footer-misc-scripts' %}
+    {% comment %} Shopify Modifications to Reject PO Boxes {% endcomment %}
+    {% include 'checkout-input-validation.js', enable: true %}
+  </body>
+</html>

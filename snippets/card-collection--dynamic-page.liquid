@@ -1,0 +1,75 @@
+{% comment %}
+    Renders a collection card
+
+    Accepts:
+    - card_collection: {Object} Collection Liquid object
+    - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - columns: {Number} 
+    - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+    
+    Usage:
+    {% render 'card-collection--dynamic-page' %}
+{% endcomment %}
+
+{%- liquid
+  assign ratio = 1
+-%}
+
+<div class="card-wrapper animate-arrow">
+  <div class="card
+    card--{{ settings.card_style }}
+    card--media
+    {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+    {% if extend_height %} card--extend-height{% endif %}
+    ratio"
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %} ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              srcset="{{ 'pattern-wtca-background.png' | asset_img_url: '223x223', crop: 'center' }}"
+              src="{{ 'pattern-wtca-background.png' | asset_img_url: '223x223', crop: 'center' }}"
+              sizes="
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+              (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+              calc(100vw - 3rem)"
+              alt="{{ page.title | escape }}"
+              height="223"
+              width="223"
+              loading="lazy"
+              class="motion-reduce"
+            >
+          </div>
+        </div>
+      <div class="card__content">        
+        <div class="card__information">
+          <h3 class="card__heading">
+            <a{% if page == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link">
+              {%- if page.title != blank -%}
+                {{- page.title | escape -}}
+              {%- else -%}
+                {{ 'onboarding.collection_title' | t }}
+              {%- endif -%}
+            </a>
+          </h3>
+        </div>   
+      </div>
+    </div>
+    {% if settings.card_style == 'card' or card_collection.featured_image %} 
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading">
+            <a href="{{ page.url }}" class="full-unstyled-link">
+              {%- if page.title != blank -%}
+                {{- page.title | escape -}}
+              {%- else -%}
+                {{ 'onboarding.collection_title' | t }}
+              {%- endif -%}
+            </a>
+          </h3>
+        </div>
+      </div>
+    {% endif %} 
+  </div>
+</div>

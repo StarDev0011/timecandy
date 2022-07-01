@@ -89,7 +89,7 @@
     -%}
   </span>
 
-  <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: 100%;">
+  <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
     <img
       srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 493 }} 493w,{% endif %}
         {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 600 }} 600w,{% endif %}
