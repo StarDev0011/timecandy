@@ -45,7 +45,15 @@
         </div>
         </div>
         <div class="collection__wrapper">
-            {% render 'include--sidebar' %}
+          <div class="filter-mobile">
+            <div class="filter-mobile__header" id="filter-mobile">
+              <span class="filter-mobile__title"> Filter & Sort </span>
+              <span class="filter-mobile__icon">
+                {%- render 'icon-arrow-right' -%}
+              </span>
+            </div>
+          </div>
+          {% render 'include--sidebar' %}
             <div class="collection-product__list">
                 {% if settings.ss_enable %}
                     <div id="searchspring-content"></div>
@@ -146,6 +154,7 @@
   });
 </script>
 <script src="{{ 'cart-drag-drop.js' | asset_url }}"></script>
+
 {% schema %}
   {
     "name": "Colections pages",

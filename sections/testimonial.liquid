@@ -12,19 +12,18 @@
 {%- endstyle -%}
 {% if product.handle != blank %}
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     $.getJSON( "/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json", function( data ) {
-      if (data.length) {
-        debugger;
-//         var $memoriesContainer = $( "#memories-container");
+        if (data.length) {
+        //         var $memoriesContainer = $( "#memories-container");
 
-//         $.each(data, function( key, val ) {
-//           $memoriesContainer.append( "<div><p class='color-blue'>" + val.title + "</p><p class='font-secondary color-dark-grey'>"+ val.content + "</p></div>" );
-//         });
+        //         $.each(data, function( key, val ) {
+        //           $memoriesContainer.append( "<div><p class='color-blue'>" + val.title + "</p><p class='font-secondary color-dark-grey'>"+ val.content + "</p></div>" );
+        //         });
 
-      }
+        }
     });
-  });
+});
 </script>
 {% endif %}
 {% if section.blocks.size > 0 %}

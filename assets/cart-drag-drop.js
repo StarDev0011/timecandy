@@ -5,6 +5,11 @@
   });
 });
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    addToBag();
+    initDraggable();
+});
+
 function updateBagItem() {
     fetch(window.Shopify.routes.root + 'cart.js')
     .then(response => response.json())
@@ -13,13 +18,12 @@ function updateBagItem() {
         document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
       	//document.querySelector('.packabag-sidebar__bag').addClass('animated tada');
         //setTimeout(function(){ document.querySelector('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
-      
     });
 }
 
 function addToBag() {
     document.querySelectorAll('.card-product__pack-bag').forEach((el) => {
-        el.addEventListener('click', async function (e) {
+        el.addEventListener('click', function (e) {
             e.preventDefault();
             let addToCartForm = this.parentElement;
             let formData = {
@@ -28,7 +32,7 @@ function addToBag() {
                     'quantity': 1
                 }]
             };
-            await fetch(window.Shopify.routes.root + 'cart/add.js', {
+            fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,9 +52,7 @@ function addToBag() {
 function initDraggable() {
     let productItems = document.querySelectorAll('.card-product__picture');
     let bag = document.querySelector('#drop-zone');
-    let dragItem = null;
-    
-    
+    let dragItem;
     productItems.forEach(item => {
         var initialPosX, initialPosY;
 
@@ -127,14 +129,15 @@ function initDraggable() {
     function dragEnter() {}
     function dragLeave() {}
 
-    async function dragDrop() {
+    function dragDrop() {
         let formData = {
             'items': [{
                 'id': dragItem.dataset.productId,
                 'quantity': 1
             }]
         };
-        await fetch(window.Shopify.routes.root + 'cart/add.js', {
+
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
