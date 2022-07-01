@@ -190,8 +190,14 @@
     }
     </script>
     
+    {% include 'adwords-remarketing' %}
+    
+    {% if template contains 'register' %}
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    {% endif %}    
+    
     {% if settings.ss_enable %}
-		{% render 'ss-script' %}
+	  {% render 'ss-script' %}
 	{% endif %}
     <meta name="facebook-domain-verification" content="hrkju3xgogfc6i8m0vetapsampa796" />
   </head>
