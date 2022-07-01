@@ -35,6 +35,9 @@
   height: 20px;
   margin-right: 14px;
   cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 .mini-cart__inner {
@@ -77,8 +80,11 @@
 
 .mini-cart__list {
   padding: 20px 15px;
-  max-height: calc(100vh - 420px);
+  max-height: calc(100vh - 309px);
   overflow: auto;
+}
+.mini-cart__progress + .mini-cart__form .mini-cart__list {
+  max-height: calc(100vh - 400px);
 }
 
 .mini-cart__item {
