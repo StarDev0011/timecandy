@@ -152,7 +152,20 @@
       }
     });
   });
+
+  window.addEventListener('load', () => {
+    const filterMobile = document.querySelector('#filter-mobile');
+    if(filterMobile) {
+      filterMobile.onclick = () => {
+        document.querySelector('body').classList.toggle('open-filter');
+      }
+    }
+    document.querySelector('.sidebar-mobile-title').onclick = () => {
+      document.querySelector('body').classList.remove('open-filter');
+    }
+  })
 </script>
+
 <script src="{{ 'cart-drag-drop.js' | asset_url }}"></script>
 
 {% schema %}
