@@ -1,0 +1,47 @@
+<!-- Global site tag (gtag.js) - AdWords: 968343338 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-968343338"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-968343338');</script>
+
+{% if template.name == 'product' %}
+    <script>
+    gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'product',
+        'ecomm_prodid': '{{ product.variants.first.sku | append: '-' | append: product.variants.first.id }}',
+        'ecomm_totalvalue': {{ product.variants.first.price | money_without_currency }}
+    });
+    </script>
+{% elsif template.name == 'collection' %}
+    <script>
+    gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'category'
+    });
+    </script>
+{% elsif template.name == 'cart' %}
+    <script>var cart_items = [];
+    {%- for item in cart.items -%}
+    cart_items.push("{{ item.sku | append: '-' | append: item.variant_id }}");
+    {%- endfor -%}
+    gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'cart',
+        'ecomm_prodid': cart_items,
+        'ecomm_totalvalue': {{ cart.total_price | money_without_currency }}
+    });
+    </script>
+{% elsif template.name == 'index' %}
+    <script>
+    gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'home'
+    });
+    </script>
+{% elsif template.name == 'search' %}
+    <script>
+    gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'searchresults'
+    });
+    </script>
+{% endif %}

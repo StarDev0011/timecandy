@@ -26,3 +26,10 @@
 		siteId : "y0yjxq",
 	};
 </script>
+
+<!-- Begin Transportr -->
+{% include 'transportr' %}
+<!-- End Transportr -->
+{%- comment -%}smartseo_integration_begin{%- endcomment -%}
+{{ 'smart-seo-broken-link-detection.js' | asset_url | script_tag }}
+{%- comment -%}smartseo_integration_end{%- endcomment -%}
