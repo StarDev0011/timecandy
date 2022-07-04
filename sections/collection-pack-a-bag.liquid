@@ -74,15 +74,11 @@
                                 {% render 'pagination', paginate: paginate, anchor: '' %}
                             {% else %}
                                 <div class="product-paginate" data-paginate>
-                                    {% unless paginate.next.is_link %}
-                                    <!-- <button class="btn no-product" type="button">
-                                        No products
-                                    </button> -->
-                                    {% else %}
-                                        <a href="{{ paginate.next.url }}" class="js-infinite-scroll">
-                                        <span class="loader"></span>
-                                        </a>
-                                    {% endunless %}
+                                  {% unless paginate.next.is_link %}
+                                    <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{collection.title | escape }}">
+                                      <span class="loader"></span>
+                                    </a> 
+                                  {% endunless %}
                                 </div>
                             {% endif %}
                         {%- endif -%}

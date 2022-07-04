@@ -864,4 +864,8 @@
   .modal-cart-gift__input {
     min-height: 88px;
   }
+
+  .shopify-section-header-hidden {
+    overflow: hidden;
+  }
 }
