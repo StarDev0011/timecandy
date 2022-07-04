@@ -37,8 +37,8 @@
   <div class="card-product__item">
       {%- if card_product.featured_media -%}
       <div class="card-product__picture">
-        <a class="card-product__link" href="{{ card_product.url | within: collection }}">
-          <img loading="lazy" height="auto" width="auto" class="card-product__image" src="{{ card_product.featured_image.src | product_img_url: '600x' }}" alt="{{ card_product.featured_image.alt | escape }}">
+        <a class="card-product__link" href="{{ card_product.url | within: collection }}" aria-label="{{ card_product.url | handleize  }}">
+          <img loading="lazy" height="auto" width="auto" class="card-product__image" src="{{ card_product.featured_image.src | product_img_url: '600x' }}" alt="{{ card_product.url | handleize }}">
         </a>
         {%- if card_product.available == false -%}
         <div class="card__badge">

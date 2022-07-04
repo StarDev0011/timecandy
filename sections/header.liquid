@@ -162,7 +162,7 @@
                 <input class="search__input field__input searchspring-ac"
                   id="Search-In-Modal-1"
                   type="search"
-                  name="q"
+                  name="q" aria-label="search"
                   value="{{ search.terms | escape }}"
                   placeholder="{{ 'general.search.search' | t }}"
                 >
@@ -192,7 +192,7 @@
             <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
               <div class="field">
                 <input class="search__input field__input"
-                  id="Search-In-Modal-1"
+                  id="Search-In-Modal-1" aria-label="search"
                   type="search"
                   name="q"
                   value="{{ search.terms | escape }}"
@@ -340,7 +340,9 @@
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}
                     <summary class="list-menu__item">
-                      <a class="item-parent header__menu-item link" href="{{ link.url }}"><span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span></a>
+                      <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link">
+                        <span {% if link.child_active %}class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                      </a>
                     </summary>
                     <div class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce megamenu" tabindex="-1">
                       {% render 'mega-menu' with links: link.links, datas: datas, index: forloop.index %}
@@ -394,8 +396,8 @@
                     </header-menu>
                   {% endif %}
                 {%- else -%}
-                  <a href="{{ link.url }}" class="item-parent header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                  <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                    <span {%- if link.current %}class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
               </li>

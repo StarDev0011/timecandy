@@ -56,7 +56,7 @@
                           {{ block.settings.title | escape }}
                         </h2>
                         {%- if block.settings.button_label != blank -%}
-                          <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
+                          <a aria-label="{{block.settings.title | escape}}" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
                             {{ block.settings.button_label | escape }}
                           </a>
                         {%- endif -%}
