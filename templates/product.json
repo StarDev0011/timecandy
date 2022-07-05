@@ -134,10 +134,10 @@
         "svg_bg_top": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94078e-05 222H1440V61.3982C1199.94 167.978 959.885 114.727 719.827 61.475C479.885 8.24888 239.942 -44.9773 5.36761e-06 61.3983L1.94078e-05 222Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "svg_bg_bottom": "<svg width=\"1440\" height=\"222\" viewbox=\"0 0 1440 222\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1440 -6.3635e-05L2.47755e-05 -0.000189524L1.07352e-05 160.602C240.058 54.0214 480.115 107.273 720.173 160.525C960.115 213.751 1200.06 266.977 1440 160.602L1440 -6.3635e-05Z\" fill=\"#F1F3F3\"><\/path> <\/svg>",
         "background_color": "#f1f3f3",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 40,
-        "padding_top_mb": 72,
-        "padding_bottom_mb": 130
+        "padding_top_mb": 50,
+        "padding_bottom_mb": 60
       }
     },
     "165085778823b445b7": {
