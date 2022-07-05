@@ -1641,6 +1641,7 @@ div.rc_block__type {
   margin-bottom: 8px;
   height: 100% !important;
   border: 3px solid #fff;
+  box-sizing: border-box;
 }
 .product-detail .product-thumbnails__item.swiper-slide-active {
   border-color: #8ED1CB; 
