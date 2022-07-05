@@ -422,8 +422,8 @@
 .collection__desc {
 /*   margin-top: 80px; */
   padding-top: 48px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+/*   border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
   padding-bottom: 40px;
   font-weight: 400;
   font-size: 16px;
