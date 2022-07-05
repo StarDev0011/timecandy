@@ -1640,6 +1640,10 @@ div.rc_block__type {
   max-height: 88px;
   margin-bottom: 8px;
   height: 100% !important;
+  border: 3px solid #fff;
+}
+.product-detail .product-thumbnails__item.swiper-slide-active {
+  border-color: #8ED1CB; 
 }
 
 .product-detail .product-thumbnails__image {
