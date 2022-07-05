@@ -1643,7 +1643,7 @@ div.rc_block__type {
   border: 3px solid #fff;
   box-sizing: border-box;
 }
-.product-detail .product-thumbnails__item.swiper-slide-active {
+.product-detail .product-thumbnails__item.swiper-slide-thumb-active {
   border-color: #8ED1CB; 
 }
 
