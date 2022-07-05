@@ -12,7 +12,7 @@
           <a class="banner-with-text__link" href="{{ block.settings.link }}">
             {% if block.settings.image != blank %}
               <div class="banner-with-text__picture">
-                <img width="auto" height="auto" loading="lazy" class="banner-with-text__img" src="{{ block.settings.image | img_url: '1024x' }}">
+                <img width="auto" height="auto" loading="lazy" alt="block.settings.image.alt" class="banner-with-text__img" src="{{ block.settings.image | img_url: '1024x' }}">
               </div>
             {% endif %}
             {% if block.settings.btn != blank %}
