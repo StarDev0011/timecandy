@@ -101,7 +101,7 @@
     "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
     "placeholder": "Search for anything!, Licorice, Laffy Taffy, Pop Rocks, Zagnut, Bubble Gum, Rock Candy, Jelly Beans, Now and Laters, Chocolate, Nerds, Jolly Rancher, Sugar Free, Runts",
     "currency_code_enabled": true,
-    "ss_enable": false,
+    "ss_enable": true,
     "checkout_logo_image": "shopify:\/\/shop_images\/otc-checkout-logo_a0a8433d-714d-4695-8dd7-8367f6eeaa7e.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
