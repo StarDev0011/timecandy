@@ -21,9 +21,9 @@ header-drawer {
   }
 
   .list-menu--inline {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .list-menu__item {
