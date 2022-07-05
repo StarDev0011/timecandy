@@ -1,0 +1,110 @@
+{{ 'column-richtext.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="{% unless section.settings.full_width %} page-width{% endunless %}">
+    <div class="column-richtext content-container section-{{ section.id }}-padding">
+        <div class="column-richtext_top">
+            {% if section.settings.heading != blank %}
+                <div class="column-richtext_top__heading">{{ section.settings.heading }}</div>
+            {% endif %}
+            {% if section.settings.content != blank %}
+                <div class="column-richtext_top__content">
+                    {{ section.settings.content }}
+                </div>
+            {% endif %}
+        </div>
+      <div class="column-richtext__blocks">
+        
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Column richtext",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading",
+            "default": "<p>Who Invented Bubble Gum?</p>"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "color",
+            "id": "bg_section",
+            "label": "Background section",
+            "default": "#FAF9F7"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 52
+        }
+    ],
+    "blocks": [
+        {
+            "type": "richtext",
+            "name": "Column text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "label",
+                    "default": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "label": "Richtext",
+                    "default": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!</p>"             
+                }
+            ]
+        }
+    ],
+   "presets": [
+        {
+            "category": "Text",
+            "name":"Column richtext"
+        }
+   ]
+}
+{% endschema %}

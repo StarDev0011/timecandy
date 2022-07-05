@@ -392,6 +392,10 @@
   .banner__box {
     max-width: 90rem;
   }
+
+  .banner__box.color-transparent {
+    max-width: 62rem;
+  }
 }
 
 .banner__heading {
@@ -434,4 +438,8 @@
 
 .banner__box > * + .banner__buttons {
   margin-top: 2rem;
+}
+
+.color-transparent.gradient{
+  background: transparent
 }

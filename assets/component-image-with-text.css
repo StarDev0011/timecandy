@@ -4,6 +4,12 @@
     column-gap: 125px;
     grid-template-columns: 1fr 1fr;
   }
+
+  .image-with-text__grid--4 {
+    display: flex;
+    column-gap: 60px;
+  }
+
   .image-with-text__grid--reverse .image-with-text__media-item{
       order: 2;
   }
@@ -43,6 +49,10 @@
       width: 100%;
       max-width: 70%;
   }
+  .image-with-text__grid--4 .image-with-text__media.media{
+    width: 100%;
+    max-width: 100%;
+  }
   .image-with-text__media-item{
     align-items: flex-start;
     display: flex;
@@ -73,6 +83,20 @@
 .image-with-text__heading span{
   font-family: "Merriweather Bold";
 }
+.image-with-text__grid--4 .image-with-text__heading{
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 42px;
+}
+
+.image-with-text__grid--4 .image-with-text__heading p{
+  margin-bottom: 0;
+}
+.image-with-text__grid--4 .image-with-text__text {
+  margin-top: 0;
+  max-width: 100%;
+}
+
 .image-with-text__text {
   font-size: 16px;
   line-height: 24px;
