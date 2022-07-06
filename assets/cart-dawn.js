@@ -276,11 +276,11 @@ CartDawn = {
   openModalCart: () => {
     $('body').on('click', '.js-open-cart', function(e) {
       e.preventDefault();
-      debugger;
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
+        $('.Rise__widget, #gorgias-chat-container').hide();
       });
     });
   },
