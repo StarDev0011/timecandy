@@ -1620,7 +1620,7 @@ div.rc_block__type {
 }
 
 .product-detail media-gallery {
-/*   max-width: 478px; */
+  max-width: 478px;
   display: block;
   order: 2;
 }
