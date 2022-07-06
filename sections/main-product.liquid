@@ -667,14 +667,15 @@
 
   });
 
-
-  window.addEventListener('load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     var swiper = new Swiper('.js-swiper-thumnail', {
       direction: 'horizontal',
       slidesPerView: 4,
       spaceBetween: 4,
       slidesPerGroup: 1,
       freeMode: true,
+      preloadImages: true,
+      updateOnImagesReady: true                          
       navigation: {
         nextEl: ".swiper-btn-next",
         prevEl: ".swiper-btn-prev",
@@ -691,6 +692,8 @@
       thumbs: {
         swiper: swiper,
       },
+      preloadImages: true,
+      updateOnImagesReady: true
     });
   });
 </script>
