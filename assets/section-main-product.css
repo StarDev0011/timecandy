@@ -2195,7 +2195,7 @@ div.rc_block__type {
   border-color: #AC1229 !important;
 }
   
-.product-detail .product-thumbnails__item:not(.swiper-slide):first-of-type {
+.product-detail :not(.swiper-initialized) .product-thumbnails__item:first-of-type {
   border-color: #8ed1cb; 
 }
 
