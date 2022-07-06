@@ -182,7 +182,8 @@ CartDawn = {
 
   closeCart: () => {
     $('body').on('click', '.js-close-minicart', function() {
-      $('body').removeClass('open-minicart')
+      $('body').removeClass('open-minicart');
+      $('.Rise__widget, #gorgias-chat-container').show();
     });
 
     $('body').on('click', '.js-close-gift', function() {
