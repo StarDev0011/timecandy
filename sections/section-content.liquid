@@ -1,4 +1,4 @@
-{{ 'section-other-types.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-content-section.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
     #shopify-section-{{section.id}}{
@@ -18,22 +18,22 @@
     }
 {%- endstyle -%}
 
-<div class="{% unless section.settings.full_width %} page-width{% endunless %}">
-    <div class="other-types content-container section-{{ section.id }}-padding">
-        <div class="other-types_top">
+<div class="page-width">
+    <div class="content-section content-container section-{{ section.id }}-padding">
+        <div class="content-section_top">
             {% if section.settings.heading != blank %}
-                <div class="other-types__heading">{{ section.settings.heading }}</div>
+                <div class="content-section__heading">{{ section.settings.heading }}</div>
             {% endif %}
             {% if section.settings.content != blank %}
-                <div class="other-types__content">
+                <div class="content-section__content">
                     {{ section.settings.content }}
                 </div>
             {% endif %}
         </div>
-        <div class="other-types_blocks">
+        <div class="content-section_blocks">
             {% for block in section.blocks %}
-            <div class="other-types_item">
-                <div class="other-types_item__media {% if block.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}">
+            <div class="content-section_item">
+                <div class="content-section_item__media {% if block.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}">
                 {%- if block.settings.image != blank -%}
                     <img
                     srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -54,11 +54,11 @@
                     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                 {%- endif -%}
                 </div>
-                <div class="other-types_item__content">
-                    <div class="other-types_item__title h2">
+                <div class="content-section_item__content">
+                    <div class="content-section_item__title h2">
                     {{block.settings.title}}
                     </div>
-                    <div class="other-types_item__richtext">
+                    <div class="content-section_item__richtext">
                     {{block.settings.richtext}}
                     </div>
                 </div>
@@ -120,18 +120,23 @@
     "blocks":[
         {
             "name": "Item",
-            "type": "product",
+            "type": "text",
             "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-                },
                 {
                     "type": "text",
                     "id": "title",
                     "label": "Title",
                     "default": "Title"
+                },
+                {
+                    "type": "range",
+                    "id": "font_size",
+                    "label": "Font-size title",
+                    "unit": "px",
+                    "min": 16,
+                    "max": 32,
+                    "step": 1,
+                    "default": 16
                 },
                 {
                     "type": "richtext",
