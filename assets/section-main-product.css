@@ -2346,7 +2346,7 @@ div.rc_block__type {
     flex-basis: 25%;
     margin-right: 4px;
   }
-  .product-detail .product-thumnail__item:first-of-type {
+  .product-detail .product-thumbnails__item:first-of-type {
     border-color: #8ed1cb; 
   }
 
