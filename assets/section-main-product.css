@@ -1620,7 +1620,7 @@ div.rc_block__type {
 }
 
 .product-detail media-gallery {
-  max-width: 478px;
+/*   max-width: 478px; */
   display: block;
   order: 2;
 }
@@ -1666,7 +1666,7 @@ div.rc_block__type {
 
 .product-detail .product__media-thumnail {
   width: 100%;
-  max-height: 478px;
+/*   max-height: 478px; */
   height: 100%;
 }
 
