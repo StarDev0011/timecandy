@@ -2195,9 +2195,9 @@ div.rc_block__type {
   border-color: #AC1229 !important;
 }
   
-.product-detail .product-thumbnails__item:first-of-type {
+/* .product-detail .product-thumbnails__item:first-of-type {
   border-color: #8ed1cb; 
-}
+} */
 
 @media (max-width: 1150px) and (min-width: 900px) {
   .product-detail .product {
