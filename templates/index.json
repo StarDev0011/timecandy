@@ -17,7 +17,7 @@
             "show_text_box": false,
             "text_alignment": "left",
             "color_scheme": "#ffffff",
-            "bg_container_scheme": "#fcf0ee",
+            "bg_container_scheme": "#fffad5",
             "text_alignment_mobile": "left"
           }
         }
