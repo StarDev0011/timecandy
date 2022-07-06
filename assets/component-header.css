@@ -318,7 +318,7 @@ header-drawer {
 	background-color: #262626;
 	width: 100%;
 	left: 0;
-	height: 1px !important;
+	height: 1.4px !important;
 	top: 10px;
 	transition: all .3s;
 }
@@ -328,7 +328,7 @@ header-drawer {
 	position: absolute;
 	background-color: #262626;
 	width: 100%;
-	height: 1px;
+	height: 1.4px;
 	transition: all .3s;
 }
 
