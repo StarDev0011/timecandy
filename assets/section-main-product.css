@@ -2343,6 +2343,7 @@ div.rc_block__type {
 
   .product-detail .product-thumbnails__item {
     padding-top: 18%;
+    flex-basis: 25%;
   }
 
   .product-detail .product,
