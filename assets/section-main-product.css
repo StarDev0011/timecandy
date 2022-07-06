@@ -1638,8 +1638,8 @@ div.rc_block__type {
   background-color: #fff;
   border-radius: 100%;
   max-height: 88px;
-/*   margin-bottom: 8px; */
-/*   height: 100% !important; */
+  margin-bottom: 8px;
+  height: 100% !important;
   border: 3px solid #fff;
   box-sizing: border-box;
 }
