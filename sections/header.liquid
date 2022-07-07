@@ -349,7 +349,7 @@
                        <style>
                           @media(min-width: 992px){
                               .index-{{ forloop.index }} .megamenu .mega-menu-wrapper{
-                                {% assign menu_width = link.links.count | times: 10 | plus: 2 %}
+                                {% assign menu_width = link.links.size | times: 10 | plus: 2 %}
                                 width: {{ menu_width }}%;
 
                               }
