@@ -1,0 +1,169 @@
+{{ 'section-content.min.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    #shopify-section-{{section.id}}{
+        background-color: {{section.settings.bg_section}}
+    }
+
+    .section-{{ section.id }}-padding .content-section_top{
+      text-align: {{ section.settings.text_align}};
+    }
+    
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{%- endstyle -%}
+
+{% for block in section.blocks %}
+    {%- style -%}
+        .content-section_{{block.id}} .content-section_item__title{
+            font-size: {{block.settings.font_size}}px;
+        }
+    {%- endstyle -%}
+{% endfor %}
+
+
+
+<div class="page-width">
+    <div class="content-section content-container section-{{ section.id }}-padding">
+        <div class="content-section_top">
+            {% if section.settings.heading != blank %}
+                <div class="content-section__heading">{{ section.settings.heading }}</div>
+            {% endif %}
+            {% if section.settings.content != blank %}
+                <div class="content-section__content">
+                    {{ section.settings.content }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="content-section_blocks">
+            {% for block in section.blocks %}
+                <div class="content-section_item content-section_{{block.id}}">
+                    <div class="content-section_item__content">
+                        <div class="content-section_item__title h2">
+                            {{block.settings.title}}
+                        </div>
+                        <div class="content-section_item__richtext">
+                            {{block.settings.richtext}}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Content",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading",
+            "default": "<p></p>"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Bubble gum comes in a number of shapes and sizes. Mix up yourchewing habits with some of these varieties.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+            "type": "color",
+            "id": "bg_section",
+            "label": "Background section",
+            "default": "#FAF9F7"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 52
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Item",
+            "type": "text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "What is Lorem Ipsum?"
+                },
+                {
+                    "type": "range",
+                    "id": "font_size",
+                    "label": "Font-size title",
+                    "unit": "px",
+                    "min": 16,
+                    "max": 32,
+                    "step": 1,
+                    "default": 16
+                },
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "label": "Richtext",
+                    "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Text",
+            "name": "Content"
+        }
+    ]
+}
+{% endschema %}
