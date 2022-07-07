@@ -1,4 +1,4 @@
-@media (min-width: 750px) {
+@media (min-width: 768px) {
   .image-with-text__grid {
     display: grid;
     column-gap: 125px;
@@ -84,17 +84,33 @@
   font-family: "Merriweather Bold";
 }
 .image-with-text__grid--4 .image-with-text__heading{
-  font-weight: 700;
   margin-bottom: 30px;
   font-size: 42px;
+  line-height: 1.2;
 }
 
 .image-with-text__grid--4 .image-with-text__heading p{
-  margin-bottom: 0;
+  margin: 0;
 }
 .image-with-text__grid--4 .image-with-text__text {
   margin-top: 0;
   max-width: 100%;
+}
+
+.page-width.image-with-text .image-with-text__grid--4 .image-with-text__text{
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .image-with-text .image-with-text__grid--4 .image-with-text__text{
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px){
+  .image-with-text__grid--4 .image-with-text__heading{
+    font-size: 32px;
+  }
 }
 
 .image-with-text__text {
@@ -127,11 +143,12 @@
   background-size: 60%;
 }
 
-@media (max-width: 749px) {
+@media (max-width: 767px) {
   .image-with-text__text-item{
     margin-top: 32px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 90% !important;
   }
 
   .image-with-text__text {
@@ -182,7 +199,7 @@
     height: 270px !important;
     right: 0;
     margin-left: auto;
-  }
+  } 
   .image-with-text-v3 .image-with-text__media-item {
     background-size: 260px;
     max-width: 320px;
@@ -191,7 +208,7 @@
   }
 }
 
-@media (max-width: 1100px) and (min-width: 750px){
+@media (max-width: 1100px) and (min-width: 768px){
   .image-with-text-v3 .image-with-text__media-item {
     background-position: left top 30%;
   }
@@ -405,7 +422,7 @@
   }
 }
 
-@media (max-width: 950px) and (min-width: 750px) {
+@media (max-width: 950px) and (min-width: 768px) {
 	.image-with-text__grid {
 		grid-gap: 40px;
 	}
@@ -423,6 +440,19 @@
 
   .image-with-text__heading h2 {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .image-with-text__grid--4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-with-text__media-item{
+    max-width: 100% !important;
   }
 }
 

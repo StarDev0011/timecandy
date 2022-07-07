@@ -61,8 +61,9 @@
     }
   {% endif %}
 {%- endstyle -%}
+{% unless section.settings.full_width %}{% endunless %}
 
-<div class="image-with-text page-width section-{{ section.id }}-padding section-image-{{ section.id }}">
+<div class="image-with-text {% unless section.settings.full_width %}page-width{% endunless %} section-{{ section.id }}-padding section-image-{{ section.id }}">
   <div class="image-with-text__container">
     <div class="image-with-text__grid--4 {% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
       <div class="image-with-text__media-item  image-with-text__media-item--{{ section.settings.desktop_content_position }}"
@@ -141,28 +142,17 @@
     {% endif %}
   </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(event) {
-  if($('.js-read-more-text').length) {
-    const btnReadmore = document.querySelector('.js-read-more-text');
-    const columItems = document.querySelectorAll('.text-bottom__item');
-    btnReadmore.onclick = (e) => {
-      e.preventDefault();
-      columItems.forEach(function(item) {
-        item.style.display = 'block'
-        btnReadmore.style.display = 'none'
-      })
-    }
-  }
-});
-</script>
-
 {% schema %}
 {
   "name": "Image with text 4",
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
     {
       "type": "image_picker",
       "id": "image",

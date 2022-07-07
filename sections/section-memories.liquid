@@ -5,7 +5,7 @@
         background-color: {{section.settings.bg_section}}
     }
 
-    .section-{{ section.id }}-padding .content-section_top{
+    .section-{{ section.id }}-padding .memories_top{
       text-align: {{ section.settings.text_align}};
     }
     
@@ -22,38 +22,29 @@
     }
 {%- endstyle -%}
 
-{% for block in section.blocks %}
-    {%- style -%}
-        .content-section_{{block.id}} .content-section_item__title{
-            font-size: {{block.settings.font_size}}px;
-        }
-    {%- endstyle -%}
-{% endfor %}
-
-
-
 <div class="page-width">
-    <div class="content-section content-container section-{{ section.id }}-padding">
-        <div class="content-section_top">
+    <div class="memories content-container section-{{ section.id }}-padding">
+        <div class="memories_top">
             {% if section.settings.heading != blank %}
-                <div class="content-section__heading">{{ section.settings.heading }}</div>
+                <div class="memories__heading">{{ section.settings.heading }}</div>
             {% endif %}
             {% if section.settings.content != blank %}
-                <div class="content-section__content">
+                <div class="memories__content">
                     {{ section.settings.content }}
                 </div>
             {% endif %}
         </div>
-        <div class="content-section_blocks">
+        <div class="memories_blocks">
             {% for block in section.blocks %}
-                <div class="content-section_item content-section_{{block.id}}">
-                    <div class="content-section_item__content">
-                        <div class="content-section_item__title h2">
+                <div class="memories_item memories_{{block.id}}">
+                    <div class="memories_item__content">
+                        <div class="memories_item__title h3">
                             {{block.settings.title}}
                         </div>
-                        <div class="content-section_item__richtext">
+                        <div class="memories_item__richtext">
                             {{block.settings.richtext}}
                         </div>
+                        <strong class="memories_item__author">- {{block.settings.author}}</strong>
                     </div>
                 </div>
             {% endfor %}
@@ -63,7 +54,7 @@
 
 {% schema %}
 {
-    "name": "Content",
+    "name": "Memories",
     "class": "section",
     "tag": "section",
     "settings": [
@@ -71,13 +62,12 @@
             "type": "richtext",
             "id": "heading",
             "label": "Heading",
-            "default": "<p></p>"
+            "default": "<p>Memories</p>"
         },
         {
             "type": "richtext",
             "id": "content",
-            "label": "Content",
-            "default": "<p>Bubble gum comes in a number of shapes and sizes. Mix up yourchewing habits with some of these varieties.</p>"
+            "label": "Content"
         },
         {
           "type": "select",
@@ -131,7 +121,7 @@
     ],
     "blocks":[
         {
-            "name": "Item",
+            "name": "Memories item",
             "type": "text",
             "settings": [
                 {
@@ -141,20 +131,15 @@
                     "default": "What is Lorem Ipsum?"
                 },
                 {
-                    "type": "range",
-                    "id": "font_size",
-                    "label": "Font-size title",
-                    "unit": "px",
-                    "min": 16,
-                    "max": 32,
-                    "step": 1,
-                    "default": 16
-                },
-                {
                     "type": "richtext",
                     "id": "richtext",
                     "label": "Richtext",
                     "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>"
+                },
+                {
+                    "type": "text",
+                    "id": "author",
+                    "label": "Author"
                 }
             ]
         }
@@ -162,7 +147,7 @@
     "presets": [
         {
             "category": "Text",
-            "name": "Content"
+            "name": "Memories"
         }
     ]
 }

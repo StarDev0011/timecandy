@@ -1,2 +1,3 @@
 config/settings_data.json
 templates/*.json
+assets/*.scss

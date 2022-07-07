@@ -1,4 +1,4 @@
-{{ 'section-other-types.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-multicolumn-richtext.min.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
     #shopify-section-{{section.id}}{
@@ -37,27 +37,6 @@
         <div class="other-types_blocks">
             {% for block in section.blocks %}
             <div class="other-types_item">
-                <div class="other-types_item__media {% if block.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}">
-                {%- if block.settings.image != blank -%}
-                    <img
-                    srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
-                        {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
-                        {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | image_url: width: 535 }} 535w,{%- endif -%}
-                        {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
-                        {%- if block.settings.image.width >= 1070 -%}{{ block.settings.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-                        {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                        {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
-                        src="{{ block.settings.image | image_url: width: 1500 }}"
-                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                        alt="{{ block.settings.image.alt | escape }}"
-                        loading="lazy"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
-                    >
-                {%- else -%}
-                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                {%- endif -%}
-                </div>
                 <div class="other-types_item__content">
                     <div class="other-types_item__title h2">
                     {{block.settings.title}}
@@ -74,7 +53,7 @@
 
 {% schema %}
 {
-    "name": "Other types of product",
+    "name": "Multi-column richtext",
     "class": "section",
     "tag": "section",
     "settings": [
@@ -82,7 +61,7 @@
             "type": "richtext",
             "id": "heading",
             "label": "Heading",
-            "default": "<p>Top Brands</p>"
+            "default": "<p>Heading</p>"
         },
         {
             "type": "richtext",
@@ -143,13 +122,8 @@
     "blocks":[
         {
             "name": "Item",
-            "type": "product",
+            "type": "text",
             "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Image"
-                },
                 {
                     "type": "text",
                     "id": "title",
@@ -167,8 +141,8 @@
     ],
     "presets": [
         {
-            "category": "Products",
-            "name": "Other types of product"
+            "category": "Content",
+            "name": "Multi-column richtext"
         }
     ]
 }
