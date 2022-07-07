@@ -349,11 +349,12 @@
                        <style>
                           @media(min-width: 992px){
                               .index-{{ forloop.index }} .megamenu .mega-menu-wrapper{
-                                width: 35%;
+                                {% assign menu_width = link.links.count | times: 10 | plus: 2 %}
+                                width: {{ menu_width }}%;
 
                               }
                               .index-{{ forloop.index }} .megamenu .mega-menu-image{
-                                 width: calc(100% - 35%);
+                                width: calc(100% - {{ menu_width }}%);
                               }
                           }
                       </style>
