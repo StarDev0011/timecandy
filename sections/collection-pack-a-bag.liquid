@@ -162,7 +162,18 @@
   })
 </script>
 
-<script src="{{ 'cart-drag-drop.js' | asset_url }}"></script>
+<script src="{{ 'cart-drag-drop.js' | asset_url }}" defer></script>
+<audio id="resource_mp3_drop_to_bag">
+  <source src="{{'500-milliseconds-of-silence.mp3' | asset_url }}" type="audio/mpeg">
+</audio>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    $('body').one('mousedown touchstart', function(){
+      var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+      obj_mp3.play();      
+    });
+  });   
+</script>
 
 {% schema %}
   {
