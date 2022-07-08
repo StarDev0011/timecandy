@@ -969,10 +969,11 @@ function initQuickAdd() {
           const html = btn.closest('.card-product__form').nextElementSibling;
           html.innerHTML += this.responseText;
           html.classList.add('active');
-          const swatchName = document.querySelector('.js-swacth-label');
-          const swatchActive = document.querySelector('.js-swatch-active');
-          swatchName.innerHTML = swatchActive.textContent;
-
+          let swatchName = document.querySelector('.js-swacth-label');
+          let swatchActive = document.querySelector('.js-swatch-active');
+          if (swatchActive != null) {
+            swatchName.innerHTML = swatchActive.textContent;
+          }
           const dropdown = document.querySelector('.product-form__swatch-dropdown');
           const btnClose = document.querySelector('.js-close-quick-add');
           const itemSwacth = document.querySelectorAll('.js-swatch-item');

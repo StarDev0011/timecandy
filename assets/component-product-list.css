@@ -440,7 +440,7 @@ img {
   top: 29px;
   border: 2px solid #0C5273;
   background-color: #fff;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   border-radius: 15px;
   opacity: 0;
@@ -551,6 +551,8 @@ img {
 
 .quick-add__header-icon {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 .quick-add .product-form__buttons .product-form__submit {
