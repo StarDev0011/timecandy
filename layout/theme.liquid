@@ -213,18 +213,17 @@
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     {% endif %}    
     
-    {% if settings.ss_enable %}
-	  {% render 'ss-script' %}
-	{% endif %}
-    <meta name="facebook-domain-verification" content="hrkju3xgogfc6i8m0vetapsampa796" />
+  {% if settings.ss_enable %}
+    {% render 'ss-script' %}
+  {% endif %}
+  {% section 'header-misc-scripts' %} 
   </head>
 
   <body class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDCTQW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->    
-    {% section 'header-misc-scripts' %}    
+    <!-- End Google Tag Manager (noscript) -->       
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -311,10 +310,10 @@
       <script src="{{ 'collections.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% if settings.ss_enable %}
-		{% render 'ss-intellisuggest' %}
-	{% endif %}
+		  {% render 'ss-intellisuggest' %}
+	  {% endif %}
     {% section 'footer-misc-scripts' %}
-    {% render 'subscription-theme-footer %}
+    {% render 'subscription-theme-footer' %}
     {% if template.suffix == 'pack-a-bag' %}
       <style>
         #gorgias-chat-container, .Rise__widget {
