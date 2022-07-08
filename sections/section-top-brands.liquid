@@ -2,15 +2,28 @@
 
 {%- style -%}
     #shopify-section-{{section.id}}{
-        background-color: {{section.settings.bg_section}}
+        background-color: {{section.settings.bg_section}};
     }
+
+    {% if section.settings.bg_image != blank %}
+        #shopify-section-{{section.id}}{
+            background-image: url({{ section.settings.bg_image | img_url: 'master' }});
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    {% endif %}
     
     .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
         padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: 768px) {
+        .section-{{ section.id }}-padding .top-brands__heading{
+            font-size: {{section.settings.font_size_title}}px;
+        }
+
         .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -75,10 +88,33 @@
     "tag": "section",
     "settings": [
         {
+            "type": "header",
+            "content": "Background image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background image"
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
             "type": "richtext",
             "id": "heading",
             "label": "Heading",
-            "default": "<p>Top Brands</p>"
+            "default": "<p>Title</p>"
+        },
+        {
+            "type": "range",
+            "id": "font_size_title",
+            "label": "Font size title",
+            "unit": "px",
+            "min": 24,
+            "max": 40,
+            "step": 1,
+            "default": 40
         },
         {
             "type": "richtext",

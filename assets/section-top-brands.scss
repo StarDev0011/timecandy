@@ -1,10 +1,9 @@
-.top-brands_top {
+.top-brands_top{
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
     align-items: center;
     max-width: 90%;
     margin: 0 auto 60px;
-
+    grid-template-columns: 30% 70%;
     @media (max-width: 767px) {
         max-width: 100%;
         grid-template-columns: 1fr;
@@ -13,35 +12,18 @@
 
 .top-brands__heading {
     font-family: var(--font-default);
-    font-size: 40px;
     line-height: 1.2;
     text-align: right;
     padding-right: 50px;
-    position: relative;
     margin-bottom: 20px;
 
     p {
         margin: 0;
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 170px;
-        background-color: rgba(var(--color-foreground), 0.2);
-    }
-
     @media (max-width: 767px) {
         text-align: center;
         padding-right: 0;
-
-        &:after {
-            display: none;
-        }
     }
 
     @media (max-width: 576px) {
@@ -53,13 +35,31 @@
     font-size: 16px;
     line-height: 24px;
     color: #484e57;
-    margin-left: 40px;
+    padding-left: 40px;
     width: 100%;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--color-foreground), 0.2);
+    }
 
     @media (max-width: 767px) {
         padding: 0 20px;
         margin-left: 0;
         text-align: center;
+
+        &:before {
+            display: none;
+        }
     }
 }
 
