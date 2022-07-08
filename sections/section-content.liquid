@@ -14,6 +14,18 @@
         padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
+    {% if section.settings.show_border_top %}
+        .section-{{ section.id }}-padding{
+            border-top: 1px solid rgba(var(--color-foreground), 1);
+        }
+    {% endif %}
+
+    {% if section.settings.show_border_bottom %}
+        .section-{{ section.id }}-padding{
+            border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
+        }
+    {% endif %}
+
     @media screen and (min-width: 750px) {
         .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -29,8 +41,6 @@
         }
     {%- endstyle -%}
 {% endfor %}
-
-
 
 <div class="page-width">
     <div class="content-section content-container section-{{ section.id }}-padding">
@@ -67,6 +77,18 @@
     "class": "section",
     "tag": "section",
     "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_border_top",
+            "label": "Show border top",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_border_bottom",
+            "label": "Show border bottom",
+            "default": false
+        },
         {
             "type": "richtext",
             "id": "heading",
