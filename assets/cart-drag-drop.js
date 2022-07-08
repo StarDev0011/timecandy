@@ -20,7 +20,7 @@ function updateBagItem() {
         var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
         obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
         obj_mp3.play();        
-      	
+      	debugger;
         document.querySelector('.packabag-sidebar__bag').addClass('animated tada');
         setTimeout(function(){ document.querySelector('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
     });
