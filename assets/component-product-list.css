@@ -808,3 +808,7 @@ img {
 .card-product__sold-out::after {
   border-bottom: 17.5px solid var(--backgound-soldout);;
 }
+
+.section-featured-product .product__media img{
+  object-fit: contain;
+}
