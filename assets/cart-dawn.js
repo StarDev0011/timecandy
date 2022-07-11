@@ -290,18 +290,18 @@ CartDawn = {
         CartDawn.shippingInsurance();
         $('.Rise__widget, #gorgias-chat-container').hide();
 	
-        var cart_items = [];
-		debugger;
-        $.each(data.items, function(i,v) {
-          cart_items.push(v.sku + '-' + v.variant_id);
-        });         
+//         var cart_items = [];
+// 		debugger;
+//         $.each(data.items, function(i,v) {
+//           cart_items.push(v.sku + '-' + v.variant_id);
+//         });         
         
-        gtag('event', 'page_view', {
-          'send_to': 'AW-968343338',
-          'ecomm_pagetype': 'cart',
-          'ecomm_prodid': cart_items,
-          'ecomm_totalvalue': data.total_price / 100
-        });         
+//         gtag('event', 'page_view', {
+//           'send_to': 'AW-968343338',
+//           'ecomm_pagetype': 'cart',
+//           'ecomm_prodid': cart_items,
+//           'ecomm_totalvalue': data.total_price / 100
+//         });         
       });
     });
   },
