@@ -2313,7 +2313,8 @@ header-drawer {
 }
 
 .header__icon:not(.header__icon--summary),
-.header__icon span {
+.header__icon span:not(span.icon-bag-desktop),
+.header__icon span:not(span.icon-bag-mb) {
 	display: flex;
 	align-items: center;
 	justify-content: center;
