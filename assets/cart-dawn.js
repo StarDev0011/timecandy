@@ -33,18 +33,33 @@ CartDawn = {
     $('.cart-overlay').show();
     $.post(window.Shopify.routes.root + 'cart/add.js', item.serialize(), null, 'json').done(function (item) {
       $('.modal-error').fadeOut(500);
+      debugger;
+      gtag('event', 'page_view', {
+        'send_to': 'AW-968343338',
+        'ecomm_pagetype': 'product',
+        'ecomm_prodid': item.sku + '-' + item.variant_id,
+        'ecomm_totalvalue': item.price / 100
+      });      
       $.get('/cart?view=dawn', function(data) {
         $('body').addClass('open-minicart');
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
         $('.cart-overlay').hide();
         
-        gtag('event', 'page_view', {
-          'send_to': 'AW-968343338',
-          'ecomm_pagetype': 'product',
-          'ecomm_prodid': data.sku + '-' + data.variant_id,
-          'ecomm_totalvalue': data.price / 100
-        });           
+//         var cart_items = [];
+
+//         $.each(CartJS.cart.items, function(i,v) {
+//           cart_items.push(v.sku + '-' + v.variant_id);
+//         });    
+
+//         //Ads updates - 5/18/20
+//         gtag('event', 'page_view', {
+//           'send_to': 'AW-968343338',
+//           'ecomm_pagetype': 'cart',
+//           'ecomm_prodid': cart_items,
+//           'ecomm_totalvalue': CartJS.cart.total_price / 100
+//         });         
+                   
       });
 
       $.get('/cart.js', null, null, 'json').done(function (data) {
