@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         </div>
                                     </a>
                                     {% if product != blank %}
-                                        <a href="{{ product.url }}"> {{ block.settings.button_label }}</a>
+                                        <a class="roller" href="{{ product.url }}"> {{ block.settings.button_label }}</a>
                                     {% endif %}
                                 </div>
                                 <div class="testimonial__content ">
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             </div>
                                         {% endif %}
                                         {% if block.settings.link_readmore != blank %}
-		                                  <a href="{{block.settings.link_readmore }}"> Read more <span class="visually-hidden">about {{ block.settings.button_label }} memories</span></a>
+		                                  <a class="roller" href="{{block.settings.link_readmore }}"> Read more <span class="visually-hidden">about {{ block.settings.button_label }} memories</span></a>
                                         {% endif %}
                                     </div>
                                 </div>
