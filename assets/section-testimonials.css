@@ -89,6 +89,10 @@
     position: relative;
     z-index: 1;
  }
+
+ .testimonial__img-wrap a.roller:after {
+    background-color: #fff;
+ }
  .testimonial__content  a{
     font-size: 12px;
     line-height: 18px;

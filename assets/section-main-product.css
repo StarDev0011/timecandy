@@ -2433,3 +2433,44 @@ div.rc_block__type {
   [data-widget-type=masonry] .stamped-reviews {
     margin-bottom: 20px !important;
   }
+
+.template-product .product-form__input--dropdown .select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/icon-caret-down.svg?v=21147046088683653141649261707);
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+}
+
+.template-product .product-form__input--dropdown .select__select{
+  font-family: var(--font-heading);
+  line-height: 1.5;
+  font-size: 14px;
+  color:#262626;
+  background-color: transparent;
+}
+
+.template-product .product-form__input--dropdown .select:focus{
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
+  outline: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.template-product .product-form__input--dropdown .select__select:focus{
+  outline: none;
+  box-shadow: none;
+  
+}
+
+.template-product .product-form__input--dropdown .select:after, .product-form__input--dropdown .select:before {
+  display: none
+}
+
+.template-product .product-form__input--dropdown .select option{
+  color: #262626;
+  background-color: #fff;
+}
