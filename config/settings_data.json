@@ -250,6 +250,13 @@
               "script": "<meta name=\"facebook-domain-verification\" content=\"hrkju3xgogfc6i8m0vetapsampa796\">",
               "enable-checkout": false
             }
+          },
+          "e5800fe7-65c9-4cb0-b5c9-a8f86eabd201": {
+            "type": "script",
+            "settings": {
+              "script": "<script type=\"text\/javascript\" src=\"https:\/\/www.bugherd.com\/sidebarv2.js?apikey=qhadjxviu0hzvyxjtczfxg\" async=\"true\"><\/script>",
+              "enable-checkout": false
+            }
           }
         },
         "block_order": [
@@ -257,7 +264,8 @@
           "d542ae9e-ff8b-407b-942c-4959404653a1",
           "43514fa4-fc24-40f2-a096-be1e187d55f7",
           "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1",
-          "e3679f1f-6f75-42f6-bf21-90d222d80572"
+          "e3679f1f-6f75-42f6-bf21-90d222d80572",
+          "e5800fe7-65c9-4cb0-b5c9-a8f86eabd201"
         ],
         "settings": {
           "header-misc-scripts-enable": false
