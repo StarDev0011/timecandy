@@ -199,7 +199,8 @@
   {% if settings.ss_enable %}
     {% render 'ss-script' %}
   {% endif %}
-  {% section 'header-misc-scripts' %} 
+  {% section 'header-misc-scripts' %}
+  <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qhadjxviu0hzvyxjtczfxg" async="true"></script>  
   </head>
 
   <body class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
