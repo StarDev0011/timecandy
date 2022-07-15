@@ -3012,12 +3012,14 @@ div.modal-background {
   color: inherit;
   position: relative;
   text-decoration: none;
+  transition: font-weight 0.1s ;
 }
 
 .roller:hover,
 .collection__desc a:hover,
 .main-page-template .rte a:hover {
   text-decoration-thickness: 0;
+  font-weight: bold !important;
 }
 
 .roller:after,
@@ -3030,7 +3032,7 @@ div.modal-background {
   bottom: 0px;
   width: 100%;
   height: 1px;
-  transition: all 0.1s ease-in-out;
+  transition: bottom .1s ;
 }
 
 
@@ -3042,13 +3044,12 @@ div.modal-background {
 	bottom: 0px;
 	width: 100%;
 	height: 0px;
-	transition: all 0.1s ease-in-out;
+	transition: height .1s;
 }
 
 .roller:hover::after,
 .collection__desc a:hover:after,
 .main-page-template .rte a:hover:after,
 .blog-categories__list a:hover:after {
-  height: 2px;
-  bottom: -1px;
+  bottom: -2px;
 }

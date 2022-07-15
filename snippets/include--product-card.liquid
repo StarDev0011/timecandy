@@ -57,7 +57,7 @@
     <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
       <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
       {% if sold_out %}
-        <a href="#" class="BIS_trigger btn--disabled card-product__btn" data-product-data="{{ product | json | escape }}">
+        <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
           Email when available
         </a>
       {% elsif option_size > 1 %}

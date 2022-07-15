@@ -76,8 +76,9 @@
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                               <summary class="menu-drawer__menu-item list-menu__item link link--text {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                                {{ link.title | escape }}
-                                {% render 'icon-angle-right' %}
+                                <a href="{{ link.url }}" class="list-menu__item link link--text {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                                  {{ link.title | escape }}
+                                </a>                                {% render 'icon-angle-right' %}
                                 {% render 'icon-caret' %}
                               </summary>
                               <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu gradient motion-reduce" tabindex="-1">
