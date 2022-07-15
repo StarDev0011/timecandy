@@ -121,6 +121,33 @@ img {
   font-size: 12px;
 }
 
+.card-product__btn.btn--OOS{
+  position: relative;
+  transition: font-weight 0.1s;
+  text-decoration-line: none;
+  color: var(--color-text);
+  display: inline-flex;
+}
+
+.card-product__btn.btn--OOS:hover{
+  font-weight: bold !important;
+}
+
+.card-product__btn.btn--OOS:after{
+  content: "";
+  background-color: var(--color-text);
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 1px;
+  transition: bottom .1s ;
+}
+
+.card-product__btn.btn--OOS:hover:after{
+  bottom: -2px;
+}
+
 .card-product__btn-icon svg {
   vertical-align: middle;
   transform: rotate(0);
@@ -307,7 +334,6 @@ img {
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
-  text-decoration-line: underline;
   text-transform: uppercase;
   color: #262626;
   text-transform: uppercase;
