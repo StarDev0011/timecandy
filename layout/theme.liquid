@@ -298,7 +298,8 @@
 	  {% endif %}
     {% section 'footer-misc-scripts' %}
     {% render 'subscription-theme-footer' %}
-    {% if template.suffix == 'pack-a-bag' %}
+    {% comment %}if template.suffix == 'pack-a-bag'{% endcomment %}
+    {% if true %}
       <style>
         #gorgias-chat-container, .Rise__widget {
           display: none !important;
