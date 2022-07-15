@@ -39,13 +39,18 @@
       #Slide-{{ section.id }}-{{ forloop.index }} div:not(.banner--desktop-transparent) .banner__box{
         background: {{ block.settings.color_scheme }};
       }
+
+      .slideshow__slide-{{block.id}} .banner__heading, .slideshow__slide-{{block.id}} .banner__text{
+        color: {{ block.settings.text_color }};
+      }
+      
       @media screen and (max-width: 749px) {
         #Slide-{{ section.id }}-{{ forloop.index }} .content-container--full-width-mobile{
           background: {{ block.settings.bg_container_scheme }};
         }
       }
       </style>
-      <div class="slideshow__slide grid__item grid--1-col slider__slide"
+      <div class="slideshow__slide grid__item grid--1-col slider__slide slideshow__slide-{{block.id}}"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
         {{ block.shopify_attributes }}
         role="group"
@@ -296,6 +301,12 @@
           "id": "subheading",
           "default": "Tell your brand's story through images",
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#484E57"
         },
         {
           "type": "text",

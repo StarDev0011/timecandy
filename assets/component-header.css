@@ -29,6 +29,7 @@ header-drawer {
   .list-menu__item {
     display: flex;
     align-items: center;
+	text-decoration: none;
   }
 
   .list-menu__item--link {
@@ -405,7 +406,8 @@ header-drawer {
 	}
 	.cart-count-bubble {
 		top: 20px;
-      	right: 3px;
+      	right: 0px;
 		font-size: 11px;
+		transform: translateX(-50%);
 	}
 }
