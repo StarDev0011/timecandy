@@ -3053,3 +3053,14 @@ div.modal-background {
 .blog-categories__list a:hover:after {
   bottom: -2px;
 }
+
+/* STAMPED REVIEWS */
+.stamped-container{
+  font-family: var(--font-body-family) !important;
+  color: rgba(var(--color-foreground), 1);
+}
+
+div[data-load-type=continue] ul.stamped-pagination li.next a, div[data-widget-load-type=continue] ul.stamped-pagination li.next a{
+  font-family: var(--font-body-family) !important;
+  font-size: 15px !important;
+}
