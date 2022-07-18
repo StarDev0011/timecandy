@@ -58,17 +58,17 @@
       <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
       {% if sold_out %}
         <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
-          Email when available
+          Email when <span class="visually-hidden">{{  product.title }} is</span> available
         </a>
       {% elsif option_size > 1 %}
         {%  if product.title contains "Personalized" %}
-        <a href="{{ product.url }}" class="btn--disabled card-product__btn">CUSTOMIZE</a>
+        <a href="{{ product.url }}" class="btn--disabled card-product__btn">Customize <span class="visually-hidden">{{  product.title }}</span></a>
         {%  else %}
         <button class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
-          <span class="card-product__btn-text"> Quick add </span>
+          <span class="card-product__btn-text"> Quick add <span class="visually-hidden">{{  product.title }} to your cart</span></span>
         </button>
         {% endif %}
       {% else %}
@@ -76,7 +76,7 @@
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
-          <span class="card-product__btn-text"> {{ 'products.product.add_to_cart' | t }} </span>
+          <span class="card-product__btn-text"> Add <span class="visually-hidden">{{  product.title }}</span> to cart </span>
         </button>
       {% endif %}
     </form>
