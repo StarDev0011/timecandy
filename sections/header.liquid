@@ -291,8 +291,9 @@
         </div>
       </div>
 
-      <div class="header__icons">
+      <ul class="list-menu header__icons">
         {%- if shop.customer_accounts_enabled -%}
+        <li>
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link">
             {% render 'icon-account' %}
             <span class="visually-hidden">
@@ -305,8 +306,9 @@
               -%}
             </span>
           </a>
+        </li>
         {%- endif -%}
-
+        <li>
         <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link js-open-cart" id="cart-icon-bubble">
           {% render 'icon-bag', class: 'icon-bag-desktop' %}
           {% render 'icon-bag', class: 'icon-bag-mb' %}
@@ -318,7 +320,8 @@
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         </a>
-      </div>
+        </li>
+      </ul>
   </div>
   {% render 'include--cart-dawn' %}
 
