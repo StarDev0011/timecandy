@@ -61,7 +61,8 @@
 
           <a href="{{ routes.root_url }}" class="logo__image--wrap">
             <div class="logo__image">
-              <img loading="lazy" height="auto"  src="{{ 'donny.svg' | asset_url }}"  width="{{ section.settings.logo_width }}"  alt="{{ shop.name }}" itemprop="logo">
+              <span class="visually-hidden">Return to home</span>
+              <img loading="lazy" height="auto" src="{{ 'donny.svg' | asset_url }}"  width="{{ section.settings.logo_width }}"  aria-hidden="true">
             </div>
           </a>
           <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
