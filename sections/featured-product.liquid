@@ -78,16 +78,16 @@
       <div class="product__info-wrapper grid__item">
         <div id="ProductInfo-{{ section.id }}" class="product__info-container">
           {% if section.settings.sub_title %}
-            <div class="product__sub-title"> {{ section.settings.sub_title }} </div>
+            <h2 class="product__sub-title"> {{ section.settings.sub_title }} </h2>
           {% endif %}
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
-          <h2 class="product__title">
+          <h3 class="product__title">
             {%- if product.title != blank -%}
               {{ product.title | escape }}
             {%- else -%}
               {{ 'onboarding.product_title' | t }}
             {%- endif -%}
-          </h2>
+          </h3>
           <div class="no-js-hidden product-price" id="price-{{ section.id }}" role="status">
             {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
           </div>
