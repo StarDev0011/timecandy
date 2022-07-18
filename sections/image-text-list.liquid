@@ -51,10 +51,10 @@
                     </div>
                     {% if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank %}
                       <div class="image-with-text__content">
-                        <div class="text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</div>
-                        <h2 class="text--heading h2" {{ block.shopify_attributes }}>
+                        <h2 class="text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h2>
+                        <p class="text--heading h2" {{ block.shopify_attributes }}>
                           {{ block.settings.title | escape }}
-                        </h2>
+                        </p>
                         {%- if block.settings.button_label != blank -%}
                           <a aria-label="{{block.settings.title | escape}}" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
                             {{ block.settings.button_label | escape }}
