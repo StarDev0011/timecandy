@@ -375,7 +375,7 @@
                   {% if section.settings.enable %}
                     {% if section.settings.optional_extras != blank %}
                       <div class="product-optional-extras">
-                        <div class="product-optional-extras__title">Optional Extras:</div>
+                        <label class="product-optional-extras__title" for="optional-extra">Optional Extras:</label>
                         <select id="optional-extra" class="unstyled" name="id[]">
                           {% comment %} Check for the ajax cart to see if a variant was selected {% endcomment %}
                           <option selected data-variant-id="blank">Remember When Booklet</option>
