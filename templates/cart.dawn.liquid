@@ -157,7 +157,7 @@
                   {%- endfor -%}
                   <div class="product-donate__item">
                     <input class="product-donate__input js-product-donate hidden" type="radio" value="{{ variant.id }}" id="ProductDonate-{{ variant.id }}"{%- for item in cart.items -%}{% if item.id == variant.id %} checked {% endif %}{% endfor %}>
-                    <label class="product-donate__label" for="ProductDonate-{{ variant.id }}"> {{ variant.title | remove: "Donation" }} </label>
+                    <label class="product-donate__label" for="ProductDonate-{{ variant.id }}" role="button"> {{ variant.title | remove: "Donation" }} </label>
                   </div>
                 {% endfor %}
               </div>
