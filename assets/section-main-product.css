@@ -2141,6 +2141,7 @@ div.rc_block__type {
 }
 
 .product-optional-extras__title {
+  display: block;
   font-size: 12px;
   line-height: 21px;
   font-family: var(--my-font);
