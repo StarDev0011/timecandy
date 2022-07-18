@@ -99,7 +99,8 @@
                     <button type="button" class="mini-cart__btn cart__btn-minus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-minus' -%}
                     </button>
-                    <input class="mini-cart__qty-input cart-{{ item.id }}" data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
+                    <label class="visually-hidden" for="cart-{{  item.id }} }}">Quantity</label>
+                    <input class="mini-cart__qty-input cart-{{ item.id }}" id="cart-{{ item.id }} data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
                     <button type="button" class="mini-cart__btn cart__btn-plus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-plus' -%}
                     </button>
