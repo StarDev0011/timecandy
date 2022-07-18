@@ -252,7 +252,7 @@
               </div>
             {%- endif -%}
             <a {% if product == blank %} role="link" aria-disabled="true"{% else %} href="{{ product.url }}"{% endif %} class="roller product__view-details animate-arrow">
-              More details
+              More details <span class="visually-hidden">about {{ product.title }}</span>
             </a>
           </div>
         </div>
