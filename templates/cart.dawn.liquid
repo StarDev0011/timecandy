@@ -202,7 +202,7 @@
             <div class="mini-cart__field">
               <input type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message hidden"{% if is_attributes %} checked{% endif %}>
               <label class="mini-cart__label" for="GiftMessage">
-                <span class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</span>
+                <a href="#addGiftMessage" class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</a>
                 <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
               </label>
             </div>
@@ -218,7 +218,7 @@
             {% endfor %}
             <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate hidden" {% if isInclude %} checked {% endif %}>
             <label class="mini-cart__label" for="CartInclude">
-              <span class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
+              <a href="#addShippingIns" class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</a>
               <span class="mini-cart__gift-text">
                {% comment %} {{ settings.cart_label }} {% endcomment %}
                 Include shipping protection for only <strong class="insurance-costs" id="insurance-cost"></strong> extra.
@@ -241,7 +241,7 @@
         </div>
         {% if settings.gif_img != blank %}
         <div class="mini-cart-empty__icon">
-          <img loading="lazy" src="{{ settings.gif_img | img_url: 'medium' }}" width="auto" height="auto">
+          <img loading="lazy" src="{{ settings.gif_img | img_url: 'medium' }}" alt="{{ settings.gif_img.alt }}" width="auto" height="auto">
         </div>
       {% endif %}
       <div class="mini-cart-empty__title"> Your bag is empty </div>
