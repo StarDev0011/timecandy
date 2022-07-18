@@ -61,12 +61,16 @@
           Email when available
         </a>
       {% elsif option_size > 1 %}
+        {%  if product.title contains "Personalized" %}
+        <a href="{{ product.url }}" class="btn--disabled card-product__btn">CUSTOMIZE</a>
+        {%  else %}
         <button class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
           <span class="card-product__btn-text"> Quick add </span>
         </button>
+        {% endif %}
       {% else %}
         <button class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart>
           <span class="card-product__btn-icon">
