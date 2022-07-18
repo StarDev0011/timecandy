@@ -3053,7 +3053,9 @@ div.modal-background {
 .blog-categories__list a:hover:after {
   bottom: -2px;
 }
-
+.no-tooltips {
+    pointer-events: none;
+}
 /* STAMPED REVIEWS */
 .stamped-container{
   font-family: var(--font-body-family) !important;
