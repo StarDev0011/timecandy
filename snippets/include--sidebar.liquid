@@ -106,8 +106,9 @@
     </a>
   </div>
   <div class="collection__sort-by">
-    <label class="h3 collection-sidebar__header sort-by__label" for="SortBy">Sort by</label>
+    <h2 class="h3 collection-sidebar__header">Sort by</h2>
     <div class="sort-by__wrapper">
+      <label class="sort-by__label" for="SortBy">Sort results by:</label>
       <select name="SortBy" id="SortBy" aria-label="SortBy" class="sort-by__select" onchange="location = this.value;">
         {% for option in collection.sort_options %}
           <option value="?sort_by={{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
