@@ -343,7 +343,7 @@
                   {%- if has_mega_menu == true -%}
                     <summary class="list-menu__item">
                       <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link">
-                        <span {% if link.child_active %}class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                        <span {% if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                       </a>
                     </summary>
                     <div class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce megamenu" tabindex="-1">
@@ -400,7 +400,7 @@
                   {% endif %}
                 {%- else -%}
                   <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item header__menu-item list-menu__item link link--text"{% if link.current %} aria-current="page"{% endif %}>
-                    <span {%- if link.current %}class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
               </li>
