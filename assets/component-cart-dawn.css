@@ -38,6 +38,7 @@
   border: none;
   background: transparent;
   padding: 0;
+  cursor: pointer;
 }
 
 .mini-cart__inner {
