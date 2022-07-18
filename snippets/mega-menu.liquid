@@ -30,11 +30,11 @@
             <div id="megamenu-image-{{ index }}" class="megamenu-image-container">  
               {% for submenu in links %}
                 {% if submenu.title == "Top Products" %}
-                  <div class="image-container-wrapper d-flex__end">
+                  <ul class="image-container-wrapper d-flex__end">
                   {% for top_product in submenu.links %}
                     {% assign top_product_handle = top_product.url | remove: '/products/' %}
                     {% assign top_product_s = all_products[top_product_handle] %}   
-                      <div class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                      <li class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
                             <div class="image-container-item">
                                 <a class="image p-relative {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}" {% endif %}>
                                     {% if top_product_s.featured_image %}
@@ -59,9 +59,9 @@
                                     <a class="text-container link h6 {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}"{% endif %}>{{ top_product.title }}</a>
                                 {% endif %}
                             </div>
-                        </div>              
+                        </li>              
                   {% endfor %}
-                  </div>
+                  </ul>
                 {% endif %}
               {% endfor %}
             </div>
