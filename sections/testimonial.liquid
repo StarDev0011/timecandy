@@ -1,0 +1,273 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.89 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.67 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{% if product.handle != blank %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    $.getJSON( "/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json", function( data ) {
+        if (data.length) {
+        //         var $memoriesContainer = $( "#memories-container");
+
+        //         $.each(data, function( key, val ) {
+        //           $memoriesContainer.append( "<div><p class='color-blue'>" + val.title + "</p><p class='font-secondary color-dark-grey'>"+ val.content + "</p></div>" );
+        //         });
+
+        }
+    });
+});
+</script>
+{% endif %}
+{% if section.blocks.size > 0 %}
+    {{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+    <div class="page-width  testimonial section-{{ section.id }}-padding">
+        <div class="testimonial__header">
+            {%- unless section.settings.title == blank -%}
+            <h2 class="h1 heading-center">{{ section.settings.title | escape }}</h2>
+            {%- endunless -%}
+            {% if section.settings.desc != blank %}
+                <div class="testimonial__desc">
+                    {{ section.settings.desc }}
+                </div>
+            {% endif %}
+            {% if section.settings.btn != blank %}
+            <div class="testimonial__action">
+                <a class="button testimonial__btn js-btn-form" href="#"> {{ section.settings.btn }} </a>
+            </div>
+            {% endif %}
+            {% render 'candy-memory-form' %}
+        </div>
+            <div id="slider-testimonial" class="swiper swiper-container">
+                <div class="swiper-wrapper">
+                    {% for block in section.blocks %}
+                    {%- assign product = block.settings.product -%}
+                        <div class="swiper-slide">
+                            <div class="testimonial-grid">
+                                {%- if section.settings.bg_image != blank -%}
+                                <img class="testimonial-bg-img"
+                                    src="{{ section.settings.bg_image | img_url: '750x' }}"
+                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                    alt="{{ section.settings.bg_image.alt | escape }}"
+                                    loading="lazy"
+                                    width="{{ section.settings.bg_image.width }}"
+                                    height="{{ section.settings.bg_image.height }}"
+                                >
+                                {%- endif -%}
+                            <div class="testimonial__wrap ">
+                                <div class="testimonial__img-wrap">
+                                    <a class="testimonial__link" href="{% if block.settings.product != blank %}{{ product.url }}{% else %}{{ routes.collections_url }}{% endif %}">
+                                        <div class="testimonial__img  {% if product == blank %} placeholder {% endif %}">
+                                            {%- if product == blank -%}
+                                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                            {%- else -%}
+                                                <img
+                                                    srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | img_url: '165x' }} 165w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | img_url: '360x' }} 360w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | img_url: '535x' }} 535w,{%- endif -%}
+                                                    {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | img_url: '750x' }} 750w,{%- endif -%}"
+                                                    src="{{ product.image | img_url: '750x' }}"
+                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                    alt="{{ product.featured_image.alt | escape }}"
+                                                    loading="lazy"
+                                                    width="{{ product.featured_image.width }}"
+                                                    height="{{ product.featured_image.height }}"
+                                                >
+                                            {%- endif -%}
+                                            {%- if product != blank -%}
+                                                <img class="testimonial-bg-mb"
+                                                    src="{{ section.settings.bg_image | img_url: '750x' }}"
+                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                    alt="{{ section.settings.bg_image.alt | escape }}"
+                                                    loading="lazy"
+                                                    width="{{ section.settings.bg_image.width }}"
+                                                    height="{{ section.settings.bg_image.height }}"
+                                                >
+                                            {%- endif -%}
+                                        </div>
+                                    </a>
+                                    {% if product != blank %}
+                                        <a class="roller" href="{{ product.url }}"> {{ block.settings.button_label }}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="testimonial__content ">
+                                    {% if block.settings.reviewer != blank %}
+                                            <div class=" h5 name-reviewer ">
+                                                {{ block.settings.reviewer }}
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.state != blank %}
+                                            <div class="state-reviewer ">
+                                                {{ block.settings.state }}
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.content_review != blank %}
+                                            <div class="content-review">
+                                                {{ block.settings.content_review }}
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.link_readmore != blank %}
+		                                  <a class="roller" href="{{block.settings.link_readmore }}"> Read more <span class="visually-hidden">about {{ block.settings.button_label }} memories</span></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            <div class="customer-controls-slide">
+                <div class="swiper-button-next">{% render "icon-next" %}</div>
+                <div class="swiper-button-prev">{% render "icon-prev" %}</div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var Swipes = new Swiper('#slider-testimonial.swiper-container', {
+            loop: true,
+            slidesPerView: 1,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        const btnForm = document.querySelector('.js-btn-form');
+        const form = document.querySelector('.candy-memory-form');
+        if(btnForm) {
+            btnForm.onclick = (e) => {
+                e.preventDefault();
+                form.classList.toggle('active');
+            }
+        }
+    });
+
+</script>
+{% schema %}
+{
+    "name": "Testimonials",
+    "tag": "section",
+    "class": "section",
+    "max_blocks": 5,
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Heading",
+          "label":"Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "desc",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "btn",
+            "label": "Button"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 200 ,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 90
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 120
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Testimonial",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select product"
+                },
+                {
+                    "type":"text",
+                    "id":"button_label",
+                    "default":"shop candy buttons",
+                    "label":"Button Label"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content_review",
+                    "label": "Customer review",
+                    "default": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! </p>"
+                },
+                {
+                    "type": "text",
+                    "id": "reviewer",
+                    "label": "Customer name",
+                    "default": "Brian"
+                },
+                {
+                    "type": "text",
+                    "id": "state",
+                    "label": "Customer State",
+                    "default": "Maryland"
+                },
+                {
+                    "type":"url",
+                    "id":"link_readmore",
+                    "label":"Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Testimonials",
+            "blocks":[
+                {
+                    "type": "select"
+                },
+                {
+                    "type": "select"
+                },
+                {
+                    "type": "select"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
