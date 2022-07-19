@@ -101,7 +101,6 @@
         "16545939019b8a69d9-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/imgage_text.png",
         "image_width": 485,
         "box_text_width": 455,
         "layout": "image_first",
@@ -183,7 +182,7 @@
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "share a memory",
-        "bg_image": "shopify:\/\/shop_images\/Frame_152.png",
+        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
@@ -207,7 +206,7 @@
         "165085798235e6af20-1": {
           "type": "heading",
           "settings": {
-            "heading": "We’re making a difference in Sierra Leone & so can you!"
+            "heading": "We’re making a difference in Africa & so can you!"
           }
         },
         "165085798235e6af20-2": {
@@ -232,7 +231,7 @@
         "165085798235e6af20-3"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/img_text.png",
+        "image": "shopify:\/\/shop_images\/sierra-leone.webp",
         "image_width": 485,
         "box_text_width": 505,
         "padding_top": 120,
