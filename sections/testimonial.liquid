@@ -145,7 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            a11y: true,
+            a11y: {
+              prevSlideMessage: 'Previous slide',
+              nextSlideMessage: 'Next slide',
+            },
         });
 
         const btnForm = document.querySelector('.js-btn-form');
