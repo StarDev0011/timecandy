@@ -162,8 +162,8 @@
         "165085798235e6af20-3": {
           "type": "button",
           "settings": {
-            "button_label": "donate",
-            "button_link": "\/"
+            "button_label": "Donate",
+            "button_link": "shopify:\/\/products\/water-wells-donation"
           }
         }
       },
