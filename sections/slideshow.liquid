@@ -28,7 +28,7 @@
 
 <slideshow-component class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}" role="article" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
   <div class="slideshow banner banner--{{ section.settings.slide_height }} grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
-    id="Slider-{{ section.id }}"
+    id="Slider-{{ section.id }}" role="slidelist"
     aria-live="polite"
     aria-atomic="true"
     data-autoplay="{{ section.settings.auto_rotate }}"
@@ -53,7 +53,7 @@
       <div class="slideshow__slide grid__item grid--1-col slider__slide slideshow__slide-{{block.id}}"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
         {{ block.shopify_attributes }}
-        role="group"
+        role="slide"
         aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
@@ -97,8 +97,8 @@
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.subheading != blank -%}
-              <div class="banner__text h5" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}
-              </div>
+              <h5 class="banner__text h5" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}
+              </h5>
             {%- endif -%}
             {%- if block.settings.heading != blank -%}
               <h2 class="banner__heading h2">{{ block.settings.heading | escape }}</h2>

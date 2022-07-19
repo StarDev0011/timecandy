@@ -311,10 +311,10 @@
       </cart-items>
       <div class="cart-page__actions">
         <div class="cart-page-gift">
-          <div class="cart-header js-toggle-title">
-            <h2 class="cart-page__header">Is This Order A Gift?</h2>
+          <button class="cart-header js-toggle-title">
+            <p class="cart-page__header h2">Is This Order A Gift?</p>
             <span class="cart-header__icon">{%- render 'icon-arrow-down' -%}</span>
-          </div>
+          </button>
           <div class="cart-page-gift__info js-toggle-content">
             <div class="cart-page-gift__inner">
               <h3 class="cart-page-gift__title">
@@ -362,10 +362,10 @@
         </div>
         {% if section.settings.water_wells_product != blank %}
           <div class="cart-page-donation">
-            <div class="cart-header js-toggle-title">
-              <h2 class="cart-page__header"> {{- section.settings.title -}} </h2>
+            <button class="cart-header js-toggle-title">
+              <p class="cart-page__header h2"> {{- section.settings.title -}} </p>
               <span class="cart-header__icon">{%- render 'icon-arrow-down' -%}</span>
-            </div>
+            </button>
             <div class="cart-page-donation__info js-toggle-content">
               {% if section.settings.desc != blank %}
               <div class="cart-page-donation__desc">

@@ -101,7 +101,7 @@
               {%- when 'heading' -%}
                   <h2 class="image-with-text__heading h2">{{ block.settings.heading }}</h2>
               {%- when 'caption' -%}
-                <div class="image-with-text__text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</div>
+                <h5 class="image-with-text__text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
               {%- when 'text' -%}
                 <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
               {%- when 'button' -%}
