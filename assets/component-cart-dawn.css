@@ -142,6 +142,7 @@
   width: 30px;
   height: 30px;
   text-align: right;
+  padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -296,12 +297,18 @@
   width: 76px;
   height: 28px;
   display: flex;
-  align-items: center;
+  align-items: center;        
   justify-content: center;
   border: 2px solid #AC1229;
   border-radius: 90px;
   margin-right: 12px;
   padding-bottom: 2px;
+}
+
+.mini-cart__label:focus-visible{
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline-offset: 0.3rem;
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .mini-cart__gift-text {

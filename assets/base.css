@@ -106,6 +106,13 @@ a {
   --alpha-link: 0.75;
 }
 
+button{
+  border: none;
+  background: transparent;
+  font-family: var(--font-heading);
+  color: var(--color-header);
+}
+
 .button--primary {
   --color-button: var(--color-primary-button-background);
   --color-button-text: var(--color-primary-button-text);
@@ -1659,6 +1666,11 @@ details[open] > .share-button__fallback {
 }
 
 /* component-form */
+select:focus-visible, textarea:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.5), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3) !important;
+}
+
 .field__input,
 .select__select,
 .customer .field input {
@@ -3066,3 +3078,5 @@ div[data-load-type=continue] ul.stamped-pagination li.next a, div[data-widget-lo
   font-family: var(--font-body-family) !important;
   font-size: 15px !important;
 }
+
+/* END STAMPED REVIEWS */

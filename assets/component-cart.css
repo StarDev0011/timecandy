@@ -256,14 +256,17 @@ cart-items {
   width: 14px;
 }
 
-.cart-header {
+button.cart-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding-bottom: 15px;
+  border: none;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
   user-select: none;
+  background: transparent;
+  width: 100%;
 }
 
 .cart-page-gift__title {

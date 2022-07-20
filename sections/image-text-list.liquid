@@ -49,12 +49,12 @@
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                       {%- endif -%}
                     </div>
-                    {% if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank %}
+                    {% if block.settings.title != blank or block.setFVtings.title != blank or block.settings.button_label != blank %}
                       <div class="image-with-text__content">
-                        <h2 class="text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h2>
-                        <p class="text--heading h2" {{ block.shopify_attributes }}>
+                        <h5 class="text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h5>
+                        <h2 class="text--heading h2" {{ block.shopify_attributes }}>
                           {{ block.settings.title | escape }}
-                        </p>
+                        </h2>
                         {%- if block.settings.button_label != blank -%}
                           <a aria-label="{{block.settings.title | escape}}" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
                             {{ block.settings.button_label | escape }}
