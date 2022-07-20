@@ -97,11 +97,10 @@
         <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.subheading != blank -%}
-              <h5 class="banner__text h5" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}
-              </h5>
+              <p class="banner__text h5" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</p>
             {%- endif -%}
             {%- if block.settings.heading != blank -%}
-              <h2 class="banner__heading h2">{{ block.settings.heading | escape }}</h2>
+              <p class="banner__heading h2">{{ block.settings.heading | escape }}</p>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">

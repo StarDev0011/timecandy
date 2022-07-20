@@ -33,7 +33,6 @@ CartDawn = {
     $('.cart-overlay').show();
     $.post(window.Shopify.routes.root + 'cart/add.js', item.serialize(), null, 'json').done(function (item) {
       $('.modal-error').fadeOut(500);
-      debugger;
       gtag('event', 'page_view', {
         'send_to': 'AW-968343338',
         'ecomm_pagetype': 'product',

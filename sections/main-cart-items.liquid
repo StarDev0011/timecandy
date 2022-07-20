@@ -321,7 +321,7 @@
                 Complementary Hand-Written Gift Card
               </h3>
               <div class="cart-page-gift__content">
-                <textarea class="modal-cart-gift__input" placeholder="Text" maxlength="100">
+                <textarea aria-label="Gift Message" class="modal-cart-gift__input" placeholder="Text" maxlength="100">
                   {{- cart.attributes['Gift Message'] -}}
                 </textarea>
                 <button class="modal-cart-gift__btn js-attr-message button">
@@ -373,7 +373,7 @@
               </div>
               {% endif %}
               <div class="cart-page-donation__content">
-                <select class="cart-page-donation__select" id="donationSelectVariant">
+                <select aria-label="Donation Variant" class="cart-page-donation__select" id="donationSelectVariant">
                   {%- assign product = all_products[section.settings.water_wells_product] -%}
                   {% for variant in product.variants %}
                     <option value="{{ variant.id }}">{{ variant.title }}</option>

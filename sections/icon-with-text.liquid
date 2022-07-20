@@ -26,7 +26,7 @@
   <div class="page-width section-{{ section.id }}-padding isolate">
     <div class="icon-list">
       <div class="swiper swiper-container">
-        <div class="swiper-wrapper contains-content-container">
+        <div aria-role="icon-list" class="swiper-wrapper contains-content-container">
           {%- liquid
             assign highest_ratio = 0
             for block in section.blocks
