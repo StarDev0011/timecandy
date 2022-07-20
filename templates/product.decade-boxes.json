@@ -3,13 +3,6 @@
     "main": {
       "type": "product-decade-box",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -76,7 +69,6 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "caption",
         "price",
@@ -257,7 +249,7 @@
         "165085798235e6af20-1": {
           "type": "heading",
           "settings": {
-            "heading": "We’re making a difference in Sierra Leone & so can you!"
+            "heading": "We’re making a difference in Africa & so can you!"
           }
         },
         "165085798235e6af20-2": {

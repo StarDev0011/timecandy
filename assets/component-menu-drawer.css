@@ -235,10 +235,11 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer .list-social__link {
   padding: 1.3rem 1.25rem;
 }
-.open-submenu .header__icon--summary ,
+.open-submenu .header__icon--summary,
 .open-submenu .header-middle .header-search,
 .open-submenu .header-middle .header__icons,
-.open-submenu .header-middle .header__heading{
+.open-submenu .header-middle .header__heading,
+.open-submenu .header-middle .header-logo {
   display: none;
 }
 .open-submenu  .header-middle{

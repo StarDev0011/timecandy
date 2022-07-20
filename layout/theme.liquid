@@ -1,13 +1,23 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-    
+    {%- comment -%}smartseo_integration_begin{%- endcomment -%}{% include 'smartseo' %}{%- comment -%}smartseo_integration_end{%- endcomment -%}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=6">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cx.atdmt.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="dns-prefetch" href="https://rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com">
+    <link rel="dns-prefetch" href="https://bid.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://recovermycart.com">
+    <link rel="dns-prefetch" href="https://assets.smartwishlist.webmarked.net">
+    <link rel="dns-prefetch" href="https://front.smartwishlist.webmarked.net">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">  
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">    
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -16,23 +26,15 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
-
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
-
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="defer"></script>
+    
     {% render 'meta-tags' %}
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
     {{ 'template-styles.min.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer="defer"></script>
+
     {{ content_for_header }}
 
     {%- liquid  
@@ -190,24 +192,24 @@
     }
     </script>
     
-    {% include 'adwords-remarketing' %}
+    {% render 'adwords-remarketing' %}
     
     {% if template contains 'register' %}
       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     {% endif %}    
     
-    {% if settings.ss_enable %}
-	  {% render 'ss-script' %}
-	{% endif %}
-    <meta name="facebook-domain-verification" content="hrkju3xgogfc6i8m0vetapsampa796" />
+  {% if settings.ss_enable %}
+    {% render 'ss-script' %}
+  {% endif %}
+  {% section 'header-misc-scripts' %}
+  <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qhadjxviu0hzvyxjtczfxg" async="true"></script>  
   </head>
 
   <body class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDCTQW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->    
-    {% section 'header-misc-scripts' %}    
+    <!-- End Google Tag Manager (noscript) -->       
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -294,11 +296,12 @@
       <script src="{{ 'collections.js' | asset_url }}" defer="defer"></script>
     {% endif %}
     {% if settings.ss_enable %}
-		{% render 'ss-intellisuggest' %}
-	{% endif %}
+		  {% render 'ss-intellisuggest' %}
+	  {% endif %}
     {% section 'footer-misc-scripts' %}
-    {% render 'subscription-theme-footer %}
-    {% if template.suffix == 'pack-a-bag' %}
+    {% render 'subscription-theme-footer' %}
+    {% comment %}if template.suffix == 'pack-a-bag'{% endcomment %}
+    {% if true %}
       <style>
         #gorgias-chat-container, .Rise__widget {
           display: none !important;
@@ -314,7 +317,6 @@
     <!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install">!function(_){_.GORGIAS_CHAT_APP_ID="5725",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/5725",!0),e.onload=function(t){if(4===e.readyState)if(200===e.status){var n=JSON.parse(e.responseText);if(!n.application||!n.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/5725");if(_.GORGIAS_CHAT_APP=n.application,_.GORGIAS_CHAT_BUNDLE_VERSION=n.bundleVersion,n&&n.texts&&(_.GORGIAS_CHAT_TEXTS=n.texts),n&&n.sspTexts&&(_.GORGIAS_CHAT_SELF_SERVICE_PORTAL_TEXTS=n.sspTexts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://client-builds.production.gorgias.chat/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",n.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/5725")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->    
     <style>
     .fa-star, .fa-star-o, .fa-star-half-o, .stamped-fa-star, .stamped-fa-star-o, .stamped-fa-star-half-o, .product__form .stamped-badge .stamped-badge-starrating .stamped-fa {color: #000 !important;}
-
     </style>
 
     <script>

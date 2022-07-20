@@ -29,13 +29,15 @@
     </div>
   {% endif %}
 
-  <div class="featured-collection page-width">
-    <script type="searchspring/personalized-recommendations" profile="similar">
-      seed = "{{ product.variants[0].sku }}";
-      options = {
-          siteId : "y0yjxq",
-      };
-    </script>
+  <div class="featured-collection">
+    <div class="page-width">
+      <script type="searchspring/personalized-recommendations" profile="similar">
+        seed = "{{ product.variants[0].sku }}";
+        options = {
+            siteId : "y0yjxq",
+        };
+      </script>
+    </div>
   </div>
   {% if section.settings.svg_bg_top != blank %}
   <div class="img-bg-bottom">

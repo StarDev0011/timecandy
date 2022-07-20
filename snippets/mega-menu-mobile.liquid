@@ -31,13 +31,13 @@
         <div class="mega-menu-image">
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_product_label' | t }}</h6>
             <div id="megamenu-image-mobile-{{ index }}" class="megamenu-image-container swiper swiper-container">  
-                <div class="image-container-wrapper swiper-wrapper">
+                <ul class="list-menu image-container-wrapper swiper-wrapper">
                     {% for submenu in links %}
                       {% if submenu.title == "Top Products" %}
                         {% for top_product in submenu.links %}
                             {% assign top_product_handle = top_product.url | remove: '/products/' %}
                             {% assign top_product_s = all_products[top_product_handle] %}
-                            <div class="image_item swiper-slide">
+                            <li class="image_item swiper-slide">
                               <div class="image-container-item">
                                 <a class="image p-relative {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}" {% endif %}>
                                   {% if top_product_s.featured_image %}
@@ -62,11 +62,11 @@
                                 <a class="text-container link h6 {% if top_product_s.url == blank %} not-link {% endif %}" {% if top_product_s.url != blank %}href="{{ top_product_s.url }}"{% endif %}>{{ top_product.title }}</a>
                                 {% endif %}
                               </div>
-                            </div>                  
+                            </li>                  
                           {% endfor %}
                       {% endif %}
                     {% endfor %}                                        
-                </div>
+                </ul>
             </div>
         </div>
     {% endif %}
@@ -76,7 +76,7 @@
        (function() {
 
       'use strict';
-      let mySwiper = new Swiper ('#megamenu-image-mobile.swiper-container', {
+      let mySwiper = new Swiper ('#megamenu-image-mobile-{{ index }}.swiper-container', {
           loop: false,
           slidesPerView: 3,
           breakpoints: {

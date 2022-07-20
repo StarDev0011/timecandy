@@ -99,7 +99,8 @@
                     <button type="button" class="mini-cart__btn cart__btn-minus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-minus' -%}
                     </button>
-                    <input class="mini-cart__qty-input cart-{{ item.id }}" data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
+                    <label class="visually-hidden" for="cart-{{  item.id }} }}">Quantity</label>
+                    <input class="mini-cart__qty-input cart-{{ item.id }}" id="cart-{{ item.id }} data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
                     <button type="button" class="mini-cart__btn cart__btn-plus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-plus' -%}
                     </button>
@@ -154,7 +155,7 @@
                   {%- endfor -%}
                   <div class="product-donate__item">
                     <input class="product-donate__input js-product-donate hidden" type="radio" value="{{ variant.id }}" id="ProductDonate-{{ variant.id }}"{%- for item in cart.items -%}{% if item.id == variant.id %} checked {% endif %}{% endfor %}>
-                    <label class="product-donate__label" for="ProductDonate-{{ variant.id }}"> {{ variant.title | remove: "Donation" }} </label>
+                    <label class="product-donate__label" for="ProductDonate-{{ variant.id }}" role="button"> {{ variant.title | remove: "Donation" }} </label>
                   </div>
                 {% endfor %}
               </div>
@@ -241,7 +242,7 @@
         </div>
         {% if settings.gif_img != blank %}
         <div class="mini-cart-empty__icon">
-          <img loading="lazy" src="{{ settings.gif_img | img_url: 'medium' }}" width="auto" height="auto">
+          <img loading="lazy" src="{{ settings.gif_img | img_url: 'medium' }}" alt="{{ settings.gif_img.alt }}" width="auto" height="auto">
         </div>
       {% endif %}
       <div class="mini-cart-empty__title"> Your bag is empty </div>

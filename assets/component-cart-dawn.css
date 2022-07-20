@@ -38,6 +38,7 @@
   border: none;
   background: transparent;
   padding: 0;
+  cursor: pointer;
 }
 
 .mini-cart__inner {
@@ -142,6 +143,9 @@
   height: 30px;
   text-align: right;
   padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .mini-cart__variants {

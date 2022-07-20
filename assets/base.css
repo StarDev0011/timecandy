@@ -847,19 +847,19 @@ summary::-webkit-details-marker {
 }
 
 *:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.75);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.5);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
 .no-js *:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.75);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.5);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
@@ -1372,7 +1372,7 @@ button.shopify-payment-button__button--unbranded {
   line-height: 24px;
   text-decoration: none;
   color: rgb(var(--color-button-text));
-  transition: all 0.35s cubic-bezier(0.5, -2, 0.5, 2);
+  transition: all 0.35s cubic-bezier(0.5, -1, 0.5, 2);
   -webkit-appearance: none;
   appearance: none;
   background-color: rgba(var(--color-button), var(--alpha-button-background));
@@ -1401,8 +1401,8 @@ button.shopify-payment-button__button--unbranded {
   color: rgb(var(--color-secondary-button-background));
   border-color: rgb(var(--color-secondary-button-border));
   background-color: rgba(var(--color-secondary-button-border), 1);
-  box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px 1px;
-  transform: scale(0.98);
+  box-shadow: inset rgb(0 0 0 / 25%) 0px 0px 2px 1px;
+  transform: scale(0.985);
 }
 
 .button:focus-visible,
@@ -3065,7 +3065,9 @@ div.modal-background {
 .blog-categories__list a:hover:after {
   bottom: -2px;
 }
-
+.no-tooltips {
+    pointer-events: none;
+}
 /* STAMPED REVIEWS */
 .stamped-container{
   font-family: var(--font-body-family) !important;
