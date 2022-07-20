@@ -24,7 +24,7 @@
     </div>
 		<div class="modal-cart-gift__field">
 			<label class="modal-cart-gift__label">Message</label>
-			<textarea class="modal-cart-gift__input" placeholder="Text" maxlength="100">
+			<textarea aria-label="Message" class="modal-cart-gift__input" placeholder="Text" maxlength="100">
 				{{- cart.attributes['Gift Message'] -}}
 			</textarea>
 			<button class="modal-cart-gift__btn js-attr-message button">
@@ -53,7 +53,7 @@
 					assign endMonth = date | date: "%s" | plus: endseconds | date: "%m"
 					assign year = date | date: "%s" | plus: endseconds | date: "%Y"
 				-%}
-				<input type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
+				<input aria-label="desired arrival date" type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
 				<button class="modal-cart-gift__btn js-attr-date button">
 					<span class="modal-cart-gift__btn-text">Confirm date</span>
