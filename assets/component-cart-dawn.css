@@ -127,7 +127,7 @@
   font-family: var(--my-font);
   text-decoration: none;
   margin-bottom: 5px;
-  padding-right: 30px;
+  margin-right: 30px;
 }
 
 .mini-cart__gift-text a {
