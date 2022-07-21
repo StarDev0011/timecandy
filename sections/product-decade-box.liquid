@@ -383,7 +383,7 @@
                     {% endif %}
                   {% endif %}
 
-                  <input type="hidden" name="items[0][id]" value="{{ product.selected_or_first_available_variant.id }}">
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   <div class="product-form__buttons">
                     <div class="product-form__group">
                       <div class="product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
@@ -397,7 +397,7 @@
                           </button>
                           <input class="quantity__input"
                               type="number"
-                              name="items[0][quantity]"
+                              name="quantity"
                               id="Quantity-{{ section.id }}"
                               min="1"
                               value="1"
