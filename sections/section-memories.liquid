@@ -44,7 +44,10 @@
                         <div class="memories_item__richtext">
                             {{block.settings.richtext}}
                         </div>
-                        <strong class="memories_item__author">- {{block.settings.author}}</strong>
+                        {% if block.settings.author != blank %}
+                          <strong class="memories_item__author">- {{block.settings.author}}</strong>
+                        {% endif %}
+                          
                     </div>
                 </div>
             {% endfor %}
