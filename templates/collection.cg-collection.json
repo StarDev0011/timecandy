@@ -85,9 +85,154 @@
       ],
       "settings": {
       }
+    },
+    "16584148595fda12b3": {
+      "type": "section-content",
+      "disabled": true,
+      "blocks": {
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
+          "type": "text",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "font_size": 18,
+            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        },
+        "af85ad11-eb06-4e0c-be51-79c30c3fb7aa": {
+          "type": "text",
+          "settings": {
+            "title": "What is Lorem Ipsum?",
+            "font_size": 16,
+            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217",
+        "af85ad11-eb06-4e0c-be51-79c30c3fb7aa"
+      ],
+      "settings": {
+        "show_border_top": true,
+        "show_border_bottom": true,
+        "heading": "<p>Here's the heading<\/p>",
+        "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>",
+        "text_align": "center",
+        "bg_section": "#FAF9F7",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "1658415159dc5b2f07": {
+      "type": "section-column-richtext",
+      "disabled": true,
+      "blocks": {
+        "48b28036-a6e3-4ec8-a641-8f87ed37c2a3": {
+          "type": "richtext",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
+          }
+        },
+        "8129d4c7-28e2-4274-916e-3fe8c4a64e33": {
+          "type": "richtext",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "48b28036-a6e3-4ec8-a641-8f87ed37c2a3",
+        "8129d4c7-28e2-4274-916e-3fe8c4a64e33"
+      ],
+      "settings": {
+        "heading": "<p>Who Invented Bubble Gum?<\/p>",
+        "content": "",
+        "bg_section": "#FAF9F7",
+        "align_content": "left",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1658415180d311c72b": {
+      "type": "section-column-richtext-2",
+      "disabled": true,
+      "blocks": {
+        "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc": {
+          "type": "richtext",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
+          }
+        },
+        "5cd87163-9925-4128-a08a-43aa63018cd4": {
+          "type": "richtext",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc",
+        "5cd87163-9925-4128-a08a-43aa63018cd4"
+      ],
+      "settings": {
+        "show_svg": false,
+        "text_align": "center",
+        "heading": "<p>Who Invented Bubble Gum?<\/p>",
+        "content": "<p>Here is some supporting text to go along with this big title<\/p>",
+        "bg_section": "#FAF9F7",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1658415969f2db5c73": {
+      "type": "section-multicolumn-richtext",
+      "disabled": true,
+      "blocks": {
+        "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d": {
+          "type": "text",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<\/p>"
+          }
+        },
+        "532d7a5a-07b1-4889-bdd6-2e872da5fab2": {
+          "type": "text",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<\/p>"
+          }
+        },
+        "61b8b9fd-c3ce-41b9-acae-6ba07b5ff477": {
+          "type": "text",
+          "settings": {
+            "title": "Title",
+            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d",
+        "532d7a5a-07b1-4889-bdd6-2e872da5fab2",
+        "61b8b9fd-c3ce-41b9-acae-6ba07b5ff477"
+      ],
+      "settings": {
+        "heading": "<p>Heading<\/p>",
+        "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
+        "text_align": "left",
+        "bg_section": "#FAF9F7",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "corporate-gifts"
+    "corporate-gifts",
+    "16584148595fda12b3",
+    "1658415159dc5b2f07",
+    "1658415180d311c72b",
+    "1658415969f2db5c73"
   ]
 }
