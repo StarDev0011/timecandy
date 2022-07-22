@@ -1,5 +1,5 @@
 {%- if predictive_search.performed -%}
-  <div id="predictive-search-results">
+  <div tabindex="2" id="predictive-search-results">
     {%- if predictive_search.resources.products.size > 0 -%}
       <h2 id="predictive-search-products" class="predictive-search__heading text-body caption-with-letter-spacing">
         {{ 'templates.search.products' | t }}
@@ -10,7 +10,7 @@
       </h2>
     {%- endif -%}
     <div class="predictive-search__container">
-      <div id="predictive-search-results-list" class="predictive-search__results-list list-unstyled col-3" role="listbox" aria-labelledby="predictive-search-products">
+      <div tabindex="2" id="predictive-search-results-list" class="predictive-search__results-list list-unstyled col-3" role="listbox" aria-labelledby="predictive-search-products">
         {%- for product in predictive_search.resources.products -%}
           {% render 'search--product-card', product: product %}
         {%- endfor -%}
