@@ -760,7 +760,6 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     // this.removeErrorMessage();
-    this.updateImage();
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -768,6 +767,8 @@ class VariantSelects extends HTMLElement {
       if(this.productDetail){
         this.updateMedia();
         this.updateURL();
+      } else {
+        this.updateCardImage();
       }
       this.updateVariantInput();
       this.renderProductInfo();
@@ -832,7 +833,7 @@ class VariantSelects extends HTMLElement {
     }
   }
 
-  updateImage() {
+  updateCardImage() {
     const variantString = document.querySelector('#selected-variant-name');
     const metafieldList = document.querySelector('#candy-list');
     if (typeof(candyList) !== "undefined") {
