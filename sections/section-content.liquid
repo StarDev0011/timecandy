@@ -73,7 +73,7 @@
 
 {% schema %}
 {
-    "name": "Content",
+    "name": "Content blocks w/ borders",
     "class": "section",
     "tag": "section",
     "settings": [
@@ -99,12 +99,12 @@
             "type": "richtext",
             "id": "content",
             "label": "Content",
-            "default": "<p>Bubble gum comes in a number of shapes and sizes. Mix up yourchewing habits with some of these varieties.</p>"
+            "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>"
         },
         {
           "type": "select",
           "id": "text_align",
-          "label": "Text align",
+          "label": "Text alignment",
           "options": [
             {
               "value": "left",
@@ -123,7 +123,7 @@
         {
             "type": "color",
             "id": "bg_section",
-            "label": "Background section",
+            "label": "Section background color",
             "default": "#FAF9F7"
         },
         {
@@ -153,7 +153,7 @@
     ],
     "blocks":[
         {
-            "name": "Item",
+            "name": "Content block",
             "type": "text",
             "settings": [
                 {
@@ -184,7 +184,7 @@
     "presets": [
         {
             "category": "Text",
-            "name": "Content"
+            "name": "Content blocks w/ borders"
         }
     ]
 }

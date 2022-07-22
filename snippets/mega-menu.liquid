@@ -1,4 +1,5 @@
 {% assign count_block = 0 %}
+{% assign count_block = 0 %}
 
 {% for submenu in links %}
     {% if submenu.title == "Top Products" and submenu.links != blank %}
@@ -12,7 +13,7 @@
         <div class="d-flex menu-child">
         {% for submenu in links %}
             {% unless submenu.title == 'Top Products' %}
-            <div class="last-level-menu {{ childlink.title | handleize }} col-ds__{{ 100 | divided_by: links.size | ceil }} js-parent">
+            <div class="last-level-menu {{ childlink.title | handleize }} col-ds__100 js-parent">
                 <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 <ul class="list-menu">
                     {% for childlink in submenu.links %}
