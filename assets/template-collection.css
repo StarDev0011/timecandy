@@ -265,7 +265,7 @@
   text-decoration: none;
   font-family: var(--my-font);
   flex-direction: column;
-  transition: all .25s ease-in;
+  transition: all .1s ease-in;
 }
 
 .collection-view-all__link:hover {
