@@ -5,7 +5,7 @@
     {% if submenu.title == "Top Products" and submenu.links != blank %}
         {% for top_product in submenu.links %}
           {% assign count_block = count_block | plus: 1 %}
-          {% assign count_menu = count_block | minus: 1 %}
+          {% assign count_menu = count_block | plus: 2 %}
         {% endfor %}
     {% endif %}
 {% endfor%}
