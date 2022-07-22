@@ -795,7 +795,8 @@ class VariantSelects extends HTMLElement {
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
     const slideIndex = $(`#Slide-${this.dataset.section}-${this.currentVariant.featured_media.id}`).attr('aria-label').split(" ").slice(0, 1);
     //mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
-    mediaGallery.slideTo(slideIndex - 1);
+    const swiper = mediaGallery.querySelector('.swiper').swiper;
+    swiper.slideTo(slideIndex - 1);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
