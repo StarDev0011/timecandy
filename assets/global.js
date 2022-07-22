@@ -793,7 +793,9 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant.featured_media) return;
 
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
-    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    const slideIndex = $(`#Slide-${this.dataset.section}-${this.currentVariant.featured_media.id}`).attr('aria-label').split(" ").slice(0, 1);
+    //mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    mediaGallery.slideTo(slideIndex - 1);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
