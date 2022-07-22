@@ -10,7 +10,7 @@
             "image_mb": "shopify:\/\/shop_images\/otc-nationalCandyMonth2022-WebSliderMobile-05-Output-1200x1200_2x_d5d3a722-b78e-4f8e-a966-d4f61c0b422c.jpg",
             "heading": "Save 15% on all peanut butter candy this week only with code 'OTC15'",
             "subheading": "National Candy Month",
-            "text_color": "#484E57",
+            "text_color": "#484e57",
             "button_label": "shop now",
             "link": "shopify:\/\/collections\/deals-of-the-week",
             "button_style_secondary": false,
@@ -78,11 +78,7 @@
         "padding_top": 40,
         "padding_bottom": 80,
         "padding_top_mb": 60,
-        "padding_bottom_mb": 66,
-        "show_bottom": false,
-        "column_1": "<p>Testing<\/p>",
-        "column_2": "<p>Testing<\/p>",
-        "column_3": "<p>Testing<\/p>"
+        "padding_bottom_mb": 66
       }
     },
     "icon_with_text": {
@@ -203,7 +199,7 @@
         "165335577618ba7b34-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>We’re making a difference in Sierra Leone and so can you!<\/p>"
+            "heading": "<p>We’re making a difference in Africa and so can you!<\/p>"
           }
         },
         "165335577618ba7b34-1": {
@@ -300,11 +296,7 @@
         "padding_top": 90,
         "padding_bottom": 60,
         "padding_top_mb": 60,
-        "padding_bottom_mb": 64,
-        "show_bottom": false,
-        "column_1": "",
-        "column_2": "",
-        "column_3": ""
+        "padding_bottom_mb": 64
       }
     },
     "testimonial": {
