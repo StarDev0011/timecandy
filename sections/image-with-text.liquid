@@ -96,7 +96,7 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {%- when 'heading' -%}
-                  <h2 class="image-with-text__heading h2">{{ block.settings.heading }}</h2>
+                <h2 class="image-with-text__heading h2">{{ block.settings.heading }}</h2>
               {%- when 'caption' -%}
                 <h3 class="image-with-text__text--caption h5" {{ block.shopify_attributes }}>{{ block.settings.caption | escape }}</h3>
               {%- when 'text' -%}

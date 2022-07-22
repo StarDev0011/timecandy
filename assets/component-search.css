@@ -22,18 +22,23 @@
   outline-offset: 0;
   box-shadow: none;
 }
+.search__input.field__input::-moz-placeholder{
+  color: rgba(38, 38, 38, 1);
+  opacity: 1;
+}
+
 .search__input.field__input::-webkit-input-placeholder {
- color: rgba(38, 38, 38, 0.5);
+ color: rgba(38, 38, 38, 1);
  opacity: 1;
 }
 
 .search__input.field__input:-ms-input-placeholder { 
-  color: rgba(38, 38, 38, 0.5);
+  color: rgba(38, 38, 38, 1);
   opacity: 1;
 }
 
 .search__input.field__input::placeholder {
-  color: rgba(38, 38, 38, 0.5);
+  color: rgba(38, 38, 38, 1);
   opacity: 1;
 }
 .search__button {

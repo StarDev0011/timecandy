@@ -72,7 +72,7 @@
                             assign type_menu = 'megamenu'
                           endif
                         -%}
-                        <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
+                        <li aria-expanded="false" class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                               <summary class="menu-drawer__menu-item list-menu__item link link--text {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
@@ -147,13 +147,13 @@
       {%- endif -%}
 
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+        <p class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header-logo header__heading-link link link--text">
               <img src="{{ 'logo.svg' | asset_url }}" loading="lazy"  width="{{ section.settings.logo_size }}" height="64"  alt="OldTimeCandy.com - Candy you ate as a kid." itemprop="logo">
           </a>
       {%- if request.page_type == 'index' -%}
-        </h1>
+        </p>
       {%- endif -%}
 
       <div class="header-search" role="combobox" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
@@ -236,17 +236,17 @@
                 {%- if settings.predictive_search_enabled -%}
                   <div class="predictive-search predictive-search--header">
                     <div class="search-results__content">
-                      <div class="search-results-suggested">
-                        <div class="search-results-suggested__header">Suggested terms</div>
-                        <div tabindex="-1" class="search-results-suggested__content">
-                          <ul class="search-results-suggested__list" data-suggested-list></ul>
-                        </div>
-                      </div>
-                      <div class="search-results-suggested__inner" tabindex="1" data-predictive-search>
+                      <div class="search-results-suggested__inner" data-predictive-search>
                         <div class="predictive-search__loading-state">
                           <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                             <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                           </svg>
+                        </div>
+                      </div>
+                      <div class="search-results-suggested">
+                        <h2 class="search-results-suggested__header">Suggested terms</h2>
+                        <div tabindex="-1" class="search-results-suggested__content">
+                          <ul class="search-results-suggested__list" data-suggested-list></ul>
                         </div>
                       </div>
                     </div>
@@ -255,18 +255,6 @@
                   <div class="predictive-search predictive-search--product" data-search-products>
                     {% assign suggested = settings.suggested | split: ',' %}
                     <div class="search-results__content">
-                      <div class="search-results-suggested">
-                        <div class="search-results-suggested__header">top search terms</div>
-                        <div tabindex="1" class="search-results-suggested__content">
-                          <ul class="search-results-suggested__list">
-                            {% for term in suggested %}
-                              <li class="search-results-suggested__item">
-                                <a class="search-results-suggested__link" href="/search?q={{ term }}"> {{ term }} </a>
-                              </li>
-                            {% endfor %}
-                          </ul>
-                        </div>
-                      </div>
                       <div class="search-results-suggested__product">
                         <h2 class="predictive-search__heading">Top products</h2>
                         <div class="predictive-search__container">
@@ -276,6 +264,18 @@
                               {% render 'search--product-card', product: product %}
                             {% endfor %}
                           </div>
+                        </div>
+                      </div>
+                      <div class="search-results-suggested">
+                        <h2 class="search-results-suggested__header">top search terms</h2>
+                        <div tabindex="1" class="search-results-suggested__content">
+                          <ul class="search-results-suggested__list">
+                            {% for term in suggested %}
+                              <li class="search-results-suggested__item">
+                                <a class="search-results-suggested__link" href="/search?q={{ term }}"> {{ term }} </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -340,7 +340,7 @@
                    assign type_menu = 'megamenu'
                 endif
             -%}
-              <li class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
+              <li aria-expanded="{{has_mega_menu}}" class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
               %}">
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}

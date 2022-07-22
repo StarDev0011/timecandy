@@ -93,7 +93,7 @@ CartDawn = {
   },
 
   addProductDonate: () => {
-    $('body').on('change', '.js-product-donate:not([checked])', function(e) {
+    $('body').on('click', '.js-product-donate:not([checked])', function(e) {
       //debugger;
       e.preventDefault();
       $('.cart-overlay').show();
@@ -290,7 +290,7 @@ CartDawn = {
   },
 
   openPopupGift: () => {
-    $('body').on('change', '.js-gift-message', function() {
+    $('body').on('click', '.js-gift-message', function() {
       $('.modal-cart-gift').fadeIn(200);
     });
   },
