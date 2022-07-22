@@ -78,7 +78,7 @@
       <div class="product__info-wrapper grid__item">
         <div id="ProductInfo-{{ section.id }}" class="product__info-container">
           {% if section.settings.sub_title %}
-            <h6 class="product__sub-title"> {{ section.settings.sub_title }} </h6>
+            <h2 class="product__sub-title"> {{ section.settings.sub_title }} </h2>
           {% endif %}
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
           <h3 class="product__title">
