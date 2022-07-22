@@ -56,8 +56,7 @@ header-drawer {
 	position: relative;
 	font-family: var(--font-heading);
 }
-.header__inline-menu .item-parent span::before,
-.header__inline-menu .item-has-megamenu span::before{	
+.header__inline-menu .item-parent span::before{	
 	content: "";
 	height: 3px;
 	width: 0;
@@ -66,7 +65,8 @@ header-drawer {
 	bottom: -15px;
 	transition: all 0.5s ease-in-out;
 }
-.header__inline-menu .item-has-mega-menu:hover span::before{
+.header__inline-menu .item-parent:hover span::before,
+.header__inline-menu .item-has-megamenu:hover span::before{
 	width: 100%;
 }
 .header__submenu .header__submenu .header__menu-item{
