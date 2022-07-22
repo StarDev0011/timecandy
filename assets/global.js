@@ -896,15 +896,16 @@ class VariantSelects extends HTMLElement {
     if (!productForm) return;
     const addButton = productForm.querySelector('[type="submit"]');
     const addButtonText = productForm.querySelector('[type="submit"] > span');
-    const addBackInstock = productForm.querySelector('.sold-out-variant');
+    const addBackInstock = productForm.querySelector('#BIS_trigger');
 
     if (!addButton) return;
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
+      
       // if($('.quick-add').length) {
       //   addButton.style.display = 'none';
-      //   addBackInstock.style.display = 'block';
+      addBackInstock.style.display = 'block';
       // }
       if (text) addButtonText.textContent = text;
     } else {
@@ -912,7 +913,7 @@ class VariantSelects extends HTMLElement {
       addButtonText.textContent = window.variantStrings.addToCart;
       // if($('.quick-add').length) {
       //   addButton.style.display = 'block';
-      //   addBackInstock.style.display = 'none';
+      addBackInstock.style.display = 'none';
       // }
     }
 
