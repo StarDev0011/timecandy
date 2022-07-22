@@ -167,6 +167,7 @@ img {
   border-bottom: 1px solid currentcolor;
   padding-bottom: 3px;
   display: inline-block;
+  transition: font-weight .1s;
 }
 
 .card-product__link {
@@ -175,6 +176,8 @@ img {
 
 .card-product__btn-text:hover {
   color: #AC1229;
+  font-weight: 700;
+  text-decoration-thickness: .2rem;
 }
 
 .section-featured-product .page-width {
