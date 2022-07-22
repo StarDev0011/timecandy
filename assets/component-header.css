@@ -211,7 +211,12 @@ header-drawer {
 	.megamenu .image-container-wrapper.image-no-slide {
 		column-gap: 20px;
 	}
-
+  
+	.col-ds__100 {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+  
 	.col-ds__50 {
 		flex: 1 1 50%;
 		max-width: 50%;
