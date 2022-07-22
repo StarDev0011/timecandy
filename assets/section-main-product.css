@@ -2303,7 +2303,9 @@ div.rc_block__type {
     grid-gap: 15px;
     margin-bottom: 24px;
   }
-
+  .product-form__group--full-width {
+    margin-bottom: 15px;
+  }
   .product-form__submit {
     padding-left: 16px;
     padding-right: 16px;
