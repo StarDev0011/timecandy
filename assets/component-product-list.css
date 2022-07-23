@@ -179,6 +179,7 @@ img {
   color: #AC1229;
   font-weight: 700;
   padding-bottom: 4px;
+  margin-bottom: -1px;
 }
 
 .section-featured-product .page-width {
