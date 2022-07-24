@@ -839,7 +839,6 @@ class VariantSelects extends HTMLElement {
   updateCardImage() {
     const variantString = document.querySelector('#selected-variant-name');
     const metafieldList = document.querySelector('#candy-list');
-    debugger
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
         let variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
