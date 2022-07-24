@@ -569,7 +569,7 @@
 
 {% if section.settings.show_desc %}
   {% if product.description %}
-    {% render 'product-description--gift-box', image: section.settings.image_meta %}
+    {% render 'product-description--gift-box-option', image: section.settings.image_meta, product: product %}
   {% endif %}
 {% endif %}
 

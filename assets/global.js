@@ -839,11 +839,12 @@ class VariantSelects extends HTMLElement {
   updateCardImage() {
     const variantString = document.querySelector('#selected-variant-name');
     const metafieldList = document.querySelector('#candy-list');
+    
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
-        var variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
+        let variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
         variantString.textContent = this.currentVariant.option1 +' '+ this.currentVariant.option2;
-        metafieldList.innerHTML = candyList[variantsText];
+        metafieldList.innerHTML = candyList[variantsText.toLowerCase()];
         if(metafieldList.textContent == 'undefined') {
           metafieldList.style.display = 'none'
         } else {
