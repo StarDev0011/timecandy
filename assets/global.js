@@ -768,9 +768,7 @@ class VariantSelects extends HTMLElement {
       if(this.productDetail){
         this.updateMedia();
         this.updateURL();
-      } else {
-        this.updateCardImage();
-      }
+      } 
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
