@@ -760,7 +760,6 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     // this.removeErrorMessage();
-    this.updateImage();
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -768,6 +767,8 @@ class VariantSelects extends HTMLElement {
       if(this.productDetail){
         this.updateMedia();
         this.updateURL();
+      } else {
+        this.updateCardImage();
       }
       this.updateVariantInput();
       this.renderProductInfo();
@@ -792,7 +793,10 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant.featured_media) return;
 
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
-    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    const slideIndex = $(`#Slide-${this.dataset.section}-${this.currentVariant.featured_media.id}`).attr('aria-label').split(" ").slice(0, 1);
+    //mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    const swiper = mediaGallery.querySelector('.swiper').swiper;
+    swiper.slideTo(slideIndex - 1);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
@@ -832,10 +836,9 @@ class VariantSelects extends HTMLElement {
     }
   }
 
-  updateImage() {
+  updateCardImage() {
     const variantString = document.querySelector('#selected-variant-name');
     const metafieldList = document.querySelector('#candy-list');
-    
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
         let variantsText;
@@ -902,24 +905,22 @@ class VariantSelects extends HTMLElement {
     if (!productForm) return;
     const addButton = productForm.querySelector('[type="submit"]');
     const addButtonText = productForm.querySelector('[type="submit"] > span');
-    const addBackInstock = productForm.querySelector('.sold-out-variant');
+    const addBackInstock = productForm.querySelector('#BIS_trigger');
 
     if (!addButton) return;
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
-      // if($('.quick-add').length) {
-      //   addButton.style.display = 'none';
-      //   addBackInstock.style.display = 'block';
-      // }
+      if (addBackInstock) {
+        addBackInstock.style.display = 'block';
+      }
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
       addButtonText.textContent = window.variantStrings.addToCart;
-      // if($('.quick-add').length) {
-      //   addButton.style.display = 'block';
-      //   addBackInstock.style.display = 'none';
-      // }
+      if (addBackInstock) {
+        addBackInstock.style.display = 'none';
+      }
     }
 
     if (!modifyClass) return;

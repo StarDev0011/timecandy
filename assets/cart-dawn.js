@@ -242,6 +242,12 @@ CartDawn = {
       }).done(function() {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
+
+        seft.text('Message Saved!');
+        setTimeout(function(){
+          seft.text('Save Message');
+        }, 2500);
+
         $.get('/cart?view=dawn', function(data) {
           $('.js-mini-cart').html(data);
         });
@@ -263,6 +269,12 @@ CartDawn = {
       }).done(function() {
         seft.find('.modal-cart-gift__btn-text').show();
         seft.find('.modal-cart-gift__btn-icon').hide();
+        
+        seft.text('Date Confirmed!');
+        setTimeout(function(){
+          seft.text('Confirm Date');
+        }, 2500);
+
         $.get('/cart?view=dawn', function(data) {
           $('.js-mini-cart').html(data);
         });

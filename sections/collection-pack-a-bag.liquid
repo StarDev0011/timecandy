@@ -24,25 +24,7 @@
     </a>
     <div class="container">
         <div class="collection__header">
-        <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
-        <div class="collection__nav">
-            <ul class="collection__menu">
-            {% for link in linklists.candy-by-decade.links %}
-                <li class="collection__menu-item{% if link.active %} active{% endif %}" {% if forloop.index > 8 %}style="display: none"{% endif %}>
-                <a class="collection__menu-link" href="{{ link.url }}">
-                    {{- link.title -}}
-                </a>
-                </li>
-                {% if forloop.last and forloop.index > 8 %}
-                <li class="collection__menu-item collection__menu-view-more">
-                    <a class="collection__menu-link menu-view-more js-menu-view-more" href="#">
-                    <span> View more</span>
-                    </a>
-                </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
+          <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
         </div>
         <div class="collection__wrapper">
           <div class="filter-mobile">

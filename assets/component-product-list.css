@@ -48,6 +48,7 @@ img {
   touch-action: none;
   z-index: 1;
   overflow: hidden;
+  transition: border-color .25s ease-in;
 }
 
 .card-product__item:hover .card-product__picture {
@@ -167,6 +168,7 @@ img {
   border-bottom: 1px solid currentcolor;
   padding-bottom: 3px;
   display: inline-block;
+  transition: all .1s;
 }
 
 .card-product__link {
@@ -175,6 +177,9 @@ img {
 
 .card-product__btn-text:hover {
   color: #AC1229;
+  font-weight: 700;
+  padding-bottom: 4px;
+  margin-bottom: -1px;
 }
 
 .section-featured-product .page-width {

@@ -1359,7 +1359,7 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   border: 1px solid rgba(var(--color-button), var(--alpha-button-background));
   height: 50px;
   border-radius: var(--buttons-radius-outset);
