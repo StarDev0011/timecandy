@@ -23,12 +23,7 @@
           {% endif %}
         </div>
       </div>
-      <div class="image-with-text__text-item" style="max-width: min(100%, 455px); padding-top: 100px;">
-        <h2 class="image-with-text__heading h2">What's in the <span id="selected-variant-name"></span> box?</h2>
-        <div class="image-with-text__text" id="candy-list">
-          {{ gift_box.selected_or_first_available_variant.metafields.box.candy_list }}
-        </div>
-      </div>
+      {% render 'include--product-gift-box', gift_box: gift_box %}
     </div>
   </div>
 </div>
@@ -47,13 +42,3 @@
     }
   }
 </style>
-{% capture 'meta_data' %}
-{% for variant in gift_box.variants %}
-  "{{ variant.option1 }}-{{ variant.option2 }}": "{{ variant.metafields.box.candy_list | strip_newlines }}"
-  {% unless forloop.last %},{% endunless %}
-{% endfor %}
-{% endcapture %}
-
-<script>
-  const candyList = { {{ meta_data }} };
-</script>

@@ -841,8 +841,13 @@ class VariantSelects extends HTMLElement {
     const metafieldList = document.querySelector('#candy-list');
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
-        let variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
-        variantString.textContent = this.currentVariant.option1 +' '+ this.currentVariant.option2;
+        let variantsText;
+        if (this.currentVariant.options.length > 2) {
+          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option3;
+        }else{
+          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
+        }
+        variantString.textContent = this.currentVariant.title.split('/').join(' ');
         metafieldList.innerHTML = candyList[variantsText.toLowerCase()];
         if(metafieldList.textContent == 'undefined') {
           metafieldList.style.display = 'none'
@@ -1005,3 +1010,10 @@ function initQuickAdd() {
 window.onload = function() {
   initQuickAdd();
 }
+
+document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((item) => {
+  item.addEventListener('mouseover', (event) => {
+    document.querySelectorAll('.item-has-megamenu').forEach((a) => a.setAttribute('aria-expanded', 'false'));
+    event.currentTarget.setAttribute('aria-expanded', 'true');
+  });
+});

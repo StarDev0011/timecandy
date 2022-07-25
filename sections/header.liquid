@@ -72,7 +72,7 @@
                             assign type_menu = 'megamenu'
                           endif
                         -%}
-                        <li aria-expanded="false" class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
+                        <li {% if type_menu == 'megamenu' %} aria-expanded="false" {% endif %} class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif %}">
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                               <summary class="menu-drawer__menu-item list-menu__item link link--text {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
@@ -340,7 +340,7 @@
                    assign type_menu = 'megamenu'
                 endif
             -%}
-              <li aria-expanded="{{has_mega_menu}}" class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
+              <li {% if type_menu == 'megamenu' %} aria-expanded="false" {% endif %} class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %} item-has-megamenu {% endif
               %}">
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}
