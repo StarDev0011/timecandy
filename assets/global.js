@@ -1009,3 +1009,10 @@ function initQuickAdd() {
 window.onload = function() {
   initQuickAdd();
 }
+
+document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((item) => {
+  item.addEventListener('mouseover', (event) => {
+    document.querySelectorAll('.item-has-megamenu').forEach((a) => a.setAttribute('aria-expanded', 'false'));
+    event.currentTarget.setAttribute('aria-expanded', 'true');
+  });
+});
