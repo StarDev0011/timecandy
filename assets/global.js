@@ -838,8 +838,13 @@ class VariantSelects extends HTMLElement {
     
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
-        let variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
-        variantString.textContent = this.currentVariant.option1 +' '+ this.currentVariant.option2;
+        let variantsText;
+        if (this.currentVariant.options.length > 2) {
+          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option3;
+        }else{
+          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
+        }
+        variantString.textContent = this.currentVariant.title.split('/').join(' ');
         metafieldList.innerHTML = candyList[variantsText.toLowerCase()];
         if(metafieldList.textContent == 'undefined') {
           metafieldList.style.display = 'none'
