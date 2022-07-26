@@ -170,6 +170,126 @@
           "settings": {
             "collection": "walk-the-candy-aisle-airheads"
           }
+        },
+        "19b75b9f-a583-4059-ac0a-68a158de4bcd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-almond-joy"
+          }
+        },
+        "d5f837b7-e301-4094-bf9e-291d60445d2c": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-andes-mints"
+          }
+        },
+        "18145c2a-67bf-441a-8b4e-fb7d469da8ea": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-andy-capp-s-fries"
+          }
+        },
+        "da65c2d8-7a60-45ec-aa9e-674bf1bd7c74": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-animal-crackers"
+          }
+        },
+        "ce1aa303-d538-4bd2-b9bd-02c811e7c1bc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-flavor-anise"
+          }
+        },
+        "23f5c434-7614-4d31-ae47-b838b29833fd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "54b29390-d51d-45fa-b955-ff5f89537c6e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "10487f1e-f0e8-458c-bea8-ff14e866fc0b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "de078bed-71d3-42b6-9ea1-606d01166072": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "980bfe64-9369-4bca-ba1e-4a3a7f5410b9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "38c6bd54-9f2c-4cdf-afb5-6d0aea3252d6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "048a97ee-402c-4d64-8f4e-5b4c0ca29d07": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "89d74c91-0c95-4f03-beb0-6bf566399239": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "5e524b0a-c37c-4399-8deb-39a2ffaee8a6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "defff130-56fa-4cbe-887f-8d0f6d1feab2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "98e4e416-12ad-4452-b5f8-7ad13c1dab5a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "42fa900b-7e30-4647-ad5e-df53f8ab5128": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "a00cd233-96ff-4d4d-9968-08db2a1762c2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "6450ca57-1c15-48de-95bb-18c2e9177596": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "d7dea4a9-a3f5-469d-b388-555551883c52": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
@@ -187,7 +307,27 @@
         "7942d38c-9ceb-4d81-b416-8230ae636c4e",
         "ab970887-fbd5-4bf4-a1d0-0ffce6a11d38",
         "5f2bbf09-8827-4442-ad62-70150348ff49",
-        "5388ec2e-9bc0-45c9-b477-f6b003cc6902"
+        "5388ec2e-9bc0-45c9-b477-f6b003cc6902",
+        "19b75b9f-a583-4059-ac0a-68a158de4bcd",
+        "d5f837b7-e301-4094-bf9e-291d60445d2c",
+        "18145c2a-67bf-441a-8b4e-fb7d469da8ea",
+        "da65c2d8-7a60-45ec-aa9e-674bf1bd7c74",
+        "ce1aa303-d538-4bd2-b9bd-02c811e7c1bc",
+        "23f5c434-7614-4d31-ae47-b838b29833fd",
+        "54b29390-d51d-45fa-b955-ff5f89537c6e",
+        "10487f1e-f0e8-458c-bea8-ff14e866fc0b",
+        "de078bed-71d3-42b6-9ea1-606d01166072",
+        "980bfe64-9369-4bca-ba1e-4a3a7f5410b9",
+        "38c6bd54-9f2c-4cdf-afb5-6d0aea3252d6",
+        "048a97ee-402c-4d64-8f4e-5b4c0ca29d07",
+        "89d74c91-0c95-4f03-beb0-6bf566399239",
+        "5e524b0a-c37c-4399-8deb-39a2ffaee8a6",
+        "defff130-56fa-4cbe-887f-8d0f6d1feab2",
+        "98e4e416-12ad-4452-b5f8-7ad13c1dab5a",
+        "42fa900b-7e30-4647-ad5e-df53f8ab5128",
+        "a00cd233-96ff-4d4d-9968-08db2a1762c2",
+        "6450ca57-1c15-48de-95bb-18c2e9177596",
+        "d7dea4a9-a3f5-469d-b388-555551883c52"
       ],
       "settings": {
         "title": "More Collections",
