@@ -140,6 +140,36 @@
           "settings": {
             "collection": "walk-the-candy-aisle-candy-sale"
           }
+        },
+        "9292bccc-803f-4f58-aabf-61c33f4d11f0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-100-grand"
+          }
+        },
+        "7942d38c-9ceb-4d81-b416-8230ae636c4e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-3-musketeers"
+          }
+        },
+        "ab970887-fbd5-4bf4-a1d0-0ffce6a11d38": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-5th-avenue"
+          }
+        },
+        "5f2bbf09-8827-4442-ad62-70150348ff49": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-abba-zaba"
+          }
+        },
+        "5388ec2e-9bc0-45c9-b477-f6b003cc6902": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walk-the-candy-aisle-airheads"
+          }
         }
       },
       "block_order": [
@@ -152,7 +182,12 @@
         "aa980fed-f624-4c00-8eba-80a9ad866c6d",
         "0b78a6d9-73be-4d53-87bc-b4c3bf3a5a71",
         "dc1d9bed-7707-48f6-b3e5-4203636d14a5",
-        "346115e6-844f-4161-95e2-101b048da9f7"
+        "346115e6-844f-4161-95e2-101b048da9f7",
+        "9292bccc-803f-4f58-aabf-61c33f4d11f0",
+        "7942d38c-9ceb-4d81-b416-8230ae636c4e",
+        "ab970887-fbd5-4bf4-a1d0-0ffce6a11d38",
+        "5f2bbf09-8827-4442-ad62-70150348ff49",
+        "5388ec2e-9bc0-45c9-b477-f6b003cc6902"
       ],
       "settings": {
         "title": "More Collections",
