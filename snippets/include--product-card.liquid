@@ -64,7 +64,7 @@
         {%  if product.title contains "Personalized" %}
         <a href="{{ product.url }}" class="btn--disabled card-product__btn">Customize <span class="visually-hidden">{{  product.title }}</span></a>
         {%  else %}
-        <button class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
+        <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
@@ -72,7 +72,7 @@
         </button>
         {% endif %}
       {% else %}
-        <button class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart>
+        <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart>
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>

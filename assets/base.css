@@ -2903,11 +2903,11 @@ details-disclosure > details {
 }
 
 .customer-controls-slide .swiper-pagination-bullet {
-  background: #e4f1f5;
+  background: #0D5274;
   height: 21px;
   width: 21px;
   opacity: 1;
-  border: 2px solid #e4f1f5;
+  border: 2px solid #0D5274;
 }
 .customer-controls-slide .swiper-pagination-bullet-active {
   background: #8ed1cb;

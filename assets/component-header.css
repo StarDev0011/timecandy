@@ -77,8 +77,7 @@ header-drawer {
 }
 
 .header__submenu.megamenu {
-	width: auto;
-	opacity: 0;
+	/* width: auto; */
 	/* top: 100%; */
 	transition: .4s linear .5s, opacity .5s;
 	pointer-events: none;

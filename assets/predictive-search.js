@@ -21,7 +21,10 @@ class PredictiveSearch extends HTMLElement {
     this.input.addEventListener('focus', this.onFocus.bind(this));
     this.addEventListener('focusout', this.onFocusOut.bind(this));
     this.addEventListener('keyup', this.onKeyup.bind(this));
-    this.addEventListener('keydown', this.onKeydown.bind(this));
+    this.addEventListener('keydown', (e) => {
+      this.onKeydown.bind(this);
+      if ((e.keyCode || e.which) === 27) this.onFocusOut.bind(this)
+    });
     this.animationWorker();
   }
 
@@ -64,7 +67,7 @@ class PredictiveSearch extends HTMLElement {
 
   onFocusOut() {
     setTimeout(() => {
-      if (!this.contains(document.activeElement)) {
+      if (!this.contains(document.activeElement) ) {
         this.searchProduct.style.display = 'none';
         this.closeIconSearch.style.display = 'none';
         this.setAttribute('product', false);

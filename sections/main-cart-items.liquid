@@ -310,7 +310,7 @@
         </form>
       </cart-items>
       <div class="cart-page__actions">
-        <div class="cart-page-gift">
+        <div aria-expanded="false" class="cart-page-gift">
           <button class="cart-header js-toggle-title">
             <p class="cart-page__header h2">Is This Order A Gift?</p>
             <span class="cart-header__icon">{%- render 'icon-arrow-down' -%}</span>
@@ -361,7 +361,7 @@
           </div>
         </div>
         {% if section.settings.water_wells_product != blank %}
-          <div class="cart-page-donation">
+          <div aria-expanded="false" class="cart-page-donation">
             <button class="cart-header js-toggle-title">
               <p class="cart-page__header h2"> {{- section.settings.title -}} </p>
               <span class="cart-header__icon">{%- render 'icon-arrow-down' -%}</span>
