@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentSlideEl = slider.slides[slider.realIndex];
       
         for (const slide of slider.slides) {
-          if (slide !== currentSlideEl) {
+          if (slide == currentSlideEl) {
             slide.setAttribute("aria-hidden", "false");
             var els = slide.querySelectorAll('a');
             for (var i=0; i < els.length; i++) {
