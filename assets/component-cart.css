@@ -304,6 +304,7 @@ button.cart-header {
   margin-bottom: 0;
   text-transform: uppercase;
   font-family: var(--my-font);
+  text-align: left;
 }
 
 .cart-page-donation__select {
@@ -429,7 +430,7 @@ button.cart-header {
   min-height: 111px;
   outline: none!important;
   box-shadow: none!important;
-  border: 1px solid #ccc;
+  border: 1px solid #484e57;
   border-radius: 3px;
   font-size: 16px;
   line-height: 24px;

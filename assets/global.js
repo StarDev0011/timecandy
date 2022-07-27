@@ -1015,4 +1015,18 @@ document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((
     document.querySelectorAll('.item-has-megamenu').forEach((a) => a.setAttribute('aria-expanded', 'false'));
     event.currentTarget.setAttribute('aria-expanded', 'true');
   });
+
+  item.addEventListener('mouseleave', (e) => {
+    e.currentTarget.setAttribute('aria-expanded', 'false');
+  });
+
+  item.addEventListener('keydown', (e) => {
+    const hideMegaMenu = `
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    `
+    if ((e.keyCode || e.which) === 27)
+      e.currentTarget.querySelector('.header__submenu.megamenu').style.cssText = hideMegaMenu;
+  });
 });

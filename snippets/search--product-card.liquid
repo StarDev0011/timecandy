@@ -34,7 +34,7 @@
     </div>
   </a>
   <div class="card-product__bottom">
-    <a class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
+    <a role="heading" class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
     {% if is_size %}
       <div class="card-product__label"> Various sizes</div>
     {% endif %}

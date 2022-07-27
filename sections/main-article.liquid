@@ -138,7 +138,11 @@
 
             <div class="article__comments--heading">
               <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
-              <div class="article__comments-count" id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments' | t: count: article.comments_count }}</div>
+              {% if article.comments_count > 1 %}
+                <div class="article__comments-count" id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments.other' | t: count: article.comments_count }}</div>
+              {% else %}
+                <div class="article__comments-count" id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments.one' | t: count: article.comments_count }}</div>
+              {% endif %}
             </div>
            
             {%- if form.errors -%}

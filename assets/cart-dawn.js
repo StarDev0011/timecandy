@@ -422,9 +422,11 @@ CartDawn = {
   toggleButton: () => {
     const cartToggleTitle = document.querySelectorAll('.js-toggle-title');
     cartToggleTitle.forEach(function(items) {
-      items.onclick = function() {
-      items.parentNode.classList.toggle('acitve');
+      items.onclick = function(e) {
+        items.parentNode.classList.toggle('acitve');
+        e.currentTarget.parentNode.setAttribute('aria-expanded', 'true');
       }
+      
     })
   }
 }
