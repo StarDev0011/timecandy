@@ -27,7 +27,7 @@
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
           <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
           <div id="GalleryViewer-{{ section.id }}" class="swiper js-swiper-main">
-            <ul role="itemlist" id="Slider-Gallery-{{ section.id }}" class="swiper-wrapper product__media-list">
+            <ul role="list" id="Slider-Gallery-{{ section.id }}" class="swiper-wrapper product__media-list">
               {%- liquid
                 assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
                 assign media_count = product.media.size
