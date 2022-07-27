@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {% endif %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.inert"></script>
 <script type="text/javascript">
-    const makeAllButCurrentSlideInert = function makeAllButCurrentSlideInert(this) {
+    const makeAllButCurrentSlideInert = function makeAllButCurrentSlideInert() {
         const currentSlideEl = this.slides[this.realIndex];
       
         this.slides.each((index, slide) => {
