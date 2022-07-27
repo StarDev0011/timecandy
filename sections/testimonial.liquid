@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function makeAllButCurrentSlideInert(slider) {
         const currentSlideEl = slider.slides[this.realIndex];
       
-        for (const slide of slider) {
+        for (const slide of slider.slides) {
           if (slide !== currentSlideEl) {
             slide.setAttribute("inert", "");
           } else {
