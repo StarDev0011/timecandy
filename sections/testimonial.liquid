@@ -132,16 +132,16 @@ document.addEventListener('DOMContentLoaded', function() {
 {% endif %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.inert"></script>
 <script type="text/javascript">
-    const makeAllButCurrentSlideInert = function makeAllButCurrentSlideInert() {
-        const currentSlideEl = this.slides[this.realIndex];
+    function makeAllButCurrentSlideInert(slider) {
+        const currentSlideEl = slider.slides[this.realIndex];
       
-        this.slides.each((index, slide) => {
+        for (const slide of slider) {
           if (slide !== currentSlideEl) {
             slide.setAttribute("inert", "");
           } else {
             slide.removeAttribute("inert");
           }
-        });
+        }
     };    
     document.addEventListener('DOMContentLoaded', function() {
         var Swipes = new Swiper('#slider-testimonial.swiper-container', {
@@ -162,10 +162,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },  
             on: {
                 init() {
-                  makeAllButCurrentSlideInert.call(this);
+                  makeAllButCurrentSlideInert(this);
                 },
                 slideChange() {
-                  makeAllButCurrentSlideInert.call(this);
+                  makeAllButCurrentSlideInert(this);
                 },
                 slideChangeTransitionEnd() {
                   const currentSlideEl = this.slides[this.realIndex];
