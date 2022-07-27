@@ -130,16 +130,23 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 {% endif %}
-<script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.inert"></script>
 <script type="text/javascript">
     function makeAllButCurrentSlideInert(slider) {
         const currentSlideEl = slider.slides[this.realIndex];
       
         for (const slide of slider.slides) {
           if (slide !== currentSlideEl) {
-            slide.setAttribute("inert", "");
+            slide.setAttribute("aria-hidden", "false");
+            var els = slide.querySelectorAll('a');
+            for (var i=0; i < els.length; i++) {
+                els[i].setAttribute("tabindex", "0");
+            }                    
           } else {
-            slide.removeAttribute("inert");
+            slide.setAttribute("aria-hidden", "true");
+            var els = slide.querySelectorAll('a');
+            for (var i=0; i < els.length; i++) {
+                els[i].setAttribute("tabindex", "-1");
+            } 
           }
         }
     };    
@@ -166,11 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 slideChange() {
                   makeAllButCurrentSlideInert(this);
-                },
-                slideChangeTransitionEnd() {
-                  const currentSlideEl = this.slides[this.realIndex];
-                  currentSlideEl.setAttribute("tabindex", "-1");
-                  currentSlideEl.focus();
                 },
               },                    
         });
