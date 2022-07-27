@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {% render 'candy-memory-form' %}
         </div>
             <div id="slider-testimonial" class="swiper swiper-container">
-                <div aria-owns="swiper-slide-item" role="slider" class="swiper-wrapper">
+                <div aria-owns="swiper-slide-item" role="list" class="swiper-wrapper">
                     {% for block in section.blocks %}
                     {%- assign product = block.settings.product -%}
-                        <div role="slider-item" class="swiper-slide">
+                        <div role="listitem" class="swiper-slide">
                             <div class="testimonial-grid">
                                 {%- if section.settings.bg_image != blank -%}
                                 <img class="testimonial-bg-img"
