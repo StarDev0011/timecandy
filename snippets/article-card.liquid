@@ -57,11 +57,11 @@
         {%- endif -%}
         <div class="card__content">        
           <div class="card__information">
-            <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
+            <p class="h3 card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
               </a>
-            </h3>
+            </p>
             <div class="article-card__info caption-with-letter-spacing h5">
               {%- if show_date -%}
                 Posted <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
@@ -96,11 +96,11 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
+          <p class="h3 card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
             </a>
-          </h3>
+          </p>
           <div class="article-card__info caption-with-letter-spacing h5">
             {%- if show_date -%}
               Posted <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>

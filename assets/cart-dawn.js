@@ -426,7 +426,7 @@ CartDawn = {
         items.parentNode.classList.toggle('acitve');
         e.currentTarget.parentNode.setAttribute('aria-expanded', 'true');
       }
-      items.parentNode.setAttribute('aria-expanded', 'false');
+      
     })
   }
 }

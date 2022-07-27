@@ -44,7 +44,7 @@
         </div>
       <div class="card__content">        
         <div class="card__information">
-          <h3 class="card__heading">
+          <p class="h3 card__heading">
             <a{% if page == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link">
               {%- if page.title != blank -%}
                 {{- page.title | escape -}}
@@ -59,7 +59,7 @@
     {% if settings.card_style == 'card' or card_collection.featured_image %} 
       <div class="card__content">
         <div class="card__information">
-          <h3 class="card__heading">
+          <p class="h3 card__heading">
             <a href="{{ page.url }}" class="full-unstyled-link">
               {%- if page.title != blank -%}
                 {{- page.title | escape -}}
@@ -67,7 +67,7 @@
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
             </a>
-          </h3>
+          </p>
         </div>
       </div>
     {% endif %} 

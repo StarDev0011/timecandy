@@ -73,7 +73,7 @@
             <span class="visually-hidden">{{ card_product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
           </p>
         {%- endif -%}
-        <a class="card-product__title h5" href="{{ card_product.url }}"> {{ card_product.title }} </a>
+        <a role="heading" class="card-product__title h5" href="{{ card_product.url }}"> {{ card_product.title }} </a>
         {%- if show_vendor -%}
           <div class="card-product__vendor h6">{{ card_product.vendor }}</div>
         {%- endif -%}
@@ -129,21 +129,21 @@
       <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: 100%;">
         <div class="card__content">
           <div class="card__information">
-            <h3 class="card__heading">
+            <p class="h3 card__heading">
               <a role="link" aria-disabled="true" class="full-unstyled-link">
                 {{ 'onboarding.product_title' | t }}
               </a>
-            </h3>
+            </p>
           </div>
         </div>
       </div>
       <div class="card__content">
         <div class="card__information">
-          <h3 class="card__heading{% if settings.card_style == 'standard' %} h5{% endif %}">
+          <p class="h3 card__heading{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
               {{ 'onboarding.product_title' | t }}
             </a>
-          </h3>
+          </p>
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

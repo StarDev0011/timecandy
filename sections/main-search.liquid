@@ -188,11 +188,11 @@
                         <div class="card card--card card--text ratio color-{{ settings.card_color_scheme }}" style="--ratio-percent: 100%;">
                             <div class="card__content">
                               <div class="card__information">
-                                <h3 class="card__heading">
+                                <p class="h3 card__heading">
                                   <a href="{{ item.url }}" class="full-unstyled-link">
                                     {{ item.title | truncate: 50 | escape }}
                                   </a>
-                                </h3>
+                                </p>
                               </div>
                               <div class="card__badge {{ settings.badge_position }}">
                                 <span class="badge color-background-1">{{ 'templates.search.page' | t }}</span>
