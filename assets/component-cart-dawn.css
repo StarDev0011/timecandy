@@ -429,6 +429,12 @@
   display: block;
 }
 
+.product-donate__input:focus-visible + label{
+  outline: .2rem solid rgba(var(--color-foreground),.75);
+  outline-offset: .3rem;
+  box-shadow: 0 0 0 .3rem rgb(var(--color-background)),0 0 .5rem .4rem rgba(var(--color-foreground),.5);
+}
+
 .product-donate__item{
   position: relative;
 }
