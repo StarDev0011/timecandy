@@ -498,7 +498,11 @@ CartDawn = {
     cartToggleTitle.forEach(function(items) {
       items.onclick = function(e) {
         items.parentNode.classList.toggle('acitve');
-        e.currentTarget.parentNode.toggleAttribute("true");
+        if (items.parentNode.classList.contains('acitve')) {
+          e.currentTarget.parentNode.setAttribute("aria-expanded","true");
+        }else{
+          e.currentTarget.parentNode.setAttribute("aria-expanded","false");
+        }
       }
       
     })

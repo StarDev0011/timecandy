@@ -298,14 +298,16 @@
                       <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
                         <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% unless is_size %}
-                          <div class="product-swatch__label">
+                          <div class="product-swatch__label" aria-expanded="false"
+                            aria-labelledby="product-form__swatch-dropdown"
+                            role="combobox">
                             <label for="option" class="js-option-label" id="option-name-{{ product.id }}"></label>
                             <span>
                               {% render 'icon-caret' %}
                             </span>
                           </div>
                         {% endunless %}
-                        <div class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+                        <div role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
                           {%- for value in option.values -%}
                             <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"

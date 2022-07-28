@@ -299,7 +299,10 @@
                       <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}{% if variantCount == 1 %} product-form__input-first{% endif %}">
                         <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% if is_size or variantCount == 1 %}
-                          <div class="product-swatch__label">
+                          <div class="product-swatch__label"
+                              aria-expanded="false"
+                              aria-labelledby="product-form__swatch-dropdown"
+                              role="combobox">
                             <div class="product-swatch__content">
                               {% unless variantCount > 1 %}
                                 <img height="200" width="200" loading="lazy" class="js-swatch-image" src="" style="display: none;">
@@ -314,7 +317,7 @@
                             </span>
                           </div>
                         {% endif %}
-                        <div class="{% if is_size or variantCount == 1 %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
+                        <div role="listbox" aria-labelledby="product-form__swatch-dropdown" class="{% if is_size or variantCount == 1 %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
                           {%- for value in option.values -%}
                             <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"
