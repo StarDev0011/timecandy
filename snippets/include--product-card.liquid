@@ -17,7 +17,7 @@
   endfor
 %}
 
-<div class="card-product__item {{ slideItem }}">
+<div class="card-product__item {{ slideItem }}" role="listitem">
   <a class="card-product__link" href="{{ product.url | within: collection }}" aria-label="{{ product.url | handleize }}">
     <div class="card-product__picture" data-product-id="{{ product.variants[0].id }}" style="transform-origin: center">
       <img width="auto" height="auto" loading="lazy" class="card-product__image js-card-product-image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
@@ -41,7 +41,7 @@
     </div>
   </a>
   <div class="card-product__bottom">
-    <a role="heading" class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
+    <a role="heading" aria-level="3" class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
     {% if is_size %}
       <div class="card-product__label"> Various sizes </div>
     {% endif %}

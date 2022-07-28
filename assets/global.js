@@ -846,7 +846,7 @@ class VariantSelects extends HTMLElement {
         }else{
           variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
         }
-        variantString.textContent = this.currentVariant.title.split('/').join(' ');
+        variantString.textContent = this.currentVariant.title.split('/').join(' ').replace('decade gift box','');;
         metafieldList.innerHTML = candyList[variantsText.toLowerCase()];
         if(metafieldList.textContent == 'undefined') {
           metafieldList.style.display = 'none'

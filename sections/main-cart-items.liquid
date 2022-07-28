@@ -373,7 +373,7 @@
               </div>
               {% endif %}
               <div class="cart-page-donation__content">
-                <select aria-label="Donation Variant" class="cart-page-donation__select" id="donationSelectVariant">
+                <select aria-label="Donation Amount" class="cart-page-donation__select" id="donationSelectVariant">
                   {%- assign product = all_products[section.settings.water_wells_product] -%}
                   {% for variant in product.variants %}
                     <option value="{{ variant.id }}">{{ variant.title }}</option>

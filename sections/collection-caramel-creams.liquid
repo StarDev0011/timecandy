@@ -29,7 +29,7 @@
       <div class="collection__wrapper">
         {%- paginate collection.products by limit -%}
           <div class="collection-product__list">
-            <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products">
+            <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
               {%- for product in collection.products -%}
                 {% render 'include--product-card', product: product %}
               {%- endfor -%}

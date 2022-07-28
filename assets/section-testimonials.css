@@ -103,9 +103,11 @@
  }
  .testimonial .swiper-button-prev{
     left: 0;
+    opacity: 1;
  }
  .testimonial .swiper-button-next{
     right: 0;
+    opacity: 1;
  }
  .testimonial .swiper-button-prev:after,
  .testimonial .swiper-button-next:after{

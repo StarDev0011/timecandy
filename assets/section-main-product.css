@@ -2189,9 +2189,6 @@ div.rc_block__type {
 
 #personalized-image {
   display: block;
-}
-
-#personalized-image {
   margin-top: 5px;
   font-family: var(--my-font);
   font-size: 12px;
@@ -2203,7 +2200,7 @@ div.rc_block__type {
   background-color: #fff;
 }
 
-#personalized-message {
+#personalized-message, #enter-birthday-number {
   width: 100%;
   padding: 12px 16px;
   min-height: 111px;
@@ -2216,6 +2213,10 @@ div.rc_block__type {
   color: #484e57;
   font-family: var(--font-2);
   max-width: calc(100% - 44px);
+}
+
+#enter-birthday-number {
+  min-height: auto;
 }
 
 .product__decade-message {
@@ -2528,4 +2529,21 @@ div.rc_block__type {
 
 div#bookmarkit {
   padding: 0 !important;
+  height: auto !important;
+}
+
+/* Temporary for wishlist text to show */
+#smartwishlist i:after {
+  content: 'Add To Wishlist';
+  font-weight: 300;
+  font-size: 12px !important;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  display: inline-flex;
+  color: var(--color-text);
+  border-bottom: 1px solid currentColor;
+  position: relative;
+  top: -3px;
+  margin-left: 5px;
 }
