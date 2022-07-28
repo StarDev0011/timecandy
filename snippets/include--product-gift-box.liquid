@@ -1,7 +1,7 @@
 <div class="image-with-text__text-item" style="max-width: min(100%, 455px); padding-top: 100px;">
     <h2 class="image-with-text__heading h2">What's in the <span id="selected-variant-name">{{ product.selected_or_first_available_variant.title | downcase | remove: 'decade gift box' | split: '/' }}</span> box?</h2>
     <div id="candy-list" class="image-with-text__text">
-      {{ gift_box.selected_or_first_available_variant.metafields.box.candy_list }}
+      {{ product.selected_or_first_available_variant.metafields.box.candy_list }}
     </div>
 </div>
 
