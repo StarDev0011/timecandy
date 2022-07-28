@@ -2189,9 +2189,6 @@ div.rc_block__type {
 
 #personalized-image {
   display: block;
-}
-
-#personalized-image {
   margin-top: 5px;
   font-family: var(--my-font);
   font-size: 12px;
