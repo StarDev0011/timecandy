@@ -16,6 +16,7 @@ CartDawn = {
     this.openPopupGift();
     this.openModalCart();
     this.toggleButton();
+    this.closePopupCart();
   },
 
   Selector: {
@@ -38,38 +39,98 @@ CartDawn = {
         'ecomm_pagetype': 'product',
         'ecomm_prodid': item.sku + '-' + item.variant_id,
         'ecomm_totalvalue': item.price / 100
-      });      
-      $.get('/cart?view=dawn', function(data) {
-        $('body').addClass('open-minicart');
-        $('.js-mini-cart').html(data);
-        CartDawn.shippingInsurance();
-        $('.cart-overlay').hide();
-        
-//         var cart_items = [];
-
-//         $.each(CartJS.cart.items, function(i,v) {
-//           cart_items.push(v.sku + '-' + v.variant_id);
-//         });    
-
-//         //Ads updates - 5/18/20
-//         gtag('event', 'page_view', {
-//           'send_to': 'AW-968343338',
-//           'ecomm_pagetype': 'cart',
-//           'ecomm_prodid': cart_items,
-//           'ecomm_totalvalue': CartJS.cart.total_price / 100
-//         });         
-                   
       });
 
-      $.get('/cart.js', null, null, 'json').done(function (data) {
-        $(CartDawn.Selector.count).text(data.item_count);
-        $('.js-cart-count').html(data.item_count);
+      if(window.show_popup == true) {
+        if($('.template-product').length){
+          $.get('/cart?view=popup-cart', function(data) {
+            $('.js-popup-cart-list').html(data);
+            const slider = '.js-products-slider';
+            CartDawn.productSider(slider, 3);
+            $('.gift-cart-modal').fadeIn(300);
+          })
+        } else {
+        $.get('/cart?view=dawn', function(data) {
+          $('body').addClass('open-minicart');
+          $('.js-mini-cart').html(data);
+          CartDawn.shippingInsurance();
+          $('.cart-overlay').hide();
+
+    //         var cart_items = [];
+
+    //         $.each(CartJS.cart.items, function(i,v) {
+    //           cart_items.push(v.sku + '-' + v.variant_id);
+    //         });
+
+    //         //Ads updates - 5/18/20
+    //         gtag('event', 'page_view', {
+    //           'send_to': 'AW-968343338',
+    //           'ecomm_pagetype': 'cart',
+    //           'ecomm_prodid': cart_items,
+    //           'ecomm_totalvalue': CartJS.cart.total_price / 100
+    //         });
+          });
+        }
+      } else {
+        $.get('/cart?view=dawn', function(data) {
+          $('body').addClass('open-minicart');
+          $('.js-mini-cart').html(data);
+          CartDawn.shippingInsurance();
+          $('.cart-overlay').hide();
+        });
+      }
+        $.get('/cart.js', null, null, 'json').done(function (data) {
+          $(CartDawn.Selector.count).text(data.item_count);
+          $('.js-cart-count').html(data.item_count);
       });
 
     }).fail(function ({ responseJSON }) {
         const { description } = responseJSON;
         $('.modal-error').fadeIn(500);
         $('.js-message-error').html(description);
+    });
+  },
+
+  productSider:(slider, perView) => {
+    const product = new Swiper (slider, {
+      loop: false,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 16
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 2,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: perView,
+          slidesPerGroup: perView,
+          spaceBetween: 16
+        },
+      }
+    });
+  },
+
+  closePopupCart: () => {
+    $('body').on('click', '.gift-cart-modal__close', function(e) {
+      e.preventDefault();
+      $('.gift-cart-modal').fadeOut(300);
+    });
+
+    $('.gift-cart-modal').click(function (e) {
+      if(!$(event.target).closest('.gift-cart-modal__container').length && !$(event.target).is('.gift-cart-modal__container')) {
+        $('.gift-cart-modal').fadeOut(300);
+      }
     });
   },
 

@@ -1,0 +1,123 @@
+{{ 'component-popup-cart.css' | asset_url | stylesheet_tag }}
+
+<div class="gift-cart-modal">
+  <div class="gift-cart-modal__container">
+    {% if section.settings.label != blank %}
+      <div class="card-product-label">
+        <label class="card-product-label__item gift-cart-modal__label">
+          {{- section.settings.label -}}
+        </label>
+      </div>
+    {% endif %}
+
+    <a class="gift-cart-modal__close" href="#">
+      {% render 'icon-close' %}
+    </a>
+    <div class="gift-cart-modal__content">
+      <div class="gift-cart-modal__inner">
+        {% if section.settings.heading != blank %}
+          <h3 class="gift-cart-modal__header">
+            {{- section.settings.heading -}}
+          </h3>
+        {% endif %}
+        <div class="gift-cart-modal__cart-list js-popup-cart-list"></div>
+      </div>
+      {% if section.settings.show_product_like %}
+        <div class="gift-cart-modal__inner">
+          <h3 class="gift-cart-modal__header"> {{- section.settings.heading_2 -}} </h3>
+          <div class="swiper js-recommendations-slider cart-product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=9">
+            <div class="swiper-wrapper gift-cart-modal__product col-3">
+              {%- for product in recommendations.products -%}
+                {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+              {% endfor %}
+            </div>
+            <div class="custom-swiper-pagination swiper-pagination"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.show_product_like %}
+  <script>
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+
+      observer.unobserve(productRecommendationsSection);
+
+      const url = productRecommendationsSection.dataset.url;
+
+      fetch(url)
+        .then(response => response.text())
+        .then(text => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const recommendations = html.querySelector('.cart-product-recommendations');
+
+          if (recommendations && recommendations.innerHTML.trim().length) {
+            productRecommendationsSection.innerHTML = recommendations.innerHTML;
+            let swiperSlider = '.js-recommendations-slider';
+            CartDawn.productSider(swiperSlider, 3);
+          }
+        })
+        .catch(e => {
+          console.error(e);
+        });
+    };
+
+    const productRecommendationsSection = document.querySelector('.cart-product-recommendations');
+    const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+    observer.observe(productRecommendationsSection);
+  </script>
+{% endif %}
+
+<script>
+  window.show_popup = {{ section.settings.show_popup_cart }};
+</script>
+
+{% schema %}
+  {
+    "name": "Popup Cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cart"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_popup_cart",
+        "label": "Show Popup Cart",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Product added to cart!"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Making it a gift? add these specials!"
+      },
+      {
+        "type": "header",
+        "content": "Product Recommendations"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_like",
+        "label": "Display You May Also Like",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading_2",
+        "label": "Heading",
+        "default": "You May Also Like"
+      }
+    ]
+  }
+{% endschema %}

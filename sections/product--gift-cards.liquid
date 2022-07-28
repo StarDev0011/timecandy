@@ -74,96 +74,16 @@
   </div>
 </div>
 
-<div class="gift-cart-modal">
-  <div class="gift-cart-modal__container">
-    <div class="card-product-label">
-      <div class="card-product-label__item gift-cart-modal__label">product added to cart!</div>
-    </div>
-    <a class="gift-cart-modal__close" href="#">
-      {% render 'icon-close' %}
-    </a>
-    <div class="gift-cart-modal__content">
-      <div class="gift-cart-modal__inner">
-        <h3 class="gift-cart-modal__header"> {{- section.settings.heading -}} </h3>
-        <div class="swiper js-products-slider">
-          <div class="swiper-wrapper gift-cart-modal__product col-3">
-            {%- for product in section.settings.collection.products limit: 3 -%}
-              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
-            {% endfor %}
-          </div>
-          <div class="custom-swiper-pagination swiper-pagination"></div>
-        </div>
-        <div class="gift-cart-modal__action">
-          <a class="gift-cart-modal__btn button button-light" href="/cart"> View cart </a>
-          <a class="gift-cart-modal__btn button" href="/checkout"> Proceed to checkout </a>
-        </div>
-      </div>
-      <div class="gift-cart-modal__inner">
-        <h3 class="gift-cart-modal__header"> {{- section.settings.heading_2 -}} </h3>
-        <div class="swiper js-products-slider">
-          <div class="swiper-wrapper gift-cart-modal__product col-3">
-            {%- for product in section.settings.collection_2.products limit: 3 -%}
-              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
-            {% endfor %}
-          </div>
-          <div class="custom-swiper-pagination swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
-  const media = window.matchMedia( '(min-width: 768px)' );
-  var product;
-  const mediaCheck = function() {
-    if ( media.matches === true ) {
-      if ( product !== undefined ) product.destroy( true, true );
-        return;
-    } else if ( media.matches === false ) {
-      return productSliders();
-    }
-  };
-
-  const productSliders = function() {
-    product = new Swiper ('.js-products-slider', {
-      loop: false,
-      slidesPerView: 1,
-      spaceBetween: 16,
-      centeredSlides: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      }
-    });
-  };
-
   const openModalCard = () => {
     $('body').on('click', '.js-modal-gift-cards', function(e) {
       e.preventDefault();
-      // $('.gift-cart-modal').fadeIn(300);
       $('.modal-cart-gift').fadeIn(300);
     });
   }
 
-  const closeModalCard = () => {
-    $('body').on('click', '.gift-cart-modal__close', function(e) {
-      e.preventDefault();
-      $('.gift-cart-modal').fadeOut(300);
-    });
-
-    $('.gift-cart-modal').click(function (e) {
-      if(!$(event.target).closest('.gift-cart-modal__container').length && !$(event.target).is('.gift-cart-modal__container')) {
-        $('.gift-cart-modal').fadeOut(300);
-      }
-    });
-  }
-
   window.addEventListener('load', (event) => {
-    media.addListener(mediaCheck);
-    mediaCheck();
     openModalCard();
-    closeModalCard();
   })
 </script>
 
@@ -240,38 +160,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 64
-    },
-    {
-      "type": "header",
-      "content": "Gift Cards Modal"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Making it a gift? add these specials!"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Select Collection Gift Cards"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_like",
-      "label": "Display You May Also Like",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "heading_2",
-      "label": "Heading",
-      "default": "You May Also Like"
-    },
-    {
-      "type": "collection",
-      "id": "collection_2",
-      "label": "Select Collection"
     }
   ],
   "blocks": [

@@ -1,0 +1,29 @@
+{% layout none %}
+{% if cart.item_count > 0 %}
+  <form class="popup-cart__form" action="/cart" method="post" novalidate>
+    <div class="swiper js-products-slider">
+      <div class="swiper-wrapper gift-cart-modal__product col-3">
+        {%- for item in cart.items -%}
+          <div class="card-product__item swiper-slide">
+            <a class="card-product__link" href="{{ item.url }}" aria-label="{{ item.url | handleize }}">
+              <div class="card-product__picture" style="transform-origin: center">
+                <img width="auto" height="auto" loading="lazy" class="card-product__image" src="{{ item | img_url: '600x' }}" alt="{{ item.image.alt | escape }}">
+              </div>
+            </a>
+            <div class="card-product__bottom">
+              <a class="card-product__title" href="{{ item.url }}"> {{- item.title -}} </a>
+              <div class="card-product__price">
+                <span>{{ item.price | money }}</span>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="custom-swiper-pagination swiper-pagination"></div>
+    </div>
+    <div class="gift-cart-modal__action">
+      <a class="gift-cart-modal__btn button button-light" href="/cart"> View cart </a>
+      <button type="submit" class="gift-cart-modal__btn button"> Proceed to checkout </button>
+    </div>
+  </form>
+{% endif %}

@@ -219,7 +219,9 @@
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
+    {% if template contains 'product' %}
+      {% section 'popop-cart' %}
+    {% endif %}
     {% section 'footer' %}
 
     <ul hidden>
@@ -330,6 +332,6 @@
         jQuery('.stamped-form-review-body .stamped-form-input-textarea').attr("minlength","3");
         jQuery('.stamped-form-review-body .stamped-form-input-textarea').attr("minlength","3");
       });
-    </script>      
+    </script>
   </body>
 </html>

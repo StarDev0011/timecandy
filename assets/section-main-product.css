@@ -2525,3 +2525,7 @@ div.rc_block__type {
   color: #262626;
   background-color: #fff;
 }
+
+div#bookmarkit {
+  padding: 0 !important;
+}
