@@ -2526,3 +2526,24 @@ div.rc_block__type {
   color: #262626;
   background-color: #fff;
 }
+
+div#bookmarkit {
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* Temporary for wishlist text to show */
+#smartwishlist i:after {
+  content: 'Add To Wishlist';
+  font-weight: 300;
+  font-size: 12px !important;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-family: var(--my-font);
+  display: inline-flex;
+  color: var(--color-text);
+  border-bottom: 1px solid currentColor;
+  position: relative;
+  top: -3px;
+  margin-left: 5px;
+}
