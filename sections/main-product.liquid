@@ -297,7 +297,7 @@
                       {% assign is_size = false %}
                     {% endif %}
                       <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}{% if variantCount == 1 %} product-form__input-first{% endif %}">
-                        <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
+                        <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% if is_size or variantCount == 1 %}
                           <div class="product-swatch__label">
                             <div class="product-swatch__content">

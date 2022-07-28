@@ -363,8 +363,21 @@ CartDawn = {
   },
 
   openPopupGift: () => {
-    $('body').on('click', '.js-gift-message', function() {
-      $('.modal-cart-gift').fadeIn(200);
+    let labelID;
+    $('body').on('click', 'label', function() {
+      labelID = $(this).attr('for');
+      $('#'+labelID).trigger('click');
+      if (labelID === 'GiftMessage') {
+        $('.modal-cart-gift').fadeIn(200);
+      }
+    });
+
+    $('body').on('keypress', 'label', function() {
+      labelID = $(this).attr('for');
+      $('#'+labelID).trigger('click');
+      if (labelID === 'GiftMessage') {
+        $('.modal-cart-gift').fadeIn(200);
+      }
     });
   },
 
@@ -485,7 +498,7 @@ CartDawn = {
     cartToggleTitle.forEach(function(items) {
       items.onclick = function(e) {
         items.parentNode.classList.toggle('acitve');
-        e.currentTarget.parentNode.setAttribute('aria-expanded', 'true');
+        e.currentTarget.parentNode.toggleAttribute("true");
       }
       
     })

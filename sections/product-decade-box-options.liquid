@@ -297,7 +297,7 @@
                       {% assign is_size = true %}
                     {% endif %}
                       <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
-                        <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
+                        <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% unless is_size %}
                           <div class="product-swatch__label">
                             <label for="option" class="js-option-label" id="option-name-{{ product.id }}"></label>

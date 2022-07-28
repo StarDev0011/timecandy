@@ -154,7 +154,7 @@
                     {% endif %}
                   {%- endfor -%}
                   <div class="product-donate__item">
-                    <input class="product-donate__input js-product-donate hidden" type="radio" value="{{ variant.id }}" id="ProductDonate-{{ variant.id }}"{%- for item in cart.items -%}{% if item.id == variant.id %} checked {% endif %}{% endfor %}>
+                    <input class="product-donate__input js-product-donate" type="radio" value="{{ variant.id }}" id="ProductDonate-{{ variant.id }}"{%- for item in cart.items -%}{% if item.id == variant.id %} checked {% endif %}{% endfor %}>
                     <label class="product-donate__label" for="ProductDonate-{{ variant.id }}" role="button"> {{ variant.title | remove: "Donation" }} </label>
                   </div>
                 {% endfor %}
@@ -201,7 +201,7 @@
           -%}
           {% if settings.enable_gift %}
             <div class="mini-cart__field">
-              <input type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message hidden"{% if is_attributes %} checked{% endif %}>
+              <input tabindex="-1" type="checkbox" value="Gift Message" id="GiftMessage" class="gift-include js-gift-message"{% if is_attributes %} checked{% endif %}>
               <label class="mini-cart__label" for="GiftMessage">
                 <span tabindex="0" role="button" class="mini-cart__gift-add js-gift-add">{%- if is_attributes -%}Added{%- else -%}Add{%- endif -%}</span>
                 <span class="mini-cart__gift-text">{{ settings.gift_label }}</span>
@@ -217,7 +217,7 @@
                 {% endif %}
               {% endfor %}
             {% endfor %}
-            <input type="radio" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate hidden" {% if isInclude %} checked {% endif %}>
+            <input tabindex="-1" type="checkbox" value="{{ shipping_product.variants[0].id }}" id="CartInclude" class="gift-include js-add-gift-card js-product-donate" {% if isInclude %} checked {% endif %}>
             <label class="mini-cart__label" for="CartInclude">
               <span tabindex="0" role="button" class="mini-cart__gift-add"> {%- if isInclude -%}Added {%- else -%} Add {%- endif -%}</span>
               <span class="mini-cart__gift-text">
@@ -229,7 +229,7 @@
           </div>
         </div>
       </div>
-    </form>
+    </form> 
   {% else %}
     <div class="mini-cart-empty">
         <div class="mini-cart__progress">

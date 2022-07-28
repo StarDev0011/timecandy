@@ -303,6 +303,7 @@
   border-radius: 90px;
   margin-right: 12px;
   padding-bottom: 2px;
+  background-color: #fff;
 }
 
 .mini-cart__label:focus-visible{
@@ -428,6 +429,10 @@
   display: block;
 }
 
+.product-donate__item{
+  position: relative;
+}
+
 .product-donate__item:first-child .product-donate__label {
   border-left: 0;
   border-radius: 4px 0 0 4px;
@@ -460,6 +465,12 @@
 
 .mini-cart__field {
   cursor: pointer;
+}
+
+.gift-include, .product-donate__input{
+  position: absolute;
+  z-index: -1;
+  left: 5px;
 }
 
 .gift-include:checked + label .mini-cart__gift-add {
@@ -559,6 +570,7 @@
 
 .mini-cart__field {
   margin-bottom: 12px;
+  position: relative;
 }
 
 .modal-cart-gift__container {
