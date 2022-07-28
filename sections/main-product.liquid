@@ -297,9 +297,12 @@
                       {% assign is_size = false %}
                     {% endif %}
                       <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}{% if variantCount == 1 %} product-form__input-first{% endif %}">
-                        <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
+                        <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% if is_size or variantCount == 1 %}
-                          <div class="product-swatch__label">
+                          <div class="product-swatch__label"
+                              aria-expanded="false"
+                              aria-labelledby="product-form__swatch-dropdown"
+                              role="combobox">
                             <div class="product-swatch__content">
                               {% unless variantCount > 1 %}
                                 <img height="200" width="200" loading="lazy" class="js-swatch-image" src="" style="display: none;">
@@ -314,7 +317,7 @@
                             </span>
                           </div>
                         {% endif %}
-                        <div class="{% if is_size or variantCount == 1 %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
+                        <div role="listbox" aria-labelledby="product-form__swatch-dropdown" class="{% if is_size or variantCount == 1 %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
                           {%- for value in option.values -%}
                             <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"
@@ -660,36 +663,6 @@
       hiddenInput.value = event.currentTarget.value;
     });
 
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    var swiper = new Swiper('.js-swiper-thumnail', {
-      direction: 'horizontal',
-      slidesPerView: 4,
-      spaceBetween: 4,
-      slidesPerGroup: 1,
-      freeMode: true,
-      preloadImages: true,
-      updateOnImagesReady: true,                          
-      navigation: {
-        nextEl: ".swiper-btn-next",
-        prevEl: ".swiper-btn-prev",
-        clickable: true
-      },
-      breakpoints: {
-        900: {
-          direction: 'vertical',
-        }
-      }
-    });
-    var Swipes = new Swiper('.js-swiper-main', {
-      spaceBetween: 10,
-      thumbs: {
-        swiper: swiper,
-      },
-      preloadImages: true,
-      updateOnImagesReady: true
-    });
   });
 </script>
 

@@ -297,16 +297,18 @@
                       {% assign is_size = true %}
                     {% endif %}
                       <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
-                        <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></legend>
+                        <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% unless is_size %}
-                          <div class="product-swatch__label">
+                          <div class="product-swatch__label" aria-expanded="false"
+                            aria-labelledby="product-form__swatch-dropdown"
+                            role="combobox">
                             <label for="option" class="js-option-label" id="option-name-{{ product.id }}"></label>
                             <span>
                               {% render 'icon-caret' %}
                             </span>
                           </div>
                         {% endunless %}
-                        <div class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+                        <div role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
                           {%- for value in option.values -%}
                             <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"
@@ -374,15 +376,7 @@
 
                   {% if section.settings.enable %}
                     {% if section.settings.optional_extras != blank %}
-                      <div class="product-optional-extras">
-                        <label class="product-optional-extras__title" for="optional-extra">Optional Extras:</label>
-                        <select id="optional-extra" class="unstyled"  name="items[1][id]">
-                          {% comment %} Check for the ajax cart to see if a variant was selected {% endcomment %}
-                          <option selected data-variant-id="blank">Remember When Booklet</option>
-                          {% comment %} Options are populated by ajax call after page loaded {% endcomment %}
-                        </select>
-                        <input type="hidden" name="items[1][quantity]" value="1">
-                      </div>
+                      {% render 'include--optional-extras' %}
                     {% endif %}
                   {% endif %}
 
@@ -634,58 +628,6 @@
     document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function(event) {
       hiddenInput.value = event.currentTarget.value;
     });
-  });
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    var swiper = new Swiper('.js-swiper-thumnail', {
-      direction: 'horizontal',
-      slidesPerView: 4,
-      spaceBetween: 4,
-      slidesPerGroup: 1,
-      freeMode: true,
-      preloadImages: true,
-      updateOnImagesReady: true,                          
-      navigation: {
-        nextEl: ".swiper-btn-next",
-        prevEl: ".swiper-btn-prev",
-        clickable: true
-      },
-      breakpoints: {
-        900: {
-          direction: 'vertical',
-        }
-      }
-    });
-    var Swipes = new Swiper('.js-swiper-main', {
-      spaceBetween: 10,
-      thumbs: {
-        swiper: swiper,
-      },
-      preloadImages: true,
-      updateOnImagesReady: true
-    });
-
-    {% if section.settings.enable %}
-      {% if section.settings.optional_extras != blank %}
-        const option = document.querySelector('#optional-extra');
-        let output = '';
-        let url = '/collections/{{ section.settings.optional_extras }}/products.json?limit=1000';
-        fetch(url)
-          .then(response => response.json())
-          .then(function(data) {
-            const product = data.products;
-            output += "<option selected data-variant-id='blank'>Remember When Booklet</option>";
-            product.map(function(item) {
-              output += "<option value='" + item.variants[0].id + "'>"+ item.title.split(/[ - ]+/).pop() + " + $" + item.variants[0].price + "</option>";
-            });
-            option.innerHTML = output;
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-      {% endif %}
-    {% endif %}
   });
 </script>
 

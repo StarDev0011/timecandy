@@ -1,0 +1,36 @@
+<div class="product-optional-extras">
+  <label class="product-optional-extras__title" for="optional-extra">Optional Extras:</label>
+  <select id="optional-extra" class="unstyled">
+    {% comment %} Check for the ajax cart to see if a variant was selected {% endcomment %}
+    <option selected value="blank">Remember When Booklet</option>
+    {% comment %} Options are populated by ajax call after page loaded {% endcomment %}
+  </select>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    {% if section.settings.enable %}
+      {% if section.settings.optional_extras != blank %}
+        const option = document.querySelector('#optional-extra');
+        let output = '';
+        let url = '/collections/{{ section.settings.optional_extras }}/products.json?limit=1000';
+        fetch(url)
+          .then(response => response.json())
+          .then(function(data) {
+            const product = data.products;
+            output += "<option selected disabled>Remember When Booklet</option>";
+            product.map(function(item) {
+              output += "<option value='" + item.variants[0].id + "'>"+ item.title.split(/[ - ]+/).pop() + " + $" + item.variants[0].price + "</option>";
+            });
+            option.innerHTML = output;
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      {% endif %}
+    {% endif %}
+
+    document.getElementById('optional-extra').addEventListener('change', function() {
+      this.setAttribute('name', 'items[1][id]');
+    });
+  });
+</script>

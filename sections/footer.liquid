@@ -73,7 +73,7 @@
                       {%- when 'subscribe' -%}
                         <div class="footer-block-subscribe-content">
                           {%- if block.settings.heading != blank -%}
-                            <p class="footer-block__heading h6">{{- block.settings.heading | escape -}}</p>
+                            <h2 class="footer-block__heading h6">{{- block.settings.heading | escape -}}</h2>
                           {%- endif -%}
                           <div class="footer-block__subscrible  rte">
                             {{ block.settings.subtext }}
@@ -85,7 +85,7 @@
                             {%- if section.settings.show_social -%}
                               <div class="footer-block__social footer-block-item">
                                 {%- if section.settings.social_heading != blank -%}
-                                    <p class="footer-block__heading h6">{{ section.settings.social_heading | escape }}</p>
+                                    <h2 class="footer-block__heading h6">{{ section.settings.social_heading | escape }}</h2>
                                   {%- endif -%}
                                 <ul class="footer__list-social list-unstyled list-social" role="list">
                                   {%- if settings.social_twitter_link != blank -%}
@@ -168,7 +168,7 @@
                       </div>
                     {%- when 'link_list' -%}
                     {%- if block.settings.heading != blank -%}
-                      <p class="footer-block__heading h6">{{- block.settings.heading | escape -}}</p>
+                      <h2 class="footer-block__heading h6">{{- block.settings.heading | escape -}}</h2>
                     {%- endif -%}
                       {%- if block.settings.menu != blank and block.settings.heading != blank -%}
                         <ul class="footer-block__details-content list-unstyled">

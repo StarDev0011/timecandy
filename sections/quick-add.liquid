@@ -22,14 +22,16 @@
             <fieldset class="js product-form__input">
               <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229;">*</span></legend>
               {% if is_size %}
-                <div class="product-swatch__label">
+                <div class="product-swatch__label" tabindex="0" aria-expanded="false"
+                  aria-labelledby="product-form__swatch-dropdown"
+                  role="combobox">
                   <span class="js-swacth-label"></span>
                   <span>
                     {% render 'icon-caret' %}
                   </span>
                 </div>
               {% endif %}
-              <div class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
+              <div role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}" tabindex="0">
                 {%- for value in option.values -%}
                   <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                         name="{{ option.name }}"
@@ -37,7 +39,7 @@
                         form="{{ product_form_id }}"
                         {% if option.selected_value == value %}checked{% endif %}
                   >
-                  <label {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                  <label tabindex="0" {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                     {% if value contains 'decade gift box' %}
                     {{ value | downcase | split: 'decade gift box' }}
                     {% else %}

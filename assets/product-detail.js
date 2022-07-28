@@ -13,6 +13,7 @@ Product = {
   init: function() {
     this.dropDownOption();
     this.readMoreDesc();
+    this.sliderProductImages();
   },
 
   dropDownOption: () => {
@@ -88,6 +89,36 @@ Product = {
       e.preventDefault();
       desc.classList.remove('product__height-desc');
       btnReadmore.style.display = 'none';
+    });
+  },
+
+  sliderProductImages: () => {
+    var thumnail = new Swiper('.js-swiper-thumnail', {
+      direction: 'horizontal',
+      slidesPerView: 4,
+      spaceBetween: 4,
+      slidesPerGroup: 1,
+      freeMode: true,
+      preloadImages: true,
+      updateOnImagesReady: true,
+      navigation: {
+        nextEl: ".swiper-btn-next",
+        prevEl: ".swiper-btn-prev",
+        clickable: true
+      },
+      breakpoints: {
+        900: {
+          direction: 'vertical',
+        }
+      }
+    });
+    var Swipes = new Swiper('.js-swiper-main', {
+      spaceBetween: 10,
+      thumbs: {
+        swiper: thumnail,
+      },
+      preloadImages: true,
+      updateOnImagesReady: true
     });
   }
 };
