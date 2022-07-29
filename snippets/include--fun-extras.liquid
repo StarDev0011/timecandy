@@ -36,7 +36,7 @@
           {% if soldout %}
             <button class="button product-add-on__btn" disabled> Sold out</button>
           {% else %}
-            <button data-add-to-cart class="button product-add-on__btn" type="submit"> Add to bag </button>
+            <button aria-label="Add product {{ product.title }} to your cart" data-add-to-cart class="button product-add-on__btn" type="submit"> Add to bag </button>
           {% endif %}
           {%- endform -%}
         </div>

@@ -393,6 +393,7 @@
                       data-add-to-cart
                       type="submit"
                       name="add"
+                      aria-label="Add product {{ product.title }} to your cart"
                       class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >

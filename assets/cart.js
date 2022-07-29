@@ -157,7 +157,6 @@ if(btnAddDonation) {
     .then((data) => {
         btnText.style.display = 'block';
         btnIcon.style.display = 'none';
-        console.log(data)
         const parsedState = data;
         cartItem.getSectionsToRender().forEach((section => {
           const elementToReplace = document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);

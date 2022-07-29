@@ -384,6 +384,11 @@
   text-transform: uppercase;
   color: var(--color-link-text);
   margin-bottom: 6px;
+  font-family: var(--my-font);
+}
+
+.product-donate__header p{
+  margin: 0;
 }
 
 .product-donate__more {

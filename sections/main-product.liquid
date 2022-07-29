@@ -299,7 +299,7 @@
                       <fieldset class="js product-form__input{% if is_size %} product-detail__swatch-order{% endif %}{% if variantCount == 1 %} product-form__input-first{% endif %}">
                         <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                         {% if is_size or variantCount == 1 %}
-                          <div class="product-swatch__label"
+                          <div class="product-swatch__label" tabindex="0" 
                               aria-expanded="false"
                               aria-labelledby="product-form__swatch-dropdown"
                               role="combobox">
@@ -319,14 +319,14 @@
                         {% endif %}
                         <div role="listbox" aria-labelledby="product-form__swatch-dropdown" class="{% if is_size or variantCount == 1 %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}">
                           {%- for value in option.values -%}
-                            <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                            <input tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                   name="{{ option.name }}"
                                   value="{{ value | escape }}"
                                   form="{{ product_form_id }}"
                                   {% if is_size or variantCount == 1 %} class="js-variant-input" {% endif %}
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label {% if is_size or variantCount == 1 %}class="js-variant-item{% if option.selected_value == value %} js-variant-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            <label tabindex="0" {% if is_size or variantCount == 1 %}class="js-variant-item{% if option.selected_value == value %} js-variant-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                               {% unless variantCount > 1 %}
                                 {% if product.variants[forloop.index0].featured_media != blank %}
                                   <img height="auto" width="50" loading="lazy"  class="product-form__swatch-image" src="{{ product.variants[forloop.index0].featured_media  | img_url: "small" }}">
@@ -449,6 +449,7 @@
                       </div>
                       <button
                         data-add-to-cart
+                        aria-label="Add product {{ product.title }} to your cart"
                         type="submit"
                         name="add"
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"

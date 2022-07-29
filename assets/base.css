@@ -2928,6 +2928,15 @@ details-disclosure > details {
   z-index: -1;
 }
 
+.button:focus,
+button[type="button"]:focus  {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),0 0 0 0.5rem rgba(var(--color-foreground),.5),0 0 0.5rem 0.4rem rgba(var(--color-foreground),.3) !important;
+}
+
+.btn-wishlist:focus,
+.btn-wishlist:active  {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),0 0 0 0.5rem rgba(var(--color-foreground),.5),0 0 0.5rem 0.4rem rgba(var(--color-foreground),.3) !important;
+}
 /* Modal */
 div.modal-background {
   position: fixed;

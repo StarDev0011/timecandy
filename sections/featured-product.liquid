@@ -213,6 +213,7 @@
                   <div class="product-form__buttons">
                     <button
                       data-add-to-cart
+                      aria-label="Add product {{ product.title }} to your cart"
                       type="submit"
                       name="add"
                       class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
