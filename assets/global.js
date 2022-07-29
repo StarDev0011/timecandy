@@ -995,8 +995,13 @@ function initQuickAdd() {
           }
 
           const swatchLabel = document.querySelector('.product-swatch__label');
-          swatchLabel.onclick = () => {
+          swatchLabel.onclick = (e) => {
             dropdown.classList.toggle('active');
+            if (dropdown.classList.contains('acitve')) {
+              e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
+            }else{
+              e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
+            }
           }
         }
       }

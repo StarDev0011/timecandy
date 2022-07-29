@@ -42,6 +42,9 @@ Product = {
     swatchLabel.forEach(function(itemLabel) {
       itemLabel.addEventListener('click', function () {
         this.nextElementSibling.classList.toggle('active');
+        this.setAttribute('aria-expanded','true');
+        if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
+        else this.setAttribute('aria-expanded','false');
       });
     })
 
