@@ -2547,3 +2547,7 @@ div#bookmarkit {
   top: -3px;
   margin-left: 5px;
 }
+
+#smartwishlist [aria-label="Remove from Wishlist"] #wishlist_icon::after {
+  content: 'Remove from Wishlist';
+}

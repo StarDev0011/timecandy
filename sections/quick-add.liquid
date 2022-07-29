@@ -58,7 +58,7 @@
         {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
       </div>
       <div class="product-form__buttons">
-        <button data-add-to-cart type="submit" name="add" class="product-form__submit button" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+        <button aria-label="Add product {{ product.title }} to your cart" data-add-to-cart type="submit" name="add" class="product-form__submit button" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
           <span>
             {%- if product.selected_or_first_available_variant.available -%}
               {{ 'products.product.add_to_cart' | t }}
