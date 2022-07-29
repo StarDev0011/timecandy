@@ -1653,6 +1653,10 @@ div.rc_block__type {
   bottom: 0;
 }
 
+.product-detail .image-description {
+  text-align: center;
+}
+
 .product-detail .product__media-list {
   padding-left: 0;
   list-style: none;

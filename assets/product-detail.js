@@ -126,8 +126,15 @@ Product = {
     const desc = document.querySelector('.product__desc-text');
     btnReadmore.addEventListener('click', function(e) {
       e.preventDefault();
-      desc.classList.remove('product__height-desc');
-      btnReadmore.style.display = 'none';
+
+      if (desc.classList.contains('product__height-desc')) {
+        btnReadmore.innerHTML = 'Read Less';
+      } else {
+        btnReadmore.innerHTML = 'Read More';
+      }
+
+      desc.classList.toggle('product__height-desc');
+
     });
   },
 

@@ -45,6 +45,7 @@
         class="product__media-image"
       >
     </div>
+    <p class="image-description">{{ media.preview_image.alt | escape }}</p>
     <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" class="product__media-toggle">
       <span class="visually-hidden">{{ 'products.product.video_exit_message' | t: title: product.title | escape }}</span>
     </a>
@@ -72,6 +73,7 @@
         class="product__media-image {{ classImage }}"
       >
     </div>
+    <p class="image-description">{{ media.preview_image.alt | escape }}</p>
   {%- endif -%}
 </noscript>
 
@@ -112,6 +114,7 @@
       class="product__media-image {{ classImage }}"
     >
   </div>
+    <p class="image-description">{{ media.preview_image.alt | escape }}</p>
   <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
     <span class="visually-hidden">
       {{ 'products.product.media.open_media' | t: index: position }}
@@ -156,6 +159,7 @@
       alt="{{ media.preview_image.alt | escape }}"
     >
   </button>
+    <p class="image-description">{{ media.preview_image.alt | escape }}</p>
   <template>
     {%- liquid
       case media.media_type
