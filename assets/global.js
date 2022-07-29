@@ -988,6 +988,12 @@ function initQuickAdd() {
               swatchName.innerHTML = item.textContent;
               dropdown.classList.remove('active');
             }
+            item.addEventListener('keypress', function (e) {
+              if (e.which === 13) {
+                swatchName.innerHTML = item.textContent;
+                dropdown.classList.remove('active');
+              }
+            });
           })
 
           btnClose.onclick = () => {
@@ -1003,6 +1009,16 @@ function initQuickAdd() {
               e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
             }
           }
+          swatchLabel.addEventListener('keypress', function (e) {
+            if (e.which === 13) {
+              dropdown.classList.toggle('active');
+              if (dropdown.classList.contains('acitve')) {
+                e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
+              }else{
+                e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
+              }
+            }
+          });
         }
       }
       xmlhttp.open('GET', baseUrl+'?view=quick-add');
