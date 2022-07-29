@@ -4,7 +4,7 @@
 <!-- End Recharge code -->
 
 <div class="mini-cart">
-  <div class="mini-cart__header">
+  <h1 class="mini-cart__header">
     <div class="mini-cart__inner">
       <button aria-label="Close mini-cart" class="mini-cart__close js-close-minicart">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@
         <span class="mini-cart__icon-count js-mini-cart-count"> {{ cart.item_count }} </span>
       </div>
     {% endif %}
-  </div>
+  </h1>
 
   {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
   {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
@@ -132,15 +132,15 @@
         {% if settings.enable_donation_product %}
           {% if settings.donation_product != blank %}
             <div class="product-donate">
-              <div class="product-donate__header">
-                <div class="product-donate__header-title">
+              <h2 class="product-donate__header">
+                <p class="product-donate__header-title">
                   {{- settings.cart_title_1 -}}
-                </div>
-                <div class="product-donate__sub-header">
+                </p>
+                <p class="product-donate__sub-header">
                   {{- settings.cart_title_2 -}}
                   <a class="product-donate__more js-donate-read-more" href="#">Read more</a>
-                </div>
-              </div>
+                </p>
+              </h2>
               <div class="product-donate__desc">
                 {{- settings.cart_desc -}}
                 <a class="product-donate__more js-read-less" href="#"> Read less</a>

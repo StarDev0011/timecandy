@@ -186,7 +186,6 @@ fieldset.product-form__input .form__label {
   border: var(--variant-pills-border-width) solid rgba(var(--color-foreground), var(--variant-pills-border-opacity));
   background-color: rgb(var(--color-background));
   color: rgba(var(--color-foreground));
-  border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
@@ -220,6 +219,12 @@ fieldset.product-form__input .form__label {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
 }
+
+.product-form__input input[type='radio']:focus-visible + label {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+}
+
 
 @media screen and (forced-colors: active) {
   .product-form__input input[type=radio]:checked + label {
@@ -1304,7 +1309,7 @@ fieldset.product-form__input .form__label {
   width: 100%;
   z-index: 2;
   max-height: 350px;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   display: none;
 }
 
@@ -1387,7 +1392,7 @@ fieldset.product-form__input .form__label {
 }
 
 .product-detail .product-form__input .product-form__swatch-dropdown.active {
-  padding: 0 16px;
+  padding: 0;
 }
 
 .product-buy-more {
@@ -1448,13 +1453,11 @@ fieldset.product-form__input .form__label {
 
 .product-detail .product-form__input {
   flex-basis: 45%;
-  order: 2;
 }
 
 .product-detail .product-detail__swatch-order {
   max-width: 285px;
   flex-basis: 49%;
-  order: 1;
   margin-right: 32px;
 }
 

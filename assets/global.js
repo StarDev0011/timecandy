@@ -1003,16 +1003,17 @@ function initQuickAdd() {
           const swatchLabel = document.querySelector('.product-swatch__label');
           swatchLabel.onclick = (e) => {
             dropdown.classList.toggle('active');
-            if (dropdown.classList.contains('acitve')) {
+            if (dropdown.classList.contains('active')) {
               e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
             }else{
               e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
             }
           }
+
           swatchLabel.addEventListener('keypress', function (e) {
             if (e.which === 13) {
               dropdown.classList.toggle('active');
-              if (dropdown.classList.contains('acitve')) {
+              if (dropdown.classList.contains('active')) {
                 e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
               }else{
                 e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");

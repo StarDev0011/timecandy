@@ -46,6 +46,22 @@ Product = {
         if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
         else this.setAttribute('aria-expanded','false');
       });
+
+      itemLabel.addEventListener('keypress', function (e) {
+        if ((e.keyCode || e.which) === 13) {
+          this.nextElementSibling.classList.toggle('active');
+          this.setAttribute('aria-expanded','true');
+          if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
+          else this.setAttribute('aria-expanded','false');
+        }
+      });
+
+      itemLabel.addEventListener('keydown', function(e){
+        if ((e.keyCode || e.which) === 27) {
+          this.nextElementSibling.classList.remove('active');
+          this.setAttribute('aria-expanded','false');
+        }
+      })
     })
 
     swacthIuput.forEach(function(input) {
@@ -57,6 +73,26 @@ Product = {
         if(swatchSoldOut){
           const textSoldOut = input.nextElementSibling.querySelector('.product-form__swatch-soldout').textContent;
           swatchSoldOut.textContent = textSoldOut;
+        }
+      })
+
+      input.addEventListener('keypress', function(e) {
+        if (e.which === 13) {
+          const name = input.value;
+          this.parentNode.classList.remove('active');
+          const elmTitle = this.parentNode.previousElementSibling;
+          elmTitle.querySelector('.js-option-label').textContent = name;
+          if(swatchSoldOut){
+            const textSoldOut = input.nextElementSibling.querySelector('.product-form__swatch-soldout').textContent;
+            swatchSoldOut.textContent = textSoldOut;
+          }
+        }
+      })
+
+      input.addEventListener('keydown', function(e){
+        if ((e.keyCode || e.which) === 27) {
+          console.log(124);
+          this.parentNode.classList.remove('active');
         }
       })
     })

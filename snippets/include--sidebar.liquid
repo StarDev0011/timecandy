@@ -129,7 +129,11 @@
     item.onclick = function(e) {
       this.parentElement.classList.toggle('active');
       document.querySelectorAll('.sidebar-filter__inner').forEach((a) => a.setAttribute('aria-expanded', 'false'));
-      e.currentTarget.parentNode.setAttribute('aria-expanded', 'true');
+      if (this.parentElement.classList.contains('active')) {
+        e.currentTarget.parentNode.setAttribute('aria-expanded', 'true');
+      }else{
+        e.currentTarget.parentNode.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 

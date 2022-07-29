@@ -157,7 +157,6 @@ CartDawn = {
     $('body').on('click', '.js-product-donate:not([checked])', function (e) {
       e.preventDefault();
       $('.cart-overlay').show();
-      console.log($(this).val());
       data = {
         items: [
           {
