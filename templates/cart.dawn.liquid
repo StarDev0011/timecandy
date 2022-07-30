@@ -3,15 +3,15 @@
 {% render 'subscription-cart-footer' %}
 <!-- End Recharge code -->
 
-<div class="mini-cart">
-  <h1 class="mini-cart__header">
+<div class="mini-cart" role="dialog" aria-modal="true" aria-label="My bag" tabindex="-1">
+  <div class="mini-cart__header">
     <div class="mini-cart__inner">
       <button aria-label="Close mini-cart" class="mini-cart__close js-close-minicart">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.04163 9.45008L12.7083 1.95008C13.0123 1.60533 13.538 1.57177 13.8833 1.87508C14.2281 2.17905 14.2616 2.70475 13.9583 3.05008L7.7833 10.0001L13.9583 16.9501C14.2381 17.2975 14.1947 17.8037 13.8598 18.0984C13.5249 18.3931 13.0173 18.3718 12.7083 18.0501L6.04163 10.5501C5.76526 10.2355 5.76526 9.76467 6.04163 9.45008Z" fill="#484E57"/>
         </svg>
       </button>
-      <span class="mini-cart__header-title">My bag </span>
+      <h2 class="mini-cart__header-title">My bag</h2>
       <span class="mini-cart__count js-mini-cart-count"> ({{ cart.item_count }} Items) </span>
     </div>
     {% if cart.item_count > 0 %}
@@ -19,7 +19,7 @@
         <span class="mini-cart__icon-count js-mini-cart-count"> {{ cart.item_count }} </span>
       </div>
     {% endif %}
-  </h1>
+  </div>
 
   {% assign limit_price_checkout = settings.min_price_checkout | plus: 0 %}
   {% assign freeshipPrice = settings.min_price_freeship | plus: 0 %}
