@@ -99,7 +99,7 @@
                     <button aria-label="Remove 1 {{ item.product.title }}" type="button" class="mini-cart__btn cart__btn-minus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-minus' -%}
                     </button>
-                    <label class="visually-hidden" for="cart-{{  item.id }} }}">Quantity</label>
+                    <label class="visually-hidden" for="cart-{{ item.id }}">Quantity (Note: Changing this quantity will automatically update your cart.)</label>
                     <input class="mini-cart__qty-input cart-{{ item.id }}" id="cart-{{ item.id }}" data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
                     <button aria-label="Add 1 {{ item.product.title }}" type="button" class="mini-cart__btn cart__btn-plus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-plus' -%}
