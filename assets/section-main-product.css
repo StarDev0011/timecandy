@@ -2560,7 +2560,7 @@ div#bookmarkit {
 }
 
 
-.stamped-summary-actions-newreview {
+.stamped-summary-actions .stamped-summary-actions-newreview {
   display: inline-flex;
   justify-content: center;
   /* align-items: center; */
@@ -2583,7 +2583,7 @@ div#bookmarkit {
   background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
   transform: scale(1);
 }
-.stamped-summary-actions-newreview:hover {
+.stamped-summary-actions .stamped-summary-actions-newreview:hover {
   color: rgb(var(--color-secondary-button-background)) !important;
   border-color: rgb(var(--color-secondary-button-border)) !important;
   background-color: rgba(var(--color-secondary-button-border), 1) !important;
