@@ -1317,8 +1317,8 @@ deferred-media {
 /* component-button */
 /* Button - default */
 .button {
-  line-height: 1.25;
-  height: auto;
+  line-height: 1.25 !important;
+  height: auto !important;
   text-align: center;
 }
 
