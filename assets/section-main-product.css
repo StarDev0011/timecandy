@@ -1309,7 +1309,7 @@ fieldset.product-form__input .form__label {
   width: 100%;
   z-index: 2;
   max-height: 350px;
-  /* overflow-x: auto; */
+  overflow-x: auto;
   display: none;
 }
 
@@ -1928,7 +1928,7 @@ div.rc_block__type {
 
 .product-individual .product-detail__swatch-order {
   max-width: 100%;
-  flex-basis: 100%;
+  flex-basis: 45%;
 }
 
 .product-individual .product-swatch__label {

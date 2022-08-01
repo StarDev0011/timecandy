@@ -315,6 +315,8 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   border-radius: 32px;
+  min-height: 0;
+  text-align: center;
 }
 
 .loader {

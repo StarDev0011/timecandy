@@ -36,7 +36,7 @@
 	max-width: 755px;
 	margin: auto;
 }
-.icon-card__media img{
+.icon-card__media img, .icon-card__media svg{
 	float: left;
 	height: 76px;
 	width: auto;
