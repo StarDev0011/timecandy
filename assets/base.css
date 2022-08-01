@@ -1316,6 +1316,11 @@ deferred-media {
 
 /* component-button */
 /* Button - default */
+.button {
+  line-height: 1.25;
+  height: auto;
+  text-align: center;
+}
 
 .button,
 .shopify-challenge__button,

@@ -317,7 +317,7 @@
                                   {% unless is_size %} class="js-variant-input" {% endunless %}
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label tabindex="0" if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            <label tabindex="0" {% if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                               {% if value contains 'decade gift box' %}
                                 {{ value | downcase | split: 'decade gift box' }}
                               {% else %}
