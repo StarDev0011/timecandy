@@ -2,6 +2,7 @@
   "sections": {
     "corporate-gifts": {
       "type": "collection--corporate-gifts",
+      "disabled": true,
       "blocks": {
         "734471e4-686b-436e-8ae0-35e1c8e15168": {
           "type": "featured_collection",
@@ -88,7 +89,6 @@
     },
     "16584148595fda12b3": {
       "type": "section-content",
-      "disabled": true,
       "blocks": {
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
           "type": "text",
@@ -117,14 +117,13 @@
         "heading": "<p>Here's the heading<\/p>",
         "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>",
         "text_align": "center",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 40
       }
     },
     "1658415159dc5b2f07": {
       "type": "section-column-richtext",
-      "disabled": true,
       "blocks": {
         "48b28036-a6e3-4ec8-a641-8f87ed37c2a3": {
           "type": "richtext",
@@ -148,7 +147,7 @@
       "settings": {
         "heading": "<p>Who Invented Bubble Gum?<\/p>",
         "content": "",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "align_content": "left",
         "padding_top": 40,
         "padding_bottom": 52
@@ -156,7 +155,6 @@
     },
     "1658415180d311c72b": {
       "type": "section-column-richtext-2",
-      "disabled": true,
       "blocks": {
         "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc": {
           "type": "richtext",
@@ -182,14 +180,13 @@
         "text_align": "center",
         "heading": "<p>Who Invented Bubble Gum?<\/p>",
         "content": "<p>Here is some supporting text to go along with this big title<\/p>",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 52
       }
     },
     "1658415969f2db5c73": {
       "type": "section-multicolumn-richtext",
-      "disabled": true,
       "blocks": {
         "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d": {
           "type": "text",
@@ -222,7 +219,7 @@
         "heading": "<p>Heading<\/p>",
         "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
         "text_align": "left",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 52
       }
