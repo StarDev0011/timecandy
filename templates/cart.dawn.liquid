@@ -11,7 +11,7 @@
           <path d="M6.04163 9.45008L12.7083 1.95008C13.0123 1.60533 13.538 1.57177 13.8833 1.87508C14.2281 2.17905 14.2616 2.70475 13.9583 3.05008L7.7833 10.0001L13.9583 16.9501C14.2381 17.2975 14.1947 17.8037 13.8598 18.0984C13.5249 18.3931 13.0173 18.3718 12.7083 18.0501L6.04163 10.5501C5.76526 10.2355 5.76526 9.76467 6.04163 9.45008Z" fill="#484E57"/>
         </svg>
       </button>
-      <h2 class="mini-cart__header-title">My bag</h2>
+      <h1 class="mini-cart__header-title">My bag</h1>
       <span class="mini-cart__count js-mini-cart-count"> ({{ cart.item_count }} Items) </span>
     </div>
     {% if cart.item_count > 0 %}
@@ -138,12 +138,12 @@
                 </p>
                 <p class="product-donate__sub-header">
                   {{- settings.cart_title_2 -}}
-                  <a class="product-donate__more js-donate-read-more" href="#">Read more</a>
+                  <a class="product-donate__more js-donate-read-more roller" href="#">Read more</a>
                 </p>
               </h2>
               <div class="product-donate__desc">
                 {{- settings.cart_desc -}}
-                <a class="product-donate__more js-read-less" href="#"> Read less</a>
+                <a class="product-donate__more js-read-less roller" href="#"> Read less</a>
               </div>
               <div class="product-donate__list">
                 {%- assign donation_product = all_products[settings.donation_product] -%}

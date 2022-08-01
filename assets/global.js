@@ -988,7 +988,8 @@ function initQuickAdd() {
               swatchName.innerHTML = item.textContent;
               dropdown.classList.remove('active');
             }
-            item.addEventListener('keypress', function (e) {
+
+            item.addEventListener('keydown', function (e) {
               if (e.which === 13) {
                 swatchName.innerHTML = item.textContent;
                 dropdown.classList.remove('active');

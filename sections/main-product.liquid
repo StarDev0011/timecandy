@@ -290,7 +290,7 @@
               {% assign variantCount = product.options_with_values | size %}
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden product-detail__variants{% if variantCount > 1 %} product-detail__many-options{% endif %}" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                  {%- for option in product.options_with_values -%}
+                  {% for option in product.options_with_values %}
                     {% assign optionName = option.name | downcase %}
                     {% assign is_size = true %}
                     {% if optionName == 'size' %}
@@ -348,38 +348,44 @@
                           {%- endfor -%}
                         </div>
                       </fieldset>
-                  {%- endfor -%}
+                  {% endfor %}
                   <script type="application/json">
                     {{ product.variants | json }}
                   </script>
                 </variant-radios>
               {%- else -%}
-                <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
-                    <div class="product-form__input product-form__input--dropdown">
-                      <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                        {{ option.name }}
-                      </label>
-                      <div class="select">
-                        <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select"
-                          name="options[{{ option.name | escape }}]"
-                          form="{{ product_form_id }}"
-                        >
+                      <fieldset class="js product-form__input product-detail__swatch-order">
+                        <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
+                        <div class="product-swatch__label" tabindex="0" aria-expanded="false"
+                          aria-labelledby="product-form__swatch-dropdown"
+                          role="combobox">
+                          <label for="option" class="js-option-label" id="option-name-{{ product.id }}"></label>
+                          <span>
+                            {% render 'icon-caret' %}
+                          </span>
+                        </div>
+                        <div role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
                           {%- for value in option.values -%}
-                            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                            <input tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                  name="{{ option.name }}"
+                                  value="{{ value | escape }}"
+                                  form="{{ product_form_id }}"
+                                  {% unless is_size %} class="js-variant-input" {% endunless %}
+                                  {% if option.selected_value == value %}checked{% endif %}
+                            >
+                            <label tabindex="0" {% if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                               {{ value }}
-                            </option>
+                            </label>
                           {%- endfor -%}
-                        </select>
-                      </div>
-                    </div>
+                        </div>
+                      </fieldset>
                   {%- endfor -%}
-
                   <script type="application/json">
                     {{ product.variants | json }}
                   </script>
-                </variant-selects>
+                </variant-radios>
               {%- endif -%}
             {%- endunless -%}
 
