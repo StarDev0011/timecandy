@@ -317,7 +317,11 @@
                                   {% unless is_size %} class="js-variant-input" {% endunless %}
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
+<<<<<<< HEAD
                             <label tabindex="0" {% if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+=======
+                            <label tabindex="0" {% if is_size %} class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+>>>>>>> 15cf516022bd32814a0430b0b398b47cfd0e2292
                               {% if value contains 'decade gift box' %}
                                 {{ value | downcase | split: 'decade gift box' }}
                               {% else %}
