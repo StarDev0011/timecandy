@@ -20,7 +20,7 @@
             {% assign is_size = true %}
           {% endif %}
           <fieldset class="js product-form__input">
-            <legend class="form__label">Choose a {{ option.name }}<span style="color: #AC1229;">*</span></legend>
+            <label class="form__label">Choose a {{ option.name }}<span style="color: #AC1229;">*</span></label>
             {% if is_size %}
               <div class="product-swatch__label" tabindex="0" aria-expanded="false"
                 aria-labelledby="{% if is_size %}product-form__swatch-dropdown{% else %} product-form__swatch-size{% endif %}"
