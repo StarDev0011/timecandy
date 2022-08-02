@@ -292,7 +292,7 @@
       "popop-cart": {
         "type": "popop-cart",
         "settings": {
-          "show_popup_cart": true,
+          "show_popup_cart": false,
           "label": "Product added to cart!",
           "heading": "Making it a gift? add these specials!",
           "show_product_like": true,
