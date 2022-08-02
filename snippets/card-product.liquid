@@ -17,7 +17,7 @@
 {% liquid
   assign on_sale = false
   assign sold_out = true
-  assign option_size = card_product.options | size
+  assign option_size = card_product.variants | size
   if card_product.compare_at_price > card_product.price
     assign on_sale = true
   endif

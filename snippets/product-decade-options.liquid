@@ -1,0 +1,33 @@
+{% for tag in product.tags %}
+    {% if tag contains 'decade-selection' %}
+      {% if tag contains '|' %}
+        {%- assign decadeLabel = tag | split: '|' | last -%}
+        {% assign decadeRequired = true %}
+      {% endif %}
+    {% endif %}
+{% endfor %}
+
+<fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
+    <label for="decade-selection" class="form__label">{{ decadeLabel }}{% if decadeRequired %}<span style="color: #AC1229"> *</span>{% endif %}</label>
+    
+    <div class="product-swatch__label" tabindex="0" aria-expanded="false"
+        aria-labelledby="product-form__swatch-dropdown"
+        role="combobox">
+        <label for="option" class="" id="option-name-{{ product.id }}">1950s</label>
+        <span> {% render 'icon-caret' %} </span>
+    </div>
+    <div id="decade-selection" name="properties[Decade]" role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+        <input tabindex="-1" type="radio" id="{{ section.id }}-1950s" name="{{ option.name }}" value="1950s" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-active js-variant-item" for="{{ section.id }}-1950s">1950s</label>
+        <input tabindex="-1" type="radio" id="{{ section.id }}-1960s" name="{{ option.name }}" value="1960s" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-item" for="{{ section.id }}-1960s">1960s</label>
+        <input tabindex="-1" type="radio" id="{{ section.id }}-1970s" name="{{ option.name }}" value="1970s" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-item" for="{{ section.id }}-1970s">1970s</label>
+        <input tabindex="-1" type="radio" id="{{ section.id }}-1980s" name="{{ option.name }}" value="1980s" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-item" for="{{ section.id }}-1980s">1980s</label>
+        <input tabindex="-1" type="radio" id="{{ section.id }}-1990s" name="{{ option.name }}" value="1990s" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-item" for="{{ section.id }}-1990s">1990s</label>
+        <input tabindex="-1" type="radio" id="{{ section.id }}-all" name="{{ option.name }}" value="all" form="{{ product_form_id }}">
+        <label tabindex="0" class="js-variant-item" for="{{ section.id }}-all">All</label>
+    </div>
+</fieldset>

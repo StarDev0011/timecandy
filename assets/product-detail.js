@@ -7,13 +7,19 @@ Product = {
     swatchLabel: '.product-swatch__label',
     swatchImage: '.js-swatch-image',
     swatchSoldOut: '.js-option-sold-out',
-    btnReadMore: '.js-read-more'
+    btnReadMore: '.js-read-more',
+    swatchDropdown: '.product-form__swatch-dropdown[role="listbox"]'
   },
 
   init: function() {
     this.dropDownOption();
     this.readMoreDesc();
     this.sliderProductImages();
+    // let giangvip = document.querySelector('variant-radios')
+    // giangvip.getVariantData()
+    // giangvip.updateOptions()
+    // giangvip.updateMasterId()
+    // console.dir(giangvip)
   },
 
   dropDownOption: () => {
@@ -22,7 +28,7 @@ Product = {
     const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
     const variantLabel = document.querySelectorAll(Product.Class.swatchName);
     const swatchSoldOut = document.querySelector(Product.Class.swatchSoldOut);
-    const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');
+    const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');                                  
 
     variantTile.forEach(function (item, index) {
       variantLabel[index].textContent = item.value;
@@ -40,11 +46,43 @@ Product = {
     }
 
     swatchLabel.forEach(function(itemLabel) {
+      let positionDropdown = window.innerHeight - itemLabel.getBoundingClientRect().bottom;
+      let heightDropdown;
+      document.addEventListener('scroll', function () {
+        positionDropdown = window.innerHeight - itemLabel.getBoundingClientRect().bottom;
+        itemLabel.addEventListener('click', function () {
+          heightDropdown = this.nextElementSibling.offsetHeight;
+          if (positionDropdown <= heightDropdown) {
+            this.nextElementSibling.style.cssText=`
+              bottom: 50px;
+              top: auto;
+            `
+          }else{
+            this.nextElementSibling.style.cssText=`
+              bottom: auto;
+              top: 100%;
+            `
+          }
+        })
+      });
+
       itemLabel.addEventListener('click', function () {
         this.nextElementSibling.classList.toggle('active');
         this.setAttribute('aria-expanded','true');
         if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
         else this.setAttribute('aria-expanded','false');
+        heightDropdown = this.nextElementSibling.offsetHeight;
+        if (positionDropdown <= heightDropdown) {
+          this.nextElementSibling.style.cssText=`
+            bottom: 50px;
+            top: auto;
+          `
+        }else{
+          this.nextElementSibling.style.cssText=`
+            bottom: auto;
+            top: 100%;
+          `
+        }
       });
 
       itemLabel.addEventListener('keypress', function (e) {
@@ -91,34 +129,12 @@ Product = {
 
       input.addEventListener('keydown', function(e){
         if ((e.keyCode || e.which) === 27) {
-          console.log(124);
           this.parentNode.classList.remove('active');
         }
       })
     })
 
-    // document.addEventListener('click', (e) => {
-    //   if (!e.target.matches('.product-swatch__label')) {
-    //     for (let i = 0; i < dropdown.length; i++) {
-    //       var openDropdown = dropdown[i];
-    //       if (openDropdown.classList.contains('active')) {
-    //         openDropdown.classList.toggle('active');
-    //       }
-    //     }
-    //   }
-    // });
-    // $('body').on('change', Product.Class.swatchInput, function() {
-    //   const name = $(this).val();
-    //   $(Product.Class.swatchName).text(name);
-    //   $('.product-form__swatch-dropdown').slideToggle(200);
 
-    //   if($(Product.Class.swatchImage).length) {
-    //     const image = $(this).next().find('.product-form__swatch-image').attr('src');
-    //     const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
-    //     $(Product.Class.swatchImage).attr('src', image).show();
-    //     $(Product.Class.swatchSoldOut).text(textSoldOut);
-    //   }
-    // })
   },
 
   readMoreDesc: () => {

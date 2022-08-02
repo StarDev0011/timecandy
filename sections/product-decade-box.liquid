@@ -289,7 +289,7 @@
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                {%- for option in product.options_with_values -%}
+                {% for option in product.options_with_values %}
                   {% assign optionName = option.name | downcase %}
                   {% assign is_size = false %}
                   {% if optionName == 'size' %}
@@ -326,7 +326,7 @@
                         {%- endfor -%}
                       </div>
                     </fieldset>
-                {%- endfor -%}
+                {% endfor %}
                 <script type="application/json">
                   {{ product.variants | json }}
                 </script>
