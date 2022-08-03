@@ -62,6 +62,11 @@ Product = {
       });
 
       itemLabel.addEventListener('click', function () {
+        let currentActiveSelection = document.querySelector(`${Product.Class.swatchDropdown}.active`);
+        if (currentActiveSelection && currentActiveSelection != this.nextElementSibling) {
+          currentActiveSelection.classList.remove('active');
+          currentActiveSelection.previousElementSibling.setAttribute('aria-expanded', 'false');
+        }
         this.nextElementSibling.classList.toggle('active');
         this.setAttribute('aria-expanded','true');
         if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
@@ -161,7 +166,7 @@ Product = {
         freeMode: true,
         preloadImages: true,
         updateOnImagesReady: true,
-        initialSlide: initialIndex,
+        initialSlide: initialIndex-1,
         navigation: {
           nextEl: ".swiper-btn-next",
           prevEl: ".swiper-btn-prev",
@@ -178,7 +183,7 @@ Product = {
         thumbs: {
           swiper: thumnail,
         },
-        initialSlide: initialIndex,
+        initialSlide: initialIndex-1,
         preloadImages: true,
         updateOnImagesReady: true
       });

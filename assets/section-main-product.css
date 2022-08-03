@@ -1271,6 +1271,7 @@ fieldset.product-form__input .form__label {
   cursor: pointer;
   background-color: #fff;
   user-select: none;
+  text-transform: capitalize;
 }
 
 .product-detail .product-swatch__label svg {

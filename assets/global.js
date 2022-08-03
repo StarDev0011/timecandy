@@ -947,7 +947,6 @@ class VariantRadios extends VariantSelects {
   constructor() {
     super();
   }
-
   updateOptions() {
     const fieldsets = Array.from(this.querySelectorAll('fieldset'));
     this.options = fieldsets.map((fieldset) => {
