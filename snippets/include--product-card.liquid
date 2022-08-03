@@ -1,7 +1,7 @@
 {% liquid
   assign on_sale = false
   assign sold_out = true
-  assign option_size = product.options | size
+  assign option_size = product.variants | size
   if product.compare_at_price > product.price
     assign on_sale = true
   endif
@@ -61,7 +61,7 @@
           Email when available
         </a>
       {% elsif option_size > 1 %}
-        {%  if product.title contains "Personalized" %}
+        {% if product.title contains "Personalized" %}
         <a href="{{ product.url }}" class="btn--disabled card-product__btn">Customize <span class="visually-hidden">{{  product.title }}</span></a>
         {%  else %}
         <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
