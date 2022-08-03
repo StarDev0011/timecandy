@@ -25,7 +25,7 @@ Product = {
   dropDownOption: () => {
     const variantTile = document.querySelectorAll(`${ Product.Class.swatchInput }:checked`);
     const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
-    const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
+    const swacthInput = document.querySelectorAll(Product.Class.swatchInput);
     const variantLabel = document.querySelectorAll(Product.Class.swatchName);
     const swatchSoldOut = document.querySelector(Product.Class.swatchSoldOut);
     const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');                                  
@@ -102,7 +102,7 @@ Product = {
       })
     })
 
-    swacthIuput.forEach(function(input) {
+    swacthInput.forEach(function(input) {
       input.addEventListener('change', function() {
         const name = input.value;
         this.parentNode.classList.remove('active');

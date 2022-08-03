@@ -975,24 +975,28 @@ function initQuickAdd() {
           const html = btn.closest('.card-product__form').nextElementSibling;
           html.innerHTML += this.responseText;
           html.classList.add('active');
-          let swatchName = document.querySelector('.js-swacth-label');
-          let swatchActive = document.querySelector('.js-swatch-active');
+          var swatchName = document.querySelectorAll('.js-swacth-label');
+          let swatchActive = document.querySelectorAll('.js-swatch-active');
           if (swatchActive != null) {
-            swatchName.innerHTML = swatchActive.textContent;
+            swatchActive.forEach(function(item, i) {
+              swatchName[i].innerHTML = item.textContent;
+            })
           }
-          const dropdown = document.querySelector('.product-form__swatch-dropdown');
+
           const btnClose = document.querySelector('.js-close-quick-add');
           const itemSwacth = document.querySelectorAll('.js-swatch-item');
-          itemSwacth.forEach(function(item) {
+          itemSwacth.forEach(function(item, i) {
             item.onclick = () => {
-              swatchName.innerHTML = item.textContent;
-              dropdown.classList.remove('active');
+              const elmTitle = item.parentNode.previousElementSibling;
+              elmTitle.querySelector('.js-swacth-label').textContent = item.textContent.trim();
+              item.parentNode.classList.remove('active');
             }
 
             item.addEventListener('keydown', function (e) {
               if (e.which === 13) {
-                swatchName.innerHTML = item.textContent;
-                dropdown.classList.remove('active');
+                const elmTitle = item.parentNode.previousElementSibling;
+                elmTitle.querySelector('.js-swacth-label').textContent = item.textContent.trim();
+                item.parentNode.classList.remove('active');
               }
             });
           })
@@ -1001,25 +1005,27 @@ function initQuickAdd() {
             html.classList.remove('active');
           }
 
-          const swatchLabel = document.querySelector('.product-swatch__label');
-          swatchLabel.onclick = (e) => {
-            dropdown.classList.toggle('active');
-            if (dropdown.classList.contains('active')) {
-              e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
-            }else{
-              e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
-            }
-          }
-
-          swatchLabel.addEventListener('keypress', function (e) {
-            if (e.which === 13) {
-              dropdown.classList.toggle('active');
-              if (dropdown.classList.contains('active')) {
+          const swatchLabel = document.querySelectorAll('.product-swatch__label');
+          swatchLabel.forEach(function(itemLabel) {
+            itemLabel.onclick = (e) => {
+              itemLabel.nextElementSibling.classList.toggle('active');
+              if (itemLabel.nextElementSibling.classList.contains('active')) {
                 e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
               }else{
                 e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
               }
             }
+
+            itemLabel.addEventListener('keypress', function (e) {
+              if (e.which === 13) {
+                itemLabel.nextElementSibling.classList.toggle('active');
+                if (itemLabel.nextElementSibling.classList.contains('active')) {
+                  e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
+                }else{
+                  e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
+                }
+              }
+            });
           });
         }
       }
