@@ -848,7 +848,8 @@ fieldset.product-form__input .form__label {
   .product-popup-modal__content table {
     display: block;
     max-width: fit-content;
-    overflow-x: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     white-space: nowrap;
     margin: 0;
   }
@@ -1270,6 +1271,7 @@ fieldset.product-form__input .form__label {
   cursor: pointer;
   background-color: #fff;
   user-select: none;
+  text-transform: capitalize;
 }
 
 .product-detail .product-swatch__label svg {
@@ -1309,7 +1311,8 @@ fieldset.product-form__input .form__label {
   width: 100%;
   z-index: 2;
   max-height: 350px;
-  overflow-x: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: none;
 }
 

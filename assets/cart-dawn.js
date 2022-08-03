@@ -138,6 +138,16 @@ CartDawn = {
     $('body').on('click', CartDawn.Selector.btnAddToCart, function (e) {
       e.preventDefault();
       const personalizedMessage = document.querySelector('#personalized-message');
+      let currentDecadeValue = document.querySelector('input[name="properties[Decade]"]');
+      let decadeOption = document.querySelector('input[name="decade-input"]:checked');
+
+      if (decadeOption) {
+        if (currentDecadeValue) {
+          currentDecadeValue.value = decadeOption.value;
+        } else {
+          $(this).parents('form').append(`<input type="hidden" name="properties[Decade]" value="${decadeOption.value}">`);
+        }
+      }
       if (personalizedMessage) {
         if (personalizedMessage.value.length == '') {
           personalizedMessage.classList.add('error');

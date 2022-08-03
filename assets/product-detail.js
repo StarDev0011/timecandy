@@ -7,7 +7,8 @@ Product = {
     swatchLabel: '.product-swatch__label',
     swatchImage: '.js-swatch-image',
     swatchSoldOut: '.js-option-sold-out',
-    btnReadMore: '.js-read-more'
+    btnReadMore: '.js-read-more',
+    swatchDropdown: '.product-form__swatch-dropdown[role="listbox"]'
   },
 
   init: function() {
@@ -19,10 +20,10 @@ Product = {
   dropDownOption: () => {
     const variantTile = document.querySelectorAll(`${ Product.Class.swatchInput }:checked`);
     const swatchLabel = document.querySelectorAll(Product.Class.swatchLabel);
-    const swacthIuput = document.querySelectorAll(Product.Class.swatchInput);
+    const swacthInput = document.querySelectorAll(Product.Class.swatchInput);
     const variantLabel = document.querySelectorAll(Product.Class.swatchName);
     const swatchSoldOut = document.querySelector(Product.Class.swatchSoldOut);
-    const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');
+    const dropdown = document.querySelectorAll('.product-form__swatch-dropdown');                                  
 
     variantTile.forEach(function (item, index) {
       variantLabel[index].textContent = item.value;
@@ -40,11 +41,48 @@ Product = {
     }
 
     swatchLabel.forEach(function(itemLabel) {
+      let positionDropdown = window.innerHeight - itemLabel.getBoundingClientRect().bottom;
+      let heightDropdown;
+      document.addEventListener('scroll', function () {
+        positionDropdown = window.innerHeight - itemLabel.getBoundingClientRect().bottom;
+        itemLabel.addEventListener('click', function () {
+          heightDropdown = this.nextElementSibling.offsetHeight;
+          if (positionDropdown <= heightDropdown) {
+            this.nextElementSibling.style.cssText=`
+              bottom: 50px;
+              top: auto;
+            `
+          }else{
+            this.nextElementSibling.style.cssText=`
+              bottom: auto;
+              top: 100%;
+            `
+          }
+        })
+      });
+
       itemLabel.addEventListener('click', function () {
+        let currentActiveSelection = document.querySelector(`${Product.Class.swatchDropdown}.active`);
+        if (currentActiveSelection && currentActiveSelection != this.nextElementSibling) {
+          currentActiveSelection.classList.remove('active');
+          currentActiveSelection.previousElementSibling.setAttribute('aria-expanded', 'false');
+        }
         this.nextElementSibling.classList.toggle('active');
         this.setAttribute('aria-expanded','true');
         if(this.nextElementSibling.classList.contains('active')) this.setAttribute('aria-expanded','true')
         else this.setAttribute('aria-expanded','false');
+        heightDropdown = this.nextElementSibling.offsetHeight;
+        if (positionDropdown <= heightDropdown) {
+          this.nextElementSibling.style.cssText=`
+            bottom: 50px;
+            top: auto;
+          `
+        }else{
+          this.nextElementSibling.style.cssText=`
+            bottom: auto;
+            top: 100%;
+          `
+        }
       });
 
       itemLabel.addEventListener('keypress', function (e) {
@@ -64,7 +102,7 @@ Product = {
       })
     })
 
-    swacthIuput.forEach(function(input) {
+    swacthInput.forEach(function(input) {
       input.addEventListener('change', function() {
         const name = input.value;
         this.parentNode.classList.remove('active');
@@ -91,34 +129,12 @@ Product = {
 
       input.addEventListener('keydown', function(e){
         if ((e.keyCode || e.which) === 27) {
-          console.log(124);
           this.parentNode.classList.remove('active');
         }
       })
     })
 
-    // document.addEventListener('click', (e) => {
-    //   if (!e.target.matches('.product-swatch__label')) {
-    //     for (let i = 0; i < dropdown.length; i++) {
-    //       var openDropdown = dropdown[i];
-    //       if (openDropdown.classList.contains('active')) {
-    //         openDropdown.classList.toggle('active');
-    //       }
-    //     }
-    //   }
-    // });
-    // $('body').on('change', Product.Class.swatchInput, function() {
-    //   const name = $(this).val();
-    //   $(Product.Class.swatchName).text(name);
-    //   $('.product-form__swatch-dropdown').slideToggle(200);
 
-    //   if($(Product.Class.swatchImage).length) {
-    //     const image = $(this).next().find('.product-form__swatch-image').attr('src');
-    //     const textSoldOut =  $(this).next().find('.product-form__swatch-soldout').text();
-    //     $(Product.Class.swatchImage).attr('src', image).show();
-    //     $(Product.Class.swatchSoldOut).text(textSoldOut);
-    //   }
-    // })
   },
 
   readMoreDesc: () => {
@@ -139,33 +155,69 @@ Product = {
   },
 
   sliderProductImages: () => {
-    var thumnail = new Swiper('.js-swiper-thumnail', {
-      direction: 'horizontal',
-      slidesPerView: 4,
-      spaceBetween: 4,
-      slidesPerGroup: 1,
-      freeMode: true,
-      preloadImages: true,
-      updateOnImagesReady: true,
-      navigation: {
-        nextEl: ".swiper-btn-next",
-        prevEl: ".swiper-btn-prev",
-        clickable: true
-      },
-      breakpoints: {
-        900: {
-          direction: 'vertical',
+    let initialSlide = document.querySelector('[data-initial]');
+    if (initialSlide != null ) {
+      let initialIndex = parseInt(initialSlide.dataset.index);
+      let thumnail = new Swiper('.js-swiper-thumnail', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 4,
+        slidesPerGroup: 1,
+        freeMode: true,
+        preloadImages: true,
+        updateOnImagesReady: true,
+        initialSlide: initialIndex-1,
+        navigation: {
+          nextEl: ".swiper-btn-next",
+          prevEl: ".swiper-btn-prev",
+          clickable: true
+        },
+        breakpoints: {
+          900: {
+            direction: 'vertical',
+          }
         }
-      }
-    });
-    var Swipes = new Swiper('.js-swiper-main', {
-      spaceBetween: 10,
-      thumbs: {
-        swiper: thumnail,
-      },
-      preloadImages: true,
-      updateOnImagesReady: true
-    });
+      });
+      let Swipes = new Swiper('.js-swiper-main', {
+        spaceBetween: 10,
+        thumbs: {
+          swiper: thumnail,
+        },
+        initialSlide: initialIndex-1,
+        preloadImages: true,
+        updateOnImagesReady: true
+      });
+    }else{
+
+      let thumnail = new Swiper('.js-swiper-thumnail', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 4,
+        slidesPerGroup: 1,
+        freeMode: true,
+        preloadImages: true,
+        updateOnImagesReady: true,
+        navigation: {
+          nextEl: ".swiper-btn-next",
+          prevEl: ".swiper-btn-prev",
+          clickable: true
+        },
+        breakpoints: {
+          900: {
+            direction: 'vertical',
+          }
+        }
+      });
+      let Swipes = new Swiper('.js-swiper-main', {
+        spaceBetween: 10,
+        thumbs: {
+          swiper: thumnail,
+        },
+        preloadImages: true,
+        updateOnImagesReady: true
+      });
+
+    }
   }
 };
 
