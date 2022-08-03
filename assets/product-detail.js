@@ -15,11 +15,6 @@ Product = {
     this.dropDownOption();
     this.readMoreDesc();
     this.sliderProductImages();
-    // let giangvip = document.querySelector('variant-radios')
-    // giangvip.getVariantData()
-    // giangvip.updateOptions()
-    // giangvip.updateMasterId()
-    // console.dir(giangvip)
   },
 
   dropDownOption: () => {
@@ -155,33 +150,69 @@ Product = {
   },
 
   sliderProductImages: () => {
-    var thumnail = new Swiper('.js-swiper-thumnail', {
-      direction: 'horizontal',
-      slidesPerView: 4,
-      spaceBetween: 4,
-      slidesPerGroup: 1,
-      freeMode: true,
-      preloadImages: true,
-      updateOnImagesReady: true,
-      navigation: {
-        nextEl: ".swiper-btn-next",
-        prevEl: ".swiper-btn-prev",
-        clickable: true
-      },
-      breakpoints: {
-        900: {
-          direction: 'vertical',
+    let initialSlide = document.querySelector('[data-initial]');
+    if (initialSlide != null ) {
+      let initialIndex = parseInt(initialSlide.dataset.index);
+      let thumnail = new Swiper('.js-swiper-thumnail', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 4,
+        slidesPerGroup: 1,
+        freeMode: true,
+        preloadImages: true,
+        updateOnImagesReady: true,
+        initialSlide: initialIndex,
+        navigation: {
+          nextEl: ".swiper-btn-next",
+          prevEl: ".swiper-btn-prev",
+          clickable: true
+        },
+        breakpoints: {
+          900: {
+            direction: 'vertical',
+          }
         }
-      }
-    });
-    var Swipes = new Swiper('.js-swiper-main', {
-      spaceBetween: 10,
-      thumbs: {
-        swiper: thumnail,
-      },
-      preloadImages: true,
-      updateOnImagesReady: true
-    });
+      });
+      let Swipes = new Swiper('.js-swiper-main', {
+        spaceBetween: 10,
+        thumbs: {
+          swiper: thumnail,
+        },
+        initialSlide: initialIndex,
+        preloadImages: true,
+        updateOnImagesReady: true
+      });
+    }else{
+
+      let thumnail = new Swiper('.js-swiper-thumnail', {
+        direction: 'horizontal',
+        slidesPerView: 4,
+        spaceBetween: 4,
+        slidesPerGroup: 1,
+        freeMode: true,
+        preloadImages: true,
+        updateOnImagesReady: true,
+        navigation: {
+          nextEl: ".swiper-btn-next",
+          prevEl: ".swiper-btn-prev",
+          clickable: true
+        },
+        breakpoints: {
+          900: {
+            direction: 'vertical',
+          }
+        }
+      });
+      let Swipes = new Swiper('.js-swiper-main', {
+        spaceBetween: 10,
+        thumbs: {
+          swiper: thumnail,
+        },
+        preloadImages: true,
+        updateOnImagesReady: true
+      });
+
+    }
   }
 };
 

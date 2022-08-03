@@ -975,7 +975,7 @@ function initQuickAdd() {
           const html = btn.closest('.card-product__form').nextElementSibling;
           html.innerHTML += this.responseText;
           html.classList.add('active');
-          var swatchName = document.querySelectorAll('.js-swacth-label');
+          let swatchName = document.querySelectorAll('.js-swacth-label');
           let swatchActive = document.querySelectorAll('.js-swatch-active');
           if (swatchActive != null) {
             swatchActive.forEach(function(item, i) {

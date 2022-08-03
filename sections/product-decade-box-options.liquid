@@ -7,9 +7,8 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
-{% comment %}
+
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{% endcomment %}
 <script src="{{ 'product-detail.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -45,7 +44,7 @@
                 endif
               -%}
               {%- for media in product.media -%}
-                <li role="listitem" id="Slide-{{ section.id }}-{{ media.id }}" class="swiper-slide product__media-item {% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                <li {% if media.id == product.selected_or_first_available_variant.featured_media.id %}data-initial{% endif %} data-index="{{forloop.index}}" role="listitem" id="Slide-{{ section.id }}-{{ media.id }}" class="swiper-slide product__media-item {% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                   {%- assign media_position = media_position | default: 0 | plus: 1 -%}
                   {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true %}
                 </li>
@@ -112,7 +111,7 @@
                       {%- endif -%}
                     {%- endcapture -%}
                     {%- assign media_index = media_index | plus: 1 -%}
-                    <li id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}" class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}" data-target="{{ section.id }}-{{ media.id }}"  data-media-position="{{ media_index }}">
+                    <li id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}" data-index="{{forloop.index}}" class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}" data-target="{{ section.id }}-{{ media.id }}"  data-media-position="{{ media_index }}">
                       {%- if media.media_type == 'model' -%}
                         <span class="thumbnail__badge" aria-hidden="true">
                           {%- render 'icon-3d-model' -%}
@@ -288,15 +287,13 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
-
-            {% unless product.has_only_default_variant %}
+            {%- unless product.has_only_default_variant -%}
               {%- assign optionSize = product.options_with_values.size -%}
               {% if optionSize == 1 %}
                 {% assign decadePosition = 'last' %}
               {% elsif optionSize == 2 or optionSize == 3 %}
                 {% assign decadePosition = 2 %}
               {% endif %}
-
               <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                 {% for option in product.options_with_values %}
                   {% assign optionName = option.name | downcase %}
@@ -304,7 +301,6 @@
                   {% if optionName == 'size' %}
                     {% assign is_size = true %}
                   {% endif %}
-
                   <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
                     <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                     {% unless is_size %}
@@ -326,7 +322,7 @@
                               {% unless is_size %} class="js-variant-input" {% endunless %}
                               {% if option.selected_value == value %}checked{% endif %}
                         >
-                        <label tabindex="0" {% if is_size %} class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                        <label tabindex="0" {% if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                           {% if value contains 'decade gift box' %}
                             {{ value | downcase | split: 'decade gift box' }}
                           {% else %}
@@ -336,7 +332,6 @@
                       {%- endfor -%}
                     </div>
                   </fieldset>
-
                   {% if product.tags contains 'Decades: Line-item' %}    
                     {% unless product.handle == 'large-decade-candy-gift-box' %}
                       {% if decadePosition == 2 and forloop.index == 2 %}
@@ -357,7 +352,7 @@
                   {{ product.variants | json }}
                 </script>
               </variant-radios>
-            {% endunless %}
+            {%- endunless -%}
 
             <noscript class="product-form__noscript-wrapper-{{ section.id }}">
               <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
@@ -393,12 +388,11 @@
                   <span class="product-form__error-message"></span>
                 </div>
 
-                {%- form 'product', product, id: product_form_id, class: 'form', data-type: 'add-to-cart-form', data-productid: product.id -%}
+                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form', data-productid: product.id -%}
                   <!-- Begin ReCharge code -->
                   {% if product.available %}{% render 'subscription-product' with product as product %}{% endif %}
                   <!-- End ReCharge code -->
                   {% render 'product-personalized-fields' %}
-
                   {% if section.settings.enable %}
                     {% if section.settings.optional_extras != blank %}
                       {% render 'include--optional-extras' %}
@@ -434,6 +428,8 @@
                       <button
                         type="submit"
                         name="add"
+                        data-add-to-cart
+                        aria-label="Add product {{ product.title }} to your cart"
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                       >
@@ -511,19 +507,20 @@
                 <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
               </p>
             {%- endif -%}
-            {%- when 'add_on' -%}
-              {% if settings.ss_enable %}
-                <script type="searchspring/personalized-recommendations" profile="fun-extras">
-                  seed = "{{ product.variants[0].sku }}";
-                  options = {
-                      siteId : "mb4gls",
-                  };
-                </script>
-              {% else %}
-                {% render 'include--fun-extras' %}
-              {% endif %}
+          {%- when 'add_on' -%}
+            {% if settings.ss_enable %}
+              <script type="searchspring/personalized-recommendations" profile="fun-extras">
+                seed = "{{ product.variants[0].sku }}";
+                options = {
+                    siteId : "mb4gls",
+                };
+              </script>
+            {% else %}               
+              {% render 'include--fun-extras' %}
+            {% endif %}
+
             {% when 'wishlist' %}
-              {% render 'include--wishlist', btn_wishlist: block.settings.btn_wishlist %}
+            {% render 'include--wishlist', btn_wishlist: block.settings.btn_wishlist %}
           {%- endcase -%}
         {%- endfor -%}
         {% if product.has_only_default_variant %}
@@ -585,7 +582,6 @@
   {%- endfor -%}
   </div>
 </section>
-
 {% if section.settings.show_desc %}
   {% if product.description %}
     {% render 'product-description--gift-box', image: section.settings.image_meta %}
