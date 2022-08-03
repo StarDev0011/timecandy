@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   padding: 17px 20px 17px 14px;
+  margin: 0;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
 }
@@ -55,6 +56,14 @@
 
 .mini-cart__header-title {
   padding-right: 5px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #262626;
+  font-family: var(--my-font);  
 }
 
 .mini-cart__icon-cart {
@@ -710,7 +719,7 @@
   width: 100%;
   height: 100%;
   background-color: rgb(255, 255, 255,  .6);
-  z-index: 999;
+  z-index: 2000;
   display: none;
 }
 

@@ -249,6 +249,8 @@
 }
 .article-template__content > p > a {
   text-decoration: none;
+  text-transform: none;
+  font-size: inherit;
 }
 .article-template__content > p > a u {
   background: var(--color-button);

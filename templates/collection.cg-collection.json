@@ -1,94 +1,7 @@
 {
   "sections": {
-    "corporate-gifts": {
-      "type": "collection--corporate-gifts",
-      "blocks": {
-        "734471e4-686b-436e-8ae0-35e1c8e15168": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "candy-gift-boxes-decade-candy-gift-boxes"
-          }
-        },
-        "69c29a76-870c-4855-947a-b77b6c3180dd": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "candy-gift-boxes-personalized-candy-gift-boxes"
-          }
-        },
-        "8549fcdc-55b4-43aa-8b71-239f8c66b61e": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "candy-gift-boxes-predesigned-decade-candy-gift-boxes"
-          }
-        },
-        "e83fb5d9-21e5-445b-ad35-eaa80ee8ebbd": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "retro-candy-assortments"
-          }
-        },
-        "2b44408b-9a0e-40f0-8fe4-6417d9ea5078": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "candy-you-ate-as-a-kid-decade-bags-collection"
-          }
-        },
-        "840436ca-a270-437f-a013-8687edf5e80a": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "candy-gifts-candy-bouquets"
-          }
-        },
-        "038a237f-a179-42a1-a941-43c4cf2ad5c0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "subscription-boxes"
-          }
-        },
-        "cfa1e037-ad9d-4954-84c7-ed663314f8b8": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "walk-the-candy-aisle-candy-plastic-tubs"
-          }
-        },
-        "00d0f32f-4aa2-4494-ad34-77a0aa92c66a": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "gift-mugs"
-          }
-        },
-        "96098b40-b8d4-432e-820d-32c17e7be7f6": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "more-assortments"
-          }
-        },
-        "e0f10097-9bba-4311-b262-cc3ffb66e949": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "walk-the-candy-aisle-lunch-box-candy"
-          }
-        }
-      },
-      "block_order": [
-        "734471e4-686b-436e-8ae0-35e1c8e15168",
-        "69c29a76-870c-4855-947a-b77b6c3180dd",
-        "8549fcdc-55b4-43aa-8b71-239f8c66b61e",
-        "e83fb5d9-21e5-445b-ad35-eaa80ee8ebbd",
-        "2b44408b-9a0e-40f0-8fe4-6417d9ea5078",
-        "840436ca-a270-437f-a013-8687edf5e80a",
-        "038a237f-a179-42a1-a941-43c4cf2ad5c0",
-        "cfa1e037-ad9d-4954-84c7-ed663314f8b8",
-        "00d0f32f-4aa2-4494-ad34-77a0aa92c66a",
-        "96098b40-b8d4-432e-820d-32c17e7be7f6",
-        "e0f10097-9bba-4311-b262-cc3ffb66e949"
-      ],
-      "settings": {
-      }
-    },
     "16584148595fda12b3": {
       "type": "section-content",
-      "disabled": true,
       "blocks": {
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
           "type": "text",
@@ -117,14 +30,13 @@
         "heading": "<p>Here's the heading<\/p>",
         "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>",
         "text_align": "center",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 40
       }
     },
     "1658415159dc5b2f07": {
       "type": "section-column-richtext",
-      "disabled": true,
       "blocks": {
         "48b28036-a6e3-4ec8-a641-8f87ed37c2a3": {
           "type": "richtext",
@@ -148,7 +60,7 @@
       "settings": {
         "heading": "<p>Who Invented Bubble Gum?<\/p>",
         "content": "",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "align_content": "left",
         "padding_top": 40,
         "padding_bottom": 52
@@ -156,7 +68,6 @@
     },
     "1658415180d311c72b": {
       "type": "section-column-richtext-2",
-      "disabled": true,
       "blocks": {
         "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc": {
           "type": "richtext",
@@ -182,14 +93,13 @@
         "text_align": "center",
         "heading": "<p>Who Invented Bubble Gum?<\/p>",
         "content": "<p>Here is some supporting text to go along with this big title<\/p>",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 52
       }
     },
     "1658415969f2db5c73": {
       "type": "section-multicolumn-richtext",
-      "disabled": true,
       "blocks": {
         "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d": {
           "type": "text",
@@ -222,14 +132,13 @@
         "heading": "<p>Heading<\/p>",
         "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
         "text_align": "left",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 52
       }
     }
   },
   "order": [
-    "corporate-gifts",
     "16584148595fda12b3",
     "1658415159dc5b2f07",
     "1658415180d311c72b",

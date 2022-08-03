@@ -2561,3 +2561,51 @@ div#bookmarkit {
 #smartwishlist [aria-label="Remove from Wishlist"] #wishlist_icon::after {
   content: 'Remove from Wishlist';
 }
+
+
+.stamped-summary-actions .stamped-summary-actions-newreview {
+  display: inline-flex;
+  justify-content: center;
+  /* align-items: center; */
+  border: 1px solid rgba(var(--color-button), var(--alpha-button-background)) !important;
+  border-color: rgba(var(--color-button), var(--alpha-button-background));
+  height: 50px;
+  border-radius: var(--buttons-radius-outset) !important;
+  padding: 13px 40px 14px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-size: 15px;
+  box-sizing: border-box;
+  line-height: 24px;
+  text-decoration: none;
+  color: rgb(var(--color-button-text)) !important;
+  transition: all 0.35s cubic-bezier(0.5, -1, 0.5, 2);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgba(var(--color-button), var(--alpha-button-background)) !important;
+  transform: scale(1);
+}
+.stamped-summary-actions .stamped-summary-actions-newreview:hover {
+  color: rgb(var(--color-secondary-button-background)) !important;
+  border-color: rgb(var(--color-secondary-button-border)) !important;
+  background-color: rgba(var(--color-secondary-button-border), 1) !important;
+  box-shadow: inset rgb(0 0 0 / 25%) 0px 0px 2px 1px !important;
+  transform: scale(0.985);
+}
+.stamped-content .stamped-reviews div.stamped-review {
+  position: relative;
+  padding-top: 80%;
+  background-color: #fff;
+  box-shadow: 0px 2px 9px rgb(0 0 0 / 25%);
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  touch-action: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: border-color .25s ease-in;  
+}
+.stamped-content .stamped-reviews div.stamped-review:hover {
+  border-color: #0C5273 !important;
+}
