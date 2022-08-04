@@ -54,6 +54,7 @@ CartDawn = {
       } else {
         $.get('/cart?view=dawn', function (data) {
           $('body').addClass('open-minicart');
+          $('.js-mini-cart').focus();
           $('.js-mini-cart').html(data);
           setTimeout(() => {
             $('.js-close-minicart').focus()
@@ -272,6 +273,7 @@ CartDawn = {
   closeCart: () => {
     $('body').on('click', '.js-close-minicart', function () {
       $('body').removeClass('open-minicart');
+      $('body').attr('aria-hidden', 'false');
       $('.Rise__widget, #gorgias-chat-container').show();
     });
 
@@ -399,6 +401,7 @@ CartDawn = {
         $('#' + labelID).trigger('click');
         if (labelID === 'GiftMessage') {
           $('.modal-cart-gift').fadeIn(200);
+          $('.modal-cart-gift').focus();
         }
       }
     });
@@ -409,6 +412,7 @@ CartDawn = {
       e.preventDefault();
       $.get('/cart?view=dawn', function (data) {
         $('body').addClass('open-minicart');
+        $('body').attr('aria-hidden', 'true');
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
         $('.Rise__widget, #gorgias-chat-container').hide();

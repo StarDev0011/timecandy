@@ -638,7 +638,7 @@
   padding: 12px 16px;
   min-height: 111px;
   outline: none !important;
-  box-shadow: none !important;
+  box-shadow: none;
   border: 1px solid #484e57;
   border-radius: 3px;
   font-size: 16px;
@@ -673,6 +673,10 @@
   font-family: var(--font-2);
   align-items: center;
   margin-bottom: 24px;
+}
+
+.modal-cart-gift__delay input:focus-visible{
+  
 }
 
 .modal-cart-gift__checked {

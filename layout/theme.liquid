@@ -205,7 +205,7 @@
   <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qhadjxviu0hzvyxjtczfxg" async="true"></script>  
   </head>
 
-  <body style="scroll-behavior: smooth" class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
+  <body aria-hidden="false" class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDCTQW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
