@@ -6,6 +6,11 @@ function getFocusableElements(container) {
   );
 }
 
+document.querySelector('.skip-to-content-link[href="#MainContent"]').addEventListener('click', function(e){
+  e.preventDefault();
+  window.scrollTo({top:document.querySelector('#MainContent').getBoundingClientRect().top+1, behavior: 'smooth'});
+})
+
 document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   summary.setAttribute('role', 'button');
   summary.setAttribute('aria-expanded', 'false');

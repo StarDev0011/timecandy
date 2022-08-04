@@ -873,13 +873,17 @@ fieldset.product-form__input .form__label {
   padding-right: 1.3rem;
   padding-left: 0;
   height: 4.4rem;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 1px;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
 }
 
 .product-popup-modal__button:hover {
+  font-weight: 700;
   text-decoration-thickness: 0.2rem;
+  color: inherit;
+  text-underline-offset: 3px;
+  transition: offset 0.1s;
 }
 
 .product-popup-modal__content-info {
@@ -1185,17 +1189,34 @@ fieldset.product-form__input .form__label {
 .product-detail .product__description a,
 .product-detail .product__description p,
 .product-detail .product__description strong {
-  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   font-family: var(--font-2);
   color: var(--color-text);
 }
 
+.product-detail .product__description a{
+  text-underline-offset: 1px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness var(--duration-short) ease;
+}
+
+.product-detail .product__description a:hover{
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness var(--duration-short) ease;
+}
+
 .product__read-more {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 12px !important;
   line-height: 18px !important;
+  text-decoration-thickness: 1px;
+}
+
+.product__read-more:hover{
+  font-weight: 700;
+  text-underline-offset: 3px;
+  transition: text-underline-offset 0.1s;
 }
 
 .product__height-desc {
