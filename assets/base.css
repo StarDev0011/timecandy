@@ -647,7 +647,7 @@ a,
   border: none;
   box-shadow: none;
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 1px;
   color: rgb(var(--color-link-text));
   background-color: transparent;
   font-size: 12px;
@@ -3048,9 +3048,7 @@ div.modal-background {
 .roller,
 .collection__desc a,
 .main-page-template .rte a,
-.blog-categories__list a,
-.article-template__info a,
-.article-template__content a {
+.blog-categories__list a{
   color: inherit;
   position: relative;
   text-decoration: none;
@@ -3059,18 +3057,14 @@ div.modal-background {
 
 .roller:hover,
 .collection__desc a:hover,
-.main-page-template .rte a:hover,
-.article-template__info a:hover,
-.article-template__content a:hover {
+.main-page-template .rte a:hover{
   text-decoration-thickness: 0;
   font-weight: 700 !important;
 }
 
 .roller:after,
 .collection__desc a:after,
-.main-page-template .rte a:after,
-.article-template__info a:after,
-.article-template__content a:after {
+.main-page-template .rte a:after{
   content: "";
   background-color: rgb(var(--color-light-text));
   position: absolute;
@@ -3092,12 +3086,24 @@ div.modal-background {
   transition: height 0.1s;
 }
 
+.article-template__info a,
+.article-template__content a{
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  transition: offset 0.1s;
+}
+
+.article-template__info a:hover,
+.article-template__content a:hover{
+  font-weight: 700;
+  text-underline-offset: 3px;
+  transition: offset 0.1s;
+}
+
 .roller:hover::after,
 .collection__desc a:hover:after,
 .main-page-template .rte a:hover:after,
-.blog-categories__list a:hover:after,
-.article-template__info a:hover:after,
-.article-template__content a:hover:after  {
+.blog-categories__list a:hover:after{
   bottom: -2px;
 }
 .no-tooltips {

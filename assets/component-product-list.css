@@ -554,13 +554,6 @@ img {
   margin-bottom: 7px;
 }
 
-.quick-add .product-form__input label {
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  font-family: var(--font-2) !important;
-}
-
 .quick-add .product-form__swatch-size {
   display: flex;
   flex-wrap: wrap;

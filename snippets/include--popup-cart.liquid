@@ -1,0 +1,52 @@
+{{ 'component-popup-cart.css' | asset_url | stylesheet_tag }}
+<div class="gift-cart-modal" aria-label="Product added to cart!" tabindex="0">
+  <div class="gift-cart-modal__container">
+    {% if settings.label != blank %}
+      <div class="card-product-label">
+        <label tabindex="0" class="card-product-label__item gift-cart-modal__label" aria-label="{{- settings.label -}}">
+          {{- settings.label -}}
+        </label>
+      </div>
+    {% endif %}
+
+    <a class="gift-cart-modal__close" href="#" aria-label="Close">
+      {% render 'icon-close' %}
+    </a>
+    <div class="gift-cart-modal__content">
+      <div class="gift-cart-modal__inner">
+        {% if settings.heading != blank %}
+          <h3 tabindex="0" class="gift-cart-modal__header" aria-label="{{- settings.heading -}}">
+            {{- settings.heading -}}
+          </h3>
+        {% endif %}
+        <div class="swiper js-products-slider">
+          <div class="swiper-wrapper gift-cart-modal__product col-3">
+            {%- for product in settings.collection_1.products limit: settings.limit_pr_1 -%}
+              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+            {% endfor %}
+          </div>
+          <div class="custom-swiper-pagination swiper-pagination"></div>
+        </div>
+        <form action="/cart" method="post" novalidate>
+          <div class="gift-cart-modal__action">
+            <a class="gift-cart-modal__btn button button-light" href="/cart" aria-label="View cart"> View cart </a>
+            <button class="gift-cart-modal__btn button" type="submit" aria-label="Proceed to checkout"> Proceed to checkout </button>
+          </div>
+        </form>
+      </div>
+      {% if settings.show_product_like %}
+        <div class="gift-cart-modal__inner">
+          <h3 tabindex="0" class="gift-cart-modal__header" aria-label="{{- settings.heading_2 -}}"> {{- settings.heading_2 -}} </h3>
+          <div class="swiper js-products-slider cart-product-recommendations">
+            <div class="swiper-wrapper gift-cart-modal__product col-3">
+              {%- for product in settings.collection_2.products limit: settings.limit_pr_2 -%}
+                {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+              {% endfor %}
+            </div>
+            <div class="custom-swiper-pagination swiper-pagination"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
