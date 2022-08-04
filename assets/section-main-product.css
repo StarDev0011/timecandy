@@ -1520,7 +1520,7 @@ div.rc_block__type {
 }
 
 #rc_radio_options .rc_radio {
-  display: none;
+  position: absolute;
 }
 
 #rc_radio_options .rc_radio:checked + label::after {

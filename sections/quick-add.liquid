@@ -13,10 +13,11 @@
     {%- form 'product', product, id: product_form_id, class: 'installment caption-large' -%}
       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-        {%- for option in product.options_with_values -%}
+        {% for option in product.options_with_values %}
           {%- assign optionName = option.name | downcase -%}
           {% assign is_size = false %}
-          {% if optionName == 'decade' and product.variants.size > 2 %}
+          {% assign optionSize = option.values | size %}
+          {% if optionName == 'decade' or optionSize > 3 %}
             {% assign is_size = true %}
           {% endif %}
           <fieldset class="js product-form__input">
@@ -50,7 +51,7 @@
               {%- endfor -%}
             </div>
           </fieldset>
-        {%- endfor -%}
+        {% endfor %}
         <script type="application/json">
           {{ product.variants | json }}
         </script>

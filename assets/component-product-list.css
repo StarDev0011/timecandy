@@ -592,10 +592,9 @@ img {
 }
 
 .quick-add .product-swatch__label {
-  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  font-family: var(--my-font);
+  font-family: var(--font-2);
   color: var(--color-text);
   padding: 13px 16px 10px;
   border: 1px solid #ccc;
