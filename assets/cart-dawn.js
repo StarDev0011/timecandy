@@ -30,7 +30,7 @@ CartDawn = {
     btnDonate: '.js-product-donate'
   },
 
-  doAjaxAddToCart: (item) => {
+  doAjaxAddToCart: (item, btn) => {
     $('.cart-overlay').show();
     $.post(window.Shopify.routes.root + 'cart/add.js', item.serialize(), null, 'json').done(function (item) {
       $('.modal-error').fadeOut(500);
@@ -41,44 +41,42 @@ CartDawn = {
         'ecomm_totalvalue': item.price / 100
       });
 
-      if (window.show_popup == true) {
-        if ($('.template-product').length) {
-          $.get('/cart?view=popup-cart', function (data) {
-            $('.js-popup-cart-list').html(data);
-            const slider = '.js-products-slider';
-            CartDawn.productSider(slider, 3);
-            $('.gift-cart-modal').fadeIn(300);
-          })
-        } else {
-          $.get('/cart?view=dawn', function (data) {
-            $('body').addClass('open-minicart');
-            $('.js-mini-cart').html(data);
-            CartDawn.shippingInsurance();
-            $('.cart-overlay').hide();
-
-            //         var cart_items = [];
-
-            //         $.each(CartJS.cart.items, function(i,v) {
-            //           cart_items.push(v.sku + '-' + v.variant_id);
-            //         });
-
-            //         //Ads updates - 5/18/20
-            //         gtag('event', 'page_view', {
-            //           'send_to': 'AW-968343338',
-            //           'ecomm_pagetype': 'cart',
-            //           'ecomm_prodid': cart_items,
-            //           'ecomm_totalvalue': CartJS.cart.total_price / 100
-            //         });
-          });
-        }
+      const isPopup = btn.getAttribute('data-popup-cart');
+      if(isPopup == 'true') {
+        const slider = '.js-products-slider';
+        const cartModal = $('.gift-cart-modal');
+        CartDawn.productSider(slider, 3);
+        setTimeout(() => {
+          $('.gift-cart-modal__label').first().focus()
+        }, 1000);
+        cartModal.fadeIn(300);
+        $('.cart-overlay').hide();
       } else {
         $.get('/cart?view=dawn', function (data) {
           $('body').addClass('open-minicart');
           $('.js-mini-cart').html(data);
+          setTimeout(() => {
+            $('.js-close-minicart').focus()
+          }, 1000);
           CartDawn.shippingInsurance();
           $('.cart-overlay').hide();
+
+          //         var cart_items = [];
+
+          //         $.each(CartJS.cart.items, function(i,v) {
+          //           cart_items.push(v.sku + '-' + v.variant_id);
+          //         });
+
+          //         //Ads updates - 5/18/20
+          //         gtag('event', 'page_view', {
+          //           'send_to': 'AW-968343338',
+          //           'ecomm_pagetype': 'cart',
+          //           'ecomm_prodid': cart_items,
+          //           'ecomm_totalvalue': CartJS.cart.total_price / 100
+          //         });
         });
       }
+
       $.get('/cart.js', null, null, 'json').done(function (data) {
         $(CartDawn.Selector.count).text(data.item_count);
         $('.js-cart-count').html(data.item_count);
@@ -137,6 +135,7 @@ CartDawn = {
   initAddToCart: () => {
     $('body').on('click', CartDawn.Selector.btnAddToCart, function (e) {
       e.preventDefault();
+      const btn = this;
       const personalizedMessage = document.querySelector('#personalized-message');
       let currentDecadeValue = document.querySelector('input[name="properties[Decade]"]');
       let decadeOption = document.querySelector('input[name="decade-input"]:checked');
@@ -154,11 +153,11 @@ CartDawn = {
         } else {
           personalizedMessage.classList.remove('error');
           const productItem = $(this).parents('form');
-          CartDawn.doAjaxAddToCart(productItem);
+          CartDawn.doAjaxAddToCart(productItem, btn);
         }
       } else {
         const productItem = $(this).parents('form');
-        CartDawn.doAjaxAddToCart(productItem);
+        CartDawn.doAjaxAddToCart(productItem, btn);
       }
     });
   },

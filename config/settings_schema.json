@@ -1387,6 +1387,73 @@
     ]
   },
   {
+    "name": "Popup Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_popup_cart",
+        "label": "Show Popup Cart",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Product added to cart!"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Making it a gift? add these specials!"
+      },
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Select Collection Gift Cards"
+      },
+      {
+        "type": "range",
+        "id": "limit_pr_1",
+        "label": "Product per row",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "header",
+        "content": "Product Recommendations"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_like",
+        "label": "Display You May Also Like",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading_2",
+        "label": "Heading",
+        "default": "You May Also Like"
+      },
+      {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Select Collection"
+      },
+      {
+        "type": "range",
+        "id": "limit_pr_2",
+        "label": "Product per row",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "default": 3
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.favicon.name",
     "settings": [
       {

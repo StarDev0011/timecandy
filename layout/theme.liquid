@@ -225,7 +225,7 @@
       {{ content_for_layout }}
     </main>
     {% if template contains 'product' %}
-      {% section 'popop-cart' %}
+      {% render 'include--popup-cart' %}
     {% endif %}
     {% section 'footer' %}
 
