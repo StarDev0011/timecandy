@@ -234,7 +234,7 @@
   }
 }
 .article-template__content p {
-  margin: 0;
+  /* margin: 0; */
   font-family: var(--font-default);
 }
 .article-template__content > p {
