@@ -100,6 +100,9 @@
     "collection": "candy-gifts",
     "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
     "placeholder": "Search for anything!, Licorice, Laffy Taffy, Pop Rocks, Zagnut, Bubble Gum, Rock Candy, Jelly Beans, Now and Laters, Chocolate, Nerds, Jolly Rancher, Sugar Free, Runts",
+    "show_popup_cart": true,
+    "collection_1": "candy-by-decade-1920s-candy",
+    "collection_2": "candy-by-decade-1980s-candy",
     "favicon": "shopify:\/\/shop_images\/favicon_32x32_7b80a147-4e82-4eaa-ae67-74e565963c77.webp",
     "currency_code_enabled": true,
     "ss_enable": true,
@@ -287,16 +290,6 @@
         ],
         "settings": {
           "footer-misc-scripts-enable": false
-        }
-      },
-      "popop-cart": {
-        "type": "popop-cart",
-        "settings": {
-          "show_popup_cart": false,
-          "label": "Product added to cart!",
-          "heading": "Making it a gift? add these specials!",
-          "show_product_like": true,
-          "heading_2": "You May Also Like"
         }
       }
     },
