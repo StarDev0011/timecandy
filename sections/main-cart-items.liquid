@@ -325,7 +325,7 @@
                   {{- cart.attributes['Gift Message'] -}}
                 </textarea>
                 <button class="modal-cart-gift__btn js-attr-message button">
-                  <span class="modal-cart-gift__btn-text">Apply Gift Message</span>
+                  <span role="alert" class="modal-cart-gift__btn-text">Apply Gift Message</span>
                   <div class="modal-cart-gift__btn-icon"></div>
                 </button>
               </div>
@@ -353,7 +353,7 @@
                 <input type="date" class="modal-cart-gift__date" id="trip-start" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
                 <button class="modal-cart-gift__btn js-attr-date button">
-                  <span class="modal-cart-gift__btn-text">Confirm date</span>
+                  <span role="alert" class="modal-cart-gift__btn-text">Confirm date</span>
                   <div class="modal-cart-gift__btn-icon"></div>
                 </button>
               </div>
