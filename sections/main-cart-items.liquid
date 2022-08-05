@@ -405,10 +405,10 @@
               <span class="cart-summary__title">TAX</span>
               <span class="cart-summary__text"> CALCULATED AT CHECKOUT </span>
             </div>
-            <div class="cart-summary__item">
+            {% comment %} <div class="cart-summary__item">
               <span class="cart-summary__title">REWARD POINTS EARNED</span>
               <span class="cart-summary__text"> {{ point_count }} </span>
-            </div>
+            </div> {% endcomment %}
             <div class="cart-summary__item">
               <span class="cart-summary__title">SUBTOTAL</span>
               <span class="cart-summary__text" data-total-price> {{- cart.total_price | money -}} </span>
