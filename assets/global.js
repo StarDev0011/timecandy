@@ -1031,6 +1031,13 @@ function initQuickAdd() {
               }
             });
           });
+
+          document.querySelectorAll('.product-form__swatch-size label').forEach((labelItem) => {
+            labelItem.addEventListener('click', function(event){
+              document.querySelectorAll('label').forEach((e) => e.setAttribute('aria-pressed', 'false'));
+              event.currentTarget.setAttribute('aria-pressed', 'true');
+            })
+          })
         }
       }
       xmlhttp.open('GET', baseUrl+'?view=quick-add');
