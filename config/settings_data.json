@@ -105,7 +105,7 @@
     "collection_2": "walk-the-candy-aisle-retro-toys",
     "favicon": "shopify:\/\/shop_images\/favicon_32x32_7b80a147-4e82-4eaa-ae67-74e565963c77.webp",
     "currency_code_enabled": true,
-    "ss_enable": true,
+    "ss_enable": false,
     "checkout_logo_image": "shopify:\/\/shop_images\/otc-checkout-logo_a0a8433d-714d-4695-8dd7-8367f6eeaa7e.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
