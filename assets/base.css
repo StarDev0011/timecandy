@@ -174,6 +174,11 @@ html {
   box-sizing: border-box;
   font-size: calc(var(--font-body-scale) * 62.5%);
   height: 100%;
+  scroll-behavior: smooth;
+}
+
+#MainContent {
+  margin-top:1px;
 }
 
 body {
@@ -3088,6 +3093,7 @@ div.modal-background {
 
 .article-template__info a,
 .article-template__content a{
+  display: inline;
   text-decoration: underline;
   text-underline-offset: 1px;
   transition: offset 0.1s;
