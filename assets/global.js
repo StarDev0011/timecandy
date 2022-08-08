@@ -6,9 +6,21 @@ function getFocusableElements(container) {
   );
 }
 
-document.querySelector('.skip-to-content-link[href="#MainContent"]').addEventListener('click', function(e){
-  e.preventDefault();
-  window.scrollTo({top:document.querySelector('#MainContent').getBoundingClientRect().top+1, behavior: 'smooth'});
+function callbackFocus(element) {
+  element.removeAttribute('tabindex');
+}
+
+function pageLinkFocus(element) {
+  let selectedElement = document.querySelector(element);
+  selectedElement.setAttribute('tabIndex', '-1');
+  selectedElement.focus();
+  selectedElement.addEventListener('blur', callbackFocus(selectedElement), {one: true});
+}
+
+document.querySelectorAll('a[href*="#"]').forEach((e) => {
+  e.addEventListener('click', function(el){
+    pageLinkFocus(el.currentTarget.hash);
+  })
 })
 
 document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {

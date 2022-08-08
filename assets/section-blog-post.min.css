@@ -244,7 +244,7 @@
   line-height: 24px;
 }
 .article-template__content > p > span:last-of-type {
-  display: block;
+  display: inline;
   margin-bottom: 32px;
 }
 .article-template__content > p > a {

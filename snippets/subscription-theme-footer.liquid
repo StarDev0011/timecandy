@@ -65,61 +65,28 @@
       $(document).on("click", checkout_button_selectors, function (e) {
         if (!e.target.hasAttribute("data-disable-recharge")) {
           e.preventDefault();
-          $(".initial-load").addClass("loading");
-          $("#cart__side .cart__side-wrapper").css({ opacity: ".5" });
-          var paramCart =
-            "&cart_token=" +
-            (document.cookie.match("(^|; )cart=([^;]*)") || 0)[2];
-          $.ajax({
-            type: "GET",
-            url: "/cart.js",
-            dataType: "text",
-            success: function (data) {
-              var cartData = JSON.parse(data);
-
-              if (getCookie("shippingInsurance") !== "false") {
-                var hasInsurance = false;
-                //loop through cart and remove any shipping insurances not the current one
-                $.each(cartData.items, function (i, v) {
-                  if ($.inArray(v.id, window.variantArray) !== -1) {
-                    if (v.id != getCookie("shippingInsuranceVariant")) {
-                      CartJS.updateItemById(v.id, 0);
-                    } else {
-                      hasInsurance = true;
-                    }
-                  }
-                });
-                if (!hasInsurance) {
-                  CartJS.addItem(
-                    getCookie("shippingInsuranceVariant"),
-                    1,
-                    {},
-                    {
-                      // Define a success callback to display a success message.
-                      success: function (data, textStatus, jqXHR) {
-                        redirectToCheckout(JSON.stringify(cartData));
-                      },
-                      // Define an error callback to display an error message.
-                      error: function (jqXHR, textStatus, errorThrown) {
-                        //return false;
-                        console.log(errorThrown);
-                        redirectToCheckout(JSON.stringify(cartData));
-                      },
-                    }
-                  );
-                } else {
-                  redirectToCheckout(JSON.stringify(cartData));
-                }
-              } else {
-                $.each(cartData.items, function (i, v) {
-                  if ($.inArray(v.id, window.variantArray) !== -1) {
-                    CartJS.updateItemById(v.id, 0);
-                  }
-                });
-                redirectToCheckout(JSON.stringify(cartData));
-              }
-            },
-          });
+						// reChargeSaveCartNoteAndRedirectToCart();
+						// window.location.href = '/cart';
+						var paramCart = '&cart_token=' + (document.cookie.match('(^|; )cart=([^;]*)')||0)[2];
+						$.ajax({
+							type: 'GET',
+							url: '/cart.js',
+							dataType: 'text',
+							success: function(data) {
+								if (data.indexOf("subscription_id") > -1) {
+									var paramDomain = 'myshopify_domain={{ shop.permanent_domain }}';
+									try {
+										var paramLinker = "&" + ga.getAll()[0].get('linkerParam');
+									} catch (err) {
+										var paramLinker = '';
+									}
+									var paramCustomer = '{% if customer %}&customer_id={{ customer.id }}&customer_email={{ customer.email }}{% endif %}';
+									window.location = "https://checkout.rechargeapps.com/r/checkout?" + paramDomain +  paramCart + paramLinker + paramCustomer;
+								} else {
+									window.location = '/checkout';
+								}
+							}
+						});
         } else {
           console.info("ReCharge disabled");
         }
