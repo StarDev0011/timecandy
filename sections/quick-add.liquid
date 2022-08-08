@@ -40,7 +40,7 @@
                       form="{{ product_form_id }}"
                       {% if option.selected_value == value %}checked{% endif %}
                 >
-                <label aria-pressed="false" role="button" tabindex="0" {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                <label aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}" role="button" tabindex="0" {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                   {% assign value_lc = value | downcase %}
                   {% if value_lc contains 'decade gift box' %}
                   {{ value_lc | split: 'decade gift box' }}

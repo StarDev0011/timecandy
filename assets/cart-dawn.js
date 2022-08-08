@@ -272,18 +272,21 @@ CartDawn = {
 
   closeCart: () => {
     $('body').on('click', '.js-close-minicart', function () {
+      $('#cart-icon-bubble').focus();
       $('body').removeClass('open-minicart');
       $('body').attr('aria-hidden', 'false');
       $('.Rise__widget, #gorgias-chat-container').show();
     });
 
     $('body').on('click', '.js-close-gift', function () {
+      $('#cart-icon-bubble').focus();
       $('.modal-cart-gift').fadeOut(200);
     });
 
     $(document).on('keydown', function (e) {
       if (e.keyCode == 27) {
         if ($('body').hasClass('open-minicart') && $('.modal-cart-gift').css('display', 'none')) {
+          $('#cart-icon-bubble').focus();
           $('body').removeClass('open-minicart');
           $('.Rise__widget, #gorgias-chat-container').show();
         }
@@ -410,6 +413,11 @@ CartDawn = {
   openModalCart: () => {
     $('body').on('click', '.js-open-cart', function (e) {
       e.preventDefault();
+      let cartModal = document.querySelector('.js-mini-cart');
+      cartModal.setAttribute('tabIndex', '-1');
+      cartModal.focus();
+      cartModal.addEventListener('blur', this.removeAttribute('tabindex'), {one: true});
+
       $.get('/cart?view=dawn', function (data) {
         $('body').addClass('open-minicart');
         $('body').attr('aria-hidden', 'true');
