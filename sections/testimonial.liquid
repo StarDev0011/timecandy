@@ -10,21 +10,6 @@
     }
   }
 {%- endstyle -%}
-{% if product.handle != blank %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    $.getJSON( "/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json", function( data ) {
-        if (data.length) {
-        //         var $memoriesContainer = $( "#memories-container");
-
-        //         $.each(data, function( key, val ) {
-        //           $memoriesContainer.append( "<div><p class='color-blue'>" + val.title + "</p><p class='font-secondary color-dark-grey'>"+ val.content + "</p></div>" );
-        //         });
-        }
-    });
-});
-</script>
-{% endif %}
 {% if section.blocks.size > 0 %}
     {{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
     <div class="page-width  testimonial section-{{ section.id }}-padding">
@@ -44,83 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {% endif %}
             {% render 'candy-memory-form' %}
         </div>
-            <div id="slider-testimonial" class="swiper swiper-container" aria-hidden="true" tabindex="-1">
-                <div aria-owns="swiper-slide-item" role="list" class="swiper-wrapper">
-                    {% for block in section.blocks %}
-                    {%- assign product = block.settings.product -%}
-                        <div role="listitem" class="swiper-slide">
-                            <div class="testimonial-grid">
-                                {%- if section.settings.bg_image != blank -%}
-                                <img class="testimonial-bg-img"
-                                    src="{{ section.settings.bg_image | img_url: '750x' }}"
-                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                    alt="{{ section.settings.bg_image.alt | escape }}"
-                                    loading="lazy"
-                                    width="{{ section.settings.bg_image.width }}"
-                                    height="{{ section.settings.bg_image.height }}"
-                                >
-                                {%- endif -%}
-                            <div class="testimonial__wrap ">
-                                <div class="testimonial__img-wrap">
-                                    <a class="testimonial__link" href="{% if block.settings.product != blank %}{{ product.url }}{% else %}{{ routes.collections_url }}{% endif %}">
-                                        <div class="testimonial__img  {% if product == blank %} placeholder {% endif %}">
-                                            {%- if product == blank -%}
-                                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                                            {%- else -%}
-                                                <img
-                                                    srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | img_url: '165x' }} 165w,{%- endif -%}
-                                                    {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | img_url: '360x' }} 360w,{%- endif -%}
-                                                    {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | img_url: '535x' }} 535w,{%- endif -%}
-                                                    {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | img_url: '750x' }} 750w,{%- endif -%}"
-                                                    src="{{ product.image | img_url: '750x' }}"
-                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                    alt="{{ product.featured_image.alt | escape }}"
-                                                    loading="lazy"
-                                                    width="{{ product.featured_image.width }}"
-                                                    height="{{ product.featured_image.height }}"
-                                                >
-                                            {%- endif -%}
-                                            {%- if product != blank -%}
-                                                <img class="testimonial-bg-mb"
-                                                    src="{{ section.settings.bg_image | img_url: '750x' }}"
-                                                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                    alt="{{ section.settings.bg_image.alt | escape }}"
-                                                    loading="lazy"
-                                                    width="{{ section.settings.bg_image.width }}"
-                                                    height="{{ section.settings.bg_image.height }}"
-                                                >
-                                            {%- endif -%}
-                                        </div>
-                                    </a>
-                                    {% if product != blank %}
-                                        <a class="roller" href="{{ product.url }}"> {{ block.settings.button_label }}</a>
-                                    {% endif %}
-                                </div>
-                                <div class="testimonial__content">
-                                    {% if block.settings.reviewer != blank %}
-                                            <div class=" h5 name-reviewer ">
-                                                {{ block.settings.reviewer }}
-                                            </div>
-                                        {% endif %}
-                                        {% if block.settings.state != blank %}
-                                            <div class="state-reviewer ">
-                                                {{ block.settings.state }}
-                                            </div>
-                                        {% endif %}
-                                        {% if block.settings.content_review != blank %}
-                                            <div class="content-review">
-                                                {{ block.settings.content_review }}
-                                            </div>
-                                        {% endif %}
-                                        {% if block.settings.link_readmore != blank %}
-		                                  <a class="roller" href="{{block.settings.link_readmore }}"> Read more <span class="visually-hidden">about {{ block.settings.button_label }} memories</span></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+        <div id="slider-testimonial" class="swiper swiper-container" aria-hidden="true" tabindex="-1">
+            <div aria-owns="swiper-slide-item" role="list" class="swiper-wrapper" id="memories-container">
+                {% render 'candy-memories', product: product, section: section %}
+            </div>
             <div class="customer-controls-slide" aria-hidden="true">
                 <div class="swiper-button-next">{% render "icon-next" %}</div>
                 <div class="swiper-button-prev">{% render "icon-prev" %}</div>
@@ -129,53 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 {% endif %}
-<script type="text/javascript">
-    function makeAllButCurrentSlideInert(slider) {
-        const currentSlideEl = slider.slides[slider.activeIndex];
-      
-        for (const slide of slider.slides) {
-          if (slide == currentSlideEl) {
-            slide.setAttribute("aria-hidden", "false");
-            var els = slide.querySelectorAll('a');
-            for (var i=0; i < els.length; i++) {
-                els[i].setAttribute("tabindex", "0");
-            }                    
-          } else {
-            slide.setAttribute("aria-hidden", "true");
-            var els = slide.querySelectorAll('a');
-            for (var i=0; i < els.length; i++) {
-                els[i].setAttribute("tabindex", "-1");
-            } 
-          }
-        }
-    };    
+<script type="text/javascript">    
     document.addEventListener('DOMContentLoaded', function() {
-        var Swipes = new Swiper('#slider-testimonial.swiper-container', {
-            loop: true,
-            slidesPerView: 1,
-            autoHeight: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            keyboard: {
-              enabled: true,
-              onlyInViewport: false,
-            },  
-            on: {
-                init() {
-                  makeAllButCurrentSlideInert(this);
-                },
-                slideChange() {
-                  makeAllButCurrentSlideInert(this);
-                },
-              },                    
-        });
-
         const btnForm = document.querySelector('.js-btn-form');
         const form = document.querySelector('.candy-memory-form');
         if(btnForm) {
