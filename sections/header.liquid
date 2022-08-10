@@ -24,7 +24,12 @@
   .section-header {
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  .stop-anim-btn {
+    position: absolute;
+    width: 70px;
+    right: 0px;
+    top: -8px;
+  }
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
@@ -216,6 +221,9 @@
                       spellcheck="false"
                     {%- endif -%}
                   >
+                  <a href="javascript:;" class="stop-anim-btn">
+                    <img src="{{'icon-pause.png'| asset_img_url :'master'}}">
+                  </a>
                   <input type="hidden" name="options[prefix]" value="last">
                   <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                     <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
@@ -425,6 +433,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
   let autotype_placeholder;
+  let anim_flag=true;
   document.addEventListener("DOMContentLoaded", () => {
     let text = window.placeholder;
     console.log(text.split(','));
@@ -435,11 +444,21 @@
   });
   $('#Search-In-Modal-1').focus(function() {
     console.log('focus');
+    $('.stop-anim-btn').css('display', 'none');
   });
   $('#Search-In-Modal-1').blur(function() {
     console.log('blur');
+    if(anim_flag){
+      $('.stop-anim-btn').css('display', 'block');
+
+    }
   });
-  
+  $('.stop-anim-btn').click(function() {
+    console.log('stop anim');
+    $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
+    $('.stop-anim-btn').css('display', 'none');
+    anim_flag = false;
+  })
 </script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
