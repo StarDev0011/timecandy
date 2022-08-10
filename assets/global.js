@@ -1026,9 +1026,9 @@ function initQuickAdd() {
             itemLabel.onclick = (e) => {
               itemLabel.nextElementSibling.classList.toggle('active');
               if (itemLabel.nextElementSibling.classList.contains('active')) {
-                e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
+                e.currentTarget.setAttribute("aria-expanded","true");
               }else{
-                e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
+                e.currentTarget.setAttribute("aria-expanded","false");
               }
             }
 
@@ -1036,9 +1036,9 @@ function initQuickAdd() {
               if (e.which === 13) {
                 itemLabel.nextElementSibling.classList.toggle('active');
                 if (itemLabel.nextElementSibling.classList.contains('active')) {
-                  e.currentTarget.previousElementSibling.setAttribute("aria-expanded","true");
+                  e.currentTarget.setAttribute("aria-expanded","true");
                 }else{
-                  e.currentTarget.previousElementSibling.setAttribute("aria-expanded","false");
+                  e.currentTarget.setAttribute("aria-expanded","false");
                 }
               }
             });
