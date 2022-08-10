@@ -31,7 +31,11 @@
     }
   }
 {%- endstyle -%}
-
+<style>
+  #Search-In-Modal-1:focus::placeholder {
+    color: transparent;
+  }
+</style>
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -418,15 +422,24 @@
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 
 <script defer src="{{ 'typewriter.js' | asset_url }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+  let autotype_placeholder;
   document.addEventListener("DOMContentLoaded", () => {
     let text = window.placeholder;
     console.log(text.split(','));
-    new TypeWriter('#Search-In-Modal-1', text.split(','),{
+    autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
         writeDelay: 100,
         deleteDelay: 40
     });
   });
+  $('#Search-In-Modal-1').focus(function() {
+    console.log('focus');
+  });
+  $('#Search-In-Modal-1').blur(function() {
+    console.log('blur');
+  });
+  
 </script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
