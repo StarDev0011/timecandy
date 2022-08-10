@@ -26,9 +26,9 @@
   }
   .stop-anim-btn {
     position: absolute;
-    width: 70px;
+    width: 50px;
     right: 0px;
-    top: -8px;
+    top: 1px;
   }
   @media screen and (min-width: 750px) {
     .section-header {
@@ -438,9 +438,14 @@
     let text = window.placeholder;
     console.log(text.split(','));
     autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
-        writeDelay: 100,
-        deleteDelay: 40
+        writeDelay: 200,
+        deleteDelay: 80
     });
+    console.log(document.cookie);
+    if(document.cookie.includes('hideanim=hide')) {
+      $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
+      $('.stop-anim-btn').css('display', 'none');
+    }
   });
   $('#Search-In-Modal-1').focus(function() {
     console.log('focus');
@@ -455,6 +460,8 @@
   });
   $('.stop-anim-btn').click(function() {
     console.log('stop anim');
+    setCookie("hideanim", "hide");
+    console.log(getCookie("hideanim"));
     $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
     $('.stop-anim-btn').css('display', 'none');
     anim_flag = false;
