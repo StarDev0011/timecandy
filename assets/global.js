@@ -1061,17 +1061,27 @@ function initQuickAdd() {
 window.onload = function() {
   initQuickAdd();
 }
+function setAriaExpanded(el) {
+  document.querySelectorAll('.item-has-megamenu').forEach((a) => a.setAttribute('aria-expanded', 'false'));
+  el.setAttribute('aria-expanded', 'true');
+}
+
+function removeAriaExpanded(el) {
+  el.setAttribute('aria-expanded', 'false');
+}
 
 document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((item) => {
-  item.addEventListener('mouseover', (event) => {
-    document.querySelectorAll('.item-has-megamenu').forEach((a) => a.setAttribute('aria-expanded', 'false'));
-    event.currentTarget.setAttribute('aria-expanded', 'true');
-  });
+  item.addEventListener('mouseover', (e) => setAriaExpanded(e.currentTarget));
 
-  item.addEventListener('mouseleave', (e) => {
-    e.currentTarget.setAttribute('aria-expanded', 'false');
-  });
+  item.addEventListener('mouseleave', (e) => removeAriaExpanded(e.currentTarget));
 
+  item.addEventListener('keyup', (e) => {
+    if ((e.keyCode || e.which) === 9) setAriaExpanded(e.currentTarget)
+  })
+
+  item.addEventListener('keydown', (e) => {
+    if ((e.keyCode || e.which) === 27) removeAriaExpanded(e.currentTarget);
+  })
   item.addEventListener('keydown', (e) => {
     const hideMegaMenu = `
       opacity: 0;

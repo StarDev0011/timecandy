@@ -302,7 +302,7 @@
                     {% assign is_size = true %}
                   {% endif %}
                   <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
-                    <label for="option-name-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
+                    <label for="option-{{ option.name }}-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                     {% unless is_size %}
                       <div class="product-swatch__label" tabindex="0" aria-expanded="false"
                         aria-labelledby="product-form__swatch-dropdown"
@@ -313,7 +313,7 @@
                         </span>
                       </div>
                     {% endunless %}
-                    <div id="option-name-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+                    <div id="option-{{ option.name }}-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
                       {%- for value in option.values -%}
                         <input tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                               name="{{ option.name }}"
