@@ -219,7 +219,8 @@ CartDawn = {
       if (qty == '') {
         $(this).val(1);
       }
-      $(target).focus();
+      let id = '#' + target.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+      $(id).focus();
     });
   },
 
@@ -232,7 +233,7 @@ CartDawn = {
       item.find(CartDawn.Selector.qty).val(number);
 
       let qty = item.find(CartDawn.Selector.qty).val();
-      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.btnPlus);
+      CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
     });
   },
 
@@ -248,7 +249,7 @@ CartDawn = {
       }
 
       let qty = item.find(CartDawn.Selector.qty).val();
-      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.btnMinus);
+      CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
     })
   },
 
@@ -256,7 +257,7 @@ CartDawn = {
     $('body').on('change', CartDawn.Selector.qty, function () {
       let id = $(this).attr('data-cart-id'),
         qty = $(this).val();
-      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.qty);
+      CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
     });
   },
 

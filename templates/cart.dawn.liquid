@@ -54,7 +54,7 @@
               {% assign included = true %}
             {% endif %}
           {% endfor %}
-          <div class="mini-cart__item" data-id="{{ item.id }}">
+          <div class="mini-cart__item" data-id="{{ item.key }}">
               <a class="mini-cart__link" href="{{ item.url }}">
                 <div class="mini-cart__picture">
                   <img loading="lazy" width="100" height="100" class="mini-cart__image" src="{{ item | img_url: 'x250' }}" alt="{{ item.image.alt | escape }}">
@@ -96,12 +96,12 @@
               <div class="mini-cart__group">
                 <div class="mini-cart__wrapper">
                   <div class="mini-cart__qty">
-                    <button aria-label="Remove 1 {{ item.product.title }}" type="button" class="mini-cart__btn cart__btn-minus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
+                    <button aria-label="Remove 1 {{ item.product.title }}" id="item_{{ item.key }}_minus" type="button" class="mini-cart__btn cart__btn-minus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-minus' -%}
                     </button>
-                    <label class="visually-hidden" for="cart-{{ item.id }}">Quantity (Note: Changing this quantity will automatically update your cart.)</label>
-                    <input class="mini-cart__qty-input cart-{{ item.id }}" id="cart-{{ item.id }}" data-cart-id="{{ item.id }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
-                    <button aria-label="Add 1 {{ item.product.title }}" type="button" class="mini-cart__btn cart__btn-plus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
+                    <label class="visually-hidden" for="cart-{{ item.key }}">Quantity (Note: Changing this quantity will automatically update your cart.)</label>
+                    <input class="mini-cart__qty-input cart-{{ item.key }}" id="cart-{{ item.key }}" data-cart-id="{{ item.key }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" {% if included %} disabled {% endif %}>
+                    <button aria-label="Add 1 {{ item.product.title }}" id="item_{{ item.key }}_plus" type="button" class="mini-cart__btn cart__btn-plus{% if included %} cart__btn-disabled {% endif %}" {% if included %} disabled {% endif %}>
                       {%- render 'icon-plus' -%}
                     </button>
                   </div>
