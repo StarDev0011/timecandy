@@ -31,7 +31,11 @@
     }
   }
 {%- endstyle -%}
-
+<style>
+  #Search-In-Modal-1:focus::placeholder {
+    color: transparent;
+  }
+</style>
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -417,11 +421,30 @@
 
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 
+<script defer src="{{ 'typewriter.js' | asset_url }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  let autotype_placeholder;
+  document.addEventListener("DOMContentLoaded", () => {
+    let text = window.placeholder;
+    console.log(text.split(','));
+    autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
+        writeDelay: 100,
+        deleteDelay: 40
+    });
+  });
+  $('#Search-In-Modal-1').focus(function() {
+    console.log('focus');
+  });
+  $('#Search-In-Modal-1').blur(function() {
+    console.log('blur');
+  });
+  
+</script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
-      this.animationWorker();
     }
 
     connectedCallback() {
@@ -506,93 +529,7 @@
     //  this.searchModal.close(false);
     }
 
-    animationWorker() {
-      const string = window.placeholder;
-      var texts = string.split(', ');
-      const input = document.querySelector('input[type="search"]');
-      const animationWorker = function (input, texts) {
-        this.input = input;
-        this.defaultPlaceholder = this.input.getAttribute('placeholder');
-        this.texts = texts;
-        this.curTextNum = 0;
-        this.curPlaceholder = '';
-        this.blinkCounter = 0;
-        this.animationFrameId = 0;
-        this.animationActive = false;
-        this.input.setAttribute('placeholder',this.curPlaceholder);
 
-        this.switch = (timeout) => {
-          this.input.classList.add('imitatefocus');
-          setTimeout(
-            () => {
-              this.input.classList.remove('imitatefocus');
-              if (this.curTextNum == 0)
-                this.input.setAttribute('placeholder',this.defaultPlaceholder);
-              else
-                this.input.setAttribute('placeholder',this.curPlaceholder);
-
-              setTimeout(
-                () => {
-                  this.input.setAttribute('placeholder',this.curPlaceholder);
-                  if(this.animationActive)
-                    this.animationFrameId = window.requestAnimationFrame(this.animate)},
-                timeout);
-            },
-            timeout);
-        }
-
-        this.animate = () => {
-          if(!this.animationActive) return;
-          let curPlaceholderFullText = this.texts[this.curTextNum];
-          let timeout = 900;
-          if (this.curPlaceholder == curPlaceholderFullText+'|' && this.blinkCounter==3) {
-            this.blinkCounter = 0;
-            this.curTextNum = (this.curTextNum >= this.texts.length-1)? 0 : this.curTextNum+1;
-            this.curPlaceholder = '|';
-            this.switch(3000);
-            return;
-          }
-          else if (this.curPlaceholder == curPlaceholderFullText+'|' && this.blinkCounter<3) {
-            this.curPlaceholder = curPlaceholderFullText;
-            this.blinkCounter++;
-          }
-          else if (this.curPlaceholder == curPlaceholderFullText && this.blinkCounter<3) {
-            this.curPlaceholder = this.curPlaceholder+'|';
-          }
-          else {
-            this.curPlaceholder = curPlaceholderFullText
-              .split('')
-              .slice(0,this.curPlaceholder.length+1)
-              .join('') + '|';
-            timeout = 150;
-          }
-          this.input.setAttribute('placeholder',this.curPlaceholder);
-          setTimeout(
-            () => { if(this.animationActive) this.animationFrameId = window.requestAnimationFrame(this.animate)},
-            timeout);
-        }
-
-        this.stop = () => {
-          this.animationActive = false;
-          window.cancelAnimationFrame(this.animationFrameId);
-        }
-
-        this.start = () => {
-          this.animationActive = true;
-          this.animationFrameId = window.requestAnimationFrame(this.animate);
-          return this;
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        let aw = new animationWorker(input, texts).start();
-        input.addEventListener("focus", (e) => aw.stop());
-        input.addEventListener("blur", (e) => {
-          aw = new animationWorker(input, texts);
-          if(e.target.value == '') setTimeout( aw.start, 5000);
-        });
-      });
-    }
   }
 
   customElements.define('sticky-header', StickyHeader);
