@@ -44,6 +44,11 @@
   #Search-In-Modal-1:focus::placeholder {
     color: transparent;
   }
+  @media (max-width: 749px) {
+    .stop-anim-btn {
+      width: 40px;
+    }
+  }
 </style>
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
@@ -226,7 +231,7 @@
                     {%- endif -%}
                   >
                   <a href="javascript:;" class="stop-anim-btn">
-                    <img src="{{'icon-pause.png'| asset_img_url :'master'}}">
+                    <img src="{{'icon-pause.png'| asset_img_url :'master'}}" alt="Stop animation" class="lazyload">
                   </a>
                   <input type="hidden" name="options[prefix]" value="last">
                   <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
