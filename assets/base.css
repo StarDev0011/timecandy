@@ -3128,3 +3128,12 @@ div[data-widget-load-type="continue"] ul.stamped-pagination li.next a {
 }
 
 /* END STAMPED REVIEWS */
+
+.swiper-button-lock{
+  display: block !important;
+}
+
+.swiper-button-lock svg{
+  width: 100%;
+  height: 100%;
+}

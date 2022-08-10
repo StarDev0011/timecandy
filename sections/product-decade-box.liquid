@@ -301,13 +301,13 @@
                         <div class="product-swatch__label" tabindex="0" aria-expanded="false"
                           aria-labelledby="product-form__swatch-dropdown"
                           role="combobox">
-                          <label for="option" class="js-option-label" id="option-name-{{ product.id }}"></label>
+                          <label for="option" class="js-option-label"></label>
                           <span>
                             {% render 'icon-caret' %}
                           </span>
                         </div>
                       {% endunless %}
-                      <div role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+                      <div id="option-name-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
                         {%- for value in option.values -%}
                           <input tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"

@@ -200,13 +200,13 @@ CartDawn = {
     });
   },
 
-  updateCartAjax: (qty, id) => {
+  updateCartAjax: (qty, id, target) => {
     $('.cart-overlay').show();
     $.post('/cart/change.json', {
       quantity: qty,
       id: id
-    }).done(function (cart) {
-      $.get('/cart?view=dawn', function (data) {
+    }).done(async function (cart) {
+      await $.get('/cart?view=dawn', function (data) {
         $('.cart-overlay').hide();
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
@@ -219,6 +219,7 @@ CartDawn = {
       if (qty == '') {
         $(this).val(1);
       }
+      $(target).focus();
     });
   },
 
@@ -231,7 +232,7 @@ CartDawn = {
       item.find(CartDawn.Selector.qty).val(number);
 
       let qty = item.find(CartDawn.Selector.qty).val();
-      CartDawn.updateCartAjax(qty, id);
+      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.btnPlus);
     });
   },
 
@@ -247,7 +248,7 @@ CartDawn = {
       }
 
       let qty = item.find(CartDawn.Selector.qty).val();
-      CartDawn.updateCartAjax(qty, id);
+      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.btnMinus);
     })
   },
 
@@ -255,7 +256,7 @@ CartDawn = {
     $('body').on('change', CartDawn.Selector.qty, function () {
       let id = $(this).attr('data-cart-id'),
         qty = $(this).val();
-      CartDawn.updateCartAjax(qty, id);
+      CartDawn.updateCartAjax(qty, id, CartDawn.Selector.qty);
     });
   },
 

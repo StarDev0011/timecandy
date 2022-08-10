@@ -1,108 +1,107 @@
 
-{% if product.handle != blank %}
-    <script>
-        document.addEventListener('DOMContentLoaded', async function() {
-            await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
-                .then(res => res.json())
-                .then((data) => {
-                    console.log(data);
-                    if (data.length) {
-                        let memoriesContainer = document.querySelector('#memories-container');
-                        data.forEach((e) => {
-                            memoriesContainer.insertAdjacentHTML('beforeEnd', `
-                                <div role="listitem" class="swiper-slide">
-                                    <div class="testimonial-grid">
-                                        <img class="testimonial-bg-img"
-                                            src="{{ section.settings.bg_image | img_url: '750x' }}"
-                                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                            alt="{{ section.settings.bg_image.alt | escape }}"
-                                            loading="lazy"
-                                            width="{{ section.settings.bg_image.width }}"
-                                            height="{{ section.settings.bg_image.height }}"
-                                        >
-                                        <div class="testimonial__wrap">
-                                            <div class="testimonial__img-wrap">
-                                                <a class="testimonial__link" href="${e.url}">
-                                                    <div class="testimonial__img">
-                                                        <img
-                                                            src="${e.image}"
-                                                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                            loading="lazy"
-                                                        >
-                                                    
-                                                        <img class="testimonial-bg-mb"
-                                                            src="{{ section.settings.bg_image | img_url: '750x' }}"
-                                                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                                                            alt="{{ section.settings.bg_image.alt | escape }}"
-                                                            loading="lazy"
-                                                            width="{{ section.settings.bg_image.width }}"
-                                                            height="{{ section.settings.bg_image.height }}"
-                                                        >
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="testimonial__content">
-                                                <div class="h5 name-reviewer">
-                                                    ${e.title}
+<script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.length) {
+                    let memoriesContainer = document.querySelector('#memories-container');
+                    data.forEach((e) => {
+                        memoriesContainer.insertAdjacentHTML('beforeEnd', `
+                            <div role="listitem" class="swiper-slide">
+                                <div class="testimonial-grid">
+                                    <img class="testimonial-bg-img"
+                                        src="{{ section.settings.bg_image | img_url: '750x' }}"
+                                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                        alt="{{ section.settings.bg_image.alt | escape }}"
+                                        loading="lazy"
+                                        width="{{ section.settings.bg_image.width }}"
+                                        height="{{ section.settings.bg_image.height }}"
+                                    >
+                                    <div class="testimonial__wrap">
+                                        <div class="testimonial__img-wrap">
+                                            <a class="testimonial__link" href="${e.url}">
+                                                <div class="testimonial__img">
+                                                    <img
+                                                        src="${e.image}"
+                                                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                        loading="lazy"
+                                                    >
+                                                
+                                                    <img class="testimonial-bg-mb"
+                                                        src="{{ section.settings.bg_image | img_url: '750x' }}"
+                                                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                                        alt="{{ section.settings.bg_image.alt | escape }}"
+                                                        loading="lazy"
+                                                        width="{{ section.settings.bg_image.width }}"
+                                                        height="{{ section.settings.bg_image.height }}"
+                                                    >
                                                 </div>
-                                                <div class="content-review">
-                                                    ${e.content}
-                                                </div>
-                                                <a class="roller" href="${e.url}"> Read more <span class="visually-hidden">about ${e.title} memories</span></a>
+                                            </a>
+                                        </div>
+                                        <div class="testimonial__content">
+                                            <div class="h5 name-reviewer">
+                                                ${e.title}
                                             </div>
+                                            <div class="content-review">
+                                                ${e.content}
+                                            </div>
+                                            <a class="roller" href="${e.url}"> Read more <span class="visually-hidden">about ${e.title} memories</span></a>
                                         </div>
                                     </div>
                                 </div>
-                            `);
-                        })
-                    }
-                })
-                .catch(err => console.error(err));
+                            </div>
+                        `);
+                    })
+                }
+            })
+            .catch(err => console.error(err));
 
-            function makeAllButCurrentSlideInert(slider) {
-                const currentSlideEl = slider.slides[slider.activeIndex];
-            
-                for (const slide of slider.slides) {
-                if (slide == currentSlideEl) {
-                    slide.setAttribute("aria-hidden", "false");
-                    var els = slide.querySelectorAll('a');
-                    for (var i=0; i < els.length; i++) {
-                        els[i].setAttribute("tabindex", "0");
-                    }                    
-                } else {
-                    slide.setAttribute("aria-hidden", "true");
-                    var els = slide.querySelectorAll('a');
-                    for (var i=0; i < els.length; i++) {
-                        els[i].setAttribute("tabindex", "-1");
-                    } 
-                }
-                }
-            };
-            var Swipes = new Swiper('#slider-testimonial.swiper-container', {
-                loop: true,
-                slidesPerView: 1,
-                autoHeight: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+        function makeAllButCurrentSlideInert(slider) {
+            const currentSlideEl = slider.slides[slider.activeIndex];
+        
+            for (const slide of slider.slides) {
+            if (slide == currentSlideEl) {
+                slide.setAttribute("aria-hidden", "false");
+                var els = slide.querySelectorAll('a');
+                for (var i=0; i < els.length; i++) {
+                    els[i].setAttribute("tabindex", "0");
+                }                    
+            } else {
+                slide.setAttribute("aria-hidden", "true");
+                var els = slide.querySelectorAll('a');
+                for (var i=0; i < els.length; i++) {
+                    els[i].setAttribute("tabindex", "-1");
+                } 
+            }
+            }
+        };
+
+        let Swipes = new Swiper('#slider-testimonial.swiper-container', {
+            loop: true,
+            slidesPerView: 1,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+            },  
+            on: {
+                init() {
+                makeAllButCurrentSlideInert(this);
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+                slideChange() {
+                makeAllButCurrentSlideInert(this);
                 },
-                keyboard: {
-                enabled: true,
-                onlyInViewport: false,
-                },  
-                on: {
-                    init() {
-                    makeAllButCurrentSlideInert(this);
-                    },
-                    slideChange() {
-                    makeAllButCurrentSlideInert(this);
-                    },
-                },                    
-            });
+            },                    
         });
-    </script>
-{% endif %}
+    });
+</script>

@@ -1,0 +1,115 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.89 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.67 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width testimonial section-{{ section.id }}-padding">
+    <div class="testimonial__header">
+        {%- unless section.settings.title == blank -%}
+        <h2 class="h1 heading-center">{{ section.settings.title | escape }}</h2>
+        {%- endunless -%}
+        {% if section.settings.desc != blank %}
+            <div class="testimonial__desc">
+                {{ section.settings.desc }}
+            </div>
+        {% endif %}
+        {% if section.settings.btn != blank %}
+        <div class="testimonial__action">
+            <a class="button testimonial__btn js-btn-form" href="#"> {{ section.settings.btn }} </a>
+        </div>
+        {% endif %}
+        {% render 'candy-memory-form' %}
+    </div>
+    <div id="slider-testimonial" class="swiper swiper-container" aria-hidden="true" tabindex="-1">
+        <div aria-owns="swiper-slide-item" role="list" class="swiper-wrapper" id="memories-container">
+            {% render 'candy-memories', section: section %}
+        </div>
+        <div class="customer-controls-slide" aria-hidden="true">
+            <div class="swiper-button-next">{% render "icon-next" %}</div>
+            <div class="swiper-button-prev">{% render "icon-prev" %}</div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">    
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnForm = document.querySelector('.js-btn-form');
+        const form = document.querySelector('.candy-memory-form');
+        if(btnForm) {
+            btnForm.onclick = (e) => {
+                e.preventDefault();
+                form.classList.toggle('active');
+            }
+        }
+    });
+
+</script>
+{% schema %}
+{
+    "name": "Candy memories",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Heading",
+          "label":"Heading"
+        },
+        {
+            "type": "textarea",
+            "id": "desc",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "btn",
+            "label": "Button"
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 200 ,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_top",
+          "default": 90
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.all.padding.padding_bottom",
+          "default": 120
+        }
+    ],
+    "presets": [
+        {
+            "name": "Candy memories"
+        }
+    ],
+    "templates": ["product"]
+}
+{% endschema %}
