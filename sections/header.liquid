@@ -449,6 +449,7 @@
     if(document.cookie.includes('hideanim=hide')) {
       $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
       $('.stop-anim-btn').css('display', 'none');
+      anim_flag=false;
     }
     else {
       $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: #0c5273;  }</style>');
