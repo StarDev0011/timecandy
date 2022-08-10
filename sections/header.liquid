@@ -25,10 +25,14 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
   .stop-anim-btn {
+    display: none;
     position: absolute;
     width: 50px;
     right: 0px;
     top: 1px;
+  }
+  #Search-In-Modal-1::placeholder {
+    color: transparent;
   }
   @media screen and (min-width: 750px) {
     .section-header {
@@ -445,6 +449,10 @@
     if(document.cookie.includes('hideanim=hide')) {
       $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
       $('.stop-anim-btn').css('display', 'none');
+    }
+    else {
+      $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: #0c5273;  }</style>');
+      $('.stop-anim-btn').css('display', 'block');
     }
   });
   $('#Search-In-Modal-1').focus(function() {
