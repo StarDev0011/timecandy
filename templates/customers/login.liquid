@@ -1,6 +1,14 @@
 {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-account.min.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translate(-20px, -50%);
+  }
+</style>
+
 <div class="customer account__form-wrapper">
   <h1>Login or create account</h1>
 
@@ -134,17 +142,19 @@
               <label for="CustomerPassword">
                 {{ 'customer.login_page.password' | t }}<span class="required">*</span>
               </label>
-
-              <input
-                type="password"
-                value=""
-                name="customer[password]"
-                id="CustomerPassword"
-                autocomplete="current-password"
-                {% if form.errors contains 'form' %}
-                  aria-invalid="true"
-                {% endif %}
-              >
+              <div class="password-input-wraper">
+                <input
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="CustomerPassword"
+                  autocomplete="current-password"
+                  {% if form.errors contains 'form' %}
+                    aria-invalid="true"
+                  {% endif %}
+                >
+                <span toggle="#CustomerPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+              </div>
             </div>
           {%- endif -%}
 
@@ -176,3 +186,16 @@
     </div>
   {%- endif -%}
 </div>
+
+<script>
+  $(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+</script>
