@@ -285,6 +285,15 @@ CartDawn = {
       $('.modal-cart-gift').fadeOut(200);
     });
 
+    $('body').on('keydown', '.js-close-minicart', function (e) {
+      if (e.shiftKey && e.keyCode === 9) {
+        $('#cart-icon-bubble').focus();
+        $('body').removeClass('open-minicart');
+        $('body').attr('aria-hidden', 'false');
+        $('.Rise__widget, #gorgias-chat-container').show();
+      }
+    });
+
     $(document).on('keydown', function (e) {
       if (e.keyCode == 27) {
         if ($('body').hasClass('open-minicart') && $('.modal-cart-gift').css('display', 'none')) {
