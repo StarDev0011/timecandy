@@ -304,25 +304,26 @@
                   <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
                     <label for="option-{{ option.name }}-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                     {% unless is_size %}
-                      <div class="product-swatch__label" tabindex="0" aria-expanded="false"
-                        aria-labelledby="product-form__swatch-dropdown"
-                        role="combobox">
+                      {% capture currentValueIndex %}{%- for value in option.values -%}{% if option.selected_value == value %}{{forloop.index0}}{% endif %}{%- endfor -%}{% endcapture %}
+                      <div class="product-swatch__label product-swatch__selected" tabindex="0" aria-expanded="false" 
+                            aria-labelledby="product-form__swatch-dropdown"
+                            role="combobox" id="variant-{{ option.position }}-{{ currentValueIndex }}">
                         <label for="option" class="js-option-label"></label>
-                        <span>
+                        <span class="dropdown-arrow">
                           {% render 'icon-caret' %}
                         </span>
                       </div>
                     {% endunless %}
-                    <div id="option-{{ option.name }}-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown"  class="{% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}">
+                    <div id="option-{{ option.name }}-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown" class="product-form__swatch-list {% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}" tabindex="-1">
                       {%- for value in option.values -%}
-                        <input tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                              name="{{ option.name }}"
-                              value="{{ value | escape }}"
-                              form="{{ product_form_id }}"
-                              {% unless is_size %} class="js-variant-input" {% endunless %}
-                              {% if option.selected_value == value %}checked{% endif %}
+                        <input style="opacity:0" tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          name="{{ option.name }}"
+                          value="{{ value | escape }}"
+                          form="{{ product_form_id }}"
+                          {% unless is_size %} class="js-variant-input" {% endunless %}
+                          {% if option.selected_value == value %}checked{% endif %}
                         >
-                        <label tabindex="0" {% if is_size %}class="js-variant-active{% if option.selected_value == value %} js-variant-item{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                        <label id="variant-{{ option.position }}-{{ forloop.index0 }}" tabindex="0" class="js-variant-item {% if is_size %}js-variant-item_size{% endif %}{% if option.selected_value == value %}js-variant-active{% endif %}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                           {% if value contains 'decade gift box' %}
                             {{ value | downcase | split: 'decade gift box' }}
                           {% else %}
