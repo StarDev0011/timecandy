@@ -1,6 +1,14 @@
 {{ 'component-buttons.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-account.min.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translate(-20px, -50%);
+  }
+
+</style>
 <div class="customer account__form-wrapper register">
   <svg style="display: none">
     <symbol id="icon-error" viewBox="0 0 13 13">
@@ -104,17 +112,19 @@
       <label for="RegisterForm-password">
         {{ 'customer.register.password' | t }}<span class="required">*</span>
       </label>
-
-      <input
-        type="password"
-        name="customer[password]"
-        id="RegisterForm-password"
-        aria-required="true"
-        {% if form.errors contains 'password' %}
-          aria-invalid="true"
-          aria-describedby="RegisterForm-password-error"
-        {% endif %}
-      >
+      <div class="password-input-wraper">
+        <input
+          type="password"
+          name="customer[password]"
+          id="RegisterForm-password"
+          aria-required="true"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+        >
+        <span toggle="#RegisterForm-password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+      </div>
     </div>
 
     <p class="login__form-note ">Required Fields *</p>
@@ -137,3 +147,16 @@
     </a> 
   {%- endform -%}
 </div>
+
+<script>
+  $(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+</script>
