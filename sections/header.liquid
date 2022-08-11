@@ -427,7 +427,6 @@
   let autotype_placeholder;
   document.addEventListener("DOMContentLoaded", () => {
     let text = window.placeholder;
-    console.log(text.split(','));
     autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
         writeDelay: 100,
         deleteDelay: 40

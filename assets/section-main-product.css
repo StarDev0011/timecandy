@@ -1401,6 +1401,10 @@ fieldset.product-form__input .form__label {
   font-family: var(--font-2) !important;
 }
 
+.product-detail .product-form__input .product-form__swatch-dropdown label:focus-visible{
+  outline-offset: -2px;
+}
+
 .product-form__swatch-dropdown input[type=radio]:checked+label:before {
   width: calc(100% + 32px);
   left: -16px;
