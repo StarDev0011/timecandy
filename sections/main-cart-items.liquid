@@ -352,8 +352,8 @@
                 -%}
                 <input type="date" class="modal-cart-gift__date" id="trip-start" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
-                <button class="modal-cart-gift__btn js-attr-date button">
-                  <span role="alert" class="modal-cart-gift__btn-text">Confirm date</span>
+                <button class="modal-cart-gift__btn js-attr-date button" aria-label="Confirm date">
+                  <span class="modal-cart-gift__btn-text">Confirm date</span>
                   <div class="modal-cart-gift__btn-icon"></div>
                 </button>
               </div>
