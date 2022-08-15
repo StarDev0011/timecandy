@@ -1,5 +1,4 @@
 {% assign count_block = 0 %}
-{% assign count_block = 0 %}
 
 {% for submenu in links %}
     {% if submenu.title == "Top Products" and submenu.links != blank %}
@@ -17,7 +16,7 @@
                 <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 <ul class="list-menu">
                     {% for childlink in submenu.links %}
-                        <li class="child-link"><a class="header__menu-item list-menu__item link link--text caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
+                        <li class="child-link"><a class="header__menu-item list-menu__item link caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
                     {% endfor %}
                 </ul>  
             </div>
@@ -69,39 +68,3 @@
         </div>
     {% endif %}
 </div>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-       (function() {
-
-      'use strict';
-      let mySwiper = new Swiper ('.has-slide .swiper-container', {
-          loop: false,
-          slidesPerView: 3,
-          breakpoints: {
-              0: { 
-                slidesPerView: 1,
-                spaceBetween: 20,
-                slidesOffsetBefore: 0,
-              },
-              375: { 
-                slidesPerView: 1.5,
-                spaceBetween: 20,
-                slidesOffsetBefore: 0,
-              },
-              500: {
-                slidesPerView: 2.5,
-                spaceBetween: 20,
-                slidesOffsetBefore: 0,
-              },
-              990: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-                slidesOffsetBefore: 0,
-              }
-            }
-        });
-
-    })(); /* IIFE end */
-  });
-
-</script>
