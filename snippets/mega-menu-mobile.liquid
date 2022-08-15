@@ -19,7 +19,7 @@
                 <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                 <ul class="list-menu">
                     {% for childlink in submenu.links %}
-                        <li class="child-link"><a class="header__menu-item list-menu__item link link--text caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
+                        <li class="child-link"><a class="header__menu-item list-menu__item link caption-large" href="{{ childlink.url }}">{{- childlink.title -}}</a></li>
                     {% endfor %}
                 </ul>  
           </div>
