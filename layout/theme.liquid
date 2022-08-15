@@ -308,7 +308,7 @@
     {% section 'footer-misc-scripts' %}
     {% render 'subscription-theme-footer' %}
     {% comment %}if template.suffix == 'pack-a-bag'{% endcomment %}
-    {% if true %}
+    {% if template.suffix == 'pack-a-bag' %}
       <style>
         #gorgias-chat-container, .Rise__widget {
           display: none !important;
