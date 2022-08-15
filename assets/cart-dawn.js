@@ -200,9 +200,9 @@ CartDawn = {
     });
   },
 
-  updateCartAjax: (qty, id, target) => {
+  updateCartAjax: async (qty, id, target) => {
     $('.cart-overlay').show();
-    $.post('/cart/change.json', {
+    await $.post('/cart/change.json', {
       quantity: qty,
       id: id
     }).done(async function (cart) {
