@@ -164,15 +164,105 @@
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
           "type": "text",
           "settings": {
-            "text_align": "center",
-            "title": "Employee Appreciation Gifts During Covid",
-            "font_size": 18,
-            "richtext": "<p>If your office is fully remote or hybrid in the wake of the Covid-19 pandemic, sending appreciation gifts for employees working from home can help make your whole workforce feel connected, united, and valued. Send them a box of candy to brighten their days and make them know how much you value them!<\/p>"
+            "text_align": "left",
+            "title": "When was chewing gum invented?",
+            "font_size": 16,
+            "richtext": "<p>The first recorded instance of chewing gum was in the late Neolithic period, around 7000 BC. The ancient Greeks and Romans also chewed gum made from the sap of the mastic tree.<\/p>"
+          }
+        },
+        "dde4e2ba-9141-4e3d-8c23-832af2cf19e7": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Who invented chewing gum?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum as we know it today was first introduced in 1848 by John Curtis.  His gum, made from the sap of the spruce tree, was called \"State of Maine Pure Spruce Gum.\"<\/p>"
+          }
+        },
+        "e27377cb-22c9-406d-9939-592b5b8496dc": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "When was bubble gum invented?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum was first introduced in 1928 by Walter Diemer. His invention was originally called \"Double Bubble\" and was made from a recipe that was accidentally created while he was trying to make a new type of gum.<\/p>"
+          }
+        },
+        "cff310dd-9a2f-4c0c-81ce-4204506ff885": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum help jawline?",
+            "font_size": 16,
+            "richtext": "<p>There is no scientific evidence to support the claim that chewing gum can help to improve jawline definition. However, some people believe that chewing gum can help to tone and strengthen the muscles in the face, which may lead to a more defined jawline.<\/p>"
+          }
+        },
+        "0fbcead3-6960-4e8c-a0b0-f46c14f06c8e": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum help with nausea?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum has been shown to be effective in reducing nausea and vomiting caused by motion sickness. The act of chewing gum increases saliva production, which can help to calm the stomach. Chewing gum for acid reflux may also help reduce discomfort!<\/p>"
+          }
+        },
+        "fcf90abb-2288-4bcb-98ba-0b4f7bf6bb8e": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum burn calories?",
+            "font_size": 16,
+            "richtext": "<p>The act of chewing gum does burn a small number of calories, but it is not an effective weight loss strategy on its own. If you’re trying to lose weight, focus on eating a healthy diet and getting regular exercise.<\/p>"
+          }
+        },
+        "6ffecde1-3b49-4e21-861b-7c69a85bf944": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "How is bubble gum made?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum is made from a mixture of sugar, corn syrup, latex, flavorings, and colorings. The gum base is typically made from chicle, a natural gum resin harvested from the sapodilla tree. <\/p>"
+          }
+        },
+        "b5d66a68-c898-4f85-a94c-790127175ff2": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What is bubble gum flavor?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum flavor is typically a combination of fruity and minty flavors. The most popular bubble gum flavors include strawberry, grape, watermelon, and mint.<\/p>"
+          }
+        },
+        "424a9892-0c60-42f4-bda8-32a6c4369db9": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What is chewing gum made of?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum is made from a variety of ingredients, including sugar, corn syrup, latex, flavorings, and colorings. The base of the gum is typically made from chicle, a natural gum resin harvested from the sapodilla tree. <\/p>"
+          }
+        },
+        "a5e06824-b25d-4cc4-897e-00911663554f": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "How do you blow a bubble with gum?",
+            "font_size": 16,
+            "richtext": "<p>To blow a bubble with gum, start by taking a piece of gum, placing it in your mouth, and chewing it for about 30 seconds to soften it up. Next, form the gum into a ball using your tongue and teeth. Finally, press your lips together and blow gently to form a bubble.<\/p>"
           }
         }
       },
       "block_order": [
-        "e69cdf94-d4a4-42ea-8f35-b28fd3336217"
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217",
+        "dde4e2ba-9141-4e3d-8c23-832af2cf19e7",
+        "e27377cb-22c9-406d-9939-592b5b8496dc",
+        "cff310dd-9a2f-4c0c-81ce-4204506ff885",
+        "0fbcead3-6960-4e8c-a0b0-f46c14f06c8e",
+        "fcf90abb-2288-4bcb-98ba-0b4f7bf6bb8e",
+        "6ffecde1-3b49-4e21-861b-7c69a85bf944",
+        "b5d66a68-c898-4f85-a94c-790127175ff2",
+        "424a9892-0c60-42f4-bda8-32a6c4369db9",
+        "a5e06824-b25d-4cc4-897e-00911663554f"
       ],
       "settings": {
         "show_border_top": false,
