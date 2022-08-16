@@ -137,13 +137,64 @@
         "padding_bottom": 52
       }
     },
+    "1660657955de1de9c2": {
+      "type": "section-other-types-prod",
+      "blocks": {
+        "67f5fbfe-156d-4b69-b98f-9719dce21903": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts--decade-box.jpg",
+            "title": "Gifts for Hospital Staff",
+            "richtext": "<p>During the pandemic, we all came to terms with just how hard medical professionals work, and showing appreciation with thank you gifts for hospital staff can help keep your team motivated. Consider sending candy boxes from Old Time Candy as thank you gifts for nursing staff to give them some sweet fuel to keep them going.<\/p>"
+          }
+        },
+        "f1e483eb-7db0-4687-b034-c90cd25e5999": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-gift-cards.jpg",
+            "title": "Gifts for Nursing Home Staff",
+            "richtext": "<p>Caring for our elderly population can be a demanding, but rewarding, task. Providing gifts for assisted living staff can help keep them energized and promote longer tenure in a field that often faces high turnover rates. Nostalgic candy from Old Time Candy can also spark conversation among staff and their patients, giving them more to talk about and enjoy while working.<\/p>"
+          }
+        },
+        "c63b7273-acae-4d7f-958d-f9d208676563": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-plastic-tub.jpg",
+            "title": "Gifts for School Staff",
+            "richtext": "<p>Educators do a great service to our children, and schools can show their gratitude to their staff with corporate gifts. Teacher appreciation week gifts for staff can promote higher engagement and improved retention rates among schools, and offering Christmas gifts for school staff can make them feel appreciated during the brief holiday break.<br\/><br\/>Give teachers and other school staff candy boxes from Old Time Candy to express appreciation, spark nostalgia, inspire conversation, and promote engagement.<\/p>"
+          }
+        },
+        "36b8f36c-3199-4773-8e06-99f5f92942da": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-decade-boxes.jpg",
+            "title": "Gifts for Veterinary Staff",
+            "richtext": "<p>Corporate candy gifts are great for veterinary staff, showing them that their efforts are appreciated and that their work is valued – just keep the chocolate away from their patients!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "67f5fbfe-156d-4b69-b98f-9719dce21903",
+        "f1e483eb-7db0-4687-b034-c90cd25e5999",
+        "c63b7273-acae-4d7f-958d-f9d208676563",
+        "36b8f36c-3199-4773-8e06-99f5f92942da"
+      ],
+      "settings": {
+        "heading": "<p>In a Specialized Field? Show Your Gratitude for Your Hardworking Staff with Candy!<\/p>",
+        "content": "<p>In every industry, there are always a few key players that go above and beyond to make things happen. If you have someone on your team that always goes the extra mile, show your appreciation with candy staff gifts!<\/p>",
+        "text_align": "center",
+        "bg_section": "#FFFFFF",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "16606566045d3360e7": {
       "type": "section-top-brands",
       "settings": {
         "heading": "<p>Looking for the Best Employee Gifts? Give Them Treats from <strong>Old Time Candy!<\/strong><\/p>",
         "font_size_title": 24,
         "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p>",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#FFFFFF",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -154,6 +205,7 @@
     "1658415159dc5b2f07",
     "1658415180d311c72b",
     "1658415969f2db5c73",
+    "1660657955de1de9c2",
     "16606566045d3360e7"
   ]
 }
