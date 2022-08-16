@@ -1,5 +1,41 @@
 {
   "sections": {
+    "16606694974554b53d": {
+      "type": "image-banner",
+      "blocks": {
+        "16606694976718e8d3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Corporate Gifts",
+            "heading_size": "h1"
+          }
+        },
+        "16606694976718e8d3-1": {
+          "type": "text",
+          "settings": {
+            "text": "Send personalized corporate gifts that will have an impact on your clients or employees.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16606694976718e8d3-0",
+        "16606694976718e8d3-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg-corporate-gifts.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "transparent",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "16606692558670ab0e": {
       "type": "image-with-text-4",
       "blocks": {
@@ -19,8 +55,8 @@
         "1660669255e9def6af-2": {
           "type": "button",
           "settings": {
-            "button_label": "Download our brochure",
-            "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/OldTimeCandy-CorporateGiftsGuide.pdf?v=1635682273"
+            "button_label": "Submit Order Inquiry",
+            "button_link": "shopify:\/\/pages\/corporate-gift-orders"
           }
         }
       },
@@ -313,6 +349,7 @@
     }
   },
   "order": [
+    "16606694974554b53d",
     "16606692558670ab0e",
     "16606662547df03c9a",
     "16606657825203367d",
