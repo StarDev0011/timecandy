@@ -36,6 +36,9 @@
 
 {% for block in section.blocks %}
     {%- style -%}
+        .content-section_{{block.id}} {
+            text-alignment: {{block.settings.text_align}}px;
+        }    
         .content-section_{{block.id}} .content-section_item__title{
             font-size: {{block.settings.font_size}}px;
         }
@@ -156,6 +159,25 @@
             "name": "Content block",
             "type": "text",
             "settings": [
+                {
+                "type": "select",
+                "id": "text_align",
+                "label": "Text alignment",
+                "options": [
+                    {
+                    "value": "left",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "center",
+                    "label": "Center"
+                    },
+                    {
+                    "value": "right",
+                    "label": "Right"
+                    }
+                ]
+                },                
                 {
                     "type": "text",
                     "id": "title",
