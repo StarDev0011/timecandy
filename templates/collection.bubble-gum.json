@@ -139,7 +139,7 @@
         "heading": "<p>What is the Flavor of <strong>Bubble Gum?<\/strong><\/p>",
         "content": "<p>If you’re a fan of the bubble gum flavor, you can find a number of great products with that sweet taste and none of the stickiness that gum has to offer. But you may wonder what the actual flavor of bubble gum is and where it comes from. The truth is that there is no standard bubble gum flavor – every bubble gum maker uses their own unique flavor combinations!<br\/><br\/>Generally, gum chewers will agree that bubble gum flavor is somewhat fruity, and if you want to achieve the flavor with natural ingredients, a blend of pineapple, cinnamon, banana, cloves, and wintergreen is typically present. Orange, lemon, vanilla, and cherry may also be used.<\/p>",
         "text_align": "center",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -203,7 +203,7 @@
         "heading": "<p>How to Blow a <strong>Bubble With Gum<\/strong><\/p>",
         "content": "<p>Now that you know all about bubble gum, it’s time to learn how to blow a bubble! This skill is not as easy as it looks,<br\/>but with a little practice, you’ll be a pro in no time. <\/p>",
         "text_align": "center",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 80,
         "padding_bottom": 20
       }
@@ -230,7 +230,7 @@
         "heading": "",
         "content": "",
         "text_align": "left",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 4,
         "padding_bottom": 52
       }
@@ -257,7 +257,7 @@
         "heading": "",
         "content": "",
         "text_align": "left",
-        "bg_section": "#FAF9F7",
+        "bg_section": "#faf9f7",
         "padding_top": 4,
         "padding_bottom": 68
       }
@@ -314,7 +314,7 @@
         "heading": "<p>Benefits of <strong>Chewing Gum<\/strong><\/p>",
         "content": "<p>Chewing gum has a number of benefits, both mental and physical. Here are just a few of the <br\/>reasons you should consider picking up a pack of gum the next time you’re at the store.<\/p>",
         "text_align": "left",
-        "bg_section": "#FFFFFF",
+        "bg_section": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -526,6 +526,39 @@
         "padding_top": 80,
         "padding_bottom": 64
       }
+    },
+    "16606826093c0abd28": {
+      "type": "section-top-brands",
+      "blocks": {
+        "4d37a92a-d49d-4577-bb65-5424894baf09": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-double-bubble.jpg",
+            "title": "Dubble Bubble Gum",
+            "richtext": "<p>An iconic bubble gum brand, Dubble Bubble was created in 1928 as “double bubble gum” and is known for its distinctive pink wrappers. The bubble gum itself is pink and has a slightly softer texture than Bazooka.<\/p>"
+          }
+        },
+        "f0636d21-c2be-424d-baf1-ddb5d3f8c0b8": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-bazooka.jpg",
+            "title": "Bazooka Bubble Gum",
+            "richtext": "<p>Bazooka chewing gum was first introduced in 1947 and is still one of the most popular brands today. The original pink flavor is instantly recognizable and continues to be a customer favorite.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4d37a92a-d49d-4577-bb65-5424894baf09",
+        "f0636d21-c2be-424d-baf1-ddb5d3f8c0b8"
+      ],
+      "settings": {
+        "heading": "<p>Top Bubble <strong>Gum Brands<\/strong><\/p>",
+        "font_size_title": 26,
+        "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
+        "bg_section": "#FFFFFF",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -540,6 +573,7 @@
     "1660680111a2a60584",
     "16606799475f51545e",
     "16606791684515fbc4",
-    "16584148595fda12b3"
+    "16584148595fda12b3",
+    "16606826093c0abd28"
   ]
 }
