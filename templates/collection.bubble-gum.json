@@ -113,6 +113,37 @@
         "padding_bottom": 48
       }
     },
+    "16606822713dc76443": {
+      "type": "section-other-types-prod",
+      "blocks": {
+        "546310b7-f10c-458b-a400-85235b0ed37d": {
+          "type": "product",
+          "settings": {
+            "title": "Bubble Gum Flavors",
+            "richtext": "<p>The classic bubble gum flavor is something of a mystery, with sweet and fruity elements that come from various combinations of elements. However, you can also enjoy different flavors of bubble gum, including:<br\/><br\/>• Cotton candy bubble gum<br\/>• Clove chewing gum<br\/>• Watermelon bubble gum<br\/>• Grape bubble gum<br\/>• And so many more!<br\/><br\/>Some of these flavors, like clove, may seem strange, but clove gum in particular was one of the first popular gum flavors – and you can still buy and try it today!<br\/><\/p>"
+          }
+        },
+        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d": {
+          "type": "product",
+          "settings": {
+            "title": "Bubble Gum Colors",
+            "richtext": "<p>Bubble gum pink is bright and distinct, and many variations of bubble gum come in this color because it is so recognizable. However, you can find more than just pink bubble gum. The color often corresponds to the flavor, so blue bubble gum may taste like cotton candy or blue raspberry.<br\/><br\/>This whimsical type of candy comes in all sorts of colors and flavors!<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "546310b7-f10c-458b-a400-85235b0ed37d",
+        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d"
+      ],
+      "settings": {
+        "heading": "<p>What is the Flavor of <strong>Bubble Gum?<\/strong><\/p>",
+        "content": "<p>If you’re a fan of the bubble gum flavor, you can find a number of great products with that sweet taste and none of the stickiness that gum has to offer. But you may wonder what the actual flavor of bubble gum is and where it comes from. The truth is that there is no standard bubble gum flavor – every bubble gum maker uses their own unique flavor combinations!<br\/><br\/>Generally, gum chewers will agree that bubble gum flavor is somewhat fruity, and if you want to achieve the flavor with natural ingredients, a blend of pineapple, cinnamon, banana, cloves, and wintergreen is typically present. Orange, lemon, vanilla, and cherry may also be used.<\/p>",
+        "text_align": "center",
+        "bg_section": "#FAF9F7",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "1660657955de1de9c2": {
       "type": "section-other-types-prod",
       "blocks": {
@@ -495,43 +526,13 @@
         "padding_top": 80,
         "padding_bottom": 64
       }
-    },
-    "16606822713dc76443": {
-      "type": "section-other-types-prod",
-      "blocks": {
-        "546310b7-f10c-458b-a400-85235b0ed37d": {
-          "type": "product",
-          "settings": {
-            "title": "Bubble Gum Flavors",
-            "richtext": "<p>The classic bubble gum flavor is something of a mystery, with sweet and fruity elements that come from various combinations of elements. However, you can also enjoy different flavors of bubble gum, including:<br\/><br\/>• Cotton candy bubble gum<br\/>• Clove chewing gum<br\/>• Watermelon bubble gum<br\/>• Grape bubble gum<br\/>• And so many more!<br\/><br\/>Some of these flavors, like clove, may seem strange, but clove gum in particular was one of the first popular gum flavors – and you can still buy and try it today!<br\/><\/p>"
-          }
-        },
-        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d": {
-          "type": "product",
-          "settings": {
-            "title": "Bubble Gum Colors",
-            "richtext": "<p>Bubble gum pink is bright and distinct, and many variations of bubble gum come in this color because it is so recognizable. However, you can find more than just pink bubble gum. The color often corresponds to the flavor, so blue bubble gum may taste like cotton candy or blue raspberry.<br\/><br\/>This whimsical type of candy comes in all sorts of colors and flavors!<br\/><\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "546310b7-f10c-458b-a400-85235b0ed37d",
-        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d"
-      ],
-      "settings": {
-        "heading": "<p>What is the Flavor of <strong>Bubble Gum?<\/strong><\/p>",
-        "content": "<p>If you’re a fan of the bubble gum flavor, you can find a number of great products with that sweet taste and none of the stickiness that gum has to offer. But you may wonder what the actual flavor of bubble gum is and where it comes from. The truth is that there is no standard bubble gum flavor – every bubble gum maker uses their own unique flavor combinations!<br\/><br\/>Generally, gum chewers will agree that bubble gum flavor is somewhat fruity, and if you want to achieve the flavor with natural ingredients, a blend of pineapple, cinnamon, banana, cloves, and wintergreen is typically present. Orange, lemon, vanilla, and cherry may also be used.<\/p>",
-        "text_align": "center",
-        "bg_section": "#FAF9F7",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "16606694974554b53d",
     "16606692558670ab0e",
     "16606662547df03c9a",
+    "16606822713dc76443",
     "1660657955de1de9c2",
     "1660680505a8068ae7",
     "1660680606db7601e9",
@@ -539,7 +540,6 @@
     "1660680111a2a60584",
     "16606799475f51545e",
     "16606791684515fbc4",
-    "16584148595fda12b3",
-    "16606822713dc76443"
+    "16584148595fda12b3"
   ]
 }
