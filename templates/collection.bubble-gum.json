@@ -23,7 +23,7 @@
         "16606694976718e8d3-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/bg-corporate-gifts.jpg",
+        "image": "shopify:\/\/shop_images\/bg-bubble-gum_bbcd8450-0fa2-4011-9373-08b299935ee9.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "adapt_height_first_image": true,
@@ -186,7 +186,7 @@
         "heading": "<p>Top Bubble <strong>Gum Brands<\/strong><\/p>",
         "font_size_title": 26,
         "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
-        "bg_section": "#FFFFFF",
+        "bg_section": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
       }
