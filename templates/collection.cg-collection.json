@@ -1,5 +1,18 @@
 {
   "sections": {
+    "16606662547df03c9a": {
+      "type": "section-content",
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>Let Your Team Know How Much You Appreciate Them With <strong>Unique Gifts for Employees From Old Time Candy<\/strong><br\/><\/p>",
+        "content": "<p>Your employees are the backbone of your company, so it's important to show them how much you appreciate their hard work. Candy gifts are a great way to do this. Not only are they a delicious treat, but they're also a thoughtful way to show your employees that you care.<br\/><br\/>When you put thought into giving meaningful gifts for employees, you show your employees that you value and appreciate them, and no matter how small, a candy corporate gift can brighten their days. In a time when employee retention, loyalty, and satisfaction are of the utmost importance, going the extra mile to express your appreciation will make a massive difference!<br\/><br\/>At Old Time Candy, we specialize in corporate candy gifts that are sure to put a smile on your employees' faces. We have a wide variety of candy gifts to choose from, so you're sure to find something that fits your budget and your employees' taste. We can even personalize our candy gifts with your company logo or a special message from you.<br\/><br\/>So, what are you waiting for? Show your employees how much you care with the best gifts for employees from Old Time Candy today!<br\/><br\/>If you enjoy the “Candy you ate as a Kid,” why not share it with others who are sure to love it? <br\/><\/p>",
+        "text_align": "center",
+        "bg_section": "#FAF9F7",
+        "padding_top": 60,
+        "padding_bottom": 48
+      }
+    },
     "16606657825203367d": {
       "type": "section-content",
       "settings": {
@@ -9,7 +22,7 @@
         "content": "<p>Your customers are your livelihood, and if you connect with them personally, sending thank you client gifts can have a positive impact on your relationships by showing them just how much you truly appreciate their business.<br\/><br\/>Knowing what to send for client thank you gifts can be tricky no matter what type of business you run. Going the extra mile to show your appreciation can appeal to your customers and make them even more inclined to purchase from you again! From real estate agents to lawyers and more, business owners can strengthen their relationships with clients by sending thoughtful corporate client gifts in appreciation of their continued patronage.<br\/><br\/>If you’re looking for client gifts ideas, consider sending nostalgic candy boxes to your customers! Personalize your customer thank you gifts with your company’s logo, a special message thanking them for their business, and curated selections of candy that you think they’ll enjoy. <br\/><\/p>",
         "text_align": "center",
         "bg_section": "#FFFFFF",
-        "padding_top": 40,
+        "padding_top": 60,
         "padding_bottom": 20
       }
     },
@@ -252,6 +265,7 @@
     }
   },
   "order": [
+    "16606662547df03c9a",
     "16606657825203367d",
     "166066071817749a92",
     "16584148595fda12b3",
