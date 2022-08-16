@@ -1,5 +1,18 @@
 {
   "sections": {
+    "16606657825203367d": {
+      "type": "section-content",
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>Show Your Gratitude to Your Customers With <strong>Client Appreciation Gifts<\/strong><\/p>",
+        "content": "<p>Your customers are your livelihood, and if you connect with them personally, sending thank you client gifts can have a positive impact on your relationships by showing them just how much you truly appreciate their business.<br\/><br\/>Knowing what to send for client thank you gifts can be tricky no matter what type of business you run. Going the extra mile to show your appreciation can appeal to your customers and make them even more inclined to purchase from you again! From real estate agents to lawyers and more, business owners can strengthen their relationships with clients by sending thoughtful corporate client gifts in appreciation of their continued patronage.<br\/><br\/>If you’re looking for client gifts ideas, consider sending nostalgic candy boxes to your customers! Personalize your customer thank you gifts with your company’s logo, a special message thanking them for their business, and curated selections of candy that you think they’ll enjoy. <br\/><\/p>",
+        "text_align": "center",
+        "bg_section": "#FFFFFF",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
     "166066071817749a92": {
       "type": "section-top-brands",
       "blocks": {
@@ -236,27 +249,14 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
-    },
-    "16606657825203367d": {
-      "type": "section-content",
-      "settings": {
-        "show_border_top": false,
-        "show_border_bottom": false,
-        "heading": "<p>Show Your Gratitude to Your Customers With <strong>Client Appreciation Gifts<\/strong><\/p>",
-        "content": "<p>Your customers are your livelihood, and if you connect with them personally, sending thank you client gifts can have a positive impact on your relationships by showing them just how much you truly appreciate their business.<br\/><br\/>Knowing what to send for client thank you gifts can be tricky no matter what type of business you run. Going the extra mile to show your appreciation can appeal to your customers and make them even more inclined to purchase from you again! From real estate agents to lawyers and more, business owners can strengthen their relationships with clients by sending thoughtful corporate client gifts in appreciation of their continued patronage.<br\/><br\/>If you’re looking for client gifts ideas, consider sending nostalgic candy boxes to your customers! Personalize your customer thank you gifts with your company’s logo, a special message thanking them for their business, and curated selections of candy that you think they’ll enjoy. <br\/><\/p>",
-        "text_align": "center",
-        "bg_section": "#FFFFFF",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
+    "16606657825203367d",
     "166066071817749a92",
     "16584148595fda12b3",
     "1658415969f2db5c73",
     "1660657955de1de9c2",
-    "16606566045d3360e7",
-    "16606657825203367d"
+    "16606566045d3360e7"
   ]
 }
