@@ -158,6 +158,97 @@
         "padding_bottom": 40
       }
     },
+    "1660657955de1de9c2": {
+      "type": "section-other-types-prod",
+      "blocks": {
+        "67f5fbfe-156d-4b69-b98f-9719dce21903": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-balls.jpg",
+            "title": "Bubble Gum Ball",
+            "richtext": "<p>If you find yourself in the presence of a bubble gum machine, a quarter is a small price to pay for a round, delightful gum ball. You can even purchase your own gum ball machines in any size, from the large ones that populated arcades and movie theaters to mini machines perfect for desktops.<br\/><br\/>While bubble gum balls aren’t most people’s go-to chewing gum, they can be a fun and nostalgic treat.<\/p>"
+          }
+        },
+        "f1e483eb-7db0-4687-b034-c90cd25e5999": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-sugar-free.jpg",
+            "title": "Bubble Gum Sugar Free",
+            "richtext": "<p>Sugar free chewing gum is a great option for anyone with sensitive teeth or high blood sugar. If you’re trying to cut back on your sugar intake for any reason but don’t want to give up chewing gum, we hear you! Plenty of brands make sugar free gum for you to chew and enjoy without worrying about your health.<\/p>"
+          }
+        },
+        "c63b7273-acae-4d7f-958d-f9d208676563": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-cigars.jpg",
+            "title": "Bubble Gum Cigars",
+            "richtext": "<p>Shaped – and often wrapped – like the real thing, bubble gum cigars are a fun way to celebrate a special occasion or enjoy a big piece of gum, perfect for blowing bubbles.<\/p>"
+          }
+        },
+        "36b8f36c-3199-4773-8e06-99f5f92942da": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-cigarettes.jpg",
+            "title": "Bubble Gum Cigarettes",
+            "richtext": "<p>Complete with a puff of sugar “smoke,” bubble gum cigarettes are paper-wrapped sticks of gum with an adult twist.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "67f5fbfe-156d-4b69-b98f-9719dce21903",
+        "f1e483eb-7db0-4687-b034-c90cd25e5999",
+        "c63b7273-acae-4d7f-958d-f9d208676563",
+        "36b8f36c-3199-4773-8e06-99f5f92942da"
+      ],
+      "settings": {
+        "heading": "<p>Other Types of <strong>Bubble Gum<\/strong><\/p>",
+        "content": "<p>Bubble gum comes in a number of shapes and sizes. Mix up your chewing habits with some of these varieties. <\/p>",
+        "text_align": "center",
+        "bg_section": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "16606791684515fbc4": {
+      "type": "image-with-text-4",
+      "blocks": {
+        "16606791672dbb7f4f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Shop Our Selection for<br\/>the <strong>Best Bubble Gum<\/strong><br\/>Around!<\/p>"
+          }
+        },
+        "16606791672dbb7f4f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At OldTimeCandy.com, we’re thrilled to bring you some of the best bubble gum and chewing gum options online. Whether you want to try something new and unique or you want to stock up on an old favorite, we’ve got everything you need to blow bubbles and enjoy.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16606791672dbb7f4f-0",
+        "16606791672dbb7f4f-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/bubble-gum-bag.jpg",
+        "image_width": 40,
+        "box_text_width": 60,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
     "16584148595fda12b3": {
       "type": "section-content",
       "blocks": {
@@ -274,57 +365,6 @@
         "padding_top": 80,
         "padding_bottom": 64
       }
-    },
-    "1660657955de1de9c2": {
-      "type": "section-other-types-prod",
-      "blocks": {
-        "67f5fbfe-156d-4b69-b98f-9719dce21903": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bubble-gum-balls.jpg",
-            "title": "Bubble Gum Ball",
-            "richtext": "<p>If you find yourself in the presence of a bubble gum machine, a quarter is a small price to pay for a round, delightful gum ball. You can even purchase your own gum ball machines in any size, from the large ones that populated arcades and movie theaters to mini machines perfect for desktops.<br\/><br\/>While bubble gum balls aren’t most people’s go-to chewing gum, they can be a fun and nostalgic treat.<\/p>"
-          }
-        },
-        "f1e483eb-7db0-4687-b034-c90cd25e5999": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bubble-gum-sugar-free.jpg",
-            "title": "Bubble Gum Sugar Free",
-            "richtext": "<p>Sugar free chewing gum is a great option for anyone with sensitive teeth or high blood sugar. If you’re trying to cut back on your sugar intake for any reason but don’t want to give up chewing gum, we hear you! Plenty of brands make sugar free gum for you to chew and enjoy without worrying about your health.<\/p>"
-          }
-        },
-        "c63b7273-acae-4d7f-958d-f9d208676563": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bubble-gum-cigars.jpg",
-            "title": "Bubble Gum Cigars",
-            "richtext": "<p>Shaped – and often wrapped – like the real thing, bubble gum cigars are a fun way to celebrate a special occasion or enjoy a big piece of gum, perfect for blowing bubbles.<\/p>"
-          }
-        },
-        "36b8f36c-3199-4773-8e06-99f5f92942da": {
-          "type": "product",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/bubble-gum-cigarettes.jpg",
-            "title": "Bubble Gum Cigarettes",
-            "richtext": "<p>Complete with a puff of sugar “smoke,” bubble gum cigarettes are paper-wrapped sticks of gum with an adult twist.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "67f5fbfe-156d-4b69-b98f-9719dce21903",
-        "f1e483eb-7db0-4687-b034-c90cd25e5999",
-        "c63b7273-acae-4d7f-958d-f9d208676563",
-        "36b8f36c-3199-4773-8e06-99f5f92942da"
-      ],
-      "settings": {
-        "heading": "<p>Other Types of <strong>Bubble Gum<\/strong><\/p>",
-        "content": "<p>Bubble gum comes in a number of shapes and sizes. Mix up your chewing habits with some of these varieties. <\/p>",
-        "text_align": "center",
-        "bg_section": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 40
-      }
     }
   },
   "order": [
@@ -332,7 +372,8 @@
     "16606692558670ab0e",
     "16606662547df03c9a",
     "166066071817749a92",
-    "16584148595fda12b3",
-    "1660657955de1de9c2"
+    "1660657955de1de9c2",
+    "16606791684515fbc4",
+    "16584148595fda12b3"
   ]
 }
