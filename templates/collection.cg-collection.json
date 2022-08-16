@@ -6,96 +6,24 @@
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
           "type": "text",
           "settings": {
-            "title": "What is Lorem Ipsum?",
+            "title": "Employee Appreciation Gifts During Covid",
             "font_size": 18,
-            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
-          }
-        },
-        "af85ad11-eb06-4e0c-be51-79c30c3fb7aa": {
-          "type": "text",
-          "settings": {
-            "title": "What is Lorem Ipsum?",
-            "font_size": 16,
-            "richtext": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>"
+            "richtext": "<p>If your office is fully remote or hybrid in the wake of the Covid-19 pandemic, sending appreciation gifts for employees working from home can help make your whole workforce feel connected, united, and valued. Send them a box of candy to brighten their days and make them know how much you value them!<\/p>"
           }
         }
       },
       "block_order": [
-        "e69cdf94-d4a4-42ea-8f35-b28fd3336217",
-        "af85ad11-eb06-4e0c-be51-79c30c3fb7aa"
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217"
       ],
       "settings": {
         "show_border_top": true,
         "show_border_bottom": true,
-        "heading": "<p>Here's the heading<\/p>",
-        "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<\/p>",
+        "heading": "<p>Bring Your Remote Workforce Together By Sending <strong>Corporate Candy Gifts<\/strong><\/p>",
+        "content": "<p>Working from home has become the new normal for many of us. But just because we're not in the office doesn't mean we can't feel connected to our teams. One way to do this is by sending remote employee appreciation gifts, and what better way to do that than by sending your employees candy?<br\/><br\/>We offer some of the best gifts for remote employees that bring joy and sweetness no matter where the recipient is. Candy boxes are perfect gifts for people who work from home because they can easily be shipped and delivered directly to their door. <\/p>",
         "text_align": "center",
         "bg_section": "#faf9f7",
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "1658415159dc5b2f07": {
-      "type": "section-column-richtext",
-      "blocks": {
-        "48b28036-a6e3-4ec8-a641-8f87ed37c2a3": {
-          "type": "richtext",
-          "settings": {
-            "title": "Title",
-            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
-          }
-        },
-        "8129d4c7-28e2-4274-916e-3fe8c4a64e33": {
-          "type": "richtext",
-          "settings": {
-            "title": "Title",
-            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "48b28036-a6e3-4ec8-a641-8f87ed37c2a3",
-        "8129d4c7-28e2-4274-916e-3fe8c4a64e33"
-      ],
-      "settings": {
-        "heading": "<p>Who Invented Bubble Gum?<\/p>",
-        "content": "",
-        "bg_section": "#faf9f7",
-        "align_content": "left",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "1658415180d311c72b": {
-      "type": "section-column-richtext-2",
-      "blocks": {
-        "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc": {
-          "type": "richtext",
-          "settings": {
-            "title": "Title",
-            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
-          }
-        },
-        "5cd87163-9925-4128-a08a-43aa63018cd4": {
-          "type": "richtext",
-          "settings": {
-            "title": "Title",
-            "richtext": "<p>National Bubble Gum Day occurs on the first EFriday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "4ad22af7-bcf2-44fc-a0f9-ce3ecbd3c5fc",
-        "5cd87163-9925-4128-a08a-43aa63018cd4"
-      ],
-      "settings": {
-        "show_svg": false,
-        "text_align": "center",
-        "heading": "<p>Who Invented Bubble Gum?<\/p>",
-        "content": "<p>Here is some supporting text to go along with this big title<\/p>",
-        "bg_section": "#faf9f7",
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "1658415969f2db5c73": {
@@ -242,8 +170,6 @@
   },
   "order": [
     "16584148595fda12b3",
-    "1658415159dc5b2f07",
-    "1658415180d311c72b",
     "1658415969f2db5c73",
     "1660657955de1de9c2",
     "16606566045d3360e7"
