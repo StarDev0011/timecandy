@@ -25,7 +25,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/bg-bubble-gum_bbcd8450-0fa2-4011-9373-08b299935ee9.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "small",
+        "image_height": "medium",
         "adapt_height_first_image": true,
         "desktop_content_position": "middle-left",
         "show_text_box": true,
