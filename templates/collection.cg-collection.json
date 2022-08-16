@@ -1,5 +1,29 @@
 {
   "sections": {
+    "166066071817749a92": {
+      "type": "section-top-brands",
+      "blocks": {
+        "91fe1748-8f51-4654-8e87-51348fc16b65": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-box-top-options.jpg",
+            "title": "Christmas Gifts for Employees",
+            "richtext": "<p>The Christmas season is all about joy, goodwill, family, and faith. With staff gifts for christmas, you can express how much your team means to you during this holiday. Offering corporate Christmas gifts to clients and customers can also show your appreciation and goodwill.<br\/><br\/>If you are looking for employee Christmas gifts or client corporate Christmas gifts, a box of candy is the perfect sweet treat for the season.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "91fe1748-8f51-4654-8e87-51348fc16b65"
+      ],
+      "settings": {
+        "heading": "<p>Celebrate Every Season With <strong>Holiday Gifts<\/strong> for Employees<\/p>",
+        "font_size_title": 24,
+        "content": "<p>The holidays are a great time to show your employees how much you appreciate them. What better way to do this than with corporate holiday gifts from Old Time Candy? We have a wide selection of unique corporate gifts that are sure to put a smile on your employees' faces no matter what holiday you’re celebrating.<br\/><br\/>From Christmas candy gifts to Halloween candy gifts and everything in between, we have something for every holiday. We can even personalize our candy gift box tops, or you can choose from our pre-designed candy boxes.<br\/><br\/>Looking for holiday client gifts, too? We’ve got you covered! Let your customers know you’re thinking of them over the holidays with a thoughtful gift of delicious candy!<br\/><\/p>",
+        "bg_section": "#FFFFFF",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "16584148595fda12b3": {
       "type": "section-content",
       "blocks": {
@@ -170,6 +194,7 @@
     }
   },
   "order": [
+    "166066071817749a92",
     "16584148595fda12b3",
     "1658415969f2db5c73",
     "1660657955de1de9c2",
