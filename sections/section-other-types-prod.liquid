@@ -37,8 +37,8 @@
         <div class="other-types_blocks">
             {% for block in section.blocks %}
             <div class="other-types_item">
-                <div class="other-types_item__media {% if block.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}">
-                {%- if block.settings.image != blank -%}
+                {% if block.settings.image != blank %}
+                <div class="other-types_item__media media">
                     <img
                     srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -54,8 +54,8 @@
                         width="{{ block.settings.image.width }}"
                         height="{{ block.settings.image.height }}"
                     >
-                {%- endif -%}
                 </div>
+                {% endif%}
                 <div class="other-types_item__content">
                     <div class="other-types_item__title h2">
                     {{block.settings.title}}
