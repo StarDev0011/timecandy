@@ -209,6 +209,57 @@
         "padding_bottom": 40
       }
     },
+    "16606799475f51545e": {
+      "type": "section-memories",
+      "blocks": {
+        "6a21c7cb-4d00-476c-9c14-dd7bb1117e9a": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>I was about 6 or 7 years old and my older sister and I were riding in our Grandfather's car on the way home from the store. He had bought us some Double Bubble Gum and as we were going home he said if we both give him a piece of our gum he would blow the \"world's LARGEST bubble\"!! So he chewed for a few minutes and then he proceeded to blow the biggest bubble I had seen in my life!!! Of course the best part was when it POPPED all over his face!! Now mind you- he's driving a car!!! I don't think to this day I have ever laughed harder!! <\/p>",
+            "author": "Becky"
+          }
+        },
+        "5ee99231-e6b8-4803-9e22-48d47092650f": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>As a kid my mom would take me to the 5 and dime. They had penny candy. It was so nice saving up my money and going to pick out whatever sweet thing I felt like that day. Depending on the day I’d have a different favorite candy. <br\/>If I wanted something chewy I’d get some Black Jack or Beeman’s gum. <br\/>I miss the days of shopping with my mom and all the choices. <br\/><\/p>",
+            "author": "Sabrina"
+          }
+        },
+        "6c633af3-419e-4a0d-a182-5977d2b001a9": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>My grandfather and I would sit and listen to the baseball games on the radio back in the early 60's.  Beeman's gum was a staple at that time, cheering and chewing!!  Wonderful memories.  Thanks guys for keeping this gum available. <br\/><\/p>",
+            "author": "Kenton"
+          }
+        },
+        "8dabeebf-4351-4a29-b128-7ae6d9b5583f": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>I remember as a kid when we would get cereal and there would be a little coupon in the inside of the cereal box to get a free container of bubble tape. When we went to the grocery store my mom would always let us redeem those coupons for the Bubble Tape. I was going through my room the other day and found one of those little containers and the memories just came flooding in as I opened it to see if it still had the same smell. It smelled just like it had the day I bought it. <br\/><\/p>",
+            "author": "Kourtney"
+          }
+        }
+      },
+      "block_order": [
+        "6a21c7cb-4d00-476c-9c14-dd7bb1117e9a",
+        "5ee99231-e6b8-4803-9e22-48d47092650f",
+        "6c633af3-419e-4a0d-a182-5977d2b001a9",
+        "8dabeebf-4351-4a29-b128-7ae6d9b5583f"
+      ],
+      "settings": {
+        "heading": "<p><strong>Bubble Gum<\/strong> Memories<\/p>",
+        "content": "",
+        "text_align": "center",
+        "bg_section": "#e4f1f5",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "16606791684515fbc4": {
       "type": "image-with-text-4",
       "blocks": {
@@ -373,6 +424,7 @@
     "16606662547df03c9a",
     "166066071817749a92",
     "1660657955de1de9c2",
+    "16606799475f51545e",
     "16606791684515fbc4",
     "16584148595fda12b3"
   ]
