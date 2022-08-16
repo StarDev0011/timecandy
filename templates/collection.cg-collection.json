@@ -10,10 +10,55 @@
             "title": "Christmas Gifts for Employees",
             "richtext": "<p>The Christmas season is all about joy, goodwill, family, and faith. With staff gifts for christmas, you can express how much your team means to you during this holiday. Offering corporate Christmas gifts to clients and customers can also show your appreciation and goodwill.<br\/><br\/>If you are looking for employee Christmas gifts or client corporate Christmas gifts, a box of candy is the perfect sweet treat for the season.<\/p>"
           }
+        },
+        "026626cf-a869-449a-bcd1-190d0e6e3e0c": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-plastic-tub-2.jpg",
+            "title": "Thanksgiving Gifts for Employees",
+            "richtext": "<p>Gratitude and generosity are central themes of the Thanksgiving holiday, so providing Employee thanksgiving gifts is a great way to engage your staff and express your appreciation. While everyone focuses on more savory items like turkey and gravy, you can send candy corporate Thanksgiving gifts to supply dessert – especially for anyone who doesn’t like pumpkin pie.<\/p>"
+          }
+        },
+        "7b17da11-32a5-491a-a710-5cdf804b06d2": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-halloween-gift-box.jpg",
+            "title": "Corporate Halloween Gifts",
+            "richtext": "<p>Trick or treat! Candy team gifts are perfect for celebrating Halloween with your employees or clients. Since most working adults don’t wear costumes and go door to door (at least, not without little ones), you can offer sweet candy gifts for office staff as a sign of gratitude and motivation with seasonal flair. Nostalgic candy boxes from Old Time Candy make good employee gifts for all holidays, but especially Halloween!<\/p>"
+          }
+        },
+        "a9cd01c7-7d09-4f7f-930a-ea6c85cdfa9a": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-easter-box.jpg",
+            "title": "Employee Appreciation Easter Gifts for Employees",
+            "richtext": "<p>Even though most teams don’t work on Easter, offering employee holiday gifts is a great way to encourage your team. With holiday corporate gifts from Old Time Candy, you can embellish your employees’ or clients’ Easter candy haul with classic and unique candy varieties.<\/p>"
+          }
+        },
+        "c6b799e3-d8e7-4c40-a28a-da8f5a07c718": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-rose-boquet.jpg",
+            "title": "Valentine's Day Gifts for Employees",
+            "richtext": "<p>While Valentine’s Day is often regarded as the romantic holiday, it is also a time of celebrating all relationships. Candy boxes make perfect Valentine gifts for office staff, with or without hand-crafted notes to accompany them. If you are looking for easy but thoughtful employee valentine gifts, candy corporate boxes are a great way to go!<\/p>"
+          }
+        },
+        "bd8b4195-5458-4683-bf15-2e98dc9ae99e": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gifts-candy-mug_e5b0d9c0-3baf-4390-99f4-b9a76bd9c4d7.jpg",
+            "title": "Employee Appreciation Day Gifts",
+            "richtext": "<p>Officially, Employee Appreciation Day occurs on the first Friday of March every year. You don’t have to wait for March to roll around again to express employee appreciation, but if you’re looking for employee appreciation day gifts ideas, ahead of time, it’s important to consider your options!<br\/><br\/>Corporate candy gifts are great for expressing your appreciation for your staff. They can be customized to suit your team’s preferences and interests, and at Old Time Candy, we can even personalize your boxes with your business’ logos and messaging.<\/p>"
+          }
         }
       },
       "block_order": [
-        "91fe1748-8f51-4654-8e87-51348fc16b65"
+        "91fe1748-8f51-4654-8e87-51348fc16b65",
+        "026626cf-a869-449a-bcd1-190d0e6e3e0c",
+        "7b17da11-32a5-491a-a710-5cdf804b06d2",
+        "a9cd01c7-7d09-4f7f-930a-ea6c85cdfa9a",
+        "c6b799e3-d8e7-4c40-a28a-da8f5a07c718",
+        "bd8b4195-5458-4683-bf15-2e98dc9ae99e"
       ],
       "settings": {
         "heading": "<p>Celebrate Every Season With <strong>Holiday Gifts<\/strong> for Employees<\/p>",
