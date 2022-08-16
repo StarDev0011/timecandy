@@ -254,7 +254,9 @@ CartDawn = {
   },
 
   updateQty: () => {
-    $('body').on('change', CartDawn.Selector.qty, function () {
+    $('body').on('change', CartDawn.Selector.qty, function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       let id = $(this).attr('data-cart-id'),
         qty = $(this).val();
       CartDawn.updateCartAjax(qty, id, $(this).attr('id'));

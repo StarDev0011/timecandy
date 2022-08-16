@@ -65,7 +65,7 @@ header-drawer {
   bottom: -14px;
   transition: all 0.5s ease-in-out;
 }
-.header__inline-menu .item-parent:hover span::before {
+.header__inline-menu .list-menu--inline > li:hover span::before {
   width: 100%;
 }
 .header__submenu .header__submenu .header__menu-item {
