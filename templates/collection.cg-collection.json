@@ -1,5 +1,89 @@
 {
   "sections": {
+    "16606694974554b53d": {
+      "type": "image-banner",
+      "blocks": {
+        "16606694976718e8d3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Corporate Gifts",
+            "heading_size": "h1"
+          }
+        },
+        "16606694976718e8d3-1": {
+          "type": "text",
+          "settings": {
+            "text": "Send personalized corporate gifts that will have an impact on your clients or employees.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16606694976718e8d3-0",
+        "16606694976718e8d3-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg-corporate-gifts.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "transparent",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "16606692558670ab0e": {
+      "type": "image-with-text-4",
+      "blocks": {
+        "1660669255e9def6af-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><strong>Corporate Gifts<\/strong><\/p>"
+          }
+        },
+        "1660669255e9def6af-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Finding the best employee gift ideas or creative client gifts can be a challenge for a number of business owners, HR professionals, and more.  OldTimeCandy.com can personalize a corporate gift program to meet your  specific needs whether it is for a one-time purchase or an on-going program.<br\/><br\/>Whether you are searching for ​​corporate holiday gifts, sales call  follow-up gifts, thank-you gifts, product announcement gifts, spontaneous business client gifts, or unique employee appreciation gifts, giving corporate candy gifts from Old Time Candy is a surefire way to delight and excite your recipients.<br\/><br\/>Choose from the product list below or, if you see a product you like but it's  not quite right, submit an order inquiry. We will work with you to customize  your corporate gift program with specific candies, business card or letter inserts, custom box tops, custom box sizes, and more.<br\/><br\/>Do you need to send corporate gifts to multiple locations? Call us at 1-866-929-5477 option 1 during east coast business hours or submit an inquiry below. <\/p>",
+            "text_style": "body"
+          }
+        },
+        "1660669255e9def6af-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Submit Order Inquiry",
+            "button_link": "shopify:\/\/pages\/corporate-gift-orders"
+          }
+        }
+      },
+      "block_order": [
+        "1660669255e9def6af-0",
+        "1660669255e9def6af-1",
+        "1660669255e9def6af-2"
+      ],
+      "settings": {
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/gifts-decade-candy-gift-box.jpg",
+        "image_width": 40,
+        "box_text_width": 60,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
     "16606662547df03c9a": {
       "type": "section-content",
       "settings": {
@@ -118,8 +202,8 @@
         "content": "<p>Working from home has become the new normal for many of us. But just because we're not in the office doesn't mean we can't feel connected to our teams. One way to do this is by sending remote employee appreciation gifts, and what better way to do that than by sending your employees candy?<br\/><br\/>We offer some of the best gifts for remote employees that bring joy and sweetness no matter where the recipient is. Candy boxes are perfect gifts for people who work from home because they can easily be shipped and delivered directly to their door. <\/p>",
         "text_align": "center",
         "bg_section": "#faf9f7",
-        "padding_top": 80,
-        "padding_bottom": 84
+        "padding_top": 60,
+        "padding_bottom": 64
       }
     },
     "1658415969f2db5c73": {
@@ -197,8 +281,8 @@
         "content": "<p>There are many ways to show your employees how much you appreciate them.  <br\/>But one of the best ways is with candy staff appreciation gifts from Old Time Candy. <\/p>",
         "text_align": "center",
         "bg_section": "#e4f1f5",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 4,
+        "padding_bottom": 40
       }
     },
     "1660657955de1de9c2": {
@@ -248,8 +332,8 @@
         "content": "<p>In every industry, there are always a few key players that go above and beyond to make things happen. If you have someone on your team that always goes the extra mile, show your appreciation with candy staff gifts!<\/p>",
         "text_align": "center",
         "bg_section": "#ffffff",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 60,
+        "padding_bottom": 40
       }
     },
     "16606566045d3360e7": {
@@ -265,6 +349,8 @@
     }
   },
   "order": [
+    "16606694974554b53d",
+    "16606692558670ab0e",
     "16606662547df03c9a",
     "16606657825203367d",
     "166066071817749a92",
