@@ -6,6 +6,7 @@
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
           "type": "text",
           "settings": {
+            "text_align": "center",
             "title": "Employee Appreciation Gifts During Covid",
             "font_size": 18,
             "richtext": "<p>If your office is fully remote or hybrid in the wake of the Covid-19 pandemic, sending appreciation gifts for employees working from home can help make your whole workforce feel connected, united, and valued. Send them a box of candy to brighten their days and make them know how much you value them!<\/p>"
@@ -16,14 +17,14 @@
         "e69cdf94-d4a4-42ea-8f35-b28fd3336217"
       ],
       "settings": {
-        "show_border_top": true,
-        "show_border_bottom": true,
+        "show_border_top": false,
+        "show_border_bottom": false,
         "heading": "<p>Bring Your Remote Workforce Together By Sending <strong>Corporate Candy Gifts<\/strong><\/p>",
         "content": "<p>Working from home has become the new normal for many of us. But just because we're not in the office doesn't mean we can't feel connected to our teams. One way to do this is by sending remote employee appreciation gifts, and what better way to do that than by sending your employees candy?<br\/><br\/>We offer some of the best gifts for remote employees that bring joy and sweetness no matter where the recipient is. Candy boxes are perfect gifts for people who work from home because they can easily be shipped and delivered directly to their door. <\/p>",
         "text_align": "center",
         "bg_section": "#faf9f7",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "1658415969f2db5c73": {
@@ -151,7 +152,7 @@
         "heading": "<p>In a Specialized Field? Show Your Gratitude for Your Hardworking Staff with Candy!<\/p>",
         "content": "<p>In every industry, there are always a few key players that go above and beyond to make things happen. If you have someone on your team that always goes the extra mile, show your appreciation with candy staff gifts!<\/p>",
         "text_align": "center",
-        "bg_section": "#FFFFFF",
+        "bg_section": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -162,7 +163,7 @@
         "heading": "<p>Looking for the Best Employee Gifts? Give Them Treats from <strong>Old Time Candy!<\/strong><\/p>",
         "font_size_title": 24,
         "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p>",
-        "bg_section": "#FFFFFF",
+        "bg_section": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40
       }
