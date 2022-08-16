@@ -218,7 +218,7 @@
         "content": "<p>Now that you know all about bubble gum, it’s time to learn how to blow a bubble! This skill is not as easy as it looks,<br\/>but with a little practice, you’ll be a pro in no time. <\/p>",
         "text_align": "center",
         "bg_section": "#FAF9F7",
-        "padding_top": 40,
+        "padding_top": 80,
         "padding_bottom": 20
       }
     },
