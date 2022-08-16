@@ -6,14 +6,14 @@
         "16606694976718e8d3-0": {
           "type": "heading",
           "settings": {
-            "heading": "Corporate Gifts",
+            "heading": "Bubble Gum",
             "heading_size": "h1"
           }
         },
         "16606694976718e8d3-1": {
           "type": "text",
           "settings": {
-            "text": "Send personalized corporate gifts that will have an impact on your clients or employees.",
+            "text": "Enjoy the best bubble gum and chewing gum varieties from when you were a kid. Browse our massive selection to find classics or a new favorite!",
             "text_style": "body"
           }
         }
@@ -42,32 +42,24 @@
         "1660669255e9def6af-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p><strong>Corporate Gifts<\/strong><\/p>"
+            "heading": "<p><strong>Bubble Gum & Chewing Gum<\/strong><\/p>"
           }
         },
         "1660669255e9def6af-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Finding the best employee gift ideas or creative client gifts can be a challenge for a number of business owners, HR professionals, and more.  OldTimeCandy.com can personalize a corporate gift program to meet your  specific needs whether it is for a one-time purchase or an on-going program.<br\/><br\/>Whether you are searching for ​​corporate holiday gifts, sales call  follow-up gifts, thank-you gifts, product announcement gifts, spontaneous business client gifts, or unique employee appreciation gifts, giving corporate candy gifts from Old Time Candy is a surefire way to delight and excite your recipients.<br\/><br\/>Choose from the product list below or, if you see a product you like but it's  not quite right, submit an order inquiry. We will work with you to customize  your corporate gift program with specific candies, business card or letter inserts, custom box tops, custom box sizes, and more.<br\/><br\/>Do you need to send corporate gifts to multiple locations? Call us at 1-866-929-5477 option 1 during east coast business hours or submit an inquiry below. <\/p>",
+            "text": "<p>From minty-fresh sticks after meals to bright pink gumballs that expand into <br\/>bubbles, gum is a timeless treat for all ages. Whether you’re a fan of new, <br\/>bold flavors, old chewing gum brands, or everything in between, we’ve got a <br\/>great selection of bubble gum and chewing gum for you to enjoy.<br\/><br\/>Enjoy the “Candy you ate as a Kid  .”<br\/><\/p>",
             "text_style": "body"
-          }
-        },
-        "1660669255e9def6af-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Submit Order Inquiry",
-            "button_link": "shopify:\/\/pages\/corporate-gift-orders"
           }
         }
       },
       "block_order": [
         "1660669255e9def6af-0",
-        "1660669255e9def6af-1",
-        "1660669255e9def6af-2"
+        "1660669255e9def6af-1"
       ],
       "settings": {
         "full_width": false,
-        "image": "shopify:\/\/shop_images\/gifts-decade-candy-gift-box.jpg",
+        "image": "shopify:\/\/shop_images\/bubble-gum-plastic-tub.jpg",
         "image_width": 40,
         "box_text_width": 60,
         "layout": "image_first",
@@ -89,25 +81,12 @@
       "settings": {
         "show_border_top": false,
         "show_border_bottom": false,
-        "heading": "<p>Let Your Team Know How Much You Appreciate Them With <strong>Unique Gifts for Employees From Old Time Candy<\/strong><br\/><\/p>",
-        "content": "<p>Your employees are the backbone of your company, so it's important to show them how much you appreciate their hard work. Candy gifts are a great way to do this. Not only are they a delicious treat, but they're also a thoughtful way to show your employees that you care.<br\/><br\/>When you put thought into giving meaningful gifts for employees, you show your employees that you value and appreciate them, and no matter how small, a candy corporate gift can brighten their days. In a time when employee retention, loyalty, and satisfaction are of the utmost importance, going the extra mile to express your appreciation will make a massive difference!<br\/><br\/>At Old Time Candy, we specialize in corporate candy gifts that are sure to put a smile on your employees' faces. We have a wide variety of candy gifts to choose from, so you're sure to find something that fits your budget and your employees' taste. We can even personalize our candy gifts with your company logo or a special message from you.<br\/><br\/>So, what are you waiting for? Show your employees how much you care with the best gifts for employees from Old Time Candy today!<br\/><br\/>If you enjoy the “Candy you ate as a Kid,” why not share it with others who are sure to love it? <br\/><\/p>",
-        "text_align": "center",
-        "bg_section": "#FAF9F7",
+        "heading": "<p>Who Invented <strong>Bubble Gum?<\/strong><\/p>",
+        "content": "<p>The invention of the first successful bubble-blowing bubble gum is credited to Walter Dimer. While working as an accountant for Fleer Chewing Gum Company, the 23-year-old experimented with new gum recipes during his spare time. One day he accidentally made a formula that was less sticky and more flexible which made it easier to blow bubbles.<br\/><br\/>The company loved Dimer’s product and quickly began to market it as “Double Bubble.” It remained the only bubble gum on the market until Bazooka bubble gum was created after WWII.<br\/><br\/>Chewing gum, however, was already popular for quite some time before bubble gum was invented. For example, William Wrigley Jr. launched two gum brands, Juicy Fruit and Wrigley’s Spearmint, in 1928 after using them as promotions when he worked as a soap salesman. Whether you prefer chewing gum or bubble gum, you’re sure to be reminded of some great candy memories as you scroll through our selection!<br\/><\/p>",
+        "text_align": "left",
+        "bg_section": "#faf9f7",
         "padding_top": 80,
         "padding_bottom": 48
-      }
-    },
-    "16606657825203367d": {
-      "type": "section-content",
-      "settings": {
-        "show_border_top": false,
-        "show_border_bottom": false,
-        "heading": "<p>Show Your Gratitude to Your Customers With <strong>Client Appreciation Gifts<\/strong><\/p>",
-        "content": "<p>Your customers are your livelihood, and if you connect with them personally, sending thank you client gifts can have a positive impact on your relationships by showing them just how much you truly appreciate their business.<br\/><br\/>Knowing what to send for client thank you gifts can be tricky no matter what type of business you run. Going the extra mile to show your appreciation can appeal to your customers and make them even more inclined to purchase from you again! From real estate agents to lawyers and more, business owners can strengthen their relationships with clients by sending thoughtful corporate client gifts in appreciation of their continued patronage.<br\/><br\/>If you’re looking for client gifts ideas, consider sending nostalgic candy boxes to your customers! Personalize your customer thank you gifts with your company’s logo, a special message thanking them for their business, and curated selections of candy that you think they’ll enjoy. <br\/><\/p>",
-        "text_align": "center",
-        "bg_section": "#FFFFFF",
-        "padding_top": 80,
-        "padding_bottom": 20
       }
     },
     "166066071817749a92": {
@@ -174,7 +153,7 @@
         "heading": "<p>Celebrate Every Season With <strong>Holiday Gifts<\/strong> for Employees<\/p>",
         "font_size_title": 24,
         "content": "<p>The holidays are a great time to show your employees how much you appreciate them. What better way to do this than with corporate holiday gifts from Old Time Candy? We have a wide selection of unique corporate gifts that are sure to put a smile on your employees' faces no matter what holiday you’re celebrating.<br\/><br\/>From Christmas candy gifts to Halloween candy gifts and everything in between, we have something for every holiday. We can even personalize our candy gift box tops, or you can choose from our pre-designed candy boxes.<br\/><br\/>Looking for holiday client gifts, too? We’ve got you covered! Let your customers know you’re thinking of them over the holidays with a thoughtful gift of delicious candy!<br\/><\/p>",
-        "bg_section": "#FFFFFF",
+        "bg_section": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -352,7 +331,6 @@
     "16606694974554b53d",
     "16606692558670ab0e",
     "16606662547df03c9a",
-    "16606657825203367d",
     "166066071817749a92",
     "16584148595fda12b3",
     "1658415969f2db5c73",
