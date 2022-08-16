@@ -177,91 +177,12 @@
       "settings": {
         "show_border_top": false,
         "show_border_bottom": false,
-        "heading": "<p>Bring Your Remote Workforce Together By Sending <strong>Corporate Candy Gifts<\/strong><\/p>",
-        "content": "<p>Working from home has become the new normal for many of us. But just because we're not in the office doesn't mean we can't feel connected to our teams. One way to do this is by sending remote employee appreciation gifts, and what better way to do that than by sending your employees candy?<br\/><br\/>We offer some of the best gifts for remote employees that bring joy and sweetness no matter where the recipient is. Candy boxes are perfect gifts for people who work from home because they can easily be shipped and delivered directly to their door. <\/p>",
-        "text_align": "center",
+        "heading": "<p>Frequently Asked Questions About Gum<br\/><\/p>",
+        "content": "",
+        "text_align": "left",
         "bg_section": "#faf9f7",
         "padding_top": 80,
         "padding_bottom": 64
-      }
-    },
-    "1658415969f2db5c73": {
-      "type": "section-multicolumn-richtext",
-      "blocks": {
-        "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d": {
-          "type": "text",
-          "settings": {
-            "title": "Welcome Gifts for New Employees",
-            "richtext": "<p>When a new employee joins your staff, offering employee welcome gifts is a great way to engage them right away and make them feel like a part of the team. New employee gifts like candy boxes can show how excited you are to have a new team member without requiring in-depth knowledge of who they are – most people like some candy, after all!<\/p>"
-          }
-        },
-        "532d7a5a-07b1-4889-bdd6-2e872da5fab2": {
-          "type": "text",
-          "settings": {
-            "title": "Employee Anniversary Gifts",
-            "richtext": "<p>It’s more important now than ever to recognize your employees throughout their tenure. With thoughtful corporate anniversary gifts, you can express your gratitude for an employee’s continued loyalty and performance, thereby encouraging them to remain in your employ. If you are looking for team gift ideas to celebrate anniversaries, consider giving tenured employees candy gifts. Knowing their preferences can help you make the gift more personalized!<\/p>"
-          }
-        },
-        "61b8b9fd-c3ce-41b9-acae-6ba07b5ff477": {
-          "type": "text",
-          "settings": {
-            "title": "Employee Service Award Gifts",
-            "richtext": "<p>Giving service award gifts typically acknowledges specific years of service, often beginning at one or five years. A corporate candy gift makes for a simple but meaningful gift for these awards, which are critical for promoting employee retention. <\/p>"
-          }
-        },
-        "43b134cc-7fe0-435c-8f27-3fdcd21d0733": {
-          "type": "text",
-          "settings": {
-            "title": "Retirement Gifts for Employees",
-            "richtext": "<p>When an employee leaves your company for retirement, you should be keen on acknowledging their service and thanking them for their time and effort. Candy boxes make excellent corporate retirement gifts, as they are sweet, tasty, thoughtful, and can be personalized. Offering your retiring employees recognition gifts can help them feel good about their careers and trust that they served your business well.<\/p>"
-          }
-        },
-        "4862a5f9-119f-401e-8dc4-eff81fb37444": {
-          "type": "text",
-          "settings": {
-            "title": "Employee Thank You Gifts",
-            "richtext": "<p>If an employee goes above and beyond, solves a critical problem, or offers help outside of their typical duties, you should absolutely go out of your way to thank them! Corporate thank you gifts often feel organic and genuine, which employees enjoy receiving. Consider customizable candy boxes as thank you gifts for employees to express your gratitude and appreciation!<\/p>"
-          }
-        },
-        "1944243e-c744-4e76-a356-61fe9da07d99": {
-          "type": "text",
-          "settings": {
-            "title": "Employee of the Month Gifts",
-            "richtext": "<p>Celebrate outstanding performance not only with public recognition but with a candy gift, as well! Offering tangible gifts to employees who go above and beyond will not only make it apparent that you truly value them but also encourage other employees to strive for excellence, as well.<\/p>"
-          }
-        },
-        "35a03716-f914-4d4b-ba79-9f7ca4d2b9c8": {
-          "type": "text",
-          "settings": {
-            "title": "Employee Appreciation Gift Ideas",
-            "richtext": "<p>Appreciation gifts for employees can come in many forms and are not restricted to specific events, holidays, or circumstances. Offering gifts for employees appreciation, especially when unprompted, can help improve staff morale, encourage employee loyalty, and increase team engagement.<br\/><br\/>Whether you want one-time fun recognition gifts for employees on an individual basis or you’re in need of recurring bulk employee appreciation gifts, candy boxes from Old Time Candy can delight your workforce and make them feel valued.<\/p>"
-          }
-        },
-        "7edb3acc-4efb-4feb-a1d1-59e3e222f4aa": {
-          "type": "text",
-          "settings": {
-            "title": "Gift Ideas for Employees on a Budget",
-            "richtext": "<p>Do you want to show your employees how much you appreciate them but don't want to break the bank? There are plenty of ways to do this! One way is by sending them corporate candy gifts from Old Time Candy. Our delicious, inexpensive employee appreciation gifts like gift mugs filled with retro candy will definitely put a smile on your employees' faces.<br\/><br\/>We offer a range of customizable options to suit your budget, so whether you're searching for small employee appreciation gifts under $50, $25, or $10, we've got you covered.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "70b2d75f-48b6-45d0-a9ef-1ba2f2b4459d",
-        "532d7a5a-07b1-4889-bdd6-2e872da5fab2",
-        "61b8b9fd-c3ce-41b9-acae-6ba07b5ff477",
-        "43b134cc-7fe0-435c-8f27-3fdcd21d0733",
-        "4862a5f9-119f-401e-8dc4-eff81fb37444",
-        "1944243e-c744-4e76-a356-61fe9da07d99",
-        "35a03716-f914-4d4b-ba79-9f7ca4d2b9c8",
-        "7edb3acc-4efb-4feb-a1d1-59e3e222f4aa"
-      ],
-      "settings": {
-        "heading": "<p>Show Your Appreciation With Some of the <strong>Best Corporate Gifts Around<\/strong><\/p>",
-        "content": "<p>There are many ways to show your employees how much you appreciate them.  <br\/>But one of the best ways is with candy staff appreciation gifts from Old Time Candy. <\/p>",
-        "text_align": "center",
-        "bg_section": "#e4f1f5",
-        "padding_top": 4,
-        "padding_bottom": 40
       }
     },
     "1660657955de1de9c2": {
@@ -322,7 +243,6 @@
     "16606662547df03c9a",
     "166066071817749a92",
     "16584148595fda12b3",
-    "1658415969f2db5c73",
     "1660657955de1de9c2"
   ]
 }
