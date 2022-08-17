@@ -208,7 +208,7 @@ CartDawn = {
         $(key).focus();
       }
       let subTotalItem = $(`.mini-cart__item[data-id="${id}"] .mini-cart__total__sub-price`);
-      $('#cart-log').html("<span>Subtotal Item: "+ subTotalItem[0].innerText.replace("$","") + " dollars</span>"+ "<span>Cart Total: " + cart.items_subtotal_price/100 + " dollars</span>")
+      $('#cart-log').html("<span>Item Subtotal: "+ subTotalItem[0] + "</span>"+ "<span>Cart Total: " + cart.items_subtotal_price/100 + "</span>")
     });
   },
 
