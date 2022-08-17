@@ -165,10 +165,19 @@ img {
 
 .card-product__btn-text {
   margin-left: 4px;
-  color: var(--color-header);
-  border-bottom: 1px solid currentcolor;
-  padding-bottom: 3px;
+  color: #ac1229;
   display: inline-block;
+  position: relative;
+  transition: all .1s;
+}
+.card-product__btn-text:after {
+  content: '';
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: #ac1229;
   transition: all .1s;
 }
 
@@ -177,10 +186,11 @@ img {
 }
 
 .card-product__btn-text:hover {
-  color: #AC1229;
+  color: #840d1f;
   font-weight: 700;
-  padding-bottom: 4px;
-  margin-bottom: -1px;
+}
+.card-product__btn-text:hover:after {
+  width: 100%;
 }
 
 .section-featured-product .page-width {
