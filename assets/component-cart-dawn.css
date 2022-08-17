@@ -253,8 +253,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
   flex-wrap: wrap;
+}
+
+.mini-cart__add-on {
+  margin: 15px 0;
 }
 
 .mini-cart-bottom__text {
