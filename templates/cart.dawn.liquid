@@ -190,10 +190,6 @@
           </label>
         </div>
         {% endcomment %}
-        <div class="mini-cart-bottom__item">
-          <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
-          {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
-        </div>
         <div class="mini-cart__add-on">
           {%- liquid
             assign shipping_product = all_products[settings.shipping_product]
@@ -230,6 +226,10 @@
               </span>
             </label>
           </div>
+        </div>        
+        <div class="mini-cart-bottom__item">
+          <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
+          {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
         </div>
       </div>
     </form> 
