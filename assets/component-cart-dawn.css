@@ -264,6 +264,7 @@
   font-size: 12px;
   line-height: 21px;
   font-family: var(--my-font);
+  margin: 0;
 }
 
 .mini-cart__checkout-text {
@@ -300,6 +301,7 @@
   text-transform: uppercase;
   color: var(--color-link-text);
   font-family: var(--my-font);
+  margin: 0;
 }
 
 .mini-cart__gift-add {
@@ -377,6 +379,10 @@
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+}
+
+.mini-cart__total__sub-price, .mini-cart__price{
+  margin: 0;
 }
 
 .product-donate {

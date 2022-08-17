@@ -28,7 +28,7 @@
 				{{- cart.attributes['Gift Message'] -}}
 			</textarea>
 			<button class="modal-cart-gift__btn js-attr-message button">
-				<span role="alert" class="modal-cart-gift__btn-text">Save message</span>
+				<span class="modal-cart-gift__btn-text">Save message</span>
 				<div class="modal-cart-gift__btn-icon"></div>
 			</button>
 		</div>
@@ -56,9 +56,10 @@
 				<input aria-label="desired arrival date" type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
 
 				<button class="modal-cart-gift__btn js-attr-date button">
-					<span role="alert" class="modal-cart-gift__btn-text">Confirm date</span>
+					<span class="modal-cart-gift__btn-text">Confirm date</span>
 					<div class="modal-cart-gift__btn-icon"></div>
 				</button>
+				<div id="confirmDate" class="clipped visually-hidden" aria-live="polite" aria-atomic="true"></div>
 			</div>
 		</div>
   </div>
