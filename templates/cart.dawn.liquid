@@ -46,6 +46,7 @@
 
   {% if cart.item_count > 0 %}
     <form class="mini-cart__form" action="/cart" method="post" novalidate>
+      <input type="submit" disabled aria-hidden="true" style="display: none;">
       <div class="mini-cart__list js-mini-cart-list">
         {%- for item in cart.items -%}
           {% assign included = false %}
