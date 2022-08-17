@@ -520,8 +520,7 @@
             {% else %}               
               {% render 'include--fun-extras' %}
             {% endif %}
-
-            {% when 'wishlist' %}
+          {% when 'wishlist' %}
             {% render 'include--wishlist', btn_wishlist: block.settings.btn_wishlist %}
           {%- endcase -%}
         {%- endfor -%}
