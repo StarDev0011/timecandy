@@ -83,7 +83,7 @@
       "settings": {
         "enable_sticky_info": true,
         "show_desc": true,
-        "image_meta": "shopify:\/\/shop_images\/decade-gift-box-samples.webp",
+        "image_meta": "shopify:\/\/shop_images\/decade-gift-box-preview-candies.png",
         "gallery_layout": "stacked",
         "media_size": "large",
         "mobile_thumbnails": "hide",
@@ -158,12 +158,7 @@
         "padding_top": 120,
         "padding_bottom": 120,
         "padding_top_mb": 60,
-        "padding_bottom_mb": 64,
-        "heading": "Making it a gift? add these specials!",
-        "collection": "candy-by-decade-1940s-candy",
-        "show_product_like": true,
-        "heading_2": "You May Also Like",
-        "collection_2": "candy-by-decade-1960s-candy"
+        "padding_bottom_mb": 64
       }
     },
     "1656448901397e1f83": {
