@@ -7,6 +7,7 @@
 
     .section-{{ section.id }}-padding .content-section_top{
       text-align: {{ section.settings.text_align}};
+      margin-bottom: 40px;
     }
     
     .section-{{ section.id }}-padding {
@@ -36,6 +37,9 @@
 
 {% for block in section.blocks %}
     {%- style -%}
+        .content-section_{{block.id}} .content-section_item__content{
+            text-align: {{block.settings.text_align}};
+        }    
         .content-section_{{block.id}} .content-section_item__title{
             font-size: {{block.settings.font_size}}px;
         }
@@ -156,6 +160,25 @@
             "name": "Content block",
             "type": "text",
             "settings": [
+                {
+                "type": "select",
+                "id": "text_align",
+                "label": "Text alignment",
+                "options": [
+                    {
+                    "value": "left",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "center",
+                    "label": "Center"
+                    },
+                    {
+                    "value": "right",
+                    "label": "Right"
+                    }
+                ]
+                },                
                 {
                     "type": "text",
                     "id": "title",

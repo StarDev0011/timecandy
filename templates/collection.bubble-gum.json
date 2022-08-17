@@ -1,0 +1,624 @@
+{
+  "sections": {
+    "16606694974554b53d": {
+      "type": "image-banner",
+      "blocks": {
+        "16606694976718e8d3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bubble Gum",
+            "heading_size": "h1"
+          }
+        },
+        "16606694976718e8d3-1": {
+          "type": "text",
+          "settings": {
+            "text": "Enjoy the best bubble gum and chewing gum varieties from when you were a kid. Browse our massive selection to find classics or a new favorite!",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16606694976718e8d3-0",
+        "16606694976718e8d3-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg-bubble-gum_bbcd8450-0fa2-4011-9373-08b299935ee9.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "transparent",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "16606692558670ab0e": {
+      "type": "image-with-text-4",
+      "blocks": {
+        "1660669255e9def6af-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><strong>Bubble Gum & Chewing Gum<\/strong><\/p>"
+          }
+        },
+        "1660669255e9def6af-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From minty-fresh sticks after meals to bright pink gumballs that expand into  bubbles, gum is a timeless treat for all ages. Whether you’re a fan of new,  bold flavors, old chewing gum brands, or everything in between, we’ve got a  great selection of bubble gum and chewing gum for you to enjoy.<br\/><br\/>Enjoy the “Candy you ate as a Kid.”<br\/><\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "1660669255e9def6af-0",
+        "1660669255e9def6af-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "image": "shopify:\/\/shop_images\/bubble-gum-plastic-tub.jpg",
+        "image_width": 40,
+        "box_text_width": 60,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
+    "16606662547df03c9a": {
+      "type": "section-content",
+      "blocks": {
+        "f6964d68-3486-43ac-af15-ab857b3ed09c": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What Is Chewing Gum Made Out Of?",
+            "font_size": 16,
+            "richtext": "<p>Modern chewing gum typically consists of a gum base, sweeteners, softeners, and  flavoring, as well as an outer coating to extend its shelf life. Each chewing gum company has their own recipe, and gum bases in particular can be incredibly diverse, with options including:<br\/><br\/>• Sorva resin <br\/>• Paraffin wax<br\/>• Beeswax<br\/>• Chicle<br\/>• Polyethylene<br\/>• Natural rubbers<br\/>• Plant-based bases<\/p>"
+          }
+        },
+        "1aa82625-d925-49f4-b0f8-b0e181a4f990": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "National Bubble Gum Day",
+            "font_size": 16,
+            "richtext": "<p>National Bubble Gum Day occurs on the first Friday in February each year. Celebrate this fun holiday by chewing bubble gum and blowing the biggest bubbles you can manage!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f6964d68-3486-43ac-af15-ab857b3ed09c",
+        "1aa82625-d925-49f4-b0f8-b0e181a4f990"
+      ],
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>Who Invented <strong>Bubble Gum?<\/strong><\/p>",
+        "content": "<p>The invention of the first successful bubble-blowing bubble gum is credited to Walter Dimer. While working as an accountant for Fleer Chewing Gum Company, the 23-year-old experimented with new gum recipes during his spare time. One day he accidentally made a formula that was less sticky and more flexible which made it easier to blow bubbles.<br\/><br\/>The company loved Dimer’s product and quickly began to market it as “Double Bubble.” It remained the only bubble gum on the market until Bazooka bubble gum was created after WWII.<br\/><br\/>Chewing gum, however, was already popular for quite some time before bubble gum was invented. For example, William Wrigley Jr. launched two gum brands, Juicy Fruit and Wrigley’s Spearmint, in 1928 after using them as promotions when he worked as a soap salesman. Whether you prefer chewing gum or bubble gum, you’re sure to be reminded of some great candy memories as you scroll through our selection!<br\/><\/p>",
+        "text_align": "left",
+        "bg_section": "#faf9f7",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "16606826093c0abd28": {
+      "type": "section-top-brands",
+      "blocks": {
+        "4d37a92a-d49d-4577-bb65-5424894baf09": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-double-bubble.jpg",
+            "title": "Dubble Bubble Gum",
+            "richtext": "<p>An iconic bubble gum brand, Dubble Bubble was created in 1928 as “double bubble gum” and is known for its distinctive pink wrappers. The bubble gum itself is pink and has a slightly softer texture than Bazooka.<\/p>"
+          }
+        },
+        "f0636d21-c2be-424d-baf1-ddb5d3f8c0b8": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-bazooka.jpg",
+            "title": "Bazooka Bubble Gum",
+            "richtext": "<p>Bazooka chewing gum was first introduced in 1947 and is still one of the most popular brands today. The original pink flavor is instantly recognizable and continues to be a customer favorite.<\/p>"
+          }
+        },
+        "b46d7bfe-8577-4abb-b8bc-47c7c1555316": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-hubba-bubba.jpg",
+            "title": "Hubba Bubba Bubble Gum",
+            "richtext": "<p>Hubba Bubba gum is known for its fun flavors and quirky commercials. They also make bubble gum tape, which makes chewing bubble gum even more fun! Some of the most popular flavors include Strawberry Watermelon, Sour Blue Raspberry, and Cotton Candy.<\/p>"
+          }
+        },
+        "0380fb1f-43a0-4842-a3fe-dd2db3da6a0f": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-wrigleys.jpg",
+            "title": "Wrigley Chewing Gum",
+            "richtext": "<p>Wrigley’s is one of the most popular chewing gum brands in the world and their bubble gum is no exception. With classic flavors like Original Bubble Gum to new favorites like Extreme Sour Bubble Gum, Wrigley's chewing gum is fun for everyone.<\/p>"
+          }
+        },
+        "93e9411d-1b8e-4ce7-81e7-50052769628b": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-big-league.jpg",
+            "title": "Big League Chew Bubble Gum",
+            "richtext": "<p>This baseball bubble gum was created by former major league baseball players in 1980 and comes in a shredded, “chewable” form. The most popular flavors of Big League chewing gum are Original, Strawberry, and Grape.<\/p>"
+          }
+        },
+        "f920a258-8f4f-4a6b-8a8f-c234add0ad71": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-beemans.jpg",
+            "title": "Beemans Chewing Gum",
+            "richtext": "<p>Beemans gum has been around since 1884 and is known for its long-lasting flavor. The clove flavor is the most popular, but it also comes in a variety of other flavors like mint and cinnamon.<\/p>"
+          }
+        },
+        "59c9875a-9f70-4b5e-a971-c97ab84650a3": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-bubble-yum.jpg",
+            "title": "Bubble Yum",
+            "richtext": "<p>Launched in 1975, Bubble Yum was the first “soft” bubble gum on the market. It quickly became a favorite among kids for its delicious flavors and the ability to blow big bubbles.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4d37a92a-d49d-4577-bb65-5424894baf09",
+        "f0636d21-c2be-424d-baf1-ddb5d3f8c0b8",
+        "b46d7bfe-8577-4abb-b8bc-47c7c1555316",
+        "0380fb1f-43a0-4842-a3fe-dd2db3da6a0f",
+        "93e9411d-1b8e-4ce7-81e7-50052769628b",
+        "f920a258-8f4f-4a6b-8a8f-c234add0ad71",
+        "59c9875a-9f70-4b5e-a971-c97ab84650a3"
+      ],
+      "settings": {
+        "heading": "<p>Top Bubble <strong>Gum Brands<\/strong><\/p>",
+        "font_size_title": 26,
+        "content": "<p>There are dozens of chewing gum brands on the market, each with their own unique recipes, textures, and flavors.<\/p>",
+        "bg_section": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "16606822713dc76443": {
+      "type": "section-other-types-prod",
+      "blocks": {
+        "546310b7-f10c-458b-a400-85235b0ed37d": {
+          "type": "product",
+          "settings": {
+            "title": "Bubble Gum Flavors",
+            "richtext": "<p>The classic bubble gum flavor is something of a mystery, with sweet and fruity elements that come from various combinations of elements. However, you can also enjoy different flavors of bubble gum, including:<br\/><br\/>• Cotton candy bubble gum<br\/>• Clove chewing gum<br\/>• Watermelon bubble gum<br\/>• Grape bubble gum<br\/>• And so many more!<br\/><br\/>Some of these flavors, like clove, may seem strange, but clove gum in particular was one of the first popular gum flavors – and you can still buy and try it today!<br\/><\/p>"
+          }
+        },
+        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d": {
+          "type": "product",
+          "settings": {
+            "title": "Bubble Gum Colors",
+            "richtext": "<p>Bubble gum pink is bright and distinct, and many variations of bubble gum come in this color because it is so recognizable. However, you can find more than just pink bubble gum. The color often corresponds to the flavor, so blue bubble gum may taste like cotton candy or blue raspberry.<br\/><br\/>This whimsical type of candy comes in all sorts of colors and flavors!<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "546310b7-f10c-458b-a400-85235b0ed37d",
+        "b45fcaa1-c3c2-4274-987b-95cb069c3d3d"
+      ],
+      "settings": {
+        "heading": "<p>What is the Flavor of <strong>Bubble Gum?<\/strong><\/p>",
+        "content": "<p>If you’re a fan of the bubble gum flavor, you can find a number of great products with that sweet taste and none of the stickiness that gum has to offer. But you may wonder what the actual flavor of bubble gum is and where it comes from. The truth is that there is no standard bubble gum flavor – every bubble gum maker uses their own unique flavor combinations!<br\/><br\/>Generally, gum chewers will agree that bubble gum flavor is somewhat fruity, and if you want to achieve the flavor with natural ingredients, a blend of pineapple, cinnamon, banana, cloves, and wintergreen is typically present. Orange, lemon, vanilla, and cherry may also be used.<\/p>",
+        "text_align": "center",
+        "bg_section": "#faf9f7",
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
+    },
+    "1660657955de1de9c2": {
+      "type": "section-other-types-prod",
+      "blocks": {
+        "67f5fbfe-156d-4b69-b98f-9719dce21903": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-balls.jpg",
+            "title": "Bubble Gum Ball",
+            "richtext": "<p>If you find yourself in the presence of a bubble gum machine, a quarter is a small price to pay for a round, delightful gum ball. You can even purchase your own gum ball machines in any size, from the large ones that populated arcades and movie theaters to mini machines perfect for desktops.<br\/><br\/>While bubble gum balls aren’t most people’s go-to chewing gum, they can be a fun and nostalgic treat.<\/p>"
+          }
+        },
+        "f1e483eb-7db0-4687-b034-c90cd25e5999": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-sugar-free.jpg",
+            "title": "Bubble Gum Sugar Free",
+            "richtext": "<p>Sugar free chewing gum is a great option for anyone with sensitive teeth or high blood sugar. If you’re trying to cut back on your sugar intake for any reason but don’t want to give up chewing gum, we hear you! Plenty of brands make sugar free gum for you to chew and enjoy without worrying about your health.<\/p>"
+          }
+        },
+        "c63b7273-acae-4d7f-958d-f9d208676563": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-cigars.jpg",
+            "title": "Bubble Gum Cigars",
+            "richtext": "<p>Shaped – and often wrapped – like the real thing, bubble gum cigars are a fun way to celebrate a special occasion or enjoy a big piece of gum, perfect for blowing bubbles.<\/p>"
+          }
+        },
+        "36b8f36c-3199-4773-8e06-99f5f92942da": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bubble-gum-cigarettes.jpg",
+            "title": "Bubble Gum Cigarettes",
+            "richtext": "<p>Complete with a puff of sugar “smoke,” bubble gum cigarettes are paper-wrapped sticks of gum with an adult twist.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "67f5fbfe-156d-4b69-b98f-9719dce21903",
+        "f1e483eb-7db0-4687-b034-c90cd25e5999",
+        "c63b7273-acae-4d7f-958d-f9d208676563",
+        "36b8f36c-3199-4773-8e06-99f5f92942da"
+      ],
+      "settings": {
+        "heading": "<p>Other Types of <strong>Bubble Gum<\/strong><\/p>",
+        "content": "<p>Bubble gum comes in a number of shapes and sizes. Mix up your chewing habits with some of these varieties. <\/p>",
+        "text_align": "center",
+        "bg_section": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "1660680505a8068ae7": {
+      "type": "section-content",
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>How to Blow a <strong>Bubble With Gum<\/strong><\/p>",
+        "content": "<p>Now that you know all about bubble gum, it’s time to learn how to blow a bubble! This skill is not as easy as it looks, but with a little practice, you’ll be a pro in no time. <\/p>",
+        "text_align": "center",
+        "bg_section": "#faf9f7",
+        "padding_top": 80,
+        "padding_bottom": 20
+      }
+    },
+    "1660680606db7601e9": {
+      "type": "section-content",
+      "blocks": {
+        "716451ca-aea7-44aa-921d-7f4fcae5709a": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What You’ll Need to Blow Bubbles",
+            "font_size": 16,
+            "richtext": "<p>If you’re trying to master blowing bubble gum into bubbles, here’s what you need.<br\/><br\/>Chewing gum - any kind will do, but we recommend starting with a classic like Bazooka or Dubble Bubble<br\/><br\/>A mirror - so you can see what you’re doing <br\/><br\/>Patience - blowing bubbles takes practice!<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "716451ca-aea7-44aa-921d-7f4fcae5709a"
+      ],
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": true,
+        "heading": "",
+        "content": "",
+        "text_align": "left",
+        "bg_section": "#faf9f7",
+        "padding_top": 4,
+        "padding_bottom": 52
+      }
+    },
+    "1660680695edb1d8aa": {
+      "type": "section-content",
+      "blocks": {
+        "a49d47e6-2375-4d2a-82e0-74fc71e00b4b": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "How to Blow Bubble Gum",
+            "font_size": 16,
+            "richtext": "<p>Start by taking a piece of gum and unwrapping it. Place the gum in your mouth and chew it until it’s soft. You want it to be pliable enough to work with.<br\/><br\/>Once the gum is soft, shape it into a ball with your tongue. Place your lips around the ball of gum and blow gently. You should feel the gum stretch as you blow.<br\/><br\/>Keep blowing until the gum stretches to the point where it pops and a bubble forms. If your gum pops before a bubble forms, try again with a smaller ball of gum. Once you’ve blown a successful bubble, carefully remove your lips from the gum without popping the bubble.<br\/><br\/>Congratulations! Now you know how to make a bubble with gum and you’ve just blown your first bubble. Practice makes perfect, so keep at it until you can blow bubbles like a pro.<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a49d47e6-2375-4d2a-82e0-74fc71e00b4b"
+      ],
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "",
+        "content": "",
+        "text_align": "left",
+        "bg_section": "#faf9f7",
+        "padding_top": 4,
+        "padding_bottom": 68
+      }
+    },
+    "1660680111a2a60584": {
+      "type": "section-content",
+      "blocks": {
+        "c2be141f-474a-4426-a7d4-190f47fe1d16": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Improve Your Concentration",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum can help you focus. If you’re struggling to pay attention or stay on task, pop a piece of gum in your mouth and see if it helps. The act of chewing gum has been shown to increase blood flow to the brain, which can improve cognitive function.<br\/><br\/>As a study trick, try chewing a specific type or flavor of gum while you’re studying something, then chew the same gum when you need to apply that knowledge; the sensory memory may help you remember!<\/p>"
+          }
+        },
+        "4ca90a48-a505-4d26-b128-262bc3fbb6b8": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Reduce Anxiety",
+            "font_size": 16,
+            "richtext": "<p>If you’re feeling overwhelmed or stressed out, try chewing gum to help you relax. The act of chewing gum may reduce cortisol levels, which is the hormone responsible for stress.<\/p>"
+          }
+        },
+        "f6ac43e2-1f3f-49ff-862a-d4312cdf4f1f": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Promote Oral Health",
+            "font_size": 16,
+            "richtext": "<p>By increasing saliva production, chewing gum can help to wash away plaque and bacteria that cause cavities and bad breath. Be sure to choose a sugar-free gum to avoid damaging your teeth.<\/p>"
+          }
+        },
+        "b4eacb2c-a9b4-48c6-b2c0-7c0d2903c80f": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Help Cut Calories",
+            "font_size": 16,
+            "richtext": "<p>If you’re trying to cut back on calories, chewing gum can help you curb your appetite and avoid unhealthy snacks. <br\/>The act of chewing gum increases satiety hormones, which can help you feel fuller for longer.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c2be141f-474a-4426-a7d4-190f47fe1d16",
+        "4ca90a48-a505-4d26-b128-262bc3fbb6b8",
+        "f6ac43e2-1f3f-49ff-862a-d4312cdf4f1f",
+        "b4eacb2c-a9b4-48c6-b2c0-7c0d2903c80f"
+      ],
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>Benefits of <strong>Chewing Gum<\/strong><\/p>",
+        "content": "<p>Chewing gum has a number of benefits, both mental and physical. Here are just a few of the reasons you should consider picking up a pack of gum the next time you’re at the store.<\/p>",
+        "text_align": "left",
+        "bg_section": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "16606799475f51545e": {
+      "type": "section-memories",
+      "blocks": {
+        "6a21c7cb-4d00-476c-9c14-dd7bb1117e9a": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>I was about 6 or 7 years old and my older sister and I were riding in our Grandfather's car on the way home from the store. He had bought us some Double Bubble Gum and as we were going home he said if we both give him a piece of our gum he would blow the \"world's LARGEST bubble\"!! So he chewed for a few minutes and then he proceeded to blow the biggest bubble I had seen in my life!!! Of course the best part was when it POPPED all over his face!! Now mind you- he's driving a car!!! I don't think to this day I have ever laughed harder!! <\/p>",
+            "author": "Becky"
+          }
+        },
+        "5ee99231-e6b8-4803-9e22-48d47092650f": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>As a kid my mom would take me to the 5 and dime. They had penny candy. It was so nice saving up my money and going to pick out whatever sweet thing I felt like that day. Depending on the day I’d have a different favorite candy. <br\/>If I wanted something chewy I’d get some Black Jack or Beeman’s gum. <br\/>I miss the days of shopping with my mom and all the choices. <br\/><\/p>",
+            "author": "Sabrina"
+          }
+        },
+        "6c633af3-419e-4a0d-a182-5977d2b001a9": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>My grandfather and I would sit and listen to the baseball games on the radio back in the early 60's.  Beeman's gum was a staple at that time, cheering and chewing!!  Wonderful memories.  Thanks guys for keeping this gum available. <br\/><\/p>",
+            "author": "Kenton"
+          }
+        },
+        "8dabeebf-4351-4a29-b128-7ae6d9b5583f": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "richtext": "<p>I remember as a kid when we would get cereal and there would be a little coupon in the inside of the cereal box to get a free container of bubble tape. When we went to the grocery store my mom would always let us redeem those coupons for the Bubble Tape. I was going through my room the other day and found one of those little containers and the memories just came flooding in as I opened it to see if it still had the same smell. It smelled just like it had the day I bought it. <br\/><\/p>",
+            "author": "Kourtney"
+          }
+        }
+      },
+      "block_order": [
+        "6a21c7cb-4d00-476c-9c14-dd7bb1117e9a",
+        "5ee99231-e6b8-4803-9e22-48d47092650f",
+        "6c633af3-419e-4a0d-a182-5977d2b001a9",
+        "8dabeebf-4351-4a29-b128-7ae6d9b5583f"
+      ],
+      "settings": {
+        "heading": "<p><strong>Bubble Gum<\/strong> Memories<\/p>",
+        "content": "",
+        "text_align": "center",
+        "bg_section": "#e4f1f5",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "16606791684515fbc4": {
+      "type": "image-with-text-4",
+      "blocks": {
+        "16606791672dbb7f4f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Shop Our Selection for the <strong>Best Bubble Gum<\/strong> Around!<\/p>"
+          }
+        },
+        "16606791672dbb7f4f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At OldTimeCandy.com, we’re thrilled to bring you some of the best bubble gum and chewing gum options online. <\/p><p>Whether you want to try something new and unique or you want to stock up on an old favorite, we’ve got everything you need to blow bubbles and enjoy.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16606791672dbb7f4f-0",
+        "16606791672dbb7f4f-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/bubble-gum-bag.jpg",
+        "image_width": 40,
+        "box_text_width": 60,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "padding_top": 90,
+        "padding_bottom": 140,
+        "padding_top_mb": 60,
+        "padding_bottom_mb": 64,
+        "show_bottom": false,
+        "column_1": "",
+        "column_2": "",
+        "column_3": ""
+      }
+    },
+    "16584148595fda12b3": {
+      "type": "section-content",
+      "blocks": {
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "When was chewing gum invented?",
+            "font_size": 16,
+            "richtext": "<p>The first recorded instance of chewing gum was in the late Neolithic period, around 7000 BC. The ancient Greeks and Romans also chewed gum made from the sap of the mastic tree.<\/p>"
+          }
+        },
+        "dde4e2ba-9141-4e3d-8c23-832af2cf19e7": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Who invented chewing gum?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum as we know it today was first introduced in 1848 by John Curtis.  His gum, made from the sap of the spruce tree, was called \"State of Maine Pure Spruce Gum.\"<\/p>"
+          }
+        },
+        "e27377cb-22c9-406d-9939-592b5b8496dc": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "When was bubble gum invented?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum was first introduced in 1928 by Walter Diemer. His invention was originally called \"Double Bubble\" and was made from a recipe that was accidentally created while he was trying to make a new type of gum.<\/p>"
+          }
+        },
+        "cff310dd-9a2f-4c0c-81ce-4204506ff885": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum help jawline?",
+            "font_size": 16,
+            "richtext": "<p>There is no scientific evidence to support the claim that chewing gum can help to improve jawline definition. However, some people believe that chewing gum can help to tone and strengthen the muscles in the face, which may lead to a more defined jawline.<\/p>"
+          }
+        },
+        "0fbcead3-6960-4e8c-a0b0-f46c14f06c8e": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum help with nausea?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum has been shown to be effective in reducing nausea and vomiting caused by motion sickness. The act of chewing gum increases saliva production, which can help to calm the stomach. Chewing gum for acid reflux may also help reduce discomfort!<\/p>"
+          }
+        },
+        "fcf90abb-2288-4bcb-98ba-0b4f7bf6bb8e": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "Does chewing gum burn calories?",
+            "font_size": 16,
+            "richtext": "<p>The act of chewing gum does burn a small number of calories, but it is not an effective weight loss strategy on its own. If you’re trying to lose weight, focus on eating a healthy diet and getting regular exercise.<\/p>"
+          }
+        },
+        "6ffecde1-3b49-4e21-861b-7c69a85bf944": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "How is bubble gum made?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum is made from a mixture of sugar, corn syrup, latex, flavorings, and colorings. The gum base is typically made from chicle, a natural gum resin harvested from the sapodilla tree. <\/p>"
+          }
+        },
+        "b5d66a68-c898-4f85-a94c-790127175ff2": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What is bubble gum flavor?",
+            "font_size": 16,
+            "richtext": "<p>Bubble gum flavor is typically a combination of fruity and minty flavors. The most popular bubble gum flavors include strawberry, grape, watermelon, and mint.<\/p>"
+          }
+        },
+        "424a9892-0c60-42f4-bda8-32a6c4369db9": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "What is chewing gum made of?",
+            "font_size": 16,
+            "richtext": "<p>Chewing gum is made from a variety of ingredients, including sugar, corn syrup, latex, flavorings, and colorings. The base of the gum is typically made from chicle, a natural gum resin harvested from the sapodilla tree. <\/p>"
+          }
+        },
+        "a5e06824-b25d-4cc4-897e-00911663554f": {
+          "type": "text",
+          "settings": {
+            "text_align": "left",
+            "title": "How do you blow a bubble with gum?",
+            "font_size": 16,
+            "richtext": "<p>To blow a bubble with gum, start by taking a piece of gum, placing it in your mouth, and chewing it for about 30 seconds to soften it up. Next, form the gum into a ball using your tongue and teeth. Finally, press your lips together and blow gently to form a bubble.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e69cdf94-d4a4-42ea-8f35-b28fd3336217",
+        "dde4e2ba-9141-4e3d-8c23-832af2cf19e7",
+        "e27377cb-22c9-406d-9939-592b5b8496dc",
+        "cff310dd-9a2f-4c0c-81ce-4204506ff885",
+        "0fbcead3-6960-4e8c-a0b0-f46c14f06c8e",
+        "fcf90abb-2288-4bcb-98ba-0b4f7bf6bb8e",
+        "6ffecde1-3b49-4e21-861b-7c69a85bf944",
+        "b5d66a68-c898-4f85-a94c-790127175ff2",
+        "424a9892-0c60-42f4-bda8-32a6c4369db9",
+        "a5e06824-b25d-4cc4-897e-00911663554f"
+      ],
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "<p>Frequently Asked Questions About Gum<br\/><\/p>",
+        "content": "",
+        "text_align": "left",
+        "bg_section": "#faf9f7",
+        "padding_top": 80,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "16606694974554b53d",
+    "16606692558670ab0e",
+    "16606662547df03c9a",
+    "16606826093c0abd28",
+    "16606822713dc76443",
+    "1660657955de1de9c2",
+    "1660680505a8068ae7",
+    "1660680606db7601e9",
+    "1660680695edb1d8aa",
+    "1660680111a2a60584",
+    "16606799475f51545e",
+    "16606791684515fbc4",
+    "16584148595fda12b3"
+  ]
+}

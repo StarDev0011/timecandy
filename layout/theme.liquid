@@ -274,8 +274,8 @@
     {% render 'back-in-stock-helper' %}
     <!-- End Back in Stock helper snippet -->
 
-    //needed for shipping insurance
     <script>
+      //needed for shipping insurance
       {% assign insurance_product = all_products['routeins-1'] %}
       {% capture insurance_variants %}
       {% for variant in insurance_product.variants %}
