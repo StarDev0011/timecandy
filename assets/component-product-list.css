@@ -146,11 +146,11 @@ img {
 .card-product__item:hover .card-product__btn .card-product__btn-icon svg {
   transform: rotate(180deg); 
 }
-.card-product__btn:hover .card-product__btn-icon svg {
-  transform: rotate(225deg); 
-}
-.card-product__btn:active .card-product__btn-icon svg {
+.card-product__item:hover .card-product__btn:hover .card-product__btn-icon svg {
   transform: rotate(270deg); 
+}
+.card-product__item:hover .card-product__btn:active .card-product__btn-icon svg {
+  transform: rotate(360deg); 
 }
 
 .card-product__btn-text {
