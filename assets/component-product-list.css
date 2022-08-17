@@ -112,14 +112,15 @@ img {
 
 .card-product__btn.btn--OOS{
   position: relative;
-  transition: font-weight 0.1s;
+  transition: all 0.25s;
   text-decoration-line: none;
-  color: var(--color-text);
+  color: #ac1229;
   display: inline-flex;
+  padding-bottom: 3px;
 }
 
 .card-product__btn.btn--OOS:hover{
-  font-weight: bold !important;
+  color: #840d1f;
 }
 
 .card-product__btn.btn--OOS:after{
@@ -128,19 +129,19 @@ img {
   position: absolute;
   left: 0;
   bottom: 0px;
-  width: 100%;
+  width: 0;
   height: 1px;
-  transition: bottom .1s ;
+  transition: all .25s;
 }
 
-.card-product__btn.btn--OOS:hover:after{
-  bottom: -2px;
+.card-product__item:hover .card-product__btn.btn--OOS:after{
+  width: 100%;
 }
 
 .card-product__btn-icon svg {
   vertical-align: middle;
   transform: rotate(0);
-  transition: all .25s ease-in-out;
+  transition: all .25s;
 }
   
 .card-product__item:hover .card-product__btn .card-product__btn-icon svg {
