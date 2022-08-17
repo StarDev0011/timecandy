@@ -16,7 +16,6 @@
     endif
   endfor
 %}
-
 <div class="card-product__item {{ slideItem }}" role="listitem">
   <a class="card-product__link" href="{{ product.url | within: collection }}" aria-label="{{ product.url | handleize }}">
     <div class="card-product__picture" data-product-id="{{ product.variants[0].id }}" style="transform-origin: center">
@@ -53,12 +52,12 @@
       {% if is_size %} <span class="card-product__price-text">Starting at</span>{% endif %}
         <span>{{ product.price | money }}</span>
       {% endif %}
-    </div>
+    </div> 
     <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
       <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
       {% if sold_out %}
         <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
-          Email when available
+          {{ 'products.product.sold_out' | t }}
         </a>
       {% elsif option_size > 1 %}
         {% if product.title contains "Personalized" %}
@@ -68,7 +67,7 @@
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
-          <span class="card-product__btn-text"> Quick add <span class="visually-hidden">{{  product.title }} to your cart</span></span>
+          <span class="card-product__btn-text"> Quick add <span class="visually-hidden">{{ product.title }} to your cart</span></span>
         </button>
         {% endif %}
       {% else %}
@@ -76,7 +75,7 @@
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>
-          <span class="card-product__btn-text"> Add <span class="visually-hidden">{{  product.title }}</span> to cart </span>
+          <span class="card-product__btn-text"> Add <span class="visually-hidden">{{ product.title }}</span> to cart </span>
         </button>
       {% endif %}
     </form>

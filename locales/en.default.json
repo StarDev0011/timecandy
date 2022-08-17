@@ -138,7 +138,7 @@
         "unit_price": "Unit price"
       },
       "share": "Share this product",
-      "sold_out": "Sold out",
+      "sold_out": "Email when available",
       "unavailable": "Unavailable",
       "vendor": "Vendor",
       "video_exit_message": "{{ title }} opens full screen video in same window.",

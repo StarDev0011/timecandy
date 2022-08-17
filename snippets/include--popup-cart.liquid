@@ -1,4 +1,6 @@
 {{ 'component-popup-cart.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
 <div class="gift-cart-modal" aria-label="Product added to cart!" tabindex="0">
   <div class="gift-cart-modal__container">
     {% if settings.label != blank %}

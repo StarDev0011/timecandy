@@ -1,4 +1,6 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
 {%- liquid
   case section.settings.grid
     when 3

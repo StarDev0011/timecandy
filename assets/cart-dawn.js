@@ -61,20 +61,6 @@ CartDawn = {
           }, 1000);
           CartDawn.shippingInsurance();
           $('.cart-overlay').hide();
-
-          //         var cart_items = [];
-
-          //         $.each(CartJS.cart.items, function(i,v) {
-          //           cart_items.push(v.sku + '-' + v.variant_id);
-          //         });
-
-          //         //Ads updates - 5/18/20
-          //         gtag('event', 'page_view', {
-          //           'send_to': 'AW-968343338',
-          //           'ecomm_pagetype': 'cart',
-          //           'ecomm_prodid': cart_items,
-          //           'ecomm_totalvalue': CartJS.cart.total_price / 100
-          //         });
         });
       }
 
@@ -211,16 +197,18 @@ CartDawn = {
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
       });
-
       $('.js-cart-count').html(cart.item_count);
       $('.packabag-sidebar__count').html(cart.item_count);
-
       $(CartDawn.Selector.count).text(cart.item_count);
       if (qty == '') {
         $(this).val(1);
       }
-      let id = '#' + target.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
-      $(id).focus();
+      if (target) {
+        let key = '#' + target.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+        $(key).focus();
+      }
+      let subTotalItem = $(`.mini-cart__item[data-id="${id}"] .mini-cart__total__sub-price`);
+      $('#cart-log').html("<span>Subtotal Item: "+ subTotalItem[0].innerText.replace("$","") + " dollars</span>"+ "<span>Cart Total: " + cart.items_subtotal_price/100 + " dollars</span>")
     });
   },
 
@@ -377,6 +365,7 @@ CartDawn = {
 
         $.get('/cart?view=dawn', function (data) {
           $('.js-mini-cart').html(data);
+          $('#confirmDate').html("<span>Date Confirmed!</span>");
         });
       }).fail(function (jqXHR, textStatus) {
         seft.find('.modal-cart-gift__btn-text').show();
@@ -437,18 +426,6 @@ CartDawn = {
         $('.js-mini-cart').html(data);
         CartDawn.shippingInsurance();
         $('.Rise__widget, #gorgias-chat-container').hide();
-
-        //         var cart_items = [];
-        //         $.each(data.items, function(i,v) {
-        //           cart_items.push(v.sku + '-' + v.variant_id);
-        //         });         
-
-        //         gtag('event', 'page_view', {
-        //           'send_to': 'AW-968343338',
-        //           'ecomm_pagetype': 'cart',
-        //           'ecomm_prodid': cart_items,
-        //           'ecomm_totalvalue': data.total_price / 100
-        //         });         
       });
     });
   },

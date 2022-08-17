@@ -46,6 +46,7 @@
 
   {% if cart.item_count > 0 %}
     <form class="mini-cart__form" action="/cart" method="post" novalidate>
+      <input type="submit" disabled aria-hidden="true" style="display: none;">
       <div class="mini-cart__list js-mini-cart-list">
         {%- for item in cart.items -%}
           {% assign included = false %}
@@ -112,10 +113,10 @@
                   assign totalPriceItem = curPrice | times: itemQuantity
                  -%}
                  <div class="mini-cart__detail-price">
-                  <div class="mini-cart__total__sub-price"> {{ totalPriceItem | money }} </div>
-                  <div class="mini-cart__price">
+                  <p class="mini-cart__total__sub-price"> {{ totalPriceItem | money }} </p>
+                  <p class="mini-cart__price">
                     x {{ item.price | money }} per
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
@@ -174,9 +175,10 @@
       </div>
       <div class="mini-cart__bottom">
         <div class="mini-cart-bottom__item">
-          <div role="alert" class="mini-cart-bottom__text"> Subtotal ({{ cart.item_count }} items) </div>
-          <div role="alert" class="mini-cart-bottom__total-price"> {{ cart.total_price | money }} </div>
+          <p class="mini-cart-bottom__text"> Subtotal ({{ cart.item_count }} items) </p>
+          <p class="mini-cart-bottom__total-price"> {{ cart.total_price | money }} </p>
         </div>
+        <div id="cart-log" class="clipped visually-hidden" aria-live="polite" aria-atomic="true"></div>
         {% comment %}
         <div class="mini-cart__field shipping-insurance">
           <input type="checkbox" id="shipping-insurance" class="gift-include  js-shipping-insurance hidden">
