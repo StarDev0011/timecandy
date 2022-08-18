@@ -14,6 +14,7 @@
   {% if template.suffix == 'pack-a-bag'%}
     .card-product__picture {
       touch-action: none;
+      user-select: none;
     }
   {% endif %}
 </style>
@@ -235,7 +236,7 @@
   })
 </script>
 
-<script src="{{ 'cart-drag-drop.js' | asset_url }}" defer></script>
+{% comment %} <script src="{{ 'cart-drag-drop.js' | asset_url }}" defer></script> {% endcomment %}
 <audio id="resource_mp3_drop_to_bag">
   <source src="{{'500-milliseconds-of-silence.mp3' | asset_url }}" type="audio/mpeg">
 </audio>

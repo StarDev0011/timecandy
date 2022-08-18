@@ -663,6 +663,11 @@ function initDraggable() {
             dragItem = null;
           })
     });
+
+    bag.removeEventListener('dragover', dragOver);
+    bag.removeEventListener('dragenter', dragEnter);
+    bag.removeEventListener('dragleave', dragLeave);
+    bag.removeEventListener('drop', dragDrop);    
     
     bag.addEventListener('dragover', dragOver);
     bag.addEventListener('dragenter', dragEnter);
