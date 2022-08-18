@@ -627,6 +627,7 @@ function initDraggable() {
       item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
     }  
     async function endDrag(e) {
+      e.stopImmediatePropagation();
       var afterPosX = dragItem.getBoundingClientRect().left;
       var afterPosY = dragItem.getBoundingClientRect().top;
       var afterPosXEnd = afterPosX + dragItem.offsetWidth;
