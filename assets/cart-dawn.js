@@ -597,13 +597,13 @@ function initDraggable() {
         item.addEventListener('dragstart', dragStart)
         item.addEventListener('dragend', dragEnd)
   
-        item.addEventListener('touchstart', function(e) {
+        item.addEventListener('dragstart', function(e) {
             initialPosX = item.getBoundingClientRect().left;
             initialPosY = item.getBoundingClientRect().top;
             item.style.opacity = '0.2';
             item.style.zIndex = '3';
         });
-        item.addEventListener('touchmove', function(e) {
+        item.addEventListener('dragmove', function(e) {
             var touchLocation = e.targetTouches[0];
             var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
             var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
@@ -612,7 +612,7 @@ function initDraggable() {
             item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
           })
   
-          item.addEventListener('touchend', async function(e) {
+          item.addEventListener('dragend', async function(e) {
             var afterPosX = item.getBoundingClientRect().left;
             var afterPosY = item.getBoundingClientRect().top;
             var afterPosXEnd = afterPosX + item.offsetWidth;
