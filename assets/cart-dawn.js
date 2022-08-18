@@ -676,7 +676,6 @@ function initDraggable() {
       dragItem.style.transform = 'translate(0,0)';
       dragItem.style.opacity = 1;
       dragItem.style.zIndex = 2;
-      dragItem = null;
     }      
     function dragOver(e) {
       e.preventDefault();
@@ -736,6 +735,7 @@ function initDraggable() {
           obj_mp3.play();        
           $('.packabag-sidebar__bag').addClass('animated tada');
           setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+          dragItem = null;
         });
       })
       .catch((error) => {
