@@ -589,7 +589,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function initDraggable() {
   let productItems = document.querySelectorAll('.card-product__picture');
   let bag = document.querySelector('#drop-zone');
-  var dragItem;
+  let dragItem;
   if (bag) {
     productItems.forEach(item => {
         item.removeEventListener('dragstart', startDrag);
@@ -615,7 +615,7 @@ function initDraggable() {
       dragItem.style.opacity = '0.2';
       dragItem.style.zIndex = '3';
     }    
-    function endDrag(e) {
+    async function endDrag(e) {
       e.stopImmediatePropagation();
       dragItem.style.transform = 'translate(0,0)';
       dragItem.style.opacity = 1;
@@ -629,7 +629,7 @@ function initDraggable() {
     async function dragDrop(e) {
       e.stopImmediatePropagation();
       let formData = {};
-      $.get('/cart.js', null, null, 'json').done(function (data) {
+      await $.get('/cart.js', null, null, 'json').done(function (data) {
         if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
           formData = {
             'items': [{
