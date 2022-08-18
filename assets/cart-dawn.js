@@ -594,10 +594,8 @@ function initDraggable() {
     productItems.forEach(item => {
         var initialPosX, initialPosY;
   
-        item.addEventListener('dragstart', dragStart)
-        item.addEventListener('dragend', dragEnd)
-  
         item.addEventListener('dragstart', function(e) {
+            dragItem = this;
             initialPosX = item.getBoundingClientRect().left;
             initialPosY = item.getBoundingClientRect().top;
             item.style.opacity = '0.2';
@@ -662,6 +660,7 @@ function initDraggable() {
             item.style.transform = 'translate(0,0)';
             item.style.opacity = 1;
             item.style.zIndex = 2;
+            dragItem = null;
           })
     });
     
@@ -669,14 +668,6 @@ function initDraggable() {
     bag.addEventListener('dragenter', dragEnter);
     bag.addEventListener('dragleave', dragLeave);
     bag.addEventListener('drop', dragDrop);
-  
-    function dragStart() {
-        dragItem = this;
-    }
-  
-    function dragEnd() {
-        dragItem = null;
-    }
   
     function dragOver(e) {
         e.preventDefault();
