@@ -68,9 +68,6 @@ header-drawer {
 .header__inline-menu .list-menu--inline > li:hover .header__menu-item > span::before {
   width: 100%;
 }
-.header__inline-menu .list-menu--inline > li .header__menu-item.item-parent {
-  transition: color .25s;
-}
 .header__inline-menu .list-menu--inline > li:hover .header__menu-item.item-parent {
   color: rgba(var(--color-secondary-background));
 }
