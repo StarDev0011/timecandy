@@ -638,7 +638,8 @@ function initDraggable() {
     }
     function dragEnter() {}
     function dragLeave() {}
-    async function dragDrop() {
+    async function dragDrop(e) {
+      e.stopImmediatePropagation();
       let formData = {};
       await $.get('/cart.js', null, null, 'json').done(function (data) {
         if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
