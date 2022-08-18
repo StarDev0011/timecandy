@@ -589,16 +589,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function initDraggable() {
   let productItems = document.querySelectorAll('.card-product__picture');
   let bag = document.querySelector('#drop-zone');
-  let dragItem;
+  var dragItem;
   if (bag) {
     productItems.forEach(item => {
-        var initialPosX, initialPosY;
         item.removeEventListener('dragstart', startDrag);
-        item.removeEventListener('dragstart', moveDrag);
         item.removeEventListener('dragend', endDrag); 
 
-        item.addEventListener('dragstart', startDrag);
-        item.addEventListener('dragmove', moveDrag);       
+        item.addEventListener('dragstart', startDrag);       
         item.addEventListener('dragend', endDrag); 
     });
 
@@ -615,19 +612,10 @@ function initDraggable() {
     function startDrag(e) {
       e.stopImmediatePropagation();
       dragItem = this;
-      initialPosX = dragItem.getBoundingClientRect().left;
-      initialPosY = dragItem.getBoundingClientRect().top;
       dragItem.style.opacity = '0.2';
       dragItem.style.zIndex = '3';
     }    
-    function moveDrag(e) {
-      var touchLocation = e.targetTouches[0];
-      var newPosX = touchLocation.clientX - dragItem.offsetWidth/2 - initialPosX;
-      var newPosY = touchLocation.clientY - dragItem.offsetHeight/2 - initialPosY;
-      // // assign box new coordinates based on the touch.
-      item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
-    }  
-    async function endDrag(e) {
+    function endDrag(e) {
       e.stopImmediatePropagation();
       dragItem.style.transform = 'translate(0,0)';
       dragItem.style.opacity = 1;
@@ -638,7 +626,7 @@ function initDraggable() {
     }
     function dragEnter() {}
     function dragLeave() {}
-    async function dragDrop(e) {
+    function dragDrop(e) {
       e.stopImmediatePropagation();
       let formData = {};
       await $.get('/cart.js', null, null, 'json').done(function (data) {
