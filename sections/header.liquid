@@ -371,7 +371,7 @@
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}
                     <div class="list-menu__item">
-                      <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link {% if link.child_active or link.active %}header__active-menu-item{% endif %}">
+                      <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link {% if link.active %}header__active-menu-item{% endif %}">
                         <span>{{ link.title | escape }}</span>
                       </a>
                     </div>
