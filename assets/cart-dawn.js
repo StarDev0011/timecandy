@@ -610,7 +610,7 @@ function initDraggable() {
     bag.addEventListener('dragover', dragOver);
     bag.addEventListener('dragenter', dragEnter);
     bag.addEventListener('dragleave', dragLeave);
-    bag.addEventListener('drop', function(e) { dragDrop(e,dragItem) });
+    bag.addEventListener('drop', dragDrop);
 
     function startDrag(e) {
       dragItem = this;
@@ -637,7 +637,7 @@ function initDraggable() {
     }
     function dragEnter() {}
     function dragLeave() {}
-    async function dragDrop(e, dragItem) {
+    async function dragDrop() {
       let formData = {};
       await $.get('/cart.js', null, null, 'json').done(function (data) {
         if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
@@ -670,8 +670,7 @@ function initDraggable() {
         body: JSON.stringify(formData)
       })
       .then(response => {
-        CartDawn.updateCartCount(dragItem);
-
+        //CartDawn.updateCartCount(dragItem);
         // $('.js-header-cart-count').text(data.item_count);
         // $('.js-cart-count').html(data.item_count);
         // document.querySelector('.js-cart-count').innerHTML = data.item_count;
