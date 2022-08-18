@@ -627,10 +627,10 @@ function initDraggable() {
       item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
     }  
     async function endDrag(e) {
-      var afterPosX = item.getBoundingClientRect().left;
-      var afterPosY = item.getBoundingClientRect().top;
-      var afterPosXEnd = afterPosX + item.offsetWidth;
-      var afterPosYEnd = afterPosY + item.offsetHeight;
+      var afterPosX = dragItem.getBoundingClientRect().left;
+      var afterPosY = dragItem.getBoundingClientRect().top;
+      var afterPosXEnd = afterPosX + dragItem.offsetWidth;
+      var afterPosYEnd = afterPosY + dragItem.offsetHeight;
       var bagPos = document.querySelector('#drop-zone').getBoundingClientRect();
       var bagPosX = bagPos.left;
       var bagPosY = bagPos.top;
@@ -640,15 +640,15 @@ function initDraggable() {
           if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
             formData = {
               'items': [{
-                'id': item.dataset.productId,
+                'id': dragItem.dataset.productId,
                 'quantity': 1
               }]
             };
           }
-          else if (item.dataset.iceBrix && window.iceBrix) {
+          else if (dragItem.dataset.iceBrix && window.iceBrix) {
             formData = {
               'items': [{
-                'id': item.dataset.productId,
+                'id': dragItem.dataset.productId,
                 'quantity': 1
               },
               {
@@ -667,15 +667,15 @@ function initDraggable() {
           body: JSON.stringify(formData)
         })
         .then(response => {
-          CartDawn.updateCartCount(item);
+          CartDawn.updateCartCount(dragItem);
         })
         .catch((error) => {
           console.error('Error:', error);
         });
       }
-      item.style.transform = 'translate(0,0)';
-      item.style.opacity = 1;
-      item.style.zIndex = 2;
+      dragItem.style.transform = 'translate(0,0)';
+      dragItem.style.opacity = 1;
+      dragItem.style.zIndex = 2;
       dragItem = null;
     }      
     function dragOver(e) {
