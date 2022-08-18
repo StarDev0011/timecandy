@@ -45,7 +45,7 @@ CartDawn = {
       if (isPopup == 'true') {
         const slider = '.js-products-slider';
         const cartModal = $('.gift-cart-modal');
-        CartDawn.productSider(slider, 3);
+        CartDawn.productSlider(slider, 3);
         setTimeout(() => {
           $('.gift-cart-modal__label').first().focus()
         }, 1000);
@@ -90,7 +90,7 @@ CartDawn = {
     });
   },
 
-  productSider: (slider, perView) => {
+  productSlider: (slider, perView) => {
     const product = new Swiper(slider, {
       loop: false,
       slidesPerView: 1,
@@ -613,6 +613,7 @@ function initDraggable() {
     bag.addEventListener('drop', dragDrop);
 
     function startDrag(e) {
+      e.stopImmediatePropagation();
       dragItem = this;
       initialPosX = dragItem.getBoundingClientRect().left;
       initialPosY = dragItem.getBoundingClientRect().top;
@@ -647,8 +648,7 @@ function initDraggable() {
               'quantity': 1
             }]
           };
-        }
-        else if (dragItem.dataset.iceBrix && window.iceBrix) {
+        } else if (dragItem.dataset.iceBrix && window.iceBrix) {
           formData = {
             'items': [{
               'id': dragItem.dataset.productId,
@@ -660,6 +660,13 @@ function initDraggable() {
             }
           ]
           };
+        } else {
+          formData = {
+            'items': [{
+              'id': dragItem.dataset.productId,
+              'quantity': 1
+            }]
+          };          
         }
       });
       fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -670,17 +677,7 @@ function initDraggable() {
         body: JSON.stringify(formData)
       })
       .then(response => {
-        //CartDawn.updateCartCount(dragItem);
-        // $('.js-header-cart-count').text(data.item_count);
-        // $('.js-cart-count').html(data.item_count);
-        // document.querySelector('.js-cart-count').innerHTML = data.item_count;
-        // document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
-
-        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-        obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-        obj_mp3.play();        
-        $('.packabag-sidebar__bag').addClass('animated tada');
-        setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);           
+        CartDawn.updateCartCount(dragItem);
         dragItem = null;
       })
       .catch((error) => {
@@ -689,7 +686,6 @@ function initDraggable() {
     }
   }
 }
-
 
 $(function () {
   CartDawn.init();
