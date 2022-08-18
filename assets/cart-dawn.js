@@ -593,75 +593,13 @@ function initDraggable() {
   if (bag) {
     productItems.forEach(item => {
         var initialPosX, initialPosY;
-  
-        item.addEventListener('dragstart', function(e) {
-            dragItem = this;
-            initialPosX = item.getBoundingClientRect().left;
-            initialPosY = item.getBoundingClientRect().top;
-            item.style.opacity = '0.2';
-            item.style.zIndex = '3';
-        });
-        item.addEventListener('dragmove', function(e) {
-            var touchLocation = e.targetTouches[0];
-            var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
-            var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
-            // // assign box new coordinates based on the touch.
-            
-            item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
-          })
-  
-          item.addEventListener('dragend', async function(e) {
-            var afterPosX = item.getBoundingClientRect().left;
-            var afterPosY = item.getBoundingClientRect().top;
-            var afterPosXEnd = afterPosX + item.offsetWidth;
-            var afterPosYEnd = afterPosY + item.offsetHeight;
-            var bagPos = document.querySelector('#drop-zone').getBoundingClientRect();
-            var bagPosX = bagPos.left;
-            var bagPosY = bagPos.top;
-            if (afterPosX <= bagPosX && bagPosX <= afterPosXEnd && afterPosY <= bagPosY && bagPosY <= afterPosYEnd) {
-              let formData = {};
-              await $.get('/cart.js', null, null, 'json').done(function (data) {
-                if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-                  formData = {
-                    'items': [{
-                      'id': item.dataset.productId,
-                      'quantity': 1
-                    }]
-                  };
-                }
-                else if (item.dataset.iceBrix && window.iceBrix) {
-                  formData = {
-                    'items': [{
-                      'id': item.dataset.productId,
-                      'quantity': 1
-                    },
-                    {
-                      'id': window.iceBrix.id,
-                      'quantity': 1
-                    }
-                  ]
-                  };
-                }
-              });
-              fetch(window.Shopify.routes.root + 'cart/add.js', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-              })
-              .then(response => {
-                CartDawn.updateCartCount(item);
-              })
-              .catch((error) => {
-                console.error('Error:', error);
-              });
-            }
-            item.style.transform = 'translate(0,0)';
-            item.style.opacity = 1;
-            item.style.zIndex = 2;
-            dragItem = null;
-          })
+        item.removeEventListener('dragstart', startDrag);
+        item.removeEventListener('dragstart', moveDrag);
+        item.removeEventListener('dragend', endDrag); 
+
+        item.addEventListener('dragstart', startDrag);
+        item.addEventListener('dragmove', moveDrag);       
+        item.addEventListener('dragend', endDrag); 
     });
 
     bag.removeEventListener('dragover', dragOver);
@@ -673,14 +611,78 @@ function initDraggable() {
     bag.addEventListener('dragenter', dragEnter);
     bag.addEventListener('dragleave', dragLeave);
     bag.addEventListener('drop', dragDrop);
-  
+
+    function startDrag(e) {
+      dragItem = this;
+      initialPosX = item.getBoundingClientRect().left;
+      initialPosY = item.getBoundingClientRect().top;
+      item.style.opacity = '0.2';
+      item.style.zIndex = '3';
+    }    
+    function moveDrag(e) {
+      var touchLocation = e.targetTouches[0];
+      var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
+      var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
+      // // assign box new coordinates based on the touch.
+      item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
+    }  
+    async function endDrag(e) {
+      var afterPosX = item.getBoundingClientRect().left;
+      var afterPosY = item.getBoundingClientRect().top;
+      var afterPosXEnd = afterPosX + item.offsetWidth;
+      var afterPosYEnd = afterPosY + item.offsetHeight;
+      var bagPos = document.querySelector('#drop-zone').getBoundingClientRect();
+      var bagPosX = bagPos.left;
+      var bagPosY = bagPos.top;
+      if (afterPosX <= bagPosX && bagPosX <= afterPosXEnd && afterPosY <= bagPosY && bagPosY <= afterPosYEnd) {
+        let formData = {};
+        await $.get('/cart.js', null, null, 'json').done(function (data) {
+          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+            formData = {
+              'items': [{
+                'id': item.dataset.productId,
+                'quantity': 1
+              }]
+            };
+          }
+          else if (item.dataset.iceBrix && window.iceBrix) {
+            formData = {
+              'items': [{
+                'id': item.dataset.productId,
+                'quantity': 1
+              },
+              {
+                'id': window.iceBrix.id,
+                'quantity': 1
+              }
+            ]
+            };
+          }
+        });
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          CartDawn.updateCartCount(item);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+      item.style.transform = 'translate(0,0)';
+      item.style.opacity = 1;
+      item.style.zIndex = 2;
+      dragItem = null;
+    }      
     function dragOver(e) {
-        e.preventDefault();
+      e.preventDefault();
     }
-  
     function dragEnter() {}
     function dragLeave() {}
-  
     async function dragDrop() {
       let formData = {};
       if (window.iceBrix) {
