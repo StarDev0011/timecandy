@@ -605,12 +605,12 @@ function initDraggable() {
     bag.removeEventListener('dragover', dragOver);
     bag.removeEventListener('dragenter', dragEnter);
     bag.removeEventListener('dragleave', dragLeave);
-    bag.removeEventListener('drop', dragDrop(dragItem));    
+    bag.removeEventListener('drop', dragDrop);    
     
     bag.addEventListener('dragover', dragOver);
     bag.addEventListener('dragenter', dragEnter);
     bag.addEventListener('dragleave', dragLeave);
-    bag.addEventListener('drop', dragDrop);
+    bag.addEventListener('drop', function(e) { dragDrop(e,dragItem) });
 
     function startDrag(e) {
       dragItem = this;
