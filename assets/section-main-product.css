@@ -2106,6 +2106,11 @@ div.rc_block__type {
   width: 100%;
   max-width: 100%;
 }
+
+.product-detail-selects .select .icon-caret{
+  height: 8px;
+}
+
 .product-detail-selects .select::before,
 .product-detail-selects .select::after {
   display: none;
@@ -2525,12 +2530,7 @@ div.rc_block__type {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/icon-caret-down.svg?v=21147046088683653141649261707);
-  background-repeat: no-repeat;
-  background-position: right 12px center;
   width: 100%;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
 }
 
 .template-product .product-form__input--dropdown .select__select{
@@ -2560,6 +2560,12 @@ div.rc_block__type {
 .template-product .product-form__input--dropdown .select option{
   color: #262626;
   background-color: #fff;
+}
+
+@media screen and (min-width: 750px){
+  .template-product .product-form__input--dropdown .select{
+    width: 50%
+  }
 }
 
 div#bookmarkit {

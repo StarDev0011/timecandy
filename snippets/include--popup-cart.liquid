@@ -1,6 +1,9 @@
 {{ 'component-popup-cart.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-
+{% if settings.icebrix-product != blank %}
+  {%- assign iceBrick = all_products[settings.icebrix-product].variants.first.id -%}
+  {%- assign iceBrickHandle = all_products[settings.icebrix-product].handle -%}
+{% endif %}
 <div class="gift-cart-modal" aria-label="Product added to cart!" tabindex="0">
   <div class="gift-cart-modal__container">
     {% if settings.label != blank %}

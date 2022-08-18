@@ -203,6 +203,17 @@
   {% endif %}
   {% section 'header-misc-scripts' %}
   <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=qhadjxviu0hzvyxjtczfxg" async="true"></script>  
+  
+  {% if settings.icebrix-enable and settings.icebrix-product != blank %}
+    <script>
+      window.iceBrix = {
+        id: '{{ all_products[settings.icebrix-product].variants.first.id }}',
+        handle: '{{ all_products[settings.icebrix-product].handle }}'
+      };
+    </script>
+  {% endif %}
+  
+
   </head>
 
   <body aria-hidden="false" class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %}">
