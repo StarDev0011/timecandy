@@ -77,7 +77,7 @@ CartDawn = {
     $.get('/cart.js', null, null, 'json').done(function (data) {
       $(CartDawn.Selector.count).text(data.item_count);
       $('.js-cart-count').html(data.item_count);
-      if (btn && btn.classList.contains('card-product__pack-bag')) {
+      if (btn && btn.classList.index('card-product__pack-bag') > -1) {
         document.querySelector('.js-cart-count').innerHTML = data.item_count;
         document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
 
