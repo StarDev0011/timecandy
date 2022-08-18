@@ -24,6 +24,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/bg-bubble-gum_bbcd8450-0fa2-4011-9373-08b299935ee9.jpg",
+        "image_2": "shopify:\/\/shop_images\/donny-blowing-bubble.gif",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": true,
