@@ -428,7 +428,7 @@
                     </header-menu>
                   {% endif %}
                 {%- else -%}
-                  <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link {%- if link.current %}header__active-menu-item{% endif %}" {% if link.current %} aria-current="page"{% endif %}>
+                  <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link {%- if link.current %} header__active-menu-item{% endif %}" {% if link.current %} aria-current="page"{% endif %}>
                     <span>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
