@@ -30,7 +30,6 @@ img {
 }
 
 .card-product__picture {
-  touch-action: none;
   position: relative;
   padding-top: 80%;
   background-color: #fff;
