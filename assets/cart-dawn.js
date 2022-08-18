@@ -670,7 +670,7 @@ function initDraggable() {
         body: JSON.stringify(formData)
       })
       .then(response => {
-        CartDawn.updateCartCount(dragItem);
+        CartDawn.updateCartCount({classList: 'card-product__pack-bag'});
         dragItem = null;
       })
       .catch((error) => {
