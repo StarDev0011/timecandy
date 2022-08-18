@@ -614,15 +614,15 @@ function initDraggable() {
 
     function startDrag(e) {
       dragItem = this;
-      initialPosX = item.getBoundingClientRect().left;
-      initialPosY = item.getBoundingClientRect().top;
-      item.style.opacity = '0.2';
-      item.style.zIndex = '3';
+      initialPosX = dragItem.getBoundingClientRect().left;
+      initialPosY = dragItem.getBoundingClientRect().top;
+      dragItem.style.opacity = '0.2';
+      dragItem.style.zIndex = '3';
     }    
     function moveDrag(e) {
       var touchLocation = e.targetTouches[0];
-      var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
-      var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
+      var newPosX = touchLocation.clientX - dragItem.offsetWidth/2 - initialPosX;
+      var newPosY = touchLocation.clientY - dragItem.offsetHeight/2 - initialPosY;
       // // assign box new coordinates based on the touch.
       item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
     }  
