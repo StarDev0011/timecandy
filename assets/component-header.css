@@ -68,6 +68,9 @@ header-drawer {
 .header__inline-menu .list-menu--inline > li:hover .header__menu-item > span::before {
   width: 100%;
 }
+.header__inline-menu .list-menu--inline > li:hover .header__menu-item {
+  color: rgba(var(--color-secondary-background));
+}
 .header__submenu .header__submenu .header__menu-item {
   color: rgb(var(--color-light-text));
   font-size: 14px;

@@ -48,11 +48,19 @@
   width: 74px;
   background: #0C5273;
   border-radius: 6px 0 0px 6px;
+  transition: all .25s;
+}
+.search__button:hover, .search__button:focus {
+  box-shadow: rgba(0 0 0 / 25%) 0px 0px 10px 2px inset;
 }
 .search__button .icon {
   height: 1.8rem;
   width: 1.8rem;
   color: #fff;
+  transition: all .25s;
+}
+.search__button:hover .icon, .search__button:focus .icon {
+  transform: translate(0px, 1px);
 }
 
 /* Remove extra spacing for search inputs in Safari */
