@@ -605,7 +605,7 @@ function initDraggable() {
     bag.removeEventListener('dragover', dragOver);
     bag.removeEventListener('dragenter', dragEnter);
     bag.removeEventListener('dragleave', dragLeave);
-    bag.removeEventListener('drop', dragDrop);    
+    bag.removeEventListener('drop', dragDrop(dragItem));    
     
     bag.addEventListener('dragover', dragOver);
     bag.addEventListener('dragenter', dragEnter);
@@ -628,132 +628,65 @@ function initDraggable() {
     }  
     async function endDrag(e) {
       e.stopImmediatePropagation();
-      var afterPosX = dragItem.getBoundingClientRect().left;
-      var afterPosY = dragItem.getBoundingClientRect().top;
-      var afterPosXEnd = afterPosX + dragItem.offsetWidth;
-      var afterPosYEnd = afterPosY + dragItem.offsetHeight;
-      var bagPos = document.querySelector('#drop-zone').getBoundingClientRect();
-      var bagPosX = bagPos.left;
-      var bagPosY = bagPos.top;
-      if (afterPosX <= bagPosX && bagPosX <= afterPosXEnd && afterPosY <= bagPosY && bagPosY <= afterPosYEnd) {
-        let formData = {};
-        await $.get('/cart.js', null, null, 'json').done(function (data) {
-          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-            formData = {
-              'items': [{
-                'id': dragItem.dataset.productId,
-                'quantity': 1
-              }]
-            };
-          }
-          else if (dragItem.dataset.iceBrix && window.iceBrix) {
-            formData = {
-              'items': [{
-                'id': dragItem.dataset.productId,
-                'quantity': 1
-              },
-              {
-                'id': window.iceBrix.id,
-                'quantity': 1
-              }
-            ]
-            };
-          }
-        });
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        })
-        .then(response => {
-          CartDawn.updateCartCount(dragItem);
-
-          $('.js-header-cart-count').text(data.item_count);
-          $('.js-cart-count').html(data.item_count);
-          document.querySelector('.js-cart-count').innerHTML = data.item_count;
-          document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
-  
-          var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-          obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-          obj_mp3.play();        
-          $('.packabag-sidebar__bag').addClass('animated tada');
-          setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);           
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-      }
       dragItem.style.transform = 'translate(0,0)';
       dragItem.style.opacity = 1;
       dragItem.style.zIndex = 2;
-      dragItem = null;
     }      
     function dragOver(e) {
       e.preventDefault();
     }
     function dragEnter() {}
     function dragLeave() {}
-    async function dragDrop() {
-      // let formData = {};
-      // if (window.iceBrix) {
-      //   if (dragItem.dataset.iceBrix) {
-      //     formData = {
-      //       'items': [{
-      //         'id': dragItem.dataset.productId,
-      //         'quantity': 1
-      //       },
-      //       {
-      //         'id': window.iceBrix.id,
-      //         'quantity': 1
-      //       }
-      //     ]
-      //     };
-      //   }
-      //   await $.get('/cart.js', null, null, 'json').done(function (data) {
-      //     if (data.items.filter((e) => e.id == window.iceBrix.id).length > 0) {
-      //       formData = {
-      //         'items': [{
-      //           'id': dragItem.dataset.productId,
-      //           'quantity': 1
-      //         }]
-      //       };
-      //     }
-      //   });
-      // } else {
-      //   formData = {
-      //     'items': [{
-      //       'id': dragItem.dataset.productId,
-      //       'quantity': 1
-      //     }]
-      //   };
-      // }
-      // fetch(window.Shopify.routes.root + 'cart/add.js', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(formData)
-      // })
-      // .then(response => {
-      //   $.get('/cart.js', null, null, 'json').done(function (data) {
-      //     $('.js-header-cart-count').text(data.item_count);
-      //     $('.js-cart-count').html(data.item_count);
-      //     document.querySelector('.js-cart-count').innerHTML = data.item_count;
-      //     document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
-  
-      //     var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-      //     obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-      //     obj_mp3.play();        
-      //     $('.packabag-sidebar__bag').addClass('animated tada');
-      //     setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
-      //     dragItem = null;
-      //   });
-      // })
-      // .catch((error) => {
-      //   console.error('Error:', error);
-      // });
+    async function dragDrop(dragItem) {
+      let formData = {};
+      await $.get('/cart.js', null, null, 'json').done(function (data) {
+        if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+          formData = {
+            'items': [{
+              'id': dragItem.dataset.productId,
+              'quantity': 1
+            }]
+          };
+        }
+        else if (dragItem.dataset.iceBrix && window.iceBrix) {
+          formData = {
+            'items': [{
+              'id': dragItem.dataset.productId,
+              'quantity': 1
+            },
+            {
+              'id': window.iceBrix.id,
+              'quantity': 1
+            }
+          ]
+          };
+        }
+      });
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        CartDawn.updateCartCount(dragItem);
+
+        // $('.js-header-cart-count').text(data.item_count);
+        // $('.js-cart-count').html(data.item_count);
+        // document.querySelector('.js-cart-count').innerHTML = data.item_count;
+        // document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+
+        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+        obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+        obj_mp3.play();        
+        $('.packabag-sidebar__bag').addClass('animated tada');
+        setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);           
+        dragItem = null;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     }
   }
 }
