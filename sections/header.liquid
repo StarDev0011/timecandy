@@ -445,45 +445,43 @@
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 
 <script defer src="{{ 'typewriter.js' | asset_url }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
   let autotype_placeholder;
   let anim_flag=true;
   document.addEventListener("DOMContentLoaded", () => {
-    let text = window.placeholder;
-    autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
-        writeDelay: 200,
-        deleteDelay: 80
-    });
     if(document.cookie.includes('hideanim=hide')) {
-      $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
+      $('body').append('<style>  #Search-In-Modal-1::placeholder { color: transparent; }</style>');
       $('.stop-anim-btn').css('display', 'none');
       anim_flag=false;
     }
     else {
-      $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: #0c5273;  }</style>');
+      let text = window.placeholder;
+      autotype_placeholder = new TypeWriter('#Search-In-Modal-1', text.split(','),{
+          writeDelay: 200,
+          deleteDelay: 80
+      });      
+      $('#Search-In-Modal-1').focus(function() {
+        $('.stop-anim-btn').css('display', 'none');
+      });      
+      $('body').append('<style>  #Search-In-Modal-1::placeholder { color: #0c5273; }</style>');
       $('.stop-anim-btn').css('display', 'block');
+      $('#Search-In-Modal-1').blur(function() {
+        if(anim_flag){
+          $('.stop-anim-btn').css('display', 'block');
+        }
+      });
+      $('.stop-anim-btn').on('click', function(e) {
+        e.preventDefault();
+        setCookie("hideanim", "hide");
+        $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
+        $('.stop-anim-btn').css('display', 'none');
+        anim_flag = false;
+      });       
     }
   });
-  $('#Search-In-Modal-1').focus(function() {
-    console.log('focus');
-    $('.stop-anim-btn').css('display', 'none');
-  });
-  $('#Search-In-Modal-1').blur(function() {
-    console.log('blur');
-    if(anim_flag){
-      $('.stop-anim-btn').css('display', 'block');
 
-    }
-  });
-  $('.stop-anim-btn').click(function() {
-    console.log('stop anim');
-    setCookie("hideanim", "hide");
-    console.log(getCookie("hideanim"));
-    $('body').append('<style>  #Search-In-Modal-1::placeholder {    color: transparent;  }</style>');
-    $('.stop-anim-btn').css('display', 'none');
-    anim_flag = false;
-  })
+
+
 </script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
