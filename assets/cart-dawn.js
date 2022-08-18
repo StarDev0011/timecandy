@@ -612,7 +612,7 @@ function initDraggable() {
     function startDrag(e) {
       e.stopImmediatePropagation();
       dragItem = this;
-      dragProperties = { productID: this.dataset.productId, iceBrix: this.dataset.iceBrix };
+      dragProperties = { productId: this.dataset.productId, iceBrix: this.dataset.iceBrix };
       dragItemString = JSON.stringify(dragProperties);
       e.dataTransfer.setData('props', dragItemString);
       dragItem.style.opacity = '0.2';
