@@ -24,7 +24,10 @@
 <!-- Begin Recharge code -->
 {% render 'subscription-cart-footer' %}
 <!-- End Recharge code -->
-
+{% if settings.icebrix-product != blank %}
+  {%- assign iceBrick = all_products[settings.icebrix-product].variants.first.id -%}
+  {%- assign iceBrickHandle = all_products[settings.icebrix-product].handle -%}
+{% endif %}
 <div class="section-{{ section.id }}-padding cart-page">
   <div class="container">
     <div class="cart-page__heading">

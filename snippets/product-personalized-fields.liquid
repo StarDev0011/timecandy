@@ -53,6 +53,12 @@
     {% endif %}
 {% endfor %}
 
+
+{% comment %} Ice Brix Field {% endcomment %}
+{% if ice-brix == true %}
+<input class="hidden" type="text" name="properties[_IceBrix]" value="Ice-Brix">
+{% endif %}
+
 {% comment %} Birthday {% endcomment %}
 {% if personalized-birthday != blank %}
     <div class="product-form__line-item-wrapper mt-3 mb-3">

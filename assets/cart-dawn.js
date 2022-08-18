@@ -42,7 +42,7 @@ CartDawn = {
       });
 
       const isPopup = btn.getAttribute('data-popup-cart');
-      if(isPopup == 'true') {
+      if (isPopup == 'true') {
         const slider = '.js-products-slider';
         const cartModal = $('.gift-cart-modal');
         CartDawn.productSider(slider, 3);
@@ -120,7 +120,7 @@ CartDawn = {
   },
 
   initAddToCart: () => {
-    $('body').on('click', CartDawn.Selector.btnAddToCart, function (e) {
+    $('body').on('click', CartDawn.Selector.btnAddToCart, async function (e) {
       e.preventDefault();
       const btn = this;
       const personalizedMessage = document.querySelector('#personalized-message');
@@ -144,6 +144,16 @@ CartDawn = {
         }
       } else {
         const productItem = $(this).parents('form');
+        
+        await $.get('/cart.js', null, null, 'json').done(function (data) {
+          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+            $('input[name="items[1]id"]').remove();
+            $('input[name="items[1]quantity"]').remove();
+          }
+          else if (btn.dataset.iceBrix) {
+            productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
+          }
+        });
         CartDawn.doAjaxAddToCart(productItem, btn);
       }
     });
@@ -204,11 +214,11 @@ CartDawn = {
         $(this).val(1);
       }
       if (target) {
-        let key = '#' + target.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+        let key = '#' + target.replace(/(:|\.|\[|\]|,|=|@)/g, "\\$1");
         $(key).focus();
       }
       let subTotalItem = $(`.mini-cart__item[data-id="${id}"] .mini-cart__total__sub-price`);
-      $('#cart-log').html("<span>Item Subtotal: "+ subTotalItem[0] + "</span>"+ "<span>Cart Total: " + cart.items_subtotal_price/100 + "</span>")
+      $('#cart-log').html("<span>Item Subtotal: " + subTotalItem[0] + "</span>" + "<span>Cart Total: " + cart.items_subtotal_price / 100 + "</span>")
     });
   },
 
@@ -418,7 +428,7 @@ CartDawn = {
       let cartModal = document.querySelector('.js-mini-cart');
       cartModal.setAttribute('tabIndex', '-1');
       cartModal.focus();
-      cartModal.addEventListener('blur', this.removeAttribute('tabindex'), {one: true});
+      cartModal.addEventListener('blur', this.removeAttribute('tabindex'), { one: true });
 
       $.get('/cart?view=dawn', function (data) {
         $('body').addClass('open-minicart');

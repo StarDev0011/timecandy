@@ -298,7 +298,9 @@
                             </option>
                           {%- endfor -%}
                         </select>
-                        {% render 'icon-caret' %}
+                        <span class="dropdown-arrow">
+                          {% render 'icon-caret' %}
+                        </span>
                       </div>
                     </div>
                   {%- endfor -%}
@@ -391,6 +393,7 @@
                   <div class="product-form__buttons" style="margin-bottom: 20px;">
                     <button
                       data-add-to-cart
+                      data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
                       data-popup-cart="{{ settings.show_popup_cart }}"
                       type="submit"
                       name="add"

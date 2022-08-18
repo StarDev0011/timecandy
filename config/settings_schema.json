@@ -542,6 +542,22 @@
     "name": "Cart Dawn",
     "settings": [
       {
+        "type": "header",
+        "content": "Ice Brix Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "icebrix-enable",
+        "label": "Enable Ice Brix Auto-Add",
+        "default": true
+      },
+      {
+        "type": "product",
+        "id": "icebrix-product",
+        "label": "Ice Brix Product",
+        "info": "Select the product that should automatically be added to any order qualifying for Ice Brix."
+      },
+      {
         "type": "text",
         "id": "min_price_checkout",
         "label": "Minimum Price value to checkout",

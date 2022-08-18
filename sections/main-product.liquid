@@ -173,7 +173,7 @@
     <div class="product__info-wrapper">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
+        
         {%- for block in section.blocks -%}
           {%- case block.type -%}
           {%- when '@app' -%}
@@ -461,6 +461,7 @@
                         type="submit"
                         name="add"
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
+                        data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                       >
                           <span>
@@ -546,7 +547,7 @@
                 };
               </script>
             {% else %}               
-              {% render 'include--fun-extras' %}
+              {% render 'include--fun-extras', block: block %}
             {% endif %}
           {% when 'wishlist' %}
             {% render 'include--wishlist', btn_wishlist: block.settings.btn_wishlist %}

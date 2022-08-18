@@ -71,7 +71,7 @@
         </button>
         {% endif %}
       {% else %}
-        <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart>
+        <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
           <span class="card-product__btn-icon">
             {% render 'icon-add' %}
           </span>

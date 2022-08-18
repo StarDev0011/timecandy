@@ -429,6 +429,7 @@
                       <button
                         type="submit"
                         name="add"
+                        data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
                         data-add-to-cart
                         data-popup-cart="{{ settings.show_popup_cart }}"
                         aria-label="Add product {{ product.title }} to your cart"
