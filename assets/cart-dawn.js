@@ -611,8 +611,9 @@ function initDraggable() {
 
     function startDrag(e) {
       e.stopImmediatePropagation();
-      dragItem = { productID: this.dataset.productId, iceBrix: this.dataset.iceBrix };
-      dragItemString = JSON.stringify(dragItem);
+      dragItem = this;
+      dragProperties = { productID: this.dataset.productId, iceBrix: this.dataset.iceBrix };
+      dragItemString = JSON.stringify(dragProperties);
       e.dataTransfer.setData('props', dragItemString);
       dragItem.style.opacity = '0.2';
       dragItem.style.zIndex = '3';
