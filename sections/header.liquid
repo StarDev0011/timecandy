@@ -98,7 +98,8 @@
                               <summary class="menu-drawer__menu-item list-menu__item link  {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                                 <a href="{{ link.url }}" class="list-menu__item link  {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                                   {{ link.title | escape }}
-                                </a>                                {% render 'icon-angle-right' %}
+                                </a>                                
+                                {% render 'icon-angle-right' %}
                                 {% render 'icon-caret' %}
                               </summary>
                               <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu gradient motion-reduce" tabindex="-1">
@@ -109,7 +110,7 @@
                                   </button>
                                   {%- if has_mega_menu == true -%}
                                     <div class="megamenu">
-                                      {% render 'mega-menu' with links: link.links, datas: datas, index: forloop.index %}
+                                      {% render 'mega-menu' with links: link.links, index: forloop.index %}
                                     </div>
                                   {% else %}
                                     <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
@@ -188,6 +189,9 @@
                   value="{{ search.terms | escape }}"
                   placeholder="{{ 'general.search.search' | t }}"
                 >
+                <a href="javascript:;" class="stop-anim-btn">
+                  <img src="{{'icon-pause.png'| asset_img_url :'master'}}" alt="Stop animation" loading="lazy" width="44" height="44">
+                </a>                  
                 <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                   <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
                     <use href="#icon-search" />
@@ -233,7 +237,7 @@
                     {%- endif -%}
                   >
                   <a href="javascript:;" class="stop-anim-btn">
-                    <img src="{{'icon-pause.png'| asset_img_url :'master'}}" alt="Stop animation" class="lazyload">
+                    <img src="{{'icon-pause.png'| asset_img_url :'master'}}" alt="Stop animation" loading="lazy" width="44" height="44">
                   </a>
                   <input type="hidden" name="options[prefix]" value="last">
                   <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
@@ -367,12 +371,12 @@
                 {%- if link.links != blank -%}
                   {%- if has_mega_menu == true -%}
                     <div class="list-menu__item">
-                      <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link">
-                        <span {% if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                      <a aria-label="{{ link.url | handleize }}" href="{{ link.url }}" class="item-parent header__menu-item link {% if link.child_active or link.active %}header__active-menu-item{% endif %}">
+                        <span>{{ link.title | escape }}</span>
                       </a>
                     </div>
                     <div class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce megamenu" tabindex="-1">
-                      {% render 'mega-menu' with links: link.links, datas: datas, index: forloop.index %}
+                      {% render 'mega-menu' with links: link.links, index: forloop.index %}
                        <style>
                           @media(min-width: 992px){
                               .index-{{ forloop.index }} .megamenu .mega-menu-wrapper{

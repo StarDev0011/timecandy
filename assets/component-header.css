@@ -65,13 +65,15 @@ header-drawer {
   bottom: -14px;
   transition: all 0.5s ease-in-out;
 }
-.header__inline-menu .list-menu--inline > li:hover .header__menu-item > span::before {
+.header__inline-menu .list-menu--inline > li:hover .header__menu-item > span::before,
+.header__inline-menu .list-menu--inline > li .header__menu-item.item-parent.header__active-menu-item > span::before {
   width: 100%;
 }
 .header__inline-menu .list-menu--inline > li .header__menu-item.item-parent {
   transition: color .25s;
 }
-.header__inline-menu .list-menu--inline > li:hover .header__menu-item.item-parent {
+.header__inline-menu .list-menu--inline > li:hover .header__menu-item.item-parent,
+.header__inline-menu .list-menu--inline > li .header__menu-item.item-parent.header__active-menu-item {
   color: rgba(var(--color-secondary-background));
 }
 .header__submenu .header__submenu .header__menu-item {
