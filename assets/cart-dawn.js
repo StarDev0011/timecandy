@@ -626,7 +626,7 @@ function initDraggable() {
     }
     function dragEnter() {}
     function dragLeave() {}
-    async function dragDrop(e) {
+    function dragDrop(e) {
       e.stopImmediatePropagation();
       let formData = {};
       $.get('/cart.js', null, null, 'json').done(function (data) {
