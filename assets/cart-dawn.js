@@ -589,7 +589,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function initDraggable() {
   let productItems = document.querySelectorAll('.card-product__picture');
   let bag = document.querySelector('#drop-zone');
-  let dragItem;
+  var dragItem;
   if (bag) {
     productItems.forEach(item => {
         var initialPosX, initialPosY;
