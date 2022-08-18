@@ -628,6 +628,8 @@ function initDraggable() {
     function dragLeave() {}
     async function dragDrop(e) {
       e.stopImmediatePropagation();
+      const id = e.dataTransfer.getData('text/plain');
+      const draggable = document.getElementById(id);
       let formData = {};
       await $.get('/cart.js', null, null, 'json').done(function (data) {
         if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
