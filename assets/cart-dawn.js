@@ -611,7 +611,9 @@ function initDraggable() {
 
     function startDrag(e) {
       e.stopImmediatePropagation();
-      dragItem = this;
+      dragItem = { productID: this.dataset.productId, iceBrix: this.dataset.iceBrix };
+      dragItemString = JSON.stringify(dragItem);
+      e.dataTransfer.setData('props', dragItemString);
       dragItem.style.opacity = '0.2';
       dragItem.style.zIndex = '3';
     }    
@@ -628,21 +630,20 @@ function initDraggable() {
     function dragLeave() {}
     async function dragDrop(e) {
       e.stopImmediatePropagation();
-      const id = e.dataTransfer.getData('text/plain');
-      const draggable = document.getElementById(id);
+      let dragItem = JSON.parse(e.dataTransfer.getData('props'));
       let formData = {};
       await $.get('/cart.js', null, null, 'json').done(function (data) {
         if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
           formData = {
             'items': [{
-              'id': dragItem.dataset.productId,
+              'id': dragItem.productId,
               'quantity': 1
             }]
           };
-        } else if (dragItem.dataset.iceBrix && window.iceBrix) {
+        } else if (dragItem.iceBrix && window.iceBrix) {
           formData = {
             'items': [{
-              'id': dragItem.dataset.productId,
+              'id': dragItem.productId,
               'quantity': 1
             },
             {
@@ -654,7 +655,7 @@ function initDraggable() {
         } else {
           formData = {
             'items': [{
-              'id': dragItem.dataset.productId,
+              'id': dragItem.productId,
               'quantity': 1
             }]
           };          
