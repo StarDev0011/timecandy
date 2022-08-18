@@ -64,15 +64,29 @@ CartDawn = {
         });
       }
 
-      $.get('/cart.js', null, null, 'json').done(function (data) {
-        $(CartDawn.Selector.count).text(data.item_count);
-        $('.js-cart-count').html(data.item_count);
-      });
+      CartDawn.updateCartCount(btn);
 
     }).fail(function ({ responseJSON }) {
       const { description } = responseJSON;
       $('.modal-error').fadeIn(500);
       $('.js-message-error').html(description);
+    });
+  },
+
+  updateCartCount: (btn) => {
+    $.get('/cart.js', null, null, 'json').done(function (data) {
+      $(CartDawn.Selector.count).text(data.item_count);
+      $('.js-cart-count').html(data.item_count);
+      if (btn && btn.classList.contains('card-product__pack-bag')) {
+        document.querySelector('.js-cart-count').innerHTML = data.item_count;
+        document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+
+        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+        obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+        obj_mp3.play();        
+        $('.packabag-sidebar__bag').addClass('animated tada');
+        setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+      }
     });
   },
 
@@ -150,7 +164,7 @@ CartDawn = {
             $('input[name="items[1]id"]').remove();
             $('input[name="items[1]quantity"]').remove();
           }
-          else if (btn.dataset.iceBrix) {
+          else if (btn.dataset.iceBrix && window.iceBrix) {
             productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
           }
         });
@@ -196,12 +210,16 @@ CartDawn = {
     });
   },
 
-  updateCartAjax: async (qty, id, target) => {
+  updateCartAjax: async (qty, id, target, removeIceBrix) => {
     $('.cart-overlay').show();
-    await $.post('/cart/change.json', {
+    let formData = {
       quantity: qty,
       id: id
-    }).done(async function (cart) {
+    };
+    if (removeIceBrix && window.iceBrix) {
+      await $.post('/cart/change.json', {quantity:0,id:window.iceBrix.id}).done(async function () {});
+    }
+    await $.post('/cart/change.json', formData).done(async function (cart) {
       await $.get('/cart?view=dawn', function (data) {
         $('.cart-overlay').hide();
         $('.js-mini-cart').html(data);
@@ -240,14 +258,19 @@ CartDawn = {
       let item = $(this).parents(CartDawn.Selector.cartItem),
         id = item.attr('data-id'),
         quantity = item.find(CartDawn.Selector.qty).val(),
-        number = parseFloat(quantity) - 1;
-
+        number = parseFloat(quantity) - 1,
+        dataIceBrix = item.attr('data-ice-brix');
       if (quantity >= 1) {
         item.find(CartDawn.Selector.qty).val(number);
       }
 
       let qty = item.find(CartDawn.Selector.qty).val();
-      CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
+      console.log($(CartDawn.Selector.cartItem + "[data-ice-brix=true]").length);
+      if (dataIceBrix && ($(CartDawn.Selector.cartItem + "[data-ice-brix=true]").length == 1) && (qty == 0)) {
+        CartDawn.updateCartAjax(qty, id, $(this).attr('id'), true);
+      } else {
+        CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
+      }
     })
   },
 
@@ -256,8 +279,13 @@ CartDawn = {
       e.preventDefault();
       e.stopPropagation();
       let id = $(this).attr('data-cart-id'),
-        qty = $(this).val();
-      CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
+        qty = $(this).val(),
+        dataIceBrix = $(this).parents(CartDawn.Selector.cartItem).attr('data-ice-brix');
+      if (dataIceBrix && ($(CartDawn.Selector.cartItem + "[data-ice-brix=true]").length == 1) && (qty == 0)) {
+        CartDawn.updateCartAjax(qty, id, $(this).attr('id'), true);
+      } else {
+        CartDawn.updateCartAjax(qty, id, $(this).attr('id'));
+      }
     });
   },
 
@@ -266,8 +294,13 @@ CartDawn = {
       e.preventDefault();
       const item = $(this).parents(CartDawn.Selector.cartItem),
         id = item.attr('data-id'),
-        qty = 0;
-      CartDawn.updateCartAjax(qty, id);
+        qty = 0,
+        dataIceBrix = $(this).parents(CartDawn.Selector.cartItem).attr('data-ice-brix');
+      if (dataIceBrix && ($(CartDawn.Selector.cartItem + "[data-ice-brix=true]").length == 1)) {
+        CartDawn.updateCartAjax(qty, id, false, true);
+      } else {
+        CartDawn.updateCartAjax(qty, id, false);
+      }
       item.hide();
     })
   },
@@ -541,6 +574,179 @@ CartDawn = {
     })
   }
 }
+if (['searchspring.domReady']) {
+  ['searchspring.domReady'].forEach(function(e) {
+    window.addEventListener(e, (event) => {
+        initDraggable();
+    });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    initDraggable();
+});
+
+function initDraggable() {
+  let productItems = document.querySelectorAll('.card-product__picture');
+  let bag = document.querySelector('#drop-zone');
+  let dragItem;
+  if (bag) {
+    productItems.forEach(item => {
+        var initialPosX, initialPosY;
+  
+        item.addEventListener('dragstart', dragStart)
+        item.addEventListener('dragend', dragEnd)
+  
+        item.addEventListener('touchstart', function(e) {
+            initialPosX = item.getBoundingClientRect().left;
+            initialPosY = item.getBoundingClientRect().top;
+            item.style.opacity = '0.2';
+            item.style.zIndex = '3';
+        });
+        item.addEventListener('touchmove', function(e) {
+            var touchLocation = e.targetTouches[0];
+            var newPosX = touchLocation.clientX - item.offsetWidth/2 - initialPosX;
+            var newPosY = touchLocation.clientY - item.offsetHeight/2 - initialPosY;
+            // // assign box new coordinates based on the touch.
+            
+            item.style.transform = 'translate('+newPosX+'px,'+newPosY+'px)';
+          })
+  
+          item.addEventListener('touchend', async function(e) {
+            var afterPosX = item.getBoundingClientRect().left;
+            var afterPosY = item.getBoundingClientRect().top;
+            var afterPosXEnd = afterPosX + item.offsetWidth;
+            var afterPosYEnd = afterPosY + item.offsetHeight;
+            var bagPos = document.querySelector('#drop-zone').getBoundingClientRect();
+            var bagPosX = bagPos.left;
+            var bagPosY = bagPos.top;
+            if (afterPosX <= bagPosX && bagPosX <= afterPosXEnd && afterPosY <= bagPosY && bagPosY <= afterPosYEnd) {
+              let formData = {};
+              await $.get('/cart.js', null, null, 'json').done(function (data) {
+                if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+                  formData = {
+                    'items': [{
+                      'id': item.dataset.productId,
+                      'quantity': 1
+                    }]
+                  };
+                }
+                else if (item.dataset.iceBrix && window.iceBrix) {
+                  formData = {
+                    'items': [{
+                      'id': item.dataset.productId,
+                      'quantity': 1
+                    },
+                    {
+                      'id': window.iceBrix.id,
+                      'quantity': 1
+                    }
+                  ]
+                  };
+                }
+              });
+              fetch(window.Shopify.routes.root + 'cart/add.js', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+              })
+              .then(response => {
+                CartDawn.updateCartCount(item);
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+            }
+            item.style.transform = 'translate(0,0)';
+            item.style.opacity = 1;
+            item.style.zIndex = 2;
+          })
+    });
+    
+    bag.addEventListener('dragover', dragOver);
+    bag.addEventListener('dragenter', dragEnter);
+    bag.addEventListener('dragleave', dragLeave);
+    bag.addEventListener('drop', dragDrop);
+  
+    function dragStart() {
+        dragItem = this;
+    }
+  
+    function dragEnd() {
+        dragItem = null;
+    }
+  
+    function dragOver(e) {
+        e.preventDefault();
+    }
+  
+    function dragEnter() {}
+    function dragLeave() {}
+  
+    async function dragDrop() {
+      let formData = {};
+      if (window.iceBrix) {
+        if (dragItem.dataset.iceBrix) {
+          formData = {
+            'items': [{
+              'id': dragItem.dataset.productId,
+              'quantity': 1
+            },
+            {
+              'id': window.iceBrix.id,
+              'quantity': 1
+            }
+          ]
+          };
+        }
+        await $.get('/cart.js', null, null, 'json').done(function (data) {
+          if (data.items.filter((e) => e.id == window.iceBrix.id).length > 0) {
+            formData = {
+              'items': [{
+                'id': dragItem.dataset.productId,
+                'quantity': 1
+              }]
+            };
+          }
+        });
+      } else {
+        formData = {
+          'items': [{
+            'id': dragItem.dataset.productId,
+            'quantity': 1
+          }]
+        };
+      }
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        $.get('/cart.js', null, null, 'json').done(function (data) {
+          $('.js-header-cart-count').text(data.item_count);
+          $('.js-cart-count').html(data.item_count);
+          document.querySelector('.js-cart-count').innerHTML = data.item_count;
+          document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+  
+          var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+          obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+          obj_mp3.play();        
+          $('.packabag-sidebar__bag').addClass('animated tada');
+          setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  }
+}
+
 
 $(function () {
   CartDawn.init();

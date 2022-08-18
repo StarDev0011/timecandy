@@ -55,7 +55,7 @@
               {% assign included = true %}
             {% endif %}
           {% endfor %}
-          <div class="mini-cart__item" data-id="{{ item.key }}">
+          <div class="mini-cart__item" data-id="{{ item.key }}" data-ice-brix="{% if item.product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
               <a class="mini-cart__link" href="{{ item.url }}">
                 <div class="mini-cart__picture">
                   <img loading="lazy" width="100" height="100" class="mini-cart__image" src="{{ item | img_url: 'x250' }}" alt="{{ item.image.alt | escape }}">
