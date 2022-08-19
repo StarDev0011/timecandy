@@ -80,6 +80,16 @@
             "pr_1": "100-grand-bar",
             "pr_2": "air-heads-bar"
           }
+        },
+        "0cb2e918-4159-406a-a3e5-5e91825f1cd1": {
+          "type": "melting",
+          "settings": {
+            "background_color": "#ffffff",
+            "melting_title": "Worried about melting?",
+            "melting_subtext": "<p>Don't be, we've got it covered!<\/p>",
+            "melting_link_label": "Learn about shipping",
+            "melting_link_shipping": "shopify:\/\/pages\/shipping"
+          }
         }
       },
       "block_order": [
@@ -94,7 +104,8 @@
         "buy_buttons",
         "9314d269-9aa5-4d88-8f23-e034ebd3d8ed",
         "41884624-41f9-4374-bde9-2bd73becdb9e",
-        "671f3cfa-ea66-44e3-8413-d7997c5f9d05"
+        "671f3cfa-ea66-44e3-8413-d7997c5f9d05",
+        "0cb2e918-4159-406a-a3e5-5e91825f1cd1"
       ],
       "settings": {
         "enable_sticky_info": true,
