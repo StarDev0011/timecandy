@@ -88,7 +88,7 @@
             "melting_title": "Worried about melting?",
             "melting_subtext": "<p>Don't be, we've got it covered!<\/p>",
             "melting_link_label": "Learn about shipping",
-            "melting_link_shipping": "shopify:\/\/pages\/shipping"
+            "page": "shipping"
           }
         }
       },
