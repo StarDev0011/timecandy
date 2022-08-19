@@ -358,30 +358,46 @@
                 </div>
               </div>
             </noscript>
-            {%- when 'melting' -%}
-              <style>
-                .product-melting{
-                  background-color: {{block.settings.background_color}};
-                }
-              </style>
-              {% if product.tags contains 'Ice-Brix' %}
-                <div class="product-melting" {{ block.shopify_attributes }}>
-                  <div class="product-melting_icon">
-                    <svg width="53" height="56" viewBox="0 0 53 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" fill="#FEA826"/>
-                      <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" fill="#FEA826"/>
-                      <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" stroke="#F3A536"/>
-                      <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" stroke="#F3A536"/>
-                      <circle cx="26" cy="27.5" r="16" fill="white"/>
-                    </svg>
-                  </div>
-                  <div class="product-melting_content">
-                    <p class="title">{{ block.settings.melting_title }}</p>
-                    <div class="text">{{ block.settings.melting_subtext }}</div>
-                    <a href="{{ block.settings.melting_link_shipping }}">{{ block.settings.melting_link_label }}</a>
+          {%- when 'melting' -%}
+            <style>
+              .product-melting{
+                background-color: {{block.settings.background_color}};
+              }
+            </style>
+            {% if product.tags contains 'Ice-Brix' %}
+              <div class="product-melting" {{ block.shopify_attributes }}>
+                <div class="product-melting_icon">
+                  <svg width="53" height="56" viewBox="0 0 53 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" fill="#FEA826"/>
+                    <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" fill="#FEA826"/>
+                    <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" stroke="#F3A536"/>
+                    <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" stroke="#F3A536"/>
+                    <circle cx="26" cy="27.5" r="16" fill="white"/>
+                  </svg>
+                </div>
+                <div class="product-melting_content">
+                  <p class="title">{{ block.settings.melting_title }}</p>
+                  <div class="text">{{ block.settings.melting_subtext }}</div>
+                  <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
+                    <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog"> {{ block.settings.melting_link_label | default: block.settings.page.title }}</button>
+                  </modal-opener>
+                  <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js"> {{ block.settings.melting_link_label }}</a>
+                </div>
+              </div>
+              <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                <div role="dialog" aria-label="{{ block.settings.text }}" aria-modal="true" class="product-popup-modal__content" tabindex="-1">
+                  <div class="product-popup-modal__content-info">
+                    <div class="product-popup-modal__header">
+                      <h2 class="product-popup-modal__header-title">{{ block.settings.page.title }}</h2>
+                      <button id="ModalClose-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+                    </div>
+                    <div class="product-popup-modal__text">
+                      {{ block.settings.page.content }}
+                    </div>
                   </div>
                 </div>
-              {% endif %}
+              </modal-dialog>
+            {% endif %}
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
@@ -819,9 +835,9 @@
           "default": "Learn about shipping"
         },
         {
-          "type": "url",
-          "id": "melting_link_shipping",
-          "label": "URL"
+          "id": "page",
+          "type": "page",
+          "label": "t:sections.main-product.blocks.popup.settings.page.label"
         }
       ]
     },

@@ -2707,9 +2707,10 @@ div#bookmarkit {
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px;
+  margin: 40px 0;
 }
 
-.product-melting_content{
+.product-melting_content {
   margin-left: 40px;
 }
 
@@ -2724,9 +2725,9 @@ div#bookmarkit {
   color: #484e57;
 }
 
-.product-melting_content .text{
+.product-melting_content .text {
   margin-top: 0;
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -2735,11 +2736,11 @@ div#bookmarkit {
   margin-bottom: 16px;
 }
 
-.product-melting_content .text p{
+.product-melting_content .text p {
   margin: 0;
 }
 
-.product-melting_content a{
+.product-melting_content a {
   font-family: var(--font-heading);
   font-style: normal;
   font-weight: 200;
@@ -2747,7 +2748,15 @@ div#bookmarkit {
   line-height: 18px;
   text-decoration-line: underline;
   text-transform: uppercase;
-  color: #484E57;
+  color: #484e57;
+}
+
+.product-melting_content a:hover {
+  font-weight: 700;
+  text-decoration-thickness: 0.2rem;
+  color: inherit;
+  text-underline-offset: 3px;
+  transition: offset 0.1s;
 }
 
 @media (max-width: 480px) {
@@ -2755,7 +2764,7 @@ div#bookmarkit {
     padding: 15px;
   }
 
-  .product-melting_content{
+  .product-melting_content {
     margin-left: 15px;
   }
 }
