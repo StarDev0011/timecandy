@@ -332,6 +332,30 @@
                 </div>
               </div>
             </noscript>
+            {%- when 'melting' -%}
+              <style>
+                .product-melting{
+                  background-color: {{block.settings.background_color}};
+                }
+              </style>
+              {% if product.tags contains 'Ice-Brix' %}
+                <div class="product-melting" {{ block.shopify_attributes }}>
+                  <div class="product-melting_icon">
+                    <svg width="53" height="56" viewBox="0 0 53 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" fill="#FEA826"/>
+                      <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" fill="#FEA826"/>
+                      <path d="M10.5 7V16L42 48.5V38L51.5 36L45 27L51.5 20L42 17.5L40.5 7L32.5 10L26 1.5L19 10L10.5 7Z" stroke="#F3A536"/>
+                      <path d="M42 49V40L10.5 7.5L10.5 18L1 20L7.5 29L1 36L10.5 38.5L12 49L20 46L26.5 54.5L33.5 46L42 49Z" stroke="#F3A536"/>
+                      <circle cx="26" cy="27.5" r="16" fill="white"/>
+                    </svg>
+                  </div>
+                  <div class="product-melting_content">
+                    <p class="title">{{ block.settings.melting_title }}</p>
+                    <div class="text">{{ block.settings.melting_subtext }}</div>
+                    <a href="{{ block.settings.melting_link_shipping }}">{{ block.settings.melting_link_label }}</a>
+                  </div>
+                </div>
+              {% endif %}
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
@@ -784,6 +808,42 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        }
+      ]
+    },
+    {
+     "type": "melting",
+      "name": "About melting",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "melting_title",
+          "label": "Title",
+          "default": "Worried about melting?"
+        },
+        {
+          "type": "richtext",
+          "id": "melting_subtext",
+          "label": "Text",
+          "default": "<p>Don't be, we've got it covered!</p>"
+        },
+        {
+          "type": "text",
+          "id": "melting_link_label",
+          "label": "Label",
+          "default": "Learn about shipping"
+        },
+        {
+          "type": "url",
+          "id": "melting_link_shipping",
+          "label": "URL"
         }
       ]
     },

@@ -149,8 +149,18 @@
   width: 100%;
 }
 
+.banner__media .banner__media-2{
+  right: 0;
+  left: auto !important;
+}
+
+.banner__media-2 img{
+  object-fit: contain;
+  top: -40px !important;
+}
+
 .banner__media-half {
-  width: 50%;
+  width: 50% !important;
 }
 
 .banner__media-half + .banner__media-half {
@@ -165,6 +175,16 @@
 
   .banner--stacked .banner__media-half + .banner__media-half {
     order: 1;
+  }
+
+  .banner__media .banner__media-2{
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  
+  .banner__media-2 img{
+    top: 0 !important;
   }
 }
 
