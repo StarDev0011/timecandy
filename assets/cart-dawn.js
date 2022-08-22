@@ -587,96 +587,125 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function initDraggable() {
-  let productItems = document.querySelectorAll('.card-product__picture');
+  var position = { x: 0, y: 0 };
+  function listener (event) { 
+    event.preventDefault();
+    event.stopImmediatePropagation();     
+    var { currentTarget, interaction } = event;
+    var element = currentTarget;   
+    switch (event.type) {
+      case 'dragstart':
+        if (
+          interaction.pointerIsDown &&
+          !interaction.interacting() &&
+          currentTarget.style.transform === ''
+        ) {
+          event.stopImmediatePropagation();
+        } else if (interaction.pointerIsDown && !interaction.interacting()) {
+          event.stopImmediatePropagation();
+          const regex = /translate\(([\d]+)px, ([\d]+)px\)/i;
+          const transform = regex.exec(currentTarget.style.transform);
+
+          if (transform && transform.length > 1) {
+            position.x = Number(transform[1]);
+            position.y = Number(transform[2]);
+          }
+
+          element.style.cssText ="z-index: 12; opacity: .2"
+          element.closest('.card-product__item').classList.add('active')
+          document.querySelector('#MainContent').style.overflowX = 'visible'
+          document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
+        }  
+        break;
+      case 'dragmove':
+        position.x += event.dx;
+        position.y += event.dy;
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`;            
+        break;
+      case 'dragend':
+        event.stopImmediatePropagation();
+        event.preventDefault();
+        element.style.cssText=`
+          transform: translate(0px, 0px);
+          z-index: 1;
+          opacity: 1;
+          scale: 1;
+        `;
+        element.closest('.card-product__item').classList.remove('active');
+        position = { x: 0, y: 0 };
+        document.querySelector('#MainContent').style.overflowX = 'hidden'
+        document.querySelector('.packabag-sidebar__bag').classList.remove("animated", "infinite", "pulse");
+        break;
+    }
+  }  
+
   let bag = document.querySelector('#drop-zone');
-  let dragItem;
-  if (bag) {
-    productItems.forEach(item => {
-        item.removeEventListener('dragstart', startDrag);
-        item.removeEventListener('dragend', endDrag); 
 
-        item.addEventListener('dragstart', startDrag);       
-        item.addEventListener('dragend', endDrag); 
-    });
+  if (bag) {  
+    interact('.card-product__picture').draggable({
+      onstart: listener,
+      onmove: listener,
+      onend: listener,
+      max: Infinity,
+      maxPerElement: 1,
+    }).styleCursor(true);   
 
-    bag.removeEventListener('dragover', dragOver);
-    bag.removeEventListener('dragenter', dragEnter);
-    bag.removeEventListener('dragleave', dragLeave);
-    bag.removeEventListener('drop', dragDrop);    
-    
-    bag.addEventListener('dragover', dragOver);
-    bag.addEventListener('dragenter', dragEnter);
-    bag.addEventListener('dragleave', dragLeave);
-    bag.addEventListener('drop', dragDrop);
-
-    function startDrag(e) {
-      e.stopImmediatePropagation();
-      dragItem = this;
-      dragProperties = { productId: this.dataset.productId, iceBrix: this.dataset.iceBrix };
-      dragItemString = JSON.stringify(dragProperties);
-      e.dataTransfer.setData('props', dragItemString);
-      dragItem.style.opacity = '0.2';
-      dragItem.style.zIndex = '3';
-    }    
-    async function endDrag(e) {
-      e.stopImmediatePropagation();
-      dragItem.style.transform = 'translate(0,0)';
-      dragItem.style.opacity = 1;
-      dragItem.style.zIndex = 2;
-    }      
-    function dragOver(e) {
-      e.preventDefault();
-    }
-    function dragEnter() {}
-    function dragLeave() {}
-    async function dragDrop(e) {
-      e.stopImmediatePropagation();
-      let dragItem = JSON.parse(e.dataTransfer.getData('props'));
-      let formData = {};
-      await $.get('/cart.js', null, null, 'json').done(function (data) {
-        if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-          formData = {
-            'items': [{
-              'id': dragItem.productId,
-              'quantity': 1
-            }]
-          };
-        } else if (dragItem.iceBrix && window.iceBrix) {
-          formData = {
-            'items': [{
-              'id': dragItem.productId,
-              'quantity': 1
-            },
-            {
-              'id': window.iceBrix.id,
-              'quantity': 1
-            }
-          ]
-          };
-        } else {
-          formData = {
-            'items': [{
-              'id': dragItem.productId,
-              'quantity': 1
-            }]
-          };          
-        }
-      });
-      fetch(window.Shopify.routes.root + 'cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => {
-        CartDawn.updateCartCount({classList: 'card-product__pack-bag'});
-        dragItem = null;
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
+    interact('.card-product__picture').on('click', function (event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+    interact('#drop-zone')
+    .dropzone({
+      accept: '.card-product__picture',
+      overlap: 'cursor',
+      ondrop: async function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        let formData = {};
+        await $.get('/cart.js', null, null, 'json').done(function (data) {
+          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+            formData = {
+              'items': [{
+                'id': event.relatedTarget.dataset.productId,
+                'quantity': 1
+              }]
+            };
+          } else if ( event.relatedTarget.dataset.iceBrix && window.iceBrix) {
+            formData = {
+              'items': [{
+                'id':  event.relatedTarget.dataset.productId,
+                'quantity': 1
+              },
+              {
+                'id': window.iceBrix.id,
+                'quantity': 1
+              }
+            ]
+            };
+          } else {
+            formData = {
+              'items': [{
+                'id':  event.relatedTarget.dataset.productId,
+                'quantity': 1
+              }]
+            };          
+          }
+        });
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          CartDawn.updateCartCount({classList: 'card-product__pack-bag'});
+        }) 
+        .catch((error) => {
+          console.error('Error:', error);
+        });                         
+      }
+    });        
   }
 }
 
