@@ -7,7 +7,7 @@
 
     {% if section.settings.bg_image != blank %}
         #shopify-section-{{section.id}}{
-            background-image: url({{ section.settings.bg_image | img_url: 'master' }});
+            background-image: url({{ section.settings.bg_image | image_url: 'master' }});
             background-position: center;
             background-size: 100%;
             background-repeat: no-repeat;
@@ -48,6 +48,9 @@
           <div class="top-brands_item">
             <div class="top-brands_item__media {% if block.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}">
             {%- if block.settings.image != blank -%}
+              {% if block.settings.link %}
+                <a href="{{ block.settings.link }}">
+              {% endif %}
                 <img
                 srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
                     {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -66,6 +69,9 @@
             {%- else -%}
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
+            {% if block.settings.link %}
+              </a>
+            {% endif %}            
             </div>
             <div class="top-brands_item__content">
                 <div class="top-brands_item__title h2">
@@ -174,6 +180,11 @@
                     "id": "richtext",
                     "label": "Richtext",
                     "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Links"
                 }
             ]
         }
