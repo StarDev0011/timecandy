@@ -42,7 +42,7 @@
       "settings": {
         "grid": 3,
         "rows": 18,
-        "show_desc": true,
+        "show_desc": false,
         "page": "scroll"
       }
     },
@@ -131,7 +131,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-double-bubble.jpg",
             "title": "Dubble Bubble Gum",
-            "richtext": "<p>An iconic bubble gum brand, Dubble Bubble was created in 1928 as “double bubble gum” and is known for its distinctive pink wrappers. The bubble gum itself is pink and has a slightly softer texture than Bazooka.<\/p>"
+            "richtext": "<p>An iconic bubble gum brand, Dubble Bubble was created in 1928 as “double bubble gum” and is known for its distinctive pink wrappers. The bubble gum itself is pink and has a slightly softer texture than Bazooka.<\/p>",
+            "link": "shopify:\/\/collections\/walk-the-candy-aisle-dubble-bubble-gum"
           }
         },
         "f0636d21-c2be-424d-baf1-ddb5d3f8c0b8": {
@@ -139,7 +140,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-bazooka.jpg",
             "title": "Bazooka Bubble Gum",
-            "richtext": "<p>Bazooka chewing gum was first introduced in 1947 and is still one of the most popular brands today. The original pink flavor is instantly recognizable and continues to be a customer favorite.<\/p>"
+            "richtext": "<p>Bazooka chewing gum was first introduced in 1947 and is still one of the most popular brands today. The original pink flavor is instantly recognizable and continues to be a customer favorite.<\/p>",
+            "link": ""
           }
         },
         "b46d7bfe-8577-4abb-b8bc-47c7c1555316": {
@@ -147,7 +149,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-hubba-bubba.jpg",
             "title": "Hubba Bubba Bubble Gum",
-            "richtext": "<p>Hubba Bubba gum is known for its fun flavors and quirky commercials. They also make bubble gum tape, which makes chewing bubble gum even more fun! Some of the most popular flavors include Strawberry Watermelon, Sour Blue Raspberry, and Cotton Candy.<\/p>"
+            "richtext": "<p>Hubba Bubba gum is known for its fun flavors and quirky commercials. They also make bubble gum tape, which makes chewing bubble gum even more fun! Some of the most popular flavors include Strawberry Watermelon, Sour Blue Raspberry, and Cotton Candy.<\/p>",
+            "link": ""
           }
         },
         "0380fb1f-43a0-4842-a3fe-dd2db3da6a0f": {
@@ -155,7 +158,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-wrigleys.jpg",
             "title": "Wrigley Chewing Gum",
-            "richtext": "<p>Wrigley’s is one of the most popular chewing gum brands in the world and their bubble gum is no exception. With classic flavors like Original Bubble Gum to new favorites like Extreme Sour Bubble Gum, Wrigley's chewing gum is fun for everyone.<\/p>"
+            "richtext": "<p>Wrigley’s is one of the most popular chewing gum brands in the world and their bubble gum is no exception. With classic flavors like Original Bubble Gum to new favorites like Extreme Sour Bubble Gum, Wrigley's chewing gum is fun for everyone.<\/p>",
+            "link": ""
           }
         },
         "93e9411d-1b8e-4ce7-81e7-50052769628b": {
@@ -163,7 +167,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-big-league.jpg",
             "title": "Big League Chew Bubble Gum",
-            "richtext": "<p>This baseball bubble gum was created by former major league baseball players in 1980 and comes in a shredded, “chewable” form. The most popular flavors of Big League chewing gum are Original, Strawberry, and Grape.<\/p>"
+            "richtext": "<p>This baseball bubble gum was created by former major league baseball players in 1980 and comes in a shredded, “chewable” form. The most popular flavors of Big League chewing gum are Original, Strawberry, and Grape.<\/p>",
+            "link": ""
           }
         },
         "f920a258-8f4f-4a6b-8a8f-c234add0ad71": {
@@ -171,7 +176,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-beemans.jpg",
             "title": "Beemans Chewing Gum",
-            "richtext": "<p>Beemans gum has been around since 1884 and is known for its long-lasting flavor. The clove flavor is the most popular, but it also comes in a variety of other flavors like mint and cinnamon.<\/p>"
+            "richtext": "<p>Beemans gum has been around since 1884 and is known for its long-lasting flavor. The clove flavor is the most popular, but it also comes in a variety of other flavors like mint and cinnamon.<\/p>",
+            "link": ""
           }
         },
         "59c9875a-9f70-4b5e-a971-c97ab84650a3": {
@@ -179,7 +185,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-bubble-yum.jpg",
             "title": "Bubble Yum",
-            "richtext": "<p>Launched in 1975, Bubble Yum was the first “soft” bubble gum on the market. It quickly became a favorite among kids for its delicious flavors and the ability to blow big bubbles.<\/p>"
+            "richtext": "<p>Launched in 1975, Bubble Yum was the first “soft” bubble gum on the market. It quickly became a favorite among kids for its delicious flavors and the ability to blow big bubbles.<\/p>",
+            "link": ""
           }
         }
       },
