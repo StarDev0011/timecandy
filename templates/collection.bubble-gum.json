@@ -37,6 +37,15 @@
         "show_text_below": true
       }
     },
+    "1661192043a5fd146f": {
+      "type": "collection-product-grid",
+      "settings": {
+        "grid": 3,
+        "rows": 18,
+        "show_desc": true,
+        "page": "scroll"
+      }
+    },
     "16606692558670ab0e": {
       "type": "image-with-text-4",
       "blocks": {
@@ -609,6 +618,7 @@
   },
   "order": [
     "16606694974554b53d",
+    "1661192043a5fd146f",
     "16606692558670ab0e",
     "16606662547df03c9a",
     "16606826093c0abd28",
