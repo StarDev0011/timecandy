@@ -19,16 +19,6 @@
   {% endif %}
 </style>
 <div class="collection collection-pack-a-bag">
-    <a href="{{ routes.cart_url }}"  class="packabag-sidebar js-open-cart">
-        <div id="drop-zone" class="animated">
-            <div class="packabag-sidebar__logo">
-                <img src="//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_LOGO_4.png?v=1424973364437215331649261733" alt="Click and Drag to Pack-a-Bag">
-            </div>
-            <div class="packabag-sidebar__bag">
-                <span class="packabag-sidebar__count" data-cart-render="item_count">{{ cart.item_count }}</span>
-            </div>
-        </div>
-    </a>
     <div class="container">
         <div class="collection__header">
           <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
@@ -181,48 +171,6 @@
   }
 </style>
 <script>
-  const items = document.querySelectorAll('.collection__menu-item');
-  const btn = document.querySelector('.js-menu-view-more');
-  btn?.addEventListener('click', function handleClick(e) {
-    e.preventDefault();
-    items.forEach(function(item) {
-      if (item.style.display === 'none') {
-        item.style.display = 'block';
-        btn.style.display = 'none';
-      }
-    })
-  });
-  window.addEventListener('load', (event) => {
-    var isBusy = false;
-    $(window).scroll(function() {
-      var btnLoadMore = $('.js-infinite-scroll');
-      let url = btnLoadMore.attr('href');
-      if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
-        if(isBusy) {
-          return;
-        }
-        if(btnLoadMore.length) {
-          isBusy = true;
-          $('[data-btn-text]').hide();
-          btnLoadMore.show();
-          var listData = $('#collection-products');
-          var product;
-          $.get(url).done(function (data) {
-            btnLoadMore.hide();
-            product = $(data).find('#collection-products');
-            listData.append(product.children());
-            $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
-            initQuickAdd();
-            addToBag();
-            initDraggable();
-          }).always (function() {
-            isBusy = false;
-          });
-        }
-      }
-    });
-  });
-
   window.addEventListener('load', () => {
     const filterMobile = document.querySelector('#filter-mobile');
     if(filterMobile) {
@@ -233,26 +181,12 @@
     document.querySelector('.sidebar-mobile-title').onclick = () => {
       document.querySelector('body').classList.remove('open-filter');
     }
-  })
+  });
 </script>
 
-{% comment %} <script src="{{ 'cart-drag-drop.js' | asset_url }}" defer></script> {% endcomment %}
-<audio id="resource_mp3_drop_to_bag">
-  <source src="{{'500-milliseconds-of-silence.mp3' | asset_url }}" type="audio/mpeg">
-</audio>
-
-<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.3/dist/interact.min.js" defer></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    $('body').one('mousedown touchstart', function(){
-      var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-      obj_mp3.play();      
-    });
-  });   
-</script>
 {% schema %}
   {
-    "name": "Pack a Bag - Collection grid",
+    "name": "Collection grid",
     "settings": [
       {
         "type": "range",
