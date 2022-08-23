@@ -38,7 +38,11 @@
             {% for block in section.blocks %}
             <div class="other-types_item">
                 {% if block.settings.image != blank %}
-                <div class="other-types_item__media media">
+                  {% if block.settings.link %}
+                    <a href="{{ block.settings.link }}" class="other-types_item__media media">
+                  {% else %}            
+                    <div class="other-types_item__media media">
+                  {% endif %}                    
                     <img
                     srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
                         {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -55,7 +59,7 @@
                         height="{{ block.settings.image.height }}"
                     >
                 </div>
-                {% endif%}
+                {% endif %}
                 <div class="other-types_item__content">
                     <div class="other-types_item__title h2">
                     {{block.settings.title}}
@@ -64,7 +68,11 @@
                     {{block.settings.richtext}}
                     </div>
                 </div>
-            </div>
+              {% if block.settings.link %}
+                </a>
+              {% else %}
+                </div>
+              {% endif %} 
             {% endfor %}
         </div>
     </div>
@@ -159,7 +167,12 @@
                     "id": "richtext",
                     "label": "Richtext",
                     "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
-                }
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Links"
+                }                
             ]
         }
     ],
