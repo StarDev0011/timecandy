@@ -215,14 +215,16 @@
           "type": "product",
           "settings": {
             "title": "Bubble Gum Flavors",
-            "richtext": "<p>The classic bubble gum flavor is something of a mystery, with sweet and fruity elements that come from various combinations of elements. However, you can also enjoy different flavors of bubble gum, including:<br\/><br\/>• Cotton candy bubble gum<br\/>• Clove chewing gum<br\/>• Watermelon bubble gum<br\/>• Grape bubble gum<br\/>• And so many more!<br\/><br\/>Some of these flavors, like clove, may seem strange, but clove gum in particular was one of the first popular gum flavors – and you can still buy and try it today!<br\/><\/p>"
+            "richtext": "<p>The classic bubble gum flavor is something of a mystery, with sweet and fruity elements that come from various combinations of elements. However, you can also enjoy different flavors of bubble gum, including:<br\/><br\/>• Cotton candy bubble gum<br\/>• Clove chewing gum<br\/>• Watermelon bubble gum<br\/>• Grape bubble gum<br\/>• And so many more!<br\/><br\/>Some of these flavors, like clove, may seem strange, but clove gum in particular was one of the first popular gum flavors – and you can still buy and try it today!<br\/><\/p>",
+            "link": ""
           }
         },
         "b45fcaa1-c3c2-4274-987b-95cb069c3d3d": {
           "type": "product",
           "settings": {
             "title": "Bubble Gum Colors",
-            "richtext": "<p>Bubble gum pink is bright and distinct, and many variations of bubble gum come in this color because it is so recognizable. However, you can find more than just pink bubble gum. The color often corresponds to the flavor, so blue bubble gum may taste like cotton candy or blue raspberry.<br\/><br\/>This whimsical type of candy comes in all sorts of colors and flavors!<br\/><\/p>"
+            "richtext": "<p>Bubble gum pink is bright and distinct, and many variations of bubble gum come in this color because it is so recognizable. However, you can find more than just pink bubble gum. The color often corresponds to the flavor, so blue bubble gum may taste like cotton candy or blue raspberry.<br\/><br\/>This whimsical type of candy comes in all sorts of colors and flavors!<br\/><\/p>",
+            "link": ""
           }
         }
       },
@@ -247,7 +249,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-balls.jpg",
             "title": "Bubble Gum Ball",
-            "richtext": "<p>If you find yourself in the presence of a bubble gum machine, a quarter is a small price to pay for a round, delightful gum ball. You can even purchase your own gum ball machines in any size, from the large ones that populated arcades and movie theaters to mini machines perfect for desktops.<br\/><br\/>While bubble gum balls aren’t most people’s go-to chewing gum, they can be a fun and nostalgic treat.<\/p>"
+            "richtext": "<p>If you find yourself in the presence of a bubble gum machine, a quarter is a small price to pay for a round, delightful gum ball. You can even purchase your own gum ball machines in any size, from the large ones that populated arcades and movie theaters to mini machines perfect for desktops.<br\/><br\/>While bubble gum balls aren’t most people’s go-to chewing gum, they can be a fun and nostalgic treat.<\/p>",
+            "link": "shopify:\/\/collections\/walk-the-candy-aisle-gumballs"
           }
         },
         "f1e483eb-7db0-4687-b034-c90cd25e5999": {
@@ -255,7 +258,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-sugar-free.jpg",
             "title": "Bubble Gum Sugar Free",
-            "richtext": "<p>Sugar free chewing gum is a great option for anyone with sensitive teeth or high blood sugar. If you’re trying to cut back on your sugar intake for any reason but don’t want to give up chewing gum, we hear you! Plenty of brands make sugar free gum for you to chew and enjoy without worrying about your health.<\/p>"
+            "richtext": "<p>Sugar free chewing gum is a great option for anyone with sensitive teeth or high blood sugar. If you’re trying to cut back on your sugar intake for any reason but don’t want to give up chewing gum, we hear you! Plenty of brands make sugar free gum for you to chew and enjoy without worrying about your health.<\/p>",
+            "link": "shopify:\/\/collections\/candy-by-type-sugar-free"
           }
         },
         "c63b7273-acae-4d7f-958d-f9d208676563": {
@@ -263,7 +267,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-cigars.jpg",
             "title": "Bubble Gum Cigars",
-            "richtext": "<p>Shaped – and often wrapped – like the real thing, bubble gum cigars are a fun way to celebrate a special occasion or enjoy a big piece of gum, perfect for blowing bubbles.<\/p>"
+            "richtext": "<p>Shaped – and often wrapped – like the real thing, bubble gum cigars are a fun way to celebrate a special occasion or enjoy a big piece of gum, perfect for blowing bubbles.<\/p>",
+            "link": "shopify:\/\/collections\/walk-the-candy-aisle-bubble-gum-cigars"
           }
         },
         "36b8f36c-3199-4773-8e06-99f5f92942da": {
@@ -271,7 +276,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/bubble-gum-cigarettes.jpg",
             "title": "Bubble Gum Cigarettes",
-            "richtext": "<p>Complete with a puff of sugar “smoke,” bubble gum cigarettes are paper-wrapped sticks of gum with an adult twist.<\/p>"
+            "richtext": "<p>Complete with a puff of sugar “smoke,” bubble gum cigarettes are paper-wrapped sticks of gum with an adult twist.<\/p>",
+            "link": "shopify:\/\/collections\/walk-the-candy-aisle-candy-cigarettes"
           }
         }
       },
