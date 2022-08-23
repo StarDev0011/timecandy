@@ -651,10 +651,11 @@ function initDraggable() {
       maxPerElement: 1,
     }).styleCursor(true);   
 
-    interact('.card-product__picture').on('click', function (event) {
+    $('.card-product__picture').on('click', function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
-    }, true);
+    });
+
     interact('#drop-zone')
     .dropzone({
       accept: '.card-product__picture',
