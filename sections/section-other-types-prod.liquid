@@ -58,7 +58,11 @@
                         width="{{ block.settings.image.width }}"
                         height="{{ block.settings.image.height }}"
                     >
-                </div>
+                  {% if block.settings.link %}
+                    </a>
+                  {% else %}
+                    </div>
+                  {% endif %}
                 {% endif %}
                 <div class="other-types_item__content">
                     <div class="other-types_item__title h2">
@@ -68,11 +72,7 @@
                     {{block.settings.richtext}}
                     </div>
                 </div>
-              {% if block.settings.link %}
-                </a>
-              {% else %}
-                </div>
-              {% endif %} 
+            </div>>
             {% endfor %}
         </div>
     </div>
