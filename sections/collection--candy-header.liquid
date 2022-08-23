@@ -29,7 +29,7 @@
   .collection-candy__header {
     padding: 81px 0;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
   }
 
   .collection-candy__header-sub {
@@ -65,7 +65,7 @@
 
     .collection-candy__header {
       padding: 48px 0;
-      margin-bottom: 48px;
+      margin-bottom: {{ section.settings.margin_bottom | divided_by: 2 }}px;
     }
   }
 </style>
@@ -103,7 +103,17 @@
         "id": "bg_color",
         "label": "Background Color",
         "default": "#BBE2DD"
-      }
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 80,
+        "step": 4,
+        "default": 80
+      }      
     ],
     "presets": [
       {
