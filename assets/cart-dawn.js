@@ -164,7 +164,8 @@ CartDawn = {
             $('input[name="items[1]id"]').remove();
             $('input[name="items[1]quantity"]').remove();
           }
-          else if (btn.dataset.iceBrix && window.iceBrix) {
+          else if (btn.dataset.iceBrix === 'true' && window.iceBrix) {
+            console.log(btn, btn.dataset.iceBrix);
             productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
           }
         });
