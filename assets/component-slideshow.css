@@ -91,7 +91,9 @@ slideshow-component .slideshow.banner {
 }
 
 @media screen and (min-width: 750px) {
-
+  .banner__box>.h5 {
+    margin-bottom: 0;
+  }
   .banner__box>*+*{
     margin-top: 24px;
   }

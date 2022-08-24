@@ -136,6 +136,15 @@ header-drawer {
 }
 .megamenu .image-container-wrapper .image {
   float: left;
+  background: #fff;
+  overflow: hidden;
+}
+.megamenu .image-container-wrapper .image img {
+  transform: scale(1);
+  transition: transform .25s;  
+}
+.megamenu .image-container-wrapper .image:hover img {
+  transform: scale(1.025);
 }
 .not-link {
   cursor: initial !important;
