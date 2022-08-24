@@ -138,6 +138,7 @@ header-drawer {
   float: left;
   background: #fff;
   overflow: hidden;
+  border-radius: 4px;
 }
 .megamenu .image-container-wrapper .image img {
   transform: scale(1);
