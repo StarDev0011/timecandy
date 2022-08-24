@@ -841,6 +841,7 @@
   cursor: -o-grab;
   cursor: -ms-grab;
   cursor: grab;
+  touch-action: none;
 }
 
 .collection-pack-a-bag .card-product__picture:hover{
