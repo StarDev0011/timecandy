@@ -518,6 +518,7 @@ img {
 .quick-add .product-form__swatch-dropdown label:hover {
   color: var(--color-link) !important;
   cursor: pointer;
+  background: #e5f1f5 !important;
 }
 
 .quick-add__content {
@@ -650,9 +651,8 @@ img {
 }
 
 .quick-add .product-form__swatch-dropdown label {
-  padding: 7px 16px;
   color: var(--color-text);
-  padding: 7px 16px !important;
+  padding: 8px 16px !important;
   color: var(--color-text) !important;
   background-color: transparent !important;
   text-align: left !important;

@@ -16,7 +16,7 @@ function initQuickAdd() {
             const html = btn.closest('.card-product__form').nextElementSibling;
             html.innerHTML += this.responseText;
             html.classList.add('active');
-            let swatchName = document.querySelectorAll('.js-swacth-label');
+            let swatchName = document.querySelectorAll('.js-swatch-label');
             let swatchActive = document.querySelectorAll('.js-swatch-active');
             if (swatchActive != null) {
               swatchActive.forEach(function(item, i) {
@@ -29,7 +29,7 @@ function initQuickAdd() {
             itemSwacth.forEach(function(item, i) {
               item.onclick = () => {
                 const elmTitle = item.parentNode.previousElementSibling;
-                elmTitle.querySelector('.js-swacth-label').textContent = item.textContent.trim();
+                elmTitle.querySelector('.js-swatch-label').textContent = item.textContent.trim();
                 item.parentNode.classList.remove('active');
               }
   
