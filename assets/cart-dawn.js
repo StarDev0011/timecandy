@@ -596,14 +596,14 @@ function initDraggable() {
     var element = currentTarget;   
     switch (event.type) {
       case 'dragstart':
+        console.log('dragstart');
         if (
           interaction.pointerIsDown &&
           !interaction.interacting() &&
           currentTarget.style.transform === ''
         ) {
-          event.stopImmediatePropagation();
+
         } else if (interaction.pointerIsDown && !interaction.interacting()) {
-          event.stopImmediatePropagation();
           const regex = /translate\(([\d]+)px, ([\d]+)px\)/i;
           const transform = regex.exec(currentTarget.style.transform);
 
@@ -611,17 +611,19 @@ function initDraggable() {
             position.x = Number(transform[1]);
             position.y = Number(transform[2]);
           }
-
-          element.style.cssText ="z-index: 12; opacity: .2"
+          element.style.cssText ="z-index: 12; opacity: .75"
           element.closest('.card-product__item').classList.add('active')
           document.querySelector('#MainContent').style.overflowX = 'visible'
           document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         }  
         break;
       case 'dragmove':
+        console.log('dragmove');
         position.x += event.dx;
         position.y += event.dy;
-        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`;            
+        document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
+        event.target.style.cssText ="z-index: 12; opacity: .75"
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`     
         break;
       case 'dragend':
         event.stopImmediatePropagation();
