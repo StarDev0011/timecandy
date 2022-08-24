@@ -45,7 +45,7 @@
       <div class="card__content">        
         <div class="card__information">
           <p class="h3 card__heading">
-            <a{% if page == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link">
+            <a{% if page == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link h5">
               {%- if page.title != blank -%}
                 {{- page.title | escape -}}
               {%- else -%}
@@ -60,7 +60,7 @@
       <div class="card__content">
         <div class="card__information">
           <p class="h3 card__heading">
-            <a href="{{ page.url }}" class="full-unstyled-link">
+            <a href="{{ page.url }}" class="full-unstyled-link h5">
               {%- if page.title != blank -%}
                 {{- page.title | escape -}}
               {%- else -%}

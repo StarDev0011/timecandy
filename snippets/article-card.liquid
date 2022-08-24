@@ -58,7 +58,7 @@
         <div class="card__content">        
           <div class="card__information">
             <p class="h3 card__heading{% if show_excerpt %} h2{% endif %}">
-              <a href="{{ article.url }}" class="full-unstyled-link">
+              <a href="{{ article.url }}" class="full-unstyled-link h5">
                 {{ article.title | truncate: 50 | escape }}
               </a>
             </p>
@@ -97,7 +97,7 @@
       <div class="card__content">
         <div class="card__information">
           <p class="h3 card__heading{% if show_excerpt %} h2{% endif %}">
-            <a href="{{ article.url }}" class="full-unstyled-link">
+            <a href="{{ article.url }}" class="full-unstyled-link h5">
               {{ article.title | truncate: 50 | escape }}
             </a>
           </p>
