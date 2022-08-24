@@ -7,20 +7,20 @@
           "type": "text",
           "settings": {
             "title": "Chat with us",
-            "content": "<p>Want to speak to Customer Support?<\/p><p>Chat with us from 9am-4pm EST  M-F<\/p>",
-            "btn_label": "Label button",
-            "btn_link": "",
-            "bg_block": "#FFFFFF"
+            "content": "<p>Have a question about your order?<br\/><br\/>Chat with us from 9am-4pm EST M-F<\/p>",
+            "btn_label": "Chat Now",
+            "btn_link": "#start-chat",
+            "bg_block": "#ffffff"
           }
         },
         "45a2e82c-3083-430e-bdc8-07a1fd373549": {
           "type": "text",
           "settings": {
-            "title": "Chat with us",
-            "content": "<p>Want to speak to Customer Support?<\/p><p>Chat with us from 9am-4pm EST  M-F<\/p>",
-            "btn_label": "Label button",
-            "btn_link": "",
-            "bg_block": "#FFFFFF"
+            "title": "Call Us",
+            "content": "<p>Want to speak to Custom Support?<br\/><br\/>Call us at 1-866-929-5477 from <br\/>9am-4pm EST M-F<\/p>",
+            "btn_label": "Call Now",
+            "btn_link": "tel:+18669295477",
+            "bg_block": "#ffffff"
           }
         }
       },
@@ -30,10 +30,10 @@
       ],
       "settings": {
         "heading": "Contact us",
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 60,
+        "padding_bottom": 60,
         "show_content": false,
-        "bg_color": "#E4F1F5"
+        "bg_color": "#e4f1f5"
       }
     },
     "form": {
