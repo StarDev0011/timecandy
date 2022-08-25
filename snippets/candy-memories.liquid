@@ -21,10 +21,10 @@
                                     >
                                     <div class="testimonial__wrap">
                                         <div class="testimonial__img-wrap">
-                                            <a class="testimonial__link" href="${e.url}">
+                                            <div class="testimonial__link">
                                                 <div class="testimonial__img">
                                                     <img
-                                                        src="${e.image}"
+                                                        src="{{product.featured_image | img_url: '750x'}}"
                                                         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
                                                         loading="lazy"
                                                     >
@@ -38,7 +38,7 @@
                                                         height="{{ section.settings.bg_image.height }}"
                                                     >
                                                 </div>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div class="testimonial__content">
                                             <div class="h5 name-reviewer">
@@ -56,7 +56,9 @@
                     })
                 }
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                document.querySelector('#slider-testimonial').style.display = 'none';
+            });
 
         function makeAllButCurrentSlideInert(slider) {
             const currentSlideEl = slider.slides[slider.activeIndex];
