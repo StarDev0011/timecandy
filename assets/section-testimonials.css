@@ -50,6 +50,7 @@
     top: 0;
     left: 0;
     height: 100%;
+    max-width: 50%;
 }
 .testimonial__content{
     align-self: center;
@@ -227,4 +228,8 @@
 
 .testimonial__action {
   margin-top: 32px;
+}
+
+.testimonial .swiper-button-next, .testimonial .swiper-button-prev{
+    transform: translateY(-50%);
 }
