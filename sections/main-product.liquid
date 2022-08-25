@@ -149,7 +149,7 @@
             </slider-component>
           {%- endif -%}
         </media-gallery>
-        {% if product.media.size >= 1 %}
+        {% if product.media.size > 0 %}
           <div class="product__media-inner">
             <div class="product__media-thumnail swiper js-swiper-thumnail">
               <div class="product-thumbnails swiper-wrapper">
@@ -160,12 +160,14 @@
                 {% endfor %}
               </div>
             </div>
-            <div class="swiper-btn-next swiper-btn swiper-button-disabled">
-              {% render 'icon-arrow-bottom' %}
-            </div>
-            <div class="swiper-btn-prev swiper-btn swiper-button-disabled">
-              {% render 'icon-arrow-top' %}
-            </div>
+            {% if product.media.size > 4 %}
+              <div class="swiper-btn-next swiper-btn swiper-button-disabled">
+                {% render 'icon-arrow-bottom' %}
+              </div>
+              <div class="swiper-btn-prev swiper-btn swiper-button-disabled">
+                {% render 'icon-arrow-top' %}
+              </div>
+            {% endif %}
           </div>
         {% endif %}
       </div>
