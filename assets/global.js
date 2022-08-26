@@ -1004,3 +1004,10 @@ document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((
       e.currentTarget.querySelector('.header__submenu.megamenu').style.cssText = hideMegaMenu;
   });
 });
+
+document.querySelectorAll('a[href*="#open-chat"]').forEach((item) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    GorgiasChat.open(); 
+  })  
+});
