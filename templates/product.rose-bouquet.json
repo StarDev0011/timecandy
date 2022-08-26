@@ -3,13 +3,6 @@
     "main": {
       "type": "product-rose-bouquet",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -59,7 +52,6 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "caption",
         "price",
