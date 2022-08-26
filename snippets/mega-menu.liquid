@@ -44,7 +44,7 @@
                             {% for top_product in submenu.links %}
                                 {% assign top_product_handle = top_product.url | remove: '/products/' %}
                                 {% assign top_product_s = all_products[top_product_handle] %}   
-                                <li class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                                <li class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block_product | ceil }}">
                                     <div class="image-container-item">
                                         <a class="image p-relative {% if top_product.url == blank %} not-link {% endif %}" {% if top_product.url != blank %}href="{{ top_product.url }}" {% endif %}>
                                             {% if top_product_s.featured_image %}
@@ -86,7 +86,7 @@
                         <ul class="list-menu image-container-wrapper d-flex__end">
                             {% for top_collection in submenu.links %}
                                 {% assign top_collection_handle = top_collection.url | remove: '/collections/' %}
-                                <li class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block | ceil }}">
+                                <li class="image_item d-flex__column  col-ds__{{ 100 | divided_by: count_block_collection | ceil }}">
                                     <div class="image-container-item">
                                         <a class="image p-relative {% if top_collection.url == blank %} not-link {% endif %}" {% if top_collection.url != blank %}href="{{ top_collection.url }}" {% endif %}>
                                             {% if top_collection.featured_image %}
