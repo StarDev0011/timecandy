@@ -22,5 +22,5 @@
 
 {% comment %} Use the product handle since product title has too much info {% endcomment %}
 {% if familyLink != blank %}
-    <a href="{{ familyLink }}" class="product__text caption-with-letter-spacing link--go-arrow">{{ familyTitle | append: ' Family Page' }}</a>
+    <a href="{{ familyLink }}" class="product__text caption-with-letter-spacing">{{ familyTitle | append: ' Family Page' }}</a>
 {% endif %}
