@@ -240,9 +240,7 @@ Product = {
       let initialIndex = parseInt(initialSlide.dataset.index);
       let thumnail = new Swiper(".js-swiper-thumnail", {
         direction: "horizontal",
-        slidesPerView: 4,
-        spaceBetween: 4,
-        slidesPerGroup: 1,
+        slidesPerView: 'auto',
         freeMode: true,
         preloadImages: true,
         updateOnImagesReady: true,
@@ -270,9 +268,7 @@ Product = {
     } else {
       let thumnail = new Swiper(".js-swiper-thumnail", {
         direction: "horizontal",
-        slidesPerView: 4,
-        spaceBetween: 4,
-        slidesPerGroup: 1,
+        slidesPerView: 'auto',
         freeMode: true,
         preloadImages: true,
         updateOnImagesReady: true,
