@@ -42,26 +42,21 @@
         "margin_bottom": 0
       }
     },
+    "166154583193261176": {
+      "type": "section-content",
+      "settings": {
+        "show_border_top": false,
+        "show_border_bottom": false,
+        "heading": "",
+        "content": "<p>How sweet it is! Our Candy you ate as a kid® party favors are a welcome addition to any event. Select from over 400 candies and 14 bag styles!<br\/><br\/><strong>Pre-Packed Party Favors<\/strong> - 25 of the most popular old time candies (10 ounces) in a colorful, cellophane bag and matching ribbon. <br\/><br\/><strong>Upack Party Favors<\/strong> - you select the candy, bag and ribbon color.<\/p>",
+        "text_align": "center",
+        "bg_section": "#FAF9F7",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "16615451160e99ff37": {
       "type": "custom-page-content",
-      "blocks": {
-        "da96807c-1123-464f-8303-16974864c16c": {
-          "type": "text-content",
-          "settings": {
-            "width": "full-width",
-            "padding_left": "0",
-            "padding_right": "0",
-            "padding_top": "0",
-            "padding_bottom": "0",
-            "heading": "",
-            "heading_type": "heading1",
-            "content": "<p>How sweet it is! Our Candy you ate as a kid® party favors are a welcome addition to any event. Select from over 400 candies and 14 bag styles!<br\/><br\/><strong>Pre-Packed Party Favors<\/strong> - 25 of the most popular old time candies (10 ounces) in a colorful, cellophane bag and matching ribbon. <br\/><br\/><strong>Upack Party Favors<\/strong> - you select the candy, bag and ribbon color.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "da96807c-1123-464f-8303-16974864c16c"
-      ],
       "settings": {
         "container_width": "full-width",
         "background_style": "solid-color",
@@ -114,6 +109,7 @@
   "order": [
     "corporate-gifts",
     "16615450135202b37c",
+    "166154583193261176",
     "16615451160e99ff37",
     "166154498818ea2559",
     "16615452240e26dfec"
