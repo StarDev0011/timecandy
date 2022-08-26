@@ -52,18 +52,7 @@
         "text_align": "center",
         "bg_section": "#FAF9F7",
         "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "16615451160e99ff37": {
-      "type": "custom-page-content",
-      "settings": {
-        "container_width": "full-width",
-        "background_style": "solid-color",
-        "background_color": "#fff",
-        "padding_top": "40px",
-        "padding_bottom": "40px",
-        "enable_flex": false
+        "padding_bottom": 24
       }
     },
     "166154498818ea2559": {
@@ -110,7 +99,6 @@
     "corporate-gifts",
     "16615450135202b37c",
     "166154583193261176",
-    "16615451160e99ff37",
     "166154498818ea2559",
     "16615452240e26dfec"
   ]
