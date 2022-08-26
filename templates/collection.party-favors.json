@@ -39,7 +39,7 @@
         "title": "Discover over 300 different kinds of Candy you ate as a kid®",
         "color_title": "#262626",
         "bg_color": "#BBE2DD",
-        "margin_bottom": 80
+        "margin_bottom": 0
       }
     },
     "16615451160e99ff37": {
@@ -66,8 +66,8 @@
         "container_width": "full-width",
         "background_style": "solid-color",
         "background_color": "#fff",
-        "padding_top": "1px",
-        "padding_bottom": "1.5em",
+        "padding_top": "40px",
+        "padding_bottom": "40px",
         "enable_flex": false
       }
     },
