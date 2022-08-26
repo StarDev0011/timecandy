@@ -223,7 +223,8 @@
         "other": "{{ count }} items"
       },
       "megamenu": {
-        "top_product_label": "Top Products"
+        "top_product_label": "Top Products",
+        "top_collection_label": "Top Collections"
       }
     },
     "cart": {
