@@ -1,0 +1,26 @@
+{% comment %}
+    Create a link to family page
+    Load in on desired product template
+
+    Strips the product title to 2 words and searches
+    through the products collections for one containing
+    the short title. Renders a link if it finds a match.
+{% endcomment %}
+
+
+{%- assign collections = product.collections | sort: 'handle' | reverse -%}
+{% for family in collections limit: 1000 %}
+    {%- assign familyHandle = family.handle | downcase -%}
+    {%- if familyHandle contains 'walk-the-candy-aisle-' -%}
+        {% unless familyHandle contains 'walk-the-candy-aisle-new' %}
+            {%- assign familyLink = family.url -%}
+            {%- assign familyTitle = family.title -%}
+            {% break %}
+        {% endunless %}
+    {% endif %}
+{% endfor %}
+
+{% comment %} Use the product handle since product title has too much info {% endcomment %}
+{% if familyLink != blank %}
+    <a href="{{ familyLink }}" class="product__text caption-with-letter-spacing link--go-arrow">{{ familyTitle | append: ' Family Page' }}</a>
+{% endif %}
