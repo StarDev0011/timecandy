@@ -672,6 +672,18 @@ a,
 .link--text:hover {
   color: var(--color-link-hover);
 }
+
+a.link--go-arrow:after{
+  background: url('go-arrow--darkened.png') no-repeat;
+  content: '';
+  color: currentColor;
+  display: inline-block;
+  background-size: contain;
+  height: 10px;
+  width: 20px;
+  margin-left: 5px;
+}
+
 @media (max-width: 989px) {
   .header-logo .hide-mobile {
     display: none !important;
@@ -1353,8 +1365,8 @@ button.shopify-payment-button__button--unbranded,
 .button,
 .shopify-challenge__button,
 button.shopify-payment-button__button--unbranded {
-  min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-width: calc(180px + var(--buttons-border-width) * 2);
+  min-height: 50px;
 }
 
 .shopify-payment-button__button--branded {
@@ -1997,10 +2009,11 @@ input[type="checkbox"] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  max-width: 142px;
+  width: 100%;
   display: flex;
   border-radius: var(--inputs-radius);
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  min-height: 48px;
 }
 
 .quantity:after {
@@ -2051,7 +2064,7 @@ input[type="checkbox"] {
 }
 
 .quantity__button {
-  width: calc(4.5rem / var(--font-body-scale));
+  width: 48px;
   flex-shrink: 0;
   font-size: 1.8rem;
   border: 0;

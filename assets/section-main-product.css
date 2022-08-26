@@ -1160,17 +1160,32 @@ fieldset.product-form__input .form__label {
 }
 
 /*  */
-.product__text {
+.product__text{
   margin-top: 0;
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
-  text-decoration-line: underline;
+  text-decoration-line: none;
   text-transform: uppercase;
   font-family: var(--my-font);
   letter-spacing: normal;
   color: var(--color-header);
   margin-bottom: 12px;
+}
+
+.product__text a, .product__text.link--go-arrow{
+  border-bottom: 1px solid currentColor;
+  transition: all ease-in-out .2s;
+  text-decoration-line: none;
+  touch-action: manipulation;
+  margin-bottom: 0;
+}
+
+.product__text.link--go-arrow:hover,
+.product__text.link--go-arrow:focus {
+  margin-bottom: -2px;
+  padding-bottom: 2px;
+  font-weight: 600;
 }
 
 .product__title {
