@@ -7,7 +7,7 @@
           "type": "text",
           "settings": {
             "title": "Chat with us",
-            "content": "<p>Have a question about your order?<br\/><br\/>Chat with us from 9am-4pm EST M-F<\/p>",
+            "content": "<p>Have a question about your order? <br\/><br\/>Chat with us from 9am-4pm EST M-F<\/p>",
             "btn_label": "Chat Now",
             "btn_link": "#open-chat",
             "bg_block": "#ffffff"
