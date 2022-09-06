@@ -139,8 +139,20 @@
         "padding_bottom_mb": 60
       }
     },
+    "16624893234ba7e148": {
+      "type": "section-candy-memories",
+      "settings": {
+        "title": "Candy memories",
+        "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
+        "btn": "Share a Memory",
+        "bg_image": "shopify:\/\/shop_images\/home-feature-dots.png",
+        "padding_top": 90,
+        "padding_bottom": 120
+      }
+    },
     "165085778823b445b7": {
       "type": "testimonial",
+      "disabled": true,
       "blocks": {
         "165085778836ad72b0-0": {
           "type": "select",
@@ -248,6 +260,7 @@
     "main",
     "165643530217e244c9",
     "16564352748a855df3",
+    "16624893234ba7e148",
     "165085778823b445b7",
     "product-recommendations",
     "1650857982f12e2d44"
