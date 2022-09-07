@@ -1,12 +1,12 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', async function() {
+        let memoriesContainer;
         await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
             .then(res => res.json())
             .then((data) => {
-                console.log(data);
                 if (data.length) {
-                    let memoriesContainer = document.querySelector('#memories-container');
+                    memoriesContainer = document.querySelector('#memories-container');
                     data.forEach((e) => {
                         memoriesContainer.insertAdjacentHTML('beforeEnd', `
                             <div role="listitem" class="swiper-slide">
@@ -57,7 +57,7 @@
                 }
             })
             .catch(err => {
-                document.querySelector('#slider-testimonial').style.display = 'none';
+                console.log('')
             });
 
         function makeAllButCurrentSlideInert(slider) {

@@ -105,9 +105,62 @@
           "default": 120
         }
     ],
+    "blocks":[
+        {
+            "name": "Memories item",
+            "type": "select",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select product"
+                },
+                {
+                    "type":"text",
+                    "id":"button_label",
+                    "default":"shop candy buttons",
+                    "label":"Button Label"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content_review",
+                    "label": "Customer review",
+                    "default": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! </p>"
+                },
+                {
+                    "type": "text",
+                    "id": "reviewer",
+                    "label": "Customer name",
+                    "default": "Brian"
+                },
+                {
+                    "type": "text",
+                    "id": "state",
+                    "label": "Customer State",
+                    "default": "Maryland"
+                },
+                {
+                    "type":"url",
+                    "id":"link_readmore",
+                    "label":"Link"
+                }
+            ]
+        }
+    ],
     "presets": [
         {
-            "name": "Candy memories"
+            "name": "Candy memories",
+            "blocks":[
+                {
+                    "type": "select"
+                },
+                {
+                    "type": "select"
+                },
+                {
+                    "type": "select"
+                }
+            ]
         }
     ],
     "templates": ["product"]
