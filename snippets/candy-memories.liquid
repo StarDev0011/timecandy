@@ -2,9 +2,11 @@
 <script>
     document.addEventListener('DOMContentLoaded', async function() {
         let memoriesContainer;
-        await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
-            .then(res => res.json())
-            .then((data) => {
+        try {
+            await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
+                .then(res => res.json())
+                .then((data) => {
+                    console.log(data);
                 if (data.length) {
                     memoriesContainer = document.querySelector('#memories-container');
                     data.forEach((e) => {
@@ -54,11 +56,13 @@
                             </div>
                         `);
                     })
+                    document.querySelectorAll('.memories-slide').forEach((e) => e.remove());
                 }
             })
-            .catch(err => {
-                console.log('')
-            });
+        }
+        catch(err) {
+            
+        }
 
         function makeAllButCurrentSlideInert(slider) {
             const currentSlideEl = slider.slides[slider.activeIndex];
