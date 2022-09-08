@@ -156,11 +156,11 @@
         "ecd78345-22b3-4df9-a54d-a43ab5768a09": {
           "type": "select",
           "settings": {
-            "product": "",
-            "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
+            "product": "100-grand-bar",
+            "button_label": "shop 100 grand",
+            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000...<\/p>",
+            "reviewer": "Kris",
+            "state": "Indiana",
             "link_readmore": ""
           }
         },
