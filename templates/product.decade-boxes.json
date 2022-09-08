@@ -24,7 +24,9 @@
           "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/star-rating-badge\/a103faaf-2125-4b0e-89fa-de5149736723",
           "settings": {
             "use_metafields": true,
-            "sku_tagtype": "sku"
+            "sku_tagtype": "sku",
+            "is_featured_product": false,
+            "featured_product_handle": ""
           }
         },
         "description": {
@@ -225,6 +227,56 @@
         "padding_bottom": 120
       }
     },
+    "1662655202ea9c4df0": {
+      "type": "section-candy-memories",
+      "blocks": {
+        "166265520242b04fba-0": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        },
+        "166265520242b04fba-1": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        },
+        "166265520242b04fba-2": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        }
+      },
+      "block_order": [
+        "166265520242b04fba-0",
+        "166265520242b04fba-1",
+        "166265520242b04fba-2"
+      ],
+      "settings": {
+        "title": "Heading",
+        "desc": "",
+        "btn": "",
+        "padding_top": 90,
+        "padding_bottom": 120
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -285,6 +337,7 @@
     "16518009138973d5b1",
     "1656448901397e1f83",
     "165085778823b445b7",
+    "1662655202ea9c4df0",
     "product-recommendations",
     "1650857982f12e2d44"
   ]
