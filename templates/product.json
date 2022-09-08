@@ -141,6 +141,46 @@
     },
     "16624893234ba7e148": {
       "type": "section-candy-memories",
+      "blocks": {
+        "3290bc8b-73ba-4f5e-9a86-7620c719bfee": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "Shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        },
+        "ecd78345-22b3-4df9-a54d-a43ab5768a09": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        },
+        "f069bf3d-8b1b-4056-9828-e935fdab6764": {
+          "type": "select",
+          "settings": {
+            "product": "",
+            "button_label": "shop candy buttons",
+            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
+            "reviewer": "Brian",
+            "state": "Maryland",
+            "link_readmore": ""
+          }
+        }
+      },
+      "block_order": [
+        "3290bc8b-73ba-4f5e-9a86-7620c719bfee",
+        "ecd78345-22b3-4df9-a54d-a43ab5768a09",
+        "f069bf3d-8b1b-4056-9828-e935fdab6764"
+      ],
       "settings": {
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
