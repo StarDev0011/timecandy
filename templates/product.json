@@ -167,12 +167,12 @@
         "f069bf3d-8b1b-4056-9828-e935fdab6764": {
           "type": "select",
           "settings": {
-            "product": "",
-            "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": ""
+            "product": "good-plenty-box",
+            "button_label": "Shop Good & Plenty",
+            "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
+            "reviewer": "Juanita",
+            "state": "Kentucky",
+            "link_readmore": "shopify:\/\/blogs\/candy-memories\/juanita-from-kentucky"
           }
         }
       },
