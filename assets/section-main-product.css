@@ -1733,8 +1733,8 @@ div.rc_block__type {
 
 .product-detail .product__media-image {
   border-radius: 15px;
-  width: 75% !important;
-  height: 75% !important;
+  width: 100% !important;
+  height: 100% !important;
   margin: auto;
   right: 0;
   bottom: 0;
