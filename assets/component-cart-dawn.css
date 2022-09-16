@@ -520,6 +520,9 @@
 .mini-cart-empty__icon {
   margin-bottom: 27px;
 }
+.mini-cart-empty__icon img {
+  max-width: 240px;
+}
 
 .mini-cart-empty__title {
   font-weight: 300;
