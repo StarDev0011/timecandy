@@ -9,7 +9,7 @@
 	{% assign ss_defer_config = '' %}
 	{%- if collection.handle != settings.ss_collection_handle -%}
 		{% capture ss_collection_config %} 
-			collection = { id: "{{ collection.id }}", name: "{{ collection.title | replace: '"', '&quot;' }}", handle: "{{ collection.handle }}" };
+			collection = { id: "{{ collection.id }}", name: "{{ collection.title | replace: '"', '&quot;' }}", handle: "{{ collection.handle }}", sort: "{{ global.variant_subsort }}" };
 		{% endcapture %}
 	{%- endif -%}	
 {%- endif -%}
