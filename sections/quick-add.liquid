@@ -17,7 +17,7 @@
           {%- assign optionName = option.name | downcase -%}
           {% assign is_size = false %}
           {% assign optionSize = option.values | size %}
-          {% if optionName == 'decade' or optionSize > 3 %}
+          {% if optionName == 'decade' or optionSize > 1 %}
             {% assign is_size = true %}
           {% endif %}
           <fieldset class="js product-form__input">
