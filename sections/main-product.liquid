@@ -596,9 +596,7 @@
           {%- endcase -%}
         {%- endfor -%}
 
-        {% if product.has_only_default_variant %}
-          {% render 'product-tiered-pricing', product: product %}
-        {% endif %}
+        {% render 'product-tiered-pricing', product: product %}
       </div>
     </div>
   </div>
