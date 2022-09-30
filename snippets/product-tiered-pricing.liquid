@@ -5,14 +5,13 @@
 {% assign Tier_2 = '4,7,11' | split: ',' %}
 {% assign Tier_3 = '10,15' | split: ',' %}
 {% assign tierPricing = blank %}
-
+{% assign undiscounted_variant_titles = "Single Bar,Single Roll,Single Random Flavor,Single Bag,Single Pattie,Single Piece,Single Box,Single Pack,Single Pop,Single 4-pack,Single Spray,Single Spray Candy,Single Tube,Single Pkg,Single Bite,Single Dispenser,Single Drum,Single Rope,Single Fish,Single Sucker,Single Tin,Single Stick,Single Sour Patch Kid,Single Necklace,Single Tray,Single Mini Box,One Piece,Single 6-pack,Single Pie,Single Mega Lollie,Single Cone,Single Mini Cup,Single Pipe,Single Canister,Single Pan,Single Bottle,Single Gift Box,Single Mini Burger,Single Hot Dog,Single Slice,Single Container,Single Bracelet,Single 4-Pack,Single Tape,Single Cigar,1 Palette,1 Pop,1 Bar,Single Pouch,Single Baseball,Single Wallet,Single Dispenser,Single String" | split:"," %}
 {% for tag in product.tags %}
 
   {% case tag %}
     {% when 'Tier_1_Discounts' %}
       {% capture tierPricing %}
       {% for variant in product.variants %}
-        {% assign undiscounted_variant_titles = "Single Bar,1 Bar,Single Roll" | split:"," %}
         {% unless undiscounted_variant_titles contains variant.title %}
         <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" style="display:none;">
           <div class="product-buy-more__header">Buy more, save more!</div>
