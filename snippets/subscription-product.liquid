@@ -100,9 +100,9 @@
 	{% assign widget_active_bg = widget_settings.background_color | default: "#F8F8F8" %}
 	{% assign widget_icon = widget_settings.widget_icon | default: "black" %}
 	{% if widget_icon == "white" %}
-		{% assign widget_icon = "//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/images/widget/rc_widget__icon__white@2x.png" %}
+		{% assign widget_icon = "//static.rechargecdn.com/static/images/widget/rc_widget__icon__white@2x.png" %}
 	{% else %}
-		{% assign widget_icon = "//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/images/widget/rc_widget__icon__black@2x.png" %}
+		{% assign widget_icon = "//static.rechargecdn.com/static/images/widget/rc_widget__icon__black@2x.png" %}
 	{% endif %}
 	{% assign popup_zindex = widget_settings.popup_zindex | default: "56" %}
 	{% assign popup_background_color = widget_settings.popup_background_color | default: "#474747" %}
@@ -130,7 +130,7 @@
 		{% capture poweredby_url %}http://rechargepayments.com/subscribe-with-recharge?utm_source=shopify%20store&utm_medium=customer%20link&utm_campaign=Shopify%20store%20back%20link&shop_name={{ shop.name | url_param_escape }}&shop={{ shop.permanent_domain }}{% endcapture %}
 	{% endif %}
 	<!-- Subscriptions Powered by ReCharge Payments: CSS -->
-	<link href="//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/css/rcWidget.css" rel="stylesheet" type="text/css">
+	<link href="//static.rechargecdn.com/static/css/rcWidget.css" rel="stylesheet" type="text/css">
 	<style>
 		/* Widget: Purchase options */
 		label.rc_label {
@@ -268,7 +268,7 @@
 						{% if show_poweredby %}
 							<div class="rc_popup__block__footer">
 								<a href="{{ poweredby_url }}" target="_blank" aria-label="ReCharge Payments homepage">
-									<img src="//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/images/widget/rc_widget__banner@2x.png" height="28" width="153" loading="lazy" decoding="async" alt="ReCharge Subscriptions company banner" class="rc_popup__badge">
+									<img src="//static.rechargecdn.com/static/images/widget/rc_widget__banner@2x.png" height="28" width="153" loading="lazy" decoding="async" alt="ReCharge Subscriptions company banner" class="rc_popup__badge">
 								</a>
 							</div>
 						{% endif %}
@@ -280,7 +280,7 @@
 		</div>
 	</div>
 	<!-- Subscriptions Powered by ReCharge Payments: JS -->
-	<script src="//rechargeassets-bootstrapheroes-rechargeapps.netdna-ssl.com/static/js/rcWidget.js"></script>
+	<script src="//static.rechargecdn.com/static/js/rcWidget.js"></script>
 	<script>
 		(function() {
 			var options = {
