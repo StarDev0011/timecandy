@@ -1109,7 +1109,7 @@ summary::-webkit-details-marker {
   width: calc(33.33% - var(--grid-mobile-horizontal-spacing) * 2 / 3);
 }
 .rte h2 {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.5;
 }
 .rte ul li {
