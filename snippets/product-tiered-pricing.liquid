@@ -12,7 +12,7 @@
     {% when 'Tier_1_Discounts' %}
       {% capture tierPricing %}
       {% for variant in product.variants %}
-        {% unless undiscounted_variant_titles contains variant.title %}
+        {% unless variant.title contains "Single" or variant.title contains "Plastic Tub" or variant.title contains "Case" %}
         <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" style="display:none;">
           <div class="product-buy-more__header">Buy more, save more!</div>
           <div class="product-buy-more__content">
