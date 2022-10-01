@@ -102,14 +102,19 @@ Collection = {
   init: function() {
     this.readMoreDesc();
   },
-
   readMoreDesc: () => {
     const btnReadmore = document.querySelector(Collection.Class.btnReadMore);
-    const desc = document.querySelector('.collection__desc-text');
-    btnReadmore.addEventListener('click', function(e) {
+    const desc = document.querySelector(".collection__desc-text");
+    btnReadmore.addEventListener("click", function (e) {
       e.preventDefault();
-      desc.classList.remove('collection__height-desc');
-      btnReadmore.style.display = 'none';
+
+      if (desc.classList.contains("collection__height-desc")) {
+        btnReadmore.innerHTML = "Read Less";
+      } else {
+        btnReadmore.innerHTML = "Read More";
+      }
+
+      desc.classList.toggle("product__height-desc");
     });
   }
 };
