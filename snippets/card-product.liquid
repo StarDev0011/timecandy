@@ -85,8 +85,9 @@
             <span class="card-product__price--sale">{{ card_product.price | money }}</span>
             <span class="card-product__price--old">{{ card_product.compare_at_price | money }}</span>
           {% else %}
-          {% if is_size %} <span class="card-product__price-text">Starting at</span>{% endif %}
+          {% if is_size == true %} <span class="card-product__price-text">Starting at</span>{% endif %}
             <span>{{ card_product.price | money }}</span>
+            <span class="card-product__price--old">{{ card_product.compare_at_price | money }}</span>
           {% endif %}
         </div>
         <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
