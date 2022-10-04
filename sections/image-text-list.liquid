@@ -2,8 +2,8 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.7 | round: 0 }}px;
-    padding-bottom: 100px;
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
   }
   .image-text-list-wrap{
     background: {{ section.settings.color_bg }};
