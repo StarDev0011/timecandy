@@ -255,10 +255,10 @@
         "show_view_all": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_top_mb": 72,
-        "padding_bottom_mb": 130
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mb": 30,
+        "padding_bottom_mb": 30
       }
     },
     "1654699404908018cb": {
