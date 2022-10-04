@@ -139,6 +139,7 @@ header-drawer {
   background: #fff;
   overflow: hidden;
   border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 2px 9px;
 }
 .megamenu .image-container-wrapper .image img {
   transform: scale(1);
