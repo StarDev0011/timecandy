@@ -176,10 +176,10 @@
         "padding_bottom_mb": 130
       }
     },
-    "165085778823b445b7": {
-      "type": "testimonial",
+    "1662655202ea9c4df0": {
+      "type": "section-candy-memories",
       "blocks": {
-        "165085778836ad72b0-0": {
+        "166265520242b04fba-0": {
           "type": "select",
           "settings": {
             "product": "candy-buttons-2pack",
@@ -187,21 +187,21 @@
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
             "state": "Maryland",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/brian-from-maryland"
+            "link_readmore": ""
           }
         },
-        "165085778836ad72b0-1": {
+        "166265520242b04fba-1": {
           "type": "select",
           "settings": {
             "product": "100-grand-bar",
-            "button_label": "shop 100 grand",
+            "button_label": "Shop 100 Grand Bars",
             "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000...<\/p>",
             "reviewer": "Kris",
             "state": "Indiana",
             "link_readmore": "shopify:\/\/blogs\/candy-memories\/100-grand-bar-candy-memory-kris-from-indiana"
           }
         },
-        "165085778836ad72b0-2": {
+        "166265520242b04fba-2": {
           "type": "select",
           "settings": {
             "product": "good-plenty-box",
@@ -214,65 +214,15 @@
         }
       },
       "block_order": [
-        "165085778836ad72b0-0",
-        "165085778836ad72b0-1",
-        "165085778836ad72b0-2"
-      ],
-      "settings": {
-        "title": "Candy memories",
-        "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
-        "btn": "share a memory",
-        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
-        "padding_top": 90,
-        "padding_bottom": 120
-      }
-    },
-    "1662655202ea9c4df0": {
-      "type": "section-candy-memories",
-      "blocks": {
-        "166265520242b04fba-0": {
-          "type": "select",
-          "settings": {
-            "product": "",
-            "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": ""
-          }
-        },
-        "166265520242b04fba-1": {
-          "type": "select",
-          "settings": {
-            "product": "",
-            "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": ""
-          }
-        },
-        "166265520242b04fba-2": {
-          "type": "select",
-          "settings": {
-            "product": "",
-            "button_label": "shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": ""
-          }
-        }
-      },
-      "block_order": [
         "166265520242b04fba-0",
         "166265520242b04fba-1",
         "166265520242b04fba-2"
       ],
       "settings": {
-        "title": "Heading",
-        "desc": "",
-        "btn": "",
+        "title": "Candy memories",
+        "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
+        "btn": "Share a memory",
+        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
@@ -336,7 +286,6 @@
     "1656448940f0011bdd",
     "16518009138973d5b1",
     "1656448901397e1f83",
-    "165085778823b445b7",
     "1662655202ea9c4df0",
     "product-recommendations",
     "1650857982f12e2d44"
