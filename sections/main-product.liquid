@@ -516,12 +516,12 @@
                               </svg>
                             </div>
                         </button>
-                        <div class="product-form__group--full-width">
-                          <button id="BIS_trigger" class="product-form__submit button button--full-width product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
-                            EMAIL WHEN AVAILABLE
-                          </button>
-                        </div>
-                    </div>                   
+                    </div>       
+                    <div class="product-form__group--full-width">
+                      <button id="BIS_trigger" class="product-form__submit button button--full-width product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
+                        EMAIL WHEN AVAILABLE
+                      </button>
+                    </div>                  
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
                     {%- endif -%}
