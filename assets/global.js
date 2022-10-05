@@ -439,7 +439,8 @@ class HeaderDrawer extends MenuDrawer {
     this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
     document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
     this.header.classList.add('menu-open');
-
+    var chatElement = document.getElementById("gorgias-chat-container");
+    chatElement.style.display = "none";
     setTimeout(() => {
       this.mainDetailsToggle.classList.add('menu-opening');
     });
