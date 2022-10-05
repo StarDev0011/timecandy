@@ -60,27 +60,28 @@
         {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
       </div>
       <div class="product-form__buttons">
-        <button aria-label="Add product {{ product.title }} to your cart" data-add-to-cart type="submit" name="add" class="product-form__submit button"
-        data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
-        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
-          <span>
-            {%- if product.selected_or_first_available_variant.available -%}
+        {%- if product.selected_or_first_available_variant.available -%}
+          <button aria-label="Add product {{ product.title }} to your cart" data-add-to-cart type="submit" name="add" class="product-form__submit button card-product__pack-bag"
+          data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
+            <span>
               {{ 'products.product.add_to_cart' | t }}
-            {%- else -%}
-              {{ 'products.product.sold_out' | t }}
-            {%- endif -%}
-          </span>
-          <div class="loading-overlay__spinner hidden">
-            <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-            </svg>
+            </span>
+            <div class="loading-overlay__spinner hidden">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        {%- else -%}
+          <div class="product-form__group--full-width">
+            <button id="BIS_trigger" class="product-form__submit button button--full-width">
+              EMAIL WHEN AVAILABLE
+            </button>
           </div>
-        </button>
-        <div class="sold-out-variant" style="display: none;">
-          <a href="#" class="BIS_trigger" data-product-data="{{ product | json | escape }}">
-            Email when available
-          </a>
-        </div>
+        {%- endif -%}
+        <a href="#" class="BIS_trigger roller" style="display: none;" data-product-data="{{ product | json | escape }}">
+          Email when available
+        </a>
       </div>
     {%- endform -%}
     </product-form>

@@ -6,7 +6,6 @@
             await fetch("/blogs/candy-memories/tagged/{{ product.handle }}?view=candy-memories-json")
                 .then(res => res.json())
                 .then((data) => {
-                    console.log(data);
                 if (data.length) {
                     memoriesContainer = document.querySelector('#memories-container');
                     data.forEach((e) => {
@@ -84,7 +83,7 @@
             }
         };
 
-        let Swipes = new Swiper('#slider-testimonial.swiper-container', {
+        let Swipes = new Swiper('#slider-memories.swiper-container', {
             loop: true,
             slidesPerView: 1,
             autoHeight: true,

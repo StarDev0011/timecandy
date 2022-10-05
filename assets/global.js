@@ -857,13 +857,14 @@ class VariantSelects extends HTMLElement {
     if (typeof(candyList) !== "undefined") {
       if(variantString) {
         let variantsText;
-        if (this.currentVariant.options.length > 2) {
-          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option3;
-        }else{
-          variantsText = this.currentVariant.option1 +'-'+ this.currentVariant.option2;
-        }
-        variantString.textContent = this.currentVariant.title.split('/').join(' ').replace('decade gift box','');;
-        metafieldList.innerHTML = candyList[variantsText.toLowerCase()];
+        let sizeChecked = this.productDetail.querySelector('input[name="Size"]:checked').value;
+        let decadeChecked = this.productDetail.querySelector('input[name="decade-input"]:checked') || this.productDetail.querySelector('input[name="Decade"]:checked');
+        decadeChecked = decadeChecked.value;
+
+        variantsText = sizeChecked +' - '+ decadeChecked;
+        variantString.textContent = variantsText;
+        metafieldList.innerHTML = candyList[variantsText.replace(' - ','-').toLowerCase()];
+        
         if(metafieldList.textContent == 'undefined') {
           metafieldList.style.display = 'none'
         } else {
@@ -921,6 +922,7 @@ class VariantSelects extends HTMLElement {
     const addButton = productForm.querySelector('[type="submit"]');
     const addButtonText = productForm.querySelector('[type="submit"] > span');
     const addBackInstock = productForm.querySelector('#BIS_trigger');
+    let addEmailAvailability = productForm.querySelector('.BIS_trigger');
 
     if (!addButton) return;
 
@@ -928,6 +930,8 @@ class VariantSelects extends HTMLElement {
       addButton.setAttribute('disabled', 'disabled');
       if (addBackInstock) {
         addBackInstock.style.display = 'block';
+      }else if (addEmailAvailability){
+        addEmailAvailability.style.display = 'inline-block';
       }
       if (text) addButtonText.textContent = text;
     } else {
@@ -935,6 +939,8 @@ class VariantSelects extends HTMLElement {
       addButtonText.textContent = window.variantStrings.addToCart;
       if (addBackInstock) {
         addBackInstock.style.display = 'none';
+      }else if (addEmailAvailability){
+        addEmailAvailability.style.display = 'none';
       }
     }
 

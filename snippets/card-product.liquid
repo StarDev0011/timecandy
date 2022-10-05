@@ -93,9 +93,11 @@
         <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
           <input class="card-product__variant-id" type="hidden" name="id" value="{{ card_product.variants[0].id }}"/>
           {% if sold_out %}
-            <button class="btn--disabled card-product__btn" disabled="disabled">
-              {{ 'products.product.sold_out' | t }}
-            </button>
+            <div class="product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
+              <button id="BIS_trigger" class="product-form__submit button button--full-width">
+                EMAIL WHEN AVAILABLE
+              </button>
+            </div>  
           {% elsif option_size > 1 %}
             <button class="card-product__btn" >
               <span class="card-product__btn-icon">

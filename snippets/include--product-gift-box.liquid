@@ -1,8 +1,26 @@
 <div class="image-with-text__text-item" style="max-width: min(100%, 455px); padding-top: 100px;">
-    <h2 class="image-with-text__heading h2">What's in the <span id="selected-variant-name">{{ product.selected_or_first_available_variant.title | downcase | remove: 'decade gift box' | split: '/' }}</span> box?</h2>
-    <div id="candy-list" class="image-with-text__text">
-      {{ product.selected_or_first_available_variant.metafields.box.candy_list }}
-    </div>
+    {% assign optionsList = product.options_with_values %}
+    {% for option in optionsList %}
+      {% if option.name contains 'Size' %}
+        {% assign sizeSelected = option.selected_value %}
+      {% elsif option.name contains 'Decade' %}
+        {% assign decadeSelected = option.selected_value %}
+      {% endif %}
+    {% endfor %}
+    {% unless decadeSelected %}
+      {% assign decadeSelected = '1950s' %}
+    {% endunless %}
+    {% assign title = sizeSelected | append: ' - ' | append: decadeSelected %}
+    <h2 class="image-with-text__heading h2">What's in the <span id="selected-variant-name">{{title}}</span> box?</h2>
+    {% for variant in gift_box.variants %}
+      {% assign variant_title = variant.option1 | append: ' - ' | append: variant.option2 | downcase %}
+      {% assign title_dc = title | downcase %}
+      {% if variant_title == title_dc %}
+        <div id="candy-list" class="image-with-text__text">
+          {{ variant.metafields.box.candy_list | strip_newlines }}
+        </div>
+      {% endif %}
+    {% endfor %}
 </div>
 
 {% capture 'meta_data' %}
