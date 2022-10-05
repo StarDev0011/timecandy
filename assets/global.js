@@ -379,7 +379,7 @@ class MenuDrawer extends HTMLElement {
     var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
     var chatElement = document.getElementById("gorgias-chat-container");
     elementAnnouncement.style.display = "block";
-    chatElement.style.display = "none";
+    chatElement.style.display = "block";
   }
 
   onFocusOut(event) {
