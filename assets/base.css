@@ -1383,7 +1383,8 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
 }
 .button,
-.shopify-challenge__button {
+.shopify-challenge__button,
+.btn.btn-info.sharebutton{
   display: inline-flex;
   justify-content: center;
   /* align-items: center; */
