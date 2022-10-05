@@ -1,3 +1,5 @@
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {%- liquid
   case section.settings.grid
@@ -30,146 +32,146 @@
         </div>
     </a>
     <div class="container">
-        <div class="collection__header">
-          <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
-        </div>
-        <div class="collection__wrapper">
-          <div class="filter-mobile">
-            <div class="filter-mobile__header" id="filter-mobile">
-              <span class="filter-mobile__title"> Filter & Sort </span>
-              <span class="filter-mobile__icon">
-                {%- render 'icon-arrow-right' -%}
-              </span>
-            </div>
+      <div class="collection__header">
+        <h1 class="collection__header-title header-title"> {{ collection.title }} </h1>
+      </div>
+      <div class="collection__wrapper">
+        <div class="filter-mobile">
+          <div class="filter-mobile__header" id="filter-mobile">
+            <span class="filter-mobile__title"> Filter & Sort </span>
+            <span class="filter-mobile__icon">
+              {%- render 'icon-arrow-right' -%}
+            </span>
           </div>
-          {% render 'include--sidebar' %}
-            <div class="collection-product__list">
-                {% if settings.ss_enable %}
-                    <div id="searchspring-content"></div>
-                    {% if section.settings.show_desc %}
-                        <div class="collection__desc">
-                            {{- collection.description -}}
-                        </div>
-                    {% endif %}
-                {% else %}
-                    {%- paginate collection.products by limit -%}
-                        <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
-                            {%- for product in collection.products -%}
-                              {% liquid
-                                assign on_sale = false
-                                assign sold_out = true
-                                assign option_size = product.variants | size
-                                if product.compare_at_price > product.price
-                                  assign on_sale = true
-                                endif
-                                if product.available
-                                  assign sold_out = false
-                                endif
-                                assign is_size = false
-                                for option in product.options_with_values
-                                  assign optionName = option.name | downcase
-                                  if optionName contains 'size'
-                                    assign is_size = true
-                                  endif
-                                endfor
-                              %}
-                              <div class="card-product__item {{ slideItem }}" role="listitem">
-                                <a class="card-product__link" href="{{ product.url | within: collection }}" aria-label="{{ product.url | handleize }}">
-                                  <div class="card-product__picture" data-product-id="{{ product.variants[0].id }}" style="transform-origin: center" data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
-                                    <img width="auto" height="auto" loading="lazy" class="card-product__image js-card-product-image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
-                                    <div class="card-product-label{% if settings.label_side == 'right' %} card-product-label__side-right{% endif %}">
-                                      {% if sold_out %}
-                                        <div class="card-product-label__item card-product__sold-out"> {{- settings.label_soldout -}} </div>
-                                      {% endif %}
-                              
-                                      {%- liquid assign tags = product.tags -%}
-                                      {% for t in tags %}
-                                        {% assign tag = t | strip %}
-                                        {% assign tag_value = tag | handleize %}
-                              
-                                        {% if tag_value contains 'label-' %}
-                                          <div class="card-product-label__item{% if tag_value == 'label-great-gift' %} card-product-label__great-gift{% elsif tag_value == 'label-limited-time-offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
-                                            {{- tag | split: 'Label:' -}}
-                                          </div>
-                                        {% endif %}
-                                      {% endfor %}
-                                    </div>
-                                  </div>
-                                </a>
-                                <div class="card-product__bottom">
-                                  <a role="heading" aria-level="3" class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
-                                  {% if is_size %}
-                                    <div class="card-product__label"> Various sizes </div>
-                                  {% endif %}
-                                  <div class="card-product__price">
-                                    {% if on_sale %}
-                                      <span class="card-product__price--sale">{{ product.price | money }}</span>
-                                      <span class="card-product__price--old">{{ product.compare_at_price | money }}</span>
-                                    {% else %}
-                                    {% if is_size == true %} <span class="card-product__price-text">Starting at</span>{% endif %}
-                                      <span>{{ product.price | money }}</span>
-                                      <span class="card-product__price--old">{{ product.compare_at_price | money }}</span>
-                                    {% endif %}
-                                  </div> 
-                                  <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
-                                    <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
-                                    {% if sold_out %}
-                                      <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
-                                        {{ 'products.product.sold_out' | t }}
-                                      </a>
-                                    {% elsif option_size > 1 %}
-                                      {% if product.title contains "Personalized" %}
-                                      <a href="{{ product.url }}" class="btn--disabled card-product__btn">Customize <span class="visually-hidden">{{  product.title }}</span></a>
-                                      {%  else %}
-                                      <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
-                                        <span class="card-product__btn-icon">
-                                          {% render 'icon-add' %}
-                                        </span>
-                                        <span class="card-product__btn-text"> Quick add <span class="visually-hidden">{{ product.title }} to your cart</span></span>
-                                      </button>
-                                      {% endif %}
-                                    {% else %}
-                                      <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
-                                        <span class="card-product__btn-icon">
-                                          {% render 'icon-add' %}
-                                        </span>
-                                        <span class="card-product__btn-text"> Add <span class="visually-hidden">{{ product.title }}</span> to cart </span>
-                                      </button>
-                                    {% endif %}
-                                  </form>
-                                  {% if option_size > 1 %}
-                                    <div class="quick-add"></div>
-                                  {% endif %}
-                                </div>
-                              </div>
-                            {%- endfor -%}
-                        </div>
-                        {%- if paginate.pages > 1 -%}
-                            {% if section.settings.page == 'page' %}
-                                {% render 'pagination', paginate: paginate, anchor: '' %}
-                            {% else %}
-                                <div class="product-paginate" data-paginate>
-                                  {% unless paginate.next.is_link %}
-                                    <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{collection.title | escape }}">
-                                      <span class="loader"></span>
-                                    </a> 
-                                  {% endunless %}
-                                </div>
-                            {% endif %}
-                        {%- endif -%}
-                    {%- endpaginate -%}
-                    {% if section.settings.show_desc %}
-                        <div class="collection__desc">
-                        {{- collection.description -}}
-                        </div>
-                    {% endif %}
-                    </div>
-                {%- endif -%}
-            </div>
         </div>
-        {% if settings.ss_enable %}
-            <div id="searchspring-no-results-recs"></div>
-        {%- endif -%}
+        {% render 'include--sidebar' %}
+          <div class="collection-product__list">
+              {% if settings.ss_enable %}
+                  <div id="searchspring-content"></div>
+                  {% if section.settings.show_desc %}
+                      <div class="collection__desc">
+                          {{- collection.description -}}
+                      </div>
+                  {% endif %}
+              {% else %}
+                  {%- paginate collection.products by limit -%}
+                      <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
+                          {%- for product in collection.products -%}
+                            {% liquid
+                              assign on_sale = false
+                              assign sold_out = true
+                              assign option_size = product.variants | size
+                              if product.compare_at_price > product.price
+                                assign on_sale = true
+                              endif
+                              if product.available
+                                assign sold_out = false
+                              endif
+                              assign is_size = false
+                              for option in product.options_with_values
+                                assign optionName = option.name | downcase
+                                if optionName contains 'size'
+                                  assign is_size = true
+                                endif
+                              endfor
+                            %}
+                            <div class="card-product__item {{ slideItem }}" role="listitem">
+                              <a class="card-product__link" href="{{ product.url | within: collection }}" aria-label="{{ product.url | handleize }}">
+                                <div class="card-product__picture" data-product-id="{{ product.variants[0].id }}" style="transform-origin: center" data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
+                                  <img width="auto" height="auto" loading="lazy" class="card-product__image js-card-product-image" src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}">
+                                  <div class="card-product-label{% if settings.label_side == 'right' %} card-product-label__side-right{% endif %}">
+                                    {% if sold_out %}
+                                      <div class="card-product-label__item card-product__sold-out"> {{- settings.label_soldout -}} </div>
+                                    {% endif %}
+                            
+                                    {%- liquid assign tags = product.tags -%}
+                                    {% for t in tags %}
+                                      {% assign tag = t | strip %}
+                                      {% assign tag_value = tag | handleize %}
+                            
+                                      {% if tag_value contains 'label-' %}
+                                        <div class="card-product-label__item{% if tag_value == 'label-great-gift' %} card-product-label__great-gift{% elsif tag_value == 'label-limited-time-offer' %} card-product-label__limited{% else %} card-product-label__custom-first{% endif %}">
+                                          {{- tag | split: 'Label:' -}}
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                  </div>
+                                </div>
+                              </a>
+                              <div class="card-product__bottom">
+                                <a role="heading" aria-level="3" class="card-product__title" href="{{ product.url | within: collection }}"> {{ product.title }} </a>
+                                {% if is_size %}
+                                  <div class="card-product__label"> Various sizes </div>
+                                {% endif %}
+                                <div class="card-product__price">
+                                  {% if on_sale %}
+                                    <span class="card-product__price--sale">{{ product.price | money }}</span>
+                                    <span class="card-product__price--old">{{ product.compare_at_price | money }}</span>
+                                  {% else %}
+                                  {% if is_size == true %} <span class="card-product__price-text">Starting at</span>{% endif %}
+                                    <span>{{ product.price | money }}</span>
+                                    <span class="card-product__price--old">{{ product.compare_at_price | money }}</span>
+                                  {% endif %}
+                                </div> 
+                                <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
+                                  <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
+                                  {% if sold_out %}
+                                    <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
+                                      {{ 'products.product.sold_out' | t }}
+                                    </a>
+                                  {% elsif option_size > 1 %}
+                                    {% if product.title contains "Personalized" %}
+                                    <a href="{{ product.url }}" class="btn--disabled card-product__btn">Customize <span class="visually-hidden">{{  product.title }}</span></a>
+                                    {%  else %}
+                                    <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" data-quick-add data-url="{{ product.url }}">
+                                      <span class="card-product__btn-icon">
+                                        {% render 'icon-add' %}
+                                      </span>
+                                      <span class="card-product__btn-text"> Quick add <span class="visually-hidden">{{ product.title }} to your cart</span></span>
+                                    </button>
+                                    {% endif %}
+                                  {% else %}
+                                    <button aria-label="Quick add {{ product.title }} to your cart" class="card-product__btn card-product__pack-bag" type="submit" data-add-to-cart data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}">
+                                      <span class="card-product__btn-icon">
+                                        {% render 'icon-add' %}
+                                      </span>
+                                      <span class="card-product__btn-text"> Add <span class="visually-hidden">{{ product.title }}</span> to cart </span>
+                                    </button>
+                                  {% endif %}
+                                </form>
+                                {% if option_size > 1 %}
+                                  <div class="quick-add"></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          {%- endfor -%}
+                      </div>
+                      {%- if paginate.pages > 1 -%}
+                          {% if section.settings.page == 'page' %}
+                              {% render 'pagination', paginate: paginate, anchor: '' %}
+                          {% else %}
+                              <div class="product-paginate" data-paginate>
+                                {% unless paginate.next.is_link %}
+                                  <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{collection.title | escape }}">
+                                    <span class="loader"></span>
+                                  </a> 
+                                {% endunless %}
+                              </div>
+                          {% endif %}
+                      {%- endif -%}
+                  {%- endpaginate -%}
+                  {% if section.settings.show_desc %}
+                      <div class="collection__desc">
+                      {{- collection.description -}}
+                      </div>
+                  {% endif %}
+                  </div>
+              {%- endif -%}
+          </div>
+    </div>
+    {% if settings.ss_enable %}
+        <div id="searchspring-no-results-recs"></div>
+    {%- endif -%}
   </div>
 </div>
 
@@ -181,6 +183,9 @@
     font-size: 14px;
   }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.3/dist/interact.min.js" defer="defer"></script>
+
 <script>
   const items = document.querySelectorAll('.collection__menu-item');
   const btn = document.querySelector('.js-menu-view-more');
@@ -242,7 +247,6 @@
   <source src="{{'500-milliseconds-of-silence.mp3' | asset_url }}" type="audio/mpeg">
 </audio>
 
-<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.3/dist/interact.min.js" defer></script>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     $('body').one('mousedown touchstart', function(){
