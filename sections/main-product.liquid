@@ -516,7 +516,7 @@
                               </svg>
                             </div>
                         </button>
-                        <button id="BIS_trigger" class="product-form__submit button button--full-width product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
+                        <button id="BIS_trigger" class="product-form__submit button button--full-width product-form__group--full-width" {% if product.selected_or_first_available_variant.available %}style="display:none;"{% endif %}>
                           EMAIL WHEN AVAILABLE
                         </button>                  
                     </div>                   
