@@ -497,7 +497,6 @@
                           </button>
                         </quantity-input>
                       </div>
-                      {%- if product.selected_or_first_available_variant.available -%}
                         <button
                           data-add-to-cart
                           data-popup-cart="{{ settings.show_popup_cart }}"
@@ -517,13 +516,11 @@
                               </svg>
                             </div>
                         </button>
-                      {%- else -%}
                         <div class="product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
                           <button id="BIS_trigger" class="product-form__submit button button--full-width">
                             EMAIL WHEN AVAILABLE
                           </button>
                         </div>
-                      {%- endif -%}
                     </div>                   
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
