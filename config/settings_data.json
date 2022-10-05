@@ -264,7 +264,7 @@
           "e3679f1f-6f75-42f6-bf21-90d222d80572"
         ],
         "settings": {
-          "header-misc-scripts-enable": false
+          "header-misc-scripts-enable": true
         }
       },
       "footer-misc-scripts": {
@@ -290,7 +290,7 @@
           "05c2ef11-018d-4cd4-90a3-19ac39c78b60"
         ],
         "settings": {
-          "footer-misc-scripts-enable": false
+          "footer-misc-scripts-enable": true
         }
       }
     },
