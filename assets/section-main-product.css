@@ -481,6 +481,9 @@ fieldset.product-form__input .form__label {
   margin-right: 0 !important;
   margin-bottom: 0 !important;
 }
+.product-detail .product-form__submit[disabled] {
+  display: none;
+}
 
 #sw_wishlist_label {
   font-weight: 300;
