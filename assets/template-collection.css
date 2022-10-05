@@ -768,7 +768,7 @@
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 766px) {
   .collection-product__inner {
     grid-template-columns: 1fr 1fr;
   }
