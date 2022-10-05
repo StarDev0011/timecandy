@@ -500,6 +500,8 @@
   position: absolute;
   z-index: -1;
   left: 5px;
+  top: 7px;
+  opacity: 0;
 }
 
 .gift-include:checked + label .mini-cart__gift-add {
