@@ -8,7 +8,8 @@
         "color_sub": "#0c5273",
         "title": "Discover over 300 different kinds of Candy you ate as a kid®",
         "color_title": "#262626",
-        "bg_color": "#bbe2dd"
+        "bg_color": "#bbe2dd",
+        "margin_bottom": 80
       }
     },
     "candy-classics": {
@@ -24,7 +25,7 @@
     "candy-chocolate": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "walk-the-candy-aisle-salt-water-taffy",
+        "collection": "bulk-candy-all",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
