@@ -822,6 +822,12 @@
   padding-top: 40px;
 }
 
+@media (max-width: 460px) {
+  .collection-product__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* COLLECTION PACK A BAG */
 
 .collection-pack-a-bag{
