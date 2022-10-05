@@ -348,6 +348,8 @@ class MenuDrawer extends HTMLElement {
         detailsElement.classList.add('menu-opening');
         summaryElement.setAttribute('aria-expanded', true);
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
+        var chatElement = document.getElementById("gorgias-chat-container");
+        chatElement.style.display = "none";
       }, 100);
     }
   }
