@@ -13,8 +13,15 @@
     <div class="collection-candy__wrapper">
       <div class="swiper js-product-slider">
         <div class="swiper-wrapper collection-candy__list col-4">
-          {%- for product in collection.products limit: section.settings.row -%}
-            {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+          {%- assign count = 0 -%}
+          {%- for product in collection.products -%}
+            {% if product.available %}
+              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+            {% if count == section.settings.row %}
+              {% break %}
+            {% endif %}
           {%- endfor -%}
           {% if section.settings.show_view_all %}
             <div class="card-product__item collection-view-all">
