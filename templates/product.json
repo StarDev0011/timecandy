@@ -145,7 +145,7 @@
         "3290bc8b-73ba-4f5e-9a86-7620c719bfee": {
           "type": "select",
           "settings": {
-            "product": "candy-buttons-2pack",
+            "product": "candy-buttons-on-paper-tape",
             "button_label": "Shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
             "reviewer": "Brian",
@@ -186,58 +186,6 @@
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "Share a Memory",
         "bg_image": "shopify:\/\/shop_images\/home-feature-dots.png",
-        "padding_top": 90,
-        "padding_bottom": 120
-      }
-    },
-    "165085778823b445b7": {
-      "type": "testimonial",
-      "disabled": true,
-      "blocks": {
-        "165085778836ad72b0-0": {
-          "type": "select",
-          "settings": {
-            "product": "candy-buttons-2pack",
-            "button_label": "Shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure! <\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/brian-from-maryland"
-          }
-        },
-        "165085778836ad72b0-1": {
-          "type": "select",
-          "settings": {
-            "product": "100-grand-bar",
-            "button_label": "shop 100 grand",
-            "content_review": "<p>This was back when this candy was called $100,000 bars, not 100 Grand bars. I remember going to my friend Cori's birthday party in elementary school, maybe third grade. At the party her mom told us that we were each going to get $100,000...<\/p>",
-            "reviewer": "Kris",
-            "state": "Indiana",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/100-grand-bar-candy-memory-kris-from-indiana"
-          }
-        },
-        "165085778836ad72b0-2": {
-          "type": "select",
-          "settings": {
-            "product": "good-plenty-box",
-            "button_label": "Shop Good & Plenty",
-            "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
-            "reviewer": "Juanita",
-            "state": "Kentucky",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/juanita-from-kentucky"
-          }
-        }
-      },
-      "block_order": [
-        "165085778836ad72b0-0",
-        "165085778836ad72b0-1",
-        "165085778836ad72b0-2"
-      ],
-      "settings": {
-        "title": "Candy memories",
-        "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
-        "btn": "Share a Memory",
-        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
@@ -301,7 +249,6 @@
     "165643530217e244c9",
     "16564352748a855df3",
     "16624893234ba7e148",
-    "165085778823b445b7",
     "product-recommendations",
     "1650857982f12e2d44"
   ]
