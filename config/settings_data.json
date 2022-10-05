@@ -101,7 +101,7 @@
     "collection": "candy-gifts",
     "suggested": "Gum, Licorice, Laffy Taffy, Candy Cigarettes, Pop Rocks",
     "placeholder": "Search for anything!, Licorice, Laffy Taffy, Pop Rocks, Zagnut, Bubble Gum, Rock Candy, Jelly Beans, Now and Laters, Chocolate, Nerds, Jolly Rancher, Sugar Free, Runts",
-    "show_popup_cart": true,
+    "show_popup_cart": false,
     "collection_1": "candy-gifts-greeting-cards",
     "collection_2": "walk-the-candy-aisle-retro-toys",
     "favicon": "shopify:\/\/shop_images\/favicon_32x32_7b80a147-4e82-4eaa-ae67-74e565963c77.webp",
