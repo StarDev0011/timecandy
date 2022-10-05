@@ -504,12 +504,17 @@
                           aria-label="Add product {{ product.title }} to your cart"
                           type="submit"
                           name="add"
+                          {% if product.selected_or_first_available_variant.available == false %}id="BIS_trigger"{% endif %}
                           class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
                           data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
-                        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                        {% if product.selected_or_first_available_variant.available == false %}{% endif %}
                         >
                             <span>
-                              {{ 'products.product.add_to_cart' | t }}
+                              {% if product.selected_or_first_available_variant.available != false %}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {% else %}
+                                EMAIL WHEN AVAILABLE
+                              {% endif %}
                             </span>
                             <div class="loading-overlay__spinner hidden">
                               <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
