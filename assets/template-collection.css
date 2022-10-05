@@ -824,7 +824,7 @@
 
 @media (max-width: 460px) {
   .collection-product__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
