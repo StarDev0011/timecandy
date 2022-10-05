@@ -17,7 +17,7 @@
          {{ 'customer.menu_links.addresses' | t | link_to: routes.account_addresses_url }}
       </li>
       <li {% if selected == 'wishlist' %}class="selected"{% endif %}>
-         {{ 'customer.menu_links.wishlist' | t | link_to: routes.account_url }}
+         <a href="/a/wishlist">Wishlist</a>
       </li>
       <li>{{ 'customer.menu_links.logout' | t | link_to: routes.account_logout_url }}</li>
    </ul>
