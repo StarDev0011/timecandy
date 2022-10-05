@@ -457,6 +457,14 @@ CartDawn = {
       }
     });
 
+    $('.modal-cart-gift').on('click', function(e) {
+      if (e.target !== this)
+        return;
+      
+      $('#cart-icon-bubble').focus();
+      $('.modal-cart-gift').fadeOut(200);
+    });
+
     $('body').on('keypress', 'label', function (event) {
       labelID = $(this).attr('for');
       if (event.key === "Enter") {
