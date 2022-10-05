@@ -10,7 +10,7 @@
             "image_mb": "shopify:\/\/shop_images\/otc-halloweenPromo2022-WebSliderMobile-Output-1200x1200_2x_2d8377aa-f725-467b-a9e6-b96f636b02cf.jpg",
             "heading": "The scariest deal ever! get 15% off site-wide with code 'boo'",
             "subheading": "Trick or Treat!",
-            "text_color": "#FFFFFF",
+            "text_color": "#ffffff",
             "button_label": "Shop Spooky Sweets",
             "link": "shopify:\/\/collections\/candy-by-occasion-halloween-fall-candy",
             "button_style_secondary": false,
@@ -314,7 +314,7 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "product": "candy-buttons-2pack",
+            "product": "candy-buttons-on-paper-tape",
             "button_label": "Shop candy buttons",
             "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
             "reviewer": "Brian",
