@@ -467,33 +467,28 @@
                           </button>
                         </quantity-input>
                       </div>
-                      {%- if product.selected_or_first_available_variant.available -%}
-                        <button
-                          type="submit"
-                          name="add"
-                          data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
-                          data-add-to-cart
-                          data-popup-cart="{{ settings.show_popup_cart }}"
-                          aria-label="Add product {{ product.title }} to your cart"
-                          class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
-                        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                        >
-                            <span>
-                              {{ 'products.product.add_to_cart' | t }}
-                            </span>
-                            <div class="loading-overlay__spinner hidden">
-                              <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                              </svg>
-                            </div>
-                        </button>
-                      {%- else -%}
-                        <div class="product-form__group--full-width" {% if product.available %}style="display:none;"{% endif %}>
-                          <button id="BIS_trigger" class="product-form__submit button button--full-width">
-                            EMAIL WHEN AVAILABLE
-                          </button>
-                        </div>   
-                      {%- endif -%}    
+                      <button
+                        data-add-to-cart
+                        data-popup-cart="{{ settings.show_popup_cart }}"
+                        aria-label="Add product {{ product.title }} to your cart"
+                        type="submit"
+                        name="add"
+                        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--primary{% endif %}"
+                        data-ice-brix="{% if product.tags contains 'Ice-Brix' %}true{% else %}false{% endif %}"
+                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                      >
+                          <span>
+                            {{ 'products.product.add_to_cart' | t }}
+                          </span>
+                          <div class="loading-overlay__spinner hidden">
+                            <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                            </svg>
+                          </div>
+                      </button>
+                      <button id="BIS_trigger" class="product-form__submit button button--full-width product-form__group--full-width" {% if product.selected_or_first_available_variant.available %}style="display:none;"{% endif %}>
+                        EMAIL WHEN AVAILABLE
+                      </button>  
                     </div>             
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
