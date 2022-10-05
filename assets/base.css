@@ -3150,6 +3150,7 @@ div.modal-background {
 .main-page-template .rte a:hover:after,
 .blog-categories__list a:hover:after{
   bottom: -2px;
+  height: 2px;
 }
 .no-tooltips {
   pointer-events: none;
