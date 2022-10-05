@@ -360,7 +360,9 @@ class MenuDrawer extends HTMLElement {
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
     var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    var chatElement = document.getElementById("gorgias-chat-container");
     elementAnnouncement.style.display = "none";
+    chatElement.style.display = "none";
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
@@ -375,7 +377,9 @@ class MenuDrawer extends HTMLElement {
     removeTrapFocus(elementToFocus);
     this.closeAnimation(this.mainDetailsToggle);
     var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    var chatElement = document.getElementById("gorgias-chat-container");
     elementAnnouncement.style.display = "block";
+    chatElement.style.display = "none";
   }
 
   onFocusOut(event) {
