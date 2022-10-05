@@ -767,13 +767,6 @@
     box-sizing: inherit;
   }
 }
-
-@media (max-width: 766px) {
-  .collection-product__inner {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (max-width: 767px) {
   .custom-collection__list {
     grid-template-columns: 1fr 1fr;
@@ -786,7 +779,7 @@
   }
 
   .collection-product__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .collection-candy__inner {
