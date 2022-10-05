@@ -232,4 +232,5 @@
 
 .testimonial .swiper-button-next, .testimonial .swiper-button-prev{
     transform: translateY(-50%);
+    pointer-events: unset !important;
 }
