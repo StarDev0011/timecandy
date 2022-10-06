@@ -79,9 +79,11 @@
             </button>
           </div>
         {%- endif -%}
-        <a href="#" class="BIS_trigger roller" style="display: none;" data-product-data="{{ product | json | escape }}">
-          Email when available
-        </a>
+        <div class="product-form__group--full-width">
+          <button class="button BIS_trigger" style="display: none;" data-product-data="{{ product | json | escape }}">
+            Email when available
+          </button>
+        </div>
       </div>
     {%- endform -%}
     </product-form>

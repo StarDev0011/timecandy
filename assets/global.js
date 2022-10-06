@@ -935,14 +935,16 @@ class VariantSelects extends HTMLElement {
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');
+      addButton.style.display = 'none';
       if (addBackInstock) {
         addBackInstock.style.display = 'block';
       }else if (addEmailAvailability){
-        addEmailAvailability.style.display = 'inline-block';
+        addEmailAvailability.style.display = 'block';
       }
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
+      addButton.style.display = 'block';
       addButtonText.textContent = window.variantStrings.addToCart;
       if (addBackInstock) {
         addBackInstock.style.display = 'none';
