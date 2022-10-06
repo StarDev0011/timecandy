@@ -325,8 +325,9 @@
                           {% if option.selected_value == value %}checked{% endif %}
                         >
                         <label id="variant-{{ option.position }}-{{ forloop.index0 }}" tabindex="0" class="js-variant-item {% if is_size %}js-variant-item_size{% endif %} {% if option.selected_value == value %}js-variant-active{% endif %}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                          {% if value contains 'decade gift box' %}
-                            {{ value | downcase | split: 'decade gift box' }}
+                          {% assign value_d = value | downcase %}
+                          {% if value_d contains 'decade gift box' %}
+                            {{ value_d | split: 'decade gift box' }}
                           {% else %}
                             {{ value }}
                           {% endif %}
