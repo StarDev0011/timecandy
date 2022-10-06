@@ -3,9 +3,9 @@
   top: 0;
   right: 0;
   background-color: #fff;
-  width: 100%;
+  width: calc(100% - 30px);
   height: 100%;
-  max-width: 375px;
+  max-width: 425px;
   z-index: 1004;
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
