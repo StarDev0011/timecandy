@@ -86,28 +86,16 @@
   }
 </style>
 <script src="{{ 'readmore.js' | asset_url }}" defer="defer"></script>  
-{% javascript %}
-var Collection = Collection || {};
-
-Collection = {
-  init: function() {
-    this.readMoreDesc();
-  },
-  readMoreDesc: () => {
-    $('.collection__desc-text').readmore({
-      speed: 75,
-      collapsedHeight: 160,
-      moreLink: '<a href="#" class="collection__read-more roller">Read more</a>',
-      lessLink: '<a href="#" class="collection__read-more roller">Read less</a>'
-    });
-  }
-};
-
+<script>
 $(function() {
-  Collection.init();
-})
-
-{% endjavascript %}
+  $('.collection__desc-text').readmore({
+    speed: 75,
+    collapsedHeight: 160,
+    moreLink: '<a href="#" class="collection__read-more roller">Read more</a>',
+    lessLink: '<a href="#" class="collection__read-more roller">Read less</a>'
+  });
+});
+</script>
 
 {% schema %}
   {
