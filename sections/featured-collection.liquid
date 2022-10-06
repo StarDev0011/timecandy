@@ -61,11 +61,18 @@
 
       <slider-component class="slider-mobile-gutter">
         <div aria-owns="slider-mobile-item" role="list"
-            id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop {% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" >
-          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-            <div role="listitem" id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}" >
-              {% render 'include--product-card', product: product %}
-            </div>
+          id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop {% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" >
+          {%- assign count = 0 -%}
+          {%- for product in section.settings.collection.products -%}
+            {% if product.available %}
+              <div role="listitem" id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}" >
+                {% render 'include--product-card', product: product %}
+              </div>
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+            {% if count == section.settings.products_to_show %}
+              {% break %}
+            {% endif %}
           {%- endfor -%}
         </div>
         {%- if show_mobile_slider -%}
