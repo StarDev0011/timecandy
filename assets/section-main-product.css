@@ -510,7 +510,7 @@ fieldset.product-form__input .form__label {
 
 @media screen and (max-width: 749px) {
   .product__media-item--variant:first-child {
-    padding-right: 1.5rem;
+    /* padding-right: 1.5rem; */
   }
 }
 
@@ -598,6 +598,7 @@ fieldset.product-form__input .form__label {
   background-color: transparent;
   color: currentColor;
   padding: 0;
+  border: none;
 }
 
 .product__media-toggle::after {
