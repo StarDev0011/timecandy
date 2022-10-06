@@ -651,7 +651,7 @@
     }
 
     hide() {
-      super.hide();
+      document.querySelector('product-modal').removeAttribute('open');
     }
 
     show(opener) {
