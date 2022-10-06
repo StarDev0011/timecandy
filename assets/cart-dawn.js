@@ -92,15 +92,32 @@ CartDawn = {
     $.get('/cart.js', null, null, 'json').done(function (data) {
       $(CartDawn.Selector.count).text(data.item_count);
       $('.js-cart-count').html(data.item_count);
-      if (btn && btn.classList.contains("card-product__pack-bag")) {
-        document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+      $('.packabag-sidebar__count').innerHTML = data.item_count;
+      if (btn) {
         document.querySelector('.js-cart-count').innerHTML = data.item_count;
+        let isPackABag = false;
+        if (typeof(btn.classList) == 'object') {
+          if (btn.classList.contains("card-product__pack-bag")) {
+            isPackABag = true;
+          }
+        } else if (typeof(btn.classList) == 'string') {
+          if (btn['classList'] == "card-product__pack-bag") {
+            isPackABag = true;
+          }
+        }
+        if (isPackABag) {
+          if (document.querySelector('.packabag-sidebar__count')) {
+            document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+          }
 
-        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-        obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-        obj_mp3.play();
-        $('.packabag-sidebar__bag').addClass('animated tada');
-        setTimeout(function () { $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);
+          var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+          if (obj_mp3) {
+            obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+            obj_mp3.play();
+            $('.packabag-sidebar__bag').addClass('animated tada');
+            setTimeout(function () { $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);
+          }
+        }
       }
     });
   },
