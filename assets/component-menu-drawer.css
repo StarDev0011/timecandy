@@ -67,7 +67,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   visibility: visible;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 989px) {
   .menu-drawer {
     position: fixed;
     left: 0;
@@ -85,7 +85,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .menu-drawer {
     width: 40rem;
   }
