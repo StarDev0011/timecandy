@@ -87,14 +87,14 @@
 </style>
 <script src="{{ 'readmore.js' | asset_url }}" defer="defer"></script>  
 <script>
-$(function() {
-  $('.collection__desc-text').readmore({
-    speed: 75,
-    collapsedHeight: 160,
-    moreLink: '<a href="#" class="collection__read-more roller">Read more</a>',
-    lessLink: '<a href="#" class="collection__read-more roller">Read less</a>'
+  document.addEventListener("DOMContentLoaded", function(event) {
+    $('.collection__desc-text').readmore({
+      speed: 75,
+      collapsedHeight: 160,
+      moreLink: '<a href="#" class="collection__read-more roller">Read more</a>',
+      lessLink: '<a href="#" class="collection__read-more roller">Read less</a>'
+    });
   });
-});
 </script>
 
 {% schema %}
