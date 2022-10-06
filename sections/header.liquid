@@ -92,70 +92,10 @@
                             assign type_menu = 'megamenu'
                           endif
                         -%}
-                        <li {% if type_menu == 'megamenu' %} aria-expanded="false" {% endif %} class="index-{{ forloop.index }} {% if type_menu == 'megamenu' %}item-has-megamenu{% endif %}">
-                          {%- if link.links != blank -%}
-                            <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                              <summary class="menu-drawer__menu-item list-menu__item link  {% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                                <a href="{{ link.url }}" class="list-menu__item link  {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-                                  {{ link.title | escape }}
-                                </a>                                
-                                {% render 'icon-angle-right' %}
-                                {% render 'icon-caret' %}
-                              </summary>
-                              <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu gradient motion-reduce" tabindex="-1">
-                                <div class="menu-drawer__inner-submenu">
-                                  <button class="menu-drawer__close-button link " aria-expanded="true">
-                                    {% render 'icon-angle-right' %}
-                                    {{ link.title | escape }}
-                                  </button>
-                                  {%- if has_mega_menu == true -%}
-                                    <div class="megamenu">
-                                      {% render 'mega-menu' with links: link.links, index: forloop.index %}
-                                    </div>
-                                  {% else %}
-                                    <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                      {%- for childlink in link.links -%}
-                                        <li>
-                                          {%- if childlink.links == blank -%}
-                                            <a href="{{ childlink.url }}" class="menu-drawer__menu-item link  list-menu__item {% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                              {{ childlink.title | escape }}
-                                            </a>
-                                          {%- else -%}
-                                            <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
-                                              <summary class="menu-drawer__menu-item link  list-menu__item">
-                                                {{ childlink.title | escape }}
-                                                {% render 'icon-angle-right' %}
-                                                {% render 'icon-caret' %}
-                                              </summary>
-                                              <div id="childlink-{{ childlink.title | escape }}" class="menu-drawer__submenu gradient motion-reduce">
-                                                <button class="menu-drawer__close-button link " aria-expanded="true">
-                                                  {% render 'icon-angle-right' %}
-                                                  {{ childlink.title | escape }}
-                                                </button>
-                                                <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                                                  {%- for grandchildlink in childlink.links -%}
-                                                    <li>
-                                                      <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link  list-menu__item {% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                                        {{ grandchildlink.title | escape }}
-                                                      </a>
-                                                    </li>
-                                                  {%- endfor -%}
-                                                </ul>
-                                              </div>
-                                            </details>
-                                          {%- endif -%}
-                                        </li>
-                                      {%- endfor -%}
-                                    </ul>
-                                  {% endif %}
-                                </div>
-                              </div>
-                            </details>
-                          {%- else -%}
+                        <li class="index-{{ forloop.index }}">
                             <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link  {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                               {{ link.title | escape }}
                             </a>
-                          {%- endif -%}
                         </li>
                       {%- endfor -%}
                     </ul>
