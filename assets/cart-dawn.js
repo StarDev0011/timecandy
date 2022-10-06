@@ -484,7 +484,7 @@ CartDawn = {
       cartModal.setAttribute('tabIndex', '-1');
       cartModal.focus();
       cartModal.addEventListener('blur', this.removeAttribute('tabindex'), { one: true });
-
+      $('.Rise__widget').css("z-index", "0");
       $.get('/cart?view=dawn', function (data) {
         $('body').addClass('open-minicart');
         $('body').attr('aria-hidden', 'true');

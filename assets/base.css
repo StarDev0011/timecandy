@@ -3178,3 +3178,7 @@ div[data-widget-load-type="continue"] ul.stamped-pagination li.next a {
   width: 100%;
   height: 100%;
 }
+
+.Rise__widget{
+  z-index: 20 !important;
+}
