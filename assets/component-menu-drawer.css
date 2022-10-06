@@ -67,6 +67,24 @@ details[open].menu-opening > .menu-drawer__submenu {
   visibility: visible;
 }
 
+@media screen and (max-width: 749px) {
+  .menu-drawer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    z-index: 11;
+  }
+  .menu-drawer__inner-submenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .megamenu {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .menu-drawer {
     width: 40rem;
@@ -183,6 +201,12 @@ details[open].menu-opening > .menu-drawer__submenu {
   justify-content: center;
   position: relative;
   border-bottom: 1px solid #ccc;
+}
+
+.menu-drawer__close-button a {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  color: rgb(var(--color-light-text));
 }
 
 .no-js .menu-drawer__close-button {

@@ -104,10 +104,12 @@
                               </summary>
                               <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu gradient motion-reduce" tabindex="-1">
                                 <div class="menu-drawer__inner-submenu">
-                                  <button class="menu-drawer__close-button link " aria-expanded="true">
-                                    {% render 'icon-angle-right' %}
-                                    {{ link.title | escape }}
-                                  </button>
+                                  <div class="menu-drawer__close-button link">
+                                    <button aria-expanded="true">
+                                      {% render 'icon-angle-right' %}
+                                    </button>
+                                    <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                                  </div>
                                   {%- if has_mega_menu == true -%}
                                     <div class="megamenu">
                                       {% render 'mega-menu' with links: link.links, index: forloop.index %}

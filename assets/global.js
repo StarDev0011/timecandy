@@ -349,6 +349,8 @@ class MenuDrawer extends HTMLElement {
         summaryElement.setAttribute('aria-expanded', true);
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
         var chatElement = document.getElementById("gorgias-chat-container");
+        document.querySelector('#menu-drawer').style.height = `100%`;
+        document.querySelector('#menu-drawer').style.top = `0`;
         chatElement.style.display = "none";
       }, 100);
     }
@@ -393,6 +395,11 @@ class MenuDrawer extends HTMLElement {
   onCloseButtonClick(event) {
     const detailsElement = event.currentTarget.closest('details');
     this.closeSubmenu(detailsElement);
+    let headerHeight = document.querySelector('.header').clientHeight;
+    console.log('haha', headerHeight);
+    document.querySelector('#menu-drawer').style.height = `calc(100% - ${headerHeight}px)`;
+    document.querySelector('#menu-drawer').style.top = `${headerHeight}px`;
+
   }
 
   closeSubmenu(detailsElement) {
@@ -450,6 +457,9 @@ class HeaderDrawer extends MenuDrawer {
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
     var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
     elementAnnouncement.style.display = "none";
+    let headerHeight = document.querySelector('.header').clientHeight;
+    document.querySelector('#menu-drawer').style.height = `calc(100% - ${headerHeight}px)`;
+    document.querySelector('#menu-drawer').style.top = `${headerHeight}px`;
   }
 
   closeMenuDrawer(event, elementToFocus) {
