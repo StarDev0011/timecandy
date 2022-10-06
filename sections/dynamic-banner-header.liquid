@@ -10,14 +10,9 @@
                 assign count_desc = desc | size
             %}
       <div class="collection__description rte">
-        <div class="collection__desc-text {% if count_desc > 35 %}collection__height-desc{% endif %}">
+        <div class="collection__desc-text">
           {{ collection.description }}
         </div>
-        {% if count_desc > 35 %}
-        <a class="js-read-more collection__read-more roller" href="#"> Read more</a>
-        {% else %}
-        {{ count_desc }}
-        {% endif %}
       </div>
       {%- endif -%}
     </div>    
@@ -25,7 +20,7 @@
 </div>
 
 <style>
-  .collection__height-desc {
+  {% comment %} .collection__height-desc {
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,7 +29,7 @@
     -webkit-box-orient: vertical;
     max-height: 160px;
     padding-bottom: 3px;  
-  }
+  } {% endcomment %}
   .collection-candy__header {
     background-color: {{ section.settings.bg_color }}
   }
@@ -90,31 +85,20 @@
     }
   }
 </style>
-
+<script src="{{ 'readmore.js' | asset_url }}" defer="defer"></script>  
 {% javascript %}
 var Collection = Collection || {};
 
 Collection = {
-  Class: {
-    btnReadMore: '.js-read-more'
-  },
-
   init: function() {
     this.readMoreDesc();
   },
   readMoreDesc: () => {
-    const btnReadmore = document.querySelector(Collection.Class.btnReadMore);
-    const desc = document.querySelector(".collection__desc-text");
-    btnReadmore.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      if (desc.classList.contains("collection__height-desc")) {
-        btnReadmore.innerHTML = "Read Less";
-      } else {
-        btnReadmore.innerHTML = "Read More";
-      }
-
-      desc.classList.toggle("collection__height-desc");
+    $('.collection__desc-text').readmore({
+      speed: 75,
+      collapsedHeight: 160,
+      moreLink: '<a href="#" class="collection__read-more roller">Read more</a>',
+      lessLink: '<a href="#" class="collection__read-more roller">Read less</a>'
     });
   }
 };
