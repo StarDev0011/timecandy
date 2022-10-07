@@ -633,8 +633,8 @@ function initDraggable() {
     var { currentTarget, interaction } = event;
     var element = currentTarget;
     switch (event.type) {
-      case 'dragstart':
-        console.log('dragstart');
+      case 'hold':
+        console.log('hold');
         if (
           interaction.pointerIsDown &&
           !interaction.interacting() &&
@@ -689,7 +689,7 @@ function initDraggable() {
       onend: listener,
       max: Infinity,
       maxPerElement: 1,
-      hold: 100,
+      hold: 200,
     }).styleCursor(true);
 
     $('.card-product__picture').on('click', function (event) {
