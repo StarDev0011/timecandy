@@ -841,7 +841,7 @@
   cursor: -ms-grab;
   cursor: grab;
   touch-action: none;
-  transition: all .5s ease-in;
+  transition: scale .5s ease-in;
 }
 
 .collection-pack-a-bag .card-product__picture:hover{
