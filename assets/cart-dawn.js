@@ -630,8 +630,7 @@ function initDraggable() {
     event.preventDefault();
     event.stopPropagation();
     return false;
-  }; 
- 
+};  
   var position = { x: 0, y: 0 };
   function listener(event) {
     event.preventDefault();
