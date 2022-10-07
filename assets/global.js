@@ -349,8 +349,6 @@ class MenuDrawer extends HTMLElement {
         summaryElement.setAttribute('aria-expanded', true);
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
         var chatElement = document.getElementById("gorgias-chat-container");
-        document.querySelector('#menu-drawer').style.height = `100%`;
-        document.querySelector('#menu-drawer').style.top = `0`;
         chatElement.style.display = "none";
       }, 100);
     }
@@ -395,11 +393,6 @@ class MenuDrawer extends HTMLElement {
   onCloseButtonClick(event) {
     const detailsElement = event.currentTarget.closest('details');
     this.closeSubmenu(detailsElement);
-    let headerHeight = document.querySelector('.header').clientHeight;
-    console.log('haha', headerHeight);
-    document.querySelector('#menu-drawer').style.height = `calc(100% - ${headerHeight}px)`;
-    document.querySelector('#menu-drawer').style.top = `${headerHeight}px`;
-
   }
 
   closeSubmenu(detailsElement) {
@@ -441,32 +434,62 @@ class HeaderDrawer extends MenuDrawer {
     super();
   }
 
-  openMenuDrawer(summaryElement) {
-    this.header = this.header || document.getElementById('shopify-section-header');
-    this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
-    document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
-    this.header.classList.add('menu-open');
-    var chatElement = document.getElementById("gorgias-chat-container");
-    chatElement.style.display = "none";
-    setTimeout(() => {
-      this.mainDetailsToggle.classList.add('menu-opening');
-    });
+  onCloseButtonClick(event) {
+    super.onCloseButtonClick(event);
+    let headerHeight = document.querySelector('.header').clientHeight;
+    document.querySelector('#menu-drawer').style.height = `calc(100% - ${headerHeight}px)`;
+    document.querySelector('#menu-drawer').style.top = `${headerHeight}px`;
 
-    summaryElement.setAttribute('aria-expanded', true);
-    trapFocus(this.mainDetailsToggle, summaryElement);
-    document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
-    var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
-    elementAnnouncement.style.display = "none";
+  }
+
+  onSummaryClick(event) {
+    const summaryElement = event.currentTarget;
+    const detailsElement = summaryElement.parentNode;
+    const isOpen = detailsElement.hasAttribute('open');
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function addTrapFocus() {
+      trapFocus(summaryElement.nextElementSibling, detailsElement.querySelector('button'));
+      summaryElement.nextElementSibling.removeEventListener('transitionend', addTrapFocus);
+    }
+
+    if (detailsElement === this.mainDetailsToggle) {
+      if(isOpen) event.preventDefault();
+      isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
+    } else {
+      setTimeout(() => {
+         document.body.classList.add(`open-submenu`);
+        detailsElement.classList.add('menu-opening');
+        summaryElement.setAttribute('aria-expanded', true);
+        !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
+        var chatElement = document.getElementById("gorgias-chat-container");
+        document.querySelector('#menu-drawer').style.height = `100%`;
+        document.querySelector('#menu-drawer').style.top = `0`;
+        chatElement.style.display = "none";
+      }, 100);
+    }
+  }
+
+  openMenuDrawer(summaryElement) {
+    super.openMenuDrawer(summaryElement);
     let headerHeight = document.querySelector('.header').clientHeight;
     document.querySelector('#menu-drawer').style.height = `calc(100% - ${headerHeight}px)`;
     document.querySelector('#menu-drawer').style.top = `${headerHeight}px`;
   }
 
-  closeMenuDrawer(event, elementToFocus) {
-    super.closeMenuDrawer(event, elementToFocus);
-    this.header.classList.remove('menu-open');
+  closeMenuDrawer(event, elementToFocus = false) {
+    this.mainDetailsToggle.classList.remove('menu-opening');
+    this.mainDetailsToggle.querySelectorAll('details').forEach(details =>  {
+      details.removeAttribute('open');
+      details.classList.remove('menu-opening');
+    });
+    document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
+    removeTrapFocus(elementToFocus);
+    this.closeAnimation(this.mainDetailsToggle);
     var elementAnnouncement = document.getElementById("shopify-section-announcement-bar");
+    var chatElement = document.getElementById("gorgias-chat-container");
     elementAnnouncement.style.display = "block";
+    chatElement.style.display = "block";
   }
 }
 
