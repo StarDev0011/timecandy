@@ -47,6 +47,9 @@ class PredictiveSearch extends HTMLElement {
   }
 
   onFocus() {
+    if (document.querySelector('.menu-drawer-container.menu-opening')) {
+      document.querySelector('header-drawer').closeMenuDrawer();
+    }
     const searchTerm = this.getQuery();
     this.closeIconSearch.style.display = 'block';
     if (!searchTerm.length) {
