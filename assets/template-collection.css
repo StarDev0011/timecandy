@@ -887,6 +887,7 @@
 }
 
 #drop-zone {
+  display: none;
   background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKG_side.png?v=1611110…) no-repeat;
   background-size: contain;
   width: 180px;

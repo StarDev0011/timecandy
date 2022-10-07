@@ -680,7 +680,7 @@ function initDraggable() {
     }
   }
 
-  let bag = document.querySelector('#drop-zone');
+  //let bag = document.querySelector('#drop-zone');
 
   if (bag) {
     interact('.card-product__picture').draggable({
