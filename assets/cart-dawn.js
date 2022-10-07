@@ -635,13 +635,12 @@ function initDraggable() {
     switch (event.type) {
       case 'hold':
         console.log('hold');
-        if (
-          interaction.pointerIsDown &&
-          !interaction.interacting() &&
-          currentTarget.style.transform === ''
-        ) {
-
-        } else if (interaction.pointerIsDown && !interaction.interacting()) {
+        if (!interaction.interacting()) {
+          interaction.start({ name: "drag" }, event.interactable, event.currentTarget);
+        }
+        break;
+      case 'dragstart': 
+        if (interaction.pointerIsDown && !interaction.interacting()) {
           const regex = /translate\(([\d]+)px, ([\d]+)px\)/i;
           const transform = regex.exec(currentTarget.style.transform);
 
