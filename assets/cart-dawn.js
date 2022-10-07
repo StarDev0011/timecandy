@@ -630,7 +630,8 @@ function initDraggable() {
     event.preventDefault();
     event.stopPropagation();
     return false;
-};  
+  }; 
+ 
   var position = { x: 0, y: 0 };
   function listener(event) {
     event.preventDefault();
@@ -687,6 +688,10 @@ function initDraggable() {
   let bag = document.querySelector('#drop-zone');
 
   if (bag) {
+    interact.addDocument(window.document, {
+      events: { passive: false },
+    });  
+        
     interact('.card-product__picture').draggable({
       onstart: listener,
       onmove: listener,
