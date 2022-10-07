@@ -689,6 +689,11 @@ function initDraggable() {
       onend: listener,
       max: Infinity,
       maxPerElement: 1,
+      delay: {
+        mouse: 0,
+        drag: 0,
+        touch: 100,
+      }
     }).styleCursor(true);
 
     $('.card-product__picture').on('click', function (event) {
