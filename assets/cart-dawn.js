@@ -692,7 +692,7 @@ function initDraggable() {
       events: { passive: false },
     });  
 
-    interact('.card-product__picture:after').draggable({
+    interact('.card-product__picture').draggable({
       onstart: listener,
       onmove: listener,
       onend: listener,
@@ -701,7 +701,7 @@ function initDraggable() {
       hold: 200,
     }).styleCursor(true);
 
-    $('.card-product__picture:after').on('click', function (event) {
+    $('.card-product__picture').on('click', function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
     });
