@@ -689,7 +689,7 @@ function initDraggable() {
       onend: listener,
       max: Infinity,
       maxPerElement: 1,
-      hold: 500,
+      hold: 100,
     }).styleCursor(true);
 
     $('.card-product__picture').on('click', function (event) {
