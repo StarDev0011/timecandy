@@ -12,13 +12,6 @@
   endcase
   assign limit = section.settings.rows
 -%}
-<style>
-  {% if template.suffix == 'pack-a-bag'%}
-    {% comment %} .card-product__image {
-      touch-action: none;
-      user-select: none;
-    } {% endcomment %}
-</style>
 <div class="collection collection-pack-a-bag">
     <a href="{{ routes.cart_url }}"  class="packabag-sidebar js-open-cart">
         <div id="drop-zone" class="animated">

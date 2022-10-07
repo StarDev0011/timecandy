@@ -637,7 +637,7 @@ function initDraggable() {
     event.preventDefault();
     event.stopImmediatePropagation();
     var { currentTarget, interaction } = event;
-    var element = currentTarget;
+    var element = currentTarget.parentElement;
     switch (event.type) {
       case 'hold':
         console.log('hold');
@@ -691,8 +691,8 @@ function initDraggable() {
     interact.addDocument(window.document, {
       events: { passive: false },
     });  
-        
-    interact('.card-product__picture').draggable({
+
+    interact('.card-product__picture:after').draggable({
       onstart: listener,
       onmove: listener,
       onend: listener,
@@ -701,7 +701,7 @@ function initDraggable() {
       hold: 200,
     }).styleCursor(true);
 
-    $('.card-product__picture').on('click', function (event) {
+    $('.card-product__picture:after').on('click', function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
     });

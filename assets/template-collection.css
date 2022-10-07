@@ -839,6 +839,7 @@
 }
 .collection-pack-a-bag .card-product__picture:after {
   position: absolute;
+  padding: 3px;
   right: 5px;
   bottom: 5px;
   content: '';
