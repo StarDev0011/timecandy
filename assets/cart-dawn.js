@@ -626,26 +626,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function initDraggable() {
-  window.oncontextmenu = function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    return false;
-};  
   var position = { x: 0, y: 0 };
   function listener(event) {
     event.preventDefault();
     event.stopImmediatePropagation();
     var { currentTarget, interaction } = event;
-    var element = currentTarget.parentElement;
+    var element = currentTarget;
     switch (event.type) {
-      case 'hold':
-        console.log('hold');
-        if (!interaction.interacting()) {
-          interaction.start({ name: "drag" }, event.interactable, event.currentTarget);
-        }
-        break;
-      case 'dragstart': 
-        if (interaction.pointerIsDown && !interaction.interacting()) {
+      case 'dragstart':
+        console.log('dragstart');
+        if (
+          interaction.pointerIsDown &&
+          !interaction.interacting() &&
+          currentTarget.style.transform === ''
+        ) {
+
+        } else if (interaction.pointerIsDown && !interaction.interacting()) {
           const regex = /translate\(([\d]+)px, ([\d]+)px\)/i;
           const transform = regex.exec(currentTarget.style.transform);
 
@@ -655,7 +651,7 @@ function initDraggable() {
           }
           element.style.cssText = "z-index: 12; opacity: .75"
           element.closest('.card-product__item').classList.add('active')
-          //document.querySelector('#MainContent').style.overflowX = 'visible'
+          document.querySelector('#MainContent').style.overflowX = 'visible'
           document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         }
         break;
@@ -665,7 +661,7 @@ function initDraggable() {
         position.y += event.dy;
         document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         event.target.style.cssText = "z-index: 12; opacity: .75"
-        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.75)`
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`
         break;
       case 'dragend':
         event.stopImmediatePropagation();
@@ -678,7 +674,7 @@ function initDraggable() {
         `;
         element.closest('.card-product__item').classList.remove('active');
         position = { x: 0, y: 0 };
-        //document.querySelector('#MainContent').style.overflowX = 'hidden'
+        document.querySelector('#MainContent').style.overflowX = 'hidden'
         document.querySelector('.packabag-sidebar__bag').classList.remove("animated", "infinite", "pulse");
         break;
     }
@@ -687,17 +683,13 @@ function initDraggable() {
   let bag = document.querySelector('#drop-zone');
 
   if (bag) {
-    interact.addDocument(window.document, {
-      events: { passive: false },
-    });  
-
     interact('.card-product__picture').draggable({
       onstart: listener,
       onmove: listener,
       onend: listener,
       max: Infinity,
       maxPerElement: 1,
-      hold: 200,
+      hold: 100,
     }).styleCursor(true);
 
     $('.card-product__picture').on('click', function (event) {
