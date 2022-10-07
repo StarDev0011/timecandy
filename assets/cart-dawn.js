@@ -650,7 +650,7 @@ function initDraggable() {
           }
           element.style.cssText = "z-index: 12; opacity: .75"
           element.closest('.card-product__item').classList.add('active')
-          document.querySelector('#MainContent').style.overflowX = 'visible'
+          //document.querySelector('#MainContent').style.overflowX = 'visible'
           document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         }
         break;
@@ -673,7 +673,7 @@ function initDraggable() {
         `;
         element.closest('.card-product__item').classList.remove('active');
         position = { x: 0, y: 0 };
-        document.querySelector('#MainContent').style.overflowX = 'hidden'
+        //document.querySelector('#MainContent').style.overflowX = 'hidden'
         document.querySelector('.packabag-sidebar__bag').classList.remove("animated", "infinite", "pulse");
         break;
     }
