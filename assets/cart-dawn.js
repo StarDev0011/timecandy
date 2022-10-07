@@ -626,6 +626,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function initDraggable() {
+  window.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+};  
   var position = { x: 0, y: 0 };
   function listener(event) {
     event.preventDefault();
@@ -660,7 +665,7 @@ function initDraggable() {
         position.y += event.dy;
         document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         event.target.style.cssText = "z-index: 12; opacity: .75"
-        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`
+        event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.75)`
         break;
       case 'dragend':
         event.stopImmediatePropagation();
