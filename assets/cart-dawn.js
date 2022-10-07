@@ -692,7 +692,7 @@ function initDraggable() {
       delay: {
         mouse: 0,
         drag: 0,
-        touch: 100,
+        touch: 500,
       }
     }).styleCursor(true);
 
