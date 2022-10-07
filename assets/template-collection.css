@@ -854,6 +854,8 @@
   background-size: cover;
   border-radius: 50%;
   border: 1px solid #3d3d3d;
+  touch-action: none;
+  user-select: none;
 }
 
 .collection-pack-a-bag .card-product__picture:hover{
