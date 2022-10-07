@@ -626,7 +626,9 @@
     }
 
     hide() {
-      super.hide();
+      document.body.classList.remove('overflow-hidden');
+      this.removeAttribute('open');
+      window.pauseAllMedia();
     }
 
     show(opener) {
