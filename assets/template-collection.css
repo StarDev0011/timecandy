@@ -835,12 +835,22 @@
 }
 
 .collection-pack-a-bag .card-product__picture{
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: -o-grab;
-  cursor: -ms-grab;
-  cursor: grab;
-  touch-action: pan-y;
+  position: relative;
+}
+.collection-pack-a-bag .card-product__picture:after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  content: '&#43;';
+  color: #3d3d3d;
+  font-size: 20px;
+  line-height: 25px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #3d3d3d;
 }
 
 .collection-pack-a-bag .card-product__picture:hover{
