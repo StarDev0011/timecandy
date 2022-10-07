@@ -833,10 +833,10 @@
 .collection-pack-a-bag{
   position: relative;
 }
-.collection-pack-a-bag .card-product__picture {
+/* .collection-pack-a-bag .card-product__picture {
   touch-action: none;
   user-select: none;
-}
+} */
 /* .collection-pack-a-bag .card-product__picture{
   position: relative;
 }
