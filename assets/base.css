@@ -2382,6 +2382,7 @@ header-drawer {
   grid-area: icons;
   justify-self: end;
   column-gap: 20px;
+  align-items: center;
 }
 
 .header__icon:not(.header__icon--summary),
