@@ -135,7 +135,7 @@
           "bg_menu": "#0c5273",
           "color_menu": "#ffffff",
           "show_line_separator": true,
-          "enable_sticky_header": true,
+          "enable_sticky_header": false,
           "margin_bottom": 0
         }
       },
