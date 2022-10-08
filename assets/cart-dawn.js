@@ -85,6 +85,7 @@ CartDawn = {
       const { description } = responseJSON;
       $('.modal-error').fadeIn(500);
       $('.js-message-error').html(description);
+      $('.cart-overlay').hide();
     });
   },
 
