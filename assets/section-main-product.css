@@ -1257,6 +1257,11 @@ fieldset.product-form__input .form__label {
   transition: text-decoration-thickness var(--duration-short) ease;
 }
 
+
+.product__desc-text {
+  overflow: hidden;
+}
+
 .product__read-more,
 .product-popup-modal__button {
   font-weight: 400;
