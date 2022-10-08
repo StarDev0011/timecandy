@@ -484,6 +484,7 @@ img {
 
 .quick-add {
   position: absolute;
+  width: 100%;
   top: 29px;
   border: 2px solid #0C5273;
   background-color: #fff;
@@ -598,6 +599,7 @@ img {
 
 .quick-add .product-form__buttons .product-form__submit {
   width: 100%;
+  min-width: unset;
   border-radius: 32px;
 }
 
