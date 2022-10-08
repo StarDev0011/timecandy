@@ -309,6 +309,8 @@ fieldset.product-form__input .form__label {
   background: transparent;
   color: rgb(var(--color-base-text));
   border-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .product .price--sold-out .price__badge-sale {
@@ -1218,6 +1220,9 @@ fieldset.product-form__input .form__label {
   font-family: var(--my-font);
   color: var(--color-link);
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .product-detail .product__description {
