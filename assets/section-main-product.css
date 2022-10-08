@@ -2043,6 +2043,7 @@ div.rc_block__type {
 .product-individual .product-detail__swatch-order {
   max-width: 100%;
   flex-basis: 45%;
+  flex-grow: 1;
 }
 
 .product-individual .product-swatch__label {
