@@ -642,9 +642,12 @@
     border-top: 0;
   }
 
-  .collection-sidebar__link {
-    padding-left: 20px;
-    padding-right: 20px;
+  .collection-sidebar__link{
+    padding: 0;
+  }
+
+  .collection-sidebar__clear{
+    margin-left: 25px;
   }
 
   .collection__sort-by {
