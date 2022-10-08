@@ -199,10 +199,6 @@
             </div>
           {%- when 'description' -%}
             {%- if product.description != blank -%}
-            {% liquid
-                assign desc = product.description | truncatewords
-                assign count_desc = desc | size
-            %}
               <div class="product__description rte">
                 <div class="product__desc-text">
                   {{ product.description }}

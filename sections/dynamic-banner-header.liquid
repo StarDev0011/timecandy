@@ -5,10 +5,6 @@
     </h1>
     <div class="h1 collection-candy__header-title">
       {%- if collection.description != blank -%}
-      {% liquid
-                assign desc = collection.description | truncatewords
-                assign count_desc = desc | size
-            %}
       <div class="collection__description rte">
         <div class="collection__desc-text">
           {{ collection.description }}
