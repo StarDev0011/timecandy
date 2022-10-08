@@ -3092,9 +3092,7 @@ div.modal-background {
 }
 
 .roller,
-.collection__desc a,
-.main-page-template .rte a,
-.blog-categories__list a{
+.collection__desc a{
   color: inherit;
   position: relative;
   text-decoration: none;
@@ -3102,15 +3100,13 @@ div.modal-background {
 }
 
 .roller:hover,
-.collection__desc a:hover,
-.main-page-template .rte a:hover{
+.collection__desc a:hover{
   text-decoration-thickness: 0;
   font-weight: 700 !important;
 }
 
 .roller:after,
-.collection__desc a:after,
-.main-page-template .rte a:after{
+.collection__desc a:after{
   content: "";
   background-color: rgb(var(--color-light-text));
   position: absolute;
@@ -3121,39 +3117,32 @@ div.modal-background {
   transition: bottom 0.1s;
 }
 
-.blog-categories__list a:after {
-  content: "";
-  background-color: rgb(var(--color-light-text));
-  position: absolute;
-  left: 0;
-  bottom: 0px;
-  width: 100%;
-  height: 0px;
-  transition: height 0.1s;
-}
-
-.article-template__info a,
-.article-template__content a{
-  display: inline;
-  text-decoration: underline;
-  text-underline-offset: 1px;
-  transition: offset 0.1s;
-}
-
-.article-template__info a:hover,
-.article-template__content a:hover{
-  font-weight: 700;
-  text-underline-offset: 3px;
-  transition: offset 0.1s;
-}
-
 .roller:hover::after,
-.collection__desc a:hover:after,
-.main-page-template .rte a:hover:after,
-.blog-categories__list a:hover:after{
+.collection__desc a:hover:after{
   bottom: -2px;
   height: 2px;
 }
+
+.article-template__info a,
+.article-template__content a, 
+.main-page-template .rte a,
+.blog-categories__list a{
+  text-underline-offset: 2px;
+	text-decoration: underline;
+  text-decoration-thickness: 1px;
+	transition: all 500ms;
+}
+
+.article-template__info a:hover,
+.article-template__content a:hover,
+.main-page-template .rte a:hover,
+.blog-categories__list a:hover{
+  font-weight: 700;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+
 .no-tooltips {
   pointer-events: none;
 }
