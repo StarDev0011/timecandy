@@ -8,7 +8,6 @@ Product = {
     swatchLabel: ".product-swatch__label",
     swatchImage: ".js-swatch-image",
     swatchSoldOut: ".js-option-sold-out",
-    btnReadMore: ".js-read-more",
     swatchDropdown: '.product-form__swatch-dropdown[role="listbox"]',
   },
 
@@ -219,18 +218,11 @@ Product = {
   },
 
   readMoreDesc: () => {
-    const btnReadmore = document.querySelector(Product.Class.btnReadMore);
-    const desc = document.querySelector(".product__desc-text");
-    btnReadmore.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      if (desc.classList.contains("product__height-desc")) {
-        btnReadmore.innerHTML = "Read Less";
-      } else {
-        btnReadmore.innerHTML = "Read More";
-      }
-
-      desc.classList.toggle("product__height-desc");
+    $('.product__desc-text').readmore({
+      speed: 75,
+      collapsedHeight: 50,
+      moreLink: '<a href="#" class="product__read-more roller">Read more</a>',
+      lessLink: '<a href="#" class="product__read-more roller">Read less</a>'
     });
   },
 

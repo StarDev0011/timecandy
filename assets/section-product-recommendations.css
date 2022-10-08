@@ -44,10 +44,6 @@
     padding-left: 0;
     grid-gap: 0;
   }
-
-  .product-recommendations__heading {
-    font-size: 28px;
-  }
 }
 
 @media (max-width: 899px) and (min-width: 768px) {
@@ -59,5 +55,12 @@
 @media (max-width: 1150px) and (min-width: 900px) {
   .product-recommendations .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 899px){
+  product-recommendations .ss__searchspring__recommendations .ss__recommendations-title {
+    font-size: 28px;
+    line-height: 36px;
   }
 }

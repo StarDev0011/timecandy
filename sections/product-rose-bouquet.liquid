@@ -204,12 +204,9 @@
                 assign count_desc = desc | size
             %}
               <div class="product__description rte">
-                <div class="product__desc-text {% if count_desc > 50 %}product__height-desc{% endif %}">
+                <div class="product__desc-text">
                   {{ product.description }}
                 </div>
-                {% if count_desc > 50 %}
-                  <a class="js-read-more product__read-more" href="#"> Read more</a>
-                {% endif %}
               </div>
             {%- endif -%}
           {%- when 'custom_liquid' -%}
