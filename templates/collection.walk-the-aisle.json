@@ -52,17 +52,6 @@
         "padding_bottom": 80
       }
     },
-    "featured-product": {
-      "type": "featured-product",
-      "settings": {
-        "product": "large-decade-candy-gift-box",
-        "sub_title": "Need a quick gift idea?",
-        "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
-        "show_best_seller": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "165884954243af5d68": {
       "type": "collection-list--dynamic",
       "settings": {
@@ -77,6 +66,17 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "large-decade-candy-gift-box",
+        "sub_title": "Need a quick gift idea?",
+        "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
+        "show_best_seller": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -85,7 +85,7 @@
     "candy-chocolate",
     "lunch-boxes-with-candy",
     "banner-with-text",
-    "featured-product",
-    "165884954243af5d68"
+    "165884954243af5d68",
+    "featured-product"
   ]
 }
