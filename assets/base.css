@@ -2714,11 +2714,12 @@ details[open] > .header__menu-item .icon-caret {
 .header__menu-item svg {
   color: #fff;
   fill: #fff;
-  strole: #fff;
+  stroke: #fff;
   width: 11px;
   height: 5px;
   margin-left: 3px;
 }
+.header__menu-item svg path { stroke: #fff; }
 
 header-menu > details,
 details-disclosure > details {
