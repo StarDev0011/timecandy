@@ -1059,3 +1059,27 @@ document.querySelectorAll('a[href*="#open-chat"]').forEach((item) => {
     GorgiasChat.open(); 
   })  
 });
+
+(function($, window) {
+  var adjustAnchor = function() {
+
+      var $anchor = $(':target'),
+              fixedElementHeight = document.querySelector('header.header').offsetHeight;
+
+      if ($anchor.length > 0) {
+
+          $('html, body')
+              .stop()
+              .animate({
+                  scrollTop: $anchor.offset().top - fixedElementHeight
+              }, 200);
+
+      }
+
+  };
+
+  $(window).on('hashchange load', function() {
+      adjustAnchor();
+  });
+
+})(jQuery, window);
