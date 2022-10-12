@@ -1,5 +1,15 @@
 {
   "sections": {
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Corporate Gift Orders",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 56
+      }
+    },
     "main": {
       "type": "main-page-contact",
       "blocks": {
@@ -29,27 +39,16 @@
         "45a2e82c-3083-430e-bdc8-07a1fd373549"
       ],
       "settings": {
-        "heading": "Contact us",
+        "heading": "Have Questions?",
         "padding_top": 60,
         "padding_bottom": 60,
         "show_content": false,
         "bg_color": "#e4f1f5"
       }
-    },
-    "form": {
-      "type": "contact-form",
-      "disabled": true,
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
-    "main",
-    "form"
+    "form",
+    "main"
   ]
 }
