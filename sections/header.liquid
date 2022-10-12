@@ -96,6 +96,8 @@
                             <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link  {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                               {{ link.title | escape }}
                             </a>
+                            {% render 'icon-angle-right' %}
+                            {% render 'icon-caret' %}
                         </li>
                       {%- endfor -%}
                     </ul>
