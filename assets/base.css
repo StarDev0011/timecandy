@@ -2711,15 +2711,17 @@ details[open] > .header__menu-item .icon-caret {
   padding-left: 3.4rem;
 }
 
-.header__menu-item .icon-caret {
-  right: 0;
+.header__menu-item svg {
+  color: #fff;
+  fill: #fff;
+  margin-left: 3px;
 }
 
-.header__submenu .icon-caret {
+/* .header__submenu svg {
   flex-shrink: 0;
   margin-left: 1rem;
   position: static;
-}
+} */
 
 header-menu > details,
 details-disclosure > details {
