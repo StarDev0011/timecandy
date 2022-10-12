@@ -636,7 +636,7 @@ table:not([class]) th {
   opacity: 0.7;
 }
 
-a:empty,
+/* a:empty, */
 ul:empty,
 dl:empty,
 section:empty,
@@ -650,6 +650,7 @@ h5:empty,
 h6:empty {
   display: none;
 }
+
 a,
 .link {
   cursor: pointer;
