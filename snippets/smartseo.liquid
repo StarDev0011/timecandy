@@ -10,7 +10,7 @@
     {%- assign use_default_meta_tags = true %}
 {%- endif -%}
 
-{%- if stop_processing_templates == false and template contains 'product' %}
+{%- if stop_processing_templates == false and template.name contains 'product' %}
     {%- capture product_snippet_metatags %}
         {%- include 'smartseo.product.metatags' %}
     {%- endcapture -%}
