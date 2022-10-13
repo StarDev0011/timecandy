@@ -65,9 +65,9 @@
                 aria-invalid="true"
                 aria-describedby="ContactForm-business_name-error"
               {% endif %}
-              placeholder="* Business Name"
+              placeholder="Business Name"
             >
-            <label class="field__label" for="ContactForm-business_name">* Business Name <span aria-hidden="true">*</span></label>
+            <label class="field__label" for="ContactForm-business_name">Business Name <span aria-hidden="true">*</span></label>
             {%- if form.errors contains 'business_name' -%}
               <small class="contact__field-error" id="ContactForm-business_name-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
@@ -89,9 +89,9 @@
                 aria-invalid="true"
                 aria-describedby="ContactForm-contact_name-error"
               {% endif %}
-              placeholder="* Contact Name"
+              placeholder="Contact Name"
             >
-            <label class="field__label" for="ContactForm-contact_name">* Contact Name <span aria-hidden="true">*</span></label>
+            <label class="field__label" for="ContactForm-contact_name">Contact Name <span aria-hidden="true">*</span></label>
             {%- if form.errors contains 'contact_name' -%}
               <small class="contact__field-error" id="ContactForm-contact_name-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
