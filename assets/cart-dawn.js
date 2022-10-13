@@ -514,6 +514,7 @@ CartDawn = {
   },
 
   shippingInsurance: () => {
+    let variantID = parseInt(localStorage.getItem('shippingInsuranceVariant'));
     window.variantArray = window.OTCIns.variants.map(function (v) {
       return v.id;
     });
@@ -596,6 +597,27 @@ CartDawn = {
       localStorage.setItem('shippingInsuranceVariant', variantId);
       $('.js-add-gift-card').val(variantId);
       $('#insurance-cost').text(variantPrice);
+      if($('#CartInclude').prop('checked')) {
+        localStorage.setItem('shippingInsurance', true);
+      } else {
+        localStorage.setItem('shippingInsurance', false);
+      }
+      const isShippingIns = localStorage.getItem('shippingInsurance');
+      if(isShippingIns == 'true') {
+        if(variantID != variantId) {
+          $.post('/cart/add.json', {quantity: 1, id: variantId}).done(function() {
+            $.post('/cart/change.json', {quantity: 0, id: variantID}).done(function() {
+              $.get('/cart?view=dawn', function (data) {
+                $('.cart-overlay').hide();
+                $('.js-mini-cart').html(data);
+                localStorage.setItem('shippingInsuranceVariant', variantId);
+                $('.js-add-gift-card').val(variantId);
+                $('#insurance-cost').text(variantPrice);
+              });
+            });
+          })
+        }
+      }
     })
   },
 
