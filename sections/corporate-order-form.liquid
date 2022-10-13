@@ -133,14 +133,12 @@
       </div>
       <div class="contact__fields">
         <div class="field">
-            <label class="form__label" for="ContactForm-assortment">
-                Which assortment or product would you like to send?	<span aria-hidden="true">*</span>
-            </label>
             <div class="select">
               <select id="ContactForm-Assortment"
                 class="select__select"
                 name="contact[assortment]"
               >
+                <option value="">Which assortment or product would you like to send?</option>
                 <option value="Classic Decade Gift Box">Classic Decade Gift Box</option>
                 <option value="Personalized Occasion Box">Personalized Occasion Box/option>
                 <option value="Predesigned Occasion Box">Predesigned Occasion Box</option>
@@ -225,7 +223,7 @@
                 {% endif %}
                 placeholder="Delivery Date"
             >
-            <label class="field__label" for="ContactForm-delivery_date">Quantity Needed <span aria-hidden="true">*</span></label>
+            <label class="field__label" for="ContactForm-delivery_date">Delivery Date <span aria-hidden="true">*</span></label>
             {%- if form.errors contains 'delivery_date' -%}
                 <small class="contact__field-error" id="ContactForm-delivery_date-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
