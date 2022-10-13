@@ -31,7 +31,7 @@
     "997c13ba-d254-4537-9f47-0041902d0a2d": {
       "type": "corporate-order-form",
       "settings": {
-        "heading": "Contact form",
+        "heading": "",
         "heading_size": "h1",
         "color_scheme": "background-1",
         "padding_top": 0,
