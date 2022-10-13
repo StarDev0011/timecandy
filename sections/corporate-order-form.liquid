@@ -131,6 +131,109 @@
           <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
         </div>        
       </div>
+      <div class="contact__fields">
+        <div class="field">
+            <label class="form__label" for="ContactForm-assortment">
+                Which assortment or product would you like to send?	<span aria-hidden="true">*</span>
+            </label>
+            <div class="select">
+              <select id="ContactForm-Assortment"
+                class="select__select"
+                name="contact[assortment]"
+              >
+                <option value="Classic Decade Gift Box">Classic Decade Gift Box</option>
+                <option value="Personalized Occasion Box">Personalized Occasion Box/option>
+                <option value="Predesigned Occasion Box">Predesigned Occasion Box</option>
+                <option value="Retro Candy Assortment">Retro Candy Assortment</option>
+                <option value="Candy Bar Bouquet">Candy Bar Bouquet</option>
+                <option value="Personalized Candy Bars">Personalized Candy Bars</option>
+                <option value="Candy you ate as a kid® decade bag">Candy you ate as a kid® decade bag</option>
+                <option value="Chocolate Roses">Chocolate Roses</option>
+                <option value="Glass Candy Jar">Glass Candy Jar</option>
+                <option value="Plastic Tub of Candy">Plastic Tub of Candy</option>
+                <option value="Party Favor">Party Favor</option>
+                <option value="Gift Mug">Gift Mug</option>
+                <option value="Lunch Box">Lunch Box</option>
+                <option value="Other">Other</option>
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+        </div>    
+        <div class="field field--with-error">
+            <input
+                type="text"
+                id="ContactForm-quantity"
+                class="field__input"
+                name="contact[quantity]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.quantity %}{{ form.quantity }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'quantity' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-quantity-error"
+                {% endif %}
+                placeholder="Quantity Needed"
+            >
+            <label class="field__label" for="ContactForm-quantity">Quantity Needed <span aria-hidden="true">*</span></label>
+            {%- if form.errors contains 'quantity' -%}
+                <small class="contact__field-error" id="ContactForm-quantity-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['quantity'] | capitalize }} {{ form.errors.messages['quantity'] }}</span>
+                </small>
+            {%- endif -%}
+        </div>
+      </div>
+      <div class="contact__fields">
+        <div class="field field--with-error">
+            <input
+                type="text"
+                id="ContactForm-locations"
+                class="field__input"
+                name="contact[locations]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.locations %}{{ form.locations }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'locations' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-locations-error"
+                {% endif %}
+                placeholder="Single or Multiple Locations"
+            >
+            <label class="field__label" for="ContactForm-locations">Single or Multiple Locations <span aria-hidden="true">*</span></label>
+            {%- if form.errors contains 'locations' -%}
+                <small class="contact__field-error" id="ContactForm-locations-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['locations'] | capitalize }} {{ form.errors.messages['locations'] }}</span>
+                </small>
+            {%- endif -%}
+        </div>
+        <div class="field field--with-error">
+            <input
+                type="text"
+                id="ContactForm-delivery_date"
+                class="field__input"
+                name="contact[delivery_date]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.delivery_date %}{{ form.delivery_date }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'delivery_date' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-delivery_date-error"
+                {% endif %}
+                placeholder="Delivery Date"
+            >
+            <label class="field__label" for="ContactForm-delivery_date">Quantity Needed <span aria-hidden="true">*</span></label>
+            {%- if form.errors contains 'delivery_date' -%}
+                <small class="contact__field-error" id="ContactForm-delivery_date-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['delivery_date'] | capitalize }} {{ form.errors.messages['delivery_date'] }}</span>
+                </small>
+            {%- endif -%}
+        </div>        
+      </div>
       <div class="field">
         <textarea
           rows="10"
