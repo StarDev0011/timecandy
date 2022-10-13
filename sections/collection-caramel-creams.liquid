@@ -1,3 +1,8 @@
+<script>
+    if(document.location.href.indexOf('/collections/gift-cards') > -1) { 
+        document.location.href = '/products/rise-ai-giftcard';
+    }
+</script>
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 
