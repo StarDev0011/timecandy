@@ -356,9 +356,6 @@
             original_total_price: data.original_total_price/100,
             items: data.items
           }
-          if (item != null) {
-            cart = Object.assign(cart, item)
-          }
           _learnq.push(['track', 'Added to Cart', cart])
         }))
       } 
