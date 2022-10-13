@@ -374,10 +374,13 @@
           return response
         }
       }(window, window.fetch))
-      $(document).ajaxComplete(function(event, request, settings){
-        if(settings.url == "/cart/add.js"){
-            addedToCart()
-        }
-      })</script>    
+      document.addEventListener("DOMContentLoaded", function(event) {
+        $(document).ajaxComplete(function(event, request, settings){
+          if(settings.url == "/cart/add.js"){
+              addedToCart()
+          }
+        });
+      });
+      </script>    
   </body>
 </html>
