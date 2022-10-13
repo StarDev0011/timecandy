@@ -23,11 +23,12 @@
     <h2 class="title title-wrapper--no-top-margin {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
     {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
       {%- if form.posted_successfully? -%}
-        <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        <div class="form-status form-status-list form__message" tabindex="-1" autofocus style="margin:0;padding:2rem 0;">
             {% render 'icon-success' %} 
-            <p>Thanks for sending your information!<br>
-            Now what happens??</p>
-            
+            <span>Success! Thanks for sending your information!</span>
+        </div>
+        <div>            
+            <p>Now what happens??</p></p>
             <p>We will respond by email with further instructions within one business day, sometimes faster.</p>
             
             <p>If requesting a personalized candy box top, you will be asked for your box top information including logo/graphic and message. We will send a proof before you purchase. There is no obligation to buy.</p>
