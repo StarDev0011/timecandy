@@ -288,560 +288,20 @@
 
     <script>
       //needed for shipping insurance
-      {% assign insurance_product = all_products['routeins-1'] %}
-      {% capture insurance_variants %}
-      {% for variant in insurance_product.variants %}
-        {
-          "id": {{ variant.id }}, 
-            "title": "{{ variant.title }}", 
-            "price": {{ variant.price }}, 
-              "sku": "{{ variant.sku }}"
-        }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-      {% endcapture %}              
-      window.OTCIns = {
-        "id": 4480997228596,
-        "title": "Shipping Insurance",
-        "price":98,
-        "price_min":98,
-        "price_max":14038,
-        "available":true,
-        "variants": [
-      
-        {
-          "id": 40328650817588, 
-            "title": "$0.98", 
-            "price": 98, 
-              "sku": "OTCINS10"
-        },
-      
-        {
-          "id": 40328650850356, 
-            "title": "$1.15", 
-            "price": 115, 
-              "sku": "OTCINS11"
-        },
-      
-        {
-          "id": 40328650883124, 
-            "title": "$1.35", 
-            "price": 135, 
-              "sku": "OTCINS12"
-        },
-      
-        {
-          "id": 40328650915892, 
-            "title": "$1.55", 
-            "price": 155, 
-              "sku": "OTCINS13"
-        },
-      
-        {
-          "id": 40328650948660, 
-            "title": "$1.75", 
-            "price": 175, 
-              "sku": "OTCINS14"
-        },
-      
-        {
-          "id": 40328650981428, 
-            "title": "$1.95", 
-            "price": 195, 
-              "sku": "OTCINS15"
-        },
-      
-        {
-          "id": 40328651014196, 
-            "title": "$2.15", 
-            "price": 215, 
-              "sku": "OTCINS16"
-        },
-      
-        {
-          "id": 40328651046964, 
-            "title": "$2.35", 
-            "price": 235, 
-              "sku": "OTCINS17"
-        },
-      
-        {
-          "id": 40328651079732, 
-            "title": "$2.55", 
-            "price": 255, 
-              "sku": "OTCINS18"
-        },
-      
-        {
-          "id": 40328651112500, 
-            "title": "$2.75", 
-            "price": 275, 
-              "sku": "OTCINS19"
-        },
-      
-        {
-          "id": 40328651145268, 
-            "title": "$2.95", 
-            "price": 295, 
-              "sku": "OTCINS20"
-        },
-      
-        {
-          "id": 40328651178036, 
-            "title": "$3.15", 
-            "price": 315, 
-              "sku": "OTCINS21"
-        },
-      
-        {
-          "id": 40328651210804, 
-            "title": "$3.35", 
-            "price": 335, 
-              "sku": "OTCINS22"
-        },
-      
-        {
-          "id": 40328651243572, 
-            "title": "$3.55", 
-            "price": 355, 
-              "sku": "OTCINS23"
-        },
-      
-        {
-          "id": 40328651276340, 
-            "title": "$3.75", 
-            "price": 375, 
-              "sku": "OTCINS24"
-        },
-      
-        {
-          "id": 40328651309108, 
-            "title": "$3.95", 
-            "price": 395, 
-              "sku": "OTCEINS25"
-        },
-      
-        {
-          "id": 40328651341876, 
-            "title": "$4.15", 
-            "price": 415, 
-              "sku": "OTCINS26"
-        },
-      
-        {
-          "id": 40328651374644, 
-            "title": "$4.35", 
-            "price": 435, 
-              "sku": "OTCINS27"
-        },
-      
-        {
-          "id": 40328651407412, 
-            "title": "$4.55", 
-            "price": 455, 
-              "sku": "OTCINS28"
-        },
-      
-        {
-          "id": 40328651440180, 
-            "title": "$4.75", 
-            "price": 475, 
-              "sku": "OTCINS29"
-        },
-      
-        {
-          "id": 40328651472948, 
-            "title": "$4.95", 
-            "price": 495, 
-              "sku": "OTCINS30"
-        },
-      
-        {
-          "id": 40328651505716, 
-            "title": "$5.15", 
-            "price": 515, 
-              "sku": "OTCINS31"
-        },
-      
-        {
-          "id": 40328651538484, 
-            "title": "$5.35", 
-            "price": 535, 
-              "sku": "OTCINS32"
-        },
-      
-        {
-          "id": 40328651571252, 
-            "title": "$5.55", 
-            "price": 555, 
-              "sku": "OTCINS33"
-        },
-      
-        {
-          "id": 40328651604020, 
-            "title": "$5.75", 
-            "price": 575, 
-              "sku": "OTCINS34"
-        },
-      
-        {
-          "id": 40328651636788, 
-            "title": "$5.95", 
-            "price": 595, 
-              "sku": "OTCINS35"
-        },
-      
-        {
-          "id": 40328651669556, 
-            "title": "$6.15", 
-            "price": 615, 
-              "sku": "OTCINS36"
-        },
-      
-        {
-          "id": 40328651702324, 
-            "title": "$6.35", 
-            "price": 635, 
-              "sku": "OTCINS37"
-        },
-      
-        {
-          "id": 40328651735092, 
-            "title": "$6.55", 
-            "price": 655, 
-              "sku": "OTCINS38"
-        },
-      
-        {
-          "id": 40328651767860, 
-            "title": "$6.75", 
-            "price": 675, 
-              "sku": "OTCINS39"
-        },
-      
-        {
-          "id": 40328651800628, 
-            "title": "$6.95", 
-            "price": 695, 
-              "sku": "OTCINS40"
-        },
-      
-        {
-          "id": 40328651833396, 
-            "title": "$7.15", 
-            "price": 715, 
-              "sku": "OTCINS41"
-        },
-      
-        {
-          "id": 40328651866164, 
-            "title": "$7.35", 
-            "price": 735, 
-              "sku": "OTCINS42"
-        },
-      
-        {
-          "id": 40328651898932, 
-            "title": "$7.55", 
-            "price": 755, 
-              "sku": "OTCINS43"
-        },
-      
-        {
-          "id": 40328651931700, 
-            "title": "$7.75", 
-            "price": 775, 
-              "sku": "OTCINS44"
-        },
-      
-        {
-          "id": 40328651964468, 
-            "title": "$7.95", 
-            "price": 795, 
-              "sku": "OTCINS45"
-        },
-      
-        {
-          "id": 40328651997236, 
-            "title": "$8.15", 
-            "price": 815, 
-              "sku": "OTCINS46"
-        },
-      
-        {
-          "id": 40328652030004, 
-            "title": "$8.35", 
-            "price": 835, 
-              "sku": "OTCINS47"
-        },
-      
-        {
-          "id": 40328652062772, 
-            "title": "$8.55", 
-            "price": 855, 
-              "sku": "OTCINS48"
-        },
-      
-        {
-          "id": 40328652095540, 
-            "title": "$8.75", 
-            "price": 875, 
-              "sku": "OTCINS49"
-        },
-      
-        {
-          "id": 40328652128308, 
-            "title": "$8.95", 
-            "price": 895, 
-              "sku": "OTCINS50"
-        },
-      
-        {
-          "id": 40328652161076, 
-            "title": "$9.38", 
-            "price": 938, 
-              "sku": "OTCINS51"
-        },
-      
-        {
-          "id": 40328652193844, 
-            "title": "$10.03", 
-            "price": 1003, 
-              "sku": "OTCINS52"
-        },
-      
-        {
-          "id": 40328652226612, 
-            "title": "$10.68", 
-            "price": 1068, 
-              "sku": "OTCINS53"
-        },
-      
-        {
-          "id": 40328652259380, 
-            "title": "$11.33", 
-            "price": 1133, 
-              "sku": "OTCINS54"
-        },
-      
-        {
-          "id": 40328652292148, 
-            "title": "$11.98", 
-            "price": 1198, 
-              "sku": "OTCINS55"
-        },
-      
-        {
-          "id": 40328652324916, 
-            "title": "$12.63", 
-            "price": 1263, 
-              "sku": "OTCINS56"
-        },
-      
-        {
-          "id": 40328652357684, 
-            "title": "$13.28", 
-            "price": 1328, 
-              "sku": "OTCINS57"
-        },
-      
-        {
-          "id": 40328652390452, 
-            "title": "$13.93", 
-            "price": 1393, 
-              "sku": "OTCINS58"
-        },
-      
-        {
-          "id": 40328652423220, 
-            "title": "$14.58", 
-            "price": 1458, 
-              "sku": "OTCINS59"
-        },
-      
-        {
-          "id": 40328652455988, 
-            "title": "$15.23", 
-            "price": 1523, 
-              "sku": "OTCINS60"
-        },
-      
-        {
-          "id": 40328652488756, 
-            "title": "$15.88", 
-            "price": 1588, 
-              "sku": "OTCINS61"
-        },
-      
-        {
-          "id": 40328652521524, 
-            "title": "$16.53", 
-            "price": 1653, 
-              "sku": "OTCINS62"
-        },
-      
-        {
-          "id": 40328652554292, 
-            "title": "$17.18", 
-            "price": 1718, 
-              "sku": "OTCINS63"
-        },
-      
-        {
-          "id": 40328652587060, 
-            "title": "$17.83", 
-            "price": 1783, 
-              "sku": "OTCINS64"
-        },
-      
-        {
-          "id": 40328652619828, 
-            "title": "$18.48", 
-            "price": 1848, 
-              "sku": "OTCINS65"
-        },
-      
-        {
-          "id": 40328652652596, 
-            "title": "$19.13", 
-            "price": 1913, 
-              "sku": "OTCINS66"
-        },
-      
-        {
-          "id": 40328652685364, 
-            "title": "$19.78", 
-            "price": 1978, 
-              "sku": "OTCINS67"
-        },
-      
-        {
-          "id": 40328652718132, 
-            "title": "$20.43", 
-            "price": 2043, 
-              "sku": "OTCINS68"
-        },
-      
-        {
-          "id": 40328652750900, 
-            "title": "$24.38", 
-            "price": 2438, 
-              "sku": "OTCINS69"
-        },
-      
-        {
-          "id": 40328652783668, 
-            "title": "$31.63", 
-            "price": 3163, 
-              "sku": "OTCINS70"
-        },
-      
-        {
-          "id": 40328652816436, 
-            "title": "$38.88", 
-            "price": 3888, 
-              "sku": "OTCINS71"
-        },
-      
-        {
-          "id": 40328652849204, 
-            "title": "$46.13", 
-            "price": 4613, 
-              "sku": "OTCINS72"
-        },
-      
-        {
-          "id": 40328652881972, 
-            "title": "$53.38", 
-            "price": 5338, 
-              "sku": "OTCINS73"
-        },
-      
-        {
-          "id": 40328652914740, 
-            "title": "$60.63", 
-            "price": 6063, 
-              "sku": "OTCINS74"
-        },
-      
-        {
-          "id": 40328652947508, 
-            "title": "$67.88", 
-            "price": 6788, 
-              "sku": "OTCINS75"
-        },
-      
-        {
-          "id": 40328652980276, 
-            "title": "$75.13", 
-            "price": 7513, 
-              "sku": "OTCINS76"
-        },
-      
-        {
-          "id": 40328653013044, 
-            "title": "$82.38", 
-            "price": 8238, 
-              "sku": "OTCINS77"
-        },
-      
-        {
-          "id": 40328653045812, 
-            "title": "$89.63", 
-            "price": 8963, 
-              "sku": "OTCINS78"
-        },
-      
-        {
-          "id": 40328653078580, 
-            "title": "$96.88", 
-            "price": 9688, 
-              "sku": "OTCINS79"
-        },
-      
-        {
-          "id": 40328653111348, 
-            "title": "$104.13", 
-            "price": 10413, 
-              "sku": "OTCINS80"
-        },
-      
-        {
-          "id": 40328653144116, 
-            "title": "$111.38", 
-            "price": 11138, 
-              "sku": "OTCINS81"
-        },
-      
-        {
-          "id": 40328653176884, 
-            "title": "$118.63", 
-            "price": 11863, 
-              "sku": "OTCINS82"
-        },
-      
-        {
-          "id": 40328653209652, 
-            "title": "$125.88", 
-            "price": 12588, 
-              "sku": "OTCINS83"
-        },
-      
-        {
-          "id": 40328653242420, 
-            "title": "$133.13", 
-            "price": 13313, 
-              "sku": "OTCINS84"
-        },
-      
-        {
-          "id": 40328653275188, 
-            "title": "$140.38", 
-            "price": 14038, 
-              "sku": "OTCINS85"
-        }
-      
-      ]
-      };      
+      {% comment %}
+        {% assign insurance_product = all_products['routeins-1'] %}
+        {% capture insurance_variants %}
+        {% for variant in insurance_product.variants %}
+          {
+            "id": {{ variant.id }}, 
+              "title": "{{ variant.title }}", 
+              "price": {{ variant.price }}, 
+                "sku": "{{ variant.sku }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+        {% endcapture %}               
+      {% endcomment %}
+      window.OTCIns={id:4480997228596,title:"Shipping Insurance",price:98,price_min:98,price_max:14038,available:!0,variants:[{id:40328650817588,title:"$0.98",price:98,sku:"OTCINS10"},{id:40328650850356,title:"$1.15",price:115,sku:"OTCINS11"},{id:40328650883124,title:"$1.35",price:135,sku:"OTCINS12"},{id:40328650915892,title:"$1.55",price:155,sku:"OTCINS13"},{id:40328650948660,title:"$1.75",price:175,sku:"OTCINS14"},{id:40328650981428,title:"$1.95",price:195,sku:"OTCINS15"},{id:40328651014196,title:"$2.15",price:215,sku:"OTCINS16"},{id:40328651046964,title:"$2.35",price:235,sku:"OTCINS17"},{id:40328651079732,title:"$2.55",price:255,sku:"OTCINS18"},{id:40328651112500,title:"$2.75",price:275,sku:"OTCINS19"},{id:40328651145268,title:"$2.95",price:295,sku:"OTCINS20"},{id:40328651178036,title:"$3.15",price:315,sku:"OTCINS21"},{id:40328651210804,title:"$3.35",price:335,sku:"OTCINS22"},{id:40328651243572,title:"$3.55",price:355,sku:"OTCINS23"},{id:40328651276340,title:"$3.75",price:375,sku:"OTCINS24"},{id:40328651309108,title:"$3.95",price:395,sku:"OTCINS25"},{id:40328651341876,title:"$4.15",price:415,sku:"OTCINS26"},{id:40328651374644,title:"$4.35",price:435,sku:"OTCINS27"},{id:40328651407412,title:"$4.55",price:455,sku:"OTCINS28"},{id:40328651440180,title:"$4.75",price:475,sku:"OTCINS29"},{id:40328651472948,title:"$4.95",price:495,sku:"OTCINS30"},{id:40328651505716,title:"$5.15",price:515,sku:"OTCINS31"},{id:40328651538484,title:"$5.35",price:535,sku:"OTCINS32"},{id:40328651571252,title:"$5.55",price:555,sku:"OTCINS33"},{id:40328651604020,title:"$5.75",price:575,sku:"OTCINS34"},{id:40328651636788,title:"$5.95",price:595,sku:"OTCINS35"},{id:40328651669556,title:"$6.15",price:615,sku:"OTCINS36"},{id:40328651702324,title:"$6.35",price:635,sku:"OTCINS37"},{id:40328651735092,title:"$6.55",price:655,sku:"OTCINS38"},{id:40328651767860,title:"$6.75",price:675,sku:"OTCINS39"},{id:40328651800628,title:"$6.95",price:695,sku:"OTCINS40"},{id:40328651833396,title:"$7.15",price:715,sku:"OTCINS41"},{id:40328651866164,title:"$7.35",price:735,sku:"OTCINS42"},{id:40328651898932,title:"$7.55",price:755,sku:"OTCINS43"},{id:40328651931700,title:"$7.75",price:775,sku:"OTCINS44"},{id:40328651964468,title:"$7.95",price:795,sku:"OTCINS45"},{id:40328651997236,title:"$8.15",price:815,sku:"OTCINS46"},{id:40328652030004,title:"$8.35",price:835,sku:"OTCINS47"},{id:40328652062772,title:"$8.55",price:855,sku:"OTCINS48"},{id:40328652095540,title:"$8.75",price:875,sku:"OTCINS49"},{id:40328652128308,title:"$8.95",price:895,sku:"OTCINS50"},{id:40328652161076,title:"$9.38",price:938,sku:"OTCINS51"},{id:40328652193844,title:"$10.03",price:1003,sku:"OTCINS52"},{id:40328652226612,title:"$10.68",price:1068,sku:"OTCINS53"},{id:40328652259380,title:"$11.33",price:1133,sku:"OTCINS54"},{id:40328652292148,title:"$11.98",price:1198,sku:"OTCINS55"},{id:40328652324916,title:"$12.63",price:1263,sku:"OTCINS56"},{id:40328652357684,title:"$13.28",price:1328,sku:"OTCINS57"},{id:40328652390452,title:"$13.93",price:1393,sku:"OTCINS58"},{id:40328652423220,title:"$14.58",price:1458,sku:"OTCINS59"},{id:40328652455988,title:"$15.23",price:1523,sku:"OTCINS60"},{id:40328652488756,title:"$15.88",price:1588,sku:"OTCINS61"},{id:40328652521524,title:"$16.53",price:1653,sku:"OTCINS62"},{id:40328652554292,title:"$17.18",price:1718,sku:"OTCINS63"},{id:40328652587060,title:"$17.83",price:1783,sku:"OTCINS64"},{id:40328652619828,title:"$18.48",price:1848,sku:"OTCINS65"},{id:40328652652596,title:"$19.13",price:1913,sku:"OTCINS66"},{id:40328652685364,title:"$19.78",price:1978,sku:"OTCINS67"},{id:40328652718132,title:"$20.43",price:2043,sku:"OTCINS68"},{id:40328652750900,title:"$24.38",price:2438,sku:"OTCINS69"},{id:40328652783668,title:"$31.63",price:3163,sku:"OTCINS70"},{id:40328652816436,title:"$38.88",price:3888,sku:"OTCINS71"},{id:40328652849204,title:"$46.13",price:4613,sku:"OTCINS72"},{id:40328652881972,title:"$53.38",price:5338,sku:"OTCINS73"},{id:40328652914740,title:"$60.63",price:6063,sku:"OTCINS74"},{id:40328652947508,title:"$67.88",price:6788,sku:"OTCINS75"},{id:40328652980276,title:"$75.13",price:7513,sku:"OTCINS76"},{id:40328653013044,title:"$82.38",price:8238,sku:"OTCINS77"},{id:40328653045812,title:"$89.63",price:8963,sku:"OTCINS78"},{id:40328653078580,title:"$96.88",price:9688,sku:"OTCINS79"},{id:40328653111348,title:"$104.13",price:10413,sku:"OTCINS80"},{id:40328653144116,title:"$111.38",price:11138,sku:"OTCINS81"},{id:40328653176884,title:"$118.63",price:11863,sku:"OTCINS82"},{id:40328653209652,title:"$125.88",price:12588,sku:"OTCINS83"},{id:40328653242420,title:"$133.13",price:13313,sku:"OTCINS84"},{id:40328653275188,title:"$140.38",price:14038,sku:"OTCINS85"}]};    
     </script>    
     <script src="{{ 'cart-dawn.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'suggested.js' | asset_url }}" defer="defer"></script>
@@ -884,5 +344,40 @@
         jQuery('.stamped-form-review-body .stamped-form-input-textarea').attr("minlength","3");
       });
     </script>
+    <script type="text/javascript">
+      var _learnq = _learnq || [];
+      function addedToCart() {
+        fetch(`${window.location.origin}/cart.js`)
+        .then(res => res.clone().json().then(data => {
+          var cart = {
+            total_price: data.total_price/100,
+            $value: data.total_price/100,
+            total_discount: data.total_discount,
+            original_total_price: data.original_total_price/100,
+            items: data.items
+          }
+          if (item !== 'undefined') {
+            cart = Object.assign(cart, item)
+          }
+          _learnq.push(['track', 'Added to Cart', cart])
+        }))
+      } 
+      (function (ns, fetch) {
+        ns.fetch = function() {
+          const response = fetch.apply(this, arguments);
+          response.then(res => {
+            if (`${window.location.origin}/cart/add.js`
+              .includes(res.url)) {
+                addedToCart()
+            }
+          });
+          return response
+        }
+      }(window, window.fetch))
+      $(document).ajaxComplete(function(event, request, settings){
+        if(settings.url == "/cart/add.js"){
+            addedToCart()
+        }
+      })</script>    
   </body>
 </html>
