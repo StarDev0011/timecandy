@@ -1,29 +1,29 @@
-// ['searchspring.domReady'].forEach(function(e) {
-//   window.addEventListener(e, (event) => {
-//       addToBag();
-//       initDraggable();
-//   });
-// });
+['searchspring.domReady'].forEach(function(e) {
+  window.addEventListener(e, (event) => {
+      addToBag();
+      //initDraggable();
+  });
+});
 
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     addToBag();
-//     initDraggable();
-// });
+window.addEventListener('DOMContentLoaded', (event) => {
+    addToBag();
+    //initDraggable();
+});
 
-// function updateBagItem() {
-//     fetch(window.Shopify.routes.root + 'cart.js')
-//     .then(response => response.json())
-//     .then(data => {
-//         document.querySelector('.js-cart-count').innerHTML = data.item_count;
-//         document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+function updateBagItem() {
+    fetch(window.Shopify.routes.root + 'cart.js')
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector('.js-cart-count').innerHTML = data.item_count;
+        document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
 
-//         var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-//         obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-//         obj_mp3.play();        
-//         $('.packabag-sidebar__bag').addClass('animated tada');
-//         setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
-//     });
-// }
+        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+        obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+        obj_mp3.play();        
+        $('.packabag-sidebar__bag').addClass('animated tada');
+        setTimeout(function(){ $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000); 
+    });
+}
 
 // function addToBag() {
 //     document.querySelectorAll('.card-product__pack-bag').forEach((el) => {
