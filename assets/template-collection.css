@@ -868,7 +868,7 @@
   user-select: none;
 }*/
 
-.collection-pack-a-bag .card-product__picture:hover{
+/* .collection-pack-a-bag .card-product__picture:hover{
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: -o-grab;
@@ -882,7 +882,7 @@
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
   cursor: grabbing;
-}
+} */
 
 .packabag-sidebar {
   position: fixed;
