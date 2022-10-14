@@ -459,8 +459,8 @@ span.header-icon__line-item::after {
   }
 
   .header__menu-item {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
