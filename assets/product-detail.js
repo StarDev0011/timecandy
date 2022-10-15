@@ -220,7 +220,7 @@ Product = {
   readMoreDesc: () => {
     $('.product__desc-text').readmore({
       speed: 75,
-      collapsedHeight: 50,
+      collapsedHeight: 42,
       moreLink: '<a href="#" class="product__read-more roller">Read more</a>',
       lessLink: '<a href="#" class="product__read-more roller">Read less</a>'
     });
