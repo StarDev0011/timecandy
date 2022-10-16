@@ -83,6 +83,9 @@ details[open].menu-opening > .menu-drawer__submenu {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
+  .menu-drawer__menu-item svg {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 989px) {
