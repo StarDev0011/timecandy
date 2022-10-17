@@ -32,7 +32,7 @@
     top: 5px;
   }
   #Search-In-Modal-1::placeholder {
-    color: transparent;
+    color: #262626;
   }
   @media screen and (min-width: 750px) {
     .section-header {
@@ -127,7 +127,7 @@
                   type="search"
                   name="q"
                   value="{{ search.terms | escape }}"
-                  placeholder="{{ 'general.search.search' | t }}"
+                  placeholder="Search for anything!"
                 >
                 <a href="javascript:;" class="stop-anim-btn">
                   <img src="{{'icon-pause.png'| asset_img_url :'master'}}" alt="Stop animation" loading="lazy" width="44" height="44">
@@ -385,7 +385,7 @@
 
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 
-{% comment %} <script defer src="{{ 'typewriter.js' | asset_url }}"></script>
+<script defer src="{{ 'typewriter.js' | asset_url }}"></script>
 <script>
   let autotype_placeholder;
   let anim_flag=true;
@@ -423,7 +423,7 @@
 
 
 
-</script> {% endcomment %}
+</script>
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
