@@ -385,7 +385,7 @@
 
 {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 
-<script defer src="{{ 'typewriter.js' | asset_url }}"></script>
+{% comment %} <script defer src="{{ 'typewriter.js' | asset_url }}"></script>
 <script>
   let autotype_placeholder;
   let anim_flag=true;
@@ -423,7 +423,7 @@
 
 
 
-</script>
+</script> {% endcomment %}
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
