@@ -1261,6 +1261,9 @@ fieldset.product-form__input .form__label {
 .product__desc-text {
   overflow: hidden;
 }
+.product__desc-text p:first-child {
+  margin-top: 0;
+}
 
 .product__read-more,
 .product-popup-modal__button {
