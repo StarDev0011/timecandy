@@ -206,7 +206,7 @@
   {% endif %}
   {% section 'header-misc-scripts' %}
   
-  {% if settings.icebrix-enable and settings.icebrix-product != blank %}
+  {% if settings.icebrix-enable %}
     <script>
       window.iceBrix = {
         id: '{{ all_products[settings.icebrix-product].variants.first.id }}',
