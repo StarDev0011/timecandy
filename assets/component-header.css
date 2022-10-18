@@ -452,7 +452,7 @@ span.header-icon__line-item::after {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 1169px) and (min-width: 990px) {
+@media (max-width: 1255px) and (min-width: 990px) {
   .header-bottom .page-width {
     padding-left: 0;
     padding-right: 0;
