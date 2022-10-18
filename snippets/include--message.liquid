@@ -47,13 +47,14 @@
 					assign seconds = 7 | times: 24 | times: 60 | times: 60
 					assign day = date | date: "%s" | plus: seconds | date: "%e"
 					assign month = date | date: "%s" | plus: seconds | date: "%m"
+					assign year = date | date: "%s" | plus: seconds | date: "%y"
 					assign endDay = date | date: "%s" | plus: seconds | date: "%e" | plus: 0
 
 					assign endseconds = 90 | times: 24 | times: 60 | times: 60
 					assign endMonth = date | date: "%s" | plus: endseconds | date: "%m"
-					assign year = date | date: "%s" | plus: endseconds | date: "%Y"
+					assign endYear = date | date: "%s" | plus: endseconds | date: "%Y"
 				-%}
-				<input aria-label="desired arrival date" type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ year }}-{{ endMonth }}-{{ endDay }}">
+				<input aria-label="desired arrival date" type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ endYear }}-{{ endMonth }}-{{ endDay }}">
 
 				<button class="modal-cart-gift__btn js-attr-date button">
 					<span class="modal-cart-gift__btn-text">Confirm date</span>
