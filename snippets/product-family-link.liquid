@@ -12,11 +12,12 @@
 {% for family in collections limit: 1000 %}
     {%- assign familyHandle = family.handle | downcase -%}
     {%- if familyHandle contains 'walk-the-candy-aisle-' -%}
-        {% unless familyHandle contains 'walk-the-candy-aisle-new' %}
+        {% assign collection_exclusion_array = 'walk-the-candy-aisle-new, walk-the-candy-aisle-candy-plastic-tubs' | remove: ' ' | split: ',' %}
+        {% if collection_exclusion_array contains familyHandle %}
             {%- assign familyLink = family.url -%}
             {%- assign familyTitle = family.title -%}
             {% break %}
-        {% endunless %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 
