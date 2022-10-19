@@ -85,8 +85,8 @@
             "tags_include": "",
             "search": "",
             "linkify": true,
-            "use_metafields": true,
-            "sku_tagtype": "sku"
+            "use_metafields": false,
+            "sku_tagtype": "handle"
           }
         }
       },
