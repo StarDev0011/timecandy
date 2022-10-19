@@ -88,6 +88,15 @@
               {{ 'onboarding.product_title' | t }}
             {%- endif -%}
           </h3>
+          <span 
+            class="stamped-product-reviews-badge" 
+            data-id="{{ product.id }}"
+            data-product-sku="{{ product.handle }}" 
+            data-product-type="{{ product.type }}" 
+            data-product-title="{{ product.title }}" 
+            style="display:block;">
+            {{ product.metafields.stamped.badge }}
+          </span>          
           <div class="no-js-hidden product-price" id="price-{{ section.id }}" role="status">
             {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
           </div>

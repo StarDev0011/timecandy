@@ -75,6 +75,15 @@
           </p>
         {%- endif -%}
         <a role="heading" aria-level="3" class="card-product__title h5" href="{{ card_product.url }}"> {{ card_product.title }} </a>
+        <span 
+          class="stamped-product-reviews-badge" 
+          data-id="{{ card_product.id }}"
+          data-product-sku="{{ card_product.handle }}" 
+          data-product-type="{{ card_product.type }}" 
+          data-product-title="{{ card_product.title }}" 
+          style="display:block;">
+          {{ card_product.metafields.stamped.badge }}
+        </span>        
         {%- if show_vendor -%}
           <div class="card-product__vendor h6">{{ card_product.vendor }}</div>
         {%- endif -%}
