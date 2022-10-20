@@ -3164,6 +3164,9 @@ div[data-widget-load-type="continue"] ul.stamped-pagination li.next a {
 .stamped-badge[data-rating="0"], .stamped-badge[data-rating="0,0"], .stamped-badge[data-rating="0.0"] {
   display: block !important;
 }
+div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-container {
+  min-height: 339px;
+}
 
 /* END STAMPED REVIEWS */
 
