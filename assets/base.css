@@ -3158,6 +3158,12 @@ div[data-widget-load-type="continue"] ul.stamped-pagination li.next a {
   font-family: var(--font-body-family) !important;
   font-size: 15px !important;
 }
+.stamped-badge {
+  min-height: 23.5px;
+}
+.stamped-badge[data-rating="0"], .stamped-badge[data-rating="0,0"], .stamped-badge[data-rating="0.0"] {
+  display: block !important;
+}
 
 /* END STAMPED REVIEWS */
 
