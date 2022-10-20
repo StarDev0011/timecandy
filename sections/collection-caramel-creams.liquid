@@ -35,7 +35,7 @@
       </div>
       <div class="collection__wrapper">
         {% if settings.ss_enable %}
-          <div class="collection-product__list">
+          <div class="collection-product__list container">
             <div id="searchspring-content"></div>
           </div>
         {% else %}        
@@ -68,7 +68,7 @@
         {% endif %}
 
         {% if section.settings.show_desc %}
-          <div class="collection__desc" id="collection-desc">
+          <div class="collection__desc container" id="collection-desc">
             {{- collection.description -}}
           </div>
         {% endif %}
