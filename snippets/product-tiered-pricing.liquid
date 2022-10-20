@@ -14,7 +14,7 @@
       {% for variant in product.variants %}
         {% assign variant_title = variant.title | downcase %}
         {% unless variant_title contains "single" or variant_title contains "case" %}
-        <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" style="display:none;">
+        <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" {% unless product.has_only_default_variant %}style="display:none;"{% endunless %}>
           <div class="product-buy-more__header">Buy more, save more!</div>
           <div class="product-buy-more__content">
             <div class="product-tiered-pricing">
@@ -58,7 +58,7 @@
         {% for variant in product.variants %}
           {% assign variant_title = variant.title | downcase %}
           {% unless variant_title contains "single" or variant_title contains "case" %}
-            <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" style="display:none;">
+            <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" {% unless product.has_only_default_variant %}style="display:none;"{% endunless %}>
               <div class="product-buy-more__header">Buy more, save more!</div>
                 <div class="product-buy-more__content">
                   <div class="product-tiered-pricing">
@@ -102,7 +102,7 @@
         {% for variant in product.variants %}
           {% assign variant_title = variant.title | downcase %}
           {% unless variant_title contains "single" or variant_title contains "case" %}
-            <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" style="display:none;">
+            <div class="product-buy-more variant-discount-box" reference="{{ variant.title }}" id="variant-discount-{{ variant.id }}" {% unless product.has_only_default_variant %}style="display:none;"{% endunless %}>
               <div class="product-buy-more__header">Buy more, save more!</div>
               <div class="product-buy-more__content">
                 <div class="product-tiered-pricing">
