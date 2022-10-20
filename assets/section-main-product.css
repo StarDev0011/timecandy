@@ -2824,6 +2824,12 @@ div#bookmarkit {
   }
 }
 
+@media (max-width: 365px) {
+  .product-detail .product-form__group {
+    grid-template-columns: 100%
+  }
+}
+
 #stamped-main-widget {
   margin-top: 40px;
 }
