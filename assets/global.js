@@ -814,7 +814,7 @@ class VariantSelects extends HTMLElement {
   onVariantChange() {
     this.updateOptions();
     this.updateMasterId();
-    this.toggleAddButton(true, '', false);
+    //this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.updateCardImage();
     // this.removeErrorMessage();
