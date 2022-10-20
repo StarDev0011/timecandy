@@ -34,32 +34,38 @@
         {% endif %}
       </div>
       <div class="collection__wrapper">
-        {%- paginate collection.products by limit -%}
+        {% if settings.ss_enable %}
           <div class="collection-product__list">
-            <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
-              {%- for product in collection.products -%}
-                {% render 'include--product-card', product: product %}
-              {%- endfor -%}
-            </div>
-            {%- if paginate.pages > 1 -%}
-              {% if section.settings.page == 'page' %}
-                {% render 'pagination', paginate: paginate, anchor: '' %}
-              {% else %}
-              <div class="product-paginate" data-paginate>
-                {% unless paginate.next.is_link %}
-                <!-- <button class="btn no-product" type="button">
-                  No products
-                </button> -->
-                {% else %}
-                  <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{collection.title | escape }}">
-                    <span class="loader"></span>
-                  </a>
-                {% endunless %}
-              </div>
-              {% endif %}
-            {%- endif -%}
+            <div id="searchspring-content"></div>
           </div>
-        {%- endpaginate -%}
+        {% else %}        
+          {%- paginate collection.products by limit -%}
+            <div class="collection-product__list">
+              <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
+                {%- for product in collection.products -%}
+                  {% render 'include--product-card', product: product %}
+                {%- endfor -%}
+              </div>
+              {%- if paginate.pages > 1 -%}
+                {% if section.settings.page == 'page' %}
+                  {% render 'pagination', paginate: paginate, anchor: '' %}
+                {% else %}
+                <div class="product-paginate" data-paginate>
+                  {% unless paginate.next.is_link %}
+                  <!-- <button class="btn no-product" type="button">
+                    No products
+                  </button> -->
+                  {% else %}
+                    <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{collection.title | escape }}">
+                      <span class="loader"></span>
+                    </a>
+                  {% endunless %}
+                </div>
+                {% endif %}
+              {%- endif -%}
+            </div>
+          {%- endpaginate -%}
+        {% endif %}
 
         {% if section.settings.show_desc %}
           <div class="collection__desc" id="collection-desc">
