@@ -150,8 +150,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   function handle_size_change() {
     let selected = $("#option-Size-{{ product.id }}").find("input[name=\"Size\"]:checked").val();
-    $(".variant-discount-box").hide();
-    $('.variant-discount-box[reference="'+selected+'"]').show();
+    if(selected) {
+      $(".variant-discount-box").hide();
+      $('.variant-discount-box[reference="'+selected+'"]').show();
+    }
   }
   handle_size_change();
 });
