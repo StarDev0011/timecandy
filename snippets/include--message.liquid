@@ -24,9 +24,10 @@
     </div>
 		<div class="modal-cart-gift__field">
 			<label for="GiftMessageText" class="modal-cart-gift__label">Message</label>
-			<textarea id="GiftMessageText" class="modal-cart-gift__input" placeholder="Text" maxlength="100">
+			<textarea id="GiftMessageText" class="modal-cart-gift__input" placeholder="Text" maxlength="100" onkeyup="limitText(this)" onpaste="limitText(this)" onchange="limitText(this)">
 				{{- cart.attributes['Gift Message'] -}}
 			</textarea>
+			<div class="order-message"><span id="order-message-count">100</span> Characters Remaining.</div>
 			<button class="modal-cart-gift__btn js-attr-message button">
 				<span class="modal-cart-gift__btn-text">Save message</span>
 				<div class="modal-cart-gift__btn-icon"></div>
@@ -65,11 +66,16 @@
 		</div>
   </div>
 </div>
-
 <script>
-  const btnCloseMessage =  document.querySelector('.js-close');
-  btnCloseMessage.onclick = (e) => {
-    e.preventDefault();
-    document.querySelector('.modal-error').style.display = 'none';
-  }
+	function limitText(_this) {
+		const messageCount = document.querySelector('#order-message-count');
+		let limit = parseInt(_this.getAttribute('maxlength'));
+		messageCount.textContent = limit - _this.value.length;
+	}
+
+	const btnCloseMessage =  document.querySelector('.js-close');
+	btnCloseMessage.onclick = (e) => {
+		e.preventDefault();
+		document.querySelector('.modal-error').style.display = 'none';
+	}
 </script>
