@@ -4,6 +4,7 @@
       "type": "collection-caramel-creams",
       "settings": {
         "show_desc": true,
+        "read_more": "Read more",
         "grid": 4,
         "rows": 18,
         "page": "scroll"
