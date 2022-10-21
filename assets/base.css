@@ -2719,6 +2719,7 @@ details[open] > .header__menu-item .icon-caret {
   width: 11px;
   height: 5px;
   margin-left: 3px;
+  transition: all .2s ease-in;
 }
 .header__menu-item svg path { stroke: #fff; }
 

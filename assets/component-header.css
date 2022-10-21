@@ -109,6 +109,9 @@ header-drawer {
   transition: visibility 0s linear 0s, opacity 0.3s, top 0.3s;
   pointer-events: all;
 }
+.item-has-megamenu[aria-expanded="true"] .header__menu-item svg {
+  transform: rotate(180deg);
+}
 .p-relative {
   position: relative;
 }
