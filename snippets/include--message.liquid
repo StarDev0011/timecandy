@@ -24,10 +24,11 @@
     </div>
 		<div class="modal-cart-gift__field">
 			<label for="GiftMessageText" class="modal-cart-gift__label">Message</label>
-			<textarea id="GiftMessageText" class="modal-cart-gift__input" placeholder="Text" maxlength="100" onkeyup="limitText(this)" onpaste="limitText(this)" onchange="limitText(this)">
+			<textarea id="GiftMessageText" class="modal-cart-gift__input" placeholder="Enter your message." maxlength="100" onkeyup="limitText(this)" onpaste="limitText(this)" onchange="limitText(this)">
 				{{- cart.attributes['Gift Message'] -}}
 			</textarea>
-			<div class="order-message"><span id="order-message-count">100</span> Characters Remaining.</div>
+			{%- assign message_count = cart.attributes['Gift Message'] | size -%}
+			<div class="order-message"><span id="order-message-count">{{- 100 | minus: message_count -}}</span> Characters Remaining.</div>
 			<button class="modal-cart-gift__btn js-attr-message button">
 				<span class="modal-cart-gift__btn-text">Save message</span>
 				<div class="modal-cart-gift__btn-icon"></div>
