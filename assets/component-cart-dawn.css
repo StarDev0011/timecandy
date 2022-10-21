@@ -660,6 +660,9 @@
   line-height: 24px;
   color: #484E57;
   font-family: var(--font-2);
+  /* margin-bottom: 24px; */
+}
+.order-message {
   margin-bottom: 24px;
 }
 
