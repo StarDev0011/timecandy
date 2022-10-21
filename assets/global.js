@@ -1033,10 +1033,10 @@ function removeAriaExpanded(el) {
 document.querySelectorAll('.item-has-megamenu').forEach((item) => {
   item.addEventListener('click', (e) => {
     e.preventDefault();
-    if (e.currentTarget.getAttribute('aria-expanded')) {
-      removeAriaExpanded(e.currentTarget);
-    } else {
+    if (e.currentTarget.getAttribute('aria-expanded') == 'false') {
       setAriaExpanded(e.currentTarget);
+    } else {
+      removeAriaExpanded(e.currentTarget);
     }
   })
 
