@@ -1030,8 +1030,14 @@ function removeAriaExpanded(el) {
   el.setAttribute('aria-expanded', 'false');
 }
 
-document.querySelectorAll('.item-has-megamenu[aria-expanded="false"]').forEach((item) => {
-  item.addEventListener('mouseover', (e) => setAriaExpanded(e.currentTarget));
+document.querySelectorAll('.item-has-megamenu').forEach((item) => {
+  item.addEventListener('click', (e) => {
+    if (e.currentTarget.getAttribute('aria-expanded')) {
+      removeAriaExpanded(e.currentTarget);
+    } else {
+      setAriaExpanded(e.currentTarget);
+    }
+  })
 
   item.addEventListener('mouseleave', (e) => removeAriaExpanded(e.currentTarget));
 
