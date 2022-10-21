@@ -102,8 +102,6 @@ header-drawer {
   column-gap: 128px;
 }
 
-.item-has-megamenu:hover .header__submenu.megamenu,
-.item-has-megamenu:focus-within .header__submenu.megamenu,
 .item-has-megamenu[aria-expanded="true"] .header__submenu.megamenu {
   opacity: 1;
   visibility: visible;
