@@ -2721,7 +2721,10 @@ details[open] > .header__menu-item .icon-caret {
   margin-left: 3px;
   transition: all .2s ease-in;
 }
-.header__menu-item svg path { stroke: #fff; }
+.header__menu-item svg path { 
+  stroke: #fff; 
+  transition: all .2s ease-in;
+}
 
 header-menu > details,
 details-disclosure > details {
