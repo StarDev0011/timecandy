@@ -26,7 +26,8 @@
           {% if collection.description != blank %}
             <div class="collection__text">
               {{- collection.description | truncate: 280 | strip_html -}}
-              {% if section.settings.read_more != blank %}
+              {% assign desc_length = collection.description | size %}
+              {% if section.settings.read_more != blank and desc_length > 280 %}
                 <div><a class="collection__more" href="#collection-desc"> {{- section.settings.read_more -}} </a></div>
               {% endif %}
             </div>
