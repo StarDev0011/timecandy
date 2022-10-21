@@ -73,7 +73,7 @@
 							url: '/cart.js',
 							dataType: 'text',
 							success: function(data) {
-								if (data.indexOf("subscription_id") > -1) {
+								if (data.indexOf("shipping_interval_frequency") > -1) {
 									var paramDomain = 'myshopify_domain={{ shop.permanent_domain }}';
 									try {
 										var paramLinker = "&" + ga.getAll()[0].get('linkerParam');
