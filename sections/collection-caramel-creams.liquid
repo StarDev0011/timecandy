@@ -68,7 +68,7 @@
           {%- endpaginate -%}
         {% endif %}
 
-        {% if section.settings.show_desc %}
+        {% if section.settings.show_desc and desc_length > 280 %}
           <div class="collection__desc container" id="collection-desc">
             {{- collection.description -}}
           </div>
