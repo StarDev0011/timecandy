@@ -113,7 +113,7 @@ header-drawer {
   transform: rotate(180deg);
 }
 .item-has-megamenu[aria-expanded="true"] .header__menu-item svg path {
- stroke: rgba(var(--color-secondary-background));
+ stroke: #bce2dd;
 }
 .p-relative {
   position: relative;
