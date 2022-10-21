@@ -93,7 +93,7 @@ header-drawer {
   opacity: 0;
   visibility: hidden;
   z-index: 99;
-  background-color: rgb(var(--color-link-text));
+  background-color: #0C5273;
 }
 
 .header__submenu.megamenu > div {
