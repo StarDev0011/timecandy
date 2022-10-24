@@ -2719,8 +2719,17 @@ details[open] > .header__menu-item .icon-caret {
   width: 11px;
   height: 5px;
   margin-left: 3px;
+  transition: all .2s ease-in;
 }
-.header__menu-item svg path { stroke: #fff; }
+.item-has-megamenu[aria-expanded="true"] .header__menu-item svg {
+  color: #bce2dd;
+  fill: #bce2dd;
+  stroke: #bce2dd;
+}
+.header__menu-item svg path { 
+  stroke: #fff; 
+  transition: all .2s ease-in;
+}
 
 header-menu > details,
 details-disclosure > details {

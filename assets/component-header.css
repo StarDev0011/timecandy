@@ -93,7 +93,7 @@ header-drawer {
   opacity: 0;
   visibility: hidden;
   z-index: 99;
-  background-color: rgb(var(--color-basic-background));
+  background-color: #0C5273;
 }
 
 .header__submenu.megamenu > div {
@@ -102,19 +102,25 @@ header-drawer {
   column-gap: 128px;
 }
 
-.item-has-megamenu:hover .header__submenu.megamenu,
-.item-has-megamenu:focus-within .header__submenu.megamenu {
+.item-has-megamenu[aria-expanded="true"] .header__submenu.megamenu {
   opacity: 1;
   visibility: visible;
   /* top: 100%; */
   transition: visibility 0s linear 0s, opacity 0.3s, top 0.3s;
   pointer-events: all;
 }
+.item-has-megamenu[aria-expanded="true"] .header__menu-item svg {
+  transform: rotate(180deg);
+}
+.item-has-megamenu[aria-expanded="true"] .header__menu-item svg path {
+ stroke: #bce2dd;
+}
 .p-relative {
   position: relative;
 }
 .megamenu-image-heading {
   margin-bottom: 14px;
+  color: #fff;
 }
 
 .megamenu .image-container-item {
@@ -130,9 +136,12 @@ header-drawer {
 .megamenu .child-link .header__menu-item {
   font-size: 14px;
   line-height: 20px;
-  color: rgb(var(--color-light-text));
+  color: #fff;
   text-transform: capitalize;
   padding: 0;
+}
+.megamenu .child-link .header__menu-item:hover {
+  color: rgba(var(--color-secondary-background));
 }
 .megamenu .image-container-wrapper .image {
   float: left;
@@ -155,13 +164,13 @@ header-drawer {
 .megamenu .image-container-wrapper .text-container {
   padding-top: 16px;
   text-decoration: none;
-  color: #484e57;
+  color: #fff;
   display: block;
   max-width: 199px;
   float: left;
 }
 .megamenu .image-container-wrapper .text-container:hover {
-  color: rgb(var(--color-link-hover));
+  color: rgb(var(--color-secondary-background));
 }
 
 .megamenu .image-container .text-container:hover {
@@ -203,12 +212,15 @@ header-drawer {
 .child-title {
   font-size: 12px;
   line-height: 21px;
-  color: rgba(var(--color-heading), 1);
+  color: #fff;
   text-decoration: none;
   padding: 0 0 16px;
   display: inline-block;
   text-transform: uppercase;
   font-family: var(--font-heading);
+}
+.child-title:hover, .child-title:focus {
+  color: rgba(var(--color-secondary-background));
 }
 .megamenu .list-menu li {
   padding-bottom: 14px;
