@@ -7,7 +7,7 @@
         {% for top_product in submenu.links %}
           {% assign count_block_product = count_block_product | plus: 1 %}
         {% endfor %}
-    {% elsif submenu.title == 'Top Collections' and submenu.links != blank %}
+    {% elsif submenu.title == 'Top Collections' or submenu.title == 'Top Brands' and submenu.links != blank %}
         {% for top_collection in submenu.links %}
             {% assign count_block_collection = count_block_collection | plus: 1 %}
         {% endfor %}
@@ -20,7 +20,7 @@
         <div class="mega-menu-wrapper">
             <div class="d-flex menu-child">
             {% for submenu in links %}
-                {% unless submenu.title == 'Top Products' or submenu.title == 'Top Collections' %}
+                {% unless submenu.title == 'Top Products' or submenu.title == 'Top Collections' or submenu.title == 'Top Brands' %}
                 <div class="last-level-menu {{ childlink.title | handleize }} col-ds__100 js-parent">
                     <a class="child-title" href="{{ submenu.url }}" >{{- submenu.title -}}</a>
                     <ul class="list-menu">
@@ -82,7 +82,7 @@
             <h6 class="megamenu-image-heading">{{ 'sections.header.megamenu.top_collection_label' | t }}</h6>
             <div id="megamenu-image-{{ index }}" class="megamenu-image-container">  
                 {% for submenu in links %}
-                    {% if submenu.title == "Top Collections" %}
+                    {% if submenu.title == "Top Collections" or submenu.title == "Top Brands" %}
                         <ul class="list-menu image-container-wrapper d-flex__end">
                             {% for top_collection in submenu.links %}
                                 {% assign top_collection_handle = top_collection.url | remove: '/collections/' %}
