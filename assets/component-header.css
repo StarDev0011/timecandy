@@ -130,7 +130,7 @@ header-drawer {
 .megamenu .image-container-item .image img {
   width: 100%;
   height: auto;
-  float: left;
+  display: block;
 }
 
 .megamenu .child-link .header__menu-item {
@@ -144,7 +144,6 @@ header-drawer {
   color: rgba(var(--color-secondary-background));
 }
 .megamenu .image-container-wrapper .image {
-  float: left;
   background: #fff;
   overflow: hidden;
   border-radius: 4px;
@@ -167,7 +166,6 @@ header-drawer {
   color: #fff;
   display: block;
   max-width: 199px;
-  float: left;
 }
 .megamenu .image-container-wrapper .text-container:hover {
   color: rgb(var(--color-secondary-background));
