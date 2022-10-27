@@ -255,6 +255,13 @@
               "script": "<meta name=\"facebook-domain-verification\" content=\"hrkju3xgogfc6i8m0vetapsampa796\">",
               "enable-checkout": true
             }
+          },
+          "f896efc1-0085-4912-ab1f-cc5071a1b1cc": {
+            "type": "script",
+            "settings": {
+              "script": "<script src=\"https:\/\/www.googleoptimize.com\/optimize.js?id=GTM-KHZNRRG\"><\/script>",
+              "enable-checkout": true
+            }
           }
         },
         "block_order": [
@@ -262,7 +269,8 @@
           "d542ae9e-ff8b-407b-942c-4959404653a1",
           "43514fa4-fc24-40f2-a096-be1e187d55f7",
           "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1",
-          "e3679f1f-6f75-42f6-bf21-90d222d80572"
+          "e3679f1f-6f75-42f6-bf21-90d222d80572",
+          "f896efc1-0085-4912-ab1f-cc5071a1b1cc"
         ],
         "settings": {
           "header-misc-scripts-enable": true
