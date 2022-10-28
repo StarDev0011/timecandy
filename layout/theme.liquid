@@ -43,12 +43,11 @@
     
     {% render 'meta-tags' %}
     {{ 'template-styles.min.css' | asset_url | stylesheet_tag }}
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>    
     <script src="{{ 'readmore.js' | asset_url }}" defer="defer"></script>  
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer="defer"></script>
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script> 
 
     {{ content_for_header }}
 
