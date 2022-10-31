@@ -366,32 +366,40 @@
       "settings": {
         "heading": "<p>Looking for the Best Employee Gifts? Give Them Treats from <strong>Old Time Candy!<\/strong><\/p>",
         "font_size_title": 24,
-        "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p><p><\/p><p><a href=\"\/pages\/corporate-gift-orders\" title=\"Corporate Gift Orders\"><strong>Submit an order inquiry<\/strong><\/a><\/p>",
+        "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p>",
         "bg_section": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40
       }
     },
-    "9560d505-c122-4f43-93b2-893046606bd2": {
-      "type": "image-with-richtext",
-      "disabled": true,
+    "98af312d-5598-4456-a936-56f4a1bbd7f2": {
+      "type": "rich-text",
       "blocks": {
-        "template--15119223390260__9560d505-c122-4f43-93b2-893046606bd2-166723213355176cc5-0": {
-          "type": "paragraph",
+        "template--15119223390260__98af312d-5598-4456-a936-56f4a1bbd7f2-1667232737e3b32efb-0": {
+          "type": "heading",
           "settings": {
-            "heading": "Looking for the Best Employee Gifts? Give Them Treats from Old Time Candy!",
-            "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p>",
-            "btn_text": "Submit Order Inquiry",
-            "btn_link": "shopify:\/\/pages\/corporate-gift-orders"
+            "heading": "Ready to Buy?",
+            "heading_size": "h1"
+          }
+        },
+        "template--15119223390260__98af312d-5598-4456-a936-56f4a1bbd7f2-1667232737e3b32efb-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Submit an Order Inquiry",
+            "button_link": "shopify:\/\/pages\/corporate-gift-orders",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "template--15119223390260__9560d505-c122-4f43-93b2-893046606bd2-166723213355176cc5-0"
+        "template--15119223390260__98af312d-5598-4456-a936-56f4a1bbd7f2-1667232737e3b32efb-0",
+        "template--15119223390260__98af312d-5598-4456-a936-56f4a1bbd7f2-1667232737e3b32efb-2"
       ],
       "settings": {
-        "title": "",
-        "background_color": "#fff"
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 68
       }
     }
   },
@@ -406,6 +414,6 @@
     "1658415969f2db5c73",
     "1660657955de1de9c2",
     "16606566045d3360e7",
-    "9560d505-c122-4f43-93b2-893046606bd2"
+    "98af312d-5598-4456-a936-56f4a1bbd7f2"
   ]
 }
