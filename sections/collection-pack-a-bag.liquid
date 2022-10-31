@@ -228,7 +228,8 @@
         document.querySelector('body').classList.toggle('open-filter');
       }
     }
-    document.querySelector('.sidebar-mobile-title').onclick = () => {
+    document.querySelector('.sidebar-mobile-title').onclick = (e) => {
+      e.preventDefault();
       document.querySelector('body').classList.remove('open-filter');
     }
   })
