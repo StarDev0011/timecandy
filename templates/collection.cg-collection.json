@@ -36,34 +36,19 @@
         "show_text_below": true
       }
     },
-    "28cf3f0d-41b8-4a68-820e-e2fff72010ac": {
-      "type": "collection-list--dynamic",
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "16606692558670ab0e": {
       "type": "image-with-text-4",
       "blocks": {
         "1660669255e9def6af-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p><strong>Corporate Gifts<\/strong><\/p>"
+            "heading": "<p><strong>How to Send Corporate Gifts<\/strong><\/p>"
           }
         },
         "1660669255e9def6af-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Finding the best employee gift ideas or creative client gifts can be a challenge for a number of business owners, HR professionals, and more.  OldTimeCandy.com can personalize a corporate gift program to meet your  specific needs whether it is for a one-time purchase or an on-going program.<br\/><br\/>Whether you are searching for ​​corporate holiday gifts, sales call  follow-up gifts, thank-you gifts, product announcement gifts, spontaneous business client gifts, or unique employee appreciation gifts, giving corporate candy gifts from Old Time Candy is a surefire way to delight and excite your recipients.<br\/><br\/>Choose from the product list below or, if you see a product you like but it's  not quite right, submit an order inquiry. We will work with you to customize  your corporate gift program with specific candies, business card or letter inserts, custom box tops, custom box sizes, and more.<br\/><br\/>Do you need to send corporate gifts to multiple locations? Call us at 1-866-929-5477 option 1 during east coast business hours or submit an inquiry below. <\/p>",
+            "text": "<p>Finding the best employee gift ideas or creative client gifts can be a challenge for a number of business owners, HR professionals, and more.  OldTimeCandy.com can personalize a corporate gift program to meet your  specific needs whether it is for a one-time purchase or an on-going program.<br\/><br\/>Whether you are searching for ​​corporate holiday gifts, sales call  follow-up gifts, thank-you gifts, product announcement gifts, spontaneous business client gifts, or unique employee appreciation gifts, giving corporate candy gifts from Old Time Candy is a surefire way to delight and excite your recipients.<br\/><br\/>Choose from the product list below or, if you see a product you like but it's  not quite right, submit an order inquiry. We will work with you to customize  your corporate gift program with specific candies, business card or letter inserts, custom box tops, custom box sizes, and more.<br\/><br\/>Do you need to send corporate gifts to multiple locations? Call us at 1-866-929-5477 option 1 during east coast business hours or submit an inquiry below. <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0004\/8132\/9204\/files\/OldTimeCandy-CorporateGiftsGuide_7c61d188-9af8-40fc-b825-bad700afb4f7.pdf?v=1667231312\" target=\"_blank\" title=\"OldTimeCandy Corporate Gifts Guide\">Download our PDF for more information.<\/a><\/p>",
             "text_style": "body"
           }
         },
@@ -97,6 +82,21 @@
         "column_1": "",
         "column_2": "",
         "column_3": ""
+      }
+    },
+    "28cf3f0d-41b8-4a68-820e-e2fff72010ac": {
+      "type": "collection-list--dynamic",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "16606662547df03c9a": {
@@ -375,8 +375,8 @@
   },
   "order": [
     "16606694974554b53d",
-    "28cf3f0d-41b8-4a68-820e-e2fff72010ac",
     "16606692558670ab0e",
+    "28cf3f0d-41b8-4a68-820e-e2fff72010ac",
     "16606662547df03c9a",
     "16606657825203367d",
     "166066071817749a92",
