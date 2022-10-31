@@ -67,16 +67,22 @@ CartDawn = {
         }
         $('.cart-overlay').hide();
       } else {
-        $.get('/cart?view=dawn', function (data) {
-          $('body').addClass('open-minicart');
-          $('.js-mini-cart').focus();
-          $('.js-mini-cart').html(data);
-          setTimeout(() => {
-            $('.js-close-minicart').focus()
-          }, 1000);
-          CartDawn.shippingInsurance();
+        if ($('body').hasClass('pack-a-bag-test')) { 
+          $('.header__icon--cart').addClass('animated tada');
+          setTimeout(function(){ $('.header__icon--cart').removeClass('animated tada'); }, 2000)
           $('.cart-overlay').hide();
-        });
+        } else {
+          $.get('/cart?view=dawn', function (data) {
+            $('body').addClass('open-minicart');
+            $('.js-mini-cart').focus();
+            $('.js-mini-cart').html(data);
+            setTimeout(() => {
+              $('.js-close-minicart').focus()
+            }, 1000);
+            CartDawn.shippingInsurance();
+            $('.cart-overlay').hide();
+          });
+        }
       }
 
       CartDawn.updateCartCount(btn);
