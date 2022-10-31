@@ -703,6 +703,8 @@
     transition: transform .5s ease;
     -webkit-transform: translate(-100%);
     transform: translate(-100%);
+    padding-bottom: 40px;
+    text-decoration: none;
   }
 
   .open-filter .collection-sidebar.sidebar {
