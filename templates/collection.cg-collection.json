@@ -371,6 +371,28 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "9560d505-c122-4f43-93b2-893046606bd2": {
+      "type": "image-with-richtext",
+      "disabled": true,
+      "blocks": {
+        "template--15119223390260__9560d505-c122-4f43-93b2-893046606bd2-166723213355176cc5-0": {
+          "type": "paragraph",
+          "settings": {
+            "heading": "Looking for the Best Employee Gifts? Give Them Treats from Old Time Candy!",
+            "content": "<p>No matter what the occasion, Old Time Candy has the best corporate client gifts and employee gifts alike. From holiday corporate candy gifts and retirement gifts to the best client gifts for any occasion, we have fun gifts for employees and unique client gifts regardless of the occasion.<br\/><br\/>And because we know that not everyone has the same taste, we offer a wide variety of candy so you can find the perfect gift for your team. We have everything from corporate chocolate gifts to gummy bears, sour candy, bubble gum, and much, much more! So no matter what your employees or customers prefer, we have delightful gifts they'll love.<br\/><br\/>If you're looking for a way to show your appreciation, give fun corporate gifts with candy from Old Time Candy!<\/p>",
+            "btn_text": "Submit Order Inquiry",
+            "btn_link": "shopify:\/\/pages\/corporate-gift-orders"
+          }
+        }
+      },
+      "block_order": [
+        "template--15119223390260__9560d505-c122-4f43-93b2-893046606bd2-166723213355176cc5-0"
+      ],
+      "settings": {
+        "title": "",
+        "background_color": "#fff"
+      }
     }
   },
   "order": [
@@ -383,6 +405,7 @@
     "16584148595fda12b3",
     "1658415969f2db5c73",
     "1660657955de1de9c2",
-    "16606566045d3360e7"
+    "16606566045d3360e7",
+    "9560d505-c122-4f43-93b2-893046606bd2"
   ]
 }
