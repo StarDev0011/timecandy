@@ -6,19 +6,19 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/otc-halloweenPromo2022-WebSliderDesktop-Output-2880x900_2x_e12ff198-1cdb-4e73-b500-ea4a81fa2f41.jpg",
-            "image_mb": "shopify:\/\/shop_images\/otc-halloweenPromo2022-WebSliderMobile-Output-1200x1200_2x_2d8377aa-f725-467b-a9e6-b96f636b02cf.jpg",
-            "heading": "The scariest deal ever! Get 15% off site-wide with code BOO.",
-            "subheading": "Trick or Treat!",
-            "text_color": "#ffffff",
-            "button_label": "Shop Spooky Sweets",
-            "link": "shopify:\/\/collections\/candy-by-occasion-halloween-fall-candy",
+            "image": "shopify:\/\/shop_images\/OTC-BirthdayBox-WebSliderDesktop-Output-2880x900_2x_b2b46289-e210-4d33-92f7-a7082a378515.jpg",
+            "image_mb": "shopify:\/\/shop_images\/OTC-BirthdayBox-WebSliderMobile-Output-1200x1200_2x_8bca9623-76b7-4ba5-8236-02bf8e6074c1.jpg",
+            "heading": "Need a gift? Save 12% site-wide with code 'FALLBDAY22'",
+            "subheading": "It's Gift Giving Season",
+            "text_color": "#262626",
+            "button_label": "celebrate birthdays",
+            "link": "shopify:\/\/collections\/candy-by-occasion-birthday-candy-gifts",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
-            "color_scheme": "#ffffff",
-            "bg_container_scheme": "#2c1e2e",
+            "color_scheme": "#FFFFFF",
+            "bg_container_scheme": "#fae1c2",
             "text_alignment_mobile": "left"
           }
         }
