@@ -15,7 +15,7 @@
     "candy-classics": {
       "type": "collection--candy-aisle",
       "settings": {
-        "collection": "candy-by-occasion-halloween-fall-candy",
+        "collection": "candy-by-occasion-christmas-candy",
         "row": 7,
         "show_view_all": true,
         "padding_top": 0,
