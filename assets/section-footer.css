@@ -629,7 +629,8 @@ noscript .localization-selector.link {
 
 #google-trusted-reviews {
   float: left !important;
-  max-height: 32px;
+  max-height: 34px;
+  border-radius: 4px;
   max-width: 96px !important;
   overflow: hidden;
   position: relative !important;
