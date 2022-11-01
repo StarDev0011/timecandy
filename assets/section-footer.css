@@ -626,3 +626,19 @@ noscript .localization-selector.link {
     font-size: 12px;
   }
 }
+
+#google-trusted-reviews {
+  float: left !important;
+  max-height: 32px;
+  max-width: 96px !important;
+  overflow: hidden;
+  position: relative !important;
+  width: 100% !important;
+  z-index: 1 !important;
+}
+
+#google-trusted-reviews > iframe {
+    position: relative !important;
+    top: inherit !important;
+    width: 100% !important;
+}
