@@ -633,9 +633,7 @@ noscript .localization-selector.link {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-}
-.icon-reviews ul {
-  margin-bottom: 20px;
+  row-gap: 20px;
 }
 
 #google-trusted-reviews {
