@@ -634,6 +634,9 @@ noscript .localization-selector.link {
   flex-wrap: wrap;
   align-items: center;
 }
+.icon-reviews ul {
+  margin-bottom: 20px;
+}
 
 #google-trusted-reviews {
   float: left !important;
