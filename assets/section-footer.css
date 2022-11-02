@@ -629,6 +629,11 @@ noscript .localization-selector.link {
     font-size: 12px;
   }
 }
+.icons-reviews {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 #google-trusted-reviews {
   float: left !important;
