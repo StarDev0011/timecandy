@@ -127,6 +127,7 @@
   
   sidebarHeader.forEach(function(item) {
     item.onclick = function(e) {
+      e.preventDefault();
       this.parentElement.classList.toggle('active');
       document.querySelectorAll('.sidebar-filter__inner').forEach((a) => a.setAttribute('aria-expanded', 'false'));
       if (this.parentElement.classList.contains('active')) {
