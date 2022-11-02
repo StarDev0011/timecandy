@@ -151,6 +151,9 @@
 .footer-block__subscrible{
   color: #fff;
 }
+.footer .list-social__link path {
+  fill: #fff;
+}
 .footer-block__heading {
   color: #fff;
   margin-bottom: 14px;
