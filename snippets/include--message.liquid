@@ -79,4 +79,24 @@
 		e.preventDefault();
 		document.querySelector('.modal-error').style.display = 'none';
 	}
+
+    var mydate = document.getElementById('trip-start-1'),
+        mydateError = document.getElementById('confirmDate');
+
+    mydate.addEventListener('input', function() {
+        if (!mydate.value.match(/\d{1,2}\/\d{1,2}\/\d{4}/)) {
+            mydateError.innerHTML = 'Please specify a valid date in the form 01/01/2022';
+            mydateError.style.display = 'inherit';
+        } else {
+            var value = new Date(mydate.value),
+                min = new Date(mydate.min),
+                max = new Date(mydate.max);
+            if (value < min || value > max) {
+                mydateError.innerHTML = 'Delayed Delivery Date must be between ' + min.toDateString() + ' and ' + max.toDateString();
+                mydateError.style.display = 'inherit';
+            } else {
+                mydateError.style.display = 'none';
+            }
+        }
+    });	
 </script>
