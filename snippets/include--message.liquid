@@ -58,11 +58,11 @@
 				-%}
 				<input aria-label="desired arrival date" type="date" class="modal-cart-gift__date" id="trip-start-1" name="trip-start" value="{% if cart.attributes['Delayed Shipping Date'] != nil %}{{- cart.attributes['Delayed Shipping Date'] -}}{% else %}{{ year }}-{{ month }}-{{ day }}{% endif %}" min="{{ year }}-{{ month }}-{{ day }}" max="{{ endYear }}-{{ endMonth }}-{{ endDay }}">
 
-				<button class="modal-cart-gift__btn js-attr-date button">
+				<button id="saveDate" class="modal-cart-gift__btn js-attr-date button">
 					<span class="modal-cart-gift__btn-text">Confirm date</span>
 					<div class="modal-cart-gift__btn-icon"></div>
 				</button>
-				<div id="confirmDate" class="clipped visually-hidden" aria-live="polite" aria-atomic="true"></div>
+				<div id="confirmDate" style="margin-top:10px;line-height:1.25;max-width:300px;" class="clipped visually-hidden" aria-live="polite" aria-atomic="true"></div>
 			</div>
 		</div>
   </div>
@@ -81,13 +81,15 @@
 	}
 
     var mydate = document.getElementById('trip-start-1'),
-        mydateError = document.getElementById('confirmDate');
+        mydateError = document.getElementById('confirmDate'),
+		saveDate = document.getElementById('saveDate');
 
     mydate.addEventListener('input', function() {
         if (!mydate.value.match(/\d{4}-\d{1,2}-\d{1,2}/)) {
             mydateError.innerHTML = 'Please specify a valid date';
             mydateError.style.display = 'block';
 			mydateError.classList.remove("clipped", "visually-hidden");
+			saveDate.disabled = true;
         } else {
             var value = new Date(mydate.value),
                 min = new Date(mydate.min),
@@ -96,9 +98,11 @@
                 mydateError.innerHTML = 'Delayed Delivery Date must be between ' + min.toDateString() + ' and ' + max.toDateString();
                 mydateError.style.display = 'block';
 				mydateError.classList.remove("clipped", "visually-hidden");
+				saveDate.disabled = true;
             } else {
                 mydateError.style.display = 'none';
 				mydateError.classList.add("clipped", "visually-hidden");
+				saveDate.disabled = false;
             }
         }
     });	
