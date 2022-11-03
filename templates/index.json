@@ -336,12 +336,12 @@
         "testimonial3": {
           "type": "select",
           "settings": {
-            "product": "good-plenty-box",
-            "button_label": "Shop good and plenty",
-            "content_review": "<p>When I was a kid we always got Good and Plenty when we went to the movies. My sister would only eat the pink ones, even though I kept telling her they tasted the same as the white ones. Just seeing them today reminds me of my little sister and the sweet taste of black licorice.<\/p>",
-            "reviewer": "Juanita",
+            "product": "satellite-wafers-bag",
+            "button_label": "Shop Satellite Wafers",
+            "content_review": "<p>Lived only a block away from the penny candy store back in the 60's. Some of my favorites were the Black Licorice Records and Flying Saucers. Also, brought home Turkish Taffy to put into the freezer for later. We indulged in Candy Cigarettes and that Bubble Gum Cigar so we would feel older. By the way, those products didn't cause me to smoke real cigarettes, ever ! Over the years I've kept an eye out for that mint called Sen Sen...so hard to find...my grandparents had a tin in their pantry. Those were the days.<\/p>",
+            "reviewer": "Paula",
             "state": "Kentucky",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/juanita-from-kentucky"
+            "link_readmore": "https:\/\/www.oldtimecandy.com\/blogs\/candy-memories\/paulas-candy-memory-2"
           }
         }
       },
