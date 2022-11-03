@@ -17,7 +17,7 @@
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
-            "color_scheme": "#FFFFFF",
+            "color_scheme": "#ffffff",
             "bg_container_scheme": "#fae1c2",
             "text_alignment_mobile": "left"
           }
@@ -314,12 +314,12 @@
         "testimonial1": {
           "type": "select",
           "settings": {
-            "product": "candy-buttons-on-paper-tape",
-            "button_label": "Shop candy buttons",
-            "content_review": "<p>When my 2 sisters and I were young, back in the late 50’s, our Dad would take us to the neighborhood playground. When we were playing in the sandbox, Dad would toss coins into the sand when we weren’t looking. We really thought we were finding lost treasure!<\/p>",
-            "reviewer": "Brian",
-            "state": "Maryland",
-            "link_readmore": "shopify:\/\/blogs\/candy-memories\/brian-from-maryland"
+            "product": "mallo-cups-pack",
+            "button_label": "Shop Mallo Cups",
+            "content_review": "<p>My favorite candy memory was buying Mallo Cups and the anticipation of opening the wrapper to see the collectible play money ticket inside. You could collect five dollars worth and send them into the company, and they would send you free candy. Iremember one time screaming and crying with delight and my parents asked me what was wrong. I said “I got a Mallo Cup Dollar, I got a Mallo Cup Dollar!” The dollar tokens were super rare and it was a special event to get one. I kept my Mallo Cups in the freezer along with my Zero candy bars. Yum !!<\/p>",
+            "reviewer": "Scott",
+            "state": "Ohio",
+            "link_readmore": "https:\/\/www.oldtimecandy.com\/blogs\/candy-memories\/scotts-candy-memory"
           }
         },
         "testimonial2": {
