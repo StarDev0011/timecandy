@@ -85,7 +85,7 @@
 
     mydate.addEventListener('input', function() {
         if (!mydate.value.match(/\d{4}-\d{1,2}-\d{1,2}/)) {
-            mydateError.innerHTML = 'Please specify a valid date in the form MM/DD/YYYY';
+            mydateError.innerHTML = 'Please specify a valid date';
             mydateError.style.display = 'block';
         } else {
             var value = new Date(mydate.value),
