@@ -87,6 +87,7 @@
         if (!mydate.value.match(/\d{4}-\d{1,2}-\d{1,2}/)) {
             mydateError.innerHTML = 'Please specify a valid date';
             mydateError.style.display = 'block';
+			mydateError.classList.remove("clipped", "visually-hidden");
         } else {
             var value = new Date(mydate.value),
                 min = new Date(mydate.min),
@@ -94,8 +95,10 @@
             if (value < min || value > max) {
                 mydateError.innerHTML = 'Delayed Delivery Date must be between ' + min.toDateString() + ' and ' + max.toDateString();
                 mydateError.style.display = 'block';
+				mydateError.classList.remove("clipped", "visually-hidden");
             } else {
                 mydateError.style.display = 'none';
+				mydateError.classList.add("clipped", "visually-hidden");
             }
         }
     });	
