@@ -816,7 +816,6 @@ class VariantSelects extends HTMLElement {
     this.updateMasterId();
     //this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
-    this.updateCardImage();
     // this.removeErrorMessage();
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -826,6 +825,7 @@ class VariantSelects extends HTMLElement {
         this.updateMedia();
         this.updateURL();
       } 
+      this.updateCardImage();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
