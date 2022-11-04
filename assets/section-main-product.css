@@ -2292,10 +2292,10 @@ div.rc_block__type {
 }
 
 .product-rose-color__title {
-  width: 32%;
-  font-size: 16px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
   color: var(--color-text);
-  padding-right: 10px;
 }
 
 .product-detail .product-form__option-other {
