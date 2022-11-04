@@ -87,6 +87,14 @@
           </div>
           <div class="sidebar__content">
             {{ content_for_order_summary }}
+            {% if order.attributes != blank %}
+            <p><strong>Order attributes</strong></p>
+            <ul>
+              {% for attribute in order.attributes -%}
+                <li><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</li>
+              {%- endfor %}
+            </ul>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -109,7 +117,7 @@
     {% include 'checkout-input-validation.js', enable: true %}
     <script>
       debugger;
-      
+
     </script>
   </body>
 </html>
