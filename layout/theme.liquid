@@ -12,8 +12,13 @@
     </script>
   
     <script type="text/javascript">
-    if (window.location.hostname == "oldstimecandy.com") {
-      window.location.replace("https://oldtimecandy.myshopify.com/"); }
+      if (window.location.hostname.replaceAll('.','') !== "wwwoldtimecandy") { // remove all dots from your domain name here
+        if (window.location.hostname == "{{ shop.permanent_domain }}") {
+          console.log("{{ shop.permanent_domain }}");
+        } else {
+          window.location.replace('https://oldtimecandy.myshopify.com');
+        }
+      };      
     </script>    
     {%- comment -%}smartseo_integration_begin{%- endcomment -%}{% include 'smartseo' %}{%- comment -%}smartseo_integration_end{%- endcomment -%}
     <meta charset="utf-8">
