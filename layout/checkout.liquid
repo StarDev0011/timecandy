@@ -86,15 +86,17 @@
             {{ content_for_logo }}
           </div>
           <div class="sidebar__content">
-            {{ content_for_order_summary }}
             {% if checkout.attributes != blank %}
-            <p><strong>Order attributes</strong></p>
-            <ul>
-              {% for attribute in checkout.attributes -%}
-                <li><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</li>
-              {%- endfor %}
-            </ul>
-            {% endif %}
+              <div id="order-attributes">
+                <h2><strong>Order Details</strong></h2>
+                <ul>
+                  {% for attribute in checkout.attributes -%}
+                    <li><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</li>
+                  {%- endfor %}
+                </ul>
+              </div>
+              {% endif %}            
+            {{ content_for_order_summary }}
           </div>
         </div>
       </div>
@@ -116,8 +118,10 @@
     {% comment %} Shopify Modifications to Reject PO Boxes {% endcomment %}
     {% include 'checkout-input-validation.js', enable: true %}
     <script>
-      debugger;
-
+      const parent = document.querySelectorAll('.order-summary__sections')[0];
+      const child = document.getElementById('order-attributes');
+      
+      parent.appendChild(child);
     </script>
   </body>
 </html>
