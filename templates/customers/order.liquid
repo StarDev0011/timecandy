@@ -40,11 +40,9 @@
               <tr>
                 <td colspan="3">
                   <h2>Order Attributes</h2>
-                  <ul>
-                    {% for attribute in order.attributes -%}
-                      <li><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</li>
-                    {%- endfor %}
-                  </ul>                  
+                  {% for attribute in order.attributes -%}
+                    <p><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</p>
+                  {%- endfor %}
               </tr>
               {% endif %}
               <tr role="row">
