@@ -1325,6 +1325,11 @@ fieldset.product-form__input .form__label {
   display: flex;
   flex-wrap: wrap;
 }
+.product-bouquet-selects .product-form__input .product-form__swatch-size {
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: stretch;
+}
 
 .product-detail .product-form__input .product-form__swatch-size label {
   margin-top: 0;
@@ -1337,6 +1342,11 @@ fieldset.product-form__input .form__label {
   border: 1px solid #ccc;
   color: var(--color-header);
   margin-bottom: 0;
+}
+.product-bouquet-selects .product-form__input .product-form__swatch-size label {
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 1 1 14.285714286%;
 }
 
 .product-detail
