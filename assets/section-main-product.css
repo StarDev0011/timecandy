@@ -2297,6 +2297,9 @@ div.rc_block__type {
   text-align: center;
   color: var(--color-text);
 }
+.product-rose-color__quantity {
+  margin: 0 auto;
+}
 
 .product-detail .product-form__option-other {
   max-width: calc(100% - 44px);
