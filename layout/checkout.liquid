@@ -87,10 +87,10 @@
           </div>
           <div class="sidebar__content">
             {{ content_for_order_summary }}
-            {% if order.attributes != blank %}
+            {% if cart.attributes != blank %}
             <p><strong>Order attributes</strong></p>
             <ul>
-              {% for attribute in order.attributes -%}
+              {% for attribute in cart.attributes -%}
                 <li><strong>{{ attribute.first }}:</strong> {{ attribute.last }}</li>
               {%- endfor %}
             </ul>
