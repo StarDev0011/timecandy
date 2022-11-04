@@ -2237,6 +2237,8 @@ div.rc_block__type {
 
 .product-rose-color {
   margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-rose-color .quantity {
@@ -2266,6 +2268,8 @@ div.rc_block__type {
 
 .product-rose-color-option {
   display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 25%;
   align-items: center;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -2276,14 +2280,15 @@ div.rc_block__type {
 }
 
 .product-rose-color__label {
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 10px;
+  line-height: 14px;
   font-family: var(--my-font);
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-link-text);
   display: block;
   margin-bottom: 20px;
+  flex: 1 0 100%;
 }
 
 .product-rose-color__title {
