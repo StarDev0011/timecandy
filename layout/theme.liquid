@@ -16,7 +16,7 @@
         if (window.location.hostname == "{{ shop.permanent_domain }}") {
           console.log("{{ shop.permanent_domain }}");
         } else {
-          window.location.replace('https://oldtimecandy.myshopify.com');
+          window.location.replace('https://{{ shop.permanent_domain }}');
         }
       };      
     </script>    
