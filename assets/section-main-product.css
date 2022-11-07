@@ -2272,6 +2272,8 @@ div.rc_block__type {
   flex: 1 1 25%;
   align-items: center;
   margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
   padding-bottom: 10px;
 }
 
@@ -2289,6 +2291,7 @@ div.rc_block__type {
   display: block;
   margin-bottom: 20px;
   flex: 1 0 100%;
+
 }
 .product-rose-image {
   flex: 1 0 100%;
@@ -2298,7 +2301,7 @@ div.rc_block__type {
   background-color: #fff;
   width: 100px;
   height: 50px;
-  border-radius: 25%;
+  border-radius: 10px;
   margin: 0 auto;
   overflow: hidden;
 }
