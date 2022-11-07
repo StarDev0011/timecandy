@@ -706,10 +706,10 @@
           if (newCount < sum) {
             var overage = sum - newCount;
             for (let i = 0; i < overage; i++) {
-              qtyInput.forEach(function(qty, i) {
+              qtyInput.every(qty => {
                 if (qty.value && qty.value >= overage) {
                   qty.value = qty.value - overage;
-                  break;  
+                  return false;  
                 }
               });
               break;                  
