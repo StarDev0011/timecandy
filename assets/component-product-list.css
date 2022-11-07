@@ -221,6 +221,7 @@ img {
   width: 100%;
   max-width: 100%;
   max-width: 488px;
+  margin: 0 auto;
 }
 
 .section-featured-product .product__media {
