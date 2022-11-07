@@ -676,6 +676,14 @@
     const qtyInput = document.querySelectorAll('.product-rose-color .qty-input');
     const all_count = 12;
     const selected = document.querySelector('.product-rose-bouquet .product-detail-selects');
+    const selectedInputs = selected.querySelectorAll('input');
+
+    selectedInputs.forEach(function(input) {
+      input.onchange = (e) => {
+        debugger;
+      };
+    });
+
     btnQty.forEach(function(btn) {
       btn.onclick = (e) => {
         e.preventDefault();
