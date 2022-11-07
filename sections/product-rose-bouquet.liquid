@@ -696,7 +696,7 @@
         }
 
         let sum = 0;
-        let totalQty = parseInt(selected.find('input:checked').value);
+        let totalQty = parseInt(selected.querySelector('input:checked').value);
         qtyInput.forEach(function(item) {
           let value = parseInt(item.value);
           if(item.value == '' ) return;
