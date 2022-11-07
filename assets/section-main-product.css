@@ -2296,9 +2296,9 @@ div.rc_block__type {
 }
 .product-rose-image-wrap {
   background-color: #fff;
-  width: 50px;
+  width: 100px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 25%;
   margin: 0 auto;
   overflow: hidden;
 }
