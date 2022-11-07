@@ -409,7 +409,9 @@
                         {%- assign roseColor = product.title | split: 'Chocolate Rose -' | last | strip -%}
                           <div class="product-rose-color-option">
                             <div class="product-rose-image">
-                              <img loading="lazy" src="{{ product.featured_image | image_url: width: 100, height: 100 }}" width="100" height="100" alt="{{ product.title }}">
+                              <div class="product-rose-image-wrap">
+                                <img loading="lazy" src="{{ product.featured_image | image_url: width: 100, height: 100 }}" width="100" height="100" alt="{{ product.title }}">
+                              </div>
                             </div>
                             <div class="product-rose-color__title">{{ roseColor }}</div>
 
