@@ -684,8 +684,29 @@
     selectedInputs.forEach(function(input) {
       input.onchange = (e) => {
         newCount = e.target.value;
+
+        let sum = 0;
+        qtyInput.forEach(function(item) {
+          let value = parseInt(item.value);
+          if(item.value == '' ) return;
+          sum += value
+        });
+
+        if (newCount > sum) {
+          const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
+          btnPlus.forEach(function(btn, i) {
+            btnPlus[i].removeAttribute('disabled');
+          });
+        } else if (newCount <= sum) {
+          const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
+          btnPlus.forEach(function(btn, i) {
+            btnPlus[i].setAttribute('disabled', true);
+          });          
+        }
       };
     });
+
+
 
     btnQty.forEach(function(btn) {
       btn.onclick = (e) => {

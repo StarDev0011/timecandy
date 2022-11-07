@@ -2274,7 +2274,7 @@ div.rc_block__type {
 .product-rose-color-option {
   display: flex;
   flex-wrap: wrap;
-  flex: 1 1 25%;
+  flex: 1 1 calc(25% - 4px);
   align-items: center;
   margin-bottom: 10px;
   margin-left: 2px;
