@@ -706,7 +706,8 @@
           if (newCount < sum) {
             var overage = sum - newCount;
             for (let i = 0; i < overage; i++) {
-              qtyInput.every(qty => {
+              const qtyArray = [...qtyInput];
+              qtyArray.every(qty => {
                 if (qty.value && qty.value >= overage) {
                   qty.value = qty.value - overage;
                   return false;  
