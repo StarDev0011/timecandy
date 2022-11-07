@@ -272,14 +272,14 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
-              <variant-radios class="no-js-hidden product-detail__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+              <variant-radios class="no-js-hidden product-detail__variants " data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                 {% for option in product.options_with_values %}
                   {% assign optionName = option.name | downcase %}
                   {% assign is_size = false %}
                   {% if optionName == 'number of roses' %}
                     {% assign is_size = true %}
                   {% endif %}
-                    <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size{% else %} product-form__option-other{% endif %}">
+                    <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size product-form__option-roses{% else %} product-form__option-other{% endif %}">
                       <label for="option-{{ option.name }}-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
                       <div class="js-select">
                         {% unless is_size %}
