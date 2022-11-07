@@ -701,7 +701,20 @@
           const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
           btnPlus.forEach(function(btn, i) {
             btnPlus[i].setAttribute('disabled', true);
-          });          
+          });
+          
+          if (newCount < sum) {
+            var overage = sum - newCount;
+            for (let i = 0; i < overage; i++) {
+              qtyInput.forEach(function(qty, i) {
+                if (qty.value && qty.value >= overage) {
+                  qty.value = qty.value - overage;
+                  break;  
+                }
+              });
+              break;                  
+            }            
+          }
         }
       };
     });
