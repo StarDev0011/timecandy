@@ -2305,9 +2305,6 @@ div.rc_block__type {
 .product-rose-image-wrap img {
   display: block;
   margin: 0 auto;
-  position: relative;
-  top: 2px;
-  left: 10px;
 }
 
 .product-rose-color__title {
