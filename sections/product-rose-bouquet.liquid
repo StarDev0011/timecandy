@@ -707,12 +707,12 @@
             var overage = sum - newCount;
             for (let i = 0; i < overage; i++) {
               const qtyArray = [...qtyInput];
-              qtyArray.every(qty => {
-                if (qty.value && qty.value >= overage) {
-                  qty.value = qty.value - overage;
+              for (j=0; j < qtyArray.length; j++) {
+                if (qtyArray[j].value && qtyArray[j].value >= overage) {
+                  qtyArray[j].value = qtyArray[j].value - overage;
                   return false;  
-                }
-              });
+                }              
+              }
               break;                  
             }            
           }
