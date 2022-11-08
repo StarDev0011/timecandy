@@ -656,10 +656,12 @@
           sum += value
         });
 
-        for(var i=0; i<selected.options.length; i++) {
-          if ( selected.options[i].text == sum ) {
-            selected.selectedIndex = i;
-            break;
+        if (sum >=6 && sum <= 12) {
+          for(var i=0; i<selected.options.length; i++) {
+            if ( selected.options[i].text == sum ) {
+              selected.selectedIndex = i;
+              break;
+            }
           }
         }
 
