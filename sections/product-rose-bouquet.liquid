@@ -294,24 +294,6 @@
                     </div>
                   </div>
                 {%- endfor -%}
-                <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-                  <label class="form__label" for="Quantity-{{ section.id }}">
-                    {{ 'products.product.quantity.label' | t }}
-                  </label>
-                  <div class="select">
-                    <select id="Quantity-{{ section.id }}"
-                      class="select__select"
-                      type="number"
-                      name="quantity"
-                      form="{{ product_form_id }}"
-                    >
-                      {%- for i in (1..10) -%}
-                        <option> {{ i }} </option>
-                      {%- endfor -%}
-                    </select>
-                    {% render 'icon-caret' %}
-                  </div>
-                </div>
                 <script type="application/json">
                   {{ product.variants | json }}
                 </script>
