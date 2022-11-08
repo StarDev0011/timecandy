@@ -660,6 +660,7 @@
           for(var i=0; i<selected.options.length; i++) {
             if ( parseInt(selected.options[i].text) == sum ) {
               selected.selectedIndex = i;
+              selected.dispatchEvent(new Event('change'));
               break;
             }
           }
