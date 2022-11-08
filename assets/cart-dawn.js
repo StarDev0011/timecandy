@@ -179,6 +179,7 @@ CartDawn = {
       const personalizedMessage = document.querySelector('#personalized-message');
       let currentDecadeValue = document.querySelector('input[name="properties[Decade]"]');
       let decadeOption = document.querySelector('input[name="decade-input"]:checked');
+      let roseOptions = document.querySelectorAll('.product-rose-color .qty-input');
 
       if (decadeOption) {
         if (currentDecadeValue) {
@@ -186,6 +187,15 @@ CartDawn = {
         } else {
           $(this).parents('form').append(`<input type="hidden" name="properties[Decade]" value="${decadeOption.value}">`);
         }
+      }
+      if (roseOptions) {
+        debugger;
+        roseOptions.forEach(function(option) {
+          if (!option.value) {
+            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').remove();
+            option.remove();
+          }
+        });
       }
       if (personalizedMessage) {
         if (personalizedMessage.value.length == '') {
