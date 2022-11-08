@@ -631,6 +631,7 @@
     btnQty.forEach(function(btn) {
       btn.onclick = (e) => {
         e.preventDefault();
+        debugger;
         let type = btn.getAttribute('name');
         switch (type) {
           case 'plus':
