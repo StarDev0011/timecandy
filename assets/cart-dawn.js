@@ -190,7 +190,7 @@ CartDawn = {
       }
       if (roseOptions) {
         roseOptions.forEach(function(option) {
-          if (!option.value) {
+          if (!option.value > 0) {
             option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').readOnly = true;
             option.readOnly = true;
           }
