@@ -1325,6 +1325,11 @@ fieldset.product-form__input .form__label {
   display: flex;
   flex-wrap: wrap;
 }
+.product-bouquet-selects .product-form__input .product-form__swatch-size {
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: stretch;
+}
 
 .product-detail .product-form__input .product-form__swatch-size label {
   margin-top: 0;
@@ -1337,6 +1342,11 @@ fieldset.product-form__input .form__label {
   border: 1px solid #ccc;
   color: var(--color-header);
   margin-bottom: 0;
+}
+.product-bouquet-selects .product-form__input .product-form__swatch-size label {
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 1 1 14.285714286%;
 }
 
 .product-detail
@@ -1829,6 +1839,7 @@ div.rc_block__type {
   left: 0;
   right: 0;
   margin: auto;
+  cursor: pointer;
 }
 
 .product-detail .product-thumbnails {
@@ -2210,6 +2221,11 @@ div.rc_block__type {
   max-width: 100%;
 }
 
+.product-rose-bouquet.product-detail .product-form__input .product-form__swatch-size label {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .product-detail-selects .select .icon-caret {
   height: 8px;
 }
@@ -2226,6 +2242,8 @@ div.rc_block__type {
 
 .product-rose-color {
   margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-rose-color .quantity {
@@ -2255,8 +2273,12 @@ div.rc_block__type {
 
 .product-rose-color-option {
   display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 calc(25% - 4px);
   align-items: center;
   margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
   padding-bottom: 10px;
 }
 
@@ -2265,21 +2287,42 @@ div.rc_block__type {
 }
 
 .product-rose-color__label {
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 10px;
+  line-height: 14px;
   font-family: var(--my-font);
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-link-text);
   display: block;
   margin-bottom: 20px;
+  flex: 1 0 100%;
+
+}
+.product-rose-image {
+  flex: 1 0 100%;
+  align-items: center;
+}
+.product-rose-image-wrap {
+  background-color: #fff;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.product-rose-image-wrap img {
+  display: block;
+  margin: 0 auto;
 }
 
 .product-rose-color__title {
-  width: 32%;
-  font-size: 16px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
   color: var(--color-text);
-  padding-right: 10px;
+}
+.product-rose-color__quantity {
+  margin: 0 auto;
 }
 
 .product-detail .product-form__option-other {

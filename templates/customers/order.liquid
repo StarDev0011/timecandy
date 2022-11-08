@@ -36,6 +36,17 @@
                   {%- endif -%}
                 </td>
               </tr>
+              {% if order.attributes != blank %}
+              <tr>
+                <td colspan="3">
+                  <h2>Order Details</h2>
+                  <p>
+                  {% for attribute in order.attributes -%}
+                    <strong>{{ attribute.first }}:</strong> {{ attribute.last }}<br />
+                  {%- endfor %}
+                  </p>
+              </tr>
+              {% endif %}
               <tr role="row">
                 <th id="ColumnProduct" scope="col" role="columnheader">{{ 'customer.order.product' | t }}</th>
                 <th id="ColumnQuantity" scope="col" role="columnheader">{{ 'customer.order.quantity' | t }}</th>

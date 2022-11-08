@@ -272,36 +272,54 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
-                {%- assign variantCount = product.options_with_values | size -%}
-                <variant-selects class="no-js-hidden product-detail-selects" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-                  {%- for option in product.options_with_values -%}
-                    <div class="product-form__input product-form__input--dropdown">
-                      <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                        Choose a {{ option.name }} <span style="color: #AC1229"> *</span>
-                      </label>
-                      <div class="select">
-                        <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                          class="select__select product-detail__select"
-                          name="options[{{ option.name | escape }}]"
-                          form="{{ product_form_id }}"
-                        >
+              <variant-radios class="no-js-hidden product-detail__variants " data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                {% for option in product.options_with_values %}
+                  {% assign optionName = option.name | downcase %}
+                  {% assign is_size = false %}
+                  {% if optionName == 'number of roses' %}
+                    {% assign is_size = true %}
+                  {% endif %}
+                    <fieldset class="js product-form__input{% if optionName == 'decade' %} product-detail__swatch-order{% elsif is_size %} product-form__option-size product-form__option-roses{% else %} product-form__option-other{% endif %}">
+                      <label for="option-{{ option.name }}-{{ product.id }}" class="form__label">Choose a {{ option.name }}<span style="color: #AC1229"> *</span></label>
+                      <div class="js-select">
+                        {% unless is_size %}
+                        {% capture currentValueIndex %}{%- for value in option.values -%}{% if option.selected_value == value %}{{forloop.index0}}{% endif %}{%- endfor -%}{% endcapture %}
+                          <div class="product-swatch__label product-swatch__selected" tabindex="0" aria-expanded="false" 
+                            aria-labelledby="product-form__swatch-dropdown"
+                            role="combobox" id="variant-{{ option.position }}-{{ currentValueIndex }}">
+                            <label for="option" class="js-option-label"></label>
+                            <span class="dropdown-arrow">
+                              {% render 'icon-caret' %}
+                            </span>
+                          </div>
+                        {% endunless %}
+                        <div id="option-{{ option.name }}-{{ product.id }}" role="listbox" aria-labelledby="product-form__swatch-dropdown" class="product-form__swatch-list {% if is_size %}product-form__swatch-size{% else %} product-form__swatch-dropdown{% endif %}" tabindex="-1">
                           {%- for value in option.values -%}
-                            <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-                              {{ value }}
-                            </option>
+                            <input style="opacity:0" tabindex="-1" type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                                  name="{{ option.name }}"
+                                  value="{{ value | escape }}"
+                                  form="{{ product_form_id }}"
+                                  {% unless is_size %} class="js-variant-input" {% endunless %}
+                                  {% if option.selected_value == value %}checked{% endif %}
+                            >
+                            <label id="variant-{{ option.position }}-{{ forloop.index0 }}" tabindex="0" class="js-variant-item {% if is_size %}js-variant-item_size{% endif %} {% if option.selected_value == value %}js-variant-active{% endif %}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                              {% assign value_d = value | downcase %}
+                              {% if value_d contains 'decade gift box' %}
+                                {{ value_d | split: 'decade gift box' }}
+                              {% else %}
+                                {{ value }}
+                              {% endif %}
+                            </label>
                           {%- endfor -%}
-                        </select>
-                        <span class="dropdown-arrow">
-                          {% render 'icon-caret' %}
-                        </span>
-                      </div>
-                    </div>
-                  {%- endfor -%}
+                        </div>
 
-                  <script type="application/json">
-                    {{ product.variants | json }}
-                  </script>
-                </variant-selects>
+                      </div>
+                    </fieldset>
+                {% endfor %}
+                <script type="application/json">
+                  {{ product.variants | json }}
+                </script>
+              </variant-radios>
             {%- endunless -%}
 
             <noscript class="product-form__noscript-wrapper-{{ section.id }}">
@@ -393,6 +411,11 @@
                       {% unless title contains 'case' or title contains 'bouquet' %}
                         {%- assign roseColor = product.title | split: 'Chocolate Rose -' | last | strip -%}
                           <div class="product-rose-color-option">
+                            <div class="product-rose-image">
+                              <div class="product-rose-image-wrap">
+                                <img loading="lazy" src="{{ product.featured_image | image_url: width: 200, height: 100, crop: 'top' }}" width="100" height="50" alt="{{ product.title }}">
+                              </div>
+                            </div>
                             <div class="product-rose-color__title">{{ roseColor }}</div>
 
                             <div class="product-rose-color__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
@@ -655,28 +678,71 @@
     const btnQty = document.querySelectorAll('.qty-btn');
     const qtyInput = document.querySelectorAll('.product-rose-color .qty-input');
     const all_count = 12;
-    const selected = document.querySelector('.product-rose-bouquet .product-detail__select');
+    const selected = document.querySelector('.product-rose-bouquet .product-detail__variants');
+    const selectedInputs = selected.querySelectorAll('input');
+
+    selectedInputs.forEach(function(input) {
+      input.onchange = (e) => {
+        newCount = e.target.value;
+
+        let sum = 0;
+        qtyInput.forEach(function(item) {
+          let value = parseInt(item.value);
+          if(item.value == '' ) return;
+          sum += value
+        });
+
+        if (newCount > sum) {
+          const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
+          btnPlus.forEach(function(btn, i) {
+            btnPlus[i].removeAttribute('disabled');
+          });
+        } else if (newCount <= sum) {
+          const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
+          btnPlus.forEach(function(btn, i) {
+            btnPlus[i].setAttribute('disabled', true);
+          });
+          
+          if (newCount < sum) {
+            var overage = sum - newCount;
+            for (let i = 0; i < overage; i++) {
+              const qtyArray = [...qtyInput];
+              for (j=0; j < qtyArray.length; j++) {
+                if (qtyArray[j].value && qtyArray[j].value >= overage) {
+                  qtyArray[j].value = qtyArray[j].value - overage;
+                  return false;  
+                }              
+              }
+              break;                  
+            }            
+          }
+        }
+      };
+    });
+
+
+
     btnQty.forEach(function(btn) {
       btn.onclick = (e) => {
         e.preventDefault();
         let type = btn.getAttribute('name');
         switch (type) {
           case 'plus':
-            var adult_count = btn.previousElementSibling.value;
-            if (adult_count < all_count)
-            adult_count++;
-            btn.previousElementSibling.value = adult_count;
+            var total_count = btn.previousElementSibling.value;
+            if (total_count < all_count)
+            total_count++;
+            btn.previousElementSibling.value = total_count;
           break;
           case 'minus':
-            var adult_count = btn.nextElementSibling.value;
-            if (adult_count != 0)
-            adult_count--;
-            btn.nextElementSibling.value = adult_count;
+            var total_count = btn.nextElementSibling.value;
+            if (total_count != 0)
+            total_count--;
+            btn.nextElementSibling.value = total_count;
             break;
         }
 
         let sum = 0;
-        let totalQty = parseInt(selected.value);
+        let totalQty = parseInt(selected.querySelector('input:checked').value);
         qtyInput.forEach(function(item) {
           let value = parseInt(item.value);
           if(item.value == '' ) return;
