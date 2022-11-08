@@ -189,11 +189,10 @@ CartDawn = {
         }
       }
       if (roseOptions) {
-        debugger;
         roseOptions.forEach(function(option) {
           if (!option.value) {
-            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').remove();
-            option.remove();
+            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').readOnly = true;
+            option.readOnly = true;
           }
         });
       }
