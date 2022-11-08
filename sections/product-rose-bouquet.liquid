@@ -272,23 +272,50 @@
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
             <div class="product-form__input hidden">
-              <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.product_variants' | t }}</label>
-              <div class="select">
-                <select name="id" id="Variants-{{ section.id }}" class="select__select" form="{{ product_form_id }}">
-                  {%- for variant in product.variants -%}
-                    <option
-                      {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-                      {% if variant.available == false %}disabled{% endif %}
-                      value="{{ variant.id }}"
+              <variant-selects class="no-js-hidden product-formv-varaint" data-section="{{ section.id }}" data-url="{{ product.url }}" data-update-url="false">
+                {%- for option in product.options_with_values -%}
+                  <div class="product-form__input product-form__input--dropdown{% if forloop.last %} product-form__input--last{% endif %}">
+                    <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+                    <div class="select">
+                      <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                        class="select__select"
+                        name="options[{{ option.name | escape }}]"
+                        form="{{ product_form_id }}"
+                      >
+                        {%- for value in option.values -%}
+                          <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                            {{ value }}
+                          </option>
+                        {%- endfor -%}
+                      </select>
+                      {% render 'icon-caret' %}
+                    </div>
+                  </div>
+                {%- endfor -%}
+                <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
+                  <label class="form__label" for="Quantity-{{ section.id }}">
+                    {{ 'products.product.quantity.label' | t }}
+                  </label>
+                  <div class="select">
+                    <select id="Quantity-{{ section.id }}"
+                      class="select__select"
+                      type="number"
+                      name="quantity"
+                      form="{{ product_form_id }}"
                     >
-                      {{ variant.title }}
-                      {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-                      - {{ variant.price | money | strip_html }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
+                      {%- for i in (1..10) -%}
+                        <option> {{ i }} </option>
+                      {%- endfor -%}
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                </div>
+                <script type="application/json">
+                  {{ product.variants | json }}
+                </script>
+              </variant-selects>
             </div>
           {%- when 'melting' -%}
               <style>
@@ -625,13 +652,12 @@
     const btnQty = document.querySelectorAll('.qty-btn');
     const qtyInput = document.querySelectorAll('.product-rose-color .qty-input');
     const all_count = 12;
-    const selected = document.querySelector('#Variants-{{ section.id }}');
+    const selected = document.querySelector('.product-formv-varaint select');
     const selectedOptions = selected.querySelectorAll('option');
 
     btnQty.forEach(function(btn) {
       btn.onclick = (e) => {
         e.preventDefault();
-        debugger;
         let type = btn.getAttribute('name');
         switch (type) {
           case 'plus':
