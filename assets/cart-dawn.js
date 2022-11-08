@@ -205,7 +205,6 @@ CartDawn = {
           CartDawn.doAjaxAddToCart(productItem, btn);
         }
       } else {
-        debugger;
         const productItem = $(this).parents('form');
         if (window.iceBrix) {
           await $.get('/cart.js', null, null, 'json').done(function (data) {
