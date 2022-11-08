@@ -218,6 +218,15 @@ CartDawn = {
           });
         }
         CartDawn.doAjaxAddToCart(productItem, btn);
+
+        if (roseOptions) {
+          roseOptions.forEach(function(option) {
+            if (!parseInt(option.value) > 0) {
+              option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').disabled = false;
+              option.disabled = false;
+            }
+          });
+        }        
       }
     });
   },
