@@ -205,17 +205,19 @@ CartDawn = {
           CartDawn.doAjaxAddToCart(productItem, btn);
         }
       } else {
+        debugger;
         const productItem = $(this).parents('form');
-
-        await $.get('/cart.js', null, null, 'json').done(function (data) {
-          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-            $('input[name="items[1]id"]').remove();
-            $('input[name="items[1]quantity"]').remove();
-          }
-          else if (btn.dataset.iceBrix === 'true' && window.iceBrix) {
-            productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
-          }
-        });
+        if (window.iceBrix) {
+          await $.get('/cart.js', null, null, 'json').done(function (data) {
+            if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+              $('input[name="items[1]id"]').remove();
+              $('input[name="items[1]quantity"]').remove();
+            }
+            else if (btn.dataset.iceBrix === 'true' && window.iceBrix) {
+              productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
+            }
+          });
+        }
         CartDawn.doAjaxAddToCart(productItem, btn);
       }
     });
