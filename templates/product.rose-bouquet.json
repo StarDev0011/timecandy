@@ -68,28 +68,11 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "chocolate_rose_collection": "build-your-chocolate-rose-bouquet"
+        "chocolate_rose_collection": "walk-the-candy-aisle-chocolate-roses"
       }
     },
     "16582417470d95b54d": {
       "type": "apps",
-      "blocks": {
-        "8d0afd11-5ce4-41a2-8cb9-50e96b2dbe29": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": true,
-            "sku_tagtype": "sku"
-          }
-        }
-      },
-      "block_order": [
-        "8d0afd11-5ce4-41a2-8cb9-50e96b2dbe29"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -153,7 +136,6 @@
         "title": "Candy memories",
         "desc": "Everyone has their own special memories involving candy we grew up eating. We are very excited to hear yours!",
         "btn": "share a memory",
-        "bg_image": "shopify:\/\/shop_images\/bg--candy-memory.webp",
         "padding_top": 90,
         "padding_bottom": 120
       }
