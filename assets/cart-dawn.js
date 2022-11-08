@@ -191,8 +191,8 @@ CartDawn = {
       if (roseOptions) {
         roseOptions.forEach(function(option) {
           if (!parseInt(option.value) > 0) {
-            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').readOnly = true;
-            option.readOnly = true;
+            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').disabled = true;
+            option.disabled = true;
           }
         });
       }
