@@ -271,16 +271,17 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
-            <div class="product-form__input hidden">
-              <variant-selects class="no-js-hidden product-formv-varaint" data-section="{{ section.id }}" data-url="{{ product.url }}" data-update-url="false">
+            {%- unless product.has_only_default_variant -%}
+              {%- assign variantCount = product.options_with_values | size -%}
+              <variant-selects class="hidden product-detail-selects" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                 {%- for option in product.options_with_values -%}
-                  <div class="product-form__input product-form__input--dropdown{% if forloop.last %} product-form__input--last{% endif %}">
+                  <div class="product-form__input product-form__input--dropdown">
                     <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                      {{ option.name }}
+                      Choose a {{ option.name }} <span style="color: #AC1229"> *</span>
                     </label>
                     <div class="select">
                       <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                        class="select__select"
+                        class="select__select product-detail__select"
                         name="options[{{ option.name | escape }}]"
                         form="{{ product_form_id }}"
                       >
@@ -290,15 +291,18 @@
                           </option>
                         {%- endfor -%}
                       </select>
-                      {% render 'icon-caret' %}
+                      <span class="dropdown-arrow">
+                        {% render 'icon-caret' %}
+                      </span>
                     </div>
                   </div>
                 {%- endfor -%}
+
                 <script type="application/json">
                   {{ product.variants | json }}
                 </script>
               </variant-selects>
-            </div>
+          {%- endunless -%}
           {%- when 'melting' -%}
               <style>
                 .product-melting{
@@ -634,7 +638,7 @@
     const btnQty = document.querySelectorAll('.qty-btn');
     const qtyInput = document.querySelectorAll('.product-rose-color .qty-input');
     const all_count = 12;
-    const selected = document.querySelector('.product-formv-varaint select');
+    const selected = document.querySelector('.product-detail-selects select');
     const selectedOptions = selected.querySelectorAll('option');
 
     btnQty.forEach(function(btn) {
