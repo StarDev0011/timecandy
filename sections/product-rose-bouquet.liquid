@@ -440,7 +440,7 @@
                                 </button>
                               </div>
                             </div>
-                            <input id="rose-sku" class="product-form__roses-hidden-sku hidden" type="text" name="properties[_{{ roseColor | downcase }}-sku]" value="{{ product.variants.first.sku }}b">
+                            <input id="rose-sku" class="product-form__roses-hidden-sku hidden" type="text" name="properties[_{{ roseColor | downcase }}-sku]" value="{{ product.variants.first.sku }}">
                           </div>
                       {% endunless %}
                    {% endfor %}
