@@ -661,7 +661,6 @@
         }
 
         let sum = 0;
-        //let totalQty = parseInt(selected.querySelector('input:checked').value);
         qtyInput.forEach(function(item) {
           let value = parseInt(item.value);
           if(item.value == '' ) return;
@@ -672,7 +671,7 @@
           for(var i=0; i<selected.options.length; i++) {
             if ( parseInt(selected.options[i].text) == sum ) {
               selected.selectedIndex = i;
-              selected.dispatchEvent(new Event('change'));
+              selected.closest('.product-detail-selects').dispatchEvent(new Event('change'));
               break;
             }
           }
