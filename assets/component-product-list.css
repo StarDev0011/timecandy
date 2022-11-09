@@ -423,6 +423,7 @@ img {
   font-size: 26px;
   line-height: 1.25;
   text-align: center;
+  width: 100%;
 }
 
 @media (max-width: 460px) {
