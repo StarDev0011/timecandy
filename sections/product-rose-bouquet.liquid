@@ -678,7 +678,7 @@
           } 
         } else if (sum > 6) {
             document.querySelector('.product-form__submit').setAttribute('disabled', true);
-            document.querySelector('.product-form__submit').text('Minimum 6 Roses')
+            document.querySelector('.product-form__submit span').textContent('Minimum 6 Roses')
         }
 
         const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
