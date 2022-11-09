@@ -2417,6 +2417,7 @@ header-drawer {
 
 .header__icon--menu.link {
   color: rgb(var(--color-light-text));
+  outline: none;
 }
 
 .header__icon span {
