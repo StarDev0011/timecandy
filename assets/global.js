@@ -919,7 +919,7 @@ class VariantSelects extends HTMLElement {
       if(this.featuredImage) {
         this.featuredImage.setAttribute('src', baseImge);
         this.featuredImage.setAttribute('srcset', baseImge);
-        this.featuredImage.parentElement.parentElement.querySelector('.image-description').textContent = baseImge.alt;
+        this.featuredImage.parentElement.parentElement.querySelector('.image-description').textContent = this.currentVariant.featured_image.alt;
       }
 
       const section = this.closest('.card-product__item');
