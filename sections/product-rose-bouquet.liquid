@@ -668,9 +668,7 @@
         });
 
         if (sum >=6 && sum <= 12) {
-          if (document.querySelector('.product-form__submit').getAttribute('disabled')) {
-            document.querySelector('.product-form__submit').setAttribute('disabled', false);
-          }
+          document.querySelector('.product-form__submit span').textContent('Add to Cart');
           for(var i=0; i<selected.options.length; i++) {
             if ( parseInt(selected.options[i].text) == sum ) {
               selected.selectedIndex = i;
@@ -679,7 +677,6 @@
             }
           } 
         } else if (sum < 6) {
-            document.querySelector('.product-form__submit').setAttribute('disabled', true);
             document.querySelector('.product-form__submit span').textContent('Minimum 6 Roses')
         }
 
