@@ -427,7 +427,7 @@ img {
 
 @media (max-width: 460px) {
   .card-product-overlay .card-product-label__item {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 @media (min-width: 461px) and (max-width: 660px) {
