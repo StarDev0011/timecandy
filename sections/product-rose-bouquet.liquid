@@ -668,7 +668,7 @@
         });
 
         if (sum >=6 && sum <= 12) {
-          document.querySelector('.product-form__submit span').textContent('Add to Cart');
+          document.querySelector('.product-form__submit span').textContent = 'Add to Cart';
           for(var i=0; i<selected.options.length; i++) {
             if ( parseInt(selected.options[i].text) == sum ) {
               selected.selectedIndex = i;
@@ -677,7 +677,7 @@
             }
           } 
         } else if (sum < 6) {
-            document.querySelector('.product-form__submit span').textContent('Minimum 6 Roses')
+            document.querySelector('.product-form__submit span').textContent = 'Minimum 6 Roses';
         }
 
         const btnPlus = document.querySelectorAll('.product-rose-color .qty-btn[name="plus"]');
