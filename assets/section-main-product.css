@@ -484,8 +484,13 @@ fieldset.product-form__input .form__label {
   margin-right: 0 !important;
   margin-bottom: 0 !important;
 }
+
 .product-detail .product-form__submit[disabled] {
   display: none;
+}
+
+.product-detail .product-form-roses.product-form__submit[disabled] {
+  display: block;
 }
 
 #sw_wishlist_label {

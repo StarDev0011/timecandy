@@ -308,7 +308,7 @@
         "type": "text",
         "id": "label_soldout",
         "label": "Sold out text",
-        "default": "Out of Stock"
+        "default": "Sold out"
       },
       {
         "type": "color",
