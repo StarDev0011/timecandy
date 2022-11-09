@@ -12,7 +12,9 @@
     </script>
   
     <script type="text/javascript">
-      if (window.location.hostname.replaceAll('.','') !== "wwwoldtimecandycom" && window.location.hostname.replaceAll('.','') !==  'old-time-developmentmyshopifycom') { 
+      if (window.location.hostname.replaceAll('.','') !== "wwwoldtimecandycom" && 
+          window.location.hostname.replaceAll('.','') !==  'old-time-developmentmyshopifycom' &&
+          window.location.hostname.replaceAll('.','') !==  'oldtimecandymyshopifycom') { 
         window.location.replace('https://www.oldtimecandy.com');
       };      
     </script>    
@@ -46,7 +48,7 @@
     {{ 'template-styles.min.css' | asset_url | stylesheet_tag }}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="defer"></script>
-<!--     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>     -->
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>    
     <script src="{{ 'readmore.js' | asset_url }}" defer="defer"></script>  
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script> 
 
