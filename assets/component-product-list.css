@@ -392,6 +392,11 @@ img {
   flex-direction: column;
   align-items: flex-start;
 }
+.card-product-label.card-product-overlay {
+  top: 0;
+  width: 100%;
+  background: rgba(31,112,138,.65);  
+}
 
 .card-product-label__item {
   font-weight: 300;
@@ -406,6 +411,11 @@ img {
   position: relative;
   margin-bottom: 8px;
   left: -2px;
+}
+
+.card-product-overlay .card-product-label__item {
+  left: 0;
+  border: none;
 }
 
 .card-product-label__great-gift {
