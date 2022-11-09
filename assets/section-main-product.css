@@ -2579,11 +2579,11 @@ div.rc_block__type {
     padding-top: 22.95%;
     flex-basis: 25%;
     /* margin-right: 4px; */
+    padding: 0 2px;
   }
   
   .product-detail .product-thumbnails__item img {
     display: block;
-    margin: 0 2px;
     border: 3px solid #fff;
   }
 
