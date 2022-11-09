@@ -392,6 +392,15 @@ img {
   flex-direction: column;
   align-items: flex-start;
 }
+.card-product-label.card-product-overlay {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(31,112,138,.65);  
+  justify-content: center;
+}
 
 .card-product-label__item {
   font-weight: 300;
@@ -406,6 +415,14 @@ img {
   position: relative;
   margin-bottom: 8px;
   left: -2px;
+}
+
+.card-product-overlay .card-product-label__item {
+  left: 0;
+  border: none;
+  font-size: 36px;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .card-product-label__great-gift {
@@ -852,12 +869,24 @@ img {
   color: var(--color-sold-out);
 }
 
+.card-product-overlay .card-product__sold-out {
+  background-color: transparent;
+}
+
 .card-product__sold-out:before {
   border-top: 17.5px solid var(--backgound-soldout);;
 }
 
+.card-product-overlay .card-product__sold-out:before {
+  display: none;
+}
+
 .card-product__sold-out::after {
   border-bottom: 17.5px solid var(--backgound-soldout);;
+}
+
+.card-product-overlay .card-product__sold-out:after {
+  display: none;
 }
 
 .section-featured-product .product__media img{
