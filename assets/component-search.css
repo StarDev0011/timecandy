@@ -62,7 +62,7 @@
   height: 1.8rem;
   width: 1.8rem;
   color: #fff;
-  transition: all .25s;
+  transition: transform .25s ease-in;
 }
 .search__button:hover .icon, .search__button:focus .icon {
   transform: translate(0px, 1px);
