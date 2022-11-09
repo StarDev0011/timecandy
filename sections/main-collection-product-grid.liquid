@@ -76,7 +76,7 @@
   </div>
 </div>
 <script>
-  const items = document.querySelectorAll('.collection__menu-item');
+  {% comment %} const items = document.querySelectorAll('.collection__menu-item');
   const btn = document.querySelector('.js-menu-view-more');
   btn?.addEventListener('click', function handleClick(e) {
     e.preventDefault();
@@ -116,7 +116,7 @@
         }
       }
     });
-  });
+  }); {% endcomment %}
 
   window.addEventListener('load', () => {
     const filterMobile = document.querySelector('#filter-mobile');
