@@ -2577,7 +2577,7 @@ div.rc_block__type {
 
   .product-detail .product-thumbnails__item {
     padding-top: 22.95%;
-    flex-basis: cacl(25% - 4px);
+    flex-basis: calc(25% - 4px);
     /* margin-right: 4px; */
     margin-left: 2px;
     margin-right: 2px;
