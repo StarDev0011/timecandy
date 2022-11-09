@@ -212,7 +212,7 @@ img {
 
 .section-featured-product .featured-product {
   display: grid;
-  grid-template-columns: 490px 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 20px 110px;
   align-items: center;
 }
@@ -220,7 +220,7 @@ img {
 .section-featured-product .grid__item {
   width: 100%;
   max-width: 100%;
-  max-width: 488px;
+  /* max-width: 488px; */
   margin: 0 auto;
 }
 

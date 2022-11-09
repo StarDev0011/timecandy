@@ -34,7 +34,7 @@
             </select>
           {% endif %}
           {% if soldout %}
-            <button class="button product-add-on__btn" disabled> Sold out</button>
+            <button class="button product-add-on__btn" disabled>Out of Stock</button>
           {% else %}
             <button aria-label="Add product {{ product.title }} to your cart" data-add-to-cart class="button product-add-on__btn" type="submit"> Add to bag </button>
           {% endif %}

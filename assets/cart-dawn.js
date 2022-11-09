@@ -179,6 +179,7 @@ CartDawn = {
       const personalizedMessage = document.querySelector('#personalized-message');
       let currentDecadeValue = document.querySelector('input[name="properties[Decade]"]');
       let decadeOption = document.querySelector('input[name="decade-input"]:checked');
+      let roseOptions = document.querySelectorAll('.product-rose-color .qty-input');
 
       if (decadeOption) {
         if (currentDecadeValue) {
@@ -186,6 +187,14 @@ CartDawn = {
         } else {
           $(this).parents('form').append(`<input type="hidden" name="properties[Decade]" value="${decadeOption.value}">`);
         }
+      }
+      if (roseOptions) {
+        roseOptions.forEach(function(option) {
+          if (!parseInt(option.value) > 0) {
+            option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').disabled = true;
+            option.disabled = true;
+          }
+        });
       }
       if (personalizedMessage) {
         if (personalizedMessage.value.length == '') {
@@ -197,17 +206,27 @@ CartDawn = {
         }
       } else {
         const productItem = $(this).parents('form');
-
-        await $.get('/cart.js', null, null, 'json').done(function (data) {
-          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-            $('input[name="items[1]id"]').remove();
-            $('input[name="items[1]quantity"]').remove();
-          }
-          else if (btn.dataset.iceBrix === 'true' && window.iceBrix) {
-            productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
-          }
-        });
+        if (window.iceBrix) {
+          await $.get('/cart.js', null, null, 'json').done(function (data) {
+            if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+              $('input[name="items[1]id"]').remove();
+              $('input[name="items[1]quantity"]').remove();
+            }
+            else if (btn.dataset.iceBrix === 'true' && window.iceBrix) {
+              productItem.append(`<input type="hidden" name="items[1]id" value="${window.iceBrix.id}"><input type="hidden" name="items[1]quantity" value="1">`)
+            }
+          });
+        }
         CartDawn.doAjaxAddToCart(productItem, btn);
+
+        if (roseOptions) {
+          roseOptions.forEach(function(option) {
+            if (!parseInt(option.value) > 0) {
+              option.closest(".product-rose-color-option").querySelector('.product-form__roses-hidden-sku').disabled = false;
+              option.disabled = false;
+            }
+          });
+        }        
       }
     });
   },
