@@ -668,12 +668,16 @@
         });
 
         if (sum >=6 && sum <= 12) {
+          document.querySelector('.product-form__submit').setAttribute('disabled', false);
           for(var i=0; i<selected.options.length; i++) {
             if ( parseInt(selected.options[i].text) == sum ) {
               selected.selectedIndex = i;
               selected.closest('.product-detail-selects').dispatchEvent(new Event('change'));
               break;
             }
+          } else if (sum > 6) {
+            document.querySelector('.product-form__submit').setAttribute('disabled', true);
+            document.querySelector('.product-form__submit').text('Minimum 6')
           }
         }
 
