@@ -482,6 +482,9 @@
   line-height: 18px;
   font-family: var(--my-font);
 }
+.collection #searchspring-content {
+  min-height: 485px;
+}
 
 #searchspring-content div[style="display: block; margin-top: 400px;"] {
   margin-top: 50px !important;
