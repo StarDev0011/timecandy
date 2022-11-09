@@ -420,9 +420,35 @@ img {
 .card-product-overlay .card-product-label__item {
   left: 0;
   border: none;
-  font-size: 36px;
+  font-size: 26px;
   line-height: 1.25;
   text-align: center;
+}
+
+@media (max-width: 460px) {
+  .card-product-overlay .card-product-label__item {
+    font-size: 26px;
+  }
+}
+@media (min-width: 461px) and (max-width: 660px) {
+  .card-product-overlay .card-product-label__item {
+    font-size: 20px;
+  }
+}
+@media (min-width: 661px) and (max-width: 767px) {
+  .card-product-overlay .card-product-label__item {
+    font-size: 26px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1190px) {
+  .card-product-overlay .card-product-label__item {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1191px) {
+  .card-product-overlay .card-product-label__item {
+    font-size: 22px;
+  }
 }
 
 .card-product-label__great-gift {
