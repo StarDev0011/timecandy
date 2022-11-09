@@ -416,6 +416,9 @@ img {
 .card-product-overlay .card-product-label__item {
   left: 0;
   border: none;
+  font-size: 36px;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .card-product-label__great-gift {
@@ -862,12 +865,24 @@ img {
   color: var(--color-sold-out);
 }
 
+.card-product-overlay .card-product__sold-out {
+  background-color: transparent;
+}
+
 .card-product__sold-out:before {
   border-top: 17.5px solid var(--backgound-soldout);;
 }
 
+.card-product-overlay .card-product__sold-out:before {
+  display: none;
+}
+
 .card-product__sold-out::after {
   border-bottom: 17.5px solid var(--backgound-soldout);;
+}
+
+.card-product-overlay .card-product__sold-out:after {
+  display: none;
 }
 
 .section-featured-product .product__media img{
