@@ -423,7 +423,8 @@ fieldset.product-form__input .form__label {
     margin-left: -2.5rem;
     padding-bottom: 2rem;
     margin-bottom: 3rem;
-    width: calc(100% + 4rem);
+    /* width: calc(100% + 4rem); */
+    width: 100%;
   }
 
   .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
