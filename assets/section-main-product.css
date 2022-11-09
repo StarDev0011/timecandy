@@ -2582,7 +2582,12 @@ div.rc_block__type {
   .product-detail .product-thumbnails__item {
     padding-top: 22.95%;
     flex-basis: 25%;
-    margin-right: 4px;
+    /* margin-right: 4px; */
+  }
+  
+  .product-detail .product-thumbnails__item img {
+    display: block;
+    margin: 0 2px;
   }
 
   .product-detail .product,
