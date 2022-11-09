@@ -572,7 +572,7 @@ noscript .localization-selector.link {
   color: rgb(var(--color-heading));
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
 }
 
