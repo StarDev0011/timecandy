@@ -6,7 +6,7 @@
     assign on_sale = true
   endif
   if product.available
-    assign sold_out = false
+    assign sold_out = true
   endif
   assign is_size = false
   for option in product.options_with_values
