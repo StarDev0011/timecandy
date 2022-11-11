@@ -287,18 +287,10 @@
               "script": "<script src=\"https:\/\/apis.google.com\/js\/platform.js?onload=renderBadge\" async=\"\" defer><\/script>\n<script>\n\/\/  Google Trusted Reviews Render\n  window.renderBadge = function() {\n    var ratingBadgeContainer = document.getElementById('google-trusted-reviews');\n    window.gapi.load('ratingbadge', function() {\n      window.gapi.ratingbadge.render(ratingBadgeContainer, {\"merchant_id\": 10386568});\n    });\n  }\n<\/script>",
               "enable-checkout": true
             }
-          },
-          "05c2ef11-018d-4cd4-90a3-19ac39c78b60": {
-            "type": "script",
-            "settings": {
-              "script": "<script>var shareasaleShopifySSCID=shareasaleShopifyGetParameterByName(\"sscid\");function shareasaleShopifySetCookie(e,a,o,i,r){if(e&&a){var s,S=i?\"; path=\"+i:\"\",h=r?\"; domain=\"+r:\"\",t=\"\";o&&((s=new Date).setTime(s.getTime()+o),t=\"; expires=\"+s.toUTCString()),document.cookie=e+\"=\"+a+t+S+h}}function shareasaleShopifyGetParameterByName(e,a){a||(a=window.location.href),e=e.replace(\/[\\[\\]]\/g,\"\\\\$&\");var o=new RegExp(\"[?&]\"+e+\"(=([^&#]*)|&|#|$)\").exec(a);return o?o[2]?decodeURIComponent(o[2].replace(\/\\+\/g,\" \")):\"\":null}shareasaleShopifySSCID&&shareasaleShopifySetCookie(\"shareasaleShopifySSCID\",shareasaleShopifySSCID,94670778e4,\"\/\");<\/script>",
-              "enable-checkout": true
-            }
           }
         },
         "block_order": [
-          "7c37eb71-da3d-43f0-a551-91a4f42c396b",
-          "05c2ef11-018d-4cd4-90a3-19ac39c78b60"
+          "7c37eb71-da3d-43f0-a551-91a4f42c396b"
         ],
         "settings": {
           "footer-misc-scripts-enable": true
