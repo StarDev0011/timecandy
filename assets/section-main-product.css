@@ -1267,7 +1267,7 @@ fieldset.product-form__input .form__label {
 .product__desc-text {
   overflow: hidden;
 }
-.product__desc-text p:first-child {
+.product__desc-text p:first-of-type {
   margin-top: 0;
 }
 
