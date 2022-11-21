@@ -6,19 +6,19 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/otc-holidayboxes2021-WebSliderDesktop-Output-2880x900_2x_e9cfe0c0-e537-4e9c-afd4-b0a7740bd8c1.jpg",
-            "image_mb": "shopify:\/\/shop_images\/otc-holidayBoxes2022-WebSliderMobileTest_2x_fddc8edc-6808-438d-9546-2246bee0a02f.jpg",
-            "heading": "Save 12% on our Holiday Decade Candy Boxes with code HOLIDAYGIFT",
+            "image": "shopify:\/\/shop_images\/OTC-corporateGifts2022-WebSliderDesktop-Output-2880x900_2x_64c63de9-c4dd-495c-859e-ee88d85589e8.jpg",
+            "image_mb": "shopify:\/\/shop_images\/OTC-corporateGifts2022-WebSliderMobile-Output-1200x1200.jpg",
+            "heading": "There's still time to order corporate and employee gifts!",
             "subheading": "It's Gift Giving Season",
-            "text_color": "#262626",
-            "button_label": "SHOP HOLIDAY BOXES",
-            "link": "shopify:\/\/collections\/christmas-and-happy-holiday-themed-candy-assortments",
+            "text_color": "#FFFFFF",
+            "button_label": "Learn More",
+            "link": "shopify:\/\/collections\/corporate-gifts",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
             "color_scheme": "#ffffff",
-            "bg_container_scheme": "#bff4ff",
+            "bg_container_scheme": "#0C5273",
             "text_alignment_mobile": "left"
           }
         }
