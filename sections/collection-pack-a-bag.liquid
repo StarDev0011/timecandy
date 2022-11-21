@@ -40,7 +40,7 @@
           <div class="collection-product__list">
               {% if settings.ss_enable %}
                   <div id="searchspring-content"></div>
-                  {% if section.settings.show_desc %}
+                  {% if section.settings.show_desc and collection.description != blank %}
                       <div class="collection__desc">
                           {{- collection.description -}}
                       </div>
@@ -152,7 +152,7 @@
                           {% endif %}
                       {%- endif -%}
                   {%- endpaginate -%}
-                  {% if section.settings.show_desc %}
+                  {% if section.settings.show_desc and collection.description != blank %}
                       <div class="collection__desc">
                       {{- collection.description -}}
                       </div>
@@ -176,7 +176,7 @@
   }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.3/dist/interact.min.js" defer="defer"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.17/dist/interact.min.js" defer="defer"></script>
 
 <script>
   const items = document.querySelectorAll('.collection__menu-item');
@@ -190,7 +190,7 @@
       }
     })
   });
-  window.addEventListener('load', (event) => {
+  {% comment %} window.addEventListener('load', (event) => {
     var isBusy = false;
     $(window).scroll(function() {
       var btnLoadMore = $('.js-infinite-scroll');
@@ -219,7 +219,7 @@
         }
       }
     });
-  });
+  }); {% endcomment %}
 
   window.addEventListener('load', () => {
     const filterMobile = document.querySelector('#filter-mobile');

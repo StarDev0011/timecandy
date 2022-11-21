@@ -1,0 +1,19 @@
+{% assign related_articles = collection.metafields.custom.related_articles | split: '|' %}
+<div class="blog-articles-wrapper related-articles">
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+        {%- for article in related_articles limit: 3 -%}
+            {% assign s_article = articles[article] %}
+            <div class="blog-articles__article article">
+            {%- render 'article-card',
+                article: s_article,
+                media_height: section.settings.image_height,
+                media_aspect_ratio: article.image.aspect_ratio,
+                show_image: true,
+                show_date: true,
+                show_author: false,
+                show_excerpt: false
+            -%}
+            </div>
+        {%- endfor -%}
+    </div>
+</div>

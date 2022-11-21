@@ -1271,6 +1271,10 @@ fieldset.product-form__input .form__label {
   margin-top: 0;
 }
 
+.product__desc-text p:first-child {
+  margin-top: 0;
+}
+
 .product__read-more,
 .product-popup-modal__button {
   font-weight: 400;

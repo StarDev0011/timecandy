@@ -8,9 +8,19 @@
         "show_desc": true,
         "page": "scroll"
       }
+    },
+    "dc1ca3da-7168-420c-a580-8f5d0dd7a5e9": {
+      "type": "section-related-articles",
+      "settings": {
+        "title": "Related Blog Posts",
+        "btn": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
-    "product-grid"
+    "product-grid",
+    "dc1ca3da-7168-420c-a580-8f5d0dd7a5e9"
   ]
 }

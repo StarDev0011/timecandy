@@ -73,7 +73,9 @@
               {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
               sizes="100vw"
               src="{{ block.settings.image | image_url: width: 1500 }}"
+              {% unless forloop.first %}
               loading="lazy"
+              {% endunless %}
               alt="{{ block.settings.image.alt | escape }}"
               width="{{ block.settings.image.width }}"
               height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
@@ -87,7 +89,9 @@
                 {%- if block.settings.image_mb.width >= 750 -%}{{ block.settings.image_mb | img_url: '750x' }} 750w,{%- endif -%}"
               sizes="100vw"
               src="{{ block.settings.image_mb | img_url: '750x' }}"
-              loading="lazy"
+              {% unless forloop.first %}
+                loading="lazy"
+              {% endunless %}
               alt="{{ block.settings.image_mb.alt | escape }}"
               width="{{ block.settings.image_mb.width }}"
               height="{{ block.settings.image_mb.height }}"

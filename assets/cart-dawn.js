@@ -100,30 +100,19 @@ CartDawn = {
       $(CartDawn.Selector.count).text(data.item_count);
       $('.js-cart-count').html(data.item_count);
       $('.packabag-sidebar__count').innerHTML = data.item_count;
-      if (btn) {
         document.querySelector('.js-cart-count').innerHTML = data.item_count;
-        let isPackABag = false;
-        if (typeof(btn.classList) == 'object') {
-          if (btn.classList.contains("card-product__pack-bag")) {
-            isPackABag = true;
-          }
-        } else if (typeof(btn.classList) == 'string') {
-          if (btn['classList'] == "card-product__pack-bag") {
-            isPackABag = true;
-          }
-        }
-        if (isPackABag) {
-          if (document.querySelector('.packabag-sidebar__count')) {
-            document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
-          }
 
-          var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
-          if (obj_mp3) {
-            obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
-            obj_mp3.play();
-            $('.packabag-sidebar__bag').addClass('animated tada');
-            setTimeout(function () { $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);
-          }
+      if (document.getElementById('drop-zone')) {
+        if (document.querySelector('.packabag-sidebar__count')) {
+          document.querySelector('.packabag-sidebar__count').innerHTML = data.item_count;
+        }
+
+        var obj_mp3 = document.getElementById("resource_mp3_drop_to_bag");
+        if (obj_mp3) {
+          obj_mp3.src = 'https://cdn.shopify.com/s/files/1/0004/8132/9204/t/55/assets/Candy_Type1_Bag_PickUp_Fienup_002.mp3';
+          obj_mp3.play();
+          $('.packabag-sidebar__bag').addClass('animated tada');
+          setTimeout(function () { $('.packabag-sidebar__bag').removeClass('animated tada') }, 1000);
         }
       }
     });
@@ -661,19 +650,39 @@ CartDawn = {
     })
   }
 }
-if (['searchspring.domReady']) {
-  ['searchspring.domReady'].forEach(function (e) {
-    window.addEventListener(e, (event) => {
-      initDraggable();
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
+var windowWidth = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+if (document.getElementById('drop-zone')) {  
+  if (['searchspring.domReady']) {
+    ['searchspring.domReady'].forEach(function (e) {
+      window.addEventListener(e, (event) => {
+        initDraggable();
+      });
     });
+  }
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    initDraggable();
   });
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  initDraggable();
-});
-
 function initDraggable() {
+    
+  window.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  };  
+
   var position = { x: 0, y: 0 };
   function listener(event) {
     event.preventDefault();
@@ -682,7 +691,7 @@ function initDraggable() {
     var element = currentTarget;
     switch (event.type) {
       case 'dragstart':
-        console.log('dragstart');
+        //console.log('dragstart');
         if (
           interaction.pointerIsDown &&
           !interaction.interacting() &&
@@ -697,18 +706,18 @@ function initDraggable() {
             position.x = Number(transform[1]);
             position.y = Number(transform[2]);
           }
-          element.style.cssText = "z-index: 12; opacity: .75"
+          element.style.cssText = "z-index: 102; opacity: .75;"
           element.closest('.card-product__item').classList.add('active')
           document.querySelector('#MainContent').style.overflowX = 'visible'
           document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
         }
         break;
       case 'dragmove':
-        console.log('dragmove');
+        //log('dragmove');
         position.x += event.dx;
         position.y += event.dy;
         document.querySelector('.packabag-sidebar__bag').classList.add("animated", "infinite", "pulse")
-        event.target.style.cssText = "z-index: 12; opacity: .75"
+        event.target.style.cssText = "z-index: 102; opacity: .75"
         event.target.style.transform = `translate(${position.x}px, ${position.y}px) scale(.85)`
         break;
       case 'dragend':
@@ -728,76 +737,104 @@ function initDraggable() {
     }
   }
 
-  let bag = document.querySelector('#drop-zone');
+  if (!isTouchDevice() && windowWidth > 989) {  
+    $('.card-product__picture, .collection-pack-a-bag .card-product__title').on('click', function (event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    });
 
-  //if (bag) {
-  if(false) {
     interact('.card-product__picture').draggable({
       onstart: listener,
       onmove: listener,
       onend: listener,
       max: Infinity,
       maxPerElement: 1,
-      hold: 100,
     }).styleCursor(true);
 
-    $('.card-product__picture').on('click', function (event) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-    });
-
     interact('#drop-zone')
-      .dropzone({
-        accept: '.card-product__picture',
-        overlap: 'cursor',
-        ondrop: async function (event) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          let formData = {};
-          await $.get('/cart.js', null, null, 'json').done(function (data) {
-            if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
-              formData = {
-                'items': [{
-                  'id': event.relatedTarget.dataset.productId,
-                  'quantity': 1
-                }]
-              };
-            } else if (event.relatedTarget.dataset.iceBrix && window.iceBrix) {
-              formData = {
-                'items': [{
-                  'id': event.relatedTarget.dataset.productId,
-                  'quantity': 1
-                },
-                {
-                  'id': window.iceBrix.id,
-                  'quantity': 1
-                }
-                ]
-              };
-            } else {
-              formData = {
-                'items': [{
-                  'id': event.relatedTarget.dataset.productId,
-                  'quantity': 1
-                }]
-              };
-            }
-          });
-          fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+    .dropzone({
+      accept: '.card-product__picture',
+      overlap: 'cursor',
+      ondrop: async function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        var elCopy = event.relatedTarget.cloneNode(true);
+        elCopy.classList.add('on-bag');
+
+        $('#drop-zone').append(elCopy);
+
+
+        let formData = {};
+        await $.get('/cart.js', null, null, 'json').done(function (data) {
+          elCopy.classList.add('in-bag');
+          if (data.items.filter((e) => e.id == '7455857868852').length > 0) {
+            formData = {
+              'items': [{
+                'id': event.relatedTarget.dataset.productId,
+                'quantity': 1
+              }]
+            };
+          } else if (event.relatedTarget.dataset.iceBrix && window.iceBrix) {
+            formData = {
+              'items': [{
+                'id': event.relatedTarget.dataset.productId,
+                'quantity': 1
+              },
+              {
+                'id': window.iceBrix.id,
+                'quantity': 1
+              }
+              ]
+            };
+          } else {
+            formData = {
+              'items': [{
+                'id': event.relatedTarget.dataset.productId,
+                'quantity': 1
+              }]
+            };
+          }
+        });
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => {
+            CartDawn.updateCartCount({ classList: 'card-product__pack-bag' });
+            setTimeout(function(){
+              elCopy.remove();
+            },2000);
           })
-            .then(response => {
-              CartDawn.updateCartCount({ classList: 'card-product__pack-bag' });
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      }
+    });
+  }         
+
+  if(isTouchDevice() || windowWidth < 990) {
+    var tapped = false;
+
+    $('.card-product__picture').on('touchstart, click',function(e){
+        if(!tapped){ 
+          tapped = setTimeout(function(){
+              tapped = null;
+              e.preventDefault();
+          },300);   
+        } else {    
+          clearTimeout(tapped); 
+          tapped = null;
+
+          var productItem = $(this).parents('.card-product__item').find('form');
+          var btn = productItem.find('button')[0];
+          CartDawn.doAjaxAddToCart(productItem, btn);            
         }
-      });
+        e.preventDefault()
+    });
   }
 }
 

@@ -31,7 +31,7 @@
         <div class="collection-product__list">
           {% if settings.ss_enable %}
           	<div id="searchspring-content"></div>
-            {% if section.settings.show_desc %}
+            {% if section.settings.show_desc and collection.description != blank %}
               <div class="collection__desc">
                 {{- collection.description -}}
               </div>
@@ -61,7 +61,7 @@
             {% endif %}
           {%- endif -%}
           {%- endpaginate -%}
-          {% if section.settings.show_desc %}
+          {% if section.settings.show_desc and collection.description != blank %}
             <div class="collection__desc">
               {{- collection.description -}}
             </div>

@@ -1,0 +1,18 @@
+{%- layout none -%}
+[{%- for article in blog.articles limit: 1000 -%}
+    { 
+        "title": {{ article.title | json }},
+        "content": {{ article.content | strip_html | truncate: 250 | json }},
+		"url": {{ article.url | json }},
+        {%- capture related_collections -%}
+        [
+        {%- for collection in article.metafields.custom.associated_collection.value -%}
+            {
+             "collection_handle": {{- collection.handle -}}
+            }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+        ]
+        {%- endcapture -%}
+        "related_collections": {{ related_collections }}
+    }{% unless forloop.last %},{% endunless %}
+{%- endfor -%}]

@@ -757,7 +757,9 @@
     grid-gap: 40px 20px;
   }
 }
-
+.card-product__item {
+  transition: all .2s ease-in;
+}
 @media (min-width: 768px){
   .collection-candy__list {
     transform: initial !important;
@@ -842,38 +844,17 @@
 
 /* COLLECTION PACK A BAG */
 
-.collection-pack-a-bag{
+.collection-pack-a-bag {
   position: relative;
-}
-/* .collection-pack-a-bag .card-product__picture {
-  touch-action: none;
   user-select: none;
-} */
-/* .collection-pack-a-bag .card-product__picture{
+}
+.collection-pack-a-bag .card-product__picture {
+  touch-action: none;
   position: relative;
-}
-.collection-pack-a-bag .card-product__picture:after {
-  position: absolute;
-  padding: 3px;
-  right: 5px;
-  bottom: 5px;
-  content: '';
-  color: #3d3d3d;
-  font-size: 20px;
-  line-height: 25px;
-  display: block;
-  width: 35px;
-  height: 35px;
-  background-color: #fff;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='128pt' height='128pt' version='1.1' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m99.457 39.426-7.2969 7.293 12.16 12.16h-35.199v-35.328l12.16 12.16 7.2969-7.2969-20.992-20.734c-2.0469-2.0469-5.2461-2.0469-7.2969 0l-20.863 20.863 7.2969 7.2969 12.16-12.16-0.003906 35.199h-35.328l12.16-12.16-7.2969-7.2969-20.734 20.992c-2.0469 2.0469-2.0469 5.2461 0 7.2969l20.863 20.863 7.2969-7.2969-12.289-12.156h35.328v35.328l-12.16-12.289-7.2969 7.2969 20.992 20.863c1.0234 1.0234 2.3047 1.5352 3.5859 1.5352s2.5586-0.51172 3.5859-1.5352l20.863-20.863-7.168-7.2969-12.16 12.289v-35.328h35.328l-12.289 12.16 7.2969 7.2969 20.863-20.992c2.0469-2.0469 2.0469-5.2461 0-7.2969z' fill='%230b5272'/%3E%3C/svg%3E");
-  background-size: cover;
-  border-radius: 50%;
-  border: 1px solid #3d3d3d;
-  touch-action: none;
   user-select: none;
-}*/
+}
 
-/* .collection-pack-a-bag .card-product__picture:hover{
+.collection-pack-a-bag .card-product__picture:hover{
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: -o-grab;
@@ -891,37 +872,43 @@
 
 .packabag-sidebar {
   position: fixed;
-  width: 170px;
-  left: 0;
-  top: 50%;
   transform: translateY(-50%);
   z-index: 2;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;  
 }
 
 #drop-zone {
-  display: none;
-  background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKG_side.png?v=1611110…) no-repeat;
-  background-size: contain;
-  width: 180px;
-  height: 191px;
+  display: block;
   cursor: pointer;
+  background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKGD_bottom.png?v=101638301398981902281649261730) no-repeat;
+  background-size: contain;
+  width: 225px;
+  height: 215px;
+  left: 50%;
+  top: unset;
+  bottom: -5px;
+  transform: translate(-50%);
+  position: fixed;
+  z-index: 100;;
 }
 
 .packabag-sidebar__logo {
-  max-width: 135px;
-  margin-left: 5px;
-  padding: 30px 0 10px;
+  padding: 55px 0 10px;
+  max-width: 150px;
+  margin: 0 auto;  
 }
 
 .packabag-sidebar__bag {
   background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BAG.png?v=1315517…) no-repeat;
   background-size: contain;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   text-align: center;
   position: relative;
-  margin-left: 26px;
-  margin-top: -30px;
+  margin: -30px auto 0;  
 }
 
 .packabag-sidebar__count {
@@ -936,34 +923,9 @@
   font-weight: 700;
 }
 
-@media (max-width: 830px) {
-  .packabag-sidebar {
-    left: 0;
-    top: unset;
-    bottom: 0;
-    width: 100%;
-  }
-
+@media (max-width: 990px) {
   #drop-zone{
-    background: url(//cdn.shopify.com/s/files/1/0004/8132/9204/t/73/assets/Pack-A-Bag_BKGD_bottom.png?v=101638301398981902281649261730) no-repeat;
-    background-size: contain;
-    width: 170px;
-    height: 160px;
-    left: 50%;
-    top: unset;
-    bottom: -5px;
-    transform: translate(-50%);
-    position: absolute;
-  }
-
-  .packabag-sidebar__logo {
-    padding-top: 40px;
-    max-width: 120px;
-    margin: 0 auto;
-  }
-
-  .packabag-sidebar__bag {
-    margin: -30px auto 0;
+    display: none;
   }
 }
 
@@ -1041,4 +1003,15 @@
 .tada {
   -webkit-animation-name: tada;
   animation-name: tada;
+}
+#drop-zone .card-product__picture.on-bag {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.5) !important;
+  transition: all 1s ease-in;
+}
+#drop-zone .card-product__picture.in-bag {
+ transform: translate(-50%, -50%)  scale(0) rotate(720deg) !important;
 }
