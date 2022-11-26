@@ -6,51 +6,12 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Merriweather Black";
-  src: local("Merriweather Black"),
-    url("./Merriweather-Black.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Merriweather BlackItalic";
-  src: local("Merriweather BlackItalic"),
-    url("./Merriweather-BlackItalic.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
   font-family: "Merriweather Bold";
   src: local("Merriweather Black"),
     url("./Merriweather-Black.ttf") format("truetype");
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Merriweather BoldItalic";
-  src: local("Merriweather BoldItalic"),
-    url("./Merriweather-BoldItalic.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Merriweather Italic";
-  src: local("Merriweather Italic"),
-    url("./Merriweather-Italic.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Merriweather Light";
-  src: local("Merriweather Light"),
-    url("./Merriweather-Light.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Merriweather LightItalic";
-  src: local("Merriweather LightItalic"),
-    url("./Merriweather-LightItalic.ttf") format("truetype");
-  font-display: swap;
-}
 @font-face {
   font-family: "Merriweather";
   src: local("Merriweather"),
@@ -177,8 +138,16 @@ html {
   scroll-behavior: smooth;
 }
 
-#MainContent {
-  margin-top:1px;
+.product-detail {
+  background-color: #e4f1f5;
+  padding-top: 64px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 899px) {
+  .product-detail {
+    padding-top: 20px;
+  }
 }
 
 body {
