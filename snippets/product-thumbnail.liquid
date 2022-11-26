@@ -69,7 +69,7 @@
         {% unless lazy_load == false %}loading="lazy"{% endunless %}
         width="973"
         height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
-        alt="{{ media.preview_image.alt | escape }}",
+        alt="{{ media.preview_image.alt | escape }}"
         class="product__media-image {{ classImage }}"
       >
     </div>
@@ -110,7 +110,7 @@
       {% unless lazy_load == false %}loading="lazy"{% endunless %}
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
-      alt="{{ media.preview_image.alt | escape }}",
+      alt="{{ media.preview_image.alt | escape }}"
       class="product__media-image {{ classImage }}"
     >
   </div>
