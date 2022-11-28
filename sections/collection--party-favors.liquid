@@ -64,7 +64,7 @@
 
       var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
-          slidesPerView: 4,
+          slidesPerView: 1,
           spaceBetween: 16,
           centeredSlides: false,
           pagination: {
@@ -72,21 +72,26 @@
             clickable: true,
           },
           breakpoints: {
-            // when window width is >= 320px
+            // when window width is <= 320px
             320: {
               slidesPerView: 1,
               spaceBetween: 16
             },
-            // when window width is >= 480px
+            // when window width is <= 480px
             480: {
               slidesPerView: 2,
               spaceBetween: 16
             },
-            // when window width is >= 768px
+            // when window width is <= 768px
             768: {
               slidesPerView: 3,
               spaceBetween: 16
-            }          
+            }, 
+            // when window width is <= 160px
+            1600: {
+              slidesPerView: 4,
+              spaceBetween: 16
+            },                     
         }
       });
     }
