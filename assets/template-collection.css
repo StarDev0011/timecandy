@@ -761,11 +761,11 @@
   transition: all .2s ease-in;
 }
 @media (min-width: 768px){
-  :not(.js-party-favor-slider) .collection-candy__list {
+  div:not(.js-party-favor-slider) .collection-candy__list {
     transform: initial !important;
   }
 
-  :not(.js-party-favor-slider) .card-product__item {
+  div:not(.js-party-favor-slider) .card-product__item {
     max-width: 100%;
     width: auto!important;
     margin-right: 0 !important;
@@ -773,7 +773,7 @@
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-  :not(.js-party-favor-slider) .collection-candy__list {
+  div:not(.js-party-favor-slider) .collection-candy__list {
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
     grid-gap: 56px 20px;
