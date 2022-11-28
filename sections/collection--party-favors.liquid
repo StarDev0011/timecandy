@@ -11,7 +11,7 @@
     </h3>
 
     <div class="collection-candy__wrapper">
-      <div class="swiper js-product-slider">
+      <div class="swiper js-party-favor-slider">
         <div class="swiper-wrapper collection-candy__list col-4">
           {%- assign count = 0 -%}
           {%- for product in collection.products -%}
@@ -62,7 +62,7 @@
   
     collectionSlider: () => {
 
-      var productSlider = new Swiper ('.js-product-slider', {
+      var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
           slidesPerView: 1,
           spaceBetween: 16,
