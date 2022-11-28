@@ -64,9 +64,9 @@
 
       var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
-          slidesPerView: 1,
+          slidesPerView: 4,
           spaceBetween: 16,
-          centeredSlides: true,
+          centeredSlides: false,
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -79,13 +79,13 @@
             },
             // when window width is >= 480px
             480: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 16
             },
             // when window width is >= 768px
             768: {
-              slidesPerView: 4,
-              spaceBetween: 40
+              slidesPerView: 3,
+              spaceBetween: 16
             }          
         }
       });
