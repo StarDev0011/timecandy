@@ -62,7 +62,7 @@
           <a href="{{ routes.root_url }}" class="logo__image--wrap">
             <div class="logo__image">
               <span class="visually-hidden">Return to home</span>
-              <img loading="lazy" height="auto" src="{{ 'donny.svg' | asset_url }}"  width="{{ section.settings.logo_width }}"  aria-hidden="true">
+              <img loading="lazy" src="{{ 'donny.svg' | asset_url }}"  width="{{ section.settings.logo_width }}" height="{{ section.settings.logo_width | times: 1.829268293 | round }}"  aria-hidden="true">
             </div>
           </a>
           <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
