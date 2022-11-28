@@ -64,13 +64,14 @@
 
       var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
-          slidesPerView: 1,
+          slidesPerView: 4,
           spaceBetween: 16,
           centeredSlides: false,
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
           },
+          navigation: true,
           breakpoints: {
             // when window width is <= 320px
             320: {

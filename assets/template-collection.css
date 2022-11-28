@@ -495,7 +495,7 @@
     overflow: inherit;
   }
 
-  .custom-swiper-pagination {
+  .custom-swiper-pagination:not(.js-party-favor-slider .custom-swiper-pagination) {
     display: none;
   }
 
