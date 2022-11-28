@@ -1,0 +1,91 @@
+{
+  "wrapper": "div.collection-candy",
+  "sections": {
+    "candy-header": {
+      "type": "collection--candy-header",
+      "settings": {
+        "sub_headder": "WALK THE CANDY AISLE",
+        "color_sub": "#0c5273",
+        "title": "Discover over 300 different kinds of Candy you ate as a kid®",
+        "color_title": "#262626",
+        "bg_color": "#bbe2dd",
+        "margin_bottom": 80
+      }
+    },
+    "candy-classics": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "candy-by-occasion-christmas-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "candy-chocolate": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "bulk-candy-all",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "lunch-boxes-with-candy": {
+      "type": "collection--candy-aisle",
+      "settings": {
+        "collection": "movie-theater-candy",
+        "row": 7,
+        "show_view_all": true,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "banner-with-text": {
+      "type": "banner-with-text",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "desc": "",
+        "padding_top": 20,
+        "padding_bottom": 80
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "large-decade-candy-gift-box",
+        "sub_title": "Need a quick gift idea?",
+        "desc": "What's better than surprising someone with a 2 or 4 lb box of candy to say, Happy Mother's Day, Happy Father's Day, Happy Birthday, Get Well Soon, Congratulations, Thank You, I Love You, I'm Sorry, and more. Perfect for any occasion.",
+        "show_best_seller": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "165884954243af5d68": {
+      "type": "collection-list--dynamic",
+      "settings": {
+        "title": "All Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "candy-header",
+    "candy-classics",
+    "candy-chocolate",
+    "lunch-boxes-with-candy",
+    "banner-with-text",
+    "featured-product",
+    "165884954243af5d68"
+  ]
+}
