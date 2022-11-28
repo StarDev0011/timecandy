@@ -13,7 +13,7 @@
       }
     },
     "candy-classics": {
-      "type": "collection--candy-aisle",
+      "type": "collection--party-favors",
       "settings": {
         "collection": "candy-by-occasion-party-favors-bags-ribbons",
         "row": 18,
@@ -23,7 +23,7 @@
       }
     },
     "candy-chocolate": {
-      "type": "collection--candy-aisle",
+      "type": "collection--party-favors",
       "settings": {
         "collection": "candy-by-occasion-party-favors-upack-party-favors",
         "row": 20,

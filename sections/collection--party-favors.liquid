@@ -1,38 +1,149 @@
+
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
-<div class="custom-collection">
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="collection-candy__inner collection-candy-{{ section.id }}">
   <div class="container">
-    <h1 class="custom-collection__header">
-      {{- collection.title -}}
-    </h1>
-    <div class="custom-collection__desc">
-      {{- collection.description -}}
-    </div>
-    <div class="custom-collection__content">
-      <div class="custom-collection__list col-4">
-        {%- for block in section.blocks -%}
-          <div class="custom-collection__list-item">
-            {% render 'include--card-collection', card_collection: block.settings.collection %}
-          </div>
-        {%- endfor -%}
+    <h3 class="collection-candy__title h3">
+      <span>{{- collection.title -}} </span>
+    </h3>
+
+    <div class="collection-candy__wrapper">
+      <div class="swiper js-product-slider">
+        <div class="swiper-wrapper collection-candy__list col-4">
+          {%- assign count = 0 -%}
+          {%- for product in collection.products -%}
+            {% if product.available %}
+              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+            {% if count == section.settings.row %}
+              {% break %}
+            {% endif %}
+          {%- endfor -%}
+          {% if section.settings.show_view_all %}
+            <div class="card-product__item collection-view-all">
+              <a class="collection-view-all__link" href="{{ collection.url }}">
+                <span>Shop all</span>
+                <span> {{ collection.title }} </span>
+                <span class="collection-view-all__link-icon">
+                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 13L6.68421 7L0.999999 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        <div class="custom-swiper-pagination swiper-pagination"></div>
+      </div>
+      <div class="collection-view-all__mobile">
+        <a class="collection-view-all__mobil-link button" href="{{ collection.url }}"> Shop all {{ collection.title }} </a>
       </div>
     </div>
   </div>
 </div>
 
+<style>
+  .collection-candy-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+<script>
+  var Collection = Collection || {};
+
+  Collection = {
+    init: function() {
+      this.collectionSlider();
+    },
+  
+    collectionSlider: () => {
+
+      var productSlider = new Swiper ('.js-product-slider', {
+          loop: false,
+          slidesPerView: 1,
+          spaceBetween: 16,
+          centeredSlides: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 16
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 3,
+              spaceBetween: 16
+            },
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40
+            }          
+        });
+    }
+  }
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    Collection.init();
+  });
+  
+</script>
 {% schema %}
   {
-    "name": "Party Favors",
-    "blocks": [
+    "name": "Candy Product list",
+    "settings": [
       {
-        "type": "featured_collection",
-        "name": "t:sections.collection-list.blocks.featured_collection.name",
-        "settings": [
-          {
-            "type": "collection",
-            "id": "collection",
-            "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
-          }
-        ]
+        "type": "collection",
+        "id": "collection",
+        "label": "Select collection"
+      },
+      {
+        "type": "range",
+        "id": "row",
+        "label": "Product per row",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "default": 7
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "label": "Show 'View all' button",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "unit": "px",
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "default": 80
+      }
+    ],
+    "presets": [
+      {
+        "name": "Candy Product list"
       }
     ]
   }
