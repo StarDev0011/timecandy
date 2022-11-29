@@ -1,6 +1,36 @@
 {
-  "wrapper": "div.collection-candy",  
   "sections": {
+    "corporate-gifts": {
+      "type": "collection--corporate-gifts",
+      "disabled": true,
+      "blocks": {
+        "55f1c056-4dcf-4e20-ad7a-b50e4c8745fd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-prepack-party-favors"
+          }
+        },
+        "d203dea0-d78e-4285-bc86-2c764e2341b5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-upack-party-favors"
+          }
+        },
+        "707d1379-8a52-4946-b6f9-1b66ddaaf7b4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "candy-by-occasion-party-favors-bags-ribbons"
+          }
+        }
+      },
+      "block_order": [
+        "55f1c056-4dcf-4e20-ad7a-b50e4c8745fd",
+        "d203dea0-d78e-4285-bc86-2c764e2341b5",
+        "707d1379-8a52-4946-b6f9-1b66ddaaf7b4"
+      ],
+      "settings": {
+      }
+    },
     "16615450135202b37c": {
       "type": "collection--candy-header",
       "settings": {
@@ -25,24 +55,19 @@
         "padding_bottom": 24
       }
     },
-    "0e450cfb-a390-4093-a9d1-09c4fa920bf5": {
-      "type": "collection--candy-aisle",
+    "c2f71eb3-593a-4ff1-957d-2e89c55f17ab": {
+      "type": "collection-list--dynamic",
       "settings": {
-        "collection": "candy-by-occasion-party-favors-bags-ribbons",
-        "row": 20,
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
         "show_view_all": false,
-        "padding_top": 0,
-        "padding_bottom": 80
-      }
-    },
-    "ad4ef0be-5ff0-432b-b838-7f7f3881babc": {
-      "type": "collection--candy-aisle",
-      "settings": {
-        "collection": "candy-by-occasion-party-favors-upack-party-favors",
-        "row": 20,
-        "show_view_all": true,
-        "padding_top": 0,
-        "padding_bottom": 80
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "16615452240e26dfec": {
@@ -74,8 +99,7 @@
     "corporate-gifts",
     "16615450135202b37c",
     "166154583193261176",
-    "0e450cfb-a390-4093-a9d1-09c4fa920bf5",
-    "ad4ef0be-5ff0-432b-b838-7f7f3881babc",
+    "c2f71eb3-593a-4ff1-957d-2e89c55f17ab",
     "16615452240e26dfec"
   ]
 }
