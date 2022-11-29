@@ -37,7 +37,8 @@
             </div>
           {% endif %}
         </div>
-        <div class="custom-swiper-pagination swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
       <div class="collection-view-all__mobile">
         <a class="collection-view-all__mobil-link button" href="{{ collection.url }}"> Shop all {{ collection.title }} </a>
@@ -67,10 +68,11 @@
           slidesPerView: 4,
           spaceBetween: 16,
           centeredSlides: false,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
+          pagination: false,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },          
           navigation: true,
           breakpoints: {
             // when window width is <= 320px
