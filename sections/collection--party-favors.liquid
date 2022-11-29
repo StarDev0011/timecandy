@@ -37,8 +37,18 @@
             </div>
           {% endif %}
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="customer-controls-slide" aria-hidden="true">
+          <div class="swiper-button-next">
+            <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.3397 26.4237C36.3473 28.3853 36.3473 31.6148 34.3397 33.5764L8.99426 58.3403C5.82807 61.4338 0.499997 59.1905 0.499997 54.7639L0.499999 5.23623C0.499999 0.809629 5.82807 -1.43365 8.99426 1.6599L34.3397 26.4237Z" fill="#1d5e7c"/>
+            </svg>
+          </div>
+          <div class="swiper-button-prev">
+            <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.66032 33.5763C-0.347331 31.6147 -0.347334 28.3852 1.66031 26.4236L27.0057 1.65974C30.1719 -1.4338 35.5 0.809462 35.5 5.23607L35.5 54.7638C35.5 59.1904 30.1719 61.4336 27.0057 58.3401L1.66032 33.5763Z" fill="#1d5e7c"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="collection-view-all__mobile">
         <a class="collection-view-all__mobil-link button" href="{{ collection.url }}"> Shop all {{ collection.title }} </a>
