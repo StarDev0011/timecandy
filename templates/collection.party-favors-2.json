@@ -38,7 +38,7 @@
       "settings": {
         "collection": "candy-by-occasion-party-favors-upack-party-favors",
         "row": 20,
-        "show_view_all": true,
+        "show_view_all": false,
         "padding_top": 30,
         "padding_bottom": 80
       }
