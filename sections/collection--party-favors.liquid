@@ -4,50 +4,51 @@
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 
 {%- assign collection = collections[section.settings.collection] -%}
+<div class="page-width">
+  <div class="collection-candy__inner collection-candy-{{ section.id }}">
+    <div class="container">
+      <h3 class="collection-candy__title h3">
+        <span>{{- collection.title -}} </span>
+      </h3>
 
-<div class="collection-candy__inner collection-candy-{{ section.id }}">
-  <div class="container">
-    <h3 class="collection-candy__title h3">
-      <span>{{- collection.title -}} </span>
-    </h3>
-
-    <div class="collection-candy__wrapper">
-      <div class="swiper js-party-favor-slider testimonial">
-        <div class="swiper-wrapper collection-candy__list col-4">
-          {%- assign count = 0 -%}
-          {%- for product in collection.products -%}
-            {% if product.available %}
-              {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
-              {% assign count = count | plus: 1 %}
+      <div class="collection-candy__wrapper">
+        <div class="swiper js-party-favor-slider testimonial">
+          <div class="swiper-wrapper collection-candy__list col-4">
+            {%- assign count = 0 -%}
+            {%- for product in collection.products -%}
+              {% if product.available %}
+                {% render 'include--product-card', product: product, slideItem: 'swiper-slide' %}
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+              {% if count == section.settings.row %}
+                {% break %}
+              {% endif %}
+            {%- endfor -%}
+            {% if section.settings.show_view_all %}
+              <div class="card-product__item collection-view-all">
+                <a class="collection-view-all__link" href="{{ collection.url }}">
+                  <span>Shop all</span>
+                  <span> {{ collection.title }} </span>
+                  <span class="collection-view-all__link-icon">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 13L6.68421 7L0.999999 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+              </div>
             {% endif %}
-            {% if count == section.settings.row %}
-              {% break %}
-            {% endif %}
-          {%- endfor -%}
-          {% if section.settings.show_view_all %}
-            <div class="card-product__item collection-view-all">
-              <a class="collection-view-all__link" href="{{ collection.url }}">
-                <span>Shop all</span>
-                <span> {{ collection.title }} </span>
-                <span class="collection-view-all__link-icon">
-                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 13L6.68421 7L0.999999 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          {% endif %}
-        </div>
-        <div class="customer-controls-slide" aria-hidden="true">
-          <div class="swiper-button-next">
-            <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M34.3397 26.4237C36.3473 28.3853 36.3473 31.6148 34.3397 33.5764L8.99426 58.3403C5.82807 61.4338 0.499997 59.1905 0.499997 54.7639L0.499999 5.23623C0.499999 0.809629 5.82807 -1.43365 8.99426 1.6599L34.3397 26.4237Z" fill="#1d5e7c"/>
-            </svg>
           </div>
-          <div class="swiper-button-prev">
-            <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.66032 33.5763C-0.347331 31.6147 -0.347334 28.3852 1.66031 26.4236L27.0057 1.65974C30.1719 -1.4338 35.5 0.809462 35.5 5.23607L35.5 54.7638C35.5 59.1904 30.1719 61.4336 27.0057 58.3401L1.66032 33.5763Z" fill="#1d5e7c"/>
-            </svg>
+          <div class="customer-controls-slide" aria-hidden="true">
+            <div class="swiper-button-next">
+              <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34.3397 26.4237C36.3473 28.3853 36.3473 31.6148 34.3397 33.5764L8.99426 58.3403C5.82807 61.4338 0.499997 59.1905 0.499997 54.7639L0.499999 5.23623C0.499999 0.809629 5.82807 -1.43365 8.99426 1.6599L34.3397 26.4237Z" fill="#1d5e7c"/>
+              </svg>
+            </div>
+            <div class="swiper-button-prev">
+              <svg width="36" height="60" viewBox="0 0 36 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.66032 33.5763C-0.347331 31.6147 -0.347334 28.3852 1.66031 26.4236L27.0057 1.65974C30.1719 -1.4338 35.5 0.809462 35.5 5.23607L35.5 54.7638C35.5 59.1904 30.1719 61.4336 27.0057 58.3401L1.66032 33.5763Z" fill="#1d5e7c"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -81,7 +82,6 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },          
-          navigation: true,
           breakpoints: {
             // when window width is <= 320px
             320: {
