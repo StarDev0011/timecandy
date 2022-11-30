@@ -57,7 +57,7 @@
           {%- for product in section.settings.collection.products -%}
             {% if product.available %}
               <div role="listitem" id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}" >
-                {% render 'include--product-card', product: product %}
+                {% render 'include--product-card-single', product: product %}
               </div>
               {% assign count = count | plus: 1 %}
             {% endif %}
