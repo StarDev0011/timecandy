@@ -817,6 +817,10 @@
     margin-left: -20px;
     margin-right: -20px;
   }
+  .collection-candy__wrapper.bags {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   .swiper.js-product-slider {
     padding-left: 20px;
