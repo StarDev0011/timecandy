@@ -903,21 +903,21 @@ fieldset.product-form__input .form__label {
 }
 
 .product-popup-modal__button {
-  font-size: 1.6rem;
+/*   font-size: 1.6rem;
   padding-right: 1.3rem;
   padding-left: 0;
-  height: 4.4rem;
-  text-underline-offset: 1px;
+  height: 4.4rem; */
+/*   text-underline-offset: 1px;
   text-decoration-thickness: 0.1rem;
-  transition: text-decoration-thickness var(--duration-short) ease;
+  transition: text-decoration-thickness var(--duration-short) ease; */
 }
 
 .product-popup-modal__button:hover {
-  font-weight: 700;
+/*   font-weight: 700;
   text-decoration-thickness: 0.2rem;
   color: inherit;
   text-underline-offset: 3px;
-  transition: offset 0.1s;
+  transition: offset 0.1s; */
 }
 
 .product-popup-modal__content-info {
@@ -1212,6 +1212,12 @@ fieldset.product-form__input .form__label {
   color: var(--color-text);
 }
 
+.product-detail {
+  background-color: #e4f1f5;
+  padding-top: 64px;
+  padding-bottom: 50px;
+}
+
 .product-detail .price {
   font-weight: 300;
   font-size: 18px;
@@ -1265,12 +1271,7 @@ fieldset.product-form__input .form__label {
   margin-top: 0;
 }
 
-.product__desc-text p:first-child {
-  margin-top: 0;
-}
-
-.product__read-more,
-.product-popup-modal__button {
+.product__read-more {
   font-weight: 400;
   font-size: 12px !important;
   line-height: 18px !important;
@@ -1280,14 +1281,12 @@ fieldset.product-form__input .form__label {
   transition: font-weight 0.1s;
 }
 
-.product__read-more:hover,
-.product-popup-modal__button:hover {
+.product__read-more:hover {
   text-decoration-thickness: 0;
   font-weight: 700 !important;
 }
 
-.product__read-more::after,
-.product-popup-modal__button::after {
+.product__read-more::after {
   content: "";
   background-color: rgb(var(--color-light-text));
   position: absolute;
@@ -1298,8 +1297,7 @@ fieldset.product-form__input .form__label {
   transition: bottom 0.1s;
 }
 
-.product__read-more:hover:after,
-.product-popup-modal__button:hover:after {
+.product__read-more:hover:after {
   bottom: -2px;
   height: 2px;
 }
@@ -1706,7 +1704,7 @@ div.rc_block__type {
   text-transform: uppercase;
 }
 
-.product-custom-text a {
+.product-custom-text a, .shopify-installments_promo a {
   font-family: var(--my-font);
 }
 
@@ -1951,10 +1949,10 @@ div.rc_block__type {
   box-shadow: none;
 }
 
-.product-custom-text {
+.product-custom-text, .shopify-installments_promo p {
   margin-bottom: 12px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   color: #484e57;
 }
@@ -2109,14 +2107,12 @@ div.rc_block__type {
 }
 
 .product-popup-modal__button {
-  font-family: var(--my-font);
+  font-family: 'Merriweather';
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px !important;
   line-height: 20px;
   color: #484e57;
-  height: auto;
-  padding-right: 0;
-  padding-left: 2px;
+  text-decoration: underline;
 }
 
 .product-popup-modal__content {
@@ -2472,6 +2468,9 @@ div.rc_block__type {
 }
 
 @media (max-width: 899px) {
+  .product-detail {
+    padding-top: 20px;
+  }
 
   .product__title {
     font-size: 20px;
@@ -2887,4 +2886,8 @@ div#bookmarkit {
 
 #stamped-main-widget {
   margin-top: 40px;
+}
+
+.shopify-installments_promo {
+  padding-bottom: 10px;
 }

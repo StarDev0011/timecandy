@@ -201,12 +201,13 @@
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} {{ section.id }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
             </div>
-            <div {{ block.shopify_attributes }}>
+          {%- when 'payment_terms' -%}
+            <div {{ block.shopify_attributes }} class="shopify-installments_promo">
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
               {%- endform -%}
-            </div>
+            </div> 
           {%- when 'description' -%}
             {%- if product.description != blank -%}
               <div class="product__description rte">
@@ -239,7 +240,7 @@
             <div class="product-custom-text">
               <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
                 {{- block.settings.desc -}}
-                <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog"> {{ block.settings.text | default: block.settings.page.title }}</button>
+                <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button" type="button" aria-haspopup="dialog"> {{ block.settings.text | default: block.settings.page.title }}</button>
               </modal-opener>
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js"> {{ block.settings.text }}</a>
             </div>
@@ -852,6 +853,7 @@
         }
       ]
     },
+    
     {
       "type": "add_on",
       "name": "Fun extras",
@@ -881,6 +883,11 @@
         }
       ]
     },
+    {
+      "type": "payment_terms",
+      "name": "Payment terms",
+      "limit": 1
+    },    
     {
       "type": "share",
       "name": "t:sections.main-product.blocks.share.name",
