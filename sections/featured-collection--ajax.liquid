@@ -50,10 +50,12 @@
         </div>
       {%- endunless -%}
   
-      {%- paginate section.settings.collection.products by 20 -%}
+      {%- paginate section.settings.collection.products by 50 -%}
       <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
         {%- for product in section.settings.collection.products -%}
-          {% render 'include--product-card-single', product: product %}
+          {% if product.variants[0].available %}
+            {% render 'include--product-card-single', product: product %}
+          {% endif %}
         {%- endfor -%}
       </div>
       {%- if paginate.pages > 1 -%}
