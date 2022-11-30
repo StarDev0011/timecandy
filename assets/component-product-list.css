@@ -920,3 +920,6 @@ img {
 .section-featured-product .product__media img{
   object-fit: contain;
 }
+.product-form__submit {
+    margin-bottom: 1rem;
+}
