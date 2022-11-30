@@ -33,17 +33,6 @@
         "padding_bottom": 80
       }
     },
-    "candy-chocolate": {
-      "type": "collection--party-favors",
-      "disabled": true,
-      "settings": {
-        "collection": "candy-by-occasion-party-favors-upack-party-favors",
-        "row": 20,
-        "show_view_all": false,
-        "padding_top": 30,
-        "padding_bottom": 80
-      }
-    },
     "2126090d-4b6d-4fd6-8215-c4abec554a5f": {
       "type": "featured-collection--ajax",
       "settings": {
@@ -59,6 +48,17 @@
         "padding_bottom": 40,
         "padding_top_mb": 72,
         "padding_bottom_mb": 130
+      }
+    },
+    "candy-chocolate": {
+      "type": "collection--party-favors",
+      "disabled": true,
+      "settings": {
+        "collection": "candy-by-occasion-party-favors-upack-party-favors",
+        "row": 20,
+        "show_view_all": false,
+        "padding_top": 30,
+        "padding_bottom": 80
       }
     },
     "c0151025-abf9-4ce0-803f-f9ec71acb03c": {
@@ -86,8 +86,8 @@
     "candy-header",
     "3e7d9953-9991-47c1-b1e6-a43ad80c4d14",
     "candy-classics",
-    "candy-chocolate",
     "2126090d-4b6d-4fd6-8215-c4abec554a5f",
+    "candy-chocolate",
     "c0151025-abf9-4ce0-803f-f9ec71acb03c"
   ]
 }
