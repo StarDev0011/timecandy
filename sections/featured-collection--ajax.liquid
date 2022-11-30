@@ -50,41 +50,26 @@
         </div>
       {%- endunless -%}
 
-      <slider-component class="slider-mobile-gutter">
-        <div aria-owns="slider-mobile-item" role="list"
-          id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop {% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}" >
-          {%- assign count = 0 -%}
-          {%- for product in section.settings.collection.products -%}
-            {% if product.available %}
-              <div role="listitem" id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider %} slider__slide{% endif %}" >
-                {% render 'include--product-card-single', product: product %}
-              </div>
-              {% assign count = count | plus: 1 %}
-            {% endif %}
-          {%- endfor -%}
+      {%- paginate section.settings.collection.products by 20 -%}
+      <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
+        {%- for product in collection.products -%}
+          {% render 'include--product-card-single', product: product %}
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <div class="product-paginate" data-paginate>
+          {% unless paginate.next.is_link %}
+          <!-- <button class="btn no-product" type="button">
+            No products
+          </button> -->
+          {% else %}
+            <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{ sectionsettings.collection.title | escape }}">
+              <span class="loader"></span>
+            </a>
+          {% endunless %}
         </div>
-        {%- if show_mobile_slider -%}
-          <div class="slider-buttons no-js-hidden">
-            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-            <div class="slider-counter caption">
-              <span class="slider-counter--current">1</span>
-              <span aria-hidden="true"> / </span>
-              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-              <span class="slider-counter--total">{{ products_to_display }}</span>
-            </div>
-            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-          </div>
-        {%- endif -%}
-      </slider-component>
-
-    <div class="center collection__view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-        <a href="{{ section.settings.collection.url }}"
-        class="button"
-        aria-label="View More Party Favors"
-        >
-        View More Party Favors
-        </a>
-    </div>
+      {%- endif -%}
+      {%- endpaginate -%}      
     </div>
   </div>
   {% if section.settings.svg_bg_top != blank %}
@@ -105,6 +90,38 @@
     bottom: -7px;
   }
 </style>
+<script>
+    window.addEventListener('load', (event) => {
+        var isBusy = false;
+        $(window).scroll(function() {
+          var btnLoadMore = $('.js-infinite-scroll');
+          let url = btnLoadMore.attr('href');
+          if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
+            if(isBusy) {
+              return;
+            }
+            if(btnLoadMore.length) {
+              isBusy = true;
+              $('[data-btn-text]').hide();
+              btnLoadMore.show();
+              var listData = $('#collection-products');
+              var product;
+              $.get(url).done(function (data) {
+                btnLoadMore.hide();
+                product = $(data).find('#collection-products');
+                listData.append(product.children());
+                $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
+                initQuickAdd();
+                addToBag();
+                initDraggable();
+              }).always (function() {
+                isBusy = false;
+              });
+            }
+          }
+        });
+      });
+</script>
 {% schema %}
 {
   "name": "Ajax Featured Collection",
