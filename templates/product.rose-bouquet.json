@@ -36,6 +36,11 @@
             "show_dynamic_checkout": false
           }
         },
+        "4dff5280-f877-492d-bc8d-8401c64c13ba": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
         "9314d269-9aa5-4d88-8f23-e034ebd3d8ed": {
           "type": "popup",
           "settings": {
@@ -58,6 +63,7 @@
         "description",
         "variant_picker",
         "buy_buttons",
+        "4dff5280-f877-492d-bc8d-8401c64c13ba",
         "9314d269-9aa5-4d88-8f23-e034ebd3d8ed",
         "41884624-41f9-4374-bde9-2bd73becdb9e"
       ],

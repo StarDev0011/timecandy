@@ -45,6 +45,11 @@
             "show_dynamic_checkout": false
           }
         },
+        "b6af558d-f34e-4f63-8acc-ae45f81cc528": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
         "18421d80-4dca-4916-be71-418d26c48563": {
           "type": "popup",
           "settings": {
@@ -58,16 +63,6 @@
           "settings": {
             "btn_wishlist": "Add to wishlist"
           }
-        },
-        "df3c808d-1e09-4c34-991c-d1ad2eb0b1b4": {
-          "type": "add_on",
-          "disabled": true,
-          "settings": {
-            "pr_title": "Fun Extras!",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "pr_1": "",
-            "pr_2": ""
-          }
         }
       },
       "block_order": [
@@ -78,9 +73,9 @@
         "description",
         "variant_picker",
         "buy_buttons",
+        "b6af558d-f34e-4f63-8acc-ae45f81cc528",
         "18421d80-4dca-4916-be71-418d26c48563",
-        "13f5a355-4ba4-442c-9cbe-c223e03cfc88",
-        "df3c808d-1e09-4c34-991c-d1ad2eb0b1b4"
+        "13f5a355-4ba4-442c-9cbe-c223e03cfc88"
       ],
       "settings": {
         "enable_sticky_info": true,
