@@ -1,0 +1,25 @@
+{% layout 'none' %}
+
+{%- paginate collection.products by 50 -%}
+<div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
+  {%- for product in collection.products -%}
+    {% if product.variants[0].available %}
+      {% render 'include--product-card-single', product: product %}
+    {% endif %}
+  {%- endfor -%}
+</div>
+{%- if paginate.pages > 1 -%}
+  <div class="product-paginate" data-paginate>
+    {% unless paginate.next.is_link %}
+    <!-- <button class="btn no-product" type="button">
+      No products
+    </button> -->
+    {% else %}
+      {% assign paginationPart = paginate.next.url | split: "?" | last | strip %}
+      <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{ collection.title | escape }}">
+        <span class="loader"></span>
+      </a>
+    {% endunless %}
+  </div>
+{%- endif -%}
+{%- endpaginate -%}      
