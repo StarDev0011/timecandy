@@ -35,12 +35,30 @@
     },
     "candy-chocolate": {
       "type": "collection--party-favors",
+      "disabled": true,
       "settings": {
         "collection": "candy-by-occasion-party-favors-upack-party-favors",
         "row": 20,
         "show_view_all": false,
         "padding_top": 30,
         "padding_bottom": 80
+      }
+    },
+    "2126090d-4b6d-4fd6-8215-c4abec554a5f": {
+      "type": "featured-collection--ajax",
+      "settings": {
+        "title": "Upack Party Favors - Select Candy",
+        "collection": "candy-by-occasion-party-favors-upack-party-favors",
+        "columns_desktop": 4,
+        "color_scheme": "#f1f3f3",
+        "svg_bg_top": "",
+        "svg_bg_bottom": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "padding_top_mb": 72,
+        "padding_bottom_mb": 130
       }
     },
     "c0151025-abf9-4ce0-803f-f9ec71acb03c": {
@@ -69,6 +87,7 @@
     "3e7d9953-9991-47c1-b1e6-a43ad80c4d14",
     "candy-classics",
     "candy-chocolate",
+    "2126090d-4b6d-4fd6-8215-c4abec554a5f",
     "c0151025-abf9-4ce0-803f-f9ec71acb03c"
   ]
 }
