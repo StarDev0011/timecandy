@@ -640,6 +640,7 @@ img {
   cursor: pointer;
   background-color: transparent;
   border: none;
+  align-self: center;
 }
 
 .quick-add .product-form__buttons .product-form__submit {
