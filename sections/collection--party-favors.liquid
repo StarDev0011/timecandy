@@ -74,7 +74,7 @@
 
       var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
-          slidesPerView: 4,
+          slidesPerView: 5,
           spaceBetween: 16,
           centeredSlides: false,
           pagination: false,
@@ -85,22 +85,22 @@
           breakpoints: {
             // when window width is <= 320px
             320: {
-              slidesPerView: 1,
+              slidesPerView: 2,
               spaceBetween: 16
             },
             // when window width is <= 480px
             480: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 16
             },
             // when window width is <= 768px
             768: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 16
             }, 
-            // when window width is <= 160px
+            // when window width is <= 1600px
             1600: {
-              slidesPerView: 4,
+              slidesPerView: 5,
               spaceBetween: 16
             },                     
         }
@@ -115,7 +115,7 @@
 </script>
 {% schema %}
   {
-    "name": "Slider -  Product list",
+    "name": "Candy Product list",
     "settings": [
       {
         "type": "collection",
@@ -127,8 +127,8 @@
         "id": "row",
         "label": "Product per row",
         "min": 3,
-        "max": 250,
-        "step": 3,
+        "max": 20,
+        "step": 1,
         "default": 7
       },
       {
@@ -160,7 +160,7 @@
     ],
     "presets": [
       {
-        "name": "Slider -  Product list"
+        "name": "Candy Product list"
       }
     ]
   }
