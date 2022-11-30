@@ -63,7 +63,7 @@
             No products
           </button> -->
           {% else %}
-            <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{ section.settings.collection.title | escape }}">
+            <a href="{{ section.settings.collection.url }}" class="js-infinite-scroll" aria-label="{{ section.settings.collection.title | escape }}">
               <span class="loader"></span>
             </a>
           {% endunless %}
