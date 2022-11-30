@@ -15,7 +15,6 @@
       No products
     </button> -->
     {% else %}
-      {% assign paginationPart = paginate.next.url | split: "?" | last | strip %}
       <a href="{{ paginate.next.url }}" class="js-infinite-scroll" aria-label="{{ collection.title | escape }}">
         <span class="loader"></span>
       </a>
