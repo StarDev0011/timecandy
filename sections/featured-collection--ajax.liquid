@@ -112,7 +112,7 @@
               var product;
               $.get(url).done(function (data) {
                 btnLoadMore.hide();
-                product = $(data).find('#collection-products');
+                product = $(data);
                 listData.append(product.children());
                 $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
                 initQuickAdd();
