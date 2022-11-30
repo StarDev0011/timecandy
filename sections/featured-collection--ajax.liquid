@@ -95,9 +95,10 @@
     window.addEventListener('load', (event) => {
         var isBusy = false;
         $(window).scroll(function() {
-          var btnLoadMore = $('.js-infinite-scroll');
-          let url = btnLoadMore.attr('href');
           if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
+            var btnLoadMore = $('.js-infinite-scroll');
+            let url = btnLoadMore.attr('href');   
+            
             if(isBusy) {
               return;
             }
