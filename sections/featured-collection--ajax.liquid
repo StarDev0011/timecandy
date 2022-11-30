@@ -65,8 +65,7 @@
             No products
           </button> -->
           {% else %}
-            {% assign paginationPart = paginate.next.url | split: "?" | last | strip %}
-            <a href="{{ section.settings.collection.url }}?{{ paginationPart }}" class="js-infinite-scroll" aria-label="{{ section.settings.collection.title | escape }}">
+            <a href="{{ section.settings.collection.url }}?view=party-favor-items" class="js-infinite-scroll" aria-label="{{ section.settings.collection.title | escape }}">
               <span class="loader"></span>
             </a>
           {% endunless %}
