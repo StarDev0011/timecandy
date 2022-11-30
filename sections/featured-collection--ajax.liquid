@@ -47,9 +47,10 @@
       {%- unless section.settings.title == blank -%}
         <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %} title-wrapper--no-top-margin">
           <h2 class="title h1 text-center">{{ section.settings.title | escape }}</h2>
+          {{ section.settings.collection.title }}-2
         </div>
       {%- endunless -%}
-
+  
       {%- paginate section.settings.collection.products by 20 -%}
       <div aria-owns="collection-list-item" class="collection-product__inner {{ grid_item_width }}" id="collection-products" role="list">
         {%- for product in collection.products -%}
