@@ -104,7 +104,6 @@
               return;
             }
             if(btnLoadMore.length) {
-              debugger;
               isBusy = true;
               $('[data-btn-text]').hide();
               btnLoadMore.show();
@@ -114,7 +113,7 @@
                 btnLoadMore.hide();
                 product = $(data);
                 listData.append(product.children());
-                $('[data-paginate]').replaceWith($(data).find('[data-paginate]'));
+                $('[data-paginate]').replaceWith(product.find('[data-paginate]'));
                 initQuickAdd();
               }).always(function() {
                 isBusy = false;
