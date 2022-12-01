@@ -54,6 +54,7 @@
       </div> 
       <form action="/cart/add" method="post" class="card-product__form" enctype="multipart/form-data">
         <input class="card-product__variant-id" type="hidden" name="id" value="{{ product.variants[0].id }}"/>
+        <input class="card-product__quantity" type="hidden" name="quantity" value="1" />
         {% if sold_out %}
           <a href="#" class="BIS_trigger btn--disabled card-product__btn btn--OOS" data-product-data="{{ product | json | escape }}">
             {{ 'products.product.sold_out' | t }}
