@@ -101,28 +101,26 @@
             let parentContainerBottom = $('#collection-products').outerHeight(),
                 windowBottom = ($(document).scrollTop() + $(window).height() + 400);
 
-            if(windowBottom > parentContainerBottom) {
-
-            }
-            
-            var btnLoadMore = $('.js-infinite-scroll');
-            let url = btnLoadMore.attr('href');   
-
-            if(btnLoadMore.length) {
-              isBusy = true;
-              $('[data-btn-text]').hide();
-              btnLoadMore.show();
-              var listData = $('#collection-products');
-              var product;
-              console.log(url);
-              $.get(url).done(function (data) {
-                btnLoadMore.hide();
-                product = $(data);
-                listData.append(product.children());
-                $('[data-paginate]').replaceWith(product.find('[data-paginate]'));
-                initQuickAdd();
-                isBusy = false;
-              });
+            if(windowBottom > parentContainerBottom) {            
+              var btnLoadMore = $('.js-infinite-scroll');
+              let url = btnLoadMore.attr('href');   
+  
+              if(btnLoadMore.length) {
+                isBusy = true;
+                $('[data-btn-text]').hide();
+                btnLoadMore.show();
+                var listData = $('#collection-products');
+                var product;
+                console.log(url);
+                $.get(url).done(function (data) {
+                  btnLoadMore.hide();
+                  product = $(data);
+                  listData.append(product.children());
+                  $('[data-paginate]').replaceWith(product.find('[data-paginate]'));
+                  initQuickAdd();
+                  isBusy = false;
+                });
+              }
             }
           }
         });
