@@ -16,11 +16,11 @@
       "type": "section-column-richtext",
       "settings": {
         "heading": "",
-        "content": "<p>How sweet it is! Our Candy you ate as a kid® party favors are a welcome addition to any event. Select from over 400 candies and 14 bag styles!<br\/><br\/><strong>Pre-Packed Party Favors<\/strong> - 25 of the most popular old time candies (10 ounces) in a colorful, cellophane bag and matching ribbon. <br\/><br\/><strong>Upack Party Favors<\/strong> - you select the candy, bag and ribbon color.<\/p>",
+        "content": "<p>How sweet it is! Our Candy you ate as a kid® party favors are a welcome addition to any event. Select from over 400 candies and 14 bag styles!<\/p><p>Get started by entering a quantity below,  select you bag design and ribbon color, then fill it with candy.<\/p>",
         "bg_section": "#e4f1f5",
         "align_content": "center",
         "padding_top": 0,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "candy-classics": {
