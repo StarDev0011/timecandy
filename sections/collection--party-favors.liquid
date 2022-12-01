@@ -142,22 +142,24 @@
             },                     
         }
       });
-      var updateQuantity = function() {
-        debugger;
-        var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
-        var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
-        $('#product-form-quick-add').append($quantity);        
-      };
-      $('[data-quick-add]').on('click', function(){
-        var thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add')[0];
-        if(thisQuickAdd) {
-          updateQuantity();
-        } else {
-          waitForElm(thisQuickAdd).then((elm) => {
-            updateQuantity();
-          });          
-        }
-      });
+      
+      // var updateQuantity = function() {
+      //   var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
+      //   var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
+      //   $('#product-form-quick-add').append($quantity);        
+      // };
+      
+      // $('[data-quick-add]').on('click', function(){
+      //   var thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add')[0];
+      //   if(thisQuickAdd) {
+      //     updateQuantity();
+      //   } else {
+      //     waitForElm(thisQuickAdd).then((elm) => {
+      //       updateQuantity();
+      //     });          
+      //   }
+      // });
+      
     },
     selectFavorQuantity: () => {
       $('.party-favor-counter .button').on('click', function(){
