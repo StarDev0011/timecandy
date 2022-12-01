@@ -163,12 +163,18 @@ CartDawn = {
 
   initAddToCart: () => {
     $('body').on('click', CartDawn.Selector.btnAddToCart, async function (e) {
-      e.preventDefault();
       const btn = this;
       const personalizedMessage = document.querySelector('#personalized-message');
       let currentDecadeValue = document.querySelector('input[name="properties[Decade]"]');
       let decadeOption = document.querySelector('input[name="decade-input"]:checked');
       let roseOptions = document.querySelectorAll('.product-rose-color .qty-input');
+      let personalizedImage = document.querySelector('#personalized-image');
+
+      if (personalizedImage) {
+        return;
+      }      
+      
+      e.preventDefault();
 
       if (decadeOption) {
         if (currentDecadeValue) {
