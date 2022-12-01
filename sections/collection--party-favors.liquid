@@ -146,7 +146,7 @@
       $('[data-quick-add]').on('click', function(){
         waitForElm('#product-form-quick-add').then((elm) => {
           var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
-          var $quantity = $('<input type="hidden" name="quantity" value="' + bagCount + '"');
+          var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
           $(elm).append($quantity);
         });        
       });
