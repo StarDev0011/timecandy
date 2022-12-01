@@ -149,7 +149,7 @@
         $('#product-form-quick-add').append($quantity);        
       };
       $('[data-quick-add]').on('click', function(){
-        var $thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add');
+        var thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add')[0];
         if($thisQuickAdd.length) {
           updateQuantity();
         } else {
