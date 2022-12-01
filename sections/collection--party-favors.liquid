@@ -122,7 +122,7 @@
     selectFavorQuantity: () => {
       //when someone enters a number, set that as the quantity for any products added on this page
       $('#party-favor-count').on('input', function(){
-        $('.card-product__quantity').val($(this.val()));
+        $('.card-product__quantity').val($(this).val());
       });
     }
   }
