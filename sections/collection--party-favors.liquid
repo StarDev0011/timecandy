@@ -8,7 +8,7 @@
   <div class="party-favor-counter">
     <h2 class="h3 title-wrapper--no-top-margin" style="margin-bottom:0">Number of Party Favors</h2>
     <div class="field">
-      <input class="field__input" type="text" id="party-favor-count" name="party-favor-count" value="" placeholder="">
+      <input class="field__input" type="number" id="party-favor-count" name="party-favor-count" value="" placeholder="">
       <label class="field__label" for="party-favor-count">Total Number*</label>
     </div> 
     <div class="contact__button">
@@ -119,7 +119,7 @@
         }
       });
     },
-    selectFavorQuantity: {} => {
+    selectFavorQuantity: () => {
       //when someone enters a number, set that as the quantity for any products added on this page
       $('#party-favor-count').on('input', function(){
         
