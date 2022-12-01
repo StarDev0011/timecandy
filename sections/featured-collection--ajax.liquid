@@ -114,7 +114,7 @@
                 $.get(url).done(function (data) {
                   btnLoadMore.hide();
                   product = $(data);
-                  listData.append(product[0]);
+                  listData.append(product.children());
                   $('[data-paginate]').replaceWith(product[1]);
                   initQuickAdd();
                   isBusy = false;
