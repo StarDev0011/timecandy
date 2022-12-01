@@ -1020,3 +1020,6 @@
 #drop-zone .card-product__picture.in-bag {
  transform: translate(-50%, -50%)  scale(0) rotate(720deg) !important;
 }
+.party-favor-counter {
+  margin-bottom: 2rem;
+}
