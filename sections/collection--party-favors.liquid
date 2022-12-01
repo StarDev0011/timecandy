@@ -87,7 +87,7 @@
 
       var productSlider = new Swiper ('.js-party-favor-slider', {
           loop: false,
-          slidesPerView: 5,
+          slidesPerView: 4,
           spaceBetween: 16,
           centeredSlides: false,
           pagination: false,
@@ -98,16 +98,21 @@
           breakpoints: {
             // when window width is <= 320px
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 16
             },
             // when window width is <= 480px
             480: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 16
             },
             // when window width is <= 768px
             768: {
+              slidesPerView: 3,
+              spaceBetween: 16
+            },
+            // when window width is <= 1440px
+            1440: {
               slidesPerView: 4,
               spaceBetween: 16
             }, 
