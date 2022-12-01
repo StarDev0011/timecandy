@@ -120,6 +120,7 @@
                   listData.append($(product[0]).children());
                   $('[data-paginate]').html(product[1]);
                   initQuickAdd();
+                  $('#party-favor-count').trigger('input', true);
                   isBusy = false;
                 });
               }
