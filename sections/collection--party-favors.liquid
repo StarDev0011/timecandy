@@ -153,7 +153,7 @@
     },
     selectFavorQuantity: () => {
       $('.party-favor-counter .button').on('click', function(){
-        var sectionHeight = $('.party-favor-counter').height();
+        var sectionHeight = $('.party-favor-counter').outerHeight();
 
         window.scrollBy(0, sectionHeight);
       });
