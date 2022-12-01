@@ -112,7 +112,6 @@
                 var listData = $('#collection-products');
                 var product;
                 $.get(url).done(function (data) {
-                  debugger;
                   btnLoadMore.hide();
                   product = $(data);
                   listData.append(product.children());
