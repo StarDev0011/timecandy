@@ -80,7 +80,7 @@
 {% if personalized-message != blank %}
     <label for="personalized-message" class="product-optional-extras__title">{{ personalized-message }} <span style="color: #AC1229">*</span></label>
     <div class="product-form__line-item-wrapper">
-        <textarea onkeyup="limitText(this)" onpaste="limitText(this)" onchange="limitText(this)" placeholder="Type your message here…" data-property-name="Personalized Message" id="personalized-message" class="product__line-item-prop product-form__line-item-field--infield" rows="8" maxlength="{{ personalized-message-count }}" name="properties[Personalized Message]" {% if personalized-message-required %}required{% endif %}></textarea>
+        <textarea placeholder="Type your message here…" data-property-name="Personalized Message" id="personalized-message" class="product__line-item-prop product-form__line-item-field--infield" rows="8" maxlength="{{ personalized-message-count }}" name="properties[Personalized Message]" {% if personalized-message-required %}required{% endif %}></textarea>
         <div class="product__decade-message"><span id="personalized-message-count">{{ personalized-message-count }}</span> Characters Remaining.</div>
     </div>
 {% endif %}
@@ -88,8 +88,11 @@
 {% comment %} End Custom Line Item Props {% endcomment %}
 
 <script>
-    function limitText(_this) {
-        const messageCount = document.querySelector('#personalized-message-count');
+    document.querySelector('#personalized-message').addEventListener('input', function (evt) {
+        limitMessage(this);
+    });
+    function limitMessage(_this) {
+        let messageCount = document.querySelector('#personalized-message-count');
         let limit = parseInt(_this.getAttribute('maxlength'));
         messageCount.textContent = limit - _this.value.length;
     }
