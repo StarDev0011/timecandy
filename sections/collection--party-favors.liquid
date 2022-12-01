@@ -150,10 +150,10 @@
       };
       $('[data-quick-add]').on('click', function(){
         var thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add')[0];
-        if($thisQuickAdd.length) {
+        if(thisQuickAdd.length) {
           updateQuantity();
         } else {
-          waitForElm($thisQuickAdd).then((elm) => {
+          waitForElm(thisQuickAdd).then((elm) => {
             updateQuantity();
           });          
         }
