@@ -115,8 +115,7 @@
                   btnLoadMore.hide();
                   product = $(data);
                   listData.append(product.children());
-                  $('[data-paginate]').replaceWith($(product[1]));
-                  console.log($('[data-paginate]'))
+                  $('[data-paginate]').html(product[1]);
                   initQuickAdd();
                   isBusy = false;
                 });
