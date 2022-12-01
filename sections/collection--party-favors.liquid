@@ -142,14 +142,19 @@
             },                     
         }
       });
-
+      var updateQuantity = function() {
+        var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
+        var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
+        $('#product-form-quick-add').append($quantity);        
+      };
       $('[data-quick-add]').on('click', function(){
-        waitForElm('#product-form-quick-add').then((elm) => {
-          debugger;
-          var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
-          var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
-          $(elm).append($quantity);
-        });        
+        if($('#product-form-quick-add').length) {
+          updateQuantity();
+        } else {
+          waitForElm('#product-form-quick-add').then((elm) => {
+            updateQuantity();
+          });          
+        }
       });
     },
     selectFavorQuantity: () => {
