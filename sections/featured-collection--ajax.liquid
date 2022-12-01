@@ -99,7 +99,7 @@
           if(!isBusy && $('#collection-products').length){
 
             let parentContainerBottom = $('#collection-products').outerHeight(),
-                windowBottom = ($(document).scrollTop() + $(window).height() + 400);
+                windowBottom = ($(document).scrollTop() + $(window).height() + 40);
 
             if(windowBottom > parentContainerBottom) {            
               var btnLoadMore = $('.js-infinite-scroll');
