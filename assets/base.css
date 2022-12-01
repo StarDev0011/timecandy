@@ -1361,7 +1361,7 @@ button.shopify-payment-button__button--unbranded {
   border: 1px solid rgba(var(--color-button), var(--alpha-button-background));
   height: 50px;
   border-radius: var(--buttons-radius-outset);
-  padding: 13px 40px 14px;
+  padding: 14px 20px 14px;
   cursor: pointer;
   font-family: var(--font-heading);
   letter-spacing: 0.02em;
