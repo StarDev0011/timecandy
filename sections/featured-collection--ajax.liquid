@@ -109,6 +109,7 @@
               btnLoadMore.show();
               var listData = $('#collection-products');
               var product;
+              console.log(url);
               $.get(url).done(function (data) {
                 btnLoadMore.hide();
                 product = $(data);
