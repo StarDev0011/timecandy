@@ -5,6 +5,13 @@
 
 {%- assign collection = collections[section.settings.collection] -%}
 <div class="page-width">
+  <div class="party-favor-counter">
+    <h2 class="title title-wrapper--no-top-margin">Enter Number of Party Favors</h2>
+    <div class="field">
+      <input class="field__input" type="text" id="party-favor-count" name="party-favor-count" value="" placeholder="">
+      <label class="field__label" for="party-favor-count">Total Number</label>
+    </div>  
+  </div>
   <div class="collection-candy__inner collection-candy-{{ section.id }}">
     <div class="">
       <h3 class="collection-candy__title h3">
