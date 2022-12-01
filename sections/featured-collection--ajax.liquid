@@ -114,10 +114,9 @@
                 $.get(url).done(function (data) {
                   btnLoadMore.hide();
                   product = $(data);
+                  debugger;
                   listData.append(product.children());
                   $('[data-paginate]').replaceWith(product.find('[data-paginate]'));
-                  console.log($('[data-paginate]'));
-                  console.log(product.find('[data-paginate]'));
                   initQuickAdd();
                   isBusy = false;
                 });
