@@ -149,10 +149,11 @@
         $('#product-form-quick-add').append($quantity);        
       };
       $('[data-quick-add]').on('click', function(){
-        if($('#product-form-quick-add').length) {
+        var $thisQuickAdd = $(this).parents('.card-product__item').find('#product-form-quick-add');
+        if($thisQuickAdd.length) {
           updateQuantity();
         } else {
-          waitForElm('#product-form-quick-add').then((elm) => {
+          waitForElm($thisQuickAdd).then((elm) => {
             updateQuantity();
           });          
         }
