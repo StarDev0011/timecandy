@@ -116,6 +116,7 @@
                   product = $(data);
                   listData.append(product.children());
                   $('[data-paginate]').replaceWith($(product[1]));
+                  console.log($('[data-paginate]'))
                   initQuickAdd();
                   isBusy = false;
                 });
