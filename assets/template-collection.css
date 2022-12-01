@@ -1021,7 +1021,7 @@
  transform: translate(-50%, -50%)  scale(0) rotate(720deg) !important;
 }
 .party-favor-counter {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .party-favor-counter .field {
   max-width: 200px;
