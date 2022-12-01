@@ -1023,3 +1023,6 @@
 .party-favor-counter {
   margin-bottom: 2rem;
 }
+.party-favor-counter input {
+  max-width: 300px;
+}
