@@ -1024,5 +1024,6 @@
   margin-bottom: 2rem;
 }
 .party-favor-counter .field {
-  max-width: 300px;
+  max-width: 200px;
+  margin-bottom: 15px;
 }
