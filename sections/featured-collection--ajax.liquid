@@ -96,13 +96,18 @@
     window.addEventListener('load', (event) => {
         var isBusy = false;
         $(window).scroll(function() {
-          if( $(window).scrollTop() + $(window).height() > $(document).height() * 0.9 ){
+          if(!isBusy && $('#collection-products').length){
+
+            let parentContainerBottom = $('#collection-products').outerHeight(),
+                windowBottom = ($(document).scrollTop() + $(window).height() + 400);
+
+            if(windowBottom > parentContainerBottom) {
+
+            }
+            
             var btnLoadMore = $('.js-infinite-scroll');
             let url = btnLoadMore.attr('href');   
-            
-            if(isBusy) {
-              return;
-            }
+
             if(btnLoadMore.length) {
               isBusy = true;
               $('[data-btn-text]').hide();
