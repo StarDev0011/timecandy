@@ -143,6 +143,7 @@
         }
       });
       var updateQuantity = function() {
+        debugger;
         var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
         var $quantity = $('<input type="text" name="quantity" value="' + bagCount + '" />');
         $('#product-form-quick-add').append($quantity);        
