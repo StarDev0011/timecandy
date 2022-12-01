@@ -75,6 +75,25 @@
   }
 </style>
 <script>
+  function waitForElm(selector) {
+      return new Promise(resolve => {
+          if (document.querySelector(selector)) {
+              return resolve(document.querySelector(selector));
+          }
+  
+          const observer = new MutationObserver(mutations => {
+              if (document.querySelector(selector)) {
+                  resolve(document.querySelector(selector));
+                  observer.disconnect();
+              }
+          });
+  
+          observer.observe(document.body, {
+              childList: true,
+              subtree: true
+          });
+      });
+  }  
   var PartyFavors = PartyFavors || {};
 
   PartyFavors = {
@@ -122,6 +141,13 @@
               spaceBetween: 16
             },                     
         }
+      });
+
+      $('[data-quick-add]').on('click', function(){
+        waitForElm('#product-form-quick-add').then((elm) => {
+          var bagCount = $('#party-favor-count').val() ? $('#party-favor-count').val() : 1;
+          $(elm).append('<input type="hidden" name="quantity" value="' +  + '"');
+        });        
       });
     },
     selectFavorQuantity: () => {
