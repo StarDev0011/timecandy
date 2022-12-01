@@ -111,12 +111,13 @@
                 btnLoadMore.show();
                 var listData = $('#collection-products');
                 var product;
-                console.log(url);
                 $.get(url).done(function (data) {
                   btnLoadMore.hide();
                   product = $(data);
                   listData.append(product.children());
                   $('[data-paginate]').replaceWith(product.find('[data-paginate]'));
+                  console.log($('[data-paginate]'));
+                  console.log(product.find('[data-paginate]'));
                   initQuickAdd();
                   isBusy = false;
                 });
