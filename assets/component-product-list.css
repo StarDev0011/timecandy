@@ -923,3 +923,46 @@ img {
 .product-form__submit {
     margin-bottom: 1rem;
 }
+.colored-option {
+  
+}
+.colored-option .color--red {
+  background: #fc1f2b !important;
+  color: #fff !important;
+}
+.colored-option .color--purple {
+  background: #fc1f2b !important;
+  color: #fff !important;
+}
+.colored-option .color--emerald-green {
+  background: #049907 !important;
+  color: #fff !important;
+}
+.colored-option .color--royal-blue {
+  background: #0133cb !important;
+  color: #fff !important;
+}
+.colored-option .color--robin-egg {
+  background: #58bae8 !important;
+  color: #fff !important;
+}
+.colored-option .color--yellow {
+  background: #ffff03 !important;
+  color: #000 !important;
+}
+.colored-option .color--fuchsia-pink {
+  background: #f76dc9 !important;
+  color: #fff !important;
+}
+.colored-option .color--gold {
+  background: #e8a742 !important;
+  color: #fff !important;
+}
+.colored-option .color--while {
+  background: #fff !important;
+  color: #000 !important;
+}
+.colored-option .color--black {
+  background: #000 !important;
+  color: #fff !important;
+}
