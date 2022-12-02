@@ -1026,6 +1026,7 @@
   border-radius: 20px;
   border: 2px solid #125372;
   background: #fff;
+  display: inline-block;
 }
 .party-favor-counter .field {
   max-width: 200px;
