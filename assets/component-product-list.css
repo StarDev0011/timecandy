@@ -926,7 +926,7 @@ img {
 .colored-option {
   
 }
-.quick-add .product-form__swatch-dropdown label.colored-option .color--red {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--red {
   background: #fc1f2b !important;
   color: #fff !important;
 }
