@@ -1033,9 +1033,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.bag-selection {
+/* .bag-selection {
   overflow: hidden;
-}
+} */
 .bag-selection .bags {
-  padding:  0 8px;
+  padding: 0 8px;
 }
