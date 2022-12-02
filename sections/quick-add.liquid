@@ -43,7 +43,7 @@
                 <label aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}" role="button" tabindex="0" {% if is_size %}class="js-swatch-item{% if option.selected_value == value %} js-swatch-active{% endif %}"{% endif %} for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
                 {% assign value_lc = value | downcase %}
                 {% if option.name contains "ribbon" %}
-                  colored-option color--{{ value_lc }}
+                  colored-option color--{{ value_lc | handleize }}
                 {% endif %}
                 ">
                   {% if value_lc contains 'decade gift box' %}
