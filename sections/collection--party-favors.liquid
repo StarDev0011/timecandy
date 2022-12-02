@@ -29,7 +29,7 @@
             {%- assign count = 0 -%}
             {%- for product in collection.products -%}
               {% if product.available %}
-                {% render 'include--product-card--favors', product: product, slideItem: 'swiper-slide' %}
+                {% render 'include--product-card-favors', product: product, slideItem: 'swiper-slide' %}
                 {% assign count = count | plus: 1 %}
               {% endif %}
               {% if count == section.settings.row %}
