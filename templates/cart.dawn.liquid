@@ -229,7 +229,10 @@
         </div>        
         <div class="mini-cart-bottom__item">
           <button type="submit" class="mini-cart__checkout-btn button" {% if cart.total_price < limit_price_checkout %} disabled {% endif %}> Proceed to checkout </button>
-          {% if cart.total_price < limit_price_checkout %}<div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>{% endif %}
+          {% if cart.total_price < limit_price_checkout %}
+            <div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>
+          {% else %}
+          {% endif %}
         </div>
       </div>
     </form> 
