@@ -926,43 +926,43 @@ img {
 .colored-option {
   
 }
-.colored-option .color--red {
+.quick-add .product-form__swatch-dropdown label.colored-option .color--red {
   background: #fc1f2b !important;
   color: #fff !important;
 }
-.colored-option .color--purple {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--purple {
   background: #fc1f2b !important;
   color: #fff !important;
 }
-.colored-option .color--emerald-green {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--emerald-green {
   background: #049907 !important;
   color: #fff !important;
 }
-.colored-option .color--royal-blue {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--royal-blue {
   background: #0133cb !important;
   color: #fff !important;
 }
-.colored-option .color--robin-egg {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--robin-egg {
   background: #58bae8 !important;
   color: #fff !important;
 }
-.colored-option .color--yellow {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--yellow {
   background: #ffff03 !important;
   color: #000 !important;
 }
-.colored-option .color--fuchsia-pink {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--fuchsia-pink {
   background: #f76dc9 !important;
   color: #fff !important;
 }
-.colored-option .color--gold {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--gold {
   background: #e8a742 !important;
   color: #fff !important;
 }
-.colored-option .color--while {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--white {
   background: #fff !important;
   color: #000 !important;
 }
-.colored-option .color--black {
+.quick-add .product-form__swatch-dropdown label.colored-option.color--black {
   background: #000 !important;
   color: #fff !important;
 }
