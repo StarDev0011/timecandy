@@ -107,7 +107,7 @@
     opacity: 1;
  }
  .js-party-favor-slider.testimonial .swiper-button-prev {
-   left: -40px;
+   left: 0;
  }
  .testimonial .swiper-button-next{
     right: 0;
