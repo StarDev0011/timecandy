@@ -1043,6 +1043,7 @@
   padding: 0 8px;
   position: relative;
 }
-.bags .swiper-button-prev:after, .bags .swiper-rtl .swiper-button-next:after {
+.bags .swiper-button-prev:after, .bags .swiper-rtl .swiper-button-next:after,
+.bags .swiper-button-next:after, .bags .swiper-rtl .swiper-button-prev:after{
   content: "";
 }
