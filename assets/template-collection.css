@@ -1047,9 +1047,11 @@
 }
 .bags .swiper-button-prev {
   left: -40px;
+  z-index: 2;
 }
 .bags .swiper-button-next {
   right: -40px;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   .bags .swiper-button-prev {
