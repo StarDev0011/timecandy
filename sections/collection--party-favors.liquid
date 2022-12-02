@@ -123,9 +123,7 @@
     },
     selectFavorQuantity: () => {
       $('.party-favor-counter .button').on('click', function(){
-        var sectionHeight = $('.party-favor-counter').height();
-
-        window.scrollBy(0, sectionHeight);
+        $('.party-favor-counter')[0].scrollIntoView({ behavior: 'auto', block: 'center' });
       });
       $('#party-favor-count').on('input', function(){
         $('.card-product__quantity').val($(this).val());
