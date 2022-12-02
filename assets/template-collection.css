@@ -1031,4 +1031,6 @@
 .bag-selection {
   overflow: hidden;
 }
+.bag-selection .bags {
+  padding:  0 40px;
 }
