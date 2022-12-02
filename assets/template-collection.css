@@ -1035,6 +1035,7 @@
 }
 .bag-selection .swiper {
   overflow-x: hidden;
+  padding: 5px;
 }
 .bag-selection .bags {
   padding: 0 8px;
