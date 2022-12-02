@@ -1041,4 +1041,5 @@
 }
 .bag-selection .bags {
   padding: 0 8px;
+  position: relative;
 }
