@@ -1051,3 +1051,11 @@
 .bags .swiper-button-next {
   right: -40px;
 }
+@media (max-width: 767px) {
+  .bags .swiper-button-prev {
+    left: -20px;
+  }
+  .bags .swiper-button-next {
+    right: -20px;
+  }  
+}
