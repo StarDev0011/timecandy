@@ -1022,6 +1022,10 @@
 }
 .party-favor-counter {
   margin-bottom: 4rem;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid #125372;
+  background: #fff;
 }
 .party-favor-counter .field {
   max-width: 200px;
