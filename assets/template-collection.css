@@ -1033,9 +1033,6 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.bag-selection {
-  overflow-x: hidden;
-}
 .bag-selection .swiper {
   overflow-y: visible;
   overflow-x: hidden;
