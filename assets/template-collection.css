@@ -1048,3 +1048,9 @@
 .bags .swiper-button-next:after, .bags .swiper-rtl .swiper-button-prev:after{
   content: "";
 }
+.bags .swiper-button-prev {
+  left: -40px;
+}
+.bags .swiper-button-next {
+  right: -40px;
+}
