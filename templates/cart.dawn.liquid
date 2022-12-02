@@ -232,9 +232,11 @@
           {% if cart.total_price < limit_price_checkout %}
             <div class="mini-cart__checkout-text">minimum order value is {{ limit_price_checkout | money }}</div>
           {% else %}
-            {% form 'cart', cart %}
-            {{ form | payment_terms }}
-            {% endform %}            
+            <div style="padding:5px;">
+              {% form 'cart', cart %}
+              {{ form | payment_terms }}
+              {% endform %}            
+            </div>
           {% endif %}
         </div>
       </div>
