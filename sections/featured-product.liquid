@@ -99,20 +99,20 @@
           </span>          
           <div class="no-js-hidden product-price" id="price-{{ section.id }}" role="status">
             {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+            {%- if product != blank -%}
+              <div>
+                {%- form 'product', product -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  {{ form | payment_terms }}
+                {%- endform -%}
+              </div>
+            {%- endif -%}            
           </div>
           {% if section.settings.desc != blank %}
             <div class="featured-product__desc">
               {{ section.settings.desc }}
             </div>
           {% endif %}
-          {%- if product != blank -%}
-            <div>
-              {%- form 'product', product -%}
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                {{ form | payment_terms }}
-              {%- endform -%}
-            </div>
-          {%- endif -%}
 
         {%- unless product.has_only_default_variant -%}
 {% comment %}
