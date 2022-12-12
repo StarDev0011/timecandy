@@ -232,7 +232,7 @@
   
   </head>
 
-  <body aria-hidden="false" class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %} {% if template.suffix contains 'pack-a-bag' %}pack-a-bag-test{% endif %}">
+  <body aria-hidden="false" class="template-{{ request.page_type | handle }} {% if settings.ss_enable and collection.handle and collection.handle == settings.ss_collection_handle %} ss-shop{% endif %} {% if template.suffix contains 'pack-a-bag' or template.suffix contains 'party-favors' %}pack-a-bag-test{% endif %}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPDCTQW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
