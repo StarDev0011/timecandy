@@ -13,6 +13,9 @@
       <li {% if selected == 'order' %}class="selected"{% endif %}>
          {{ 'customer.menu_links.orders' | t | link_to: routes.account_url }}
       </li>
+      <li>
+         <a href="/pages/for-you">Candy For You</a>
+      </li>      
       <li {% if selected == 'addresses' %}class="selected"{% endif %}>
          {{ 'customer.menu_links.addresses' | t | link_to: routes.account_addresses_url }}
       </li>
