@@ -170,12 +170,6 @@ CartDawn = {
       let roseOptions = document.querySelectorAll('.product-rose-color .qty-input');
       let personalizedImage = document.querySelector('#personalized-image');
 
-      if (personalizedImage) {
-        return;
-      }      
-      
-      e.preventDefault();
-
       if (decadeOption) {
         if (currentDecadeValue) {
           currentDecadeValue.value = decadeOption.value;
@@ -191,6 +185,13 @@ CartDawn = {
           }
         });
       }
+
+      if (personalizedImage) {
+        return;
+      }      
+      
+      e.preventDefault();
+
       if (personalizedMessage) {
         if (personalizedMessage.value.length == '') {
           personalizedMessage.classList.add('error');
