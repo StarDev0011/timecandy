@@ -6,7 +6,7 @@ Checkout.$(document).on('ready page:load page:change', function() {
   var isValid = true;
   var fieldErrorClass = 'field--error';
   var fieldErrorMessageSelector = '.field__message--error';
-  var errorText = "{{ 'plus.checkout.po_box_rejection_message' | t }}";
+  var errorText = "We're unable to deliver to PO boxes. Please enter another address.";
   var $inputs = Checkout.$("[data-step] input:visible");
 
   var regexCheckFn = function(elem) {
