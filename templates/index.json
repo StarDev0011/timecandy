@@ -6,13 +6,13 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/otc-christmasCandy2022-WebSliderDesktopNew-Output-2880x900_2x_f1bec8de-ee9e-4ac2-98b0-32e4a3facb05.jpg",
-            "image_mb": "shopify:\/\/shop_images\/otc-christmasCandy2022-WebSliderMobileNew-Output-1200x1200_2x_65b3b23e-9692-4a7f-8b8f-a8d52e84c24a.jpg",
-            "heading": "'Tis the sweetest season! Get 15% off site-wide with code XMAS15",
+            "image": "shopify:\/\/shop_images\/otc-christmasGiftCards2022-WebSliderDesktop-Output-2880x900_2x_3ef04484-9bce-40c1-b393-c1bea7df5bfd.jpg",
+            "image_mb": "shopify:\/\/shop_images\/otc-christmasGiftCards2022-WebSliderMobile-Output-1200x1200_2x_d8acea2a-77d0-4421-8034-4b4d70427587.jpg",
+            "heading": "Give a gift card, get a gift card! See the image for details.",
             "subheading": "It's Gift Giving Season",
             "text_color": "#262626",
-            "button_label": "Stuff Your Stocking",
-            "link": "shopify:\/\/collections\/candy-by-occasion-christmas-candy",
+            "button_label": "Spread the Sweetness",
+            "link": "shopify:\/\/products\/rise-ai-giftcard",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
