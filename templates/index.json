@@ -6,19 +6,19 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/OTC-dialADecade2022-WebSliderDesktopNew-Output-2880x900_2x_25441b1d-7aa1-4885-b0a5-6158197f1a1f.jpg",
-            "image_mb": "shopify:\/\/shop_images\/OTC-dialADecade2022-WebSliderMobileNew-Output-1200x1200_2x_7534c831-a228-4dcd-bd0c-1f101817e0d2.jpg",
-            "heading": "Take your taste buds back in time! Shop candy by decade!",
+            "image": "shopify:\/\/shop_images\/otc-newYearsEve2022-WebSliderDesktop-Output-2880x900_2x_d3ca8971-9e26-496f-bf7d-67702c4ab476.jpg",
+            "image_mb": "shopify:\/\/shop_images\/otc-newYearsEve2022-WebSliderMobile-Output-1200x1200_2x_cd334f4a-db6f-4669-9d14-d81d5a96002e.jpg",
+            "heading": "We're counting down to 2023! Save 12% site-wide with code COUNTDOWN",
             "subheading": "",
-            "text_color": "#262626",
-            "button_label": "Choose your decade",
-            "link": "shopify:\/\/collections\/candy-by-decade",
+            "text_color": "#ffffff",
+            "button_label": "Celebrate early",
+            "link": "shopify:\/\/collections\/walk-the-candy-aisle",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
             "color_scheme": "#ffffff",
-            "bg_container_scheme": "#e2f5f6",
+            "bg_container_scheme": "#011414",
             "text_alignment_mobile": "left"
           }
         }
