@@ -6,19 +6,19 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/OTC-dialADecade2022-WebSliderDesktopNew-Output-2880x900_2x_25441b1d-7aa1-4885-b0a5-6158197f1a1f.jpg",
-            "image_mb": "shopify:\/\/shop_images\/OTC-dialADecade2022-WebSliderMobileNew-Output-1200x1200_2x_7534c831-a228-4dcd-bd0c-1f101817e0d2.jpg",
-            "heading": "Take your taste buds back in time! Shop candy by decade.",
+            "image": "shopify:\/\/shop_images\/otc-winterBirthdays2023-WebSliderDesktop-Output-2880x900_2x_8571390f-6e27-4b20-8047-d4bf611a5550.jpg",
+            "image_mb": "shopify:\/\/shop_images\/otc-winterBirthdays2023-WebSliderMobile-Output-1200x1200_2x_96fcb5b8-b949-4d1e-bdfc-1ef92303c4f6.jpg",
+            "heading": "Need a gift? Save 12% site-wide with code WINTERBDAY23",
             "subheading": "",
             "text_color": "#262626",
-            "button_label": "Choose Your Decade",
-            "link": "shopify:\/\/collections\/candy-by-decade",
+            "button_label": "CELEBRATE BIRTHDAYS",
+            "link": "shopify:\/\/collections\/candy-by-occasion-birthday-candy-gifts",
             "button_style_secondary": false,
             "box_align": "middle-left",
             "show_text_box": false,
             "text_alignment": "left",
             "color_scheme": "#ffffff",
-            "bg_container_scheme": "#e2f5f6",
+            "bg_container_scheme": "#cbe9f8",
             "text_alignment_mobile": "left"
           }
         }
