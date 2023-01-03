@@ -244,24 +244,10 @@
               "enable-checkout": true
             }
           },
-          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1": {
-            "type": "script",
-            "settings": {
-              "script": "<!-- Hotjar Tracking Code for http:\/\/www.oldtimecandy.com -->\n<script>\n    (function(h,o,t,j,a,r){\n        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n        h._hjSettings={hjid:120850,hjsv:6};\n        a=o.getElementsByTagName('head')[0];\n        r=o.createElement('script');r.async=1;\n        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n        a.appendChild(r);\n    })(window,document,'https:\/\/static.hotjar.com\/c\/hotjar-','.js?sv=');\n<\/script>",
-              "enable-checkout": true
-            }
-          },
           "e3679f1f-6f75-42f6-bf21-90d222d80572": {
             "type": "script",
             "settings": {
               "script": "<meta name=\"facebook-domain-verification\" content=\"hrkju3xgogfc6i8m0vetapsampa796\">",
-              "enable-checkout": true
-            }
-          },
-          "f896efc1-0085-4912-ab1f-cc5071a1b1cc": {
-            "type": "script",
-            "settings": {
-              "script": "<script src=\"https:\/\/www.googleoptimize.com\/optimize.js?id=GTM-KHZNRRG\"><\/script>",
               "enable-checkout": true
             }
           },
@@ -271,16 +257,32 @@
               "script": "<script src=\"https:\/\/www.dwin1.com\/38476.js\" type=\"text\/javascript\" defer><\/script>",
               "enable-checkout": true
             }
+          },
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1": {
+            "type": "script",
+            "disabled": true,
+            "settings": {
+              "script": "<!-- Hotjar Tracking Code for http:\/\/www.oldtimecandy.com -->\n<script>\n    (function(h,o,t,j,a,r){\n        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n        h._hjSettings={hjid:120850,hjsv:6};\n        a=o.getElementsByTagName('head')[0];\n        r=o.createElement('script');r.async=1;\n        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n        a.appendChild(r);\n    })(window,document,'https:\/\/static.hotjar.com\/c\/hotjar-','.js?sv=');\n<\/script>",
+              "enable-checkout": true
+            }
+          },
+          "f896efc1-0085-4912-ab1f-cc5071a1b1cc": {
+            "type": "script",
+            "disabled": true,
+            "settings": {
+              "script": "<script src=\"https:\/\/www.googleoptimize.com\/optimize.js?id=GTM-KHZNRRG\"><\/script>",
+              "enable-checkout": true
+            }
           }
         },
         "block_order": [
           "3d891d24-34a7-47aa-88b6-3bbeacccc570",
           "d542ae9e-ff8b-407b-942c-4959404653a1",
           "43514fa4-fc24-40f2-a096-be1e187d55f7",
-          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1",
           "e3679f1f-6f75-42f6-bf21-90d222d80572",
-          "f896efc1-0085-4912-ab1f-cc5071a1b1cc",
-          "77061b35-013f-420b-af32-3632d5de8043"
+          "77061b35-013f-420b-af32-3632d5de8043",
+          "f6a4d764-4d64-4fd8-9291-0a12b7b71fb1",
+          "f896efc1-0085-4912-ab1f-cc5071a1b1cc"
         ],
         "settings": {
           "header-misc-scripts-enable": true
