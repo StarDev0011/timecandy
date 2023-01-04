@@ -86,7 +86,7 @@
 {% endif %}
 
 {% comment %} End Custom Line Item Props {% endcomment %}
-
+{% if personalized-message != blank %}
 <script>
     document.querySelector('#personalized-message').addEventListener('input', function (evt) {
         limitMessage(this);
@@ -97,3 +97,4 @@
         messageCount.textContent = limit - _this.value.length;
     }
 </script>
+{% endif %}
